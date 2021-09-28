@@ -34,7 +34,7 @@ The Austrian Radio Amateur Association (OeVSV) together with the Institute of Te
 </ul>
 
 <h1>Concept Modem</h1>
-<img src="doc/img/ConceptModem.png" height="400" alt="Concept Modem">
+<img src="doc/img/Modem.png" height="400" alt="Concept Modem">
 
 <h1>Concept Access Point</h1>
-<img src="doc/img/ConceptAccessPoint.png" height="400" alt="Concept Access Point">
+<img src="doc/img/AccessPoint.png" height="400" alt="Concept Access Point">
