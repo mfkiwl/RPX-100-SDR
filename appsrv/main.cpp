@@ -57,8 +57,8 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
 {
     QCoreApplication a(argc, argv);
 
-    QCoreApplication::setOrganizationName("f4exb");
-    QCoreApplication::setApplicationName("SDRangelSrv");
+    QCoreApplication::setOrganizationName("oe3bia");
+    QCoreApplication::setApplicationName("RPX-100");
     QCoreApplication::setApplicationVersion(SDRANGEL_VERSION);
 
 #ifndef _WIN32
@@ -106,6 +106,6 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
         logger->installMsgHandler();
         int res = runQtApplication(argc, argv, logger);
         delete logger;
-        qWarning("SDRangel quit.");
+        qWarning("RPX-100 quit.");
         return res;
       }

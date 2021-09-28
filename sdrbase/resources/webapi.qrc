@@ -126,5 +126,6 @@
         <file>webapi/doc/swagger-ui/swagger-ui.js.map</file>
         <file>webapi/index.html</file>
         <file>webapi/sdrangel_logo.png</file>
+        <file>webapi/OEVSV_small.png</file>
     </qresource>
 </RCC>
