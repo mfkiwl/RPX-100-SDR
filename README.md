@@ -21,6 +21,8 @@ The implementation of a new digital communication system will be based on the co
 Hardware and software design of a base station and CPE-like user device shall allow a modular use with different radio front-ends supporting all possible Sub-GHz frequency bands.<br><br>
 The Austrian Radio Amateur Association (OeVSV) together with the Institute of Telecommunication of the Vienna University of Technology will request a permit to test operation of such a new digital communication system in VHF and UHF frequency bands. A possible cooperation with The German Radio Amateur Association shall be explored for utilizing the new transmission protocol in German UHF bands.  
 
+<img src="doc/img/SDR concept.png" height="400" alt="Concept Modem">
+
 <h1>Goals</h1>
 <ul>
 <li>Evaluate and select appropriate wireless communication protocol similar to existing Wireless LAN protocols but suitable for the VHF and UHF bands.</li>
@@ -32,7 +34,7 @@ The Austrian Radio Amateur Association (OeVSV) together with the Institute of Te
 </ul>
 
 <h1>Concept Modem</h1>
-<img src="docs/img/ConceptModem.png" height="400" alt="Concept Modem">
+<img src="doc/img/ConceptModem.png" height="400" alt="Concept Modem">
 
 <h1>Concept Access Point</h1>
-<img src="docs/img/ConceptAccessPoint.png" height="400" alt="Concept Access Point">
+<img src="doc/img/ConceptAccessPoint.png" height="400" alt="Concept Access Point">
