@@ -8,8 +8,8 @@
         Web: <a href="https://outofband.info">www.outofband.info</a><br>
         </td>
         <td align="center">
-        <a href="https://oevsv.at/home/" target="_blank"><img src="docs/img/OEVSV_small.png" height="120" alt="Austrian Radio Amateur Association"></a><br><br>
-        <a href="https://www.tuwien.at/en/" target="_blank"><img src="docs/img/TU.jpg" height="80" alt="Technische Universität Wien"></a>
+        <a href="https://oevsv.at/home/" target="_blank"><img src="doc/img/OEVSV_small.png" height="120" alt="Austrian Radio Amateur Association"></a><br><br>
+        <a href="https://www.tuwien.at/en/" target="_blank"><img src="doc/img/TU.jpg" height="80" alt="Technische Universität Wien"></a>
     </td>
  </tr>
 </table>
