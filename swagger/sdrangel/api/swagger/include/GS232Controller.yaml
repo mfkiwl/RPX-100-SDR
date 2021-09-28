@@ -1,0 +1,62 @@
+GS232ControllerSettings:
+  description: "GS-232 Controller settings"
+  properties:
+    azimuth:
+      description: Target azimuth in degrees (0-450)
+      type: number
+      format: float
+    elevation:
+      description: Target elevation in degrees (0-180)
+      type: number
+      format: float
+    serialPort:
+      description: The serial port the GS-232 controller is connected to
+      type: string
+    baudRate:
+      description: The baud rate to use for the serial connection to the GS-232 controller
+      type: integer
+    track:
+      description: Track a target where azimuth and elevation are determined by another plugin (1 for yes, 0 for no)
+      type: integer
+    target:
+      description: "Identifier of the channel or feature plugin providing target azimuth and elevation (E.g. R0:0 ADSBDemod)"
+      type: string
+    azimuthOffset:
+      description: Azimuth offset in degrees
+      type: integer
+    elevationOffset:
+      description: Elevation offset in degrees
+      type: integer
+    azimuthMin:
+      description: Minimum azimuth the controller will output
+      type: integer
+    azimuthMax:
+      description: Maximum azimuth the controller will output
+      type: integer
+    elevationMin:
+      description: Minimum elevation the controller will output
+      type: integer
+    elevationMax:
+      description: Maximum elevation the controller will output
+      type: integer
+    tolerance:
+      description: Tolerance in degrees
+      type: integer
+    protocol:
+      description: (0 GS-232, 1 SPID rot2prog)
+      type: integer
+    title:
+      type: string
+    rgbColor:
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIFeatureSetIndex:
+      type: integer
+    reverseAPIFeatureIndex:
+      type: integer

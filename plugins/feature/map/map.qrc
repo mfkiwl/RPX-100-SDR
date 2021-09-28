@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/map/">
+    <file>map/map.qml</file>
+    <file>map/map_5_12.qml</file>
+    <file>map/antenna.png</file>
+    <file>map/antennatime.png</file>
+  </qresource>
+</RCC>

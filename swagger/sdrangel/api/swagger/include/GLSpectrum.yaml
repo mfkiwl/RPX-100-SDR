@@ -1,0 +1,70 @@
+GLSpectrum:
+  description: GLSpectrumGUI settings
+  properties:
+    fftSize:
+      type: integer
+    fftOverlap:
+      type: integer
+    fftWindow:
+      description: See FFTWindow
+      type: integer
+    refLevel:
+      type: number
+      format: float
+    powerRange:
+      type: number
+      format: float
+    fpsPeriodMs:
+      type: integer
+      description: FPS capping period in milliseconds. 0 for no limit.
+    displayWaterfall:
+      description: boolean
+      type: integer
+    invertedWaterfall:
+      description: boolean
+      type: integer
+    displayMaxHold:
+      description: boolean
+      type: integer
+    displayHistogram:
+      description: boolean
+      type: integer
+    decay:
+      type: integer
+    displayGrid:
+      description: boolean
+      type: integer
+    displayGridIntensity:
+      type: integer
+    decayDivisor:
+      type: integer
+    histogramStroke:
+      type: integer
+    displayCurrent:
+      description: boolean
+      type: integer
+    displayTraceIntensity:
+      type: integer
+    waterfallShare:
+      type: number
+      format: float
+    averagingMode:
+      description: See GLSpectrumGUI::AveragingMode
+      type: integer
+    averagingValue:
+      type: integer
+    linear:
+      description: boolean
+      type: integer
+    ssb:
+      description: boolean
+      type: integer
+    usb:
+      description: boolean
+      type: integer
+    wsSpectrumAddress:
+      description: IPv4 address of interface the websocket server is listening to
+      type: string
+    wsSpectrumPort:
+      description: port on which the websocket server is listening
+      type: integer

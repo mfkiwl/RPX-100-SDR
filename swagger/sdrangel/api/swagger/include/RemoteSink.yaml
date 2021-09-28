@@ -1,0 +1,37 @@
+RemoteSinkSettings:
+  description: "Remote channel sink settings"
+  properties:
+    nbFECBlocks:
+      description: "Number of FEC blocks per frame"
+      type: integer
+    dataAddress:
+      description: "Receiving USB data address"
+      type: string
+    dataPort:
+      description: "Receiving USB data port"
+      type: integer
+    txDelay:
+      description: "Minimum delay in ms between consecutive USB blocks transmissions"
+      type: integer
+    rgbColor:
+      type: integer
+    title:
+      type: string
+    log2Decim:
+      type: integer
+    filterChainHash:
+      type: integer
+    streamIndex:
+      description: MIMO channel. Not relevant when connected to SI (single Rx).
+      type: integer
+    useReverseAPI:
+      description: Synchronize with reverse API (1 for yes, 0 for no)
+      type: integer
+    reverseAPIAddress:
+      type: string
+    reverseAPIPort:
+      type: integer
+    reverseAPIDeviceIndex:
+      type: integer
+    reverseAPIChannelIndex:
+      type: integer

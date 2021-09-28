@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/">
+    <file>icons/aircraft.png</file>
+    <file>icons/controltower.png</file>
+    <file>icons/allflightpaths.png</file>
+  </qresource>
+</RCC>

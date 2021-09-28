@@ -1,0 +1,33 @@
+project(feature)
+
+if (Qt5SerialPort_FOUND)
+    add_subdirectory(gs232controller)
+endif()
+
+if (Qt5Quick_FOUND AND Qt5QuickWidgets_FOUND AND Qt5Positioning_FOUND AND Qt5Location_FOUND)
+    add_subdirectory(map)
+endif()
+if (Qt5Quick_FOUND AND Qt5QuickWidgets_FOUND AND Qt5Positioning_FOUND)
+    add_subdirectory(vorlocalizer)
+endif()
+
+add_subdirectory(afc)
+add_subdirectory(ais)
+add_subdirectory(antennatools)
+add_subdirectory(aprs)
+add_subdirectory(demodanalyzer)
+add_subdirectory(pertester)
+add_subdirectory(rigctlserver)
+add_subdirectory(simpleptt)
+
+if (NOT SERVER_MODE)
+    if (SGP4_FOUND AND Qt5Positioning_FOUND AND Qt5Charts_FOUND AND Qt5TextToSpeech_FOUND)
+        add_subdirectory(satellitetracker)
+    endif()
+else()
+    if (SGP4_FOUND AND Qt5Positioning_FOUND AND Qt5Charts_FOUND)
+        add_subdirectory(satellitetracker)
+    endif()
+endif()
+
+add_subdirectory(startracker)
