@@ -1,6 +1,6 @@
-<table border="0">
+<table border="0" style="width:100%">
  <tr>
-    <td><img src="docs/img/image1.png" height="340" alt="OFDMA"></td>
+  <td><img src="doc/img/image1.png" height="340" alt="OFDMA"></td>
     <td>
     <b>Bernhard Isemann</b><br><br>
         AT: OE3BIA<br>
@@ -8,8 +8,8 @@
         Web: <a href="https://outofband.info">www.outofband.info</a><br>
         </td>
         <td align="center">
-        <a href="https://oevsv.at/home/" target="_blank"><img src="docs/img/OEVSV_small.png" height="120" alt="Austrian Radio Amateur Association"></a><br><br>
-        <a href="https://www.tuwien.at/en/" target="_blank"><img src="docs/img/TU.jpg" height="80" alt="Technische Universität Wien"></a>
+        <a href="https://oevsv.at/home/" target="_blank"><img src="doc/img/OEVSV_small.png" height="120" alt="Austrian Radio Amateur Association"></a><br><br>
+        <a href="https://www.tuwien.at/en/" target="_blank"><img src="doc/img/TU.jpg" height="80" alt="Technische Universität Wien"></a>
     </td>
  </tr>
 </table>
@@ -20,6 +20,8 @@ Requirements for the new communication system are to use a wideband transmission
 The implementation of a new digital communication system will be based on the concept of a software defined radio using the LimeSDR ecosystem. This will address and motivate a larger community of developers and radio amateurs to get involved in the enhancement of the system. 
 Hardware and software design of a base station and CPE-like user device shall allow a modular use with different radio front-ends supporting all possible Sub-GHz frequency bands.<br><br>
 The Austrian Radio Amateur Association (OeVSV) together with the Institute of Telecommunication of the Vienna University of Technology will request a permit to test operation of such a new digital communication system in VHF and UHF frequency bands. A possible cooperation with The German Radio Amateur Association shall be explored for utilizing the new transmission protocol in German UHF bands.  
+
+<p align="center"><img src="doc/img/SDR concept.png" height="400" alt="Concept Modem"></p>
 
 <h1>Goals</h1>
 <ul>
@@ -32,7 +34,7 @@ The Austrian Radio Amateur Association (OeVSV) together with the Institute of Te
 </ul>
 
 <h1>Concept Modem</h1>
-<img src="docs/img/ConceptModem.png" height="400" alt="Concept Modem">
+<img src="doc/img/ConceptModem.png" height="400" alt="Concept Modem">
 
 <h1>Concept Access Point</h1>
-<img src="docs/img/ConceptAccessPoint.png" height="400" alt="Concept Access Point">
+<img src="doc/img/ConceptAccessPoint.png" height="400" alt="Concept Access Point">
