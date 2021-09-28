@@ -1,4 +1,4 @@
-<table border="0" width="100%">
+<table border="0" style="width:100%">
  <tr>
   <td><img src="doc/img/image1.png" height="340" alt="OFDMA"></td>
     <td>
