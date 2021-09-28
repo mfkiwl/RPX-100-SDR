@@ -1,6 +1,6 @@
 <table border="0">
  <tr>
-    <td align="center"><img src="doc/img/image1.png" height="340" alt="OFDMA"></td>
+  <td><p align="center"><img src="doc/img/image1.png" height="340" alt="OFDMA"></p></td>
     <td>
     <b>Bernhard Isemann</b><br><br>
         AT: OE3BIA<br>
