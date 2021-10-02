@@ -197,7 +197,7 @@ void SimplePTT::applySettings(const SimplePTTSettings& settings, bool force)
 }
 
 int SimplePTT::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -208,11 +208,11 @@ int SimplePTT::webapiRun(bool run,
 }
 
 int SimplePTT::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSimplePttSettings(new SWGrpx-100::SWGSimplePTTSettings());
+    response.setSimplePttSettings(new SWGRPX100::SWGSimplePTTSettings());
     response.getSimplePttSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -221,7 +221,7 @@ int SimplePTT::webapiSettingsGet(
 int SimplePTT::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -244,11 +244,11 @@ int SimplePTT::webapiSettingsPutPatch(
 }
 
 int SimplePTT::webapiReportGet(
-    SWGrpx-100::SWGFeatureReport& response,
+    SWGRPX100::SWGFeatureReport& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSimplePttReport(new SWGrpx-100::SWGSimplePTTReport());
+    response.setSimplePttReport(new SWGRPX100::SWGSimplePTTReport());
     response.getSimplePttReport()->init();
     webapiFormatFeatureReport(response);
     return 200;
@@ -256,10 +256,10 @@ int SimplePTT::webapiReportGet(
 
 int SimplePTT::webapiActionsPost(
     const QStringList& featureActionsKeys,
-    SWGrpx-100::SWGFeatureActions& query,
+    SWGRPX100::SWGFeatureActions& query,
     QString& errorMessage)
 {
-    SWGrpx-100::SWGSimplePTTActions *swgSimplePTTActions = query.getSimplePttActions();
+    SWGRPX100::SWGSimplePTTActions *swgSimplePTTActions = query.getSimplePttActions();
 
     if (swgSimplePTTActions)
     {
@@ -287,7 +287,7 @@ int SimplePTT::webapiActionsPost(
 }
 
 void SimplePTT::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const SimplePTTSettings& settings)
 {
     if (response.getSimplePttSettings()->getTitle()) {
@@ -318,7 +318,7 @@ void SimplePTT::webapiFormatFeatureSettings(
 void SimplePTT::webapiUpdateFeatureSettings(
     SimplePTTSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("title")) {
         settings.m_title = *response.getSimplePttSettings()->getTitle();
@@ -355,19 +355,19 @@ void SimplePTT::webapiUpdateFeatureSettings(
     }
 }
 
-void SimplePTT::webapiFormatFeatureReport(SWGrpx-100::SWGFeatureReport& response)
+void SimplePTT::webapiFormatFeatureReport(SWGRPX100::SWGFeatureReport& response)
 {
     response.getSimplePttReport()->setPtt(m_ptt ? 1 : 0);
 }
 
 void SimplePTT::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const SimplePTTSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("SimplePTT"));
-    swgFeatureSettings->setSimplePttSettings(new SWGrpx-100::SWGSimplePTTSettings());
-    SWGrpx-100::SWGSimplePTTSettings *swgSimplePTTSettings = swgFeatureSettings->getSimplePttSettings();
+    swgFeatureSettings->setSimplePttSettings(new SWGRPX100::SWGSimplePTTSettings());
+    SWGRPX100::SWGSimplePTTSettings *swgSimplePTTSettings = swgFeatureSettings->getSimplePttSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

@@ -235,7 +235,7 @@ void StarTracker::applySettings(const StarTrackerSettings& settings, bool force)
 }
 
 int StarTracker::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -246,11 +246,11 @@ int StarTracker::webapiRun(bool run,
 }
 
 int StarTracker::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setStarTrackerSettings(new SWGrpx-100::SWGStarTrackerSettings());
+    response.setStarTrackerSettings(new SWGRPX100::SWGStarTrackerSettings());
     response.getStarTrackerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -259,7 +259,7 @@ int StarTracker::webapiSettingsGet(
 int StarTracker::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -281,7 +281,7 @@ int StarTracker::webapiSettingsPutPatch(
 }
 
 void StarTracker::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const StarTrackerSettings& settings)
 {
     response.getStarTrackerSettings()->setTarget(new QString(settings.m_target));
@@ -325,7 +325,7 @@ void StarTracker::webapiFormatFeatureSettings(
 void StarTracker::webapiUpdateFeatureSettings(
     StarTrackerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("target")) {
         settings.m_target = *response.getStarTrackerSettings()->getTarget();
@@ -400,12 +400,12 @@ void StarTracker::webapiUpdateFeatureSettings(
 
 void StarTracker::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const StarTrackerSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("StarTracker"));
-    swgFeatureSettings->setStarTrackerSettings(new SWGrpx-100::SWGStarTrackerSettings());
-    SWGrpx-100::SWGStarTrackerSettings *swgStarTrackerSettings = swgFeatureSettings->getStarTrackerSettings();
+    swgFeatureSettings->setStarTrackerSettings(new SWGRPX100::SWGStarTrackerSettings());
+    SWGRPX100::SWGStarTrackerSettings *swgStarTrackerSettings = swgFeatureSettings->getStarTrackerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

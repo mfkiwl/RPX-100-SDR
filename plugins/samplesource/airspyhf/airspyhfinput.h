@@ -100,36 +100,36 @@ public:
 	virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGDeviceReport& response,
+            SWGRPX100::SWGDeviceReport& response,
             QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
 	static void webapiFormatDeviceSettings(
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             const AirspyHFSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             AirspyHFSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response);
+            SWGRPX100::SWGDeviceSettings& response);
 
     static const qint64 loLowLimitFreqHF;
 	static const qint64 loHighLimitFreqHF;
@@ -156,7 +156,7 @@ private:
 	bool applySettings(const AirspyHFSettings& settings, bool force);
 	airspyhf_device_t *open_airspyhf_from_serial(const QString& serialStr);
 	void setDeviceCenterFrequency(quint64 freq, const AirspyHFSettings& settings);
-    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const AirspyHFSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

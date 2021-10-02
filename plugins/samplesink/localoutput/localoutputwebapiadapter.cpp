@@ -29,11 +29,11 @@ LocalOutputWebAPIAdapter::~LocalOutputWebAPIAdapter()
 {}
 
 int LocalOutputWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalOutputSettings(new SWGrpx-100::SWGLocalOutputSettings());
+    response.setLocalOutputSettings(new SWGRPX100::SWGLocalOutputSettings());
     response.getLocalOutputSettings()->init();
     LocalOutput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int LocalOutputWebAPIAdapter::webapiSettingsGet(
 int LocalOutputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

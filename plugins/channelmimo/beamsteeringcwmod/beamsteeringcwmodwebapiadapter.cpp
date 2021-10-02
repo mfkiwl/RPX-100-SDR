@@ -26,11 +26,11 @@ BeamSteeringCWModWebAPIAdapter::~BeamSteeringCWModWebAPIAdapter()
 {}
 
 int BeamSteeringCWModWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBeamSteeringCwModSettings(new SWGrpx-100::SWGBeamSteeringCWModSettings());
+    response.setBeamSteeringCwModSettings(new SWGRPX100::SWGBeamSteeringCWModSettings());
     response.getBeamSteeringCwModSettings()->init();
     BeamSteeringCWMod::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int BeamSteeringCWModWebAPIAdapter::webapiSettingsGet(
 int BeamSteeringCWModWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

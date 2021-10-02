@@ -27,7 +27,7 @@
 
 #include <QObject>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 class SWGFeatureSetApi: public QObject {
     Q_OBJECT

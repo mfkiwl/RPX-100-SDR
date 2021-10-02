@@ -25,11 +25,11 @@ DATVDemodWebAPIAdapter::~DATVDemodWebAPIAdapter()
 {}
 
 int DATVDemodWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDatvDemodSettings(new SWGrpx-100::SWGDATVDemodSettings());
+    response.setDatvDemodSettings(new SWGRPX100::SWGDATVDemodSettings());
     response.getDatvDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -38,7 +38,7 @@ int DATVDemodWebAPIAdapter::webapiSettingsGet(
 int DATVDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;
@@ -48,7 +48,7 @@ int DATVDemodWebAPIAdapter::webapiSettingsPutPatch(
 }
 
 void DATVDemodWebAPIAdapter::webapiFormatChannelSettings(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         const DATVDemodSettings& settings)
 {
     response.getDatvDemodSettings()->setAllowDrift(settings.m_allowDrift ? 1 : 0);
@@ -79,7 +79,7 @@ void DATVDemodWebAPIAdapter::webapiFormatChannelSettings(
 void DATVDemodWebAPIAdapter::webapiUpdateChannelSettings(
         DATVDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("allowDrift")) {
         settings.m_allowDrift = response.getDatvDemodSettings()->getAllowDrift() != 0;

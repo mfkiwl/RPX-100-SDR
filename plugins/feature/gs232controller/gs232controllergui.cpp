@@ -101,7 +101,7 @@ bool GS232ControllerGUI::handleMessage(const Message& message)
     else if (MainCore::MsgTargetAzimuthElevation::match(message))
     {
         MainCore::MsgTargetAzimuthElevation& msg = (MainCore::MsgTargetAzimuthElevation&) message;
-        SWGrpx-100::SWGTargetAzimuthElevation *swgTarget = msg.getSWGTargetAzimuthElevation();
+        SWGRPX100::SWGTargetAzimuthElevation *swgTarget = msg.getSWGTargetAzimuthElevation();
 
         ui->azimuth->setValue(round(swgTarget->getAzimuth()));
         ui->elevation->setValue(round(swgTarget->getElevation()));

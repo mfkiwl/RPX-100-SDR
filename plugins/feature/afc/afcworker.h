@@ -161,7 +161,7 @@ private:
     void initTrackedDeviceSet(int deviceSetIndex);
     void processChannelSettings(
         const ChannelAPI *channelAPI,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings
+        SWGRPX100::SWGChannelSettings *swgChannelSettings
     );
     bool updateChannelOffset(ChannelAPI *channelAPI, int direction, int offset);
     bool updateDeviceFrequency(DeviceSet *deviceSet, const QString& key, int64_t frequency);

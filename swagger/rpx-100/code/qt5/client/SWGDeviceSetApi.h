@@ -32,7 +32,7 @@
 
 #include <QObject>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 class SWGDeviceSetApi: public QObject {
     Q_OBJECT

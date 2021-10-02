@@ -136,36 +136,36 @@ public:
     virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGDeviceReport& response,
+            SWGRPX100::SWGDeviceReport& response,
             QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             const SDRPlaySettings& settings);
 
     static void webapiUpdateDeviceSettings(
             SDRPlaySettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response);
+            SWGRPX100::SWGDeviceSettings& response);
 
     SDRPlayVariant getVariant() const { return m_variant; }
 
@@ -186,7 +186,7 @@ private:
     void closeDevice();
     bool applySettings(const SDRPlaySettings& settings, bool forwardChange, bool force);
     bool setDeviceCenterFrequency(quint64 freq);
-    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const SDRPlaySettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

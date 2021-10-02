@@ -27,11 +27,11 @@ SatelliteTrackerWebAPIAdapter::~SatelliteTrackerWebAPIAdapter()
 {}
 
 int SatelliteTrackerWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSatelliteTrackerSettings(new SWGrpx-100::SWGSatelliteTrackerSettings());
+    response.setSatelliteTrackerSettings(new SWGRPX100::SWGSatelliteTrackerSettings());
     response.getSatelliteTrackerSettings()->init();
     SatelliteTracker::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int SatelliteTrackerWebAPIAdapter::webapiSettingsGet(
 int SatelliteTrackerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

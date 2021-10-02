@@ -211,7 +211,7 @@ void RigCtlServer::applySettings(const RigCtlServerSettings& settings, bool forc
 }
 
 int RigCtlServer::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -222,11 +222,11 @@ int RigCtlServer::webapiRun(bool run,
 }
 
 int RigCtlServer::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRigCtlServerSettings(new SWGrpx-100::SWGRigCtlServerSettings());
+    response.setRigCtlServerSettings(new SWGRPX100::SWGRigCtlServerSettings());
     response.getRigCtlServerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -235,7 +235,7 @@ int RigCtlServer::webapiSettingsGet(
 int RigCtlServer::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -258,7 +258,7 @@ int RigCtlServer::webapiSettingsPutPatch(
 }
 
 void RigCtlServer::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const RigCtlServerSettings& settings)
 {
     response.getRigCtlServerSettings()->setEnabled(settings.m_enabled ? 1 : 0);
@@ -290,7 +290,7 @@ void RigCtlServer::webapiFormatFeatureSettings(
 void RigCtlServer::webapiUpdateFeatureSettings(
     RigCtlServerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("enabled")) {
         settings.m_enabled = response.getRigCtlServerSettings()->getEnabled();
@@ -332,12 +332,12 @@ void RigCtlServer::webapiUpdateFeatureSettings(
 
 void RigCtlServer::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const RigCtlServerSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("RigCtlServer"));
-    swgFeatureSettings->setRigCtlServerSettings(new SWGrpx-100::SWGRigCtlServerSettings());
-    SWGrpx-100::SWGRigCtlServerSettings *swgRigCtlServerSettings = swgFeatureSettings->getRigCtlServerSettings();
+    swgFeatureSettings->setRigCtlServerSettings(new SWGRPX100::SWGRigCtlServerSettings());
+    SWGRPX100::SWGRigCtlServerSettings *swgRigCtlServerSettings = swgFeatureSettings->getRigCtlServerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

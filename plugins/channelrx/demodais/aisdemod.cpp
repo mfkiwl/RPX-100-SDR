@@ -307,11 +307,11 @@ void AISDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int AISDemod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisDemodSettings(new SWGrpx-100::SWGAISDemodSettings());
+    response.setAisDemodSettings(new SWGRPX100::SWGAISDemodSettings());
     response.getAisDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -320,7 +320,7 @@ int AISDemod::webapiSettingsGet(
 int AISDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -345,7 +345,7 @@ int AISDemod::webapiSettingsPutPatch(
 void AISDemod::webapiUpdateChannelSettings(
         AISDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getAisDemodSettings()->getInputFrequencyOffset();
@@ -397,7 +397,7 @@ void AISDemod::webapiUpdateChannelSettings(
     }
 }
 
-void AISDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const AISDemodSettings& settings)
+void AISDemod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const AISDemodSettings& settings)
 {
     response.getAisDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getAisDemodSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -431,7 +431,7 @@ void AISDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respo
 
 void AISDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AISDemodSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -456,7 +456,7 @@ void AISDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
 
 void AISDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const AISDemodSettings& settings,
         bool force
 )
@@ -465,8 +465,8 @@ void AISDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("AISDemod"));
-    swgChannelSettings->setAisDemodSettings(new SWGrpx-100::SWGAISDemodSettings());
-    SWGrpx-100::SWGAISDemodSettings *swgAISDemodSettings = swgChannelSettings->getAisDemodSettings();
+    swgChannelSettings->setAisDemodSettings(new SWGRPX100::SWGAISDemodSettings());
+    SWGRPX100::SWGAISDemodSettings *swgAISDemodSettings = swgChannelSettings->getAisDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

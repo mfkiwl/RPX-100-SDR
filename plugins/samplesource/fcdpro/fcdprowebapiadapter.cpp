@@ -29,11 +29,11 @@ FCDProWebAPIAdapter::~FCDProWebAPIAdapter()
 {}
 
 int FCDProWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFcdProSettings(new SWGrpx-100::SWGFCDProSettings());
+    response.setFcdProSettings(new SWGRPX100::SWGFCDProSettings());
     response.getFcdProSettings()->init();
     FCDProInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int FCDProWebAPIAdapter::webapiSettingsGet(
 int FCDProWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

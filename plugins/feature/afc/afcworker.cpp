@@ -110,7 +110,7 @@ bool AFCWorker::handleMessage(const Message& cmd)
     {
         QMutexLocker mutexLocker(&m_mutex);
         MainCore::MsgChannelSettings& cfg = (MainCore::MsgChannelSettings&) cmd;
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = cfg.getSWGSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = cfg.getSWGSettings();
         qDebug() << "AFCWorker::handleMessage: MainCore::MsgChannelSettings:" << *swgChannelSettings->getChannelType();
         processChannelSettings(cfg.getChannelAPI(), swgChannelSettings);
 
@@ -188,9 +188,9 @@ void AFCWorker::initTrackerDeviceSet(int deviceSetIndex)
         if (channel->getURI() == "rpx-100.channel.freqtracker")
         {
             m_freqTracker = channel;
-            SWGrpx-100::SWGDeviceSettings resDevice;
-            SWGrpx-100::SWGChannelSettings resChannel;
-            SWGrpx-100::SWGErrorResponse error;
+            SWGRPX100::SWGDeviceSettings resDevice;
+            SWGRPX100::SWGChannelSettings resChannel;
+            SWGRPX100::SWGErrorResponse error;
 
             int rc = m_webAPIAdapterInterface->devicesetDeviceSettingsGet(deviceSetIndex, resDevice, error);
 
@@ -240,8 +240,8 @@ void AFCWorker::initTrackedDeviceSet(int deviceSetIndex)
 
         if (channel->getURI() != "rpx-100.channel.freqtracker")
         {
-            SWGrpx-100::SWGChannelSettings resChannel;
-            SWGrpx-100::SWGErrorResponse error;
+            SWGRPX100::SWGChannelSettings resChannel;
+            SWGRPX100::SWGErrorResponse error;
 
             int rc = m_webAPIAdapterInterface->devicesetChannelSettingsGet(deviceSetIndex, i, resChannel, error);
 
@@ -280,7 +280,7 @@ void AFCWorker::initTrackedDeviceSet(int deviceSetIndex)
 
 void AFCWorker::processChannelSettings(
     const ChannelAPI *channelAPI,
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings)
+    SWGRPX100::SWGChannelSettings *swgChannelSettings)
 {
     MainCore *mainCore = MainCore::instance();
     QJsonObject *jsonObj = swgChannelSettings->asJsonObject();
@@ -323,8 +323,8 @@ void AFCWorker::processChannelSettings(
 
 bool AFCWorker::updateChannelOffset(ChannelAPI *channelAPI, int direction, int offset)
 {
-    SWGrpx-100::SWGChannelSettings swgChannelSettings;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGChannelSettings swgChannelSettings;
+    SWGRPX100::SWGErrorResponse errorResponse;
     QString channelId;
     channelAPI->getIdentifier(channelId);
     swgChannelSettings.init();
@@ -361,9 +361,9 @@ bool AFCWorker::updateChannelOffset(ChannelAPI *channelAPI, int direction, int o
 
 void AFCWorker::updateTarget()
 {
-    SWGrpx-100::SWGDeviceSettings resDevice;
-    SWGrpx-100::SWGChannelSettings resChannel;
-    SWGrpx-100::SWGErrorResponse error;
+    SWGRPX100::SWGDeviceSettings resDevice;
+    SWGRPX100::SWGChannelSettings resChannel;
+    SWGRPX100::SWGErrorResponse error;
 
     int rc = m_webAPIAdapterInterface->devicesetDeviceSettingsGet(m_settings.m_trackerDeviceSetIndex, resDevice, error);
 
@@ -445,8 +445,8 @@ void AFCWorker::updateTarget()
 
 bool AFCWorker::updateDeviceFrequency(DeviceSet *deviceSet, const QString& key, int64_t frequency)
 {
-    SWGrpx-100::SWGDeviceSettings swgDeviceSettings;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGDeviceSettings swgDeviceSettings;
+    SWGRPX100::SWGErrorResponse errorResponse;
     QStringList deviceSettingsKeys;
     deviceSettingsKeys.append(key);
     int deviceIndex = deviceSet->getIndex();

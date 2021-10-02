@@ -520,7 +520,7 @@ bool TestMI::applySettings(const TestMISettings& settings, bool force)
 
 int TestMI::webapiRunGet(
         int subsystemIndex,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if (subsystemIndex == 0)
@@ -538,7 +538,7 @@ int TestMI::webapiRunGet(
 int TestMI::webapiRun(
         bool run,
         int subsystemIndex,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if (subsystemIndex == 0)
@@ -564,11 +564,11 @@ int TestMI::webapiRun(
 }
 
 int TestMI::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setTestMiSettings(new SWGrpx-100::SWGTestMISettings());
+    response.setTestMiSettings(new SWGRPX100::SWGTestMISettings());
     response.getTestMiSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -577,7 +577,7 @@ int TestMI::webapiSettingsGet(
 int TestMI::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -600,12 +600,12 @@ int TestMI::webapiSettingsPutPatch(
 void TestMI::webapiUpdateDeviceSettings(
         TestMISettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("streams"))
     {
-        QList<SWGrpx-100::SWGTestMiStreamSettings*> *streamsSettings = response.getTestMiSettings()->getStreams();
-        QList<SWGrpx-100::SWGTestMiStreamSettings*>::const_iterator it = streamsSettings->begin();
+        QList<SWGRPX100::SWGTestMiStreamSettings*> *streamsSettings = response.getTestMiSettings()->getStreams();
+        QList<SWGRPX100::SWGTestMiStreamSettings*>::const_iterator it = streamsSettings->begin();
 
         for (; it != streamsSettings->end(); ++it)
         {
@@ -685,15 +685,15 @@ void TestMI::webapiUpdateDeviceSettings(
     }
 }
 
-void TestMI::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const TestMISettings& settings)
+void TestMI::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const TestMISettings& settings)
 {
     std::vector<TestMIStreamSettings>::const_iterator it = settings.m_streams.begin();
     int istream = 0;
 
     for (; it != settings.m_streams.end(); ++it, istream++)
     {
-        QList<SWGrpx-100::SWGTestMiStreamSettings*> *streams = response.getTestMiSettings()->getStreams();
-        streams->append(new SWGrpx-100::SWGTestMiStreamSettings);
+        QList<SWGRPX100::SWGTestMiStreamSettings*> *streams = response.getTestMiSettings()->getStreams();
+        streams->append(new SWGRPX100::SWGTestMiStreamSettings);
         streams->back()->init();
         streams->back()->setStreamIndex(istream);
         streams->back()->setCenterFrequency(it->m_centerFrequency);
@@ -728,12 +728,12 @@ void TestMI::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response,
 
 void TestMI::webapiReverseSendSettings(const DeviceSettingsKeys& deviceSettingsKeys, const TestMISettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));
-    swgDeviceSettings->setTestMiSettings(new SWGrpx-100::SWGTestMISettings());
-    SWGrpx-100::SWGTestMISettings *swgTestMISettings = swgDeviceSettings->getTestMiSettings();
+    swgDeviceSettings->setTestMiSettings(new SWGRPX100::SWGTestMISettings());
+    SWGRPX100::SWGTestMISettings *swgTestMISettings = swgDeviceSettings->getTestMiSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -744,8 +744,8 @@ void TestMI::webapiReverseSendSettings(const DeviceSettingsKeys& deviceSettingsK
     {
         if ((it->size() > 0) || force)
         {
-            QList<SWGrpx-100::SWGTestMiStreamSettings*> *streams = swgTestMISettings->getStreams();
-            streams->append(new SWGrpx-100::SWGTestMiStreamSettings);
+            QList<SWGRPX100::SWGTestMiStreamSettings*> *streams = swgTestMISettings->getStreams();
+            streams->append(new SWGRPX100::SWGTestMiStreamSettings);
             streams->back()->init();
             streams->back()->setStreamIndex(istream);
             const QList<QString>& streamSettingsKeys = *it;
@@ -822,7 +822,7 @@ void TestMI::webapiReverseSendSettings(const DeviceSettingsKeys& deviceSettingsK
 
 void TestMI::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));

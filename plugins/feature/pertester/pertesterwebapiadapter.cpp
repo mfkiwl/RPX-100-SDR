@@ -27,11 +27,11 @@ PERTesterWebAPIAdapter::~PERTesterWebAPIAdapter()
 {}
 
 int PERTesterWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPerTesterSettings(new SWGrpx-100::SWGPERTesterSettings());
+    response.setPerTesterSettings(new SWGRPX100::SWGPERTesterSettings());
     response.getPerTesterSettings()->init();
     PERTester::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int PERTesterWebAPIAdapter::webapiSettingsGet(
 int PERTesterWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

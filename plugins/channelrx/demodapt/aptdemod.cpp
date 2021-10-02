@@ -330,11 +330,11 @@ bool APTDemod::deserialize(const QByteArray& data)
 }
 
 int APTDemod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAptDemodSettings(new SWGrpx-100::SWGAPTDemodSettings());
+    response.setAptDemodSettings(new SWGRPX100::SWGAPTDemodSettings());
     response.getAptDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -343,7 +343,7 @@ int APTDemod::webapiSettingsGet(
 int APTDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -368,7 +368,7 @@ int APTDemod::webapiSettingsPutPatch(
 void APTDemod::webapiUpdateChannelSettings(
         APTDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getAptDemodSettings()->getInputFrequencyOffset();
@@ -438,7 +438,7 @@ void APTDemod::webapiUpdateChannelSettings(
     }
 }
 
-void APTDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const APTDemodSettings& settings)
+void APTDemod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const APTDemodSettings& settings)
 {
     response.getAptDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getAptDemodSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -479,7 +479,7 @@ void APTDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respo
 
 void APTDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const APTDemodSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -504,7 +504,7 @@ void APTDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
 
 void APTDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const APTDemodSettings& settings,
         bool force
 )
@@ -513,8 +513,8 @@ void APTDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("APTDemod"));
-    swgChannelSettings->setAptDemodSettings(new SWGrpx-100::SWGAPTDemodSettings());
-    SWGrpx-100::SWGAPTDemodSettings *swgAPTDemodSettings = swgChannelSettings->getAptDemodSettings();
+    swgChannelSettings->setAptDemodSettings(new SWGRPX100::SWGAPTDemodSettings());
+    SWGRPX100::SWGAPTDemodSettings *swgAPTDemodSettings = swgChannelSettings->getAptDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -573,16 +573,16 @@ void APTDemod::webapiFormatChannelSettings(
 
 int APTDemod::webapiActionsPost(
         const QStringList& channelActionsKeys,
-        SWGrpx-100::SWGChannelActions& query,
+        SWGRPX100::SWGChannelActions& query,
         QString& errorMessage)
 {
-    SWGrpx-100::SWGAPTDemodActions *swgAPTDemodActions = query.getAptDemodActions();
+    SWGRPX100::SWGAPTDemodActions *swgAPTDemodActions = query.getAptDemodActions();
 
     if (swgAPTDemodActions)
     {
         if (channelActionsKeys.contains("aos"))
         {
-            SWGrpx-100::SWGAPTDemodActions_aos* aos = swgAPTDemodActions->getAos();
+            SWGRPX100::SWGAPTDemodActions_aos* aos = swgAPTDemodActions->getAos();
             QString *satelliteName = aos->getSatelliteName();
             qDebug() << "APTDemod::webapiActionsPost - AOS " << *satelliteName;
             if (satelliteName != nullptr)
@@ -616,7 +616,7 @@ int APTDemod::webapiActionsPost(
         }
         else if (channelActionsKeys.contains("los"))
         {
-            SWGrpx-100::SWGAPTDemodActions_los* los = swgAPTDemodActions->getLos();
+            SWGRPX100::SWGAPTDemodActions_los* los = swgAPTDemodActions->getLos();
             QString *satelliteName = los->getSatelliteName();
             qDebug() << "APTDemod::webapiActionsPost - LOS " << *satelliteName;
 

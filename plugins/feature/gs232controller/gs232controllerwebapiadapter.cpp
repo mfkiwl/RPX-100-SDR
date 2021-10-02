@@ -27,11 +27,11 @@ GS232ControllerWebAPIAdapter::~GS232ControllerWebAPIAdapter()
 {}
 
 int GS232ControllerWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setGs232ControllerSettings(new SWGrpx-100::SWGGS232ControllerSettings());
+    response.setGs232ControllerSettings(new SWGRPX100::SWGGS232ControllerSettings());
     response.getGs232ControllerSettings()->init();
     GS232Controller::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int GS232ControllerWebAPIAdapter::webapiSettingsGet(
 int GS232ControllerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

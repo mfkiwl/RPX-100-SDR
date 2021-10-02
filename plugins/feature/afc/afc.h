@@ -32,7 +32,7 @@ class WebAPIAdapterInterface;
 class DeviceSet;
 class AFCWorker;
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
     class SWGDeviceState;
 }
 
@@ -119,36 +119,36 @@ public:
     virtual bool deserialize(const QByteArray& data);
 
     virtual int webapiRun(bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGFeatureSettings& response,
+            SWGRPX100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGrpx-100::SWGFeatureSettings& response,
+            SWGRPX100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGFeatureReport& response,
+            SWGRPX100::SWGFeatureReport& response,
             QString& errorMessage);
 
     virtual int webapiActionsPost(
             const QStringList& featureActionsKeys,
-            SWGrpx-100::SWGFeatureActions& query,
+            SWGRPX100::SWGFeatureActions& query,
             QString& errorMessage);
 
     static void webapiFormatFeatureSettings(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         const AFCSettings& settings);
 
     static void webapiUpdateFeatureSettings(
             AFCSettings& settings,
             const QStringList& featureSettingsKeys,
-            SWGrpx-100::SWGFeatureSettings& response);
+            SWGRPX100::SWGFeatureSettings& response);
 
     static const char* const m_featureIdURI;
     static const char* const m_featureId;
@@ -169,7 +169,7 @@ private:
     void start();
     void stop();
     void applySettings(const AFCSettings& settings, bool force = false);
-    void webapiFormatFeatureReport(SWGrpx-100::SWGFeatureReport& response);
+    void webapiFormatFeatureReport(SWGRPX100::SWGFeatureReport& response);
     void webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const AFCSettings& settings, bool force);
     void trackerDeviceChange(int deviceIndex);
     void trackedDeviceChange(int deviceIndex);

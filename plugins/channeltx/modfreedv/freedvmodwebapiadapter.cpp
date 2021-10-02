@@ -27,16 +27,16 @@ FreeDVModWebAPIAdapter::~FreeDVModWebAPIAdapter()
 {}
 
 int FreeDVModWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreeDvModSettings(new SWGrpx-100::SWGFreeDVModSettings());
+    response.setFreeDvModSettings(new SWGRPX100::SWGFreeDVModSettings());
     response.getFreeDvModSettings()->init();
     FreeDVMod::webapiFormatChannelSettings(response, m_settings);
 
     const CWKeyerSettings& cwKeyerSettings = m_settings.getCWKeyerSettings();
-    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
+    SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
     apiCwKeyerSettings->init();
     CWKeyer::webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
@@ -46,7 +46,7 @@ int FreeDVModWebAPIAdapter::webapiSettingsGet(
 int FreeDVModWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action
@@ -56,7 +56,7 @@ int FreeDVModWebAPIAdapter::webapiSettingsPutPatch(
     if (channelSettingsKeys.contains("cwKeyer"))
     {
         CWKeyerSettings newCWKeyerSettings;
-        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
+        SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
         CWKeyer::webapiSettingsPutPatch(channelSettingsKeys, newCWKeyerSettings, apiCwKeyerSettings);
         m_settings.setCWKeyerSettings(newCWKeyerSettings);
         const QByteArray& serializedNewSettings = m_settings.serialize(); // effectively update CW keyer settings

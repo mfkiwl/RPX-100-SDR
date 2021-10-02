@@ -293,11 +293,11 @@ bool PacketDemod::deserialize(const QByteArray& data)
 }
 
 int PacketDemod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPacketDemodSettings(new SWGrpx-100::SWGPacketDemodSettings());
+    response.setPacketDemodSettings(new SWGRPX100::SWGPacketDemodSettings());
     response.getPacketDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -306,7 +306,7 @@ int PacketDemod::webapiSettingsGet(
 int PacketDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -331,7 +331,7 @@ int PacketDemod::webapiSettingsPutPatch(
 void PacketDemod::webapiUpdateChannelSettings(
         PacketDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getPacketDemodSettings()->getInputFrequencyOffset();
@@ -377,7 +377,7 @@ void PacketDemod::webapiUpdateChannelSettings(
     }
 }
 
-void PacketDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const PacketDemodSettings& settings)
+void PacketDemod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const PacketDemodSettings& settings)
 {
     response.getPacketDemodSettings()->setFmDeviation(settings.m_fmDeviation);
     response.getPacketDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
@@ -409,7 +409,7 @@ void PacketDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& re
 
 void PacketDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const PacketDemodSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -434,7 +434,7 @@ void PacketDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys,
 
 void PacketDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const PacketDemodSettings& settings,
         bool force
 )
@@ -443,8 +443,8 @@ void PacketDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("PacketDemod"));
-    swgChannelSettings->setPacketDemodSettings(new SWGrpx-100::SWGPacketDemodSettings());
-    SWGrpx-100::SWGPacketDemodSettings *swgPacketDemodSettings = swgChannelSettings->getPacketDemodSettings();
+    swgChannelSettings->setPacketDemodSettings(new SWGRPX100::SWGPacketDemodSettings());
+    SWGRPX100::SWGPacketDemodSettings *swgPacketDemodSettings = swgChannelSettings->getPacketDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

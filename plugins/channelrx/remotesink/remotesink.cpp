@@ -269,11 +269,11 @@ void RemoteSink::calculateFrequencyOffset()
 }
 
 int RemoteSink::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteSinkSettings(new SWGrpx-100::SWGRemoteSinkSettings());
+    response.setRemoteSinkSettings(new SWGRPX100::SWGRemoteSinkSettings());
     response.getRemoteSinkSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -282,7 +282,7 @@ int RemoteSink::webapiSettingsGet(
 int RemoteSink::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -308,7 +308,7 @@ int RemoteSink::webapiSettingsPutPatch(
 void RemoteSink::webapiUpdateChannelSettings(
         RemoteSinkSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("nbFECBlocks"))
     {
@@ -384,7 +384,7 @@ void RemoteSink::webapiUpdateChannelSettings(
     }
 }
 
-void RemoteSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const RemoteSinkSettings& settings)
+void RemoteSink::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const RemoteSinkSettings& settings)
 {
     response.getRemoteSinkSettings()->setNbFecBlocks(settings.m_nbFECBlocks);
     response.getRemoteSinkSettings()->setTxDelay(settings.m_txDelay);
@@ -422,7 +422,7 @@ void RemoteSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& res
 
 void RemoteSink::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const RemoteSinkSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -455,7 +455,7 @@ void RemoteSink::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -469,7 +469,7 @@ void RemoteSink::sendChannelSettings(
 
 void RemoteSink::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const RemoteSinkSettings& settings,
         bool force
 )
@@ -478,8 +478,8 @@ void RemoteSink::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setRemoteSinkSettings(new SWGrpx-100::SWGRemoteSinkSettings());
-    SWGrpx-100::SWGRemoteSinkSettings *swgRemoteSinkSettings = swgChannelSettings->getRemoteSinkSettings();
+    swgChannelSettings->setRemoteSinkSettings(new SWGRPX100::SWGRemoteSinkSettings());
+    SWGRPX100::SWGRemoteSinkSettings *swgRemoteSinkSettings = swgChannelSettings->getRemoteSinkSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

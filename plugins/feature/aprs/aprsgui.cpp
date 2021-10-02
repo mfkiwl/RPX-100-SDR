@@ -347,7 +347,7 @@ bool APRSGUI::handleMessage(const Message& message)
 
                         for (; it != mapMessageQueues->end(); ++it)
                         {
-                            SWGrpx-100::SWGMapItem *swgMapItem = new SWGrpx-100::SWGMapItem();
+                            SWGRPX100::SWGMapItem *swgMapItem = new SWGRPX100::SWGMapItem();
                             if (!aprs->m_objectName.isEmpty())
                                 swgMapItem->setName(new QString(aprs->m_objectName));
                             else

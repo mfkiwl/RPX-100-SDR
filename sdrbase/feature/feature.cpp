@@ -60,7 +60,7 @@ void Feature::handlePipeMessageQueue(MessageQueue* messageQueue)
 }
 
 int Feature::webapiRunGet(
-	SWGrpx-100::SWGDeviceState& response,
+	SWGRPX100::SWGDeviceState& response,
 	QString& errorMessage) const
 {
 	(void) errorMessage;

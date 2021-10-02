@@ -222,7 +222,7 @@ void APRS::applySettings(const APRSSettings& settings, bool force)
 }
 
 int APRS::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) run;
@@ -235,11 +235,11 @@ int APRS::webapiRun(bool run,
 }
 
 int APRS::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAprsSettings(new SWGrpx-100::SWGAPRSSettings());
+    response.setAprsSettings(new SWGRPX100::SWGAPRSSettings());
     response.getAprsSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -248,7 +248,7 @@ int APRS::webapiSettingsGet(
 int APRS::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -271,7 +271,7 @@ int APRS::webapiSettingsPutPatch(
 }
 
 void APRS::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const APRSSettings& settings)
 {
     response.getAprsSettings()->setIgateServer(new QString(settings.m_igateServer));
@@ -304,7 +304,7 @@ void APRS::webapiFormatFeatureSettings(
 void APRS::webapiUpdateFeatureSettings(
     APRSSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("igateServer")) {
         settings.m_igateServer = *response.getAprsSettings()->getIgateServer();
@@ -346,12 +346,12 @@ void APRS::webapiUpdateFeatureSettings(
 
 void APRS::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const APRSSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("APRS"));
-    swgFeatureSettings->setAprsSettings(new SWGrpx-100::SWGAPRSSettings());
-    SWGrpx-100::SWGAPRSSettings *swgAPRSSettings = swgFeatureSettings->getAprsSettings();
+    swgFeatureSettings->setAprsSettings(new SWGRPX100::SWGAPRSSettings());
+    SWGRPX100::SWGAPRSSettings *swgAPRSSettings = swgFeatureSettings->getAprsSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

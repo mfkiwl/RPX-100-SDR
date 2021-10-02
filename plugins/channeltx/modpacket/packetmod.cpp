@@ -433,11 +433,11 @@ void PacketMod::sendSampleRateToDemodAnalyzer()
 }
 
 int PacketMod::webapiSettingsGet(
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPacketModSettings(new SWGrpx-100::SWGPacketModSettings());
+    response.setPacketModSettings(new SWGRPX100::SWGPacketModSettings());
     response.getPacketModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
 
@@ -447,7 +447,7 @@ int PacketMod::webapiSettingsGet(
 int PacketMod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -471,7 +471,7 @@ int PacketMod::webapiSettingsPutPatch(
 void PacketMod::webapiUpdateChannelSettings(
         PacketModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getPacketModSettings()->getInputFrequencyOffset();
@@ -626,11 +626,11 @@ void PacketMod::webapiUpdateChannelSettings(
 }
 
 int PacketMod::webapiReportGet(
-                SWGrpx-100::SWGChannelReport& response,
+                SWGRPX100::SWGChannelReport& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPacketModReport(new SWGrpx-100::SWGPacketModReport());
+    response.setPacketModReport(new SWGRPX100::SWGPacketModReport());
     response.getPacketModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
@@ -638,16 +638,16 @@ int PacketMod::webapiReportGet(
 
 int PacketMod::webapiActionsPost(
         const QStringList& channelActionsKeys,
-        SWGrpx-100::SWGChannelActions& query,
+        SWGRPX100::SWGChannelActions& query,
         QString& errorMessage)
 {
-    SWGrpx-100::SWGPacketModActions *swgPacketModActions = query.getPacketModActions();
+    SWGRPX100::SWGPacketModActions *swgPacketModActions = query.getPacketModActions();
 
     if (swgPacketModActions)
     {
         if (channelActionsKeys.contains("tx"))
         {
-            SWGrpx-100::SWGPacketModActions_tx* tx = swgPacketModActions->getTx();
+            SWGRPX100::SWGPacketModActions_tx* tx = swgPacketModActions->getTx();
             QString *callsignP = tx->getCallsign();
             QString *toP = tx->getTo();
             QString *viaP = tx->getVia();
@@ -682,7 +682,7 @@ int PacketMod::webapiActionsPost(
     }
 }
 
-void PacketMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const PacketModSettings& settings)
+void PacketMod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const PacketModSettings& settings)
 {
     response.getPacketModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getPacketModSettings()->setMode(new QString(settings.getMode()));
@@ -770,7 +770,7 @@ void PacketMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& resp
     response.getPacketModSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void PacketMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void PacketMod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getPacketModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getPacketModReport()->setChannelSampleRate(m_basebandSource->getChannelSampleRate());
@@ -778,7 +778,7 @@ void PacketMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response
 
 void PacketMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const PacketModSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -811,7 +811,7 @@ void PacketMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -825,7 +825,7 @@ void PacketMod::sendChannelSettings(
 
 void PacketMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const PacketModSettings& settings,
         bool force
 )
@@ -834,8 +834,8 @@ void PacketMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setPacketModSettings(new SWGrpx-100::SWGPacketModSettings());
-    SWGrpx-100::SWGPacketModSettings *swgPacketModSettings = swgChannelSettings->getPacketModSettings();
+    swgChannelSettings->setPacketModSettings(new SWGRPX100::SWGPacketModSettings());
+    SWGRPX100::SWGPacketModSettings *swgPacketModSettings = swgChannelSettings->getPacketModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

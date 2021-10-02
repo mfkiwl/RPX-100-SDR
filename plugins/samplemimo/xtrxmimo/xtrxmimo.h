@@ -220,41 +220,41 @@ public:
     double getClockGen() const;
 
     virtual int webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-                SWGrpx-100::SWGDeviceReport& response,
+                SWGRPX100::SWGDeviceReport& response,
                 QString& errorMessage);
 
 
     virtual int webapiRunGet(
             int subsystemIndex,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
             int subsystemIndex,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             const XTRXMIMOSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             XTRXMIMOSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response);
+            SWGRPX100::SWGDeviceSettings& response);
 
-    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response);
 
     bool getRxRunning() const { return m_runningRx; }
     bool getTxRunning() const { return m_runningTx; }

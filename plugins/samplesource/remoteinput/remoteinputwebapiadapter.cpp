@@ -29,11 +29,11 @@ RemoteInputWebAPIAdapter::~RemoteInputWebAPIAdapter()
 {}
 
 int RemoteInputWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteInputSettings(new SWGrpx-100::SWGRemoteInputSettings());
+    response.setRemoteInputSettings(new SWGRPX100::SWGRemoteInputSettings());
     response.getRemoteInputSettings()->init();
     RemoteInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int RemoteInputWebAPIAdapter::webapiSettingsGet(
 int RemoteInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

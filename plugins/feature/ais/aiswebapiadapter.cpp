@@ -27,11 +27,11 @@ AISWebAPIAdapter::~AISWebAPIAdapter()
 {}
 
 int AISWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisSettings(new SWGrpx-100::SWGAISSettings());
+    response.setAisSettings(new SWGRPX100::SWGAISSettings());
     response.getAisSettings()->init();
     AIS::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int AISWebAPIAdapter::webapiSettingsGet(
 int AISWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

@@ -538,7 +538,7 @@ void FCDProPlusInput::set_rf_filter(int filterIndex)
 }
 
 int FCDProPlusInput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -548,7 +548,7 @@ int FCDProPlusInput::webapiRunGet(
 
 int FCDProPlusInput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -566,11 +566,11 @@ int FCDProPlusInput::webapiRun(
 }
 
 int FCDProPlusInput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFcdProPlusSettings(new SWGrpx-100::SWGFCDProPlusSettings());
+    response.setFcdProPlusSettings(new SWGRPX100::SWGFCDProPlusSettings());
     response.getFcdProPlusSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -579,7 +579,7 @@ int FCDProPlusInput::webapiSettingsGet(
 int FCDProPlusInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -602,7 +602,7 @@ int FCDProPlusInput::webapiSettingsPutPatch(
 void FCDProPlusInput::webapiUpdateDeviceSettings(
         FCDProPlusSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getFcdProPlusSettings()->getCenterFrequency();
@@ -666,7 +666,7 @@ void FCDProPlusInput::webapiUpdateDeviceSettings(
     }
 }
 
-void FCDProPlusInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const FCDProPlusSettings& settings)
+void FCDProPlusInput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const FCDProPlusSettings& settings)
 {
     response.getFcdProPlusSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getFcdProPlusSettings()->setLog2Decim(settings.m_log2Decim);
@@ -699,12 +699,12 @@ void FCDProPlusInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& 
 
 void FCDProPlusInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const FCDProPlusSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("FCDPro+"));
-    swgDeviceSettings->setFcdProPlusSettings(new SWGrpx-100::SWGFCDProPlusSettings());
-    SWGrpx-100::SWGFCDProPlusSettings *swgFCDProPlusSettings = swgDeviceSettings->getFcdProPlusSettings();
+    swgDeviceSettings->setFcdProPlusSettings(new SWGRPX100::SWGFCDProPlusSettings());
+    SWGRPX100::SWGFCDProPlusSettings *swgFCDProPlusSettings = swgDeviceSettings->getFcdProPlusSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -778,7 +778,7 @@ void FCDProPlusInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKe
 
 void FCDProPlusInput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("FCDPro+"));

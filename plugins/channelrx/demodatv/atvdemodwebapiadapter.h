@@ -33,23 +33,23 @@ public:
     virtual bool deserialize(const QByteArray& data) { return m_settings.deserialize(data); }
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             const ATVDemodSettings& settings);
 
     static void webapiUpdateChannelSettings(
             ATVDemodSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response);
+            SWGRPX100::SWGChannelSettings& response);
 
 private:
     ATVDemodSettings m_settings;

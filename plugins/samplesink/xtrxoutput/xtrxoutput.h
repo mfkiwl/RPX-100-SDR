@@ -195,36 +195,36 @@ public:
     virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGDeviceReport& response,
+            SWGRPX100::SWGDeviceReport& response,
             QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             const XTRXOutputSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             XTRXOutputSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response);
+            SWGRPX100::SWGDeviceSettings& response);
 
     std::size_t getChannelIndex();
     void getLORange(float& minF, float& maxF, float& stepF) const;
@@ -250,7 +250,7 @@ private:
     void suspendRxThread();
     void resumeRxThread();
     bool applySettings(const XTRXOutputSettings& settings, bool force = false, bool forceNCOFrequency = false);
-    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const XTRXOutputSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

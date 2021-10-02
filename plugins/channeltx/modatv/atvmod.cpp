@@ -355,11 +355,11 @@ bool ATVMod::deserialize(const QByteArray& data)
 }
 
 int ATVMod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAtvModSettings(new SWGrpx-100::SWGATVModSettings());
+    response.setAtvModSettings(new SWGRPX100::SWGATVModSettings());
     response.getAtvModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -368,7 +368,7 @@ int ATVMod::webapiSettingsGet(
 int ATVMod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -427,7 +427,7 @@ int ATVMod::webapiSettingsPutPatch(
 void ATVMod::webapiUpdateChannelSettings(
         ATVModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getAtvModSettings()->getInputFrequencyOffset();
@@ -513,17 +513,17 @@ void ATVMod::webapiUpdateChannelSettings(
 }
 
 int ATVMod::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAtvModReport(new SWGrpx-100::SWGATVModReport());
+    response.setAtvModReport(new SWGRPX100::SWGATVModReport());
     response.getAtvModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void ATVMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const ATVModSettings& settings)
+void ATVMod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const ATVModSettings& settings)
 {
     response.getAtvModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getAtvModSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -583,7 +583,7 @@ void ATVMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respons
     response.getAtvModSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void ATVMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void ATVMod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getAtvModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getAtvModReport()->setChannelSampleRate(m_basebandSource->getChannelSampleRate());
@@ -591,7 +591,7 @@ void ATVMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void ATVMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const ATVModSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -624,7 +624,7 @@ void ATVMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -638,7 +638,7 @@ void ATVMod::sendChannelSettings(
 
 void ATVMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const ATVModSettings& settings,
         bool force
 )
@@ -647,8 +647,8 @@ void ATVMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setAtvModSettings(new SWGrpx-100::SWGATVModSettings());
-    SWGrpx-100::SWGATVModSettings *swgATVModSettings = swgChannelSettings->getAtvModSettings();
+    swgChannelSettings->setAtvModSettings(new SWGRPX100::SWGATVModSettings());
+    SWGRPX100::SWGATVModSettings *swgATVModSettings = swgChannelSettings->getAtvModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

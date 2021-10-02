@@ -15,7 +15,7 @@
 
 #include <QJsonValue>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 class SWGObject {
   public:

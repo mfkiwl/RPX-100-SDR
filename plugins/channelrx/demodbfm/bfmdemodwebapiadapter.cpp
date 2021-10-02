@@ -26,11 +26,11 @@ BFMDemodWebAPIAdapter::~BFMDemodWebAPIAdapter()
 {}
 
 int BFMDemodWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBfmDemodSettings(new SWGrpx-100::SWGBFMDemodSettings());
+    response.setBfmDemodSettings(new SWGRPX100::SWGBFMDemodSettings());
     response.getBfmDemodSettings()->init();
     BFMDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int BFMDemodWebAPIAdapter::webapiSettingsGet(
 int BFMDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

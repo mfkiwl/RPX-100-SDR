@@ -32,7 +32,7 @@ class WebAPIAdapterInterface;
 class ChannelAPI;
 class Message;
 
-namespace SWGrpx-100
+namespace SWGRPX100
 {
     class SWGFeatureSettings;
     class SWGFeatureReport;
@@ -69,14 +69,14 @@ public:
      * API adapter for the feature run GET requests
      */
     virtual int webapiRunGet(
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage) const;
 
     /**
      * API adapter for the feature run POST and DELETE requests
      */
     virtual int webapiRun(bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage)
     {
         (void) run;
@@ -89,7 +89,7 @@ public:
      * API adapter for the feature settings GET requests
      */
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGFeatureSettings& response,
+            SWGRPX100::SWGFeatureSettings& response,
             QString& errorMessage)
     {
         (void) response;
@@ -102,7 +102,7 @@ public:
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGrpx-100::SWGFeatureSettings& response,
+            SWGRPX100::SWGFeatureSettings& response,
             QString& errorMessage)
     {
         (void) force;
@@ -115,7 +115,7 @@ public:
      * API adapter for the feature report GET requests
      */
     virtual int webapiReportGet(
-            SWGrpx-100::SWGFeatureReport& response,
+            SWGRPX100::SWGFeatureReport& response,
             QString& errorMessage)
     {
         (void) response;
@@ -127,7 +127,7 @@ public:
      */
     virtual int webapiActionsPost(
             const QStringList& featureActionsKeys,
-            SWGrpx-100::SWGFeatureActions& query,
+            SWGRPX100::SWGFeatureActions& query,
             QString& errorMessage)
     {
         (void) query;

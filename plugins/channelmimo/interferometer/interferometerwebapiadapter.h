@@ -35,17 +35,17 @@ public:
     virtual bool deserialize(const QByteArray& data) { return m_settings.deserialize(data); }
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             const InterferometerSettings& settings,
             const GLScopeSettings& scopeSettings,
             const SpectrumSettings& spectrumSettings);
@@ -55,7 +55,7 @@ public:
             GLScopeSettings& scopeSettings,
             SpectrumSettings& spectrumSettings,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response);
+            SWGRPX100::SWGChannelSettings& response);
 
 private:
     InterferometerSettings m_settings;

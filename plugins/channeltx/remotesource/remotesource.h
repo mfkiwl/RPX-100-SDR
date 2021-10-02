@@ -182,27 +182,27 @@ public:
     virtual bool deserialize(const QByteArray& data);
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGChannelReport& response,
+            SWGRPX100::SWGChannelReport& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         const RemoteSourceSettings& settings);
 
     static void webapiUpdateChannelSettings(
             RemoteSourceSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response);
+            SWGRPX100::SWGChannelSettings& response);
 
     uint32_t getNumberOfDeviceStreams() const;
 
@@ -219,7 +219,7 @@ private:
     QNetworkRequest m_networkRequest;
 
     void applySettings(const RemoteSourceSettings& settings, bool force = false);
-    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
+    void webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const RemoteSourceSettings& settings, bool force);
     void sendChannelSettings(
         QList<MessageQueue*> *messageQueues,
@@ -229,7 +229,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const RemoteSourceSettings& settings,
         bool force
     );

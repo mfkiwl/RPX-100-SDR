@@ -317,7 +317,7 @@ void AudioInput::applySettings(const AudioInputSettings& settings, bool force, b
 }
 
 int AudioInput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -327,7 +327,7 @@ int AudioInput::webapiRunGet(
 
 int AudioInput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -345,11 +345,11 @@ int AudioInput::webapiRun(
 }
 
 int AudioInput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAudioInputSettings(new SWGrpx-100::SWGAudioInputSettings());
+    response.setAudioInputSettings(new SWGRPX100::SWGAudioInputSettings());
     response.getAudioInputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
 
@@ -359,7 +359,7 @@ int AudioInput::webapiSettingsGet(
 int AudioInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -382,7 +382,7 @@ int AudioInput::webapiSettingsPutPatch(
 void AudioInput::webapiUpdateDeviceSettings(
         AudioInputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("device")) {
         settings.m_deviceName = *response.getAudioInputSettings()->getDevice();
@@ -413,7 +413,7 @@ void AudioInput::webapiUpdateDeviceSettings(
     }
 }
 
-void AudioInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const AudioInputSettings& settings)
+void AudioInput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const AudioInputSettings& settings)
 {
     response.getAudioInputSettings()->setDevice(new QString(settings.m_deviceName));
     response.getAudioInputSettings()->setDevSampleRate(settings.m_sampleRate);
@@ -435,12 +435,12 @@ void AudioInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& respo
 
 void AudioInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const AudioInputSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("AudioInput"));
-    swgDeviceSettings->setAudioInputSettings(new SWGrpx-100::SWGAudioInputSettings());
-    SWGrpx-100::SWGAudioInputSettings *swgAudioInputSettings = swgDeviceSettings->getAudioInputSettings();
+    swgDeviceSettings->setAudioInputSettings(new SWGRPX100::SWGAudioInputSettings());
+    SWGRPX100::SWGAudioInputSettings *swgAudioInputSettings = swgDeviceSettings->getAudioInputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -481,7 +481,7 @@ void AudioInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
 
 void AudioInput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("AudioInput"));

@@ -27,11 +27,11 @@ PacketModWebAPIAdapter::~PacketModWebAPIAdapter()
 {}
 
 int PacketModWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPacketModSettings(new SWGrpx-100::SWGPacketModSettings());
+    response.setPacketModSettings(new SWGRPX100::SWGPacketModSettings());
     response.getPacketModSettings()->init();
     PacketMod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int PacketModWebAPIAdapter::webapiSettingsGet(
 int PacketModWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

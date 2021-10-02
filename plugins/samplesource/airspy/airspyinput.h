@@ -99,36 +99,36 @@ public:
 	virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGDeviceReport& response,
+            SWGRPX100::SWGDeviceReport& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         const AirspySettings& settings);
 
     static void webapiUpdateDeviceSettings(
             AirspySettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response);
+            SWGRPX100::SWGDeviceSettings& response);
 
     static const qint64 loLowLimitFreq;
 	static const qint64 loHighLimitFreq;
@@ -153,7 +153,7 @@ private:
 	bool applySettings(const AirspySettings& settings, bool force);
 	struct airspy_device *open_airspy_from_sequence(int sequence);
 	void setDeviceCenterFrequency(quint64 freq);
-    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const AirspySettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

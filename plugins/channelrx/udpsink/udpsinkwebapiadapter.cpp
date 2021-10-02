@@ -26,11 +26,11 @@ UDPSinkWebAPIAdapter::~UDPSinkWebAPIAdapter()
 {}
 
 int UDPSinkWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUdpSinkSettings(new SWGrpx-100::SWGUDPSinkSettings());
+    response.setUdpSinkSettings(new SWGRPX100::SWGUDPSinkSettings());
     response.getUdpSinkSettings()->init();
     UDPSink::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int UDPSinkWebAPIAdapter::webapiSettingsGet(
 int UDPSinkWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

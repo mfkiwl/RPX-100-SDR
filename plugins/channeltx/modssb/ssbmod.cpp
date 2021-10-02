@@ -386,15 +386,15 @@ void SSBMod::sendSampleRateToDemodAnalyzer()
 }
 
 int SSBMod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSsbModSettings(new SWGrpx-100::SWGSSBModSettings());
+    response.setSsbModSettings(new SWGRPX100::SWGSSBModSettings());
     response.getSsbModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
 
-    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getSsbModSettings()->getCwKeyer();
+    SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getSsbModSettings()->getCwKeyer();
     const CWKeyerSettings& cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
     CWKeyer::webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
@@ -404,7 +404,7 @@ int SSBMod::webapiSettingsGet(
 int SSBMod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -413,7 +413,7 @@ int SSBMod::webapiSettingsPutPatch(
 
     if (channelSettingsKeys.contains("cwKeyer"))
     {
-        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getSsbModSettings()->getCwKeyer();
+        SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getSsbModSettings()->getCwKeyer();
         CWKeyerSettings cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
         CWKeyer::webapiSettingsPutPatch(channelSettingsKeys, cwKeyerSettings, apiCwKeyerSettings);
 
@@ -444,7 +444,7 @@ int SSBMod::webapiSettingsPutPatch(
 void SSBMod::webapiUpdateChannelSettings(
         SSBModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getSsbModSettings()->getInputFrequencyOffset();
@@ -524,17 +524,17 @@ void SSBMod::webapiUpdateChannelSettings(
 }
 
 int SSBMod::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSsbModReport(new SWGrpx-100::SWGSSBModReport());
+    response.setSsbModReport(new SWGRPX100::SWGSSBModReport());
     response.getSsbModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void SSBMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const SSBModSettings& settings)
+void SSBMod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const SSBModSettings& settings)
 {
     response.getSsbModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getSsbModSettings()->setBandwidth(settings.m_bandwidth);
@@ -568,7 +568,7 @@ void SSBMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respons
     }
 
     if (!response.getSsbModSettings()->getCwKeyer()) {
-        response.getSsbModSettings()->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings);
+        response.getSsbModSettings()->setCwKeyer(new SWGRPX100::SWGCWKeyerSettings);
     }
 
     response.getSsbModSettings()->setUseReverseApi(settings.m_useReverseAPI ? 1 : 0);
@@ -584,7 +584,7 @@ void SSBMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respons
     response.getSsbModSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void SSBMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void SSBMod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getSsbModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getSsbModReport()->setAudioSampleRate(m_basebandSource->getAudioSampleRate());
@@ -593,7 +593,7 @@ void SSBMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void SSBMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const SSBModSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -618,14 +618,14 @@ void SSBMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, cons
 
 void SSBMod::webapiReverseSendCWSettings(const CWKeyerSettings& cwKeyerSettings)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     swgChannelSettings->setDirection(1); // single source (Tx)
     swgChannelSettings->setChannelType(new QString("SSBMod"));
-    swgChannelSettings->setSsbModSettings(new SWGrpx-100::SWGSSBModSettings());
-    SWGrpx-100::SWGSSBModSettings *swgSSBModSettings = swgChannelSettings->getSsbModSettings();
+    swgChannelSettings->setSsbModSettings(new SWGRPX100::SWGSSBModSettings());
+    SWGRPX100::SWGSSBModSettings *swgSSBModSettings = swgChannelSettings->getSsbModSettings();
 
-    swgSSBModSettings->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings());
-    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = swgSSBModSettings->getCwKeyer();
+    swgSSBModSettings->setCwKeyer(new SWGRPX100::SWGCWKeyerSettings());
+    SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = swgSSBModSettings->getCwKeyer();
     m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -658,7 +658,7 @@ void SSBMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -672,7 +672,7 @@ void SSBMod::sendChannelSettings(
 
 void SSBMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const SSBModSettings& settings,
         bool force
 )
@@ -681,8 +681,8 @@ void SSBMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setSsbModSettings(new SWGrpx-100::SWGSSBModSettings());
-    SWGrpx-100::SWGSSBModSettings *swgSSBModSettings = swgChannelSettings->getSsbModSettings();
+    swgChannelSettings->setSsbModSettings(new SWGRPX100::SWGSSBModSettings());
+    SWGRPX100::SWGSSBModSettings *swgSSBModSettings = swgChannelSettings->getSsbModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -750,8 +750,8 @@ void SSBMod::webapiFormatChannelSettings(
     if (force)
     {
         const CWKeyerSettings& cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
-        swgSSBModSettings->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings());
-        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = swgSSBModSettings->getCwKeyer();
+        swgSSBModSettings->setCwKeyer(new SWGRPX100::SWGCWKeyerSettings());
+        SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = swgSSBModSettings->getCwKeyer();
         m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
     }
 }

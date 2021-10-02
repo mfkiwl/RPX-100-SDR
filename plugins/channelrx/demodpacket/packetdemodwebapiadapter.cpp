@@ -27,11 +27,11 @@ PacketDemodWebAPIAdapter::~PacketDemodWebAPIAdapter()
 {}
 
 int PacketDemodWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPacketDemodSettings(new SWGrpx-100::SWGPacketDemodSettings());
+    response.setPacketDemodSettings(new SWGRPX100::SWGPacketDemodSettings());
     response.getPacketDemodSettings()->init();
     PacketDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int PacketDemodWebAPIAdapter::webapiSettingsGet(
 int PacketDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

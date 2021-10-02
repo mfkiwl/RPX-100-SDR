@@ -17,7 +17,7 @@
 #include <QList>
 #include <QMap>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
     void setValue(void* value, QJsonValue obj, QString type, QString complexType);
     void toJsonArray(QList<void*>* value, QJsonObject* output, QString innerName, QString innerType);

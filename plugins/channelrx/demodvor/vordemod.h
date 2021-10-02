@@ -91,27 +91,27 @@ public:
     }
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGChannelReport& response,
+            SWGRPX100::SWGChannelReport& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             const VORDemodSettings& settings);
 
     static void webapiUpdateChannelSettings(
             VORDemodSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response);
+            SWGRPX100::SWGChannelSettings& response);
 
     uint32_t getAudioSampleRate() const { return m_basebandSink->getAudioSampleRate(); }
     double getMagSq() const { return m_basebandSink->getMagSq(); }
@@ -142,7 +142,7 @@ private:
     QNetworkRequest m_networkRequest;
 
     void applySettings(const VORDemodSettings& settings, bool force = false);
-    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
+    void webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const VORDemodSettings& settings, bool force);
     void sendChannelSettings(
         QList<MessageQueue*> *messageQueues,
@@ -152,7 +152,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const VORDemodSettings& settings,
         bool force
     );

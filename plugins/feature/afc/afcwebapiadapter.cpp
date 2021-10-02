@@ -26,11 +26,11 @@ AFCWebAPIAdapter::~AFCWebAPIAdapter()
 {}
 
 int AFCWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAfcSettings(new SWGrpx-100::SWGAFCSettings());
+    response.setAfcSettings(new SWGRPX100::SWGAFCSettings());
     response.getAfcSettings()->init();
     AFC::webapiFormatFeatureSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int AFCWebAPIAdapter::webapiSettingsGet(
 int AFCWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

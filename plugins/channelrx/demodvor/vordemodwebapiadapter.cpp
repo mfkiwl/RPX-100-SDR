@@ -27,11 +27,11 @@ VORDemodWebAPIAdapter::~VORDemodWebAPIAdapter()
 {}
 
 int VORDemodWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setVorDemodSettings(new SWGrpx-100::SWGVORDemodSettings());
+    response.setVorDemodSettings(new SWGRPX100::SWGVORDemodSettings());
     response.getVorDemodSettings()->init();
     VORDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int VORDemodWebAPIAdapter::webapiSettingsGet(
 int VORDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

@@ -34,8 +34,8 @@ bool FeatureWebAPIUtils::mapFind(const QString& target, int featureSetIndex, int
     {
         QString errorMessage;
         QStringList featureActionKeys = {"find"};
-        SWGrpx-100::SWGFeatureActions query;
-        SWGrpx-100::SWGMapActions *mapActions = new SWGrpx-100::SWGMapActions();
+        SWGRPX100::SWGFeatureActions query;
+        SWGRPX100::SWGMapActions *mapActions = new SWGRPX100::SWGMapActions();
 
         mapActions->setFind(new QString(target));
         query.setMapActions(mapActions);
@@ -114,9 +114,9 @@ bool FeatureWebAPIUtils::satelliteAOS(const QString name, const QDateTime aos, c
             if (feature->getURI() == "rpx-100.feature.pertester")
             {
                 QStringList featureActionKeys = {"aos"};
-                SWGrpx-100::SWGFeatureActions featureActions;
-                SWGrpx-100::SWGPERTesterActions *perTesterFeatureAction = new SWGrpx-100::SWGPERTesterActions();
-                SWGrpx-100::SWGPERTesterActions_aos *aosAction = new SWGrpx-100::SWGPERTesterActions_aos();
+                SWGRPX100::SWGFeatureActions featureActions;
+                SWGRPX100::SWGPERTesterActions *perTesterFeatureAction = new SWGRPX100::SWGPERTesterActions();
+                SWGRPX100::SWGPERTesterActions_aos *aosAction = new SWGRPX100::SWGPERTesterActions_aos();
                 QString errorResponse;
                 int httpRC;
 

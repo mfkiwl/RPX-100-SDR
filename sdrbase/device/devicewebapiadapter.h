@@ -26,7 +26,7 @@
 
 #include "export.h"
 
-namespace SWGrpx-100
+namespace SWGRPX100
 {
     class SWGDeviceSettings;
 }
@@ -40,13 +40,13 @@ public:
     virtual bool deserialize(const QByteArray& data)  = 0;
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             QString& errorMessage) = 0;
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response, // query + response
+            SWGRPX100::SWGDeviceSettings& response, // query + response
             QString& errorMessage) = 0;
 };
 

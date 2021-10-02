@@ -235,7 +235,7 @@ void SatelliteTrackerWorker::sendToMap(QList<MessageQueue*> *mapMessageQueues,
 
     for (; it != mapMessageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGMapItem *swgMapItem = new SWGrpx-100::SWGMapItem();
+        SWGRPX100::SWGMapItem *swgMapItem = new SWGRPX100::SWGMapItem();
         swgMapItem->setName(new QString(name));
         swgMapItem->setLatitude(lat);
         swgMapItem->setLongitude(lon);
@@ -246,10 +246,10 @@ void SatelliteTrackerWorker::sendToMap(QList<MessageQueue*> *mapMessageQueues,
         swgMapItem->setImageMinZoom(0);
         if (track != nullptr)
         {
-            QList<SWGrpx-100::SWGMapCoordinate *> *mapTrack = new QList<SWGrpx-100::SWGMapCoordinate *>();
+            QList<SWGRPX100::SWGMapCoordinate *> *mapTrack = new QList<SWGRPX100::SWGMapCoordinate *>();
             for (int i = 0; i < track->size(); i++)
             {
-                SWGrpx-100::SWGMapCoordinate* p = new SWGrpx-100::SWGMapCoordinate();
+                SWGRPX100::SWGMapCoordinate* p = new SWGRPX100::SWGMapCoordinate();
                 QGeoCoordinate *c = track->at(i);
                 p->setLatitude(c->latitude());
                 p->setLongitude(c->longitude());
@@ -260,10 +260,10 @@ void SatelliteTrackerWorker::sendToMap(QList<MessageQueue*> *mapMessageQueues,
         }
         if (predictedTrack != nullptr)
         {
-            QList<SWGrpx-100::SWGMapCoordinate *> *mapTrack = new QList<SWGrpx-100::SWGMapCoordinate *>();
+            QList<SWGRPX100::SWGMapCoordinate *> *mapTrack = new QList<SWGRPX100::SWGMapCoordinate *>();
             for (int i = 0; i < predictedTrack->size(); i++)
             {
-                SWGrpx-100::SWGMapCoordinate* p = new SWGrpx-100::SWGMapCoordinate();
+                SWGRPX100::SWGMapCoordinate* p = new SWGRPX100::SWGMapCoordinate();
                 QGeoCoordinate *c = predictedTrack->at(i);
                 p->setLatitude(c->latitude());
                 p->setLongitude(c->longitude());
@@ -387,7 +387,7 @@ void SatelliteTrackerWorker::update()
 
                         for (; it != rotatorMessageQueues->end(); ++it)
                         {
-                            SWGrpx-100::SWGTargetAzimuthElevation *swgTarget = new SWGrpx-100::SWGTargetAzimuthElevation();
+                            SWGRPX100::SWGTargetAzimuthElevation *swgTarget = new SWGRPX100::SWGTargetAzimuthElevation();
                             swgTarget->setName(new QString(m_settings.m_target));
                             swgTarget->setAzimuth(azimuth);
                             swgTarget->setElevation(elevation);

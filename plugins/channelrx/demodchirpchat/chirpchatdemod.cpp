@@ -470,11 +470,11 @@ void ChirpChatDemod::applySettings(const ChirpChatDemodSettings& settings, bool 
 }
 
 int ChirpChatDemod::webapiSettingsGet(
-    SWGrpx-100::SWGChannelSettings& response,
+    SWGRPX100::SWGChannelSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setChirpChatDemodSettings(new SWGrpx-100::SWGChirpChatDemodSettings());
+    response.setChirpChatDemodSettings(new SWGRPX100::SWGChirpChatDemodSettings());
     response.getChirpChatDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
 
@@ -484,7 +484,7 @@ int ChirpChatDemod::webapiSettingsGet(
 int ChirpChatDemod::webapiSettingsPutPatch(
     bool force,
     const QStringList& channelSettingsKeys,
-    SWGrpx-100::SWGChannelSettings& response,
+    SWGRPX100::SWGChannelSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -508,7 +508,7 @@ int ChirpChatDemod::webapiSettingsPutPatch(
 void ChirpChatDemod::webapiUpdateChannelSettings(
         ChirpChatDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getChirpChatDemodSettings()->getInputFrequencyOffset();
@@ -593,17 +593,17 @@ void ChirpChatDemod::webapiUpdateChannelSettings(
 }
 
 int ChirpChatDemod::webapiReportGet(
-    SWGrpx-100::SWGChannelReport& response,
+    SWGRPX100::SWGChannelReport& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setChirpChatDemodReport(new SWGrpx-100::SWGChirpChatDemodReport());
+    response.setChirpChatDemodReport(new SWGRPX100::SWGChirpChatDemodReport());
     response.getChirpChatDemodReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void ChirpChatDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const ChirpChatDemodSettings& settings)
+void ChirpChatDemod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const ChirpChatDemodSettings& settings)
 {
     response.getChirpChatDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getChirpChatDemodSettings()->setBandwidthIndex(settings.m_bandwidthIndex);
@@ -649,7 +649,7 @@ void ChirpChatDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings&
     response.getChirpChatDemodSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void ChirpChatDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void ChirpChatDemod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getChirpChatDemodReport()->setChannelPowerDb(CalcDb::dbPower(getTotalPower()));
     response.getChirpChatDemodReport()->setSignalPowerDb(m_lastMsgSignalDb);
@@ -680,7 +680,7 @@ void ChirpChatDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& res
 
 void ChirpChatDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const ChirpChatDemodSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -713,7 +713,7 @@ void ChirpChatDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -727,7 +727,7 @@ void ChirpChatDemod::sendChannelSettings(
 
 void ChirpChatDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const ChirpChatDemodSettings& settings,
         bool force
 )
@@ -736,8 +736,8 @@ void ChirpChatDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setChirpChatDemodSettings(new SWGrpx-100::SWGChirpChatDemodSettings());
-    SWGrpx-100::SWGChirpChatDemodSettings *swgChirpChatDemodSettings = swgChannelSettings->getChirpChatDemodSettings();
+    swgChannelSettings->setChirpChatDemodSettings(new SWGRPX100::SWGChirpChatDemodSettings());
+    SWGRPX100::SWGChirpChatDemodSettings *swgChirpChatDemodSettings = swgChannelSettings->getChirpChatDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

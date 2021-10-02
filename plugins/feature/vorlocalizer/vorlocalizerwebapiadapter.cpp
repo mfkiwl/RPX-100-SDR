@@ -27,11 +27,11 @@ VORLocalizerWebAPIAdapter::~VORLocalizerWebAPIAdapter()
 {}
 
 int VORLocalizerWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setVorLocalizerSettings(new SWGrpx-100::SWGVORLocalizerSettings());
+    response.setVorLocalizerSettings(new SWGRPX100::SWGVORLocalizerSettings());
     response.getVorLocalizerSettings()->init();
     VORLocalizer::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int VORLocalizerWebAPIAdapter::webapiSettingsGet(
 int VORLocalizerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force;

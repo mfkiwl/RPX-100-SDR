@@ -26,11 +26,11 @@ LocalSinkWebAPIAdapter::~LocalSinkWebAPIAdapter()
 {}
 
 int LocalSinkWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalSinkSettings(new SWGrpx-100::SWGLocalSinkSettings());
+    response.setLocalSinkSettings(new SWGRPX100::SWGLocalSinkSettings());
     response.getLocalSinkSettings()->init();
     LocalSink::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int LocalSinkWebAPIAdapter::webapiSettingsGet(
 int LocalSinkWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

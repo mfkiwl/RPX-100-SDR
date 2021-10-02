@@ -160,7 +160,7 @@ void Map::applySettings(const MapSettings& settings, bool force)
 }
 
 int Map::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) run;
@@ -170,11 +170,11 @@ int Map::webapiRun(bool run,
 }
 
 int Map::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setMapSettings(new SWGrpx-100::SWGMapSettings());
+    response.setMapSettings(new SWGRPX100::SWGMapSettings());
     response.getMapSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -183,7 +183,7 @@ int Map::webapiSettingsGet(
 int Map::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -206,10 +206,10 @@ int Map::webapiSettingsPutPatch(
 
 int Map::webapiActionsPost(
     const QStringList& featureActionsKeys,
-    SWGrpx-100::SWGFeatureActions& query,
+    SWGRPX100::SWGFeatureActions& query,
     QString& errorMessage)
 {
-    SWGrpx-100::SWGMapActions *swgMapActions = query.getMapActions();
+    SWGRPX100::SWGMapActions *swgMapActions = query.getMapActions();
 
     if (swgMapActions)
     {
@@ -231,7 +231,7 @@ int Map::webapiActionsPost(
 }
 
 void Map::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const MapSettings& settings)
 {
     response.getMapSettings()->setDisplayNames(settings.m_displayNames ? 1 : 0);
@@ -259,7 +259,7 @@ void Map::webapiFormatFeatureSettings(
 void Map::webapiUpdateFeatureSettings(
     MapSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("displayNames")) {
         settings.m_displayNames = response.getMapSettings()->getDisplayNames();
@@ -289,12 +289,12 @@ void Map::webapiUpdateFeatureSettings(
 
 void Map::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const MapSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("Map"));
-    swgFeatureSettings->setMapSettings(new SWGrpx-100::SWGMapSettings());
-    SWGrpx-100::SWGMapSettings *swgMapSettings = swgFeatureSettings->getMapSettings();
+    swgFeatureSettings->setMapSettings(new SWGRPX100::SWGMapSettings());
+    SWGRPX100::SWGMapSettings *swgMapSettings = swgFeatureSettings->getMapSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

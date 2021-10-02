@@ -163,11 +163,11 @@ void AIS::applySettings(const AISSettings& settings, bool force)
 }
 
 int AIS::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisSettings(new SWGrpx-100::SWGAISSettings());
+    response.setAisSettings(new SWGRPX100::SWGAISSettings());
     response.getAisSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -176,7 +176,7 @@ int AIS::webapiSettingsGet(
 int AIS::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -198,7 +198,7 @@ int AIS::webapiSettingsPutPatch(
 }
 
 void AIS::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const AISSettings& settings)
 {
     if (response.getAisSettings()->getTitle()) {
@@ -224,7 +224,7 @@ void AIS::webapiFormatFeatureSettings(
 void AIS::webapiUpdateFeatureSettings(
     AISSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("title")) {
         settings.m_title = *response.getAisSettings()->getTitle();
@@ -251,12 +251,12 @@ void AIS::webapiUpdateFeatureSettings(
 
 void AIS::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const AISSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("AIS"));
-    swgFeatureSettings->setAisSettings(new SWGrpx-100::SWGAISSettings());
-    SWGrpx-100::SWGAISSettings *swgAISSettings = swgFeatureSettings->getAisSettings();
+    swgFeatureSettings->setAisSettings(new SWGRPX100::SWGAISSettings());
+    SWGRPX100::SWGAISSettings *swgAISSettings = swgFeatureSettings->getAisSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

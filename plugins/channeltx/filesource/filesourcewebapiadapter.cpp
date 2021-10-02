@@ -26,11 +26,11 @@ FileSourceWebAPIAdapter::~FileSourceWebAPIAdapter()
 {}
 
 int FileSourceWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileSourceSettings(new SWGrpx-100::SWGFileSourceSettings());
+    response.setFileSourceSettings(new SWGRPX100::SWGFileSourceSettings());
     response.getFileSourceSettings()->init();
     FileSource::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int FileSourceWebAPIAdapter::webapiSettingsGet(
 int FileSourceWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

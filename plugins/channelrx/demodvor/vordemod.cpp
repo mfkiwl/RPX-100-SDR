@@ -245,11 +245,11 @@ bool VORDemod::deserialize(const QByteArray& data)
 }
 
 int VORDemod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setVorDemodSettings(new SWGrpx-100::SWGVORDemodSettings());
+    response.setVorDemodSettings(new SWGRPX100::SWGVORDemodSettings());
     response.getVorDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -258,7 +258,7 @@ int VORDemod::webapiSettingsGet(
 int VORDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -283,7 +283,7 @@ int VORDemod::webapiSettingsPutPatch(
 void VORDemod::webapiUpdateChannelSettings(
         VORDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("audioMute")) {
         settings.m_audioMute = response.getVorDemodSettings()->getAudioMute() != 0;
@@ -331,17 +331,17 @@ void VORDemod::webapiUpdateChannelSettings(
 }
 
 int VORDemod::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setVorDemodReport(new SWGrpx-100::SWGVORDemodReport());
+    response.setVorDemodReport(new SWGRPX100::SWGVORDemodReport());
     response.getVorDemodReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void VORDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const VORDemodSettings& settings)
+void VORDemod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const VORDemodSettings& settings)
 {
     response.getVorDemodSettings()->setAudioMute(settings.m_audioMute ? 1 : 0);
     response.getVorDemodSettings()->setRgbColor(settings.m_rgbColor);
@@ -377,7 +377,7 @@ void VORDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respo
     response.getVorDemodSettings()->setMagDecAdjust(settings.m_magDecAdjust ? 1 : 0);
 }
 
-void VORDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void VORDemod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -390,7 +390,7 @@ void VORDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void VORDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const VORDemodSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -423,7 +423,7 @@ void VORDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -437,7 +437,7 @@ void VORDemod::sendChannelSettings(
 
 void VORDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const VORDemodSettings& settings,
         bool force
 )
@@ -446,8 +446,8 @@ void VORDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("VORDemod"));
-    swgChannelSettings->setVorDemodSettings(new SWGrpx-100::SWGVORDemodSettings());
-    SWGrpx-100::SWGVORDemodSettings *swgVORDemodSettings = swgChannelSettings->getVorDemodSettings();
+    swgChannelSettings->setVorDemodSettings(new SWGRPX100::SWGVORDemodSettings());
+    SWGRPX100::SWGVORDemodSettings *swgVORDemodSettings = swgChannelSettings->getVorDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

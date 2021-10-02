@@ -290,11 +290,11 @@ void FileSource::calculateFrequencyOffset()
 }
 
 int FileSource::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileSourceSettings(new SWGrpx-100::SWGFileSourceSettings());
+    response.setFileSourceSettings(new SWGRPX100::SWGFileSourceSettings());
     response.getFileSourceSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -303,7 +303,7 @@ int FileSource::webapiSettingsGet(
 int FileSource::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -328,7 +328,7 @@ int FileSource::webapiSettingsPutPatch(
 void FileSource::webapiUpdateChannelSettings(
         FileSourceSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("fileName")) {
         settings.m_fileName = *response.getFileSourceSettings()->getFileName();
@@ -376,11 +376,11 @@ void FileSource::webapiUpdateChannelSettings(
 }
 
 int FileSource::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileSourceReport(new SWGrpx-100::SWGFileSourceReport());
+    response.setFileSourceReport(new SWGRPX100::SWGFileSourceReport());
     response.getFileSourceReport()->init();
     webapiFormatChannelReport(response);
     return 200;
@@ -388,10 +388,10 @@ int FileSource::webapiReportGet(
 
 int FileSource::webapiActionsPost(
         const QStringList& channelActionsKeys,
-        SWGrpx-100::SWGChannelActions& query,
+        SWGRPX100::SWGChannelActions& query,
         QString& errorMessage)
 {
-    SWGrpx-100::SWGFileSourceActions *swgFileSourceActions = query.getFileSourceActions();
+    SWGRPX100::SWGFileSourceActions *swgFileSourceActions = query.getFileSourceActions();
 
     if (swgFileSourceActions)
     {
@@ -432,7 +432,7 @@ int FileSource::webapiActionsPost(
     }
 }
 
-void FileSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const FileSourceSettings& settings)
+void FileSource::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const FileSourceSettings& settings)
 {
     if (response.getFileSourceSettings()->getFileName()) {
         *response.getFileSourceSettings()->getFileName() = settings.m_fileName;
@@ -465,7 +465,7 @@ void FileSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& res
     response.getFileSourceSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void FileSource::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void FileSource::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     qint64 t_sec = 0;
     qint64 t_msec = 0;
@@ -505,7 +505,7 @@ void FileSource::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& respons
 
 void FileSource::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const FileSourceSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -538,7 +538,7 @@ void FileSource::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -552,7 +552,7 @@ void FileSource::sendChannelSettings(
 
 void FileSource::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const FileSourceSettings& settings,
         bool force
 )
@@ -561,8 +561,8 @@ void FileSource::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setFileSourceSettings(new SWGrpx-100::SWGFileSourceSettings());
-    SWGrpx-100::SWGFileSourceSettings *swgFileSourceSettings = swgChannelSettings->getFileSourceSettings();
+    swgChannelSettings->setFileSourceSettings(new SWGRPX100::SWGFileSourceSettings());
+    SWGRPX100::SWGFileSourceSettings *swgFileSourceSettings = swgChannelSettings->getFileSourceSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

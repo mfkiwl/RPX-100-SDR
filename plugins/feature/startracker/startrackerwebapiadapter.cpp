@@ -27,11 +27,11 @@ StarTrackerWebAPIAdapter::~StarTrackerWebAPIAdapter()
 {}
 
 int StarTrackerWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setStarTrackerSettings(new SWGrpx-100::SWGStarTrackerSettings());
+    response.setStarTrackerSettings(new SWGRPX100::SWGStarTrackerSettings());
     response.getStarTrackerSettings()->init();
     StarTracker::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int StarTrackerWebAPIAdapter::webapiSettingsGet(
 int StarTrackerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

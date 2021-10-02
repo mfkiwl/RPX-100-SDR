@@ -297,11 +297,11 @@ void NFMDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int NFMDemod::webapiSettingsGet(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage)
 {
     (void) errorMessage;
-    response.setNfmDemodSettings(new SWGrpx-100::SWGNFMDemodSettings());
+    response.setNfmDemodSettings(new SWGRPX100::SWGNFMDemodSettings());
     response.getNfmDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -310,7 +310,7 @@ int NFMDemod::webapiSettingsGet(
 int NFMDemod::webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage)
 {
     (void) errorMessage;
@@ -334,7 +334,7 @@ int NFMDemod::webapiSettingsPutPatch(
 void NFMDemod::webapiUpdateChannelSettings(
         NFMDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("afBandwidth")) {
         settings.m_afBandwidth = response.getNfmDemodSettings()->getAfBandwidth();
@@ -402,17 +402,17 @@ void NFMDemod::webapiUpdateChannelSettings(
 }
 
 int NFMDemod::webapiReportGet(
-            SWGrpx-100::SWGChannelReport& response,
+            SWGRPX100::SWGChannelReport& response,
             QString& errorMessage)
 {
     (void) errorMessage;
-    response.setNfmDemodReport(new SWGrpx-100::SWGNFMDemodReport());
+    response.setNfmDemodReport(new SWGRPX100::SWGNFMDemodReport());
     response.getNfmDemodReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void NFMDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const NFMDemodSettings& settings)
+void NFMDemod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const NFMDemodSettings& settings)
 {
     response.getNfmDemodSettings()->setAfBandwidth(settings.m_afBandwidth);
     response.getNfmDemodSettings()->setAudioMute(settings.m_audioMute ? 1 : 0);
@@ -454,7 +454,7 @@ void NFMDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respo
     response.getNfmDemodSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void NFMDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void NFMDemod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -479,7 +479,7 @@ void NFMDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void NFMDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const NFMDemodSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -512,7 +512,7 @@ void NFMDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -526,7 +526,7 @@ void NFMDemod::sendChannelSettings(
 
 void NFMDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const NFMDemodSettings& settings,
         bool force
 )
@@ -535,8 +535,8 @@ void NFMDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setNfmDemodSettings(new SWGrpx-100::SWGNFMDemodSettings());
-    SWGrpx-100::SWGNFMDemodSettings *swgNFMDemodSettings = swgChannelSettings->getNfmDemodSettings();
+    swgChannelSettings->setNfmDemodSettings(new SWGRPX100::SWGNFMDemodSettings());
+    SWGRPX100::SWGNFMDemodSettings *swgNFMDemodSettings = swgChannelSettings->getNfmDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

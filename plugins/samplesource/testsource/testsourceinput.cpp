@@ -434,7 +434,7 @@ bool TestSourceInput::applySettings(const TestSourceSettings& settings, bool for
 }
 
 int TestSourceInput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -444,7 +444,7 @@ int TestSourceInput::webapiRunGet(
 
 int TestSourceInput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -462,11 +462,11 @@ int TestSourceInput::webapiRun(
 }
 
 int TestSourceInput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setTestSourceSettings(new SWGrpx-100::SWGTestSourceSettings());
+    response.setTestSourceSettings(new SWGRPX100::SWGTestSourceSettings());
     response.getTestSourceSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -475,7 +475,7 @@ int TestSourceInput::webapiSettingsGet(
 int TestSourceInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -498,7 +498,7 @@ int TestSourceInput::webapiSettingsPutPatch(
 void TestSourceInput::webapiUpdateDeviceSettings(
     TestSourceSettings& settings,
     const QStringList& deviceSettingsKeys,
-    SWGrpx-100::SWGDeviceSettings& response)
+    SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getTestSourceSettings()->getCenterFrequency();
@@ -570,7 +570,7 @@ void TestSourceInput::webapiUpdateDeviceSettings(
     }
 }
 
-void TestSourceInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const TestSourceSettings& settings)
+void TestSourceInput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const TestSourceSettings& settings)
 {
     response.getTestSourceSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getTestSourceSettings()->setFrequencyShift(settings.m_frequencyShift);
@@ -603,12 +603,12 @@ void TestSourceInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& 
 
 void TestSourceInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const TestSourceSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));
-    swgDeviceSettings->setTestSourceSettings(new SWGrpx-100::SWGTestSourceSettings());
-    SWGrpx-100::SWGTestSourceSettings *swgTestSourceSettings = swgDeviceSettings->getTestSourceSettings();
+    swgDeviceSettings->setTestSourceSettings(new SWGRPX100::SWGTestSourceSettings());
+    SWGRPX100::SWGTestSourceSettings *swgTestSourceSettings = swgDeviceSettings->getTestSourceSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -684,7 +684,7 @@ void TestSourceInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKe
 
 void TestSourceInput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));

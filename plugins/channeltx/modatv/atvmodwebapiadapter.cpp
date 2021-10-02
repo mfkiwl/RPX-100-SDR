@@ -26,11 +26,11 @@ ATVModWebAPIAdapter::~ATVModWebAPIAdapter()
 {}
 
 int ATVModWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAtvModSettings(new SWGrpx-100::SWGATVModSettings());
+    response.setAtvModSettings(new SWGRPX100::SWGATVModSettings());
     response.getAtvModSettings()->init();
     ATVMod::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int ATVModWebAPIAdapter::webapiSettingsGet(
 int ATVModWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

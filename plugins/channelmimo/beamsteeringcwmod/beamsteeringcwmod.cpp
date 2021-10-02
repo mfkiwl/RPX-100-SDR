@@ -249,11 +249,11 @@ void BeamSteeringCWMod::calculateFrequencyOffset()
 }
 
 int BeamSteeringCWMod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBeamSteeringCwModSettings(new SWGrpx-100::SWGBeamSteeringCWModSettings());
+    response.setBeamSteeringCwModSettings(new SWGRPX100::SWGBeamSteeringCWModSettings());
     response.getBeamSteeringCwModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -262,7 +262,7 @@ int BeamSteeringCWMod::webapiSettingsGet(
 int BeamSteeringCWMod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -286,7 +286,7 @@ int BeamSteeringCWMod::webapiSettingsPutPatch(
 void BeamSteeringCWMod::webapiUpdateChannelSettings(
         BeamSteeringCWModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("steerDegrees")) {
         settings.m_rgbColor = response.getBeamSteeringCwModSettings()->getSteerDegrees();
@@ -325,7 +325,7 @@ void BeamSteeringCWMod::webapiUpdateChannelSettings(
     }
 }
 
-void BeamSteeringCWMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const BeamSteeringCWModSettings& settings)
+void BeamSteeringCWMod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const BeamSteeringCWModSettings& settings)
 {
     response.getBeamSteeringCwModSettings()->setSteerDegrees(settings.m_steerDegrees);
     response.getBeamSteeringCwModSettings()->setRgbColor(settings.m_rgbColor);
@@ -353,7 +353,7 @@ void BeamSteeringCWMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettin
 
 void BeamSteeringCWMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const BeamSteeringCWModSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -386,7 +386,7 @@ void BeamSteeringCWMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -400,7 +400,7 @@ void BeamSteeringCWMod::sendChannelSettings(
 
 void BeamSteeringCWMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const BeamSteeringCWModSettings& settings,
         bool force
 )
@@ -409,8 +409,8 @@ void BeamSteeringCWMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("BeamSteeringCWSource"));
-    swgChannelSettings->setBeamSteeringCwModSettings(new SWGrpx-100::SWGBeamSteeringCWModSettings());
-    SWGrpx-100::SWGBeamSteeringCWModSettings *swgBeamSteeringCWSettings = swgChannelSettings->getBeamSteeringCwModSettings();
+    swgChannelSettings->setBeamSteeringCwModSettings(new SWGRPX100::SWGBeamSteeringCWModSettings());
+    SWGRPX100::SWGBeamSteeringCWModSettings *swgBeamSteeringCWSettings = swgChannelSettings->getBeamSteeringCwModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

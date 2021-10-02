@@ -29,11 +29,11 @@ MetisMISOWebAPIAdapter::~MetisMISOWebAPIAdapter()
 {}
 
 int MetisMISOWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setMetisMisoSettings(new SWGrpx-100::SWGMetisMISOSettings());
+    response.setMetisMisoSettings(new SWGRPX100::SWGMetisMISOSettings());
     response.getMetisMisoSettings()->init();
     MetisMISO::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int MetisMISOWebAPIAdapter::webapiSettingsGet(
 int MetisMISOWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

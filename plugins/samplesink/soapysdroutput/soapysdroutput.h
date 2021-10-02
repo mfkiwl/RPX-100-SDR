@@ -40,7 +40,7 @@ namespace SoapySDR
     class ArgInfo;
 }
 
-namespace SWGrpx-100
+namespace SWGRPX100
 {
     class SWGArgValue;
     class SWGArgInfo;
@@ -159,36 +159,36 @@ public:
     bool hasIQCorrectionValue();
 
     virtual int webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGDeviceReport& response,
+            SWGRPX100::SWGDeviceReport& response,
             QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             const SoapySDROutputSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             SoapySDROutputSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response);
+            SWGRPX100::SWGDeviceSettings& response);
 
 private:
     DeviceAPI *m_deviceAPI;
@@ -209,10 +209,10 @@ private:
     bool setDeviceCenterFrequency(SoapySDR::Device *dev, int requestedChannel, quint64 freq_hz, int loPpmTenths);
     void updateGains(SoapySDR::Device *dev, int requestedChannel, SoapySDROutputSettings& settings);
     void updateTunableElements(SoapySDR::Device *dev, int requestedChannel, SoapySDROutputSettings& settings);
-    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
-    static QVariant webapiVariantFromArgValue(SWGrpx-100::SWGArgValue *argValue);
-    static void webapiFormatArgValue(const QVariant& v, SWGrpx-100::SWGArgValue *argValue);
-    void webapiFormatArgInfo(const SoapySDR::ArgInfo& arg, SWGrpx-100::SWGArgInfo *argInfo);
+    void webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response);
+    static QVariant webapiVariantFromArgValue(SWGRPX100::SWGArgValue *argValue);
+    static void webapiFormatArgValue(const QVariant& v, SWGRPX100::SWGArgValue *argValue);
+    void webapiFormatArgInfo(const SoapySDR::ArgInfo& arg, SWGRPX100::SWGArgInfo *argInfo);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const SoapySDROutputSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

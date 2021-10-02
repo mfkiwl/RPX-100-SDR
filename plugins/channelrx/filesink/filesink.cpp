@@ -357,11 +357,11 @@ unsigned int FileSink::getNbTracks() const
 }
 
 int FileSink::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileSinkSettings(new SWGrpx-100::SWGFileSinkSettings());
+    response.setFileSinkSettings(new SWGRPX100::SWGFileSinkSettings());
     response.getFileSinkSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -370,7 +370,7 @@ int FileSink::webapiSettingsGet(
 int FileSink::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -393,11 +393,11 @@ int FileSink::webapiSettingsPutPatch(
 }
 
 int FileSink::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileSinkReport(new SWGrpx-100::SWGFileSinkReport());
+    response.setFileSinkReport(new SWGRPX100::SWGFileSinkReport());
     response.getFileSinkReport()->init();
     webapiFormatChannelReport(response);
     return 200;
@@ -405,10 +405,10 @@ int FileSink::webapiReportGet(
 
 int FileSink::webapiActionsPost(
         const QStringList& channelActionsKeys,
-        SWGrpx-100::SWGChannelActions& query,
+        SWGRPX100::SWGChannelActions& query,
         QString& errorMessage)
 {
-    SWGrpx-100::SWGFileSinkActions *swgFileSinkActions = query.getFileSinkActions();
+    SWGRPX100::SWGFileSinkActions *swgFileSinkActions = query.getFileSinkActions();
 
     if (swgFileSinkActions)
     {
@@ -441,7 +441,7 @@ int FileSink::webapiActionsPost(
 void FileSink::webapiUpdateChannelSettings(
         FileSinkSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getFileSinkSettings()->getInputFrequencyOffset();
@@ -496,7 +496,7 @@ void FileSink::webapiUpdateChannelSettings(
     }
 }
 
-void FileSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const FileSinkSettings& settings)
+void FileSink::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const FileSinkSettings& settings)
 {
     response.getFileSinkSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
 
@@ -534,7 +534,7 @@ void FileSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respo
     response.getFileSinkSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void FileSink::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void FileSink::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getFileSinkReport()->setSpectrumSquelch(m_basebandSink->isSquelchOpen() ? 1 : 0);
     response.getFileSinkReport()->setSpectrumMax(m_basebandSink->getSpecMax());
@@ -548,7 +548,7 @@ void FileSink::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void FileSink::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const FileSinkSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -581,7 +581,7 @@ void FileSink::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -595,7 +595,7 @@ void FileSink::sendChannelSettings(
 
 void FileSink::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const FileSinkSettings& settings,
         bool force
 )
@@ -604,8 +604,8 @@ void FileSink::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setFileSinkSettings(new SWGrpx-100::SWGFileSinkSettings());
-    SWGrpx-100::SWGFileSinkSettings *swgFileSinkSettings = swgChannelSettings->getFileSinkSettings();
+    swgChannelSettings->setFileSinkSettings(new SWGRPX100::SWGFileSinkSettings());
+    SWGRPX100::SWGFileSinkSettings *swgFileSinkSettings = swgChannelSettings->getFileSinkSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

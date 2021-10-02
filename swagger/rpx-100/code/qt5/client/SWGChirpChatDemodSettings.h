@@ -27,7 +27,7 @@
 #include "SWGObject.h"
 #include "export.h"
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 class SWG_API SWGChirpChatDemodSettings: public SWGObject {
 public:

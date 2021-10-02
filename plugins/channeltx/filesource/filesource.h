@@ -192,32 +192,32 @@ public:
     virtual bool deserialize(const QByteArray& data);
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response,
+            SWGRPX100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGChannelReport& response,
+            SWGRPX100::SWGChannelReport& response,
             QString& errorMessage);
 
     virtual int webapiActionsPost(
             const QStringList& channelActionsKeys,
-            SWGrpx-100::SWGChannelActions& query,
+            SWGRPX100::SWGChannelActions& query,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         const FileSourceSettings& settings);
 
     static void webapiUpdateChannelSettings(
             FileSourceSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response);
+            SWGRPX100::SWGChannelSettings& response);
 
     /** Set center frequency given in Hz */
     void setCenterFrequency(uint64_t centerFrequency) { m_frequencyOffset = centerFrequency; }
@@ -251,7 +251,7 @@ private:
     void applySettings(const FileSourceSettings& settings, bool force = false);
     static void validateFilterChainHash(FileSourceSettings& settings);
     void calculateFrequencyOffset();
-    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
+    void webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const FileSourceSettings& settings, bool force);
     void sendChannelSettings(
         QList<MessageQueue*> *messageQueues,
@@ -261,7 +261,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const FileSourceSettings& settings,
         bool force
     );

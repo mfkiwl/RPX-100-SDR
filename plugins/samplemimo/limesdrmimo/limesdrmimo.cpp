@@ -1704,11 +1704,11 @@ void LimeSDRMIMO::getTxLPFRange(int& min, int& max, int& step)
 }
 
 int LimeSDRMIMO::webapiSettingsGet(
-    SWGrpx-100::SWGDeviceSettings& response,
+    SWGRPX100::SWGDeviceSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLimeSdrMimoSettings(new SWGrpx-100::SWGLimeSdrMIMOSettings());
+    response.setLimeSdrMimoSettings(new SWGRPX100::SWGLimeSdrMIMOSettings());
     response.getLimeSdrMimoSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -1717,7 +1717,7 @@ int LimeSDRMIMO::webapiSettingsGet(
 int LimeSDRMIMO::webapiSettingsPutPatch(
     bool force,
     const QStringList& deviceSettingsKeys,
-    SWGrpx-100::SWGDeviceSettings& response, // query + response
+    SWGRPX100::SWGDeviceSettings& response, // query + response
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -1738,11 +1738,11 @@ int LimeSDRMIMO::webapiSettingsPutPatch(
 }
 
 int LimeSDRMIMO::webapiReportGet(
-        SWGrpx-100::SWGDeviceReport& response,
+        SWGRPX100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLimeSdrMimoReport(new SWGrpx-100::SWGLimeSdrMIMOReport());
+    response.setLimeSdrMimoReport(new SWGRPX100::SWGLimeSdrMIMOReport());
     response.getLimeSdrMimoReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
@@ -1750,7 +1750,7 @@ int LimeSDRMIMO::webapiReportGet(
 
 int LimeSDRMIMO::webapiRunGet(
     int subsystemIndex,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) subsystemIndex;
@@ -1762,7 +1762,7 @@ int LimeSDRMIMO::webapiRunGet(
 int LimeSDRMIMO::webapiRun(
     bool run,
     int subsystemIndex,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -1780,7 +1780,7 @@ int LimeSDRMIMO::webapiRun(
 }
 
 void LimeSDRMIMO::webapiFormatDeviceSettings(
-    SWGrpx-100::SWGDeviceSettings& response,
+    SWGRPX100::SWGDeviceSettings& response,
     const LimeSDRMIMOSettings& settings)
 {
     // Common
@@ -1857,7 +1857,7 @@ void LimeSDRMIMO::webapiFormatDeviceSettings(
 void LimeSDRMIMO::webapiUpdateDeviceSettings(
     LimeSDRMIMOSettings& settings,
     const QStringList& deviceSettingsKeys,
-    SWGrpx-100::SWGDeviceSettings& response)
+    SWGRPX100::SWGDeviceSettings& response)
 {
     // Common
     if (deviceSettingsKeys.contains("devSampleRate")) {
@@ -2036,7 +2036,7 @@ void LimeSDRMIMO::webapiUpdateDeviceSettings(
     }
 }
 
-void LimeSDRMIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
+void LimeSDRMIMO::webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response)
 {
     bool success = false;
     double temp = 0.0;
@@ -2102,12 +2102,12 @@ void LimeSDRMIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response
 
 void LimeSDRMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const LimeSDRMIMOSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("LimeSDR"));
-    swgDeviceSettings->setLimeSdrMimoSettings(new SWGrpx-100::SWGLimeSdrMIMOSettings());
-    SWGrpx-100::SWGLimeSdrMIMOSettings *swgLimeSdrMIMOSettings = swgDeviceSettings->getLimeSdrMimoSettings();
+    swgDeviceSettings->setLimeSdrMimoSettings(new SWGRPX100::SWGLimeSdrMIMOSettings());
+    SWGRPX100::SWGLimeSdrMIMOSettings *swgLimeSdrMIMOSettings = swgDeviceSettings->getLimeSdrMimoSettings();
 
     // Common
     if (deviceSettingsKeys.contains("devSampleRate") || force) {
@@ -2288,7 +2288,7 @@ void LimeSDRMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
 
 void LimeSDRMIMO::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("LimeSDR"));

@@ -331,11 +331,11 @@ void LocalSink::calculateFrequencyOffset(uint32_t log2Decim, uint32_t filterChai
 }
 
 int LocalSink::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalSinkSettings(new SWGrpx-100::SWGLocalSinkSettings());
+    response.setLocalSinkSettings(new SWGRPX100::SWGLocalSinkSettings());
     response.getLocalSinkSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -344,7 +344,7 @@ int LocalSink::webapiSettingsGet(
 int LocalSink::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -369,7 +369,7 @@ int LocalSink::webapiSettingsPutPatch(
 void LocalSink::webapiUpdateChannelSettings(
         LocalSinkSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("localDeviceIndex")) {
         settings.m_localDeviceIndex = response.getLocalSinkSettings()->getLocalDeviceIndex();
@@ -413,7 +413,7 @@ void LocalSink::webapiUpdateChannelSettings(
     }
 }
 
-void LocalSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const LocalSinkSettings& settings)
+void LocalSink::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const LocalSinkSettings& settings)
 {
     response.getLocalSinkSettings()->setLocalDeviceIndex(settings.m_localDeviceIndex);
     response.getLocalSinkSettings()->setRgbColor(settings.m_rgbColor);
@@ -443,7 +443,7 @@ void LocalSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& resp
 
 void LocalSink::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const LocalSinkSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -476,7 +476,7 @@ void LocalSink::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -490,7 +490,7 @@ void LocalSink::sendChannelSettings(
 
 void LocalSink::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const LocalSinkSettings& settings,
         bool force
 )
@@ -499,8 +499,8 @@ void LocalSink::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setLocalSinkSettings(new SWGrpx-100::SWGLocalSinkSettings());
-    SWGrpx-100::SWGLocalSinkSettings *swgLocalSinkSettings = swgChannelSettings->getLocalSinkSettings();
+    swgChannelSettings->setLocalSinkSettings(new SWGRPX100::SWGLocalSinkSettings());
+    SWGRPX100::SWGLocalSinkSettings *swgLocalSinkSettings = swgChannelSettings->getLocalSinkSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

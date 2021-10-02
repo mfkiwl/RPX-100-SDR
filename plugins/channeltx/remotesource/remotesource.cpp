@@ -214,11 +214,11 @@ void RemoteSource::applySettings(const RemoteSourceSettings& settings, bool forc
 }
 
 int RemoteSource::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteSourceSettings(new SWGrpx-100::SWGRemoteSourceSettings());
+    response.setRemoteSourceSettings(new SWGRPX100::SWGRemoteSourceSettings());
     response.getRemoteSourceSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -227,7 +227,7 @@ int RemoteSource::webapiSettingsGet(
 int RemoteSource::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -252,7 +252,7 @@ int RemoteSource::webapiSettingsPutPatch(
 void RemoteSource::webapiUpdateChannelSettings(
         RemoteSourceSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("dataAddress")) {
         settings.m_dataAddress = *response.getRemoteSourceSettings()->getDataAddress();
@@ -294,17 +294,17 @@ void RemoteSource::webapiUpdateChannelSettings(
 }
 
 int RemoteSource::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteSourceReport(new SWGrpx-100::SWGRemoteSourceReport());
+    response.setRemoteSourceReport(new SWGRPX100::SWGRemoteSourceReport());
     response.getRemoteSourceReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void RemoteSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const RemoteSourceSettings& settings)
+void RemoteSource::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const RemoteSourceSettings& settings)
 {
     if (response.getRemoteSourceSettings()->getDataAddress()) {
         *response.getRemoteSourceSettings()->getDataAddress() = settings.m_dataAddress;
@@ -334,7 +334,7 @@ void RemoteSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& r
     response.getRemoteSourceSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void RemoteSource::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void RemoteSource::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     uint64_t nowus = TimeUtil::nowus();
     RemoteDataReadQueue& dataReadQueue = m_basebandSource->getDataQueue();
@@ -357,7 +357,7 @@ void RemoteSource::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& respo
 
 void RemoteSource::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const RemoteSourceSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -390,7 +390,7 @@ void RemoteSource::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -404,7 +404,7 @@ void RemoteSource::sendChannelSettings(
 
 void RemoteSource::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const RemoteSourceSettings& settings,
         bool force
 )
@@ -413,8 +413,8 @@ void RemoteSource::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setRemoteSourceSettings(new SWGrpx-100::SWGRemoteSourceSettings());
-    SWGrpx-100::SWGRemoteSourceSettings *swgRemoteSourceSettings = swgChannelSettings->getRemoteSourceSettings();
+    swgChannelSettings->setRemoteSourceSettings(new SWGRPX100::SWGRemoteSourceSettings());
+    SWGRPX100::SWGRemoteSourceSettings *swgRemoteSourceSettings = swgChannelSettings->getRemoteSourceSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

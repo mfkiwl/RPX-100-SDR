@@ -362,15 +362,15 @@ void AMMod::sendSampleRateToDemodAnalyzer()
 }
 
 int AMMod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAmModSettings(new SWGrpx-100::SWGAMModSettings());
+    response.setAmModSettings(new SWGRPX100::SWGAMModSettings());
     response.getAmModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
 
-    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getAmModSettings()->getCwKeyer();
+    SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getAmModSettings()->getCwKeyer();
     const CWKeyerSettings& cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
     CWKeyer::webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
@@ -380,7 +380,7 @@ int AMMod::webapiSettingsGet(
 int AMMod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -389,7 +389,7 @@ int AMMod::webapiSettingsPutPatch(
 
     if (channelSettingsKeys.contains("cwKeyer"))
     {
-        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getAmModSettings()->getCwKeyer();
+        SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getAmModSettings()->getCwKeyer();
         CWKeyerSettings cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
         CWKeyer::webapiSettingsPutPatch(channelSettingsKeys, cwKeyerSettings, apiCwKeyerSettings);
 
@@ -420,7 +420,7 @@ int AMMod::webapiSettingsPutPatch(
 void AMMod::webapiUpdateChannelSettings(
         AMModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("channelMute")) {
         settings.m_channelMute = response.getAmModSettings()->getChannelMute() != 0;
@@ -476,17 +476,17 @@ void AMMod::webapiUpdateChannelSettings(
 }
 
 int AMMod::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAmModReport(new SWGrpx-100::SWGAMModReport());
+    response.setAmModReport(new SWGRPX100::SWGAMModReport());
     response.getAmModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void AMMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const AMModSettings& settings)
+void AMMod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const AMModSettings& settings)
 {
     response.getAmModSettings()->setChannelMute(settings.m_channelMute ? 1 : 0);
     response.getAmModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
@@ -506,7 +506,7 @@ void AMMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response
     response.getAmModSettings()->setVolumeFactor(settings.m_volumeFactor);
 
     if (!response.getAmModSettings()->getCwKeyer()) {
-        response.getAmModSettings()->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings);
+        response.getAmModSettings()->setCwKeyer(new SWGRPX100::SWGCWKeyerSettings);
     }
 
     if (response.getAmModSettings()->getAudioDeviceName()) {
@@ -528,7 +528,7 @@ void AMMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response
     response.getAmModSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void AMMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void AMMod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getAmModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getAmModReport()->setAudioSampleRate(m_basebandSource->getAudioSampleRate());
@@ -537,7 +537,7 @@ void AMMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void AMMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AMModSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -562,14 +562,14 @@ void AMMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const
 
 void AMMod::webapiReverseSendCWSettings(const CWKeyerSettings& cwKeyerSettings)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     swgChannelSettings->setDirection(1); // single source (Tx)
     swgChannelSettings->setChannelType(new QString("AMMod"));
-    swgChannelSettings->setAmModSettings(new SWGrpx-100::SWGAMModSettings());
-    SWGrpx-100::SWGAMModSettings *swgAMModSettings = swgChannelSettings->getAmModSettings();
+    swgChannelSettings->setAmModSettings(new SWGRPX100::SWGAMModSettings());
+    SWGRPX100::SWGAMModSettings *swgAMModSettings = swgChannelSettings->getAmModSettings();
 
-    swgAMModSettings->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings());
-    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = swgAMModSettings->getCwKeyer();
+    swgAMModSettings->setCwKeyer(new SWGRPX100::SWGCWKeyerSettings());
+    SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = swgAMModSettings->getCwKeyer();
     m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -602,7 +602,7 @@ void AMMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -616,7 +616,7 @@ void AMMod::sendChannelSettings(
 
 void AMMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const AMModSettings& settings,
         bool force
 )
@@ -625,8 +625,8 @@ void AMMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setAmModSettings(new SWGrpx-100::SWGAMModSettings());
-    SWGrpx-100::SWGAMModSettings *swgAMModSettings = swgChannelSettings->getAmModSettings();
+    swgChannelSettings->setAmModSettings(new SWGRPX100::SWGAMModSettings());
+    SWGRPX100::SWGAMModSettings *swgAMModSettings = swgChannelSettings->getAmModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -670,8 +670,8 @@ void AMMod::webapiFormatChannelSettings(
     if (force)
     {
         const CWKeyerSettings& cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
-        swgAMModSettings->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings());
-        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = swgAMModSettings->getCwKeyer();
+        swgAMModSettings->setCwKeyer(new SWGRPX100::SWGCWKeyerSettings());
+        SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = swgAMModSettings->getCwKeyer();
         m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
     }
 }

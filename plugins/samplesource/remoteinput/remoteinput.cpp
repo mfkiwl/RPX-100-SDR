@@ -282,7 +282,7 @@ void RemoteInput::applySettings(const RemoteInputSettings& settings, bool force)
 }
 
 int RemoteInput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -292,7 +292,7 @@ int RemoteInput::webapiRunGet(
 
 int RemoteInput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -310,11 +310,11 @@ int RemoteInput::webapiRun(
 }
 
 int RemoteInput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteInputSettings(new SWGrpx-100::SWGRemoteInputSettings());
+    response.setRemoteInputSettings(new SWGRPX100::SWGRemoteInputSettings());
     response.getRemoteInputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -323,7 +323,7 @@ int RemoteInput::webapiSettingsGet(
 int RemoteInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -346,7 +346,7 @@ int RemoteInput::webapiSettingsPutPatch(
 void RemoteInput::webapiUpdateDeviceSettings(
     RemoteInputSettings& settings,
     const QStringList& deviceSettingsKeys,
-    SWGrpx-100::SWGDeviceSettings& response)
+    SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("apiAddress")) {
         settings.m_apiAddress = *response.getRemoteInputSettings()->getApiAddress();
@@ -386,7 +386,7 @@ void RemoteInput::webapiUpdateDeviceSettings(
     }
 }
 
-void RemoteInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const RemoteInputSettings& settings)
+void RemoteInput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const RemoteInputSettings& settings)
 {
     response.getRemoteInputSettings()->setApiAddress(new QString(settings.m_apiAddress));
     response.getRemoteInputSettings()->setApiPort(settings.m_apiPort);
@@ -410,17 +410,17 @@ void RemoteInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& resp
 }
 
 int RemoteInput::webapiReportGet(
-        SWGrpx-100::SWGDeviceReport& response,
+        SWGRPX100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteInputReport(new SWGrpx-100::SWGRemoteInputReport());
+    response.setRemoteInputReport(new SWGRPX100::SWGRemoteInputReport());
     response.getRemoteInputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void RemoteInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
+void RemoteInput::webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response)
 {
     response.getRemoteInputReport()->setCenterFrequency(m_remoteInputUDPHandler->getCenterFrequency());
     response.getRemoteInputReport()->setSampleRate(m_remoteInputUDPHandler->getSampleRate());
@@ -435,12 +435,12 @@ void RemoteInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response
 
 void RemoteInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const RemoteInputSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("RemoteInput"));
-    swgDeviceSettings->setRemoteInputSettings(new SWGrpx-100::SWGRemoteInputSettings());
-    SWGrpx-100::SWGRemoteInputSettings *swgRemoteInputSettings = swgDeviceSettings->getRemoteInputSettings();
+    swgDeviceSettings->setRemoteInputSettings(new SWGRPX100::SWGRemoteInputSettings());
+    SWGRPX100::SWGRemoteInputSettings *swgRemoteInputSettings = swgDeviceSettings->getRemoteInputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -490,7 +490,7 @@ void RemoteInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
 
 void RemoteInput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("RemoteInput"));

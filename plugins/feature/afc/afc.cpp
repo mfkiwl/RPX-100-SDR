@@ -120,7 +120,7 @@ bool AFC::handleMessage(const Message& cmd)
     else if (MainCore::MsgChannelSettings::match(cmd))
     {
         MainCore::MsgChannelSettings& cfg = (MainCore::MsgChannelSettings&) cmd;
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = cfg.getSWGSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = cfg.getSWGSettings();
         QString *channelType  = swgChannelSettings->getChannelType();
         qDebug() << "AFC::handleMessage: MainCore::MsgChannelSettings: " << *channelType;
 
@@ -269,7 +269,7 @@ void AFC::applySettings(const AFCSettings& settings, bool force)
 }
 
 int AFC::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -280,11 +280,11 @@ int AFC::webapiRun(bool run,
 }
 
 int AFC::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAfcSettings(new SWGrpx-100::SWGAFCSettings());
+    response.setAfcSettings(new SWGRPX100::SWGAFCSettings());
     response.getAfcSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -293,7 +293,7 @@ int AFC::webapiSettingsGet(
 int AFC::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -316,11 +316,11 @@ int AFC::webapiSettingsPutPatch(
 }
 
 int AFC::webapiReportGet(
-    SWGrpx-100::SWGFeatureReport& response,
+    SWGRPX100::SWGFeatureReport& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAfcReport(new SWGrpx-100::SWGAFCReport());
+    response.setAfcReport(new SWGRPX100::SWGAFCReport());
     response.getAfcReport()->init();
     webapiFormatFeatureReport(response);
     return 200;
@@ -328,10 +328,10 @@ int AFC::webapiReportGet(
 
 int AFC::webapiActionsPost(
     const QStringList& featureActionsKeys,
-    SWGrpx-100::SWGFeatureActions& query,
+    SWGRPX100::SWGFeatureActions& query,
     QString& errorMessage)
 {
-    SWGrpx-100::SWGAFCActions *swgAFCActions = query.getAfcActions();
+    SWGRPX100::SWGAFCActions *swgAFCActions = query.getAfcActions();
 
     if (swgAFCActions)
     {
@@ -367,7 +367,7 @@ int AFC::webapiActionsPost(
 }
 
 void AFC::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const AFCSettings& settings)
 {
     if (response.getAfcSettings()->getTitle()) {
@@ -401,7 +401,7 @@ void AFC::webapiFormatFeatureSettings(
 void AFC::webapiUpdateFeatureSettings(
     AFCSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("title")) {
         settings.m_title = *response.getAfcSettings()->getTitle();
@@ -447,7 +447,7 @@ void AFC::webapiUpdateFeatureSettings(
     }
 }
 
-void AFC::webapiFormatFeatureReport(SWGrpx-100::SWGFeatureReport& response)
+void AFC::webapiFormatFeatureReport(SWGRPX100::SWGFeatureReport& response)
 {
     response.getAfcReport()->setTrackerChannelIndex(m_trackerIndexInDeviceSet);
     response.getAfcReport()->setTrackerDeviceFrequency(m_worker->getTrackerDeviceFrequency());
@@ -456,12 +456,12 @@ void AFC::webapiFormatFeatureReport(SWGrpx-100::SWGFeatureReport& response)
 
 void AFC::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AFCSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("AFC"));
-    swgFeatureSettings->setAfcSettings(new SWGrpx-100::SWGAFCSettings());
-    SWGrpx-100::SWGAFCSettings *swgAFCSettings = swgFeatureSettings->getAfcSettings();
+    swgFeatureSettings->setAfcSettings(new SWGRPX100::SWGAFCSettings());
+    SWGRPX100::SWGAFCSettings *swgAFCSettings = swgFeatureSettings->getAfcSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

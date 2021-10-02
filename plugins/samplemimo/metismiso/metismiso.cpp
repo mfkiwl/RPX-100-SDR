@@ -462,7 +462,7 @@ bool MetisMISO::applySettings(const MetisMISOSettings& settings, bool force)
 
 int MetisMISO::webapiRunGet(
         int subsystemIndex,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if ((subsystemIndex == 0) || (subsystemIndex == 1)) // Rx and Tx always started together
@@ -480,7 +480,7 @@ int MetisMISO::webapiRunGet(
 int MetisMISO::webapiRun(
         bool run,
         int subsystemIndex,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     // Rx and Tx are started or stopped together
@@ -507,11 +507,11 @@ int MetisMISO::webapiRun(
 }
 
 int MetisMISO::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setMetisMisoSettings(new SWGrpx-100::SWGMetisMISOSettings());
+    response.setMetisMisoSettings(new SWGRPX100::SWGMetisMISOSettings());
     response.getMetisMisoSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -520,7 +520,7 @@ int MetisMISO::webapiSettingsGet(
 int MetisMISO::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -543,7 +543,7 @@ int MetisMISO::webapiSettingsPutPatch(
 void MetisMISO::webapiUpdateDeviceSettings(
         MetisMISOSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("nbReceivers")) {
         settings.m_nbReceivers = response.getMetisMisoSettings()->getNbReceivers();
@@ -661,7 +661,7 @@ void MetisMISO::webapiUpdateDeviceSettings(
     }
 }
 
-void MetisMISO::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const MetisMISOSettings& settings)
+void MetisMISO::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const MetisMISOSettings& settings)
 {
     response.getMetisMisoSettings()->setNbReceivers(settings.m_nbReceivers);
     response.getMetisMisoSettings()->setTxEnable(settings.m_txEnable ? 1 : 0);
@@ -714,12 +714,12 @@ void MetisMISO::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& respon
 
 void MetisMISO::webapiReverseSendSettings(const QList<QString>& deviceSettingsKeys, const MetisMISOSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("MetisMISO"));
-    swgDeviceSettings->setMetisMisoSettings(new SWGrpx-100::SWGMetisMISOSettings());
-    SWGrpx-100::SWGMetisMISOSettings *swgMetisMISOSettings = swgDeviceSettings->getMetisMisoSettings();
+    swgDeviceSettings->setMetisMisoSettings(new SWGRPX100::SWGMetisMISOSettings());
+    SWGRPX100::SWGMetisMISOSettings *swgMetisMISOSettings = swgDeviceSettings->getMetisMisoSettings();
 
     if (deviceSettingsKeys.contains("nbReceivers") || force) {
         swgMetisMISOSettings->setNbReceivers(settings.m_nbReceivers);
@@ -848,7 +848,7 @@ void MetisMISO::webapiReverseSendSettings(const QList<QString>& deviceSettingsKe
 
 void MetisMISO::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("MetisMISO"));

@@ -290,11 +290,11 @@ bool UDPSource::deserialize(const QByteArray& data)
 }
 
 int UDPSource::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUdpSourceSettings(new SWGrpx-100::SWGUDPSourceSettings());
+    response.setUdpSourceSettings(new SWGRPX100::SWGUDPSourceSettings());
     response.getUdpSourceSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -303,7 +303,7 @@ int UDPSource::webapiSettingsGet(
 int UDPSource::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -335,7 +335,7 @@ int UDPSource::webapiSettingsPutPatch(
 void UDPSource::webapiUpdateChannelSettings(
         UDPSourceSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("sampleFormat")) {
         settings.m_sampleFormat = (UDPSourceSettings::SampleFormat) response.getUdpSourceSettings()->getSampleFormat();
@@ -421,17 +421,17 @@ void UDPSource::webapiUpdateChannelSettings(
 }
 
 int UDPSource::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUdpSourceReport(new SWGrpx-100::SWGUDPSourceReport());
+    response.setUdpSourceReport(new SWGRPX100::SWGUDPSourceReport());
     response.getUdpSourceReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void UDPSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const UDPSourceSettings& settings)
+void UDPSource::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const UDPSourceSettings& settings)
 {
     response.getUdpSourceSettings()->setSampleFormat((int) settings.m_sampleFormat);
     response.getUdpSourceSettings()->setInputSampleRate(settings.m_inputSampleRate);
@@ -485,7 +485,7 @@ void UDPSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& resp
     response.getUdpSourceSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void UDPSource::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void UDPSource::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getUdpSourceReport()->setInputPowerDb(CalcDb::dbPower(getInMagSq()));
     response.getUdpSourceReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
@@ -496,7 +496,7 @@ void UDPSource::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response
 
 void UDPSource::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const UDPSourceSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -529,7 +529,7 @@ void UDPSource::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -543,7 +543,7 @@ void UDPSource::sendChannelSettings(
 
 void UDPSource::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const UDPSourceSettings& settings,
         bool force
 )
@@ -552,8 +552,8 @@ void UDPSource::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setUdpSourceSettings(new SWGrpx-100::SWGUDPSourceSettings());
-    SWGrpx-100::SWGUDPSourceSettings *swgUDPSourceSettings = swgChannelSettings->getUdpSourceSettings();
+    swgChannelSettings->setUdpSourceSettings(new SWGRPX100::SWGUDPSourceSettings());
+    SWGRPX100::SWGUDPSourceSettings *swgUDPSourceSettings = swgChannelSettings->getUdpSourceSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

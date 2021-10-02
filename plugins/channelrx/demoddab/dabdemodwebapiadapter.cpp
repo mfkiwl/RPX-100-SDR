@@ -27,11 +27,11 @@ DABDemodWebAPIAdapter::~DABDemodWebAPIAdapter()
 {}
 
 int DABDemodWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDabDemodSettings(new SWGrpx-100::SWGDABDemodSettings());
+    response.setDabDemodSettings(new SWGRPX100::SWGDABDemodSettings());
     response.getDabDemodSettings()->init();
     DABDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int DABDemodWebAPIAdapter::webapiSettingsGet(
 int DABDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

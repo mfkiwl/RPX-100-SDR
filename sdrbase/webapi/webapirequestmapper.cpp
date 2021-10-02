@@ -87,7 +87,7 @@ void WebAPIRequestMapper::service(qtwebapp::HttpRequest& request, qtwebapp::Http
 {
     if (m_adapter == 0) // format service unavailable if adapter is null
     {
-        SWGrpx-100::SWGErrorResponse errorResponse;
+        SWGRPX100::SWGErrorResponse errorResponse;
         response.setHeader("Content-Type", "application/json");
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setStatus(500,"Service not available");
@@ -236,13 +236,13 @@ void WebAPIRequestMapper::service(qtwebapp::HttpRequest& request, qtwebapp::Http
 
 void WebAPIRequestMapper::instanceSummaryService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGInstanceSummaryResponse normalResponse;
+        SWGRPX100::SWGInstanceSummaryResponse normalResponse;
 
         int status = m_adapter->instanceSummary(normalResponse, errorResponse);
         response.setStatus(status);
@@ -255,7 +255,7 @@ void WebAPIRequestMapper::instanceSummaryService(qtwebapp::HttpRequest& request,
     }
     else if (request.getMethod() == "DELETE")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
 
         int status = m_adapter->instanceDelete(normalResponse, errorResponse);
         response.setStatus(status);
@@ -277,14 +277,14 @@ void WebAPIRequestMapper::instanceSummaryService(qtwebapp::HttpRequest& request,
 
 void WebAPIRequestMapper::instanceConfigService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGInstanceConfigResponse query;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGInstanceConfigResponse query;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGInstanceConfigResponse normalResponse;
+        SWGRPX100::SWGInstanceConfigResponse normalResponse;
         int status = m_adapter->instanceConfigGet(normalResponse, errorResponse);
         response.setStatus(status);
 
@@ -302,8 +302,8 @@ void WebAPIRequestMapper::instanceConfigService(qtwebapp::HttpRequest& request, 
         if (parseJsonBody(jsonStr, jsonObject, response))
         {
             WebAPIAdapterInterface::ConfigKeys configKeys;
-            SWGrpx-100::SWGInstanceConfigResponse query;
-            SWGrpx-100::SWGSuccessResponse normalResponse;
+            SWGRPX100::SWGInstanceConfigResponse query;
+            SWGRPX100::SWGSuccessResponse normalResponse;
             query.init();
 
             if (validateConfig(query, jsonObject, configKeys))
@@ -358,8 +358,8 @@ void WebAPIRequestMapper::instanceConfigService(qtwebapp::HttpRequest& request, 
 
 void WebAPIRequestMapper::instanceDevicesService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGInstanceDevicesResponse normalResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGInstanceDevicesResponse normalResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -397,8 +397,8 @@ void WebAPIRequestMapper::instanceDevicesService(qtwebapp::HttpRequest& request,
 
 void WebAPIRequestMapper::instanceChannelsService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGInstanceChannelsResponse normalResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGInstanceChannelsResponse normalResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -436,8 +436,8 @@ void WebAPIRequestMapper::instanceChannelsService(qtwebapp::HttpRequest& request
 
 void WebAPIRequestMapper::instanceFeaturesService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGInstanceFeaturesResponse normalResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGInstanceFeaturesResponse normalResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -463,9 +463,9 @@ void WebAPIRequestMapper::instanceFeaturesService(qtwebapp::HttpRequest& request
 
 void WebAPIRequestMapper::instanceLoggingService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGLoggingInfo query;
-    SWGrpx-100::SWGLoggingInfo normalResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGLoggingInfo query;
+    SWGRPX100::SWGLoggingInfo normalResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -516,13 +516,13 @@ void WebAPIRequestMapper::instanceLoggingService(qtwebapp::HttpRequest& request,
 
 void WebAPIRequestMapper::instanceAudioService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGAudioDevices normalResponse;
+        SWGRPX100::SWGAudioDevices normalResponse;
 
         int status = m_adapter->instanceAudioGet(normalResponse, errorResponse);
         response.setStatus(status);
@@ -544,7 +544,7 @@ void WebAPIRequestMapper::instanceAudioService(qtwebapp::HttpRequest& request, q
 
 void WebAPIRequestMapper::instanceAudioInputParametersService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -553,7 +553,7 @@ void WebAPIRequestMapper::instanceAudioInputParametersService(qtwebapp::HttpRequ
 
     if (parseJsonBody(jsonStr, jsonObject, response))
     {
-        SWGrpx-100::SWGAudioInputDevice normalResponse;
+        SWGRPX100::SWGAudioInputDevice normalResponse;
         resetAudioInputDevice(normalResponse);
         QStringList audioInputDeviceKeys;
 
@@ -613,7 +613,7 @@ void WebAPIRequestMapper::instanceAudioInputParametersService(qtwebapp::HttpRequ
 
 void WebAPIRequestMapper::instanceAudioOutputParametersService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -622,7 +622,7 @@ void WebAPIRequestMapper::instanceAudioOutputParametersService(qtwebapp::HttpReq
 
     if (parseJsonBody(jsonStr, jsonObject, response))
     {
-        SWGrpx-100::SWGAudioOutputDevice normalResponse;
+        SWGRPX100::SWGAudioOutputDevice normalResponse;
         resetAudioOutputDevice(normalResponse);
         QStringList audioOutputDeviceKeys;
 
@@ -682,13 +682,13 @@ void WebAPIRequestMapper::instanceAudioOutputParametersService(qtwebapp::HttpReq
 
 void WebAPIRequestMapper::instanceAudioInputCleanupService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "PATCH")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
 
         int status = m_adapter->instanceAudioInputCleanupPatch(normalResponse, errorResponse);
         response.setStatus(status);
@@ -710,13 +710,13 @@ void WebAPIRequestMapper::instanceAudioInputCleanupService(qtwebapp::HttpRequest
 
 void WebAPIRequestMapper::instanceAudioOutputCleanupService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "PATCH")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
 
         int status = m_adapter->instanceAudioOutputCleanupPatch(normalResponse, errorResponse);
         response.setStatus(status);
@@ -738,13 +738,13 @@ void WebAPIRequestMapper::instanceAudioOutputCleanupService(qtwebapp::HttpReques
 
 void WebAPIRequestMapper::instanceLocationService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGLocationInformation normalResponse;
+        SWGRPX100::SWGLocationInformation normalResponse;
 
         int status = m_adapter->instanceLocationGet(normalResponse, errorResponse);
         response.setStatus(status);
@@ -757,7 +757,7 @@ void WebAPIRequestMapper::instanceLocationService(qtwebapp::HttpRequest& request
     }
     else if (request.getMethod() == "PUT")
     {
-        SWGrpx-100::SWGLocationInformation normalResponse;
+        SWGRPX100::SWGLocationInformation normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -792,13 +792,13 @@ void WebAPIRequestMapper::instanceLocationService(qtwebapp::HttpRequest& request
 
 void WebAPIRequestMapper::instanceAMBESerialService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGDVSerialDevices normalResponse;
+        SWGRPX100::SWGDVSerialDevices normalResponse;
 
         int status = m_adapter->instanceAMBESerialGet(normalResponse, errorResponse);
         response.setStatus(status);
@@ -820,13 +820,13 @@ void WebAPIRequestMapper::instanceAMBESerialService(qtwebapp::HttpRequest& reque
 
 void WebAPIRequestMapper::instanceAMBEDevicesService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGAMBEDevices normalResponse;
+        SWGRPX100::SWGAMBEDevices normalResponse;
 
         int status = m_adapter->instanceAMBEDevicesGet(normalResponse, errorResponse);
         response.setStatus(status);
@@ -839,8 +839,8 @@ void WebAPIRequestMapper::instanceAMBEDevicesService(qtwebapp::HttpRequest& requ
     }
     else if ((request.getMethod() == "PATCH") || (request.getMethod() == "PUT"))
     {
-        SWGrpx-100::SWGAMBEDevices query;
-        SWGrpx-100::SWGAMBEDevices normalResponse;
+        SWGRPX100::SWGAMBEDevices query;
+        SWGRPX100::SWGAMBEDevices normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -882,7 +882,7 @@ void WebAPIRequestMapper::instanceAMBEDevicesService(qtwebapp::HttpRequest& requ
     }
     else if (request.getMethod() == "DELETE")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
 
         int status = m_adapter->instanceAMBEDevicesDelete(normalResponse, errorResponse);
         response.setStatus(status);
@@ -904,13 +904,13 @@ void WebAPIRequestMapper::instanceAMBEDevicesService(qtwebapp::HttpRequest& requ
 
 void WebAPIRequestMapper::instanceLimeRFESerialService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGLimeRFEDevices normalResponse;
+        SWGRPX100::SWGLimeRFEDevices normalResponse;
 
         int status = m_adapter->instanceLimeRFESerialGet(normalResponse, errorResponse);
         response.setStatus(status);
@@ -932,14 +932,14 @@ void WebAPIRequestMapper::instanceLimeRFESerialService(qtwebapp::HttpRequest& re
 
 void WebAPIRequestMapper::instanceLimeRFEConfigService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
         QByteArray serialStr = request.getParameter("serial");
-        SWGrpx-100::SWGLimeRFESettings normalResponse;
+        SWGRPX100::SWGLimeRFESettings normalResponse;
 
         int status = m_adapter->instanceLimeRFEConfigGet(serialStr, normalResponse, errorResponse);
         response.setStatus(status);
@@ -952,8 +952,8 @@ void WebAPIRequestMapper::instanceLimeRFEConfigService(qtwebapp::HttpRequest& re
     }
     else if (request.getMethod() == "PUT")
     {
-        SWGrpx-100::SWGLimeRFESettings query;
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGLimeRFESettings query;
+        SWGRPX100::SWGSuccessResponse normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1009,13 +1009,13 @@ void WebAPIRequestMapper::instanceLimeRFEConfigService(qtwebapp::HttpRequest& re
 
 void WebAPIRequestMapper::instanceLimeRFERunService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "PUT")
     {
-        SWGrpx-100::SWGLimeRFESettings query;
+        SWGRPX100::SWGLimeRFESettings query;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1027,7 +1027,7 @@ void WebAPIRequestMapper::instanceLimeRFERunService(qtwebapp::HttpRequest& reque
             {
                 if (limeRFESettingsKeys.contains("devicePath"))
                 {
-                    SWGrpx-100::SWGSuccessResponse normalResponse;
+                    SWGRPX100::SWGSuccessResponse normalResponse;
                     int status = m_adapter->instanceLimeRFERunPut(query, normalResponse, errorResponse);
                     response.setStatus(status);
 
@@ -1072,14 +1072,14 @@ void WebAPIRequestMapper::instanceLimeRFERunService(qtwebapp::HttpRequest& reque
 
 void WebAPIRequestMapper::instanceLimeRFEPowerService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
         QByteArray serialStr = request.getParameter("serial");
-        SWGrpx-100::SWGLimeRFEPower normalResponse;
+        SWGRPX100::SWGLimeRFEPower normalResponse;
 
         int status = m_adapter->instanceLimeRFEPowerGet(serialStr, normalResponse, errorResponse);
         response.setStatus(status);
@@ -1101,13 +1101,13 @@ void WebAPIRequestMapper::instanceLimeRFEPowerService(qtwebapp::HttpRequest& req
 
 void WebAPIRequestMapper::instancePresetsService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGPresets normalResponse;
+        SWGRPX100::SWGPresets normalResponse;
         int status = m_adapter->instancePresetsGet(normalResponse, errorResponse);
         response.setStatus(status);
 
@@ -1121,14 +1121,14 @@ void WebAPIRequestMapper::instancePresetsService(qtwebapp::HttpRequest& request,
 
 void WebAPIRequestMapper::instancePresetService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "PATCH")
     {
-        SWGrpx-100::SWGPresetTransfer query;
-        SWGrpx-100::SWGPresetIdentifier normalResponse;
+        SWGRPX100::SWGPresetTransfer query;
+        SWGRPX100::SWGPresetIdentifier normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1165,8 +1165,8 @@ void WebAPIRequestMapper::instancePresetService(qtwebapp::HttpRequest& request, 
     }
     else if (request.getMethod() == "PUT")
     {
-        SWGrpx-100::SWGPresetTransfer query;
-        SWGrpx-100::SWGPresetIdentifier normalResponse;
+        SWGRPX100::SWGPresetTransfer query;
+        SWGRPX100::SWGPresetIdentifier normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1203,8 +1203,8 @@ void WebAPIRequestMapper::instancePresetService(qtwebapp::HttpRequest& request, 
     }
     else if (request.getMethod() == "POST")
     {
-        SWGrpx-100::SWGPresetTransfer query;
-        SWGrpx-100::SWGPresetIdentifier normalResponse;
+        SWGRPX100::SWGPresetTransfer query;
+        SWGRPX100::SWGPresetIdentifier normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1241,7 +1241,7 @@ void WebAPIRequestMapper::instancePresetService(qtwebapp::HttpRequest& request, 
     }
     else if (request.getMethod() == "DELETE")
     {
-        SWGrpx-100::SWGPresetIdentifier normalResponse;
+        SWGRPX100::SWGPresetIdentifier normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1287,14 +1287,14 @@ void WebAPIRequestMapper::instancePresetService(qtwebapp::HttpRequest& request, 
 
 void WebAPIRequestMapper::instancePresetFileService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "PUT")
     {
-        SWGrpx-100::SWGPresetImport query;
-        SWGrpx-100::SWGPresetIdentifier normalResponse;
+        SWGRPX100::SWGPresetImport query;
+        SWGRPX100::SWGPresetIdentifier normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1331,8 +1331,8 @@ void WebAPIRequestMapper::instancePresetFileService(qtwebapp::HttpRequest& reque
     }
     else if (request.getMethod() == "POST")
     {
-        SWGrpx-100::SWGPresetExport query;
-        SWGrpx-100::SWGPresetIdentifier normalResponse;
+        SWGRPX100::SWGPresetExport query;
+        SWGRPX100::SWGPresetIdentifier normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1378,13 +1378,13 @@ void WebAPIRequestMapper::instancePresetFileService(qtwebapp::HttpRequest& reque
 
 void WebAPIRequestMapper::instanceFeaturePresetsService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGFeaturePresets normalResponse;
+        SWGRPX100::SWGFeaturePresets normalResponse;
         int status = m_adapter->instanceFeaturePresetsGet(normalResponse, errorResponse);
         response.setStatus(status);
 
@@ -1398,13 +1398,13 @@ void WebAPIRequestMapper::instanceFeaturePresetsService(qtwebapp::HttpRequest& r
 
 void WebAPIRequestMapper::instanceFeaturePresetService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "DELETE")
     {
-        SWGrpx-100::SWGFeaturePresetIdentifier normalResponse;
+        SWGRPX100::SWGFeaturePresetIdentifier normalResponse;
         QString jsonStr = request.getBody();
         QJsonObject jsonObject;
 
@@ -1450,13 +1450,13 @@ void WebAPIRequestMapper::instanceFeaturePresetService(qtwebapp::HttpRequest& re
 
 void WebAPIRequestMapper::instanceDeviceSetsService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGDeviceSetList normalResponse;
+        SWGRPX100::SWGDeviceSetList normalResponse;
         int status = m_adapter->instanceDeviceSetsGet(normalResponse, errorResponse);
         response.setStatus(status);
 
@@ -1477,13 +1477,13 @@ void WebAPIRequestMapper::instanceDeviceSetsService(qtwebapp::HttpRequest& reque
 
 void WebAPIRequestMapper::instanceFeatureSetsService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "GET")
     {
-        SWGrpx-100::SWGFeatureSetList normalResponse;
+        SWGRPX100::SWGFeatureSetList normalResponse;
         int status = m_adapter->instanceFeatureSetsGet(normalResponse, errorResponse);
         response.setStatus(status);
 
@@ -1504,13 +1504,13 @@ void WebAPIRequestMapper::instanceFeatureSetsService(qtwebapp::HttpRequest& requ
 
 void WebAPIRequestMapper::instanceDeviceSetService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "POST")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
         QByteArray dirStr = request.getParameter("direction");
         int direction = 0;
 
@@ -1534,7 +1534,7 @@ void WebAPIRequestMapper::instanceDeviceSetService(qtwebapp::HttpRequest& reques
     }
     else if (request.getMethod() == "DELETE")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
         int status = m_adapter->instanceDeviceSetDelete(normalResponse, errorResponse);
         response.setStatus(status);
 
@@ -1555,13 +1555,13 @@ void WebAPIRequestMapper::instanceDeviceSetService(qtwebapp::HttpRequest& reques
 
 void WebAPIRequestMapper::instanceFeatureSetService(qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
     if (request.getMethod() == "POST")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
 
         int status = m_adapter->instanceFeatureSetPost(normalResponse, errorResponse);
         response.setStatus(status);
@@ -1574,7 +1574,7 @@ void WebAPIRequestMapper::instanceFeatureSetService(qtwebapp::HttpRequest& reque
     }
     else if (request.getMethod() == "DELETE")
     {
-        SWGrpx-100::SWGSuccessResponse normalResponse;
+        SWGRPX100::SWGSuccessResponse normalResponse;
         int status = m_adapter->instanceFeatureSetDelete(normalResponse, errorResponse);
         response.setStatus(status);
 
@@ -1595,7 +1595,7 @@ void WebAPIRequestMapper::instanceFeatureSetService(qtwebapp::HttpRequest& reque
 
 void WebAPIRequestMapper::devicesetService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1603,7 +1603,7 @@ void WebAPIRequestMapper::devicesetService(const std::string& indexStr, qtwebapp
     {
         try
         {
-            SWGrpx-100::SWGDeviceSet normalResponse;
+            SWGRPX100::SWGDeviceSet normalResponse;
             int deviceSetIndex = boost::lexical_cast<int>(indexStr);
             int status = m_adapter->devicesetGet(deviceSetIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -1633,7 +1633,7 @@ void WebAPIRequestMapper::devicesetService(const std::string& indexStr, qtwebapp
 
 void WebAPIRequestMapper::devicesetFocusService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1643,7 +1643,7 @@ void WebAPIRequestMapper::devicesetFocusService(const std::string& indexStr, qtw
 
         if (request.getMethod() == "PATCH")
         {
-            SWGrpx-100::SWGSuccessResponse normalResponse;
+            SWGRPX100::SWGSuccessResponse normalResponse;
             int status = m_adapter->devicesetFocusPatch(deviceSetIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -1673,7 +1673,7 @@ void WebAPIRequestMapper::devicesetFocusService(const std::string& indexStr, qtw
 
 void WebAPIRequestMapper::devicesetSpectrumSettingsService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1688,7 +1688,7 @@ void WebAPIRequestMapper::devicesetSpectrumSettingsService(const std::string& in
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGGLSpectrum normalResponse;
+                SWGRPX100::SWGGLSpectrum normalResponse;
                 resetSpectrumSettings(normalResponse);
                 QStringList spectrumSettingsKeys;
 
@@ -1726,7 +1726,7 @@ void WebAPIRequestMapper::devicesetSpectrumSettingsService(const std::string& in
         }
         else if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGGLSpectrum normalResponse;
+            SWGRPX100::SWGGLSpectrum normalResponse;
             resetSpectrumSettings(normalResponse);
             int status = m_adapter->devicesetSpectrumSettingsGet(deviceSetIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -1756,7 +1756,7 @@ void WebAPIRequestMapper::devicesetSpectrumSettingsService(const std::string& in
 
 void WebAPIRequestMapper::devicesetSpectrumServerService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1766,7 +1766,7 @@ void WebAPIRequestMapper::devicesetSpectrumServerService(const std::string& inde
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGSpectrumServer normalResponse;
+            SWGRPX100::SWGSpectrumServer normalResponse;
             int status = m_adapter->devicesetSpectrumServerGet(deviceSetIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -1779,7 +1779,7 @@ void WebAPIRequestMapper::devicesetSpectrumServerService(const std::string& inde
         }
         else if (request.getMethod() == "POST")
         {
-            SWGrpx-100::SWGSuccessResponse normalResponse;
+            SWGRPX100::SWGSuccessResponse normalResponse;
             int status = m_adapter->devicesetSpectrumServerPost(deviceSetIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -1792,7 +1792,7 @@ void WebAPIRequestMapper::devicesetSpectrumServerService(const std::string& inde
         }
         else if (request.getMethod() == "DELETE")
         {
-            SWGrpx-100::SWGSuccessResponse normalResponse;
+            SWGRPX100::SWGSuccessResponse normalResponse;
             int status = m_adapter->devicesetSpectrumServerDelete(deviceSetIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -1822,7 +1822,7 @@ void WebAPIRequestMapper::devicesetSpectrumServerService(const std::string& inde
 
 void WebAPIRequestMapper::devicesetDeviceService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1837,8 +1837,8 @@ void WebAPIRequestMapper::devicesetDeviceService(const std::string& indexStr, qt
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGDeviceListItem query;
-                SWGrpx-100::SWGDeviceListItem normalResponse;
+                SWGRPX100::SWGDeviceListItem query;
+                SWGRPX100::SWGDeviceListItem normalResponse;
 
                 if (validateDeviceListItem(query, jsonObject))
                 {
@@ -1886,7 +1886,7 @@ void WebAPIRequestMapper::devicesetDeviceService(const std::string& indexStr, qt
 
 void WebAPIRequestMapper::devicesetDeviceSettingsService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1901,7 +1901,7 @@ void WebAPIRequestMapper::devicesetDeviceSettingsService(const std::string& inde
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGDeviceSettings normalResponse;
+                SWGRPX100::SWGDeviceSettings normalResponse;
                 resetDeviceSettings(normalResponse);
                 QStringList deviceSettingsKeys;
 
@@ -1939,7 +1939,7 @@ void WebAPIRequestMapper::devicesetDeviceSettingsService(const std::string& inde
         }
         else if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGDeviceSettings normalResponse;
+            SWGRPX100::SWGDeviceSettings normalResponse;
             resetDeviceSettings(normalResponse);
             int status = m_adapter->devicesetDeviceSettingsGet(deviceSetIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -1969,7 +1969,7 @@ void WebAPIRequestMapper::devicesetDeviceSettingsService(const std::string& inde
 
 void WebAPIRequestMapper::devicesetDeviceRunService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1979,7 +1979,7 @@ void WebAPIRequestMapper::devicesetDeviceRunService(const std::string& indexStr,
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->devicesetDeviceRunGet(deviceSetIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -1992,7 +1992,7 @@ void WebAPIRequestMapper::devicesetDeviceRunService(const std::string& indexStr,
         }
         else if (request.getMethod() == "POST")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->devicesetDeviceRunPost(deviceSetIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2005,7 +2005,7 @@ void WebAPIRequestMapper::devicesetDeviceRunService(const std::string& indexStr,
         }
         else if (request.getMethod() == "DELETE")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->devicesetDeviceRunDelete(deviceSetIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2035,7 +2035,7 @@ void WebAPIRequestMapper::devicesetDeviceRunService(const std::string& indexStr,
 
 void WebAPIRequestMapper::devicesetDeviceSubsystemRunService(const std::string& indexStr, const std::string& subsystemIndexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2046,7 +2046,7 @@ void WebAPIRequestMapper::devicesetDeviceSubsystemRunService(const std::string& 
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->devicesetDeviceSubsystemRunGet(deviceSetIndex, subsystemIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2059,7 +2059,7 @@ void WebAPIRequestMapper::devicesetDeviceSubsystemRunService(const std::string& 
         }
         else if (request.getMethod() == "POST")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->devicesetDeviceSubsystemRunPost(deviceSetIndex, subsystemIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2072,7 +2072,7 @@ void WebAPIRequestMapper::devicesetDeviceSubsystemRunService(const std::string& 
         }
         else if (request.getMethod() == "DELETE")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->devicesetDeviceSubsystemRunDelete(deviceSetIndex, subsystemIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2102,7 +2102,7 @@ void WebAPIRequestMapper::devicesetDeviceSubsystemRunService(const std::string& 
 
 void WebAPIRequestMapper::devicesetDeviceReportService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2110,7 +2110,7 @@ void WebAPIRequestMapper::devicesetDeviceReportService(const std::string& indexS
     {
         try
         {
-            SWGrpx-100::SWGDeviceReport normalResponse;
+            SWGRPX100::SWGDeviceReport normalResponse;
             resetDeviceReport(normalResponse);
             int deviceSetIndex = boost::lexical_cast<int>(indexStr);
             int status = m_adapter->devicesetDeviceReportGet(deviceSetIndex, normalResponse, errorResponse);
@@ -2141,7 +2141,7 @@ void WebAPIRequestMapper::devicesetDeviceReportService(const std::string& indexS
 
 void WebAPIRequestMapper::devicesetDeviceActionsService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2156,8 +2156,8 @@ void WebAPIRequestMapper::devicesetDeviceActionsService(const std::string& index
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGDeviceActions query;
-                SWGrpx-100::SWGSuccessResponse normalResponse;
+                SWGRPX100::SWGDeviceActions query;
+                SWGRPX100::SWGSuccessResponse normalResponse;
                 resetDeviceActions(query);
                 QStringList deviceActionsKeys;
 
@@ -2212,7 +2212,7 @@ void WebAPIRequestMapper::devicesetDeviceActionsService(const std::string& index
 
 void WebAPIRequestMapper::devicesetChannelsReportService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2220,7 +2220,7 @@ void WebAPIRequestMapper::devicesetChannelsReportService(const std::string& inde
     {
         try
         {
-            SWGrpx-100::SWGChannelsDetail normalResponse;
+            SWGRPX100::SWGChannelsDetail normalResponse;
             int deviceSetIndex = boost::lexical_cast<int>(indexStr);
             int status = m_adapter->devicesetChannelsReportGet(deviceSetIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -2253,7 +2253,7 @@ void WebAPIRequestMapper::devicesetChannelService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2268,8 +2268,8 @@ void WebAPIRequestMapper::devicesetChannelService(
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGChannelSettings query;
-                SWGrpx-100::SWGSuccessResponse normalResponse;
+                SWGRPX100::SWGChannelSettings query;
+                SWGRPX100::SWGSuccessResponse normalResponse;
                 resetChannelSettings(query);
 
                 if (jsonObject.contains("direction")) {
@@ -2331,7 +2331,7 @@ void WebAPIRequestMapper::devicesetChannelIndexService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2342,7 +2342,7 @@ void WebAPIRequestMapper::devicesetChannelIndexService(
 
         if (request.getMethod() == "DELETE")
         {
-            SWGrpx-100::SWGSuccessResponse normalResponse;
+            SWGRPX100::SWGSuccessResponse normalResponse;
             int status = m_adapter->devicesetChannelDelete(deviceSetIndex, channelIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2376,7 +2376,7 @@ void WebAPIRequestMapper::devicesetChannelSettingsService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2387,7 +2387,7 @@ void WebAPIRequestMapper::devicesetChannelSettingsService(
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGChannelSettings normalResponse;
+            SWGRPX100::SWGChannelSettings normalResponse;
             resetChannelSettings(normalResponse);
             int status = m_adapter->devicesetChannelSettingsGet(deviceSetIndex, channelIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -2405,7 +2405,7 @@ void WebAPIRequestMapper::devicesetChannelSettingsService(
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGChannelSettings normalResponse;
+                SWGRPX100::SWGChannelSettings normalResponse;
                 resetChannelSettings(normalResponse);
                 QStringList channelSettingsKeys;
 
@@ -2465,7 +2465,7 @@ void WebAPIRequestMapper::devicesetChannelReportService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2476,7 +2476,7 @@ void WebAPIRequestMapper::devicesetChannelReportService(
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGChannelReport normalResponse;
+            SWGRPX100::SWGChannelReport normalResponse;
             resetChannelReport(normalResponse);
             int status = m_adapter->devicesetChannelReportGet(deviceSetIndex, channelIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -2510,7 +2510,7 @@ void WebAPIRequestMapper::devicesetChannelActionsService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2526,8 +2526,8 @@ void WebAPIRequestMapper::devicesetChannelActionsService(
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGChannelActions query;
-                SWGrpx-100::SWGSuccessResponse normalResponse;
+                SWGRPX100::SWGChannelActions query;
+                SWGRPX100::SWGSuccessResponse normalResponse;
                 resetChannelActions(query);
                 QStringList channelActionsKeys;
 
@@ -2583,7 +2583,7 @@ void WebAPIRequestMapper::devicesetChannelActionsService(
 
 void WebAPIRequestMapper::featuresetService(const std::string& indexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2591,7 +2591,7 @@ void WebAPIRequestMapper::featuresetService(const std::string& indexStr, qtwebap
     {
         try
         {
-            SWGrpx-100::SWGFeatureSet normalResponse;
+            SWGRPX100::SWGFeatureSet normalResponse;
             int deviceSetIndex = boost::lexical_cast<int>(indexStr);
             int status = m_adapter->featuresetGet(deviceSetIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -2624,7 +2624,7 @@ void WebAPIRequestMapper::featuresetFeatureService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2639,8 +2639,8 @@ void WebAPIRequestMapper::featuresetFeatureService(
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGFeatureSettings query;
-                SWGrpx-100::SWGSuccessResponse normalResponse;
+                SWGRPX100::SWGFeatureSettings query;
+                SWGRPX100::SWGSuccessResponse normalResponse;
                 resetFeatureSettings(query);
 
                 if (jsonObject.contains("featureType") && jsonObject["featureType"].isString())
@@ -2695,7 +2695,7 @@ void WebAPIRequestMapper::featuresetPresetService(
     qtwebapp::HttpRequest& request,
     qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2705,7 +2705,7 @@ void WebAPIRequestMapper::featuresetPresetService(
 
         if (request.getMethod() == "PATCH")
         {
-            SWGrpx-100::SWGFeaturePresetIdentifier query;
+            SWGRPX100::SWGFeaturePresetIdentifier query;
             QString jsonStr = request.getBody();
             QJsonObject jsonObject;
 
@@ -2742,7 +2742,7 @@ void WebAPIRequestMapper::featuresetPresetService(
         }
         else if (request.getMethod() == "PUT")
         {
-            SWGrpx-100::SWGFeaturePresetIdentifier query;
+            SWGRPX100::SWGFeaturePresetIdentifier query;
             QString jsonStr = request.getBody();
             QJsonObject jsonObject;
 
@@ -2779,7 +2779,7 @@ void WebAPIRequestMapper::featuresetPresetService(
         }
         else if (request.getMethod() == "POST")
         {
-            SWGrpx-100::SWGFeaturePresetIdentifier query;
+            SWGRPX100::SWGFeaturePresetIdentifier query;
             QString jsonStr = request.getBody();
             QJsonObject jsonObject;
 
@@ -2837,7 +2837,7 @@ void WebAPIRequestMapper::featuresetFeatureIndexService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2848,7 +2848,7 @@ void WebAPIRequestMapper::featuresetFeatureIndexService(
 
         if (request.getMethod() == "DELETE")
         {
-            SWGrpx-100::SWGSuccessResponse normalResponse;
+            SWGRPX100::SWGSuccessResponse normalResponse;
             int status = m_adapter->featuresetFeatureDelete(featureSetIndex, featureIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2882,7 +2882,7 @@ void WebAPIRequestMapper::featuresetFeatureRunService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2893,7 +2893,7 @@ void WebAPIRequestMapper::featuresetFeatureRunService(
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->featuresetFeatureRunGet(featureSetIndex, featureIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2906,7 +2906,7 @@ void WebAPIRequestMapper::featuresetFeatureRunService(
         }
         else if (request.getMethod() == "POST")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->featuresetFeatureRunPost(featureSetIndex, featureIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2920,7 +2920,7 @@ void WebAPIRequestMapper::featuresetFeatureRunService(
         }
         else if (request.getMethod() == "DELETE")
         {
-            SWGrpx-100::SWGDeviceState normalResponse;
+            SWGRPX100::SWGDeviceState normalResponse;
             int status = m_adapter->featuresetFeatureRunDelete(featureSetIndex, featureIndex, normalResponse, errorResponse);
 
             response.setStatus(status);
@@ -2954,7 +2954,7 @@ void WebAPIRequestMapper::featuresetFeatureSettingsService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -2965,7 +2965,7 @@ void WebAPIRequestMapper::featuresetFeatureSettingsService(
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGFeatureSettings normalResponse;
+            SWGRPX100::SWGFeatureSettings normalResponse;
             resetFeatureSettings(normalResponse);
             int status = m_adapter->featuresetFeatureSettingsGet(featureSetIndex, featureIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -2983,7 +2983,7 @@ void WebAPIRequestMapper::featuresetFeatureSettingsService(
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGFeatureSettings normalResponse;
+                SWGRPX100::SWGFeatureSettings normalResponse;
                 resetFeatureSettings(normalResponse);
                 QStringList featureSettingsKeys;
 
@@ -3043,7 +3043,7 @@ void WebAPIRequestMapper::featuresetFeatureReportService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -3054,7 +3054,7 @@ void WebAPIRequestMapper::featuresetFeatureReportService(
 
         if (request.getMethod() == "GET")
         {
-            SWGrpx-100::SWGFeatureReport normalResponse;
+            SWGRPX100::SWGFeatureReport normalResponse;
             resetFeatureReport(normalResponse);
             int status = m_adapter->featuresetFeatureReportGet(featureSetIndex, featureIndex, normalResponse, errorResponse);
             response.setStatus(status);
@@ -3088,7 +3088,7 @@ void WebAPIRequestMapper::featuresetFeatureActionsService(
         qtwebapp::HttpRequest& request,
         qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     response.setHeader("Content-Type", "application/json");
     response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -3104,8 +3104,8 @@ void WebAPIRequestMapper::featuresetFeatureActionsService(
 
             if (parseJsonBody(jsonStr, jsonObject, response))
             {
-                SWGrpx-100::SWGFeatureActions query;
-                SWGrpx-100::SWGSuccessResponse normalResponse;
+                SWGRPX100::SWGFeatureActions query;
+                SWGRPX100::SWGSuccessResponse normalResponse;
                 resetFeatureActions(query);
                 QStringList featureActionsKeys;
 
@@ -3161,7 +3161,7 @@ void WebAPIRequestMapper::featuresetFeatureActionsService(
 
 bool WebAPIRequestMapper::parseJsonBody(QString& jsonStr, QJsonObject& jsonObject, qtwebapp::HttpResponse& response)
 {
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
 
     try
     {
@@ -3196,9 +3196,9 @@ bool WebAPIRequestMapper::parseJsonBody(QString& jsonStr, QJsonObject& jsonObjec
     }
 }
 
-bool WebAPIRequestMapper::validatePresetTransfer(SWGrpx-100::SWGPresetTransfer& presetTransfer)
+bool WebAPIRequestMapper::validatePresetTransfer(SWGRPX100::SWGPresetTransfer& presetTransfer)
 {
-    SWGrpx-100::SWGPresetIdentifier *presetIdentifier = presetTransfer.getPreset();
+    SWGRPX100::SWGPresetIdentifier *presetIdentifier = presetTransfer.getPreset();
 
     if (presetIdentifier == 0) {
         return false;
@@ -3207,14 +3207,14 @@ bool WebAPIRequestMapper::validatePresetTransfer(SWGrpx-100::SWGPresetTransfer& 
     return validatePresetIdentifer(*presetIdentifier);
 }
 
-bool WebAPIRequestMapper::validatePresetIdentifer(SWGrpx-100::SWGPresetIdentifier& presetIdentifier)
+bool WebAPIRequestMapper::validatePresetIdentifer(SWGRPX100::SWGPresetIdentifier& presetIdentifier)
 {
     return (presetIdentifier.getGroupName() && presetIdentifier.getName() && presetIdentifier.getType());
 }
 
-bool WebAPIRequestMapper::validateFeaturePresetTransfer(SWGrpx-100::SWGFeaturePresetTransfer& presetTransfer)
+bool WebAPIRequestMapper::validateFeaturePresetTransfer(SWGRPX100::SWGFeaturePresetTransfer& presetTransfer)
 {
-    SWGrpx-100::SWGFeaturePresetIdentifier *presetIdentifier = presetTransfer.getPreset();
+    SWGRPX100::SWGFeaturePresetIdentifier *presetIdentifier = presetTransfer.getPreset();
 
     if (presetIdentifier == 0) {
         return false;
@@ -3223,18 +3223,18 @@ bool WebAPIRequestMapper::validateFeaturePresetTransfer(SWGrpx-100::SWGFeaturePr
     return validateFeaturePresetIdentifer(*presetIdentifier);
 }
 
-bool WebAPIRequestMapper::validateFeaturePresetIdentifer(SWGrpx-100::SWGFeaturePresetIdentifier& presetIdentifier)
+bool WebAPIRequestMapper::validateFeaturePresetIdentifer(SWGRPX100::SWGFeaturePresetIdentifier& presetIdentifier)
 {
     return (presetIdentifier.getGroupName() && presetIdentifier.getDescription());
 }
 
-bool WebAPIRequestMapper::validatePresetExport(SWGrpx-100::SWGPresetExport& presetExport)
+bool WebAPIRequestMapper::validatePresetExport(SWGRPX100::SWGPresetExport& presetExport)
 {
     if (presetExport.getFilePath() == 0) {
         return false;
     }
 
-    SWGrpx-100::SWGPresetIdentifier *presetIdentifier =  presetExport.getPreset();
+    SWGRPX100::SWGPresetIdentifier *presetIdentifier =  presetExport.getPreset();
 
     if (presetIdentifier == 0) {
         return false;
@@ -3243,7 +3243,7 @@ bool WebAPIRequestMapper::validatePresetExport(SWGrpx-100::SWGPresetExport& pres
     return validatePresetIdentifer(*presetIdentifier);
 }
 
-bool WebAPIRequestMapper::validateDeviceListItem(SWGrpx-100::SWGDeviceListItem& deviceListItem, QJsonObject& jsonObject)
+bool WebAPIRequestMapper::validateDeviceListItem(SWGRPX100::SWGDeviceListItem& deviceListItem, QJsonObject& jsonObject)
 {
     if (jsonObject.contains("direction")) {
         deviceListItem.setDirection(jsonObject["direction"].toInt());
@@ -3300,7 +3300,7 @@ bool WebAPIRequestMapper::validateDeviceListItem(SWGrpx-100::SWGDeviceListItem& 
 }
 
 bool WebAPIRequestMapper::validateDeviceSettings(
-        SWGrpx-100::SWGDeviceSettings& deviceSettings,
+        SWGRPX100::SWGDeviceSettings& deviceSettings,
         QJsonObject& jsonObject,
         QStringList& deviceSettingsKeys)
 {
@@ -3352,7 +3352,7 @@ bool WebAPIRequestMapper::validateDeviceSettings(
 }
 
 bool WebAPIRequestMapper::validateDeviceActions(
-        SWGrpx-100::SWGDeviceActions& deviceActions,
+        SWGRPX100::SWGDeviceActions& deviceActions,
         QJsonObject& jsonObject,
         QStringList& deviceActionsKeys)
 {
@@ -3404,7 +3404,7 @@ bool WebAPIRequestMapper::validateDeviceActions(
 }
 
 bool WebAPIRequestMapper::validateChannelSettings(
-        SWGrpx-100::SWGChannelSettings& channelSettings,
+        SWGRPX100::SWGChannelSettings& channelSettings,
         QJsonObject& jsonObject,
         QStringList& channelSettingsKeys)
 {
@@ -3430,7 +3430,7 @@ bool WebAPIRequestMapper::validateChannelSettings(
 }
 
 bool WebAPIRequestMapper::validateChannelActions(
-    SWGrpx-100::SWGChannelActions& channelActions,
+    SWGRPX100::SWGChannelActions& channelActions,
     QJsonObject& jsonObject,
     QStringList& channelActionsKeys)
 {
@@ -3456,7 +3456,7 @@ bool WebAPIRequestMapper::validateChannelActions(
 }
 
 bool WebAPIRequestMapper::validateFeatureSettings(
-        SWGrpx-100::SWGFeatureSettings& featureSettings,
+        SWGRPX100::SWGFeatureSettings& featureSettings,
         QJsonObject& jsonObject,
         QStringList& featureSettingsKeys)
 {
@@ -3476,7 +3476,7 @@ bool WebAPIRequestMapper::validateFeatureSettings(
 }
 
 bool WebAPIRequestMapper::validateFeatureActions(
-    SWGrpx-100::SWGFeatureActions& featureActions,
+    SWGRPX100::SWGFeatureActions& featureActions,
     QJsonObject& jsonObject,
     QStringList& featureActionsKeys)
 {
@@ -3496,7 +3496,7 @@ bool WebAPIRequestMapper::validateFeatureActions(
 }
 
 bool WebAPIRequestMapper::validateAudioInputDevice(
-        SWGrpx-100::SWGAudioInputDevice& audioInputDevice,
+        SWGRPX100::SWGAudioInputDevice& audioInputDevice,
         QJsonObject& jsonObject,
         QStringList& audioInputDeviceKeys)
 {
@@ -3519,7 +3519,7 @@ bool WebAPIRequestMapper::validateAudioInputDevice(
 }
 
 bool WebAPIRequestMapper::validateAudioOutputDevice(
-        SWGrpx-100::SWGAudioOutputDevice& audioOutputDevice,
+        SWGRPX100::SWGAudioOutputDevice& audioOutputDevice,
         QJsonObject& jsonObject,
         QStringList& audioOutputDeviceKeys)
 {
@@ -3571,7 +3571,7 @@ bool WebAPIRequestMapper::validateAudioOutputDevice(
     return true;
 }
 
-bool WebAPIRequestMapper::validateAMBEDevices(SWGrpx-100::SWGAMBEDevices& ambeDevices, QJsonObject& jsonObject)
+bool WebAPIRequestMapper::validateAMBEDevices(SWGRPX100::SWGAMBEDevices& ambeDevices, QJsonObject& jsonObject)
 {
     if (jsonObject.contains("nbDevices"))
     {
@@ -3587,14 +3587,14 @@ bool WebAPIRequestMapper::validateAMBEDevices(SWGrpx-100::SWGAMBEDevices& ambeDe
 
             ambeDevices.init();
             ambeDevices.setNbDevices(nbDevices);
-            QList<SWGrpx-100::SWGAMBEDevice *> *ambeList = ambeDevices.getAmbeDevices();
+            QList<SWGRPX100::SWGAMBEDevice *> *ambeList = ambeDevices.getAmbeDevices();
 
             for (int i = 0; i < nbDevices; i++)
             {
                 QJsonObject ambeDeviceJson = ambeDevicesJson.at(i).toObject();
                 if (ambeDeviceJson.contains("deviceRef") && ambeDeviceJson.contains("delete"))
                 {
-                    ambeList->push_back(new SWGrpx-100::SWGAMBEDevice());
+                    ambeList->push_back(new SWGRPX100::SWGAMBEDevice());
                     ambeList->back()->init();
                     ambeList->back()->setDeviceRef(new QString(ambeDeviceJson["deviceRef"].toString()));
                     ambeList->back()->setDelete(ambeDeviceJson["delete"].toInt());
@@ -3612,7 +3612,7 @@ bool WebAPIRequestMapper::validateAMBEDevices(SWGrpx-100::SWGAMBEDevices& ambeDe
     return false;
 }
 
-bool WebAPIRequestMapper::validateLimeRFEConfig(SWGrpx-100::SWGLimeRFESettings& limeRFESettings, QJsonObject& jsonObject, QStringList& limeRFESettingsKeys)
+bool WebAPIRequestMapper::validateLimeRFEConfig(SWGRPX100::SWGLimeRFESettings& limeRFESettings, QJsonObject& jsonObject, QStringList& limeRFESettingsKeys)
 {
     if (jsonObject.contains("devicePath"))
     {
@@ -3703,7 +3703,7 @@ bool WebAPIRequestMapper::validateLimeRFEConfig(SWGrpx-100::SWGLimeRFESettings& 
     return true;
 }
 
-bool WebAPIRequestMapper::validateSpectrumSettings(SWGrpx-100::SWGGLSpectrum& spectrumSettings, QJsonObject& jsonObject, QStringList& spectrumSettingsKeys)
+bool WebAPIRequestMapper::validateSpectrumSettings(SWGRPX100::SWGGLSpectrum& spectrumSettings, QJsonObject& jsonObject, QStringList& spectrumSettingsKeys)
 {
     if (jsonObject.contains("fftSize"))
     {
@@ -3830,13 +3830,13 @@ bool WebAPIRequestMapper::validateSpectrumSettings(SWGrpx-100::SWGGLSpectrum& sp
 }
 
 bool WebAPIRequestMapper::validateConfig(
-    SWGrpx-100::SWGInstanceConfigResponse& config,
+    SWGRPX100::SWGInstanceConfigResponse& config,
     QJsonObject& jsonObject,
     WebAPIAdapterInterface::ConfigKeys& configKeys)
 {
     if (jsonObject.contains("preferences"))
     {
-        SWGrpx-100::SWGPreferences *preferences = new SWGrpx-100::SWGPreferences();
+        SWGRPX100::SWGPreferences *preferences = new SWGRPX100::SWGPreferences();
         config.setPreferences(preferences);
         QJsonObject preferencesJson = jsonObject["preferences"].toObject();
         configKeys.m_preferencesKeys = preferencesJson.keys();
@@ -3845,7 +3845,7 @@ bool WebAPIRequestMapper::validateConfig(
 
     if (jsonObject.contains("commands"))
     {
-        QList<SWGrpx-100::SWGCommand *> *commands = new QList<SWGrpx-100::SWGCommand *>();
+        QList<SWGRPX100::SWGCommand *> *commands = new QList<SWGRPX100::SWGCommand *>();
         config.setCommands(commands);
         QJsonArray commandsJson = jsonObject["commands"].toArray();
         QJsonArray::const_iterator commandsIt = commandsJson.begin();
@@ -3853,7 +3853,7 @@ bool WebAPIRequestMapper::validateConfig(
         for (; commandsIt != commandsJson.end(); ++commandsIt)
         {
             QJsonObject commandJson = commandsIt->toObject();
-            commands->append(new SWGrpx-100::SWGCommand());
+            commands->append(new SWGRPX100::SWGCommand());
             configKeys.m_commandKeys.append(WebAPIAdapterInterface::CommandKeys());
             configKeys.m_commandKeys.back().m_keys = commandJson.keys();
             commands->back()->fromJsonObject(commandJson);
@@ -3862,7 +3862,7 @@ bool WebAPIRequestMapper::validateConfig(
 
     if (jsonObject.contains("presets"))
     {
-        QList<SWGrpx-100::SWGPreset *> *presets = new QList<SWGrpx-100::SWGPreset *>();
+        QList<SWGRPX100::SWGPreset *> *presets = new QList<SWGRPX100::SWGPreset *>();
         config.setPresets(presets);
         QJsonArray presetsJson = jsonObject["presets"].toArray();
         QJsonArray::const_iterator presetsIt = presetsJson.begin();
@@ -3870,7 +3870,7 @@ bool WebAPIRequestMapper::validateConfig(
         for (; presetsIt != presetsJson.end(); ++presetsIt)
         {
             QJsonObject presetJson = presetsIt->toObject();
-            SWGrpx-100::SWGPreset *preset = new SWGrpx-100::SWGPreset();
+            SWGRPX100::SWGPreset *preset = new SWGRPX100::SWGPreset();
             presets->append(preset);
             configKeys.m_presetKeys.append(WebAPIAdapterInterface::PresetKeys());
             appendPresetKeys(preset, presetJson, configKeys.m_presetKeys.back());
@@ -3879,7 +3879,7 @@ bool WebAPIRequestMapper::validateConfig(
 
     if (jsonObject.contains("featuresetpresets"))
     {
-        QList<SWGrpx-100::SWGFeatureSetPreset *> *featureSetPresets = new QList<SWGrpx-100::SWGFeatureSetPreset *>();
+        QList<SWGRPX100::SWGFeatureSetPreset *> *featureSetPresets = new QList<SWGRPX100::SWGFeatureSetPreset *>();
         config.setFeaturesetpresets(featureSetPresets);
         QJsonArray presetsJson = jsonObject["featuresetpresets"].toArray();
         QJsonArray::const_iterator featureSetPresetsIt = presetsJson.begin();
@@ -3887,7 +3887,7 @@ bool WebAPIRequestMapper::validateConfig(
         for (; featureSetPresetsIt != presetsJson.end(); ++featureSetPresetsIt)
         {
             QJsonObject presetJson = featureSetPresetsIt->toObject();
-            SWGrpx-100::SWGFeatureSetPreset *featureSetPreset = new SWGrpx-100::SWGFeatureSetPreset();
+            SWGRPX100::SWGFeatureSetPreset *featureSetPreset = new SWGRPX100::SWGFeatureSetPreset();
             featureSetPresets->append(featureSetPreset);
             configKeys.m_featureSetPresetKeys.append(WebAPIAdapterInterface::FeatureSetPresetKeys());
             appendFeatureSetPresetKeys(featureSetPreset, presetJson, configKeys.m_featureSetPresetKeys.back());
@@ -3896,7 +3896,7 @@ bool WebAPIRequestMapper::validateConfig(
 
     if (jsonObject.contains("workingPreset"))
     {
-        SWGrpx-100::SWGPreset *preset = new SWGrpx-100::SWGPreset();
+        SWGRPX100::SWGPreset *preset = new SWGRPX100::SWGPreset();
         config.setWorkingPreset(preset);
         QJsonObject presetJson = jsonObject["workingPreset"].toObject();
         appendPresetKeys(preset, presetJson, configKeys.m_workingPresetKeys);
@@ -3904,7 +3904,7 @@ bool WebAPIRequestMapper::validateConfig(
 
     if (jsonObject.contains("workingFeatureSetPreset"))
     {
-        SWGrpx-100::SWGFeatureSetPreset *preset = new SWGrpx-100::SWGFeatureSetPreset();
+        SWGRPX100::SWGFeatureSetPreset *preset = new SWGRPX100::SWGFeatureSetPreset();
         config.setWorkingFeatureSetPreset(preset);
         QJsonObject presetJson = jsonObject["workingFeatureSetPreset"].toObject();
         appendFeatureSetPresetKeys(preset, presetJson, configKeys.m_workingFeatureSetPresetKeys);
@@ -3914,7 +3914,7 @@ bool WebAPIRequestMapper::validateConfig(
 }
 
 bool WebAPIRequestMapper::appendFeatureSetPresetKeys(
-    SWGrpx-100::SWGFeatureSetPreset *preset,
+    SWGRPX100::SWGFeatureSetPreset *preset,
     const QJsonObject& presetJson,
     WebAPIAdapterInterface::FeatureSetPresetKeys& featureSetPresetKeys
 )
@@ -3933,13 +3933,13 @@ bool WebAPIRequestMapper::appendFeatureSetPresetKeys(
     {
         QJsonArray featuresJson = presetJson["featureConfigs"].toArray();
         QJsonArray::const_iterator featuresIt = featuresJson.begin();
-        QList<SWGrpx-100::SWGFeatureConfig*> *features = new QList<SWGrpx-100::SWGFeatureConfig*>();
+        QList<SWGRPX100::SWGFeatureConfig*> *features = new QList<SWGRPX100::SWGFeatureConfig*>();
         preset->setFeatureConfigs(features);
 
         for (; featuresIt != featuresJson.end(); ++featuresIt)
         {
             QJsonObject featureJson = featuresIt->toObject();
-            SWGrpx-100::SWGFeatureConfig *featureConfig = new SWGrpx-100::SWGFeatureConfig();
+            SWGRPX100::SWGFeatureConfig *featureConfig = new SWGRPX100::SWGFeatureConfig();
             featureSetPresetKeys.m_featureKeys.append(WebAPIAdapterInterface::FeatureKeys());
 
             if (appendPresetFeatureKeys(featureConfig, featureJson, featureSetPresetKeys.m_featureKeys.back()))
@@ -3958,7 +3958,7 @@ bool WebAPIRequestMapper::appendFeatureSetPresetKeys(
 }
 
 bool WebAPIRequestMapper::appendPresetKeys(
-    SWGrpx-100::SWGPreset *preset,
+    SWGRPX100::SWGPreset *preset,
     const QJsonObject& presetJson,
     WebAPIAdapterInterface::PresetKeys& presetKeys
 )
@@ -4003,7 +4003,7 @@ bool WebAPIRequestMapper::appendPresetKeys(
     {
         QJsonObject spectrumJson = presetJson["spectrumConfig"].toObject();
         presetKeys.m_spectrumKeys = spectrumJson.keys();
-        SWGrpx-100::SWGGLSpectrum *spectrum = new SWGrpx-100::SWGGLSpectrum();
+        SWGRPX100::SWGGLSpectrum *spectrum = new SWGRPX100::SWGGLSpectrum();
         preset->setSpectrumConfig(spectrum);
         spectrum->fromJsonObject(spectrumJson);
     }
@@ -4012,13 +4012,13 @@ bool WebAPIRequestMapper::appendPresetKeys(
     {
         QJsonArray channelsJson = presetJson["channelConfigs"].toArray();
         QJsonArray::const_iterator channelsIt = channelsJson.begin();
-        QList<SWGrpx-100::SWGChannelConfig*> *channels = new QList<SWGrpx-100::SWGChannelConfig*>();
+        QList<SWGRPX100::SWGChannelConfig*> *channels = new QList<SWGRPX100::SWGChannelConfig*>();
         preset->setChannelConfigs(channels);
 
         for (; channelsIt != channelsJson.end(); ++channelsIt)
         {
             QJsonObject channelJson = channelsIt->toObject();
-            SWGrpx-100::SWGChannelConfig *channelConfig = new SWGrpx-100::SWGChannelConfig();
+            SWGRPX100::SWGChannelConfig *channelConfig = new SWGRPX100::SWGChannelConfig();
             presetKeys.m_channelsKeys.append(WebAPIAdapterInterface::ChannelKeys());
 
             if (appendPresetChannelKeys(channelConfig, channelJson, presetKeys.m_channelsKeys.back()))
@@ -4037,13 +4037,13 @@ bool WebAPIRequestMapper::appendPresetKeys(
     {
         QJsonArray devicesJson = presetJson["deviceConfigs"].toArray();
         QJsonArray::const_iterator devicesIt = devicesJson.begin();
-        QList<SWGrpx-100::SWGDeviceConfig*> *devices = new QList<SWGrpx-100::SWGDeviceConfig*>();
+        QList<SWGRPX100::SWGDeviceConfig*> *devices = new QList<SWGRPX100::SWGDeviceConfig*>();
         preset->setDeviceConfigs(devices);
 
         for (; devicesIt != devicesJson.end(); ++devicesIt)
         {
             QJsonObject deviceJson = devicesIt->toObject();
-            SWGrpx-100::SWGDeviceConfig *deviceConfig = new SWGrpx-100::SWGDeviceConfig();
+            SWGRPX100::SWGDeviceConfig *deviceConfig = new SWGRPX100::SWGDeviceConfig();
             presetKeys.m_devicesKeys.append(WebAPIAdapterInterface::DeviceKeys());
 
             if (appendPresetDeviceKeys(deviceConfig, deviceJson, presetKeys.m_devicesKeys.back()))
@@ -4062,7 +4062,7 @@ bool WebAPIRequestMapper::appendPresetKeys(
 }
 
 bool WebAPIRequestMapper::appendPresetFeatureKeys(
-        SWGrpx-100::SWGFeatureConfig *feature,
+        SWGRPX100::SWGFeatureConfig *feature,
         const QJsonObject& featureSettingsJson,
         WebAPIAdapterInterface::FeatureKeys& featureKeys
 )
@@ -4075,7 +4075,7 @@ bool WebAPIRequestMapper::appendPresetFeatureKeys(
 
         if (featureSettingsJson.contains("config") && WebAPIUtils::m_featureURIToSettingsKey.contains(*featureURI))
         {
-            SWGrpx-100::SWGFeatureSettings *featureSettings = new SWGrpx-100::SWGFeatureSettings();
+            SWGRPX100::SWGFeatureSettings *featureSettings = new SWGRPX100::SWGFeatureSettings();
             feature->setConfig(featureSettings);
             return getFeatureSettings(
                 WebAPIUtils::m_channelURIToSettingsKey[*featureURI],
@@ -4096,7 +4096,7 @@ bool WebAPIRequestMapper::appendPresetFeatureKeys(
 }
 
 bool WebAPIRequestMapper::appendPresetChannelKeys(
-        SWGrpx-100::SWGChannelConfig *channel,
+        SWGRPX100::SWGChannelConfig *channel,
         const QJsonObject& channelSettingsJson,
         WebAPIAdapterInterface::ChannelKeys& channelKeys
 )
@@ -4109,7 +4109,7 @@ bool WebAPIRequestMapper::appendPresetChannelKeys(
 
         if (channelSettingsJson.contains("config") && WebAPIUtils::m_channelURIToSettingsKey.contains(*channelURI))
         {
-            SWGrpx-100::SWGChannelSettings *channelSettings = new SWGrpx-100::SWGChannelSettings();
+            SWGRPX100::SWGChannelSettings *channelSettings = new SWGRPX100::SWGChannelSettings();
             channel->setConfig(channelSettings);
             return getChannelSettings(WebAPIUtils::m_channelURIToSettingsKey[*channelURI], channelSettings, channelSettingsJson["config"].toObject(), channelKeys.m_channelKeys);
         }
@@ -4126,7 +4126,7 @@ bool WebAPIRequestMapper::appendPresetChannelKeys(
 
 bool WebAPIRequestMapper::getChannelSettings(
     const QString& channelSettingsKey,
-    SWGrpx-100::SWGChannelSettings *channelSettings,
+    SWGRPX100::SWGChannelSettings *channelSettings,
     const QJsonObject& channelSettingsJson,
     QStringList& channelSettingsKeys
 )
@@ -4147,52 +4147,52 @@ bool WebAPIRequestMapper::getChannelSettings(
 
         if (channelSettingsKey == "ADSBDemodSettings")
         {
-            channelSettings->setAdsbDemodSettings(new SWGrpx-100::SWGADSBDemodSettings());
+            channelSettings->setAdsbDemodSettings(new SWGRPX100::SWGADSBDemodSettings());
             channelSettings->getAdsbDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "AISDemodSettings")
         {
-            channelSettings->setAisDemodSettings(new SWGrpx-100::SWGAISDemodSettings());
+            channelSettings->setAisDemodSettings(new SWGRPX100::SWGAISDemodSettings());
             channelSettings->getAisDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "AISModSettings")
         {
-            channelSettings->setAisModSettings(new SWGrpx-100::SWGAISModSettings());
+            channelSettings->setAisModSettings(new SWGRPX100::SWGAISModSettings());
             channelSettings->getAisModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "AMDemodSettings")
         {
-            channelSettings->setAmDemodSettings(new SWGrpx-100::SWGAMDemodSettings());
+            channelSettings->setAmDemodSettings(new SWGRPX100::SWGAMDemodSettings());
             channelSettings->getAmDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "AMModSettings")
         {
-            channelSettings->setAmModSettings(new SWGrpx-100::SWGAMModSettings());
+            channelSettings->setAmModSettings(new SWGRPX100::SWGAMModSettings());
             channelSettings->getAmModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "APTDemodSettings")
         {
-            channelSettings->setAptDemodSettings(new SWGrpx-100::SWGAPTDemodSettings());
+            channelSettings->setAptDemodSettings(new SWGRPX100::SWGAPTDemodSettings());
             channelSettings->getAptDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "ATVDemodSettings")
         {
-            channelSettings->setAtvDemodSettings(new SWGrpx-100::SWGATVDemodSettings());
+            channelSettings->setAtvDemodSettings(new SWGRPX100::SWGATVDemodSettings());
             channelSettings->getAtvDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "ATVModSettings")
         {
-            channelSettings->setAtvModSettings(new SWGrpx-100::SWGATVModSettings());
+            channelSettings->setAtvModSettings(new SWGRPX100::SWGATVModSettings());
             channelSettings->getAtvModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "BeamSteeringCWModSettings")
         {
-            channelSettings->setBeamSteeringCwModSettings(new SWGrpx-100::SWGBeamSteeringCWModSettings());
+            channelSettings->setBeamSteeringCwModSettings(new SWGRPX100::SWGBeamSteeringCWModSettings());
             channelSettings->getBeamSteeringCwModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "BFMDemodSettings")
         {
-            channelSettings->setBfmDemodSettings(new SWGrpx-100::SWGBFMDemodSettings());
+            channelSettings->setBfmDemodSettings(new SWGRPX100::SWGBFMDemodSettings());
             channelSettings->getBfmDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "ChannelAnalyzerSettings")
@@ -4201,163 +4201,163 @@ bool WebAPIRequestMapper::getChannelSettings(
         }
         else if (channelSettingsKey == "ChirpChatDemodSettings")
         {
-            channelSettings->setChirpChatDemodSettings(new SWGrpx-100::SWGChirpChatDemodSettings());
+            channelSettings->setChirpChatDemodSettings(new SWGRPX100::SWGChirpChatDemodSettings());
             channelSettings->getChirpChatDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "ChirpChatModSettings")
         {
-            channelSettings->setChirpChatModSettings(new SWGrpx-100::SWGChirpChatModSettings());
+            channelSettings->setChirpChatModSettings(new SWGRPX100::SWGChirpChatModSettings());
             channelSettings->getChirpChatModSettings()->init(); // contains a list of strings
             channelSettings->getChirpChatModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "DATVDemodSettings")
         {
-            channelSettings->setDatvDemodSettings(new SWGrpx-100::SWGDATVDemodSettings());
+            channelSettings->setDatvDemodSettings(new SWGRPX100::SWGDATVDemodSettings());
             channelSettings->getDatvDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "DATVModSettings")
         {
-            channelSettings->setDatvModSettings(new SWGrpx-100::SWGDATVModSettings());
+            channelSettings->setDatvModSettings(new SWGRPX100::SWGDATVModSettings());
             channelSettings->getDatvModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "DABDemodSettings")
         {
-            channelSettings->setDabDemodSettings(new SWGrpx-100::SWGDABDemodSettings());
+            channelSettings->setDabDemodSettings(new SWGRPX100::SWGDABDemodSettings());
             channelSettings->getDabDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "DSDDemodSettings")
         {
-            channelSettings->setDsdDemodSettings(new SWGrpx-100::SWGDSDDemodSettings());
+            channelSettings->setDsdDemodSettings(new SWGRPX100::SWGDSDDemodSettings());
             channelSettings->getDsdDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "FileSinkSettings")
         {
-            channelSettings->setFileSinkSettings(new SWGrpx-100::SWGFileSinkSettings());
+            channelSettings->setFileSinkSettings(new SWGRPX100::SWGFileSinkSettings());
             channelSettings->getFileSinkSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "FileSourceSettings")
         {
-            channelSettings->setFileSourceSettings(new SWGrpx-100::SWGFileSourceSettings());
+            channelSettings->setFileSourceSettings(new SWGRPX100::SWGFileSourceSettings());
             channelSettings->getFileSourceSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "FreeDVDemodSettings")
         {
-            channelSettings->setFreeDvDemodSettings(new SWGrpx-100::SWGFreeDVDemodSettings());
+            channelSettings->setFreeDvDemodSettings(new SWGRPX100::SWGFreeDVDemodSettings());
             channelSettings->getFreeDvDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "FreeDVModSettings")
         {
-            channelSettings->setFreeDvModSettings(new SWGrpx-100::SWGFreeDVModSettings());
+            channelSettings->setFreeDvModSettings(new SWGRPX100::SWGFreeDVModSettings());
             channelSettings->getFreeDvModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "FreqTrackerSettings")
         {
-            channelSettings->setFreqTrackerSettings(new SWGrpx-100::SWGFreqTrackerSettings());
+            channelSettings->setFreqTrackerSettings(new SWGRPX100::SWGFreqTrackerSettings());
             channelSettings->getFreqTrackerSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "IEEE_802_15_4_ModSettings")
         {
-            channelSettings->setIeee802154ModSettings(new SWGrpx-100::SWGIEEE_802_15_4_ModSettings());
+            channelSettings->setIeee802154ModSettings(new SWGRPX100::SWGIEEE_802_15_4_ModSettings());
             channelSettings->getIeee802154ModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "InterferometerSettings")
         {
-            channelSettings->setInterferometerSettings(new SWGrpx-100::SWGInterferometerSettings());
+            channelSettings->setInterferometerSettings(new SWGRPX100::SWGInterferometerSettings());
             channelSettings->getInterferometerSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "NFMDemodSettings")
         {
-            channelSettings->setNfmDemodSettings(new SWGrpx-100::SWGNFMDemodSettings());
+            channelSettings->setNfmDemodSettings(new SWGRPX100::SWGNFMDemodSettings());
             channelSettings->getNfmDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "NFMModSettings")
         {
-            channelSettings->setNfmModSettings(new SWGrpx-100::SWGNFMModSettings());
+            channelSettings->setNfmModSettings(new SWGRPX100::SWGNFMModSettings());
             channelSettings->getNfmModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "NoiseFigureSettings")
         {
-            channelSettings->setNoiseFigureSettings(new SWGrpx-100::SWGNoiseFigureSettings());
+            channelSettings->setNoiseFigureSettings(new SWGRPX100::SWGNoiseFigureSettings());
             channelSettings->getNoiseFigureSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "LocalSinkSettings")
         {
-            channelSettings->setLocalSinkSettings(new SWGrpx-100::SWGLocalSinkSettings());
+            channelSettings->setLocalSinkSettings(new SWGRPX100::SWGLocalSinkSettings());
             channelSettings->getLocalSinkSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "LocalSourceSettings")
         {
-            channelSettings->setLocalSourceSettings(new SWGrpx-100::SWGLocalSourceSettings());
+            channelSettings->setLocalSourceSettings(new SWGRPX100::SWGLocalSourceSettings());
             channelSettings->getLocalSourceSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "PacketDemodSettings")
         {
-            channelSettings->setPacketDemodSettings(new SWGrpx-100::SWGPacketDemodSettings());
+            channelSettings->setPacketDemodSettings(new SWGRPX100::SWGPacketDemodSettings());
             channelSettings->getPacketDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "PacketModSettings")
         {
-            channelSettings->setPacketModSettings(new SWGrpx-100::SWGPacketModSettings());
+            channelSettings->setPacketModSettings(new SWGRPX100::SWGPacketModSettings());
             channelSettings->getPacketModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "PagerDemodSettings")
         {
-            channelSettings->setPagerDemodSettings(new SWGrpx-100::SWGPagerDemodSettings());
+            channelSettings->setPagerDemodSettings(new SWGRPX100::SWGPagerDemodSettings());
             channelSettings->getPagerDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "RadioClockSettings")
         {
-            channelSettings->setRadioClockSettings(new SWGrpx-100::SWGRadioClockSettings());
+            channelSettings->setRadioClockSettings(new SWGRPX100::SWGRadioClockSettings());
             channelSettings->getRadioClockSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "RemoteSinkSettings")
         {
-            channelSettings->setRemoteSinkSettings(new SWGrpx-100::SWGRemoteSinkSettings());
+            channelSettings->setRemoteSinkSettings(new SWGRPX100::SWGRemoteSinkSettings());
             channelSettings->getRemoteSinkSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "RemoteSourceSettings")
         {
-            channelSettings->setRemoteSourceSettings(new SWGrpx-100::SWGRemoteSourceSettings());
+            channelSettings->setRemoteSourceSettings(new SWGRPX100::SWGRemoteSourceSettings());
             channelSettings->getRemoteSourceSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "SigMFFileSinkSettings")
         {
-            channelSettings->setSigMfFileSinkSettings(new SWGrpx-100::SWGSigMFFileSinkSettings());
+            channelSettings->setSigMfFileSinkSettings(new SWGRPX100::SWGSigMFFileSinkSettings());
             channelSettings->getSigMfFileSinkSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "SSBDemodSettings")
         {
-            channelSettings->setSsbDemodSettings(new SWGrpx-100::SWGSSBDemodSettings());
+            channelSettings->setSsbDemodSettings(new SWGRPX100::SWGSSBDemodSettings());
             channelSettings->getSsbDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "SSBModSettings")
         {
-            channelSettings->setSsbModSettings(new SWGrpx-100::SWGSSBModSettings());
+            channelSettings->setSsbModSettings(new SWGRPX100::SWGSSBModSettings());
             channelSettings->getSsbModSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "UDPSourceSettings")
         {
-            channelSettings->setUdpSourceSettings(new SWGrpx-100::SWGUDPSourceSettings());
+            channelSettings->setUdpSourceSettings(new SWGRPX100::SWGUDPSourceSettings());
             channelSettings->getUdpSourceSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "UDPSinkSettings")
         {
-            channelSettings->setUdpSinkSettings(new SWGrpx-100::SWGUDPSinkSettings());
+            channelSettings->setUdpSinkSettings(new SWGRPX100::SWGUDPSinkSettings());
             channelSettings->getUdpSinkSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "VORDemodSettings")
         {
-            channelSettings->setVorDemodSettings(new SWGrpx-100::SWGVORDemodSettings());
+            channelSettings->setVorDemodSettings(new SWGRPX100::SWGVORDemodSettings());
             channelSettings->getVorDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "WFMDemodSettings")
         {
-            channelSettings->setWfmDemodSettings(new SWGrpx-100::SWGWFMDemodSettings());
+            channelSettings->setWfmDemodSettings(new SWGRPX100::SWGWFMDemodSettings());
             channelSettings->getWfmDemodSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (channelSettingsKey == "WFMModSettings")
         {
-            channelSettings->setWfmModSettings(new SWGrpx-100::SWGWFMModSettings());
+            channelSettings->setWfmModSettings(new SWGRPX100::SWGWFMModSettings());
             channelSettings->getWfmModSettings()->fromJsonObject(settingsJsonObject);
         }
         else
@@ -4375,7 +4375,7 @@ bool WebAPIRequestMapper::getChannelSettings(
 
 bool WebAPIRequestMapper::getChannelActions(
     const QString& channelActionsKey,
-    SWGrpx-100::SWGChannelActions *channelActions,
+    SWGRPX100::SWGChannelActions *channelActions,
     const QJsonObject& channelActionsJson,
     QStringList& channelActionsKeys
 )
@@ -4389,32 +4389,32 @@ bool WebAPIRequestMapper::getChannelActions(
 
         if (channelActionsKey == "AISModActions")
         {
-            channelActions->setAisModActions(new SWGrpx-100::SWGAISModActions());
+            channelActions->setAisModActions(new SWGRPX100::SWGAISModActions());
             channelActions->getAisModActions()->fromJsonObject(actionsJsonObject);
         }
         else if (channelActionsKey == "APTDemodActions")
         {
-            channelActions->setAptDemodActions(new SWGrpx-100::SWGAPTDemodActions());
+            channelActions->setAptDemodActions(new SWGRPX100::SWGAPTDemodActions());
             channelActions->getAptDemodActions()->fromJsonObject(actionsJsonObject);
         }
         else if (channelActionsKey == "FileSinkActions")
         {
-            channelActions->setFileSinkActions(new SWGrpx-100::SWGFileSinkActions());
+            channelActions->setFileSinkActions(new SWGRPX100::SWGFileSinkActions());
             channelActions->getFileSinkActions()->fromJsonObject(actionsJsonObject);
         }
         else if (channelActionsKey == "FileSourceActions")
         {
-            channelActions->setFileSourceActions(new SWGrpx-100::SWGFileSourceActions());
+            channelActions->setFileSourceActions(new SWGRPX100::SWGFileSourceActions());
             channelActions->getFileSourceActions()->fromJsonObject(actionsJsonObject);
         }
         else if (channelActionsKey == "IEEE_802_15_4_ModActions")
         {
-            channelActions->setIeee802154ModActions(new SWGrpx-100::SWGIEEE_802_15_4_ModActions());
+            channelActions->setIeee802154ModActions(new SWGRPX100::SWGIEEE_802_15_4_ModActions());
             channelActions->getIeee802154ModActions()->fromJsonObject(actionsJsonObject);
         }
         else if (channelActionsKey == "PacketModActions")
         {
-            channelActions->setPacketModActions(new SWGrpx-100::SWGPacketModActions());
+            channelActions->setPacketModActions(new SWGRPX100::SWGPacketModActions());
             channelActions->getPacketModActions()->fromJsonObject(actionsJsonObject);
         }
         else
@@ -4431,7 +4431,7 @@ bool WebAPIRequestMapper::getChannelActions(
 }
 
 bool WebAPIRequestMapper::appendPresetDeviceKeys(
-        SWGrpx-100::SWGDeviceConfig *device,
+        SWGRPX100::SWGDeviceConfig *device,
         const QJsonObject& deviceSettngsJson,
         WebAPIAdapterInterface::DeviceKeys& devicelKeys
 )
@@ -4456,7 +4456,7 @@ bool WebAPIRequestMapper::appendPresetDeviceKeys(
 
         if (deviceSettngsJson.contains("config") && WebAPIUtils::m_deviceIdToSettingsKey.contains(*deviceId))
         {
-            SWGrpx-100::SWGDeviceSettings *deviceSettings = new SWGrpx-100::SWGDeviceSettings();
+            SWGRPX100::SWGDeviceSettings *deviceSettings = new SWGRPX100::SWGDeviceSettings();
             device->setConfig(deviceSettings);
             return getDeviceSettings(WebAPIUtils::m_deviceIdToSettingsKey[*deviceId], deviceSettings, deviceSettngsJson["config"].toObject(), devicelKeys.m_deviceKeys);
         }
@@ -4473,7 +4473,7 @@ bool WebAPIRequestMapper::appendPresetDeviceKeys(
 
 bool WebAPIRequestMapper::getDeviceSettings(
         const QString& deviceSettingsKey,
-        SWGrpx-100::SWGDeviceSettings *deviceSettings,
+        SWGRPX100::SWGDeviceSettings *deviceSettings,
         const QJsonObject& deviceSettingsJson,
         QStringList& deviceSettingsKeys
 )
@@ -4487,42 +4487,42 @@ bool WebAPIRequestMapper::getDeviceSettings(
 
         if (deviceSettingsKey == "airspySettings")
         {
-            deviceSettings->setAirspySettings(new SWGrpx-100::SWGAirspySettings());
+            deviceSettings->setAirspySettings(new SWGRPX100::SWGAirspySettings());
             deviceSettings->getAirspySettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "airspyHFSettings")
         {
-            deviceSettings->setAirspyHfSettings(new SWGrpx-100::SWGAirspyHFSettings());
+            deviceSettings->setAirspyHfSettings(new SWGRPX100::SWGAirspyHFSettings());
             deviceSettings->getAirspyHfSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "audioInputSettings")
         {
-            deviceSettings->setAudioInputSettings(new SWGrpx-100::SWGAudioInputSettings());
+            deviceSettings->setAudioInputSettings(new SWGRPX100::SWGAudioInputSettings());
             deviceSettings->getAudioInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "audioOutputSettings")
         {
-            deviceSettings->setAudioOutputSettings(new SWGrpx-100::SWGAudioOutputSettings());
+            deviceSettings->setAudioOutputSettings(new SWGRPX100::SWGAudioOutputSettings());
             deviceSettings->getAudioOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "bladeRF1InputSettings")
         {
-            deviceSettings->setBladeRf1InputSettings(new SWGrpx-100::SWGBladeRF1InputSettings());
+            deviceSettings->setBladeRf1InputSettings(new SWGRPX100::SWGBladeRF1InputSettings());
             deviceSettings->getBladeRf1InputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "bladeRF1OutputSettings")
         {
-            deviceSettings->setBladeRf1OutputSettings(new SWGrpx-100::SWGBladeRF1OutputSettings());
+            deviceSettings->setBladeRf1OutputSettings(new SWGRPX100::SWGBladeRF1OutputSettings());
             deviceSettings->getBladeRf1OutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "bladeRF2InputSettings")
         {
-            deviceSettings->setBladeRf2InputSettings(new SWGrpx-100::SWGBladeRF2InputSettings());
+            deviceSettings->setBladeRf2InputSettings(new SWGRPX100::SWGBladeRF2InputSettings());
             deviceSettings->getBladeRf2InputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "bladeRF2OutputSettings")
         {
-            deviceSettings->setBladeRf2OutputSettings(new SWGrpx-100::SWGBladeRF2OutputSettings());
+            deviceSettings->setBladeRf2OutputSettings(new SWGRPX100::SWGBladeRF2OutputSettings());
             deviceSettings->getBladeRf2OutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "bladeRF2MIMOSettings")
@@ -4531,52 +4531,52 @@ bool WebAPIRequestMapper::getDeviceSettings(
                 appendSettingsArrayKeys(settingsJsonObject, "streams", deviceSettingsKeys);
             }
 
-            deviceSettings->setBladeRf2MimoSettings(new SWGrpx-100::SWGBladeRF2MIMOSettings());
+            deviceSettings->setBladeRf2MimoSettings(new SWGRPX100::SWGBladeRF2MIMOSettings());
             deviceSettings->getBladeRf2MimoSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "fcdProSettings")
         {
-            deviceSettings->setFcdProSettings(new SWGrpx-100::SWGFCDProSettings());
+            deviceSettings->setFcdProSettings(new SWGRPX100::SWGFCDProSettings());
             deviceSettings->getFcdProSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "fcdProPlusSettings")
         {
-            deviceSettings->setFcdProPlusSettings(new SWGrpx-100::SWGFCDProPlusSettings());
+            deviceSettings->setFcdProPlusSettings(new SWGRPX100::SWGFCDProPlusSettings());
             deviceSettings->getFcdProPlusSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "fileInputSettings")
         {
-            deviceSettings->setFileInputSettings(new SWGrpx-100::SWGFileInputSettings());
+            deviceSettings->setFileInputSettings(new SWGRPX100::SWGFileInputSettings());
             deviceSettings->getFileInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "fileOutputSettings")
         {
-            deviceSettings->setFileOutputSettings(new SWGrpx-100::SWGFileOutputSettings());
+            deviceSettings->setFileOutputSettings(new SWGRPX100::SWGFileOutputSettings());
             deviceSettings->getFileOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "hackRFInputSettings")
         {
-            deviceSettings->setHackRfInputSettings(new SWGrpx-100::SWGHackRFInputSettings());
+            deviceSettings->setHackRfInputSettings(new SWGRPX100::SWGHackRFInputSettings());
             deviceSettings->getHackRfInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "hackRFOutputSettings")
         {
-            deviceSettings->setHackRfOutputSettings(new SWGrpx-100::SWGHackRFOutputSettings());
+            deviceSettings->setHackRfOutputSettings(new SWGRPX100::SWGHackRFOutputSettings());
             deviceSettings->getHackRfOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "kiwiSDRSettings")
         {
-            deviceSettings->setKiwiSdrSettings(new SWGrpx-100::SWGKiwiSDRSettings());
+            deviceSettings->setKiwiSdrSettings(new SWGRPX100::SWGKiwiSDRSettings());
             deviceSettings->getKiwiSdrSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "limeSdrInputSettings")
         {
-            deviceSettings->setLimeSdrInputSettings(new SWGrpx-100::SWGLimeSdrInputSettings());
+            deviceSettings->setLimeSdrInputSettings(new SWGRPX100::SWGLimeSdrInputSettings());
             deviceSettings->getLimeSdrInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "limeSdrOutputSettings")
         {
-            deviceSettings->setLimeSdrOutputSettings(new SWGrpx-100::SWGLimeSdrOutputSettings());
+            deviceSettings->setLimeSdrOutputSettings(new SWGRPX100::SWGLimeSdrOutputSettings());
             deviceSettings->getLimeSdrOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "limeSdrMIMOSettings")
@@ -4585,7 +4585,7 @@ bool WebAPIRequestMapper::getDeviceSettings(
                 appendSettingsArrayKeys(settingsJsonObject, "streams", deviceSettingsKeys);
             }
 
-            deviceSettings->setLimeSdrMimoSettings(new SWGrpx-100::SWGLimeSdrMIMOSettings());
+            deviceSettings->setLimeSdrMimoSettings(new SWGRPX100::SWGLimeSdrMIMOSettings());
             deviceSettings->getLimeSdrMimoSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "metisMISOSettings")
@@ -4594,61 +4594,61 @@ bool WebAPIRequestMapper::getDeviceSettings(
                 appendSettingsArrayKeys(settingsJsonObject, "streams", deviceSettingsKeys);
             }
 
-            deviceSettings->setMetisMisoSettings(new SWGrpx-100::SWGMetisMISOSettings());
+            deviceSettings->setMetisMisoSettings(new SWGRPX100::SWGMetisMISOSettings());
             deviceSettings->getMetisMisoSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "perseusSettings")
         {
-            deviceSettings->setPerseusSettings(new SWGrpx-100::SWGPerseusSettings());
+            deviceSettings->setPerseusSettings(new SWGRPX100::SWGPerseusSettings());
             deviceSettings->getPerseusSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "plutoSdrInputSettings")
         {
-            deviceSettings->setPlutoSdrInputSettings(new SWGrpx-100::SWGPlutoSdrInputSettings());
+            deviceSettings->setPlutoSdrInputSettings(new SWGRPX100::SWGPlutoSdrInputSettings());
             deviceSettings->getPlutoSdrInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "plutoSdrOutputSettings")
         {
-            deviceSettings->setPlutoSdrOutputSettings(new SWGrpx-100::SWGPlutoSdrOutputSettings());
+            deviceSettings->setPlutoSdrOutputSettings(new SWGRPX100::SWGPlutoSdrOutputSettings());
             deviceSettings->getPlutoSdrOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "rtlSdrSettings")
         {
-            deviceSettings->setRtlSdrSettings(new SWGrpx-100::SWGRtlSdrSettings());
+            deviceSettings->setRtlSdrSettings(new SWGRPX100::SWGRtlSdrSettings());
             deviceSettings->getRtlSdrSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "sdrPlaySettings")
         {
-            deviceSettings->setSdrPlaySettings(new SWGrpx-100::SWGSDRPlaySettings());
+            deviceSettings->setSdrPlaySettings(new SWGRPX100::SWGSDRPlaySettings());
             deviceSettings->getSdrPlaySettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "sdrPlayV3Settings")
         {
-            deviceSettings->setSdrPlayV3Settings(new SWGrpx-100::SWGSDRPlayV3Settings());
+            deviceSettings->setSdrPlayV3Settings(new SWGRPX100::SWGSDRPlayV3Settings());
             deviceSettings->getSdrPlayV3Settings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "sigMFFileInputSettings")
         {
-            deviceSettings->setSigMfFileInputSettings(new SWGrpx-100::SWGSigMFFileInputSettings());
+            deviceSettings->setSigMfFileInputSettings(new SWGRPX100::SWGSigMFFileInputSettings());
             deviceSettings->getSigMfFileInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "soapySDRInputSettings")
         {
             processSoapySDRSettings(deviceSettings, settingsJsonObject, deviceSettingsKeys, true);
-            // deviceSettings->setSoapySdrInputSettings(new SWGrpx-100::SWGSoapySDRInputSettings());
+            // deviceSettings->setSoapySdrInputSettings(new SWGRPX100::SWGSoapySDRInputSettings());
             // deviceSettings->getSoapySdrInputSettings()->init(); // contains complex objects
             // deviceSettings->getSoapySdrInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "soapySDROutputSettings")
         {
             processSoapySDRSettings(deviceSettings, settingsJsonObject, deviceSettingsKeys, false);
-            // deviceSettings->setSoapySdrOutputSettings(new SWGrpx-100::SWGSoapySDROutputSettings());
+            // deviceSettings->setSoapySdrOutputSettings(new SWGRPX100::SWGSoapySDROutputSettings());
             // deviceSettings->getSoapySdrOutputSettings()->init(); // contains complex objects
             // deviceSettings->getSoapySdrOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "testSourceSettings")
         {
-            deviceSettings->setTestSourceSettings(new SWGrpx-100::SWGTestSourceSettings());
+            deviceSettings->setTestSourceSettings(new SWGRPX100::SWGTestSourceSettings());
             deviceSettings->getTestSourceSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "testMISettings")
@@ -4657,7 +4657,7 @@ bool WebAPIRequestMapper::getDeviceSettings(
                 appendSettingsArrayKeys(settingsJsonObject, "streams", deviceSettingsKeys);
             }
 
-            deviceSettings->setTestMiSettings(new SWGrpx-100::SWGTestMISettings());
+            deviceSettings->setTestMiSettings(new SWGRPX100::SWGTestMISettings());
             deviceSettings->getTestMiSettings()->init();
             deviceSettings->getTestMiSettings()->fromJsonObject(settingsJsonObject);
         }
@@ -4667,27 +4667,27 @@ bool WebAPIRequestMapper::getDeviceSettings(
                 appendSettingsArrayKeys(settingsJsonObject, "streams", deviceSettingsKeys);
             }
 
-            deviceSettings->setTestMoSyncSettings(new SWGrpx-100::SWGTestMOSyncSettings());
+            deviceSettings->setTestMoSyncSettings(new SWGRPX100::SWGTestMOSyncSettings());
             deviceSettings->getTestMoSyncSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "usrpInputSettings")
         {
-            deviceSettings->setUsrpInputSettings(new SWGrpx-100::SWGUSRPInputSettings());
+            deviceSettings->setUsrpInputSettings(new SWGRPX100::SWGUSRPInputSettings());
             deviceSettings->getUsrpInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "usrpOutputSettings")
         {
-            deviceSettings->setUsrpOutputSettings(new SWGrpx-100::SWGUSRPOutputSettings());
+            deviceSettings->setUsrpOutputSettings(new SWGRPX100::SWGUSRPOutputSettings());
             deviceSettings->getUsrpOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "xtrxInputSettings")
         {
-            deviceSettings->setXtrxInputSettings(new SWGrpx-100::SWGXtrxInputSettings());
+            deviceSettings->setXtrxInputSettings(new SWGRPX100::SWGXtrxInputSettings());
             deviceSettings->getXtrxInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "xtrxOutputSettings")
         {
-            deviceSettings->setXtrxOutputSettings(new SWGrpx-100::SWGXtrxOutputSettings());
+            deviceSettings->setXtrxOutputSettings(new SWGRPX100::SWGXtrxOutputSettings());
             deviceSettings->getXtrxOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "XtrxMIMOSettings")
@@ -4696,27 +4696,27 @@ bool WebAPIRequestMapper::getDeviceSettings(
                 appendSettingsArrayKeys(settingsJsonObject, "streams", deviceSettingsKeys);
             }
 
-            deviceSettings->setXtrxMimoSettings(new SWGrpx-100::SWGXtrxMIMOSettings());
+            deviceSettings->setXtrxMimoSettings(new SWGRPX100::SWGXtrxMIMOSettings());
             deviceSettings->getXtrxMimoSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "remoteInputSettings")
         {
-            deviceSettings->setRemoteInputSettings(new SWGrpx-100::SWGRemoteInputSettings());
+            deviceSettings->setRemoteInputSettings(new SWGRPX100::SWGRemoteInputSettings());
             deviceSettings->getRemoteInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "localInputSettings")
         {
-            deviceSettings->setLocalInputSettings(new SWGrpx-100::SWGLocalInputSettings());
+            deviceSettings->setLocalInputSettings(new SWGRPX100::SWGLocalInputSettings());
             deviceSettings->getLocalInputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "remoteOutputSettings")
         {
-            deviceSettings->setRemoteOutputSettings(new SWGrpx-100::SWGRemoteOutputSettings());
+            deviceSettings->setRemoteOutputSettings(new SWGRPX100::SWGRemoteOutputSettings());
             deviceSettings->getRemoteOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (deviceSettingsKey == "localOutputSettings")
         {
-            deviceSettings->setLocalOutputSettings(new SWGrpx-100::SWGLocalOutputSettings());
+            deviceSettings->setLocalOutputSettings(new SWGRPX100::SWGLocalOutputSettings());
             deviceSettings->getLocalOutputSettings()->fromJsonObject(settingsJsonObject);
         }
         else
@@ -4735,7 +4735,7 @@ bool WebAPIRequestMapper::getDeviceSettings(
 
 bool WebAPIRequestMapper::getDeviceActions(
         const QString& deviceActionsKey,
-        SWGrpx-100::SWGDeviceActions *deviceActions,
+        SWGRPX100::SWGDeviceActions *deviceActions,
         const QJsonObject& deviceActionsJson,
         QStringList& deviceActionsKeys
 )
@@ -4749,7 +4749,7 @@ bool WebAPIRequestMapper::getDeviceActions(
 
         if (deviceActionsKey == "SigMFFileInputActions")
         {
-            deviceActions->setSigMfFileInputActions(new SWGrpx-100::SWGSigMFFileInputActions());
+            deviceActions->setSigMfFileInputActions(new SWGRPX100::SWGSigMFFileInputActions());
             deviceActions->getSigMfFileInputActions()->fromJsonObject(actionsJsonObject);
         }
         else
@@ -4768,7 +4768,7 @@ bool WebAPIRequestMapper::getDeviceActions(
 
 bool WebAPIRequestMapper::getFeatureSettings(
     const QString& featureSettingsKey,
-    SWGrpx-100::SWGFeatureSettings *featureSettings,
+    SWGRPX100::SWGFeatureSettings *featureSettings,
     const QJsonObject& featureSettingsJson,
     QStringList& featureSettingsKeys
 )
@@ -4782,54 +4782,54 @@ bool WebAPIRequestMapper::getFeatureSettings(
 
         if (featureSettingsKey == "AISSSettings")
         {
-            featureSettings->setAisSettings(new SWGrpx-100::SWGAISSettings());
+            featureSettings->setAisSettings(new SWGRPX100::SWGAISSettings());
             featureSettings->getAisSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "AntennaToolsSettings")
         {
-            featureSettings->setAntennaToolsSettings(new SWGrpx-100::SWGAntennaToolsSettings());
+            featureSettings->setAntennaToolsSettings(new SWGRPX100::SWGAntennaToolsSettings());
             featureSettings->getAntennaToolsSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "APRSSettings")
         {
-            featureSettings->setAprsSettings(new SWGrpx-100::SWGAPRSSettings());
+            featureSettings->setAprsSettings(new SWGRPX100::SWGAPRSSettings());
             featureSettings->getAprsSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "GS232ControllerSettings")
         {
-            featureSettings->setGs232ControllerSettings(new SWGrpx-100::SWGGS232ControllerSettings());
+            featureSettings->setGs232ControllerSettings(new SWGRPX100::SWGGS232ControllerSettings());
             featureSettings->getGs232ControllerSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "MapSettings")
         {
-            featureSettings->setMapSettings(new SWGrpx-100::SWGMapSettings());
+            featureSettings->setMapSettings(new SWGRPX100::SWGMapSettings());
             featureSettings->getMapSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "PERTesterSettings")
         {
-            featureSettings->setPerTesterSettings(new SWGrpx-100::SWGPERTesterSettings());
+            featureSettings->setPerTesterSettings(new SWGRPX100::SWGPERTesterSettings());
             featureSettings->getPerTesterSettings()->init();
             featureSettings->getPerTesterSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "SatelliteTrackerSettings")
         {
-            featureSettings->setSatelliteTrackerSettings(new SWGrpx-100::SWGSatelliteTrackerSettings());
+            featureSettings->setSatelliteTrackerSettings(new SWGRPX100::SWGSatelliteTrackerSettings());
             featureSettings->getSatelliteTrackerSettings()->init();
             featureSettings->getSatelliteTrackerSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "SimplePTTSettings")
         {
-            featureSettings->setSimplePttSettings(new SWGrpx-100::SWGSimplePTTSettings());
+            featureSettings->setSimplePttSettings(new SWGRPX100::SWGSimplePTTSettings());
             featureSettings->getSimplePttSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "StarTrackerSettings")
         {
-            featureSettings->setStarTrackerSettings(new SWGrpx-100::SWGStarTrackerSettings());
+            featureSettings->setStarTrackerSettings(new SWGRPX100::SWGStarTrackerSettings());
             featureSettings->getStarTrackerSettings()->fromJsonObject(settingsJsonObject);
         }
         else if (featureSettingsKey == "RigCtlServerSettings")
         {
-            featureSettings->setRigCtlServerSettings(new SWGrpx-100::SWGRigCtlServerSettings());
+            featureSettings->setRigCtlServerSettings(new SWGRPX100::SWGRigCtlServerSettings());
             featureSettings->getRigCtlServerSettings()->fromJsonObject(settingsJsonObject);
         }
         else
@@ -4847,7 +4847,7 @@ bool WebAPIRequestMapper::getFeatureSettings(
 
 bool WebAPIRequestMapper::getFeatureActions(
     const QString& featureActionsKey,
-    SWGrpx-100::SWGFeatureActions *featureActions,
+    SWGRPX100::SWGFeatureActions *featureActions,
     const QJsonObject& featureActionsJson,
     QStringList& featureActionsKeys
 )
@@ -4861,12 +4861,12 @@ bool WebAPIRequestMapper::getFeatureActions(
 
         if (featureActionsKey == "MapActions")
         {
-            featureActions->setMapActions(new SWGrpx-100::SWGMapActions());
+            featureActions->setMapActions(new SWGRPX100::SWGMapActions());
             featureActions->getMapActions()->fromJsonObject(actionsJsonObject);
         }
         else if (featureActionsKey == "SimplePTTActions")
         {
-            featureActions->setSimplePttActions(new SWGrpx-100::SWGSimplePTTActions());
+            featureActions->setSimplePttActions(new SWGRPX100::SWGSimplePTTActions());
             featureActions->getSimplePttActions()->fromJsonObject(actionsJsonObject);
         }
         else
@@ -4920,12 +4920,12 @@ void WebAPIRequestMapper::appendSettingsArrayKeys(
     }
 }
 
-void WebAPIRequestMapper::resetSpectrumSettings(SWGrpx-100::SWGGLSpectrum& spectrumSettings)
+void WebAPIRequestMapper::resetSpectrumSettings(SWGRPX100::SWGGLSpectrum& spectrumSettings)
 {
     spectrumSettings.cleanup();
 }
 
-void WebAPIRequestMapper::resetDeviceSettings(SWGrpx-100::SWGDeviceSettings& deviceSettings)
+void WebAPIRequestMapper::resetDeviceSettings(SWGRPX100::SWGDeviceSettings& deviceSettings)
 {
     deviceSettings.cleanup();
     deviceSettings.setDeviceHwType(nullptr);
@@ -4955,7 +4955,7 @@ void WebAPIRequestMapper::resetDeviceSettings(SWGrpx-100::SWGDeviceSettings& dev
     deviceSettings.setUsrpOutputSettings(nullptr);
 }
 
-void WebAPIRequestMapper::resetDeviceReport(SWGrpx-100::SWGDeviceReport& deviceReport)
+void WebAPIRequestMapper::resetDeviceReport(SWGRPX100::SWGDeviceReport& deviceReport)
 {
     deviceReport.cleanup();
     deviceReport.setDeviceHwType(nullptr);
@@ -4975,14 +4975,14 @@ void WebAPIRequestMapper::resetDeviceReport(SWGrpx-100::SWGDeviceReport& deviceR
     deviceReport.setUsrpOutputReport(nullptr);
 }
 
-void WebAPIRequestMapper::resetDeviceActions(SWGrpx-100::SWGDeviceActions& deviceActions)
+void WebAPIRequestMapper::resetDeviceActions(SWGRPX100::SWGDeviceActions& deviceActions)
 {
     deviceActions.cleanup();
     deviceActions.setDeviceHwType(nullptr);
     // deviceActions.setXtrxInputActions(nullptr);
 }
 
-void WebAPIRequestMapper::resetChannelSettings(SWGrpx-100::SWGChannelSettings& channelSettings)
+void WebAPIRequestMapper::resetChannelSettings(SWGRPX100::SWGChannelSettings& channelSettings)
 {
     channelSettings.cleanup();
     channelSettings.setChannelType(nullptr);
@@ -5015,7 +5015,7 @@ void WebAPIRequestMapper::resetChannelSettings(SWGrpx-100::SWGChannelSettings& c
     channelSettings.setWfmModSettings(nullptr);
 }
 
-void WebAPIRequestMapper::resetChannelReport(SWGrpx-100::SWGChannelReport& channelReport)
+void WebAPIRequestMapper::resetChannelReport(SWGRPX100::SWGChannelReport& channelReport)
 {
     channelReport.cleanup();
     channelReport.setChannelType(nullptr);
@@ -5043,7 +5043,7 @@ void WebAPIRequestMapper::resetChannelReport(SWGrpx-100::SWGChannelReport& chann
     channelReport.setWfmModReport(nullptr);
 }
 
-void WebAPIRequestMapper::resetChannelActions(SWGrpx-100::SWGChannelActions& channelActions)
+void WebAPIRequestMapper::resetChannelActions(SWGRPX100::SWGChannelActions& channelActions)
 {
     channelActions.cleanup();
     channelActions.setAisModActions(nullptr);
@@ -5054,20 +5054,20 @@ void WebAPIRequestMapper::resetChannelActions(SWGrpx-100::SWGChannelActions& cha
     channelActions.setPacketModActions(nullptr);
 }
 
-void WebAPIRequestMapper::resetAudioInputDevice(SWGrpx-100::SWGAudioInputDevice& audioInputDevice)
+void WebAPIRequestMapper::resetAudioInputDevice(SWGRPX100::SWGAudioInputDevice& audioInputDevice)
 {
     audioInputDevice.cleanup();
     audioInputDevice.setName(nullptr);
 }
 
-void WebAPIRequestMapper::resetAudioOutputDevice(SWGrpx-100::SWGAudioOutputDevice& audioOutputDevice)
+void WebAPIRequestMapper::resetAudioOutputDevice(SWGRPX100::SWGAudioOutputDevice& audioOutputDevice)
 {
     audioOutputDevice.cleanup();
     audioOutputDevice.setName(nullptr);
     audioOutputDevice.setUdpAddress(nullptr);
 }
 
-void WebAPIRequestMapper::resetFeatureSettings(SWGrpx-100::SWGFeatureSettings& featureSettings)
+void WebAPIRequestMapper::resetFeatureSettings(SWGRPX100::SWGFeatureSettings& featureSettings)
 {
     featureSettings.cleanup();
     featureSettings.setFeatureType(nullptr);
@@ -5082,14 +5082,14 @@ void WebAPIRequestMapper::resetFeatureSettings(SWGrpx-100::SWGFeatureSettings& f
     featureSettings.setRigCtlServerSettings(nullptr);
 }
 
-void WebAPIRequestMapper::resetFeatureReport(SWGrpx-100::SWGFeatureReport& featureReport)
+void WebAPIRequestMapper::resetFeatureReport(SWGRPX100::SWGFeatureReport& featureReport)
 {
     featureReport.cleanup();
     featureReport.setFeatureType(nullptr);
     featureReport.setSimplePttReport(nullptr);
 }
 
-void WebAPIRequestMapper::resetFeatureActions(SWGrpx-100::SWGFeatureActions& featureActions)
+void WebAPIRequestMapper::resetFeatureActions(SWGRPX100::SWGFeatureActions& featureActions)
 {
     featureActions.cleanup();
     featureActions.setFeatureType(nullptr);
@@ -5098,12 +5098,12 @@ void WebAPIRequestMapper::resetFeatureActions(SWGrpx-100::SWGFeatureActions& fea
 }
 
 void WebAPIRequestMapper::processChannelAnalyzerSettings(
-        SWGrpx-100::SWGChannelSettings *channelSettings,
+        SWGRPX100::SWGChannelSettings *channelSettings,
         const QJsonObject& channelSettingsJson,
         QStringList& channelSettingsKeys
 )
 {
-    SWGrpx-100::SWGChannelAnalyzerSettings *channelAnalyzerSettings = new SWGrpx-100::SWGChannelAnalyzerSettings();
+    SWGRPX100::SWGChannelAnalyzerSettings *channelAnalyzerSettings = new SWGRPX100::SWGChannelAnalyzerSettings();
     channelSettings->setChannelAnalyzerSettings(channelAnalyzerSettings);
     channelAnalyzerSettings->init();
 
@@ -5155,7 +5155,7 @@ void WebAPIRequestMapper::processChannelAnalyzerSettings(
 
     if (channelSettingsJson.contains("spectrumConfig"))
     {
-        SWGrpx-100::SWGGLSpectrum *spectrum = new SWGrpx-100::SWGGLSpectrum();
+        SWGRPX100::SWGGLSpectrum *spectrum = new SWGRPX100::SWGGLSpectrum();
         spectrum->init();
         channelAnalyzerSettings->setSpectrumConfig(spectrum);
         QJsonObject spectrumJson;
@@ -5165,7 +5165,7 @@ void WebAPIRequestMapper::processChannelAnalyzerSettings(
 
     if (channelSettingsJson.contains("scopeConfig") && channelSettingsJson["scopeConfig"].isObject())
     {
-        SWGrpx-100::SWGGLScope *scopeConfig = new SWGrpx-100::SWGGLScope();
+        SWGRPX100::SWGGLScope *scopeConfig = new SWGRPX100::SWGGLScope();
         scopeConfig->init();
         channelAnalyzerSettings->setScopeConfig(scopeConfig);
         QJsonObject scopeConfigJson;
@@ -5174,13 +5174,13 @@ void WebAPIRequestMapper::processChannelAnalyzerSettings(
 
         if (scopeConfigJson.contains("tracesData") && scopeConfigJson["tracesData"].isArray())
         {
-            QList<SWGrpx-100::SWGTraceData *> *tracesData = new QList<SWGrpx-100::SWGTraceData *>();
+            QList<SWGRPX100::SWGTraceData *> *tracesData = new QList<SWGRPX100::SWGTraceData *>();
             scopeConfig->setTracesData(tracesData);
             QJsonArray tracesJson = scopeConfigJson["tracesData"].toArray();
 
             for (int i = 0; i < tracesJson.size(); i++)
             {
-                SWGrpx-100::SWGTraceData *traceData = new SWGrpx-100::SWGTraceData();
+                SWGRPX100::SWGTraceData *traceData = new SWGRPX100::SWGTraceData();
                 tracesData->append(traceData);
                 QJsonObject traceJson = tracesJson.at(i).toObject();
                 traceData->fromJsonObject(traceJson);
@@ -5196,13 +5196,13 @@ void WebAPIRequestMapper::processChannelAnalyzerSettings(
 
         if (scopeConfigJson.contains("triggersData") && scopeConfigJson["triggersData"].isArray())
         {
-            QList<SWGrpx-100::SWGTriggerData *> *triggersData = new QList<SWGrpx-100::SWGTriggerData *>();
+            QList<SWGRPX100::SWGTriggerData *> *triggersData = new QList<SWGRPX100::SWGTriggerData *>();
             scopeConfig->setTriggersData(triggersData);
             QJsonArray triggersJson = scopeConfigJson["triggersData"].toArray();
 
             for (int i = 0; i < triggersJson.size(); i++)
             {
-                SWGrpx-100::SWGTriggerData *triggerData = new SWGrpx-100::SWGTriggerData();
+                SWGRPX100::SWGTriggerData *triggerData = new SWGRPX100::SWGTriggerData();
                 triggersData->append(triggerData);
                 QJsonObject triggerJson = triggersJson.at(i).toObject();
                 triggerData->fromJsonObject(triggerJson);
@@ -5219,7 +5219,7 @@ void WebAPIRequestMapper::processChannelAnalyzerSettings(
 }
 
 void WebAPIRequestMapper::processSoapySDRSettings(
-        SWGrpx-100::SWGDeviceSettings *deviceSettings,
+        SWGRPX100::SWGDeviceSettings *deviceSettings,
         QJsonObject& deviceSettingsJson,
         QStringList& deviceSettingsKeys,
         bool inputElseOutput
@@ -5227,7 +5227,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 {
     if (inputElseOutput)
     {
-        SWGrpx-100::SWGSoapySDRInputSettings *swgSoapySDRInputSettings = new SWGrpx-100::SWGSoapySDRInputSettings();
+        SWGRPX100::SWGSoapySDRInputSettings *swgSoapySDRInputSettings = new SWGRPX100::SWGSoapySDRInputSettings();
         deviceSettings->setSoapySdrInputSettings(swgSoapySDRInputSettings);
         swgSoapySDRInputSettings->init();
 
@@ -5278,7 +5278,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
         }
         if (deviceSettingsJson.contains("dcCorrection"))
         {
-            SWGrpx-100::SWGComplex *swgComplex = new SWGrpx-100::SWGComplex;
+            SWGRPX100::SWGComplex *swgComplex = new SWGRPX100::SWGComplex;
             swgSoapySDRInputSettings->setDcCorrection(swgComplex);
             QJsonObject complexJson = deviceSettingsJson["dcCorrection"].toObject();
 
@@ -5291,7 +5291,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
         }
         if (deviceSettingsJson.contains("iqCorrection"))
         {
-            SWGrpx-100::SWGComplex *swgComplex = new SWGrpx-100::SWGComplex;
+            SWGRPX100::SWGComplex *swgComplex = new SWGRPX100::SWGComplex;
             swgSoapySDRInputSettings->setIqCorrection(swgComplex);
             QJsonObject complexJson = deviceSettingsJson["iqCorrection"].toObject();
 
@@ -5317,7 +5317,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
     }
     else
     {
-        SWGrpx-100::SWGSoapySDROutputSettings *swgSoapySDROutputSettings = new SWGrpx-100::SWGSoapySDROutputSettings();
+        SWGRPX100::SWGSoapySDROutputSettings *swgSoapySDROutputSettings = new SWGRPX100::SWGSoapySDROutputSettings();
         deviceSettings->setSoapySdrOutputSettings(swgSoapySDROutputSettings);
         swgSoapySDROutputSettings->init();
 
@@ -5359,7 +5359,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
         }
         if (deviceSettingsJson.contains("dcCorrection"))
         {
-            SWGrpx-100::SWGComplex *swgComplex = new SWGrpx-100::SWGComplex;
+            SWGRPX100::SWGComplex *swgComplex = new SWGRPX100::SWGComplex;
             swgSoapySDROutputSettings->setDcCorrection(swgComplex);
             QJsonObject complexJson = deviceSettingsJson["dcCorrection"].toObject();
 
@@ -5372,7 +5372,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
         }
         if (deviceSettingsJson.contains("iqCorrection"))
         {
-            SWGrpx-100::SWGComplex *swgComplex = new SWGrpx-100::SWGComplex;
+            SWGRPX100::SWGComplex *swgComplex = new SWGRPX100::SWGComplex;
             swgSoapySDROutputSettings->setIqCorrection(swgComplex);
             QJsonObject complexJson = deviceSettingsJson["iqCorrection"].toObject();
 
@@ -5399,7 +5399,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
     if (deviceSettingsKeys.contains("deviceArgSettings"))
     {
-        QList<SWGrpx-100::SWGArgValue *> *swgArgSettings = new QList<SWGrpx-100::SWGArgValue *>;
+        QList<SWGRPX100::SWGArgValue *> *swgArgSettings = new QList<SWGRPX100::SWGArgValue *>;
         QJsonArray argsJson = deviceSettingsJson["deviceArgSettings"].toArray();
 
         if (inputElseOutput) {
@@ -5410,7 +5410,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
         for (int i = 0; i < argsJson.count(); i++)
         {
-            SWGrpx-100::SWGArgValue *argValue = new SWGrpx-100::SWGArgValue();
+            SWGRPX100::SWGArgValue *argValue = new SWGRPX100::SWGArgValue();
             swgArgSettings->append(argValue);
             QJsonObject argValueJson = argsJson.at(i).toObject();
             argValue->fromJsonObject(argValueJson);
@@ -5421,7 +5421,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
     if (deviceSettingsKeys.contains("individualGains"))
     {
-        QList<SWGrpx-100::SWGArgValue *> *swgIndividualGains = new QList<SWGrpx-100::SWGArgValue *>;
+        QList<SWGRPX100::SWGArgValue *> *swgIndividualGains = new QList<SWGRPX100::SWGArgValue *>;
         QJsonArray argsJson = deviceSettingsJson["individualGains"].toArray();
 
         if (inputElseOutput) {
@@ -5432,7 +5432,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
         for (int i = 0; i < argsJson.count(); i++)
         {
-            SWGrpx-100::SWGArgValue *argValue = new SWGrpx-100::SWGArgValue();
+            SWGRPX100::SWGArgValue *argValue = new SWGRPX100::SWGArgValue();
             swgIndividualGains->append(argValue);
             QJsonObject argValueJson = argsJson.at(i).toObject();
             argValue->fromJsonObject(argValueJson);
@@ -5443,7 +5443,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
     if (deviceSettingsKeys.contains("streamArgSettings"))
     {
-        QList<SWGrpx-100::SWGArgValue *> *swgStreamArgSettings = new QList<SWGrpx-100::SWGArgValue *>;
+        QList<SWGRPX100::SWGArgValue *> *swgStreamArgSettings = new QList<SWGRPX100::SWGArgValue *>;
         QJsonArray argsJson = deviceSettingsJson["streamArgSettings"].toArray();
 
         if (inputElseOutput) {
@@ -5454,7 +5454,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
         for (int i = 0; i < argsJson.count(); i++)
         {
-            SWGrpx-100::SWGArgValue *argValue = new SWGrpx-100::SWGArgValue();
+            SWGRPX100::SWGArgValue *argValue = new SWGRPX100::SWGArgValue();
             swgStreamArgSettings->append(argValue);
             QJsonObject argValueJson = argsJson.at(i).toObject();
             argValue->fromJsonObject(argValueJson);
@@ -5465,7 +5465,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
     if (deviceSettingsKeys.contains("tunableElements"))
     {
-        QList<SWGrpx-100::SWGArgValue *> *swgTunableElements = new QList<SWGrpx-100::SWGArgValue *>;
+        QList<SWGRPX100::SWGArgValue *> *swgTunableElements = new QList<SWGRPX100::SWGArgValue *>;
         QJsonArray argsJson = deviceSettingsJson["tunableElements"].toArray();
 
         if (inputElseOutput) {
@@ -5476,7 +5476,7 @@ void WebAPIRequestMapper::processSoapySDRSettings(
 
         for (int i = 0; i < argsJson.count(); i++)
         {
-            SWGrpx-100::SWGArgValue *argValue = new SWGrpx-100::SWGArgValue();
+            SWGRPX100::SWGArgValue *argValue = new SWGRPX100::SWGArgValue();
             swgTunableElements->append(argValue);
             QJsonObject argValueJson = argsJson.at(i).toObject();
             argValue->fromJsonObject(argValueJson);

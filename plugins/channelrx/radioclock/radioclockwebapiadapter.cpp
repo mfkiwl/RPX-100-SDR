@@ -27,11 +27,11 @@ RadioClockWebAPIAdapter::~RadioClockWebAPIAdapter()
 {}
 
 int RadioClockWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRadioClockSettings(new SWGrpx-100::SWGRadioClockSettings());
+    response.setRadioClockSettings(new SWGRPX100::SWGRadioClockSettings());
     response.getRadioClockSettings()->init();
     RadioClock::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int RadioClockWebAPIAdapter::webapiSettingsGet(
 int RadioClockWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

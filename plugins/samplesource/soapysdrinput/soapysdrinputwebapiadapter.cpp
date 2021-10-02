@@ -29,11 +29,11 @@ SoapySDRInputWebAPIAdapter::~SoapySDRInputWebAPIAdapter()
 {}
 
 int SoapySDRInputWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSoapySdrInputSettings(new SWGrpx-100::SWGSoapySDRInputSettings());
+    response.setSoapySdrInputSettings(new SWGRPX100::SWGSoapySDRInputSettings());
     response.getSoapySdrInputSettings()->init();
     SoapySDRInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int SoapySDRInputWebAPIAdapter::webapiSettingsGet(
 int SoapySDRInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

@@ -33,7 +33,7 @@ class WebAPIAdapterInterface;
 class QNetworkAccessManager;
 class QNetworkReply;
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
     class SWGDeviceState;
 }
 
@@ -75,23 +75,23 @@ public:
     virtual bool deserialize(const QByteArray& data);
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGFeatureSettings& response,
+            SWGRPX100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGrpx-100::SWGFeatureSettings& response,
+            SWGRPX100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     static void webapiFormatFeatureSettings(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         const AntennaToolsSettings& settings);
 
     static void webapiUpdateFeatureSettings(
             AntennaToolsSettings& settings,
             const QStringList& featureSettingsKeys,
-            SWGrpx-100::SWGFeatureSettings& response);
+            SWGRPX100::SWGFeatureSettings& response);
 
     static const char* const m_featureIdURI;
     static const char* const m_featureId;

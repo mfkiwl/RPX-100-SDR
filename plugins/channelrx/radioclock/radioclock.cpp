@@ -254,11 +254,11 @@ bool RadioClock::deserialize(const QByteArray& data)
 }
 
 int RadioClock::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRadioClockSettings(new SWGrpx-100::SWGRadioClockSettings());
+    response.setRadioClockSettings(new SWGRPX100::SWGRadioClockSettings());
     response.getRadioClockSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -267,7 +267,7 @@ int RadioClock::webapiSettingsGet(
 int RadioClock::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -292,7 +292,7 @@ int RadioClock::webapiSettingsPutPatch(
 void RadioClock::webapiUpdateChannelSettings(
         RadioClockSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getRadioClockSettings()->getInputFrequencyOffset();
@@ -335,7 +335,7 @@ void RadioClock::webapiUpdateChannelSettings(
     }
 }
 
-void RadioClock::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const RadioClockSettings& settings)
+void RadioClock::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const RadioClockSettings& settings)
 {
     response.getRadioClockSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getRadioClockSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -364,7 +364,7 @@ void RadioClock::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& res
     response.getRadioClockSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void RadioClock::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void RadioClock::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -378,7 +378,7 @@ void RadioClock::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& respons
 
 void RadioClock::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const RadioClockSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -402,11 +402,11 @@ void RadioClock::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, 
 }
 
 int RadioClock::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRadioClockReport(new SWGrpx-100::SWGRadioClockReport());
+    response.setRadioClockReport(new SWGRPX100::SWGRadioClockReport());
     response.getRadioClockReport()->init();
     webapiFormatChannelReport(response);
     return 200;
@@ -414,7 +414,7 @@ int RadioClock::webapiReportGet(
 
 void RadioClock::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const RadioClockSettings& settings,
         bool force
 )
@@ -423,8 +423,8 @@ void RadioClock::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("RadioClock"));
-    swgChannelSettings->setRadioClockSettings(new SWGrpx-100::SWGRadioClockSettings());
-    SWGrpx-100::SWGRadioClockSettings *swgRadioClockSettings = swgChannelSettings->getRadioClockSettings();
+    swgChannelSettings->setRadioClockSettings(new SWGRPX100::SWGRadioClockSettings());
+    SWGRPX100::SWGRadioClockSettings *swgRadioClockSettings = swgChannelSettings->getRadioClockSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

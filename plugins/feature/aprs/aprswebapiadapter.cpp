@@ -27,11 +27,11 @@ APRSWebAPIAdapter::~APRSWebAPIAdapter()
 {}
 
 int APRSWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAprsSettings(new SWGrpx-100::SWGAPRSSettings());
+    response.setAprsSettings(new SWGRPX100::SWGAPRSSettings());
     response.getAprsSettings()->init();
     APRS::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int APRSWebAPIAdapter::webapiSettingsGet(
 int APRSWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGrpx-100::SWGFeatureSettings& response,
+        SWGRPX100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

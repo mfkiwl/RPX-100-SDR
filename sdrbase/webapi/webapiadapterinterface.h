@@ -28,7 +28,7 @@
 
 #include "export.h"
 
-namespace SWGrpx-100
+namespace SWGRPX100
 {
     class SWGInstanceSummaryResponse;
     class SWGInstanceConfigResponse;
@@ -128,8 +128,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceSummary(
-            SWGrpx-100::SWGInstanceSummaryResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGInstanceSummaryResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -142,8 +142,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDelete(
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -156,8 +156,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceConfigGet(
-            SWGrpx-100::SWGInstanceConfigResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGInstanceConfigResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -171,10 +171,10 @@ public:
      */
     virtual int instanceConfigPutPatch(
         bool force, // PUT else PATCH
-        SWGrpx-100::SWGInstanceConfigResponse& query,
+        SWGRPX100::SWGInstanceConfigResponse& query,
         const ConfigKeys& configKeys,
-        SWGrpx-100::SWGSuccessResponse& response,
-        SWGrpx-100::SWGErrorResponse& error
+        SWGRPX100::SWGSuccessResponse& response,
+        SWGRPX100::SWGErrorResponse& error
     )
     {
         (void) force;
@@ -192,8 +192,8 @@ public:
      */
     virtual int instanceDevices(
             int direction,
-            SWGrpx-100::SWGInstanceDevicesResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGInstanceDevicesResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) direction;
         (void) response;
@@ -208,8 +208,8 @@ public:
      */
     virtual int instanceChannels(
             int direction,
-            SWGrpx-100::SWGInstanceChannelsResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGInstanceChannelsResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) direction;
         (void) response;
@@ -223,8 +223,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatures(
-            SWGrpx-100::SWGInstanceFeaturesResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGInstanceFeaturesResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -237,8 +237,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLoggingGet(
-            SWGrpx-100::SWGLoggingInfo& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLoggingInfo& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -251,9 +251,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLoggingPut(
-            SWGrpx-100::SWGLoggingInfo& query,
-            SWGrpx-100::SWGLoggingInfo& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLoggingInfo& query,
+            SWGRPX100::SWGLoggingInfo& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -267,8 +267,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioGet(
-            SWGrpx-100::SWGAudioDevices& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGAudioDevices& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -281,9 +281,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputPatch(
-            SWGrpx-100::SWGAudioInputDevice& response,
+            SWGRPX100::SWGAudioInputDevice& response,
             const QStringList& audioInputKeys,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         (void) audioInputKeys;
@@ -297,9 +297,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputPatch(
-            SWGrpx-100::SWGAudioOutputDevice& response,
+            SWGRPX100::SWGAudioOutputDevice& response,
             const QStringList& audioOutputKeys,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         (void) audioOutputKeys;
@@ -313,8 +313,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputDelete(
-            SWGrpx-100::SWGAudioInputDevice& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGAudioInputDevice& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -327,8 +327,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputDelete(
-            SWGrpx-100::SWGAudioOutputDevice& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGAudioOutputDevice& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -341,8 +341,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputCleanupPatch(
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -355,8 +355,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputCleanupPatch(
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -369,8 +369,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLocationGet(
-            SWGrpx-100::SWGLocationInformation& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLocationInformation& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -383,8 +383,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLocationPut(
-            SWGrpx-100::SWGLocationInformation& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLocationInformation& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -397,8 +397,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBESerialGet(
-            SWGrpx-100::SWGDVSerialDevices& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDVSerialDevices& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -411,8 +411,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesGet(
-            SWGrpx-100::SWGAMBEDevices& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGAMBEDevices& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -425,9 +425,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesPut(
-            SWGrpx-100::SWGAMBEDevices& query,
-            SWGrpx-100::SWGAMBEDevices& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGAMBEDevices& query,
+            SWGRPX100::SWGAMBEDevices& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -441,9 +441,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesPatch(
-            SWGrpx-100::SWGAMBEDevices& query,
-            SWGrpx-100::SWGAMBEDevices& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGAMBEDevices& query,
+            SWGRPX100::SWGAMBEDevices& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -457,8 +457,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesDelete(
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -471,8 +471,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFESerialGet(
-            SWGrpx-100::SWGLimeRFEDevices& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLimeRFEDevices& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -486,8 +486,8 @@ public:
      */
     virtual int instanceLimeRFEConfigGet(
             const QString& serial,
-            SWGrpx-100::SWGLimeRFESettings& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLimeRFESettings& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) serial;
         (void) response;
@@ -501,9 +501,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFEConfigPut(
-            SWGrpx-100::SWGLimeRFESettings& query,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLimeRFESettings& query,
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -517,9 +517,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFERunPut(
-            SWGrpx-100::SWGLimeRFESettings& query,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLimeRFESettings& query,
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -534,8 +534,8 @@ public:
      */
     virtual int instanceLimeRFEPowerGet(
             const QString& serial,
-            SWGrpx-100::SWGLimeRFEPower& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGLimeRFEPower& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) serial;
         (void) response;
@@ -549,8 +549,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetsGet(
-            SWGrpx-100::SWGPresets& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGPresets& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -563,9 +563,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPatch(
-            SWGrpx-100::SWGPresetTransfer& query,
-            SWGrpx-100::SWGPresetIdentifier& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGPresetTransfer& query,
+            SWGRPX100::SWGPresetIdentifier& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -579,9 +579,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPut(
-            SWGrpx-100::SWGPresetTransfer& query,
-            SWGrpx-100::SWGPresetIdentifier& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGPresetTransfer& query,
+            SWGRPX100::SWGPresetIdentifier& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -595,9 +595,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPost(
-            SWGrpx-100::SWGPresetTransfer& query,
-            SWGrpx-100::SWGPresetIdentifier& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGPresetTransfer& query,
+            SWGRPX100::SWGPresetIdentifier& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -611,8 +611,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetDelete(
-            SWGrpx-100::SWGPresetIdentifier& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGPresetIdentifier& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -625,9 +625,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetFilePut(
-            SWGrpx-100::SWGPresetImport& query,
-            SWGrpx-100::SWGPresetIdentifier& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGPresetImport& query,
+            SWGRPX100::SWGPresetIdentifier& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -641,9 +641,9 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetFilePost(
-            SWGrpx-100::SWGPresetExport& query,
-            SWGrpx-100::SWGPresetIdentifier& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGPresetExport& query,
+            SWGRPX100::SWGPresetIdentifier& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -657,8 +657,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeaturePresetsGet(
-            SWGrpx-100::SWGFeaturePresets& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeaturePresets& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -671,8 +671,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeaturePresetDelete(
-            SWGrpx-100::SWGFeaturePresetIdentifier& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeaturePresetIdentifier& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -685,8 +685,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetsGet(
-            SWGrpx-100::SWGDeviceSetList& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceSetList& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -700,8 +700,8 @@ public:
      */
     virtual int instanceDeviceSetPost(
             int direction,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) direction;
         (void) response;
@@ -715,8 +715,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetDelete(
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -729,8 +729,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetsGet(
-            SWGrpx-100::SWGFeatureSetList& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeatureSetList& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -743,8 +743,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetPost(
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -757,8 +757,8 @@ public:
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetDelete(
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -772,8 +772,8 @@ public:
      */
     virtual int devicesetGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGDeviceSet& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceSet& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -788,8 +788,8 @@ public:
      */
     virtual int devicesetFocusPatch(
             int deviceSetIndex,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -804,8 +804,8 @@ public:
      */
     virtual int devicesetSpectrumSettingsGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGGLSpectrum& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGGLSpectrum& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -822,8 +822,8 @@ public:
             int deviceSetIndex,
             bool force, //!< true to force settings = put else patch
             const QStringList& spectrumSettingsKeys,
-            SWGrpx-100::SWGGLSpectrum& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGGLSpectrum& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) force;
@@ -840,8 +840,8 @@ public:
      */
     virtual int devicesetSpectrumServerGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGSpectrumServer& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSpectrumServer& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -856,8 +856,8 @@ public:
      */
     virtual int devicesetSpectrumServerPost(
             int deviceSetIndex,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -872,8 +872,8 @@ public:
      */
     virtual int devicesetSpectrumServerDelete(
             int deviceSetIndex,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -888,9 +888,9 @@ public:
      */
     virtual int devicesetDevicePut(
             int deviceSetIndex,
-            SWGrpx-100::SWGDeviceListItem& query,
-            SWGrpx-100::SWGDeviceListItem& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceListItem& query,
+            SWGRPX100::SWGDeviceListItem& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) query;
@@ -906,8 +906,8 @@ public:
      */
     virtual int devicesetDeviceSettingsGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGDeviceSettings& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceSettings& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -924,8 +924,8 @@ public:
             int deviceSetIndex,
             bool force, //!< true to force settings = put else patch
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceSettings& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) force;
@@ -942,8 +942,8 @@ public:
      */
     virtual int devicesetDeviceRunGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -959,8 +959,8 @@ public:
     virtual int devicesetDeviceSubsystemRunGet(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) subsystemIndex;
@@ -976,8 +976,8 @@ public:
      */
     virtual int devicesetDeviceRunPost(
             int deviceSetIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -993,8 +993,8 @@ public:
     virtual int devicesetDeviceSubsystemRunPost(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) subsystemIndex;
@@ -1010,8 +1010,8 @@ public:
      */
     virtual int devicesetDeviceRunDelete(
             int deviceSetIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1027,8 +1027,8 @@ public:
     virtual int devicesetDeviceSubsystemRunDelete(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) subsystemIndex;
@@ -1044,8 +1044,8 @@ public:
      */
     virtual int devicesetDeviceReportGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGDeviceReport& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceReport& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1060,8 +1060,8 @@ public:
      */
     virtual int devicesetChannelsReportGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGChannelsDetail& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGChannelsDetail& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1077,9 +1077,9 @@ public:
     virtual int devicesetDeviceActionsPost(
             int deviceSetIndex,
             const QStringList& deviceActionsKeys,
-            SWGrpx-100::SWGDeviceActions& query,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error
+            SWGRPX100::SWGDeviceActions& query,
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error
     )
     {
         (void) deviceSetIndex;
@@ -1097,9 +1097,9 @@ public:
      */
     virtual int devicesetChannelPost(
             int deviceSetIndex,
-            SWGrpx-100::SWGChannelSettings& query,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGChannelSettings& query,
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) query;
@@ -1116,8 +1116,8 @@ public:
     virtual int devicesetChannelDelete(
             int deviceSetIndex,
             int channelIndex,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1135,8 +1135,8 @@ public:
     virtual int devicesetChannelSettingsGet(
             int deviceSetIndex,
             int channelIndex,
-            SWGrpx-100::SWGChannelSettings& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGChannelSettings& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1155,8 +1155,8 @@ public:
             int channelIndex,
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGChannelSettings& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1176,8 +1176,8 @@ public:
     virtual int devicesetChannelReportGet(
             int deviceSetIndex,
             int channelIndex,
-            SWGrpx-100::SWGChannelReport& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGChannelReport& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1195,9 +1195,9 @@ public:
             int deviceSetIndex,
             int channelIndex,
             const QStringList& channelActionsKeys,
-            SWGrpx-100::SWGChannelActions& query,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGChannelActions& query,
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1215,8 +1215,8 @@ public:
      */
     virtual int featuresetGet(
             int deviceSetIndex,
-            SWGrpx-100::SWGFeatureSet& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeatureSet& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1231,9 +1231,9 @@ public:
      */
     virtual int featuresetFeaturePost(
             int featureSetIndex,
-            SWGrpx-100::SWGFeatureSettings& query,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeatureSettings& query,
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1250,8 +1250,8 @@ public:
     virtual int featuresetFeatureDelete(
             int featureSetIndex,
             int featureIndex,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1269,8 +1269,8 @@ public:
     virtual int featuresetFeatureRunGet(
             int featureSetIndex,
             int featureIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1288,8 +1288,8 @@ public:
     virtual int featuresetFeatureRunPost(
             int featureSetIndex,
             int featureIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1307,8 +1307,8 @@ public:
     virtual int featuresetFeatureRunDelete(
             int featureSetIndex,
             int featureIndex,
-            SWGrpx-100::SWGDeviceState& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGDeviceState& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1325,8 +1325,8 @@ public:
      */
     virtual int featuresetPresetPatch(
             int featureSetIndex,
-            SWGrpx-100::SWGFeaturePresetIdentifier& query,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeaturePresetIdentifier& query,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1341,8 +1341,8 @@ public:
      */
     virtual int featuresetPresetPut(
             int featureSetIndex,
-            SWGrpx-100::SWGFeaturePresetIdentifier& query,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeaturePresetIdentifier& query,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1357,8 +1357,8 @@ public:
      */
     virtual int featuresetPresetPost(
             int featureSetIndex,
-            SWGrpx-100::SWGFeaturePresetIdentifier& query,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeaturePresetIdentifier& query,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1374,8 +1374,8 @@ public:
     virtual int featuresetFeatureSettingsGet(
             int featureSetIndex,
             int featureIndex,
-            SWGrpx-100::SWGFeatureSettings& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeatureSettings& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1394,8 +1394,8 @@ public:
             int featureIndex,
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGrpx-100::SWGFeatureSettings& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeatureSettings& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1414,8 +1414,8 @@ public:
     virtual int featuresetFeatureReportGet(
             int featureSetIndex,
             int featureIndex,
-            SWGrpx-100::SWGFeatureReport& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeatureReport& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1433,9 +1433,9 @@ public:
             int featureSetIndex,
             int featureIndex,
             const QStringList& featureActionsKeys,
-            SWGrpx-100::SWGFeatureActions& query,
-            SWGrpx-100::SWGSuccessResponse& response,
-            SWGrpx-100::SWGErrorResponse& error)
+            SWGRPX100::SWGFeatureActions& query,
+            SWGRPX100::SWGSuccessResponse& response,
+            SWGRPX100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;

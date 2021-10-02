@@ -285,7 +285,7 @@
 #include "SWGXtrxOutputReport.h"
 #include "SWGXtrxOutputSettings.h"
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
   inline void* create(QString type) {
     if(QString("SWGADSBDemodReport").compare(type) == 0) {

@@ -464,7 +464,7 @@ void ADSBDemodGUI::updatePosition(Aircraft *aircraft)
 
         for (; it != mapMessageQueues->end(); ++it)
         {
-            SWGrpx-100::SWGMapItem *swgMapItem = new SWGrpx-100::SWGMapItem();
+            SWGRPX100::SWGMapItem *swgMapItem = new SWGRPX100::SWGMapItem();
             swgMapItem->setName(new QString(QString("%1").arg(aircraft->m_icao, 0, 16)));
             swgMapItem->setLatitude(aircraft->m_latitude);
             swgMapItem->setLongitude(aircraft->m_longitude);
@@ -2086,7 +2086,7 @@ void ADSBDemodGUI::tick()
                     QList<MessageQueue*>::iterator it = mapMessageQueues->begin();
                     for (; it != mapMessageQueues->end(); ++it)
                     {
-                        SWGrpx-100::SWGMapItem *swgMapItem = new SWGrpx-100::SWGMapItem();
+                        SWGRPX100::SWGMapItem *swgMapItem = new SWGRPX100::SWGMapItem();
                         swgMapItem->setName(new QString(QString("%1").arg(aircraft->m_icao, 0, 16)));
                         swgMapItem->setImage(new QString(""));
                         MainCore::MsgMapItem *msg = MainCore::MsgMapItem::create(m_adsbDemod, swgMapItem);

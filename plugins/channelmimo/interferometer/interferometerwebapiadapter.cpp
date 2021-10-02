@@ -30,18 +30,18 @@ InterferometerWebAPIAdapter::~InterferometerWebAPIAdapter()
 {}
 
 int InterferometerWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setInterferometerSettings(new SWGrpx-100::SWGInterferometerSettings());
+    response.setInterferometerSettings(new SWGRPX100::SWGInterferometerSettings());
     response.getInterferometerSettings()->init();
     webapiFormatChannelSettings(response, m_settings, m_glScopeSettings, m_SpectrumSettings);
     return 200;
 }
 
 void InterferometerWebAPIAdapter::webapiFormatChannelSettings(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         const InterferometerSettings& settings,
         const GLScopeSettings& scopeSettings,
         const SpectrumSettings& spectrumSettings)
@@ -51,7 +51,7 @@ void InterferometerWebAPIAdapter::webapiFormatChannelSettings(
     response.getInterferometerSettings()->setTitle(new QString(settings.m_title));
 
     // scope
-    SWGrpx-100::SWGGLScope *swgScope = new SWGrpx-100::SWGGLScope();
+    SWGRPX100::SWGGLScope *swgScope = new SWGRPX100::SWGGLScope();
     swgScope->init();
     response.getInterferometerSettings()->setScopeConfig(swgScope);
     swgScope->setDisplayMode(scopeSettings.m_displayMode);
@@ -63,12 +63,12 @@ void InterferometerWebAPIAdapter::webapiFormatChannelSettings(
     swgScope->setTrigPre(scopeSettings.m_trigPre);
 
     // array of traces
-    swgScope->setTracesData(new QList<SWGrpx-100::SWGTraceData *>);
+    swgScope->setTracesData(new QList<SWGRPX100::SWGTraceData *>);
     std::vector<GLScopeSettings::TraceData>::const_iterator traceIt = scopeSettings.m_tracesData.begin();
 
     for (; traceIt != scopeSettings.m_tracesData.end(); ++traceIt)
     {
-        swgScope->getTracesData()->append(new SWGrpx-100::SWGTraceData);
+        swgScope->getTracesData()->append(new SWGRPX100::SWGTraceData);
         swgScope->getTracesData()->back()->setAmp(traceIt->m_amp);
         swgScope->getTracesData()->back()->setHasTextOverlay(traceIt->m_hasTextOverlay ? 1 : 0);
         swgScope->getTracesData()->back()->setStreamIndex(traceIt->m_streamIndex);
@@ -87,12 +87,12 @@ void InterferometerWebAPIAdapter::webapiFormatChannelSettings(
     }
 
     // array of triggers
-    swgScope->setTriggersData(new QList<SWGrpx-100::SWGTriggerData *>);
+    swgScope->setTriggersData(new QList<SWGRPX100::SWGTriggerData *>);
     std::vector<GLScopeSettings::TriggerData>::const_iterator triggerIt = scopeSettings.m_triggersData.begin();
 
     for (; triggerIt != scopeSettings.m_triggersData.end(); ++triggerIt)
     {
-        swgScope->getTriggersData()->append(new SWGrpx-100::SWGTriggerData);
+        swgScope->getTriggersData()->append(new SWGRPX100::SWGTriggerData);
         swgScope->getTriggersData()->back()->setInputIndex(triggerIt->m_inputIndex);
         swgScope->getTriggersData()->back()->setProjectionType((int) triggerIt->m_projectionType);
         swgScope->getTriggersData()->back()->setTriggerBothEdges(triggerIt->m_triggerBothEdges ? 1 : 0);
@@ -113,7 +113,7 @@ void InterferometerWebAPIAdapter::webapiFormatChannelSettings(
     }
 
     // spectrum
-    SWGrpx-100::SWGGLSpectrum *swgSpectrum = new SWGrpx-100::SWGGLSpectrum();
+    SWGRPX100::SWGGLSpectrum *swgSpectrum = new SWGRPX100::SWGGLSpectrum();
     swgSpectrum->init();
     response.getInterferometerSettings()->setSpectrumConfig(swgSpectrum);
     swgSpectrum->setAveragingMode((int) spectrumSettings.m_averagingMode);
@@ -135,7 +135,7 @@ void InterferometerWebAPIAdapter::webapiFormatChannelSettings(
 int InterferometerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action
@@ -149,7 +149,7 @@ void InterferometerWebAPIAdapter::webapiUpdateChannelSettings(
         GLScopeSettings& scopeSettings,
         SpectrumSettings& spectrumSettings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("correlationType")) {
         settings.m_correlationType = (InterferometerSettings::CorrelationType) response.getInterferometerSettings()->getCorrelationType();
@@ -187,14 +187,14 @@ void InterferometerWebAPIAdapter::webapiUpdateChannelSettings(
         // traces
         if (channelSettingsKeys.contains("scopeConfig.tracesData"))
         {
-            QList<SWGrpx-100::SWGTraceData *> *tracesData = response.getInterferometerSettings()->getScopeConfig()->getTracesData();
+            QList<SWGRPX100::SWGTraceData *> *tracesData = response.getInterferometerSettings()->getScopeConfig()->getTracesData();
             scopeSettings.m_tracesData.clear();
 
             for (int i = 0; i < 10; i++) // no more than 10 traces anyway
             {
                 if (channelSettingsKeys.contains(QString("scopeConfig.tracesData[%1]").arg(i)))
                 {
-                    SWGrpx-100::SWGTraceData *traceData = tracesData->at(i);
+                    SWGRPX100::SWGTraceData *traceData = tracesData->at(i);
                     scopeSettings.m_tracesData.push_back(GLScopeSettings::TraceData());
 
                     if (channelSettingsKeys.contains(QString("scopeConfig.tracesData[%1].streamIndex").arg(i))) {
@@ -252,14 +252,14 @@ void InterferometerWebAPIAdapter::webapiUpdateChannelSettings(
         // triggers
         if (channelSettingsKeys.contains("scopeConfig.triggersData"))
         {
-            QList<SWGrpx-100::SWGTriggerData *> *triggersData = response.getInterferometerSettings()->getScopeConfig()->getTriggersData();
+            QList<SWGRPX100::SWGTriggerData *> *triggersData = response.getInterferometerSettings()->getScopeConfig()->getTriggersData();
             scopeSettings.m_triggersData.clear();
 
             for (int i = 0; i < 10; i++) // no more than 10 triggers anyway
             {
                 if (channelSettingsKeys.contains(QString("scopeConfig.triggersData[%1]").arg(i)))
                 {
-                    SWGrpx-100::SWGTriggerData *triggerData = triggersData->at(i);
+                    SWGRPX100::SWGTriggerData *triggerData = triggersData->at(i);
                     scopeSettings.m_triggersData.push_back(GLScopeSettings::TriggerData());
 
                     if (channelSettingsKeys.contains(QString("scopeConfig.triggersData[%1].streamIndex").arg(i))) {

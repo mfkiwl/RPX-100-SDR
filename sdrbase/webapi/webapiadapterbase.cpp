@@ -38,7 +38,7 @@ WebAPIAdapterBase::~WebAPIAdapterBase()
 }
 
 void WebAPIAdapterBase::webapiFormatPreferences(
-    SWGrpx-100::SWGPreferences *apiPreferences,
+    SWGRPX100::SWGPreferences *apiPreferences,
     const Preferences& preferences
 )
 {
@@ -63,7 +63,7 @@ void WebAPIAdapterBase::webapiInitConfig(
 }
 
 void WebAPIAdapterBase::webapiUpdatePreferences(
-    SWGrpx-100::SWGPreferences *apiPreferences,
+    SWGRPX100::SWGPreferences *apiPreferences,
     const QStringList& preferenceKeys,
     Preferences& preferences
 )
@@ -95,7 +95,7 @@ void WebAPIAdapterBase::webapiUpdatePreferences(
 }
 
 void WebAPIAdapterBase::webapiFormatFeatureSetPreset(
-        SWGrpx-100::SWGFeatureSetPreset *apiPreset,
+        SWGRPX100::SWGFeatureSetPreset *apiPreset,
         const FeatureSetPreset& preset
 )
 {
@@ -107,12 +107,12 @@ void WebAPIAdapterBase::webapiFormatFeatureSetPreset(
     for (int i = 0; i < nbFeatures; i++)
     {
         const FeatureSetPreset::FeatureConfig& featureConfig = preset.getFeatureConfig(i);
-        QList<SWGrpx-100::SWGFeatureConfig *> *swgFeatureConfigs = apiPreset->getFeatureConfigs();
-        swgFeatureConfigs->append(new SWGrpx-100::SWGFeatureConfig);
+        QList<SWGRPX100::SWGFeatureConfig *> *swgFeatureConfigs = apiPreset->getFeatureConfigs();
+        swgFeatureConfigs->append(new SWGRPX100::SWGFeatureConfig);
         swgFeatureConfigs->back()->init();
         swgFeatureConfigs->back()->setFeatureIdUri(new QString(featureConfig.m_featureIdURI));
         const QByteArray& featureSettings = featureConfig.m_config;
-        SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = swgFeatureConfigs->back()->getConfig();
+        SWGRPX100::SWGFeatureSettings *swgFeatureSettings = swgFeatureConfigs->back()->getConfig();
         swgFeatureSettings->init();
         FeatureWebAPIAdapter *featureWebAPIAdapter = m_webAPIFeatureAdapters.getFeatureWebAPIAdapter(featureConfig.m_featureIdURI, m_pluginManager);
 
@@ -126,7 +126,7 @@ void WebAPIAdapterBase::webapiFormatFeatureSetPreset(
 }
 
 void WebAPIAdapterBase::webapiFormatPreset(
-        SWGrpx-100::SWGPreset *apiPreset,
+        SWGRPX100::SWGPreset *apiPreset,
         const Preset& preset
 )
 {
@@ -142,7 +142,7 @@ void WebAPIAdapterBase::webapiFormatPreset(
 
     if (m_spectrumSettings.deserialize(spectrumConfig))
     {
-        SWGrpx-100::SWGGLSpectrum *swgSpectrumConfig = apiPreset->getSpectrumConfig();
+        SWGRPX100::SWGGLSpectrum *swgSpectrumConfig = apiPreset->getSpectrumConfig();
         swgSpectrumConfig->init();
         swgSpectrumConfig->setFftSize(m_spectrumSettings.m_fftSize);
         swgSpectrumConfig->setFftOverlap(m_spectrumSettings.m_fftOverlap);
@@ -171,12 +171,12 @@ void WebAPIAdapterBase::webapiFormatPreset(
     for (int i = 0; i < nbChannels; i++)
     {
         const Preset::ChannelConfig& channelConfig = preset.getChannelConfig(i);
-        QList<SWGrpx-100::SWGChannelConfig *> *swgChannelConfigs = apiPreset->getChannelConfigs();
-        swgChannelConfigs->append(new SWGrpx-100::SWGChannelConfig);
+        QList<SWGRPX100::SWGChannelConfig *> *swgChannelConfigs = apiPreset->getChannelConfigs();
+        swgChannelConfigs->append(new SWGRPX100::SWGChannelConfig);
         swgChannelConfigs->back()->init();
         swgChannelConfigs->back()->setChannelIdUri(new QString(channelConfig.m_channelIdURI));
         const QByteArray& channelSettings = channelConfig.m_config;
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = swgChannelConfigs->back()->getConfig();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = swgChannelConfigs->back()->getConfig();
         swgChannelSettings->init();
         ChannelWebAPIAdapter *channelWebAPIAdapter = m_webAPIChannelAdapters.getChannelWebAPIAdapter(channelConfig.m_channelIdURI, m_pluginManager);
 
@@ -192,14 +192,14 @@ void WebAPIAdapterBase::webapiFormatPreset(
     for (int i = 0; i < nbDevices; i++)
     {
         const Preset::DeviceConfig& deviceConfig = preset.getDeviceConfig(i);
-        QList<SWGrpx-100::SWGDeviceConfig *> *swgdeviceConfigs = apiPreset->getDeviceConfigs();
-        swgdeviceConfigs->append(new SWGrpx-100::SWGDeviceConfig);
+        QList<SWGRPX100::SWGDeviceConfig *> *swgdeviceConfigs = apiPreset->getDeviceConfigs();
+        swgdeviceConfigs->append(new SWGRPX100::SWGDeviceConfig);
         swgdeviceConfigs->back()->init();
         swgdeviceConfigs->back()->setDeviceId(new QString(deviceConfig.m_deviceId));
         swgdeviceConfigs->back()->setDeviceSerial(new QString(deviceConfig.m_deviceSerial));
         swgdeviceConfigs->back()->setDeviceSequence(deviceConfig.m_deviceSequence);
         const QByteArray& deviceSettings = deviceConfig.m_config;
-        SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = swgdeviceConfigs->back()->getConfig();
+        SWGRPX100::SWGDeviceSettings *swgDeviceSettings = swgdeviceConfigs->back()->getConfig();
         swgDeviceSettings->init();
         DeviceWebAPIAdapter *deviceWebAPIAdapter = m_webAPIDeviceAdapters.getDeviceWebAPIAdapter(deviceConfig.m_deviceId, m_pluginManager);
 
@@ -216,7 +216,7 @@ void WebAPIAdapterBase::webapiFormatPreset(
 
 void WebAPIAdapterBase::webapiUpdateFeatureSetPreset(
     bool force,
-    SWGrpx-100::SWGFeatureSetPreset *apiPreset,
+    SWGRPX100::SWGFeatureSetPreset *apiPreset,
     const WebAPIAdapterInterface::FeatureSetPresetKeys& presetKeys,
     FeatureSetPreset *preset
 )
@@ -238,7 +238,7 @@ void WebAPIAdapterBase::webapiUpdateFeatureSetPreset(
 
     for (; featureKeysIt != presetKeys.m_featureKeys.end(); ++featureKeysIt, i++)
     {
-        SWGrpx-100::SWGFeatureConfig *swgFeatureConfig = apiPreset->getFeatureConfigs()->at(i);
+        SWGRPX100::SWGFeatureConfig *swgFeatureConfig = apiPreset->getFeatureConfigs()->at(i);
 
         if (!swgFeatureConfig) { // safety measure but should not happen
             continue;
@@ -258,7 +258,7 @@ void WebAPIAdapterBase::webapiUpdateFeatureSetPreset(
                 continue;
             }
 
-            SWGrpx-100::SWGFeatureSettings *featureSettings = swgFeatureConfig->getConfig();
+            SWGRPX100::SWGFeatureSettings *featureSettings = swgFeatureConfig->getConfig();
 
             featureWebAPIAdapter->webapiSettingsPutPatch(
                 true, // features are always appended
@@ -275,7 +275,7 @@ void WebAPIAdapterBase::webapiUpdateFeatureSetPreset(
 
 void WebAPIAdapterBase::webapiUpdatePreset(
         bool force,
-        SWGrpx-100::SWGPreset *apiPreset,
+        SWGRPX100::SWGPreset *apiPreset,
         const WebAPIAdapterInterface::PresetKeys& presetKeys,
         Preset *preset
 )
@@ -391,7 +391,7 @@ void WebAPIAdapterBase::webapiUpdatePreset(
     int i = 0;
     for (; deviceKeysIt != presetKeys.m_devicesKeys.end(); ++deviceKeysIt, i++)
     {
-        SWGrpx-100::SWGDeviceConfig *swgDeviceConfig = apiPreset->getDeviceConfigs()->at(i);
+        SWGRPX100::SWGDeviceConfig *swgDeviceConfig = apiPreset->getDeviceConfigs()->at(i);
         if (!swgDeviceConfig) { // safety measure but should not happen
             continue;
         }
@@ -434,7 +434,7 @@ void WebAPIAdapterBase::webapiUpdatePreset(
     i = 0;
     for (; channelKeysIt != presetKeys.m_channelsKeys.end(); ++channelKeysIt, i++)
     {
-        SWGrpx-100::SWGChannelConfig *swgChannelConfig = apiPreset->getChannelConfigs()->at(i);
+        SWGRPX100::SWGChannelConfig *swgChannelConfig = apiPreset->getChannelConfigs()->at(i);
         if (!swgChannelConfig) { // safety measure but should not happen
             continue;
         }
@@ -451,7 +451,7 @@ void WebAPIAdapterBase::webapiUpdatePreset(
                 continue;
             }
 
-            SWGrpx-100::SWGChannelSettings *channelSettings = swgChannelConfig->getConfig();
+            SWGRPX100::SWGChannelSettings *channelSettings = swgChannelConfig->getConfig();
 
             channelWebAPIAdapter->webapiSettingsPutPatch(
                 true, // channels are always appended
@@ -467,7 +467,7 @@ void WebAPIAdapterBase::webapiUpdatePreset(
 }
 
 void WebAPIAdapterBase::webapiFormatCommand(
-        SWGrpx-100::SWGCommand *apiCommand,
+        SWGRPX100::SWGCommand *apiCommand,
         const Command& command
 )
 {
@@ -483,7 +483,7 @@ void WebAPIAdapterBase::webapiFormatCommand(
 }
 
 void WebAPIAdapterBase::webapiUpdateCommand(
-        SWGrpx-100::SWGCommand *apiCommand,
+        SWGRPX100::SWGCommand *apiCommand,
         const WebAPIAdapterInterface::CommandKeys& commandKeys,
         Command& command
 )

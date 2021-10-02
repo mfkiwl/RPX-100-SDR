@@ -212,7 +212,7 @@ void MapModel::setFrequency(double frequency)
     ChannelWebAPIUtils::setCenterFrequency(0, frequency);
 }
 
-void MapModel::update(const PipeEndPoint *sourcePipe, SWGrpx-100::SWGMapItem *swgMapItem, quint32 sourceMask)
+void MapModel::update(const PipeEndPoint *sourcePipe, SWGRPX100::SWGMapItem *swgMapItem, quint32 sourceMask)
 {
     QString name = *swgMapItem->getName();
     // Add, update or delete and item
@@ -263,7 +263,7 @@ void MapModel::updateTarget()
 
         for (; it != mapMessageQueues->end(); ++it)
         {
-            SWGrpx-100::SWGTargetAzimuthElevation *swgTarget = new SWGrpx-100::SWGTargetAzimuthElevation();
+            SWGRPX100::SWGTargetAzimuthElevation *swgTarget = new SWGRPX100::SWGTargetAzimuthElevation();
             swgTarget->setName(new QString(m_items[m_target]->m_name));
             swgTarget->setAzimuth(azEl->getAzimuth());
             swgTarget->setElevation(azEl->getElevation());
@@ -645,7 +645,7 @@ bool MapGUI::handleMessage(const Message& message)
     else if (MainCore::MsgMapItem::match(message))
     {
         MainCore::MsgMapItem& msgMapItem = (MainCore::MsgMapItem&) message;
-        SWGrpx-100::SWGMapItem *swgMapItem = msgMapItem.getSWGMapItem();
+        SWGRPX100::SWGMapItem *swgMapItem = msgMapItem.getSWGMapItem();
         m_mapModel.update(msgMapItem.getPipeSource(), swgMapItem);
         return true;
     }
@@ -724,7 +724,7 @@ MapGUI::MapGUI(PluginAPI* pluginAPI, FeatureUISet *featureUISet, Feature *featur
     }
 
     // Create antenna at My Position
-    SWGrpx-100::SWGMapItem antennaMapItem;
+    SWGRPX100::SWGMapItem antennaMapItem;
     antennaMapItem.setName(new QString(MainCore::instance()->getSettings().getStationName()));
     antennaMapItem.setLatitude(stationLatitude);
     antennaMapItem.setLongitude(stationLongitude);
@@ -758,7 +758,7 @@ void MapGUI::setBeacons(QList<Beacon *> *beacons)
     while (i.hasNext())
     {
         Beacon *beacon = i.next();
-        SWGrpx-100::SWGMapItem beaconMapItem;
+        SWGRPX100::SWGMapItem beaconMapItem;
         // Need to suffix frequency, as there are multiple becaons with same callsign at different locations
         QString name = QString("%1-%2").arg(beacon->m_callsign).arg(beacon->getFrequencyShortText());
         beaconMapItem.setName(new QString(name));
@@ -785,7 +785,7 @@ void MapGUI::addRadioTimeTransmitters()
 {
     for (int i = 0; i < m_radioTimeTransmitters.size(); i++)
     {
-        SWGrpx-100::SWGMapItem timeMapItem;
+        SWGRPX100::SWGMapItem timeMapItem;
         // Need to suffix frequency, as there are multiple becaons with same callsign at different locations
         QString name = QString("%1").arg(m_radioTimeTransmitters[i].m_callsign);
         timeMapItem.setName(new QString(name));

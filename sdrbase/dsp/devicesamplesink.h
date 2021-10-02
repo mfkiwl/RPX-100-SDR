@@ -26,7 +26,7 @@
 #include "util/messagequeue.h"
 #include "export.h"
 
-namespace SWGrpx-100
+namespace SWGRPX100
 {
     class SWGDeviceSettings;
     class SWGDeviceState;
@@ -63,7 +63,7 @@ public:
 	virtual bool handleMessage(const Message& message) = 0;
 
     virtual int webapiSettingsGet(
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             QString& errorMessage)
     {
         (void) response;
@@ -74,7 +74,7 @@ public:
     virtual int webapiSettingsPutPatch(
             bool force, //!< true to force settings = put
             const QStringList& deviceSettingsKeys,
-            SWGrpx-100::SWGDeviceSettings& response,
+            SWGRPX100::SWGDeviceSettings& response,
             QString& errorMessage)
     {
         (void) force;
@@ -85,7 +85,7 @@ public:
     }
 
     virtual int webapiRunGet(
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage)
     {
         (void) response;
@@ -94,7 +94,7 @@ public:
     }
 
     virtual int webapiRun(bool run,
-            SWGrpx-100::SWGDeviceState& response,
+            SWGRPX100::SWGDeviceState& response,
             QString& errorMessage)
     {
         (void) run;
@@ -104,7 +104,7 @@ public:
     }
 
     virtual int webapiReportGet(
-            SWGrpx-100::SWGDeviceReport& response,
+            SWGRPX100::SWGDeviceReport& response,
             QString& errorMessage)
     {
         (void) response;
@@ -114,7 +114,7 @@ public:
 
     virtual int webapiActionsPost(
             const QStringList& deviceActionsKeys,
-            SWGrpx-100::SWGDeviceActions& actions,
+            SWGRPX100::SWGDeviceActions& actions,
             QString& errorMessage)
     {
         (void) deviceActionsKeys;

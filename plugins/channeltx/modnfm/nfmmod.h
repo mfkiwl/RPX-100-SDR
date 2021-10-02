@@ -199,27 +199,27 @@ public:
     }
 
     virtual int webapiSettingsGet(
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-                SWGrpx-100::SWGChannelReport& response,
+                SWGRPX100::SWGChannelReport& response,
                 QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         const NFMModSettings& settings);
 
     static void webapiUpdateChannelSettings(
             NFMModSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGrpx-100::SWGChannelSettings& response);
+            SWGRPX100::SWGChannelSettings& response);
 
     double getMagSq() const;
     CWKeyer *getCWKeyer();
@@ -258,7 +258,7 @@ private:
     void sendSampleRateToDemodAnalyzer();
     void openFileStream();
     void seekFileStream(int seekPercentage);
-    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
+    void webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const NFMModSettings& settings, bool force);
     void webapiReverseSendCWSettings(const CWKeyerSettings& settings);
     void sendChannelSettings(
@@ -269,7 +269,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const NFMModSettings& settings,
         bool force
     );

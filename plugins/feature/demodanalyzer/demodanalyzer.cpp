@@ -353,7 +353,7 @@ void DemodAnalyzer::setChannel(ChannelAPI *selectedChannel)
 }
 
 int DemodAnalyzer::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -364,11 +364,11 @@ int DemodAnalyzer::webapiRun(bool run,
 }
 
 int DemodAnalyzer::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDemodAnalyzerSettings(new SWGrpx-100::SWGDemodAnalyzerSettings());
+    response.setDemodAnalyzerSettings(new SWGRPX100::SWGDemodAnalyzerSettings());
     response.getDemodAnalyzerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -377,7 +377,7 @@ int DemodAnalyzer::webapiSettingsGet(
 int DemodAnalyzer::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -400,7 +400,7 @@ int DemodAnalyzer::webapiSettingsPutPatch(
 }
 
 void DemodAnalyzer::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const DemodAnalyzerSettings& settings)
 {
     if (response.getDemodAnalyzerSettings()->getTitle()) {
@@ -427,7 +427,7 @@ void DemodAnalyzer::webapiFormatFeatureSettings(
 void DemodAnalyzer::webapiUpdateFeatureSettings(
     DemodAnalyzerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("log2Decim")) {
         settings.m_log2Decim = response.getDemodAnalyzerSettings()->getLog2Decim();
@@ -457,12 +457,12 @@ void DemodAnalyzer::webapiUpdateFeatureSettings(
 
 void DemodAnalyzer::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const DemodAnalyzerSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("DemodAnalyzer"));
-    swgFeatureSettings->setDemodAnalyzerSettings(new SWGrpx-100::SWGDemodAnalyzerSettings());
-    SWGrpx-100::SWGDemodAnalyzerSettings *swgDemodAnalyzerSettings = swgFeatureSettings->getDemodAnalyzerSettings();
+    swgFeatureSettings->setDemodAnalyzerSettings(new SWGRPX100::SWGDemodAnalyzerSettings());
+    SWGRPX100::SWGDemodAnalyzerSettings *swgDemodAnalyzerSettings = swgFeatureSettings->getDemodAnalyzerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

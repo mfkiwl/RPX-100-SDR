@@ -29,11 +29,11 @@ RemoteOutputWebAPIAdapter::~RemoteOutputWebAPIAdapter()
 {}
 
 int RemoteOutputWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteOutputSettings(new SWGrpx-100::SWGRemoteOutputSettings());
+    response.setRemoteOutputSettings(new SWGRPX100::SWGRemoteOutputSettings());
     response.getRemoteOutputSettings()->init();
     RemoteOutput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int RemoteOutputWebAPIAdapter::webapiSettingsGet(
 int RemoteOutputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

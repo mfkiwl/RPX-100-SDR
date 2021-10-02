@@ -443,7 +443,7 @@ void DeviceUISet::handleChannelGUIClosing(ChannelGUI* channelGUI)
     }
 }
 
-int DeviceUISet::webapiSpectrumSettingsGet(SWGrpx-100::SWGGLSpectrum& response, QString& errorMessage) const
+int DeviceUISet::webapiSpectrumSettingsGet(SWGRPX100::SWGGLSpectrum& response, QString& errorMessage) const
 {
     return m_spectrumVis->webapiSpectrumSettingsGet(response, errorMessage);
 }
@@ -451,23 +451,23 @@ int DeviceUISet::webapiSpectrumSettingsGet(SWGrpx-100::SWGGLSpectrum& response, 
 int DeviceUISet::webapiSpectrumSettingsPutPatch(
     bool force,
     const QStringList& spectrumSettingsKeys,
-    SWGrpx-100::SWGGLSpectrum& response, // query + response
+    SWGRPX100::SWGGLSpectrum& response, // query + response
     QString& errorMessage)
 {
     return m_spectrumVis->webapiSpectrumSettingsPutPatch(force, spectrumSettingsKeys, response, errorMessage);
 }
 
-int DeviceUISet::webapiSpectrumServerGet(SWGrpx-100::SWGSpectrumServer& response, QString& errorMessage) const
+int DeviceUISet::webapiSpectrumServerGet(SWGRPX100::SWGSpectrumServer& response, QString& errorMessage) const
 {
     return m_spectrumVis->webapiSpectrumServerGet(response, errorMessage);
 }
 
-int DeviceUISet::webapiSpectrumServerPost(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage)
+int DeviceUISet::webapiSpectrumServerPost(SWGRPX100::SWGSuccessResponse& response, QString& errorMessage)
 {
     return m_spectrumVis->webapiSpectrumServerPost(response, errorMessage);
 }
 
-int DeviceUISet::webapiSpectrumServerDelete(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage)
+int DeviceUISet::webapiSpectrumServerDelete(SWGRPX100::SWGSuccessResponse& response, QString& errorMessage)
 {
     return m_spectrumVis->webapiSpectrumServerDelete(response, errorMessage);
 }

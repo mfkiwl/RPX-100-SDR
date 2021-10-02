@@ -26,12 +26,12 @@ FileSinkWebAPIAdapter::~FileSinkWebAPIAdapter()
 {}
 
 int FileSinkWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
     (void) response;
-    response.setFileSinkSettings(new SWGrpx-100::SWGFileSinkSettings());
+    response.setFileSinkSettings(new SWGRPX100::SWGFileSinkSettings());
     response.getFileSinkSettings()->init();
     FileSink::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int FileSinkWebAPIAdapter::webapiSettingsGet(
 int FileSinkWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

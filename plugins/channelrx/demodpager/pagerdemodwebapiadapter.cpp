@@ -27,11 +27,11 @@ PagerDemodWebAPIAdapter::~PagerDemodWebAPIAdapter()
 {}
 
 int PagerDemodWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPagerDemodSettings(new SWGrpx-100::SWGPagerDemodSettings());
+    response.setPagerDemodSettings(new SWGRPX100::SWGPagerDemodSettings());
     response.getPagerDemodSettings()->init();
     PagerDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int PagerDemodWebAPIAdapter::webapiSettingsGet(
 int PagerDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

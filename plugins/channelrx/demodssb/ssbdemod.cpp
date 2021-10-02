@@ -308,11 +308,11 @@ void SSBDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int SSBDemod::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSsbDemodSettings(new SWGrpx-100::SWGSSBDemodSettings());
+    response.setSsbDemodSettings(new SWGRPX100::SWGSSBDemodSettings());
     response.getSsbDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -321,7 +321,7 @@ int SSBDemod::webapiSettingsGet(
 int SSBDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -346,7 +346,7 @@ int SSBDemod::webapiSettingsPutPatch(
 void SSBDemod::webapiUpdateChannelSettings(
         SSBDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getSsbDemodSettings()->getInputFrequencyOffset();
@@ -420,17 +420,17 @@ void SSBDemod::webapiUpdateChannelSettings(
 }
 
 int SSBDemod::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSsbDemodReport(new SWGrpx-100::SWGSSBDemodReport());
+    response.setSsbDemodReport(new SWGRPX100::SWGSSBDemodReport());
     response.getSsbDemodReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void SSBDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const SSBDemodSettings& settings)
+void SSBDemod::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const SSBDemodSettings& settings)
 {
     response.getSsbDemodSettings()->setAudioMute(settings.m_audioMute ? 1 : 0);
     response.getSsbDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
@@ -475,7 +475,7 @@ void SSBDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respo
     response.getSsbDemodSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void SSBDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void SSBDemod::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -489,7 +489,7 @@ void SSBDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void SSBDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const SSBDemodSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -522,7 +522,7 @@ void SSBDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -536,7 +536,7 @@ void SSBDemod::sendChannelSettings(
 
 void SSBDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const SSBDemodSettings& settings,
         bool force
 )
@@ -545,8 +545,8 @@ void SSBDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setSsbDemodSettings(new SWGrpx-100::SWGSSBDemodSettings());
-    SWGrpx-100::SWGSSBDemodSettings *swgSSBDemodSettings = swgChannelSettings->getSsbDemodSettings();
+    swgChannelSettings->setSsbDemodSettings(new SWGRPX100::SWGSSBDemodSettings());
+    SWGRPX100::SWGSSBDemodSettings *swgSSBDemodSettings = swgChannelSettings->getSsbDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

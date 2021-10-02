@@ -334,11 +334,11 @@ void LocalSource::calculateFrequencyOffset(uint32_t log2Interp, uint32_t filterC
 }
 
 int LocalSource::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalSourceSettings(new SWGrpx-100::SWGLocalSourceSettings());
+    response.setLocalSourceSettings(new SWGRPX100::SWGLocalSourceSettings());
     response.getLocalSourceSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -347,7 +347,7 @@ int LocalSource::webapiSettingsGet(
 int LocalSource::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -372,7 +372,7 @@ int LocalSource::webapiSettingsPutPatch(
 void LocalSource::webapiUpdateChannelSettings(
         LocalSourceSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("localDeviceIndex")) {
         settings.m_localDeviceIndex = response.getLocalSourceSettings()->getLocalDeviceIndex();
@@ -416,7 +416,7 @@ void LocalSource::webapiUpdateChannelSettings(
     }
 }
 
-void LocalSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const LocalSourceSettings& settings)
+void LocalSource::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const LocalSourceSettings& settings)
 {
     response.getLocalSourceSettings()->setLocalDeviceIndex(settings.m_localDeviceIndex);
     response.getLocalSourceSettings()->setRgbColor(settings.m_rgbColor);
@@ -445,7 +445,7 @@ void LocalSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& re
 
 void LocalSource::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const LocalSourceSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -478,7 +478,7 @@ void LocalSource::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -492,7 +492,7 @@ void LocalSource::sendChannelSettings(
 
 void LocalSource::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const LocalSourceSettings& settings,
         bool force
 )
@@ -501,8 +501,8 @@ void LocalSource::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setLocalSourceSettings(new SWGrpx-100::SWGLocalSourceSettings());
-    SWGrpx-100::SWGLocalSourceSettings *swgLocalSourceSettings = swgChannelSettings->getLocalSourceSettings();
+    swgChannelSettings->setLocalSourceSettings(new SWGRPX100::SWGLocalSourceSettings());
+    SWGRPX100::SWGLocalSourceSettings *swgLocalSourceSettings = swgChannelSettings->getLocalSourceSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

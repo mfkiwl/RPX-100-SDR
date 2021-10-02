@@ -26,11 +26,11 @@ FreqTrackerWebAPIAdapter::~FreqTrackerWebAPIAdapter()
 {}
 
 int FreqTrackerWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreqTrackerSettings(new SWGrpx-100::SWGFreqTrackerSettings());
+    response.setFreqTrackerSettings(new SWGRPX100::SWGFreqTrackerSettings());
     response.getFreqTrackerSettings()->init();
     FreqTracker::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int FreqTrackerWebAPIAdapter::webapiSettingsGet(
 int FreqTrackerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

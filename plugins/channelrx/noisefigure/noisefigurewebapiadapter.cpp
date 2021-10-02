@@ -27,11 +27,11 @@ NoiseFigureWebAPIAdapter::~NoiseFigureWebAPIAdapter()
 {}
 
 int NoiseFigureWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setNoiseFigureSettings(new SWGrpx-100::SWGNoiseFigureSettings());
+    response.setNoiseFigureSettings(new SWGRPX100::SWGNoiseFigureSettings());
     response.getNoiseFigureSettings()->init();
     NoiseFigure::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int NoiseFigureWebAPIAdapter::webapiSettingsGet(
 int NoiseFigureWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

@@ -29,11 +29,11 @@ KiwiSDRWebAPIAdapter::~KiwiSDRWebAPIAdapter()
 {}
 
 int KiwiSDRWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setKiwiSdrSettings(new SWGrpx-100::SWGKiwiSDRSettings());
+    response.setKiwiSdrSettings(new SWGRPX100::SWGKiwiSDRSettings());
     response.getKiwiSdrSettings()->init();
     KiwiSDRInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int KiwiSDRWebAPIAdapter::webapiSettingsGet(
 int KiwiSDRWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

@@ -352,7 +352,7 @@ void RemoteOutput::applySettings(const RemoteOutputSettings& settings, bool forc
 }
 
 int RemoteOutput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -362,7 +362,7 @@ int RemoteOutput::webapiRunGet(
 
 int RemoteOutput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -380,11 +380,11 @@ int RemoteOutput::webapiRun(
 }
 
 int RemoteOutput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteOutputSettings(new SWGrpx-100::SWGRemoteOutputSettings());
+    response.setRemoteOutputSettings(new SWGRPX100::SWGRemoteOutputSettings());
     response.getRemoteOutputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -393,7 +393,7 @@ int RemoteOutput::webapiSettingsGet(
 int RemoteOutput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -416,7 +416,7 @@ int RemoteOutput::webapiSettingsPutPatch(
 void RemoteOutput::webapiUpdateDeviceSettings(
         RemoteOutputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("sampleRate")) {
         settings.m_sampleRate = response.getRemoteOutputSettings()->getSampleRate();
@@ -460,17 +460,17 @@ void RemoteOutput::webapiUpdateDeviceSettings(
 }
 
 int RemoteOutput::webapiReportGet(
-        SWGrpx-100::SWGDeviceReport& response,
+        SWGRPX100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteOutputReport(new SWGrpx-100::SWGRemoteOutputReport());
+    response.setRemoteOutputReport(new SWGRPX100::SWGRemoteOutputReport());
     response.getRemoteOutputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void RemoteOutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const RemoteOutputSettings& settings)
+void RemoteOutput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const RemoteOutputSettings& settings)
 {
     response.getRemoteOutputSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getRemoteOutputSettings()->setSampleRate(settings.m_sampleRate);
@@ -494,7 +494,7 @@ void RemoteOutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& res
     response.getRemoteOutputSettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void RemoteOutput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
+void RemoteOutput::webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response)
 {
     uint64_t ts_usecs;
     response.getRemoteOutputReport()->setBufferRwBalance(m_sampleSourceFifo.getRWBalance());
@@ -647,12 +647,12 @@ void RemoteOutput::sampleRateCorrection(double remoteTimeDeltaUs, double timeDel
 
 void RemoteOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const RemoteOutputSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("RemoteOutput"));
-    swgDeviceSettings->setRemoteOutputSettings(new SWGrpx-100::SWGRemoteOutputSettings());
-    SWGrpx-100::SWGRemoteOutputSettings *swgRemoteOutputSettings = swgDeviceSettings->getRemoteOutputSettings();
+    swgDeviceSettings->setRemoteOutputSettings(new SWGRPX100::SWGRemoteOutputSettings());
+    SWGRPX100::SWGRemoteOutputSettings *swgRemoteOutputSettings = swgDeviceSettings->getRemoteOutputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -705,7 +705,7 @@ void RemoteOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
 
 void RemoteOutput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("RemoteOutput"));

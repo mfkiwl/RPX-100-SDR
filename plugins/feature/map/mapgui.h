@@ -58,7 +58,7 @@ struct RadioTimeTransmitter {
 class MapItem {
 
 public:
-    MapItem(const PipeEndPoint *sourcePipe, quint32 sourceMask, SWGrpx-100::SWGMapItem *mapItem)
+    MapItem(const PipeEndPoint *sourcePipe, quint32 sourceMask, SWGRPX100::SWGMapItem *mapItem)
     {
         m_sourcePipe = sourcePipe;
         m_sourceMask = sourceMask;
@@ -77,7 +77,7 @@ public:
         updatePredictedTrack(mapItem->getPredictedTrack());
     }
 
-    void update(SWGrpx-100::SWGMapItem *mapItem)
+    void update(SWGRPX100::SWGMapItem *mapItem)
     {
         m_latitude = mapItem->getLatitude();
         m_longitude = mapItem->getLongitude();
@@ -105,7 +105,7 @@ private:
 
     void findFrequency();
 
-    void updateTrack(QList<SWGrpx-100::SWGMapCoordinate *> *track)
+    void updateTrack(QList<SWGRPX100::SWGMapCoordinate *> *track)
     {
         if (track != nullptr)
         {
@@ -116,7 +116,7 @@ private:
             m_takenTrack2.clear();
             for (int i = 0; i < track->size(); i++)
             {
-                SWGrpx-100::SWGMapCoordinate* p = track->at(i);
+                SWGRPX100::SWGMapCoordinate* p = track->at(i);
                 QGeoCoordinate *c = new QGeoCoordinate(p->getLatitude(), p->getLongitude(), p->getAltitude());
                 m_takenTrackCoords.push_back(c);
                 m_takenTrack.push_back(QVariant::fromValue(*c));
@@ -144,7 +144,7 @@ private:
         }
     }
 
-    void updatePredictedTrack(QList<SWGrpx-100::SWGMapCoordinate *> *track)
+    void updatePredictedTrack(QList<SWGRPX100::SWGMapCoordinate *> *track)
     {
         if (track != nullptr)
         {
@@ -155,7 +155,7 @@ private:
             m_predictedTrack2.clear();
             for (int i = 0; i < track->size(); i++)
             {
-                SWGrpx-100::SWGMapCoordinate* p = track->at(i);
+                SWGRPX100::SWGMapCoordinate* p = track->at(i);
                 QGeoCoordinate *c = new QGeoCoordinate(p->getLatitude(), p->getLongitude(), p->getAltitude());
                 m_predictedTrackCoords.push_back(c);
                 m_predictedTrack.push_back(QVariant::fromValue(*c));
@@ -238,7 +238,7 @@ public:
         endInsertRows();
     }
 
-    void update(const PipeEndPoint *source, SWGrpx-100::SWGMapItem *swgMapItem, quint32 sourceMask=0);
+    void update(const PipeEndPoint *source, SWGRPX100::SWGMapItem *swgMapItem, quint32 sourceMask=0);
 
     void updateTarget();
 

@@ -336,8 +336,8 @@ void RigCtlServerWorker::getCommand()
 
 bool RigCtlServerWorker::setFrequency(double targetFrequency, rig_errcode_e& rigCtlRC)
 {
-    SWGrpx-100::SWGDeviceSettings deviceSettingsResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGDeviceSettings deviceSettingsResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     int httpRC;
 
     // Get current device center frequency
@@ -370,7 +370,7 @@ bool RigCtlServerWorker::setFrequency(double targetFrequency, rig_errcode_e& rig
             deviceSettingsKeys.append("centerFrequency");
             deviceSettingsResponse.init();
             deviceSettingsResponse.fromJsonObject(*jsonObj);
-            SWGrpx-100::SWGErrorResponse errorResponse2;
+            SWGRPX100::SWGErrorResponse errorResponse2;
 
             httpRC = m_webAPIAdapterInterface->devicesetDeviceSettingsPutPatch(
                 m_settings.m_deviceIndex,
@@ -395,7 +395,7 @@ bool RigCtlServerWorker::setFrequency(double targetFrequency, rig_errcode_e& rig
 
         // Update inputFrequencyOffset (offet if in range else zero)
         float targetOffset = outOfRange ?  0 : targetFrequency - freq;
-        SWGrpx-100::SWGChannelSettings channelSettingsResponse;
+        SWGRPX100::SWGChannelSettings channelSettingsResponse;
         // Get channel settings containing inputFrequencyOffset, so we can patch it
         httpRC = m_webAPIAdapterInterface->devicesetChannelSettingsGet(
             m_settings.m_deviceIndex,
@@ -462,8 +462,8 @@ bool RigCtlServerWorker::setFrequency(double targetFrequency, rig_errcode_e& rig
 
 bool RigCtlServerWorker::getFrequency(double& frequency, rig_errcode_e& rigCtlRC)
 {
-    SWGrpx-100::SWGDeviceSettings deviceSettingsResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGDeviceSettings deviceSettingsResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     int httpRC;
 
     // Get current device center frequency
@@ -486,7 +486,7 @@ bool RigCtlServerWorker::getFrequency(double& frequency, rig_errcode_e& rigCtlRC
 
     if (WebAPIUtils::getSubObjectDouble(*jsonObj, "centerFrequency", deviceFreq))
     {
-        SWGrpx-100::SWGChannelSettings channelSettingsResponse;
+        SWGRPX100::SWGChannelSettings channelSettingsResponse;
         // Get channel settings containg inputFrequencyOffset, so we can patch them
         httpRC = m_webAPIAdapterInterface->devicesetChannelSettingsGet(
             m_settings.m_deviceIndex,
@@ -530,9 +530,9 @@ bool RigCtlServerWorker::getFrequency(double& frequency, rig_errcode_e& rigCtlRC
 
 bool RigCtlServerWorker::changeModem(const char *newMode, const char *newModemId, int newModemBw, rig_errcode_e& rigCtlRC)
 {
-    SWGrpx-100::SWGDeviceSet deviceSetResponse;
-    SWGrpx-100::SWGSuccessResponse successResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGDeviceSet deviceSetResponse;
+    SWGRPX100::SWGSuccessResponse successResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     int httpRC;
     int nbChannels;
     int currentOffset;
@@ -603,7 +603,7 @@ bool RigCtlServerWorker::changeModem(const char *newMode, const char *newModemId
     }
 
     // create new modem
-    SWGrpx-100::SWGChannelSettings query;
+    SWGRPX100::SWGChannelSettings query;
     QString newModemIdStr(newModemId);
     bool lsb = !strncmp(newMode, "LSB", 3);
     query.init();
@@ -642,7 +642,7 @@ bool RigCtlServerWorker::changeModem(const char *newMode, const char *newModemId
         m_msgQueueToFeature->push(msg);
     }
 
-    SWGrpx-100::SWGChannelSettings swgChannelSettings;
+    SWGRPX100::SWGChannelSettings swgChannelSettings;
     QStringList channelSettingsKeys;
     channelSettingsKeys.append("inputFrequencyOffset");
     QString jsonSettingsStr = tr("\"inputFrequencyOffset\":%1").arg(currentOffset);
@@ -683,8 +683,8 @@ bool RigCtlServerWorker::changeModem(const char *newMode, const char *newModemId
 
 bool RigCtlServerWorker::getMode(const char **mode, double& passband, rig_errcode_e& rigCtlRC)
 {
-    SWGrpx-100::SWGChannelSettings channelSettingsResponse;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGChannelSettings channelSettingsResponse;
+    SWGRPX100::SWGErrorResponse errorResponse;
     int httpRC;
 
     // Get channel settings containg inputFrequencyOffset, so we can patch them
@@ -753,8 +753,8 @@ bool RigCtlServerWorker::getMode(const char **mode, double& passband, rig_errcod
 
 bool RigCtlServerWorker::setPowerOn(rig_errcode_e& rigCtlRC)
 {
-    SWGrpx-100::SWGDeviceState response;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGDeviceState response;
+    SWGRPX100::SWGErrorResponse errorResponse;
 
     int httpRC = m_webAPIAdapterInterface->devicesetDeviceRunPost(
         m_settings.m_deviceIndex,
@@ -779,8 +779,8 @@ bool RigCtlServerWorker::setPowerOn(rig_errcode_e& rigCtlRC)
 
 bool RigCtlServerWorker::setPowerOff(rig_errcode_e& rigCtlRC)
 {
-    SWGrpx-100::SWGDeviceState response;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGDeviceState response;
+    SWGRPX100::SWGErrorResponse errorResponse;
 
     int httpRC = m_webAPIAdapterInterface->devicesetDeviceRunDelete(
         m_settings.m_deviceIndex,
@@ -805,8 +805,8 @@ bool RigCtlServerWorker::setPowerOff(rig_errcode_e& rigCtlRC)
 
 bool RigCtlServerWorker::getPower(bool& power, rig_errcode_e& rigCtlRC)
 {
-    SWGrpx-100::SWGDeviceState response;
-    SWGrpx-100::SWGErrorResponse errorResponse;
+    SWGRPX100::SWGDeviceState response;
+    SWGRPX100::SWGErrorResponse errorResponse;
 
     int httpRC = m_webAPIAdapterInterface->devicesetDeviceRunGet(
         m_settings.m_deviceIndex,

@@ -125,12 +125,12 @@ bool VORLocalizer::handleMessage(const Message& cmd)
 	else if (MainCore::MsgChannelReport::match(cmd))
     {
         MainCore::MsgChannelReport& report = (MainCore::MsgChannelReport&) cmd;
-        SWGrpx-100::SWGChannelReport* swgChannelReport = report.getSWGReport();
+        SWGRPX100::SWGChannelReport* swgChannelReport = report.getSWGReport();
         QString *channelType  = swgChannelReport->getChannelType();
 
         if (*channelType == "VORDemodSC")
         {
-            SWGrpx-100::SWGVORDemodSCReport *swgVORDemodSCReport = swgChannelReport->getVorDemodScReport();
+            SWGRPX100::SWGVORDemodSCReport *swgVORDemodSCReport = swgChannelReport->getVorDemodScReport();
             int navId = swgVORDemodSCReport->getNavId();
 
             if (navId < 0) { // disregard message for unallocated channels
@@ -403,7 +403,7 @@ void VORLocalizer::updateChannels()
 }
 
 int VORLocalizer::webapiRun(bool run,
-    SWGrpx-100::SWGDeviceState& response,
+    SWGRPX100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -414,11 +414,11 @@ int VORLocalizer::webapiRun(bool run,
 }
 
 int VORLocalizer::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setVorLocalizerSettings(new SWGrpx-100::SWGVORLocalizerSettings());
+    response.setVorLocalizerSettings(new SWGRPX100::SWGVORLocalizerSettings());
     response.getVorLocalizerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -427,7 +427,7 @@ int VORLocalizer::webapiSettingsGet(
 int VORLocalizer::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -450,7 +450,7 @@ int VORLocalizer::webapiSettingsPutPatch(
 }
 
 void VORLocalizer::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const VORLocalizerSettings& settings)
 {
     if (response.getVorLocalizerSettings()->getTitle()) {
@@ -481,7 +481,7 @@ void VORLocalizer::webapiFormatFeatureSettings(
 void VORLocalizer::webapiUpdateFeatureSettings(
     VORLocalizerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("title")) {
         settings.m_title = *response.getVorLocalizerSettings()->getTitle();
@@ -520,12 +520,12 @@ void VORLocalizer::webapiUpdateFeatureSettings(
 
 void VORLocalizer::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const VORLocalizerSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("VORLocalizer"));
-    swgFeatureSettings->setVorLocalizerSettings(new SWGrpx-100::SWGVORLocalizerSettings());
-    SWGrpx-100::SWGVORLocalizerSettings *swgVORLocalizerSettings = swgFeatureSettings->getVorLocalizerSettings();
+    swgFeatureSettings->setVorLocalizerSettings(new SWGRPX100::SWGVORLocalizerSettings());
+    SWGRPX100::SWGVORLocalizerSettings *swgVORLocalizerSettings = swgFeatureSettings->getVorLocalizerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

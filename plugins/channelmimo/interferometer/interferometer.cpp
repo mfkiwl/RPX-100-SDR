@@ -272,11 +272,11 @@ void Interferometer::applyChannelSettings(uint32_t log2Decim, uint32_t filterCha
 }
 
 int Interferometer::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setInterferometerSettings(new SWGrpx-100::SWGInterferometerSettings());
+    response.setInterferometerSettings(new SWGRPX100::SWGInterferometerSettings());
     response.getInterferometerSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -285,7 +285,7 @@ int Interferometer::webapiSettingsGet(
 int Interferometer::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -309,7 +309,7 @@ int Interferometer::webapiSettingsPutPatch(
 void Interferometer::webapiUpdateChannelSettings(
         InterferometerSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("rgbColor")) {
         settings.m_rgbColor = response.getInterferometerSettings()->getRgbColor();
@@ -344,7 +344,7 @@ void Interferometer::webapiUpdateChannelSettings(
     }
 }
 
-void Interferometer::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const InterferometerSettings& settings)
+void Interferometer::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const InterferometerSettings& settings)
 {
     response.getInterferometerSettings()->setRgbColor(settings.m_rgbColor);
 
@@ -371,7 +371,7 @@ void Interferometer::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings&
 
 void Interferometer::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const InterferometerSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -404,7 +404,7 @@ void Interferometer::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -418,7 +418,7 @@ void Interferometer::sendChannelSettings(
 
 void Interferometer::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const InterferometerSettings& settings,
         bool force
 )
@@ -427,8 +427,8 @@ void Interferometer::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("Interferometer"));
-    swgChannelSettings->setInterferometerSettings(new SWGrpx-100::SWGInterferometerSettings());
-    SWGrpx-100::SWGInterferometerSettings *swgInterferometerSettings = swgChannelSettings->getInterferometerSettings();
+    swgChannelSettings->setInterferometerSettings(new SWGRPX100::SWGInterferometerSettings());
+    SWGRPX100::SWGInterferometerSettings *swgInterferometerSettings = swgChannelSettings->getInterferometerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

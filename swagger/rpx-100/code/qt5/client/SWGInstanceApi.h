@@ -45,7 +45,7 @@
 
 #include <QObject>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 class SWGInstanceApi: public QObject {
     Q_OBJECT

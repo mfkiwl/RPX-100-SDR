@@ -270,11 +270,11 @@ bool UDPSink::deserialize(const QByteArray& data)
 }
 
 int UDPSink::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUdpSinkSettings(new SWGrpx-100::SWGUDPSinkSettings());
+    response.setUdpSinkSettings(new SWGRPX100::SWGUDPSinkSettings());
     response.getUdpSinkSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -283,7 +283,7 @@ int UDPSink::webapiSettingsGet(
 int UDPSink::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGrpx-100::SWGChannelSettings& response,
+                SWGRPX100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -308,7 +308,7 @@ int UDPSink::webapiSettingsPutPatch(
 void UDPSink::webapiUpdateChannelSettings(
         UDPSinkSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response)
+        SWGRPX100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("outputSampleRate")) {
         settings.m_outputSampleRate = response.getUdpSinkSettings()->getOutputSampleRate();
@@ -388,17 +388,17 @@ void UDPSink::webapiUpdateChannelSettings(
 }
 
 int UDPSink::webapiReportGet(
-        SWGrpx-100::SWGChannelReport& response,
+        SWGRPX100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUdpSinkReport(new SWGrpx-100::SWGUDPSinkReport());
+    response.setUdpSinkReport(new SWGRPX100::SWGUDPSinkReport());
     response.getUdpSinkReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void UDPSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const UDPSinkSettings& settings)
+void UDPSink::webapiFormatChannelSettings(SWGRPX100::SWGChannelSettings& response, const UDPSinkSettings& settings)
 {
     response.getUdpSinkSettings()->setOutputSampleRate(settings.m_outputSampleRate);
     response.getUdpSinkSettings()->setSampleFormat((int) settings.m_sampleFormat);
@@ -445,7 +445,7 @@ void UDPSink::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& respon
     response.getUdpSinkSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void UDPSink::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
+void UDPSink::webapiFormatChannelReport(SWGRPX100::SWGChannelReport& response)
 {
     response.getUdpSinkReport()->setChannelPowerDb(CalcDb::dbPower(getInMagSq()));
     response.getUdpSinkReport()->setOutputPowerDb(CalcDb::dbPower(getMagSq()));
@@ -455,7 +455,7 @@ void UDPSink::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 
 void UDPSink::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const UDPSinkSettings& settings, bool force)
 {
-    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+    SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
     QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
@@ -488,7 +488,7 @@ void UDPSink::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
+        SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -502,7 +502,7 @@ void UDPSink::sendChannelSettings(
 
 void UDPSink::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
+        SWGRPX100::SWGChannelSettings *swgChannelSettings,
         const UDPSinkSettings& settings,
         bool force
 )
@@ -511,8 +511,8 @@ void UDPSink::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setUdpSinkSettings(new SWGrpx-100::SWGUDPSinkSettings());
-    SWGrpx-100::SWGUDPSinkSettings *swgUDPSinkSettings = swgChannelSettings->getUdpSinkSettings();
+    swgChannelSettings->setUdpSinkSettings(new SWGRPX100::SWGUDPSinkSettings());
+    SWGRPX100::SWGUDPSinkSettings *swgUDPSinkSettings = swgChannelSettings->getUdpSinkSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

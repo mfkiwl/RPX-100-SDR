@@ -145,11 +145,11 @@ void AntennaTools::applySettings(const AntennaToolsSettings& settings, bool forc
 }
 
 int AntennaTools::webapiSettingsGet(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAntennaToolsSettings(new SWGrpx-100::SWGAntennaToolsSettings());
+    response.setAntennaToolsSettings(new SWGRPX100::SWGAntennaToolsSettings());
     response.getAntennaToolsSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -158,7 +158,7 @@ int AntennaTools::webapiSettingsGet(
 int AntennaTools::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -180,7 +180,7 @@ int AntennaTools::webapiSettingsPutPatch(
 }
 
 void AntennaTools::webapiFormatFeatureSettings(
-    SWGrpx-100::SWGFeatureSettings& response,
+    SWGRPX100::SWGFeatureSettings& response,
     const AntennaToolsSettings& settings)
 {
     response.getAntennaToolsSettings()->setDipoleFrequencyMHz(settings.m_dipoleFrequencyMHz);
@@ -212,7 +212,7 @@ void AntennaTools::webapiFormatFeatureSettings(
 void AntennaTools::webapiUpdateFeatureSettings(
     AntennaToolsSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGrpx-100::SWGFeatureSettings& response)
+    SWGRPX100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("dipoleFrequencyMHz")) {
         settings.m_dipoleFrequencyMHz = response.getAntennaToolsSettings()->getDipoleFrequencyMHz();
@@ -257,12 +257,12 @@ void AntennaTools::webapiUpdateFeatureSettings(
 
 void AntennaTools::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const AntennaToolsSettings& settings, bool force)
 {
-    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
+    SWGRPX100::SWGFeatureSettings *swgFeatureSettings = new SWGRPX100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("AntennaTools"));
-    swgFeatureSettings->setAntennaToolsSettings(new SWGrpx-100::SWGAntennaToolsSettings());
-    SWGrpx-100::SWGAntennaToolsSettings *swgAntennaToolsSettings = swgFeatureSettings->getAntennaToolsSettings();
+    swgFeatureSettings->setAntennaToolsSettings(new SWGRPX100::SWGAntennaToolsSettings());
+    SWGRPX100::SWGAntennaToolsSettings *swgAntennaToolsSettings = swgFeatureSettings->getAntennaToolsSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

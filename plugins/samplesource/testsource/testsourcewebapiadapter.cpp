@@ -29,11 +29,11 @@ TestSourceWebAPIAdapter::~TestSourceWebAPIAdapter()
 {}
 
 int TestSourceWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setTestSourceSettings(new SWGrpx-100::SWGTestSourceSettings());
+    response.setTestSourceSettings(new SWGRPX100::SWGTestSourceSettings());
     response.getTestSourceSettings()->init();
     TestSourceInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int TestSourceWebAPIAdapter::webapiSettingsGet(
 int TestSourceWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action
