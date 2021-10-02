@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGStarTrackerSettings::SWGStarTrackerSettings(QString* json) {
     init();
@@ -204,59 +204,59 @@ SWGStarTrackerSettings::fromJson(QString &json) {
 
 void
 SWGStarTrackerSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&target, pJson["target"], "QString", "QString");
+    ::SWGRPX100::setValue(&target, pJson["target"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&ra, pJson["ra"], "QString", "QString");
+    ::SWGRPX100::setValue(&ra, pJson["ra"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&dec, pJson["dec"], "QString", "QString");
+    ::SWGRPX100::setValue(&dec, pJson["dec"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&latitude, pJson["latitude"], "float", "");
+    ::SWGRPX100::setValue(&latitude, pJson["latitude"], "float", "");
     
-    ::SWGrpx-100::setValue(&longitude, pJson["longitude"], "float", "");
+    ::SWGRPX100::setValue(&longitude, pJson["longitude"], "float", "");
     
-    ::SWGrpx-100::setValue(&date_time, pJson["dateTime"], "QString", "QString");
+    ::SWGRPX100::setValue(&date_time, pJson["dateTime"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&refraction, pJson["refraction"], "QString", "QString");
+    ::SWGRPX100::setValue(&refraction, pJson["refraction"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&pressure, pJson["pressure"], "float", "");
+    ::SWGRPX100::setValue(&pressure, pJson["pressure"], "float", "");
     
-    ::SWGrpx-100::setValue(&temperature, pJson["temperature"], "float", "");
+    ::SWGRPX100::setValue(&temperature, pJson["temperature"], "float", "");
     
-    ::SWGrpx-100::setValue(&humidity, pJson["humidity"], "float", "");
+    ::SWGRPX100::setValue(&humidity, pJson["humidity"], "float", "");
     
-    ::SWGrpx-100::setValue(&height_above_sea_level, pJson["heightAboveSeaLevel"], "float", "");
+    ::SWGRPX100::setValue(&height_above_sea_level, pJson["heightAboveSeaLevel"], "float", "");
     
-    ::SWGrpx-100::setValue(&temperature_lapse_rate, pJson["temperatureLapseRate"], "float", "");
+    ::SWGRPX100::setValue(&temperature_lapse_rate, pJson["temperatureLapseRate"], "float", "");
     
-    ::SWGrpx-100::setValue(&frequency, pJson["frequency"], "float", "");
+    ::SWGRPX100::setValue(&frequency, pJson["frequency"], "float", "");
     
-    ::SWGrpx-100::setValue(&stellarium_server_enabled, pJson["stellariumServerEnabled"], "qint32", "");
+    ::SWGRPX100::setValue(&stellarium_server_enabled, pJson["stellariumServerEnabled"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&stellarium_port, pJson["stellariumPort"], "qint32", "");
+    ::SWGRPX100::setValue(&stellarium_port, pJson["stellariumPort"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&update_period, pJson["updatePeriod"], "float", "");
+    ::SWGRPX100::setValue(&update_period, pJson["updatePeriod"], "float", "");
     
-    ::SWGrpx-100::setValue(&epoch, pJson["epoch"], "QString", "QString");
+    ::SWGRPX100::setValue(&epoch, pJson["epoch"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&draw_sun_on_map, pJson["drawSunOnMap"], "qint32", "");
+    ::SWGRPX100::setValue(&draw_sun_on_map, pJson["drawSunOnMap"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&draw_moon_on_map, pJson["drawMoonOnMap"], "qint32", "");
+    ::SWGRPX100::setValue(&draw_moon_on_map, pJson["drawMoonOnMap"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&draw_star_on_map, pJson["drawStarOnMap"], "qint32", "");
+    ::SWGRPX100::setValue(&draw_star_on_map, pJson["drawStarOnMap"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&title, pJson["title"], "QString", "QString");
+    ::SWGRPX100::setValue(&title, pJson["title"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
+    ::SWGRPX100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
+    ::SWGRPX100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
+    ::SWGRPX100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_feature_set_index, pJson["reverseAPIFeatureSetIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_feature_set_index, pJson["reverseAPIFeatureSetIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_feature_index, pJson["reverseAPIFeatureIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_feature_index, pJson["reverseAPIFeatureIndex"], "qint32", "");
     
 }
 

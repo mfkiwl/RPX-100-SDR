@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 ''' Randomize channel colors for a specified device set
-      -a: address and port of rpx-100 REST API (default: 127.0.0.1:8091)
+      -a: address and port of RPX100 REST API (default: 127.0.0.1:8091)
       -d: index of device set to apply changes to (default 0)
     By default colors are changed randomly (hue, saturation, value). Optionally you can change one or several of the
     hue, saturation and value parameters with these options:
@@ -14,7 +14,7 @@ import requests, json, traceback, sys, random
 import colorsys
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/rpx-100"
+base_url = "http://127.0.0.1:8091/RPX100"
 
 
 # ======================================================================
@@ -170,7 +170,7 @@ def main():
     try:
         options = getInputOptions()
         global base_url
-        base_url = "http://%s/rpx-100" % options.address
+        base_url = "http://%s/RPX100" % options.address
         deviceset_url = base_url + ("/deviceset/%d" % options.device_index)
         r = requests.get(url=deviceset_url)
         if r.status_code / 100 == 2:

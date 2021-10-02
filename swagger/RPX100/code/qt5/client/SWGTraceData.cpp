@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGTraceData::SWGTraceData(QString* json) {
     init();
@@ -135,37 +135,37 @@ SWGTraceData::fromJson(QString &json) {
 
 void
 SWGTraceData::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&stream_index, pJson["streamIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&stream_index, pJson["streamIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&projection_type, pJson["projectionType"], "qint32", "");
+    ::SWGRPX100::setValue(&projection_type, pJson["projectionType"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&input_index, pJson["inputIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&input_index, pJson["inputIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&amp, pJson["amp"], "float", "");
+    ::SWGRPX100::setValue(&amp, pJson["amp"], "float", "");
     
-    ::SWGrpx-100::setValue(&ofs, pJson["ofs"], "float", "");
+    ::SWGRPX100::setValue(&ofs, pJson["ofs"], "float", "");
     
-    ::SWGrpx-100::setValue(&trace_delay, pJson["traceDelay"], "qint32", "");
+    ::SWGRPX100::setValue(&trace_delay, pJson["traceDelay"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&trace_delay_coarse, pJson["traceDelayCoarse"], "qint32", "");
+    ::SWGRPX100::setValue(&trace_delay_coarse, pJson["traceDelayCoarse"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&trace_delay_fine, pJson["traceDelayFine"], "qint32", "");
+    ::SWGRPX100::setValue(&trace_delay_fine, pJson["traceDelayFine"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&trigger_display_level, pJson["triggerDisplayLevel"], "float", "");
+    ::SWGRPX100::setValue(&trigger_display_level, pJson["triggerDisplayLevel"], "float", "");
     
-    ::SWGrpx-100::setValue(&trace_color, pJson["traceColor"], "qint32", "");
+    ::SWGRPX100::setValue(&trace_color, pJson["traceColor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&trace_color_r, pJson["traceColorR"], "float", "");
+    ::SWGRPX100::setValue(&trace_color_r, pJson["traceColorR"], "float", "");
     
-    ::SWGrpx-100::setValue(&trace_color_g, pJson["traceColorG"], "float", "");
+    ::SWGRPX100::setValue(&trace_color_g, pJson["traceColorG"], "float", "");
     
-    ::SWGrpx-100::setValue(&trace_color_b, pJson["traceColorB"], "float", "");
+    ::SWGRPX100::setValue(&trace_color_b, pJson["traceColorB"], "float", "");
     
-    ::SWGrpx-100::setValue(&has_text_overlay, pJson["hasTextOverlay"], "qint32", "");
+    ::SWGRPX100::setValue(&has_text_overlay, pJson["hasTextOverlay"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&text_overlay, pJson["textOverlay"], "QString", "QString");
+    ::SWGRPX100::setValue(&text_overlay, pJson["textOverlay"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&view_trace, pJson["viewTrace"], "qint32", "");
+    ::SWGRPX100::setValue(&view_trace, pJson["viewTrace"], "qint32", "");
     
 }
 

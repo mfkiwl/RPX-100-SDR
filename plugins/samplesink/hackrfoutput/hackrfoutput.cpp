@@ -552,11 +552,11 @@ bool HackRFOutput::applySettings(const HackRFOutputSettings& settings, bool forc
 }
 
 int HackRFOutput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setHackRfOutputSettings(new SWGrpx-100::SWGHackRFOutputSettings());
+    response.setHackRfOutputSettings(new SWGRPX100::SWGHackRFOutputSettings());
     response.getHackRfOutputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -565,7 +565,7 @@ int HackRFOutput::webapiSettingsGet(
 int HackRFOutput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -588,7 +588,7 @@ int HackRFOutput::webapiSettingsPutPatch(
 void HackRFOutput::webapiUpdateDeviceSettings(
     HackRFOutputSettings& settings,
     const QStringList& deviceSettingsKeys,
-    SWGrpx-100::SWGDeviceSettings& response)
+    SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getHackRfOutputSettings()->getCenterFrequency();
@@ -640,7 +640,7 @@ void HackRFOutput::webapiUpdateDeviceSettings(
     }
 }
 
-void HackRFOutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const HackRFOutputSettings& settings)
+void HackRFOutput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const HackRFOutputSettings& settings)
 {
     response.getHackRfOutputSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getHackRfOutputSettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -667,7 +667,7 @@ void HackRFOutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& res
 }
 
 int HackRFOutput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -677,7 +677,7 @@ int HackRFOutput::webapiRunGet(
 
 int HackRFOutput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -696,12 +696,12 @@ int HackRFOutput::webapiRun(
 
 void HackRFOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const HackRFOutputSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("HackRF"));
-    swgDeviceSettings->setHackRfOutputSettings(new SWGrpx-100::SWGHackRFOutputSettings());
-    SWGrpx-100::SWGHackRFOutputSettings *swgHackRFOutputSettings = swgDeviceSettings->getHackRfOutputSettings();
+    swgDeviceSettings->setHackRfOutputSettings(new SWGRPX100::SWGHackRFOutputSettings());
+    SWGRPX100::SWGHackRFOutputSettings *swgHackRFOutputSettings = swgDeviceSettings->getHackRfOutputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -739,7 +739,7 @@ void HackRFOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
         swgHackRFOutputSettings->setTransverterMode(settings.m_transverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -760,12 +760,12 @@ void HackRFOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
 
 void HackRFOutput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("HackRF"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

@@ -6,7 +6,7 @@
   - libavcodec-dev
   - libavformat-dev
 
-[LeanSDR](https://github.com/pabr/leansdr) framework from F4DAV is intensively used. It has been integrated in the source tree and modified to suit rpx-100 specific needs.
+[LeanSDR](https://github.com/pabr/leansdr) framework from F4DAV is intensively used. It has been integrated in the source tree and modified to suit RPX100 specific needs.
 
 <h2>Introduction</h2>
 
@@ -187,7 +187,7 @@ Runs the `ldpctool` program for soft LDPC decoding. Frames are sent on its stand
 
 Right clicking on this control opens a dialog where you can choose:
 
-  - The `ldpctool` executable. You have to use the `ldpctool` binary produced by the build of rpx-100.
+  - The `ldpctool` executable. You have to use the `ldpctool` binary produced by the build of RPX100.
   - The maximum of retries in LDPC decoding from 1 to 8.
 
 <h5>B.2b.7: DVB-S2 specific - LDPC maximum number of bit flips allowed</h5>

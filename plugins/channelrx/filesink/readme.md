@@ -4,7 +4,7 @@
 
 Use this plugin to record its channel IQ data in [sdriq](../../samplesource/fileinput/readme.md#introduction) or signed 16-bit PCM `.wav` format. The baseband sample rate can be decimated by a factor of two and its center shifted to accomodate different requirements than recording the full baseband. More than one such plugin can be used in the same baseband to record different parts of the baseband spectrum. Of course in this case file output collision should be avoided.
 
-Such files can be read in rpx-100 using the [File input plugin](../../samplesource/fileinput/readme.md).
+Such files can be read in RPX100 using the [File input plugin](../../samplesource/fileinput/readme.md).
 
 Each recording is written in a new file with the starting timestamp before the `.sdriq` extension in `yyyy-MM-ddTHH_mm_ss_zzz` format. It keeps the first dot limted groups of the filename before the `.sdriq` or `.wav` extension if there are two such groups or before the two last groups if there are more than two groups. Examples:
 

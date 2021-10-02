@@ -1,20 +1,20 @@
 version: '3'
 services:
   swgcodegen:
-    image: "rpx-100/swagger/codegen:${IMAGE_CODEGEN_VERSION}"
-    container_name: "rpx-100_swgcodegen"
+    image: "RPX100/swagger/codegen:${IMAGE_CODEGEN_VERSION}"
+    container_name: "RPX100_swgcodegen"
     volumes:
-      - "${rpx-100_BASE}:/opt/build/rpx-100:rw"
+      - "${RPX100_BASE}:/opt/build/RPX100:rw"
     networks:
       default:
         ipv4_address: 172.20.0.2
     stdin_open: true
     tty: true
   swgserver:
-    image: "rpx-100/swagger/server:${IMAGE_SERVER_VERSION}"
-    container_name: "rpx-100_swgserver"
+    image: "RPX100/swagger/server:${IMAGE_SERVER_VERSION}"
+    container_name: "RPX100_swgserver"
     volumes:
-      - "${rpx-100_BASE}:/opt/build/rpx-100:rw"
+      - "${RPX100_BASE}:/opt/build/RPX100:rw"
     expose:
       - "8081"
     networks:

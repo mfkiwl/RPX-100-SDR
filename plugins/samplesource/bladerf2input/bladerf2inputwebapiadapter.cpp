@@ -29,11 +29,11 @@ BladeRF2InputWebAPIAdapter::~BladeRF2InputWebAPIAdapter()
 {}
 
 int BladeRF2InputWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBladeRf2InputSettings(new SWGrpx-100::SWGBladeRF2InputSettings());
+    response.setBladeRf2InputSettings(new SWGRPX100::SWGBladeRF2InputSettings());
     response.getBladeRf2InputSettings()->init();
     BladeRF2Input::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int BladeRF2InputWebAPIAdapter::webapiSettingsGet(
 int BladeRF2InputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

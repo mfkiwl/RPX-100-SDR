@@ -13,9 +13,9 @@ Note that libbladeRF v2 with git tag 2018.10-rc1 should be used (official releas
   - The FX3 firmware version should be v2.3.1
   - The FPGA image version should be v0.9.0
 
-The FPGA .rbf file should be copied to the folder where the `rpx-100` binary resides. You can download FPGA images from [here](https://www.nuand.com/fpga_images/)
+The FPGA .rbf file should be copied to the folder where the `RPX100` binary resides. You can download FPGA images from [here](https://www.nuand.com/fpga_images/)
 
-The BladeRF Host library is also provided by many Linux distributions (check its version) and is built in the rpx-100 binary releases.
+The BladeRF Host library is also provided by many Linux distributions (check its version) and is built in the RPX100 binary releases.
 
 <h2>Interface</h2>
 

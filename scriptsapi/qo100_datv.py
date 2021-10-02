@@ -5,9 +5,9 @@ Quick control of configuration for receiving QO-100 DATV
 
 import requests, traceback, sys, json, time
 from optparse import OptionParser
-import rpx-100
+import RPX100
 
-base_url_pattern = "http://{0}/rpx-100"
+base_url_pattern = "http://{0}/RPX100"
 base_url = None
 
 # ======================================================================
@@ -111,7 +111,7 @@ def set_device(options):
     if r.status_code // 100 == 2: # OK
         rj = r.json()
         hwtype = rj.get("deviceHwType", None)
-        device_settings = rj.get(rpx-100.DEVICE_TYPES[hwtype]["settings"], None)
+        device_settings = rj.get(RPX100.DEVICE_TYPES[hwtype]["settings"], None)
         device_sr, device_decim = get_device_sr_and_decim(hwtype, device_settings)
         new_decim = calc_decim(device_sr, options.symbol_rate)
         print(f"sr: {device_sr} S/s decim: {device_decim} new decim: {1<<new_decim}")

@@ -716,7 +716,7 @@ float PlutoSDROutput::getTemperature()
 }
 
 int PlutoSDROutput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -726,7 +726,7 @@ int PlutoSDROutput::webapiRunGet(
 
 int PlutoSDROutput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -744,11 +744,11 @@ int PlutoSDROutput::webapiRun(
 }
 
 int PlutoSDROutput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPlutoSdrOutputSettings(new SWGrpx-100::SWGPlutoSdrOutputSettings());
+    response.setPlutoSdrOutputSettings(new SWGRPX100::SWGPlutoSdrOutputSettings());
     response.getPlutoSdrOutputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -757,7 +757,7 @@ int PlutoSDROutput::webapiSettingsGet(
 int PlutoSDROutput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -780,7 +780,7 @@ int PlutoSDROutput::webapiSettingsPutPatch(
 void PlutoSDROutput::webapiUpdateDeviceSettings(
         PlutoSDROutputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getPlutoSdrOutputSettings()->getCenterFrequency();
@@ -838,17 +838,17 @@ void PlutoSDROutput::webapiUpdateDeviceSettings(
 }
 
 int PlutoSDROutput::webapiReportGet(
-        SWGrpx-100::SWGDeviceReport& response,
+        SWGRPX100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPlutoSdrOutputReport(new SWGrpx-100::SWGPlutoSdrOutputReport());
+    response.setPlutoSdrOutputReport(new SWGRPX100::SWGPlutoSdrOutputReport());
     response.getPlutoSdrOutputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void PlutoSDROutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const PlutoSDROutputSettings& settings)
+void PlutoSDROutput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const PlutoSDROutputSettings& settings)
 {
     response.getPlutoSdrOutputSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getPlutoSdrOutputSettings()->setDevSampleRate(settings.m_devSampleRate);
@@ -875,7 +875,7 @@ void PlutoSDROutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& r
     response.getPlutoSdrOutputSettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void PlutoSDROutput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
+void PlutoSDROutput::webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response)
 {
     response.getPlutoSdrOutputReport()->setDacRate(getDACSampleRate());
     std::string rssiStr;
@@ -887,12 +887,12 @@ void PlutoSDROutput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respo
 
 void PlutoSDROutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const PlutoSDROutputSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("PlutoSDR"));
-    swgDeviceSettings->setPlutoSdrOutputSettings(new SWGrpx-100::SWGPlutoSdrOutputSettings());
-    SWGrpx-100::SWGPlutoSdrOutputSettings *swgPlutoSdrOutputSettings = swgDeviceSettings->getPlutoSdrOutputSettings();
+    swgDeviceSettings->setPlutoSdrOutputSettings(new SWGRPX100::SWGPlutoSdrOutputSettings());
+    SWGRPX100::SWGPlutoSdrOutputSettings *swgPlutoSdrOutputSettings = swgDeviceSettings->getPlutoSdrOutputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -936,7 +936,7 @@ void PlutoSDROutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
         swgPlutoSdrOutputSettings->setTransverterMode(settings.m_transverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -957,12 +957,12 @@ void PlutoSDROutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
 
 void PlutoSDROutput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("PlutoSDR"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

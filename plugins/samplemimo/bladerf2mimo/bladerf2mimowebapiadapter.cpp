@@ -29,11 +29,11 @@ BladeRF2MIMOWebAPIAdapter::~BladeRF2MIMOWebAPIAdapter()
 {}
 
 int BladeRF2MIMOWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBladeRf2MimoSettings(new SWGrpx-100::SWGBladeRF2MIMOSettings());
+    response.setBladeRf2MimoSettings(new SWGRPX100::SWGBladeRF2MIMOSettings());
     response.getBladeRf2MimoSettings()->init();
     BladeRF2MIMO::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int BladeRF2MIMOWebAPIAdapter::webapiSettingsGet(
 int BladeRF2MIMOWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

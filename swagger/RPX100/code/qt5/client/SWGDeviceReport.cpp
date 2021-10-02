@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGDeviceReport::SWGDeviceReport(QString* json) {
     init();
@@ -268,67 +268,67 @@ SWGDeviceReport::fromJson(QString &json) {
 
 void
 SWGDeviceReport::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&device_hw_type, pJson["deviceHwType"], "QString", "QString");
+    ::SWGRPX100::setValue(&device_hw_type, pJson["deviceHwType"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&direction, pJson["direction"], "qint32", "");
+    ::SWGRPX100::setValue(&direction, pJson["direction"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&airspy_report, pJson["airspyReport"], "SWGAirspyReport", "SWGAirspyReport");
+    ::SWGRPX100::setValue(&airspy_report, pJson["airspyReport"], "SWGAirspyReport", "SWGAirspyReport");
     
-    ::SWGrpx-100::setValue(&airspy_hf_report, pJson["airspyHFReport"], "SWGAirspyHFReport", "SWGAirspyHFReport");
+    ::SWGRPX100::setValue(&airspy_hf_report, pJson["airspyHFReport"], "SWGAirspyHFReport", "SWGAirspyHFReport");
     
-    ::SWGrpx-100::setValue(&blade_rf2_input_report, pJson["bladeRF2InputReport"], "SWGBladeRF2InputReport", "SWGBladeRF2InputReport");
+    ::SWGRPX100::setValue(&blade_rf2_input_report, pJson["bladeRF2InputReport"], "SWGBladeRF2InputReport", "SWGBladeRF2InputReport");
     
-    ::SWGrpx-100::setValue(&blade_rf2_output_report, pJson["bladeRF2OutputReport"], "SWGBladeRF2OutputReport", "SWGBladeRF2OutputReport");
+    ::SWGRPX100::setValue(&blade_rf2_output_report, pJson["bladeRF2OutputReport"], "SWGBladeRF2OutputReport", "SWGBladeRF2OutputReport");
     
-    ::SWGrpx-100::setValue(&blade_rf2_mimo_report, pJson["bladeRF2MIMOReport"], "SWGBladeRF2MIMOReport", "SWGBladeRF2MIMOReport");
+    ::SWGRPX100::setValue(&blade_rf2_mimo_report, pJson["bladeRF2MIMOReport"], "SWGBladeRF2MIMOReport", "SWGBladeRF2MIMOReport");
     
-    ::SWGrpx-100::setValue(&file_input_report, pJson["fileInputReport"], "SWGFileInputReport", "SWGFileInputReport");
+    ::SWGRPX100::setValue(&file_input_report, pJson["fileInputReport"], "SWGFileInputReport", "SWGFileInputReport");
     
-    ::SWGrpx-100::setValue(&kiwi_sdr_report, pJson["kiwiSDRReport"], "SWGKiwiSDRReport", "SWGKiwiSDRReport");
+    ::SWGRPX100::setValue(&kiwi_sdr_report, pJson["kiwiSDRReport"], "SWGKiwiSDRReport", "SWGKiwiSDRReport");
     
-    ::SWGrpx-100::setValue(&lime_sdr_input_report, pJson["limeSdrInputReport"], "SWGLimeSdrInputReport", "SWGLimeSdrInputReport");
+    ::SWGRPX100::setValue(&lime_sdr_input_report, pJson["limeSdrInputReport"], "SWGLimeSdrInputReport", "SWGLimeSdrInputReport");
     
-    ::SWGrpx-100::setValue(&lime_sdr_output_report, pJson["limeSdrOutputReport"], "SWGLimeSdrOutputReport", "SWGLimeSdrOutputReport");
+    ::SWGRPX100::setValue(&lime_sdr_output_report, pJson["limeSdrOutputReport"], "SWGLimeSdrOutputReport", "SWGLimeSdrOutputReport");
     
-    ::SWGrpx-100::setValue(&lime_sdr_mimo_report, pJson["limeSdrMIMOReport"], "SWGLimeSdrMIMOReport", "SWGLimeSdrMIMOReport");
+    ::SWGRPX100::setValue(&lime_sdr_mimo_report, pJson["limeSdrMIMOReport"], "SWGLimeSdrMIMOReport", "SWGLimeSdrMIMOReport");
     
-    ::SWGrpx-100::setValue(&local_input_report, pJson["localInputReport"], "SWGLocalInputReport", "SWGLocalInputReport");
+    ::SWGRPX100::setValue(&local_input_report, pJson["localInputReport"], "SWGLocalInputReport", "SWGLocalInputReport");
     
-    ::SWGrpx-100::setValue(&local_output_report, pJson["localOutputReport"], "SWGLocalOutputReport", "SWGLocalOutputReport");
+    ::SWGRPX100::setValue(&local_output_report, pJson["localOutputReport"], "SWGLocalOutputReport", "SWGLocalOutputReport");
     
-    ::SWGrpx-100::setValue(&perseus_report, pJson["perseusReport"], "SWGPerseusReport", "SWGPerseusReport");
+    ::SWGRPX100::setValue(&perseus_report, pJson["perseusReport"], "SWGPerseusReport", "SWGPerseusReport");
     
-    ::SWGrpx-100::setValue(&pluto_sdr_input_report, pJson["plutoSdrInputReport"], "SWGPlutoSdrInputReport", "SWGPlutoSdrInputReport");
+    ::SWGRPX100::setValue(&pluto_sdr_input_report, pJson["plutoSdrInputReport"], "SWGPlutoSdrInputReport", "SWGPlutoSdrInputReport");
     
-    ::SWGrpx-100::setValue(&pluto_sdr_output_report, pJson["plutoSdrOutputReport"], "SWGPlutoSdrOutputReport", "SWGPlutoSdrOutputReport");
+    ::SWGRPX100::setValue(&pluto_sdr_output_report, pJson["plutoSdrOutputReport"], "SWGPlutoSdrOutputReport", "SWGPlutoSdrOutputReport");
     
-    ::SWGrpx-100::setValue(&pluto_sdr_mimo_report, pJson["plutoSdrMIMOReport"], "SWGPlutoSdrMIMOReport", "SWGPlutoSdrMIMOReport");
+    ::SWGRPX100::setValue(&pluto_sdr_mimo_report, pJson["plutoSdrMIMOReport"], "SWGPlutoSdrMIMOReport", "SWGPlutoSdrMIMOReport");
     
-    ::SWGrpx-100::setValue(&rtl_sdr_report, pJson["rtlSdrReport"], "SWGRtlSdrReport", "SWGRtlSdrReport");
+    ::SWGRPX100::setValue(&rtl_sdr_report, pJson["rtlSdrReport"], "SWGRtlSdrReport", "SWGRtlSdrReport");
     
-    ::SWGrpx-100::setValue(&remote_output_report, pJson["remoteOutputReport"], "SWGRemoteOutputReport", "SWGRemoteOutputReport");
+    ::SWGRPX100::setValue(&remote_output_report, pJson["remoteOutputReport"], "SWGRemoteOutputReport", "SWGRemoteOutputReport");
     
-    ::SWGrpx-100::setValue(&remote_input_report, pJson["remoteInputReport"], "SWGRemoteInputReport", "SWGRemoteInputReport");
+    ::SWGRPX100::setValue(&remote_input_report, pJson["remoteInputReport"], "SWGRemoteInputReport", "SWGRemoteInputReport");
     
-    ::SWGrpx-100::setValue(&sdr_play_report, pJson["sdrPlayReport"], "SWGSDRPlayReport", "SWGSDRPlayReport");
+    ::SWGRPX100::setValue(&sdr_play_report, pJson["sdrPlayReport"], "SWGSDRPlayReport", "SWGSDRPlayReport");
     
-    ::SWGrpx-100::setValue(&sdr_play_v3_report, pJson["sdrPlayV3Report"], "SWGSDRPlayV3Report", "SWGSDRPlayV3Report");
+    ::SWGRPX100::setValue(&sdr_play_v3_report, pJson["sdrPlayV3Report"], "SWGSDRPlayV3Report", "SWGSDRPlayV3Report");
     
-    ::SWGrpx-100::setValue(&sig_mf_file_input_report, pJson["sigMFFileInputReport"], "SWGSigMFFileInputReport", "SWGSigMFFileInputReport");
+    ::SWGRPX100::setValue(&sig_mf_file_input_report, pJson["sigMFFileInputReport"], "SWGSigMFFileInputReport", "SWGSigMFFileInputReport");
     
-    ::SWGrpx-100::setValue(&soapy_sdr_input_report, pJson["soapySDRInputReport"], "SWGSoapySDRReport", "SWGSoapySDRReport");
+    ::SWGRPX100::setValue(&soapy_sdr_input_report, pJson["soapySDRInputReport"], "SWGSoapySDRReport", "SWGSoapySDRReport");
     
-    ::SWGrpx-100::setValue(&soapy_sdr_output_report, pJson["soapySDROutputReport"], "SWGSoapySDRReport", "SWGSoapySDRReport");
+    ::SWGRPX100::setValue(&soapy_sdr_output_report, pJson["soapySDROutputReport"], "SWGSoapySDRReport", "SWGSoapySDRReport");
     
-    ::SWGrpx-100::setValue(&usrp_input_report, pJson["usrpInputReport"], "SWGUSRPInputReport", "SWGUSRPInputReport");
+    ::SWGRPX100::setValue(&usrp_input_report, pJson["usrpInputReport"], "SWGUSRPInputReport", "SWGUSRPInputReport");
     
-    ::SWGrpx-100::setValue(&usrp_output_report, pJson["usrpOutputReport"], "SWGUSRPOutputReport", "SWGUSRPOutputReport");
+    ::SWGRPX100::setValue(&usrp_output_report, pJson["usrpOutputReport"], "SWGUSRPOutputReport", "SWGUSRPOutputReport");
     
-    ::SWGrpx-100::setValue(&xtrx_input_report, pJson["xtrxInputReport"], "SWGXtrxInputReport", "SWGXtrxInputReport");
+    ::SWGRPX100::setValue(&xtrx_input_report, pJson["xtrxInputReport"], "SWGXtrxInputReport", "SWGXtrxInputReport");
     
-    ::SWGrpx-100::setValue(&xtrx_output_report, pJson["xtrxOutputReport"], "SWGXtrxOutputReport", "SWGXtrxOutputReport");
+    ::SWGRPX100::setValue(&xtrx_output_report, pJson["xtrxOutputReport"], "SWGXtrxOutputReport", "SWGXtrxOutputReport");
     
-    ::SWGrpx-100::setValue(&xtrx_mimo_report, pJson["xtrxMIMOReport"], "SWGXtrxMIMOReport", "SWGXtrxMIMOReport");
+    ::SWGRPX100::setValue(&xtrx_mimo_report, pJson["xtrxMIMOReport"], "SWGXtrxMIMOReport", "SWGXtrxMIMOReport");
     
 }
 

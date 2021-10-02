@@ -2,4 +2,4 @@
 
 <h2>Controllers</h2>
 
-  - `instance.js`: methods found in the `/rpx-100` route
+  - `instance.js`: methods found in the `/RPX100` route

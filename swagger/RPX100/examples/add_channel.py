@@ -3,7 +3,7 @@
 import requests, json, traceback, sys
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/rpx-100"
+base_url = "http://127.0.0.1:8091/RPX100"
 
 
 # ======================================================================
@@ -34,7 +34,7 @@ def main():
     try:
         options = getInputOptions()
         global base_url
-        base_url = "http://%s/rpx-100" % options.address
+        base_url = "http://%s/RPX100" % options.address
         device_url = base_url + ("/deviceset/%d/channel" % options.device_index)
         r = requests.post(url=device_url, json={"direction": 0, "channelType": options.channel_id})
         if r.status_code / 100 == 2:

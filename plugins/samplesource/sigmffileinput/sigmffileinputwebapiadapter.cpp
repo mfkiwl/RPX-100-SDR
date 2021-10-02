@@ -29,11 +29,11 @@ SigMFFileInputWebAPIAdapter::~SigMFFileInputWebAPIAdapter()
 {}
 
 int SigMFFileInputWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSigMfFileInputSettings(new SWGrpx-100::SWGSigMFFileInputSettings());
+    response.setSigMfFileInputSettings(new SWGRPX100::SWGSigMFFileInputSettings());
     response.getSigMfFileInputSettings()->init();
     SigMFFileInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int SigMFFileInputWebAPIAdapter::webapiSettingsGet(
 int SigMFFileInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

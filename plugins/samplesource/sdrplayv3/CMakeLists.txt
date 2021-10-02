@@ -17,7 +17,7 @@ set(sdrplayv3_HEADERS
 )
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/RPX100/code/qt5/client
     ${SDRPLAY_INCLUDE_DIR}
 )
 

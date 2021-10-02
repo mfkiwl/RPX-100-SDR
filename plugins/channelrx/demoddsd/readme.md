@@ -43,7 +43,7 @@ Newer kernels do not seem to have this issue.
 
 DSDcc itself can use [mbelib](https://github.com/szechyjs/mbelib) to decode AMBE frames. While DSDcc is intended to be patent-free, `mbelib` that it uses describes functions that may be covered by one or more U.S. patents owned by DVSI Inc. The source code itself should not be infringing as it merely describes possible methods of implementation. Compiling or using `mbelib` may infringe on patents rights in your jurisdiction and/or require licensing. It is unknown if DVSI will sell licenses for software that uses `mbelib`.
 
-If you are not comfortable with this just do not install DSDcc and/or mbelib and the plugin will not be compiled and added to rpx-100. For packaged distributions just remove:
+If you are not comfortable with this just do not install DSDcc and/or mbelib and the plugin will not be compiled and added to RPX100. For packaged distributions just remove:
 
   - For Linux distributions: `plugins/channel/libdemoddsd.so`
   - For Windows distributions: `dsdcc.dll`, `mbelib.dll`, `plugins\channel\demoddsd.dll`

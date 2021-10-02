@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop">
-  <id>org.rpx-100.rpx-100</id>
-  <launchable type="desktop-id">org.rpx-100.rpx-100.desktop</launchable>
+  <id>org.RPX100.RPX100</id>
+  <launchable type="desktop-id">org.RPX100.RPX100.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
-  <name>rpx-100</name>
+  <name>RPX100</name>
   <summary>SDR and signal analyzer frontend to various hardware</summary>
   <description>
     <p>
-      rpx-100 is an Open Source Qt5 / OpenGL 3.0+ SDR and signal analyzer frontend to various hardware.
+      RPX100 is an Open Source Qt5 / OpenGL 3.0+ SDR and signal analyzer frontend to various hardware.
     </p>
   </description>
 <!--
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://raw.githubusercontent.com/f4exb/rpx-100/master/flatpak/screenshot.png</image>
+      <image type="source">https://raw.githubusercontent.com/f4exb/RPX100/master/flatpak/screenshot.png</image>
     </screenshot>
   </screenshots>
 -->
-  <url type="homepage">https://github.com/f4exb/rpx-100</url>
-  <url type="bugtracker">https://github.com/f4exb/rpx-100/issues</url>
-  <project_group>rpx-100</project_group>
+  <url type="homepage">https://github.com/f4exb/RPX100</url>
+  <url type="bugtracker">https://github.com/f4exb/RPX100/issues</url>
+  <project_group>RPX100</project_group>
   <provides>
-    <binary>rpx-100</binary>
+    <binary>RPX100</binary>
   </provides>
 </component>

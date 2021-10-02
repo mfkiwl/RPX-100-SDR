@@ -211,7 +211,7 @@ function instanceLoggingGet(req, res, next) {
         "consoleLevel":"info",
         "fileLevel":"debug",
         "dumpToFile": true,
-        "fileName":"rpx-100.log"
+        "fileName":"RPX100.log"
     }
   );
 }

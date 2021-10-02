@@ -57,7 +57,7 @@ When there is more than one turn for a device valid radial directions are averag
 
 <h3>9: Refresh VOR demodulators list and allocation</h3>
 
-Use this button to (re)scan the available VOR demodulators in the rpx-100 instance and (re)run the round robin allocation.
+Use this button to (re)scan the available VOR demodulators in the RPX100 instance and (re)run the round robin allocation.
 
 <h2>B: VOR Table</h2>
 

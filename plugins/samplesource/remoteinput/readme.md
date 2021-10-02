@@ -2,13 +2,13 @@
 
 <h2>Introduction</h2>
 
-This input sample source plugin gets its samples over tbe network from a rpx-100 instance's Remote channel sink using UDP connection.
+This input sample source plugin gets its samples over tbe network from a RPX100 instance's Remote channel sink using UDP connection.
 
 Forward Error Correction with a Cauchy MDS block erasure codec is used to prevent block loss. This can make the UDP transmission more robust particularly over WiFi links.
 
 Please note that there is no provision for handling out of sync UDP blocks. It is assumed that frames and block numbers always increase with possible blocks missing. Such out of sync situation has never been encountered in practice.
 
-The remote rpx-100 instance that sends the data stream is controlled via its REST API using a separate control software for example [rpx-100cli](https://github.com/f4exb/rpx-100cli)
+The remote RPX100 instance that sends the data stream is controlled via its REST API using a separate control software for example [RPX100cli](https://github.com/f4exb/RPX100cli)
 
 A sample size conversion takes place if the stream sample size sent by the remote instance and the Rx sample size of the local instance do not match (i.e. 16 to 24 bits or 24 to 16 bits). Best performace is obtained when both instances use the same sample size.
 
@@ -31,7 +31,7 @@ Device start / stop button.
 
 <h3>2: Frequency</h3>
 
-This is the center frequency in Hz sent in the meta data from the remote rpx-100 instance and corresponds to the center frequency of reception. The sub kHz value (000 to 999 Hz) is represented in smaller digits on the right.
+This is the center frequency in Hz sent in the meta data from the remote RPX100 instance and corresponds to the center frequency of reception. The sub kHz value (000 to 999 Hz) is represented in smaller digits on the right.
 
 <h3>3: Stream sample rate</h3>
 
@@ -136,15 +136,15 @@ The "Remote" label is lit in green when the connection is successful
 
 <h4>7.2: API IP address</h4>
 
-IP address of the remote rpx-100 instance REST API
+IP address of the remote RPX100 instance REST API
 
 <h4>7.3: API port</h4>
 
-Port of the remote rpx-100 instance REST API
+Port of the remote RPX100 instance REST API
 
 <h4>7.4: Get information button</h4>
 
-When the return key is hit within the address (5.2) or port (5.3) the changes are effective immediately. You can also use this button to set again these values. Clicking on this button will send a request to the API to get the remote rpx-100 instance information that is displayed in the API message box (8)
+When the return key is hit within the address (5.2) or port (5.3) the changes are effective immediately. You can also use this button to set again these values. Clicking on this button will send a request to the API to get the remote RPX100 instance information that is displayed in the API message box (8)
 
 <h3>8: Local network interface address and port for data reception</h3>
 
@@ -152,11 +152,11 @@ When the return key is hit within the address (5.2) or port (5.3) the changes ar
 
 <h4>8.1: Interface IP address</h4>
 
-IP address of the local network interface the remote rpx-100 instance sends the data to. Effective when the validation button (8.3) is pressed.
+IP address of the local network interface the remote RPX100 instance sends the data to. Effective when the validation button (8.3) is pressed.
 
 <h4>8.2: Interface port</h4>
 
-Local port the remote rpx-100 instance sends the data to.  Effective when the validation button (8.3) is pressed.
+Local port the remote RPX100 instance sends the data to.  Effective when the validation button (8.3) is pressed.
 
 <h4>8.3: Validation button</h4>
 

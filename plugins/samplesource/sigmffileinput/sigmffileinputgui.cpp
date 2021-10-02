@@ -181,7 +181,7 @@ bool SigMFFileInputGUI::handleMessage(const Message& message)
 
         m_recordInfo = QString("Meta file..: %1\n").arg(m_metaFileName);
 
-        if (m_metaInfo.m_rpx-100Version.size() == 0)
+        if (m_metaInfo.m_RPX100Version.size() == 0)
         {
             if (m_metaInfo.m_description.size() > 0) {
                 m_recordInfo += QString("Description: %1\n").arg(m_metaInfo.m_description);
@@ -205,7 +205,7 @@ bool SigMFFileInputGUI::handleMessage(const Message& message)
             m_recordInfo += QString("Nb captures: %1\n").arg(m_metaInfo.m_nbCaptures);
             m_recordInfo += QString("Nb annot...: %1\n").arg(m_metaInfo.m_nbAnnotations);
 
-            ui->infoSummaryText->setText("Not recorded with rpx-100");
+            ui->infoSummaryText->setText("Not recorded with RPX100");
         }
         else
         {
@@ -215,8 +215,8 @@ bool SigMFFileInputGUI::handleMessage(const Message& message)
             m_recordInfo += QString("Core SRate.: %1 S/s\n").arg(m_metaInfo.m_coreSampleRate);
             m_recordInfo += QString("Nb samples.: %1 (%2S)\n").arg(m_metaInfo.m_totalSamples).arg(displayScaled(m_metaInfo.m_totalSamples, 3));
             m_recordInfo += QString("Nb captures: %1\n").arg(m_metaInfo.m_nbCaptures);
-            m_recordInfo += QString("rpx-100 application info:\n");
-            m_recordInfo += QString("Version....: v%1\n").arg(m_metaInfo.m_rpx-100Version);
+            m_recordInfo += QString("RPX100 application info:\n");
+            m_recordInfo += QString("Version....: v%1\n").arg(m_metaInfo.m_RPX100Version);
             m_recordInfo += QString("Qt version.: %1\n").arg(m_metaInfo.m_qtVersion);
             m_recordInfo += QString("Rx bits....: %1 bits\n").arg(m_metaInfo.m_rxBits);
             m_recordInfo += QString("Arch.......: %1\n").arg(m_metaInfo.m_arch);
@@ -225,7 +225,7 @@ bool SigMFFileInputGUI::handleMessage(const Message& message)
             ui->infoSummaryText->setText(QString("%1 Rx %2 bits v%3")
                 .arg(m_metaInfo.m_recorder)
                 .arg(m_metaInfo.m_rxBits)
-                .arg(m_metaInfo.m_rpx-100Version));
+                .arg(m_metaInfo.m_RPX100Version));
         }
 
         m_captures = report.getCaptures();

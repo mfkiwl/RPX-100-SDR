@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-By "source" one should understand a source of samples that feed the baseband of the transmitting device. An external application establishes an UDP connection to the plugin at the given address and port and samples are directed to it. In fact it can also come from rpx-100 itself using the UDP source plugin
+By "source" one should understand a source of samples that feed the baseband of the transmitting device. An external application establishes an UDP connection to the plugin at the given address and port and samples are directed to it. In fact it can also come from RPX100 itself using the UDP source plugin
 
 The UDP block size or UDP payload size is optimized for 512 bytes but other sizes are acceptable.
 

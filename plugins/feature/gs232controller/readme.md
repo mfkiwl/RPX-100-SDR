@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-The GS-232 Rotator Controller feature plugin allows rpx-100 to send commands to GS-232 rotators. This allows rpx-100 to point antennas mounted on a rotator to a specified azimuth and elevation.
+The GS-232 Rotator Controller feature plugin allows RPX100 to send commands to GS-232 rotators. This allows RPX100 to point antennas mounted on a rotator to a specified azimuth and elevation.
 
 Azimuth and elevation can be set manually by a user in the GUI, via the REST API, or via another plugin, such as the Map Feature, the ADS-B Demodulator, or the Star Tracker.
 
@@ -31,7 +31,7 @@ For example, this allows an aircraft to be tracked, by setting the Source to the
 
 <h3>5: Source</h3>
 
-Specify the rpx-100 Channel or Feature that that will control the target aziumth and elevation values, when Track (4) is checked.
+Specify the RPX100 Channel or Feature that that will control the target aziumth and elevation values, when Track (4) is checked.
 
 <h3>6: Target</h3>
 
@@ -94,8 +94,8 @@ All frames start with 0x57 and end with 0x20.
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to set the azimuth and elevation from the command line:
 
-    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "GS232Controller",  "GS232ControllerSettings": { "azimuth": 180, "elevation": 45 }}'
+    curl -X PATCH "http://127.0.0.1:8091/RPX100/featureset/0/feature/0/settings" -d '{"featureType": "GS232Controller",  "GS232ControllerSettings": { "azimuth": 180, "elevation": 45 }}'
 
 To start sending commands to the rotator:
 
-    curl -X POST "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/run"
+    curl -X POST "http://127.0.0.1:8091/RPX100/featureset/0/feature/0/run"

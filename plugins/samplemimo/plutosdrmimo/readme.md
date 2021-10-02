@@ -15,7 +15,7 @@ The device comes configured for 2 Rx and 2 Tx but in case you change firmware yo
 # fw_setenv attr_val 2r2t
 ```
 
-&#9758; Similarly with ADALM Pluto when running the Pluto on Ethernet interface you have to create a non discoverable device reference in the [user arguments dialog](https://github.com/f4exb/rpx-100/blob/master/sdrgui/deviceuserargs.md) from the main window Preferences &gt; Devices menu. You must use the `PlutoSDR` hardware ID then specify the device address with a `uri` parameter in the user arguments for example: `uri=ip:192.168.1.10`. Note that this will become effective once rpx-100 is restarted.
+&#9758; Similarly with ADALM Pluto when running the Pluto on Ethernet interface you have to create a non discoverable device reference in the [user arguments dialog](https://github.com/f4exb/RPX100/blob/master/sdrgui/deviceuserargs.md) from the main window Preferences &gt; Devices menu. You must use the `PlutoSDR` hardware ID then specify the device address with a `uri` parameter in the user arguments for example: `uri=ip:192.168.1.10`. Note that this will become effective once RPX100 is restarted.
 
 <h2>Build</h2>
 
@@ -30,7 +30,7 @@ The plugin will be built only if libiio is installed in your system. To build an
   - `make -j8`
   - `make install`
 
-Then add the following defines on `cmake` command line when compiling rpx-100:
+Then add the following defines on `cmake` command line when compiling RPX100:
 
 `-DIIO_DIR=/opt/install/libiio`
 

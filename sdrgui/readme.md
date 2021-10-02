@@ -2,7 +2,7 @@
 
 <h2>Multi device support</h2>
 
-Starting with version 2 rpx-100 supports running several sampling devices simultaneously. Each concurrent device is associated to a slot with a set of tabbed windows in the UI. These tabs are marked R0, R1, R2...
+Starting with version 2 RPX100 supports running several sampling devices simultaneously. Each concurrent device is associated to a slot with a set of tabbed windows in the UI. These tabs are marked R0, R1, R2...
 
 The slots are arranged in a stacked fashion so that when a new device is added with the Acquisition -> Add device set menu a new slot is allocated in the last position and when a device is removed with the Acquisition -> Remove last device set menu the slot in the last position is deleted. Slot 0 (R0) receiver slot is created at initialization and cannot be deleted with the menu. The letter "R" in the tab names indicates that the slot is for a receiver (source) device while "T" designates a transmitter (sink) device.
 
@@ -147,11 +147,11 @@ Checks the list of devices or addresses currently in use and update the in use l
 
 <h5>1.3.5 Empty in use list</h5>
 
-Removes all devices or addresses in use. The in use list (6) is cleared consequently. This removes all AMBE devices related resources attached to the current instance of the rpx-100 program. Therefore consecutive AMBE frames decoding will be handled by the mbelib library if available or no audio will be output.
+Removes all devices or addresses in use. The in use list (6) is cleared consequently. This removes all AMBE devices related resources attached to the current instance of the RPX100 program. Therefore consecutive AMBE frames decoding will be handled by the mbelib library if available or no audio will be output.
 
 <h5>1.3.6 In use list</h5>
 
-List of devices or addresses currently in use for AMBE frames decoding by this instance of the rpx-100 program.
+List of devices or addresses currently in use for AMBE frames decoding by this instance of the RPX100 program.
 
 <h5>1.3.7 Import serial device</h5>
 
@@ -183,7 +183,7 @@ See the devuces user arguments management documentation [here](deviceuserargs.md
 
 <h4>1.6. Help - Loaded plugins display</h4>
 
-When clicking on Help -> Loaded Plugins from the main menu bar a dialog box appears that shows information about the plugins loaded in rpx-100:
+When clicking on Help -> Loaded Plugins from the main menu bar a dialog box appears that shows information about the plugins loaded in RPX100:
 
 ![Main Window loaded plugins](../doc/img/MainWindow_loadedPlugins.png)
 
@@ -193,7 +193,7 @@ Plugin display name. Tells briefly what this plugin is about.
 
 <h5>Version</h5>
 
-Starting with rpx-100 version 2.0.0 this is the rpx-100 version when the plugin was last updated.
+Starting with RPX100 version 2.0.0 this is the RPX100 version when the plugin was last updated.
 
 <h5>GPL</h5>
 
@@ -262,7 +262,7 @@ Right click to control device reverse API. This dialog opens:
 
 <h6>2.4.2.1: Toggle reverse API feature</h6>
 
-Use this checkbox to toggle on/off the reverse API feature. With reverse API engaged the changes in the device settings are forwarded to an API endpoint given by address (2.1.2.2), port (2.1.2.3) and device index (2.1.2.4) in the same format as the rpx-100 REST API device settings endpoint. With the values of the screenshot the API URL is: `http://127.0.0.1:8888/rpx-100/deviceset/0/device/settings` The JSON payload follows the same format as the rpx-100 REST API device settings. For example with HachRF Rx this would be something like:
+Use this checkbox to toggle on/off the reverse API feature. With reverse API engaged the changes in the device settings are forwarded to an API endpoint given by address (2.1.2.2), port (2.1.2.3) and device index (2.1.2.4) in the same format as the RPX100 REST API device settings endpoint. With the values of the screenshot the API URL is: `http://127.0.0.1:8888/RPX100/deviceset/0/device/settings` The JSON payload follows the same format as the RPX100 REST API device settings. For example with HachRF Rx this would be something like:
 
 ```
 {
@@ -287,7 +287,7 @@ Use this checkbox to toggle on/off the reverse API feature. With reverse API eng
 ```
 Note that the PATCH method is used. The full set of parameters is sent only when the reverse API is toggled on or a full settings update is done.
 
-The start and stop actions are also forwarded with the `/rpx-100/deviceset/{deviceSetIndex}/device/run` API endpoint using POST (start) or DELETE (stop) methods.
+The start and stop actions are also forwarded with the `/RPX100/deviceset/{deviceSetIndex}/device/run` API endpoint using POST (start) or DELETE (stop) methods.
 
 More details on this feature can be found on the corresponding Wiki page.
 
@@ -432,7 +432,7 @@ When in linear mode the range control (4.4) has no effect because the actual ran
 
 <h4>3B.6. Spectrum server control</h4>
 
-A websockets based server can be used to send spectrum data to clients. An example of such client can be found in the [rpx-100Spectrum](https://github.com/f4exb/rpx-100spectrum) project.
+A websockets based server can be used to send spectrum data to clients. An example of such client can be found in the [RPX100Spectrum](https://github.com/f4exb/RPX100spectrum) project.
 
   - Left button: toggles server on/off
   - Right button: opens a secondary dialog that lets you choose the server listening (local) address and port.
@@ -625,7 +625,7 @@ Applies the selected preset to the current device set (source and channel plugin
 
 This is a tree view of the saved commands. Commands describe the path to an executable file, its arguments a possible link to a keystroke event that triggers the execution. Similarly to presets commands can be arranged into groups and have a description short text.
 
-Typically an "executable file" is a script (Python, shell, whatever...) or can be a compiled program (c, c++, java, whatever...) that interacts with rpx-100 using its web REST API. When called from within rpx-100 they can act as "macros" allowing to perform actions automatically.
+Typically an "executable file" is a script (Python, shell, whatever...) or can be a compiled program (c, c++, java, whatever...) that interacts with RPX100 using its web REST API. When called from within RPX100 they can act as "macros" allowing to perform actions automatically.
 
 Of course any binary that resides in your system can be used that way like `/bin/ls` or `/bin/date` although these two are of anecdotal interest...
 
@@ -875,7 +875,7 @@ When the mouse is over the channel window or over the central line in the spectr
 
 <h5>5.1.4: Toggle reverse API feature</h5>
 
-Use this checkbox to toggle on/off the reverse API feature. With reverse API engaged the changes in the channel settings are forwarded to an API endpoint given by address (5.1.5), port (5.1.6), device index (5.1.7) and channel index (5.1.8) in the same format as the rpx-100 REST API channel settings endpoint. With the values of the screenshot the API URL is: `http://127.0.0.1:8888/rpx-100/deviceset/0/channel/0/settings` The JSON payload follows the same format as the rpx-100 REST API channel settings. Using the same example this would be:
+Use this checkbox to toggle on/off the reverse API feature. With reverse API engaged the changes in the channel settings are forwarded to an API endpoint given by address (5.1.5), port (5.1.6), device index (5.1.7) and channel index (5.1.8) in the same format as the RPX100 REST API channel settings endpoint. With the values of the screenshot the API URL is: `http://127.0.0.1:8888/RPX100/deviceset/0/channel/0/settings` The JSON payload follows the same format as the RPX100 REST API channel settings. Using the same example this would be:
 
 ```
 {
@@ -1014,21 +1014,21 @@ When the mouse is inside the time scale (waterfall) the overlap is increased by 
 
 ![Main Window status](../doc/img/MainWindow_status.png)
 
-<h4>7.1. rpx-100 version</h4>
+<h4>7.1. RPX100 version</h4>
 
 This is the current tag or the latest tag followed by the number of commits since the latest tag followed by the git commit SHA1 (8 hex characters) preceded by 'g'. Ex: `v4.5.3-29-gf5f2349d`
 
 <h4>7.2. Qt version</h4>
 
-Qt version with which this copy of rpx-100 was compiled.
+Qt version with which this copy of RPX100 was compiled.
 
 <h4>7.3. Architecture</h4>
 
-Codename of the CPU architecture in which rpx-100 is running.
+Codename of the CPU architecture in which RPX100 is running.
 
 <h4>7.4. Operating system</h4>
 
-Pretty print of the operating system in which rpx-100 is running.
+Pretty print of the operating system in which RPX100 is running.
 
 <h4>7.5. Local date and time</h4>
 
@@ -1078,7 +1078,7 @@ Changes the color of the window title bar. To change the color click on the colo
 
 <h5>8.2.3: Toggle reverse API feature</h5>
 
-Use this checkbox to toggle on/off the reverse API feature. With reverse API engaged the changes in the feature settings are forwarded to an API endpoint given by address (8.2.4), port (8.2.5), feature set index (8.2.6) and feature index (8.2.7) in the same format as the rpx-100 REST API feature settings endpoint. With the values of the screenshot the API URL is: `http://127.0.0.1:8888/rpx-100/featureeset/0/feature/0/settings` The JSON payload follows the same format as the rpx-100 REST API feature settings. Using the same example this would be:
+Use this checkbox to toggle on/off the reverse API feature. With reverse API engaged the changes in the feature settings are forwarded to an API endpoint given by address (8.2.4), port (8.2.5), feature set index (8.2.6) and feature index (8.2.7) in the same format as the RPX100 REST API feature settings endpoint. With the values of the screenshot the API URL is: `http://127.0.0.1:8888/RPX100/featureeset/0/feature/0/settings` The JSON payload follows the same format as the RPX100 REST API feature settings. Using the same example this would be:
 
 ```
 {

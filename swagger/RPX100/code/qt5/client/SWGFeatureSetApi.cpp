@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -17,7 +17,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGFeatureSetApi::SWGFeatureSetApi() {}
 
@@ -31,7 +31,7 @@ SWGFeatureSetApi::SWGFeatureSetApi(QString host, QString basePath) {
 void
 SWGFeatureSetApi::featuresetFEatureSettingsPut(qint32 feature_set_index, qint32 feature_index, SWGFeatureSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/settings");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/settings");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -90,7 +90,7 @@ SWGFeatureSetApi::featuresetFEatureSettingsPutCallback(SWGHttpRequestWorker * wo
 void
 SWGFeatureSetApi::featuresetFeatureActionsPost(qint32 feature_set_index, qint32 feature_index, SWGFeatureActions& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/actions");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/actions");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -149,7 +149,7 @@ SWGFeatureSetApi::featuresetFeatureActionsPostCallback(SWGHttpRequestWorker * wo
 void
 SWGFeatureSetApi::featuresetFeatureDelete(qint32 feature_set_index, qint32 feature_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -205,7 +205,7 @@ SWGFeatureSetApi::featuresetFeatureDeleteCallback(SWGHttpRequestWorker * worker)
 void
 SWGFeatureSetApi::featuresetFeaturePost(qint32 feature_set_index, SWGFeatureSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -262,7 +262,7 @@ SWGFeatureSetApi::featuresetFeaturePostCallback(SWGHttpRequestWorker * worker) {
 void
 SWGFeatureSetApi::featuresetFeatureReportGet(qint32 feature_set_index, qint32 feature_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/report");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/report");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -318,7 +318,7 @@ SWGFeatureSetApi::featuresetFeatureReportGetCallback(SWGHttpRequestWorker * work
 void
 SWGFeatureSetApi::featuresetFeatureRunDelete(qint32 feature_set_index, qint32 feature_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/run");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/run");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -374,7 +374,7 @@ SWGFeatureSetApi::featuresetFeatureRunDeleteCallback(SWGHttpRequestWorker * work
 void
 SWGFeatureSetApi::featuresetFeatureRunGet(qint32 feature_set_index, qint32 feature_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/run");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/run");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -430,7 +430,7 @@ SWGFeatureSetApi::featuresetFeatureRunGetCallback(SWGHttpRequestWorker * worker)
 void
 SWGFeatureSetApi::featuresetFeatureRunPost(qint32 feature_set_index, qint32 feature_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/run");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/run");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -486,7 +486,7 @@ SWGFeatureSetApi::featuresetFeatureRunPostCallback(SWGHttpRequestWorker * worker
 void
 SWGFeatureSetApi::featuresetFeatureSettingsGet(qint32 feature_set_index, qint32 feature_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/settings");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/settings");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -542,7 +542,7 @@ SWGFeatureSetApi::featuresetFeatureSettingsGetCallback(SWGHttpRequestWorker * wo
 void
 SWGFeatureSetApi::featuresetFeatureSettingsPatch(qint32 feature_set_index, qint32 feature_index, SWGFeatureSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/settings");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/feature/{featureIndex}/settings");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -601,7 +601,7 @@ SWGFeatureSetApi::featuresetFeatureSettingsPatchCallback(SWGHttpRequestWorker * 
 void
 SWGFeatureSetApi::featuresetGet(qint32 feature_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -655,7 +655,7 @@ SWGFeatureSetApi::featuresetGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGFeatureSetApi::featuresetPresetPatch(qint32 feature_set_index, SWGFeaturePresetIdentifier& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/preset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/preset");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -712,7 +712,7 @@ SWGFeatureSetApi::featuresetPresetPatchCallback(SWGHttpRequestWorker * worker) {
 void
 SWGFeatureSetApi::featuresetPresetPost(qint32 feature_set_index, SWGFeaturePresetIdentifier& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/preset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/preset");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -769,7 +769,7 @@ SWGFeatureSetApi::featuresetPresetPostCallback(SWGHttpRequestWorker * worker) {
 void
 SWGFeatureSetApi::featuresetPresetPut(qint32 feature_set_index, SWGFeaturePresetIdentifier& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset/{featureSetIndex}/preset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset/{featureSetIndex}/preset");
 
     QString feature_set_indexPathParam("{"); feature_set_indexPathParam.append("featureSetIndex").append("}");
     fullPath.replace(feature_set_indexPathParam, stringValue(feature_set_index));
@@ -826,7 +826,7 @@ SWGFeatureSetApi::featuresetPresetPutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGFeatureSetApi::instanceFeatureSetDelete() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset");
 
 
 
@@ -878,7 +878,7 @@ SWGFeatureSetApi::instanceFeatureSetDeleteCallback(SWGHttpRequestWorker * worker
 void
 SWGFeatureSetApi::instanceFeatureSetPost() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featureset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featureset");
 
 
 

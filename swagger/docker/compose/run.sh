@@ -10,16 +10,16 @@ show_help() {
   -D         use this option to bring down the compose stack (default is to bring up).
   -t tag     Docker codegen image tag (default latest)
   -T tag     Docker server image tag (default latest)
-  -b path    rpx-100 source code root path (default /opt/build/rpx-100)
-  -c name    Compose stack name (default rpx-100swg)
+  -b path    RPX100 source code root path (default /opt/build/RPX100)
+  -c name    Compose stack name (default RPX100swg)
   -h         Print this help.
 EOF
 }
 
 image_tag_codegen="latest"
 image_tag_server="latest"
-rpx-100_codebase="/opt/build/rpx-100"
-stack_name="-p rpx-100swg"
+RPX100_codebase="/opt/build/RPX100"
+stack_name="-p RPX100swg"
 action="up -d"
 
 while getopts "h?Dt:T:b:c:" opt; do
@@ -34,7 +34,7 @@ while getopts "h?Dt:T:b:c:" opt; do
         ;;
     T)  image_tag_server=${OPTARG}
         ;;
-    b)  rpx-100_codebase=${OPTARG}
+    b)  RPX100_codebase=${OPTARG}
         ;;
     c)  stack_name="-p ${OPTARG}"
         ;;
@@ -49,6 +49,6 @@ shift $((OPTIND-1))
 export USER_UID=$(id -u)
 export IMAGE_CODEGEN_VERSION=${image_tag_codegen}
 export IMAGE_SERVER_VERSION=${image_tag_server}
-export rpx-100_BASE=${rpx-100_codebase}
+export RPX100_BASE=${RPX100_codebase}
 
 docker-compose -f compose.yml ${stack_name} ${action}

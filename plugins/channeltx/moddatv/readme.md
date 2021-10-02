@@ -5,7 +5,7 @@
 This plugin can be used to transmit a digital amateur TV signal in the DVB-S or DVB-S2 standards. The plugin requires the video and audio to be transmitted to be in an MPEG transport stream.
 The MPEG transport stream can either be read from a file or streamed via UDP.
 
-The MPEG transport stream must (for now) be created outside of rpx-100, using software such as ffmpeg. The MPEG transport stream can contain video compressed using codecs such as MPEG-2, h264 or h265 (HEVC).
+The MPEG transport stream must (for now) be created outside of RPX100, using software such as ffmpeg. The MPEG transport stream can contain video compressed using codecs such as MPEG-2, h264 or h265 (HEVC).
 Similarly, audio can be MPEG-2, MP3 or Opus. Settings such as the video resolution are determined by the software used to create the MPEG transport stream.
 The DATV modulator plugin just performs channel coding and modulation of the transport stream according to the DVB-S standard.
 
@@ -125,11 +125,11 @@ This slider can be used to randomly set the current position in the file when fi
 
 An MPEG transport stream file can be created from a video file using ffpmeg:
 
-    ffmpeg -i input.avi -pix_fmt yuv420p -r 25 -s 720x576 -aspect 4:3 -c:v hevc -c:a libopus -b:v 500k -b:a 64k -maxrate 600k -bufsize 50k -f mpegts -mpegts_original_network_id 1 -mpegts_transport_stream_id 1 -mpegts_service_id 1  -mpegts_pmt_start_pid 4096 -streamid 0:289 -streamid 1:337 -metadata service_provider="rpx-100"  -metadata service_name="rpx-100 TV" -y mpeg.ts
+    ffmpeg -i input.avi -pix_fmt yuv420p -r 25 -s 720x576 -aspect 4:3 -c:v hevc -c:a libopus -b:v 500k -b:a 64k -maxrate 600k -bufsize 50k -f mpegts -mpegts_original_network_id 1 -mpegts_transport_stream_id 1 -mpegts_service_id 1  -mpegts_pmt_start_pid 4096 -streamid 0:289 -streamid 1:337 -metadata service_provider="RPX100"  -metadata service_name="RPX100 TV" -y mpeg.ts
 
 To stream from a video camera via UDP (on Windows):
 
-    ffmpeg  -f dshow -i video="c922 Pro Stream Webcam":audio="Microphone (C922 Pro Stream Webcam)" -pix_fmt yuv420p -r 25 -s 720x576 -aspect 4:3 -c:v hevc -c:a libopus -b:v 500k -b:a 64k -maxrate 600k -bufsize 50k -f mpegts -mpegts_original_network_id 1 -mpegts_transport_stream_id 1 -mpegts_service_id 1  -mpegts_pmt_start_pid 4096 -streamid 0:289 -streamid 1:337 -metadata service_provider="rpx-100"  -metadata service_name="rpx-100 TV" -flush_packets 0 "udp://127.0.0.1:5004?pkt_size=1316&bitrate=600000"
+    ffmpeg  -f dshow -i video="c922 Pro Stream Webcam":audio="Microphone (C922 Pro Stream Webcam)" -pix_fmt yuv420p -r 25 -s 720x576 -aspect 4:3 -c:v hevc -c:a libopus -b:v 500k -b:a 64k -maxrate 600k -bufsize 50k -f mpegts -mpegts_original_network_id 1 -mpegts_transport_stream_id 1 -mpegts_service_id 1  -mpegts_pmt_start_pid 4096 -streamid 0:289 -streamid 1:337 -metadata service_provider="RPX100"  -metadata service_name="RPX100 TV" -flush_packets 0 "udp://127.0.0.1:5004?pkt_size=1316&bitrate=600000"
 
 You can list camera devices with:
 

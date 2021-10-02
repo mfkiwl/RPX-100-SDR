@@ -101,7 +101,7 @@ Baseband I/Q sample rate in kS/s. This is the device sample rate (the "SR" Soapy
 
 <h3>2: Software auto correction options</h3>
 
-These buttons control the rpx-100 internal DSP auto correction options:
+These buttons control the RPX100 internal DSP auto correction options:
 
   - **DC**: auto remove DC component
   - **IQ**: auto make I/Q balance. The DC correction must be enabled for this to be effective.
@@ -129,7 +129,7 @@ This button opens a dialog to set the transverter mode frequency translation opt
 
 <h3>6: Software LO ppm correction</h3>
 
-Use this slider to adjust rpx-100 internal LO correction in ppm. It can be varied from -100.0 to 100.0 in 0.1 steps and is applied in software when calculating the frequency at which the LO should be set.
+Use this slider to adjust RPX100 internal LO correction in ppm. It can be varied from -100.0 to 100.0 in 0.1 steps and is applied in software when calculating the frequency at which the LO should be set.
 
 <h2>A: SoapySDR variable interface</h2>
 

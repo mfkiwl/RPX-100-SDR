@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import requests, json
 
-base_url = "http://127.0.0.1:8091/rpx-100"
+base_url = "http://127.0.0.1:8091/RPX100"
 
 requests_methods = {
     "GET": requests.get,

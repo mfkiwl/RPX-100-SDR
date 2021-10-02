@@ -11,25 +11,25 @@ pip install -r requirements.txt     # Install requirements
 
 <h2>freqtracking.py</h2>
 
-This script is used to achieve frequency tracking with the FreqTracker plugin. Ideally you would start it before connecting the Frequency Tracker plugin in rpx-100. It works continuously (daemon style) until stop via Ctl-C.
+This script is used to achieve frequency tracking with the FreqTracker plugin. Ideally you would start it before connecting the Frequency Tracker plugin in RPX100. It works continuously (daemon style) until stop via Ctl-C.
 
 Options are:
 
   - `-h` or `--help` show help message and exit
   - `-A` or `--address` listening address (default `0.0.0.0`)
   - `-P` or `--port`  listening port (default `8888`)
-  - `-a` or `--address-sdr` rpx-100 REST API address (defaults to calling address)
-  - `-p` or `--port-sdr` rpx-100 REST API port (default `8091`)
+  - `-a` or `--address-sdr` RPX100 REST API address (defaults to calling address)
+  - `-p` or `--port-sdr` RPX100 REST API port (default `8091`)
   - `-f` or `--tracker-frequency` Absolute frequency the tracker should aim at (in Hz optional)
   - `-r` or `--refcorr-limit` Limit of the tracker frequency reference correction. Correction is not apply if error is in this +/- frequency range (Hz, optional, default 1000 Hz)
   - `-d` or `--transverter-device` Transverter device index to use for tracker frequency correction (optional)
 
-With default options (no parameters) it will listen on all available interfaces including loopback at `127.0.0.1` and at port `8888`. It will identify the rpx-100 API address with the first request from rpx-100 and connect back at port `8091`.
+With default options (no parameters) it will listen on all available interfaces including loopback at `127.0.0.1` and at port `8888`. It will identify the RPX100 API address with the first request from RPX100 and connect back at port `8091`.
 
 Normal sequence of operations:
 
   - Start `freqtracking.py` in a terminal
-  - In rpx-100 connect the Frequency Tracker plugin by clicking on the grey square at the left of the top bar of the Frequency Tracker GUI. It opens the channel settings dialog. Check the 'Reverse API' box. Next to this box is the address and port at which the channel will be connected. If you use the defaults for `freqtracking.py` you may leave it as it is else you have to adjust it to the address and port of `freqtracking.py` (options `-A` and `-P`).
+  - In RPX100 connect the Frequency Tracker plugin by clicking on the grey square at the left of the top bar of the Frequency Tracker GUI. It opens the channel settings dialog. Check the 'Reverse API' box. Next to this box is the address and port at which the channel will be connected. If you use the defaults for `freqtracking.py` you may leave it as it is else you have to adjust it to the address and port of `freqtracking.py` (options `-A` and `-P`).
   - In the same manner connect the channel you want to be controlled by `freqtracking.py`. You may connect any number of channels like this. When a channel is removed `freqtracking.py` will automatically remove it from its list at the first attempt to synchronize that will fail.
 
 <h2>ptt_active.py</h2>
@@ -41,7 +41,7 @@ Options are:
   - `-h` or `--help` show help message and exit
   - `-A` or `--address` listening IP address. Default `0.0.0.0` (all interfaces)
   - `-P` or `--port` listening port. Default `8000`
-  - `-p` or `--port-sdr` rpx-100 instance REST API listening port. Default `8091`
+  - `-p` or `--port-sdr` RPX100 instance REST API listening port. Default `8091`
   - `-l` or `--link` Pair of indexes of the device sets to link. Default `0 1`
   - `-d` or `--delay` Switch over delay in seconds. Default `1`
   - `-f` or `--freq-sync` Synchronize devices center frequencies
@@ -64,7 +64,7 @@ Quick control of configuration for receiving QO-100 DATV to rapidly follow spott
 
 Options are:
   - `-h` or `--help` show this help message and exit
-  - `-a` or `--address` address and port of rpx-100 instance API. Default: 127.0.0.1:8091
+  - `-a` or `--address` address and port of RPX100 instance API. Default: 127.0.0.1:8091
   - `-d` or `--device` index of device set. Default 0
   - `-c` or `--channel` index of DATV demod channel. Default 0
   - `-f` or `--frequency` device center frequency (kHz). Mandatory. Ex: 491500
@@ -77,7 +77,7 @@ Sends a sequence of commands recorded in a JSON file which is in the form of a l
 Options are:
 
   - `-h` or `--help` show help message and exit
-  - `-a` or `--address` address and port of rpx-100 instance. Default is `127.0.0.1:8091`
+  - `-a` or `--address` address and port of RPX100 instance. Default is `127.0.0.1:8091`
   - `-j` or `--json-file` JSON file containing description of API commands
 
 Each command in the JSON file is a JSON document with the following keys:
@@ -207,15 +207,15 @@ If you have presets defined you may also use presets instead of having to set up
 
 Connects to spectrum server to monitor PSD and detect local PSD hotspots to pilot channel(s). Thus channels can follow band activity. This effectively implements a "scanner" feature with parallel tracking of any number of channels. It is FFT based so can effectively track spectrum hotspots simultaneously. Therefore the "super" superlative.
 
-It requires rpx-100 version 5.6 or above. On rpx-100 instance baseband spectrum should be set in log mode and the spectrum server activated with an accessible address and a port that matches the port given to `superscanner.py`. Please refer to rpx-100 documentation for details.
+It requires RPX100 version 5.6 or above. On RPX100 instance baseband spectrum should be set in log mode and the spectrum server activated with an accessible address and a port that matches the port given to `superscanner.py`. Please refer to RPX100 documentation for details.
 
 The script runs in daemon mode and is stopped using `Ctl-C`.
 
 <h3>Options</h3>
 
-  - `-a` or `--address` rpx-100 web base address. Default: `127.0.0.1`
-  - `-p` or `--api-port` rpx-100 API port. Default: `8091`
-  - `-w` or `--ws-port` rpx-100 websocket spectrum server port. Default: `8887`
+  - `-a` or `--address` RPX100 web base address. Default: `127.0.0.1`
+  - `-p` or `--api-port` RPX100 API port. Default: `8091`
+  - `-w` or `--ws-port` RPX100 websocket spectrum server port. Default: `8887`
   - `-c` or `--config-file` JSON configuration file. Mandatory. See next for format details
   - `-j` or `--psd-in` JSON file containing PSD floor information previously saved with the `-J` option
   - `-J` or `--psd-out` Write PSD floor information to JSON file
@@ -236,11 +236,11 @@ Command examples:
 
 <h3>Configuration file</h3>
 
-This file drives how channels in the connected rpx-100 instance are managed.
+This file drives how channels in the connected RPX100 instance are managed.
 
 ```json
 {
-    "deviceset_index": 0,           // rpx-100 instance deviceset index addressed - required
+    "deviceset_index": 0,           // RPX100 instance deviceset index addressed - required
     "freqrange_inclusions": [
         [145170000, 145900000]      // List of frequency ranges in Hz to include in processing - optional
     ],
@@ -276,7 +276,7 @@ Esample of `superscanner.conf` file to put in your `/etc//etc/supervisor/conf.d/
 
 ```
 [program:superscanner]
-command = /opt/build/rpx-100/scriptsapi/venv/bin/python /opt/build/rpx-100/scriptsapi/superscanner.py -a 192.168.0.24 -c /home/f4exb/145M_scan.config.json -g 4 -r 3125 -f -65
+command = /opt/build/RPX100/scriptsapi/venv/bin/python /opt/build/RPX100/scriptsapi/superscanner.py -a 192.168.0.24 -c /home/f4exb/145M_scan.config.json -g 4 -r 3125 -f -65
 process_name = superscanner
 user = f4exb
 stopsignal = INT
@@ -293,9 +293,9 @@ stdout_logfile_backups = 3
 redirect_stderr=true
 ```
 
-<h2>rpx-100.py</h2>
+<h2>RPX100.py</h2>
 
-Holds constants related to rpx-100 software required by other scripts
+Holds constants related to RPX100 software required by other scripts
 
 <h2>Unit tests</h2>
 

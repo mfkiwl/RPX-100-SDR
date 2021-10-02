@@ -1,11 +1,11 @@
 {
-  "app-id": "org.rpx-100.rpx-100",
+  "app-id": "org.RPX100.RPX100",
   "runtime": "org.kde.Platform",
   "runtime-version": "5.12",
   "sdk": "org.kde.Sdk",
-  "command": "rpx-100",
-  "rename-desktop-file": "rpx-100.desktop",
-  "rename-icon": "rpx-100_icon",
+  "command": "RPX100",
+  "rename-desktop-file": "RPX100.desktop",
+  "rename-icon": "RPX100_icon",
   "copy-icon": true,
   "finish-args": [
     "--filesystem=xdg-documents",
@@ -494,7 +494,7 @@
       ]
     },
     {
-      "name": "rpx-100",
+      "name": "RPX100",
       "buildsystem": "cmake-ninja",
       "config-opts": [
         "-Wno-dev",
@@ -513,11 +513,11 @@
         },
         {
           "type": "file",
-          "path": "org.rpx-100.rpx-100.appdata.xml"
+          "path": "org.RPX100.RPX100.appdata.xml"
         }
       ],
       "post-install": [
-        "install -Dm644 org.rpx-100.rpx-100.appdata.xml /app/share/appdata/org.rpx-100.rpx-100.appdata.xml"
+        "install -Dm644 org.RPX100.RPX100.appdata.xml /app/share/appdata/org.RPX100.RPX100.appdata.xml"
       ]
     }
   ]

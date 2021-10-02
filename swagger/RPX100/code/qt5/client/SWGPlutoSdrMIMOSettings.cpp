@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGPlutoSdrMIMOSettings::SWGPlutoSdrMIMOSettings(QString* json) {
     init();
@@ -265,89 +265,89 @@ SWGPlutoSdrMIMOSettings::fromJson(QString &json) {
 
 void
 SWGPlutoSdrMIMOSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&dev_sample_rate, pJson["devSampleRate"], "qint32", "");
+    ::SWGRPX100::setValue(&dev_sample_rate, pJson["devSampleRate"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&l_oppm_tenths, pJson["LOppmTenths"], "qint32", "");
+    ::SWGRPX100::setValue(&l_oppm_tenths, pJson["LOppmTenths"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx_center_frequency, pJson["rxCenterFrequency"], "qint64", "");
+    ::SWGRPX100::setValue(&rx_center_frequency, pJson["rxCenterFrequency"], "qint64", "");
     
-    ::SWGrpx-100::setValue(&dc_block, pJson["dcBlock"], "qint32", "");
+    ::SWGRPX100::setValue(&dc_block, pJson["dcBlock"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&iq_correction, pJson["iqCorrection"], "qint32", "");
+    ::SWGRPX100::setValue(&iq_correction, pJson["iqCorrection"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&hw_bbdc_block, pJson["hwBBDCBlock"], "qint32", "");
+    ::SWGRPX100::setValue(&hw_bbdc_block, pJson["hwBBDCBlock"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&hw_rfdc_block, pJson["hwRFDCBlock"], "qint32", "");
+    ::SWGRPX100::setValue(&hw_rfdc_block, pJson["hwRFDCBlock"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&hw_iq_correction, pJson["hwIQCorrection"], "qint32", "");
+    ::SWGRPX100::setValue(&hw_iq_correction, pJson["hwIQCorrection"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&fc_pos_rx, pJson["fcPosRx"], "qint32", "");
+    ::SWGRPX100::setValue(&fc_pos_rx, pJson["fcPosRx"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx_transverter_mode, pJson["rxTransverterMode"], "qint32", "");
+    ::SWGRPX100::setValue(&rx_transverter_mode, pJson["rxTransverterMode"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx_transverter_delta_frequency, pJson["rxTransverterDeltaFrequency"], "qint64", "");
+    ::SWGRPX100::setValue(&rx_transverter_delta_frequency, pJson["rxTransverterDeltaFrequency"], "qint64", "");
     
-    ::SWGrpx-100::setValue(&iq_order, pJson["iqOrder"], "qint32", "");
+    ::SWGRPX100::setValue(&iq_order, pJson["iqOrder"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_bw_rx, pJson["lpfBWRx"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_bw_rx, pJson["lpfBWRx"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_rx_fir_enable, pJson["lpfRxFIREnable"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_rx_fir_enable, pJson["lpfRxFIREnable"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_rx_firbw, pJson["lpfRxFIRBW"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_rx_firbw, pJson["lpfRxFIRBW"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_rx_fi_rlog2_decim, pJson["lpfRxFIRlog2Decim"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_rx_fi_rlog2_decim, pJson["lpfRxFIRlog2Decim"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_rx_fir_gain, pJson["lpfRxFIRGain"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_rx_fir_gain, pJson["lpfRxFIRGain"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&log2_decim, pJson["log2Decim"], "qint32", "");
+    ::SWGRPX100::setValue(&log2_decim, pJson["log2Decim"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx0_gain, pJson["rx0Gain"], "qint32", "");
+    ::SWGRPX100::setValue(&rx0_gain, pJson["rx0Gain"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx0_gain_mode, pJson["rx0GainMode"], "qint32", "");
+    ::SWGRPX100::setValue(&rx0_gain_mode, pJson["rx0GainMode"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx0_antenna_path, pJson["rx0AntennaPath"], "qint32", "");
+    ::SWGRPX100::setValue(&rx0_antenna_path, pJson["rx0AntennaPath"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx1_gain, pJson["rx1Gain"], "qint32", "");
+    ::SWGRPX100::setValue(&rx1_gain, pJson["rx1Gain"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx1_gain_mode, pJson["rx1GainMode"], "qint32", "");
+    ::SWGRPX100::setValue(&rx1_gain_mode, pJson["rx1GainMode"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx1_antenna_path, pJson["rx1AntennaPath"], "qint32", "");
+    ::SWGRPX100::setValue(&rx1_antenna_path, pJson["rx1AntennaPath"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx_center_frequency, pJson["txCenterFrequency"], "qint64", "");
+    ::SWGRPX100::setValue(&tx_center_frequency, pJson["txCenterFrequency"], "qint64", "");
     
-    ::SWGrpx-100::setValue(&fc_pos_tx, pJson["fcPosTx"], "qint32", "");
+    ::SWGRPX100::setValue(&fc_pos_tx, pJson["fcPosTx"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx_transverter_mode, pJson["txTransverterMode"], "qint32", "");
+    ::SWGRPX100::setValue(&tx_transverter_mode, pJson["txTransverterMode"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx_transverter_delta_frequency, pJson["txTransverterDeltaFrequency"], "qint64", "");
+    ::SWGRPX100::setValue(&tx_transverter_delta_frequency, pJson["txTransverterDeltaFrequency"], "qint64", "");
     
-    ::SWGrpx-100::setValue(&lpf_bw_tx, pJson["lpfBWTx"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_bw_tx, pJson["lpfBWTx"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_tx_fir_enable, pJson["lpfTxFIREnable"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_tx_fir_enable, pJson["lpfTxFIREnable"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_tx_firbw, pJson["lpfTxFIRBW"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_tx_firbw, pJson["lpfTxFIRBW"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_tx_fi_rlog2_interp, pJson["lpfTxFIRlog2Interp"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_tx_fi_rlog2_interp, pJson["lpfTxFIRlog2Interp"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&lpf_tx_fir_gain, pJson["lpfTxFIRGain"], "qint32", "");
+    ::SWGRPX100::setValue(&lpf_tx_fir_gain, pJson["lpfTxFIRGain"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&log2_interp, pJson["log2Interp"], "qint32", "");
+    ::SWGRPX100::setValue(&log2_interp, pJson["log2Interp"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx0_att, pJson["tx0Att"], "qint32", "");
+    ::SWGRPX100::setValue(&tx0_att, pJson["tx0Att"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx0_antenna_path, pJson["tx0AntennaPath"], "qint32", "");
+    ::SWGRPX100::setValue(&tx0_antenna_path, pJson["tx0AntennaPath"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx1_att, pJson["tx1Att"], "qint32", "");
+    ::SWGRPX100::setValue(&tx1_att, pJson["tx1Att"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx1_antenna_path, pJson["tx1AntennaPath"], "qint32", "");
+    ::SWGRPX100::setValue(&tx1_antenna_path, pJson["tx1AntennaPath"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
+    ::SWGRPX100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
+    ::SWGRPX100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_device_index, pJson["reverseAPIDeviceIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_device_index, pJson["reverseAPIDeviceIndex"], "qint32", "");
     
 }
 

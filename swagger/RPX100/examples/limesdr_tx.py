@@ -3,7 +3,7 @@
 import requests, json, traceback, sys
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/rpx-100"
+base_url = "http://127.0.0.1:8091/RPX100"
 
 requests_methods = {
     "GET": requests.get,
@@ -63,7 +63,7 @@ def main():
         options = getInputOptions()
 
         global base_url
-        base_url = "http://%s/rpx-100" % options.address
+        base_url = "http://%s/RPX100" % options.address
 
         r = callAPI("/deviceset", "POST", {"direction": 1}, None, "Add Tx device set")
         if r is None:

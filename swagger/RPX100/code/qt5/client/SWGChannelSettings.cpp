@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGChannelSettings::SWGChannelSettings(QString* json) {
     init();
@@ -383,101 +383,101 @@ SWGChannelSettings::fromJson(QString &json) {
 
 void
 SWGChannelSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&channel_type, pJson["channelType"], "QString", "QString");
+    ::SWGRPX100::setValue(&channel_type, pJson["channelType"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&direction, pJson["direction"], "qint32", "");
+    ::SWGRPX100::setValue(&direction, pJson["direction"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&originator_device_set_index, pJson["originatorDeviceSetIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&originator_device_set_index, pJson["originatorDeviceSetIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&originator_channel_index, pJson["originatorChannelIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&originator_channel_index, pJson["originatorChannelIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&adsb_demod_settings, pJson["ADSBDemodSettings"], "SWGADSBDemodSettings", "SWGADSBDemodSettings");
+    ::SWGRPX100::setValue(&adsb_demod_settings, pJson["ADSBDemodSettings"], "SWGADSBDemodSettings", "SWGADSBDemodSettings");
     
-    ::SWGrpx-100::setValue(&ais_demod_settings, pJson["AISDemodSettings"], "SWGAISDemodSettings", "SWGAISDemodSettings");
+    ::SWGRPX100::setValue(&ais_demod_settings, pJson["AISDemodSettings"], "SWGAISDemodSettings", "SWGAISDemodSettings");
     
-    ::SWGrpx-100::setValue(&ais_mod_settings, pJson["AISModSettings"], "SWGAISModSettings", "SWGAISModSettings");
+    ::SWGRPX100::setValue(&ais_mod_settings, pJson["AISModSettings"], "SWGAISModSettings", "SWGAISModSettings");
     
-    ::SWGrpx-100::setValue(&am_demod_settings, pJson["AMDemodSettings"], "SWGAMDemodSettings", "SWGAMDemodSettings");
+    ::SWGRPX100::setValue(&am_demod_settings, pJson["AMDemodSettings"], "SWGAMDemodSettings", "SWGAMDemodSettings");
     
-    ::SWGrpx-100::setValue(&am_mod_settings, pJson["AMModSettings"], "SWGAMModSettings", "SWGAMModSettings");
+    ::SWGRPX100::setValue(&am_mod_settings, pJson["AMModSettings"], "SWGAMModSettings", "SWGAMModSettings");
     
-    ::SWGrpx-100::setValue(&apt_demod_settings, pJson["APTDemodSettings"], "SWGAPTDemodSettings", "SWGAPTDemodSettings");
+    ::SWGRPX100::setValue(&apt_demod_settings, pJson["APTDemodSettings"], "SWGAPTDemodSettings", "SWGAPTDemodSettings");
     
-    ::SWGrpx-100::setValue(&atv_demod_settings, pJson["ATVDemodSettings"], "SWGATVDemodSettings", "SWGATVDemodSettings");
+    ::SWGRPX100::setValue(&atv_demod_settings, pJson["ATVDemodSettings"], "SWGATVDemodSettings", "SWGATVDemodSettings");
     
-    ::SWGrpx-100::setValue(&atv_mod_settings, pJson["ATVModSettings"], "SWGATVModSettings", "SWGATVModSettings");
+    ::SWGRPX100::setValue(&atv_mod_settings, pJson["ATVModSettings"], "SWGATVModSettings", "SWGATVModSettings");
     
-    ::SWGrpx-100::setValue(&beam_steering_cw_mod_settings, pJson["BeamSteeringCWModSettings"], "SWGBeamSteeringCWModSettings", "SWGBeamSteeringCWModSettings");
+    ::SWGRPX100::setValue(&beam_steering_cw_mod_settings, pJson["BeamSteeringCWModSettings"], "SWGBeamSteeringCWModSettings", "SWGBeamSteeringCWModSettings");
     
-    ::SWGrpx-100::setValue(&bfm_demod_settings, pJson["BFMDemodSettings"], "SWGBFMDemodSettings", "SWGBFMDemodSettings");
+    ::SWGRPX100::setValue(&bfm_demod_settings, pJson["BFMDemodSettings"], "SWGBFMDemodSettings", "SWGBFMDemodSettings");
     
-    ::SWGrpx-100::setValue(&channel_analyzer_settings, pJson["ChannelAnalyzerSettings"], "SWGChannelAnalyzerSettings", "SWGChannelAnalyzerSettings");
+    ::SWGRPX100::setValue(&channel_analyzer_settings, pJson["ChannelAnalyzerSettings"], "SWGChannelAnalyzerSettings", "SWGChannelAnalyzerSettings");
     
-    ::SWGrpx-100::setValue(&chirp_chat_demod_settings, pJson["ChirpChatDemodSettings"], "SWGChirpChatDemodSettings", "SWGChirpChatDemodSettings");
+    ::SWGRPX100::setValue(&chirp_chat_demod_settings, pJson["ChirpChatDemodSettings"], "SWGChirpChatDemodSettings", "SWGChirpChatDemodSettings");
     
-    ::SWGrpx-100::setValue(&chirp_chat_mod_settings, pJson["ChirpChatModSettings"], "SWGChirpChatModSettings", "SWGChirpChatModSettings");
+    ::SWGRPX100::setValue(&chirp_chat_mod_settings, pJson["ChirpChatModSettings"], "SWGChirpChatModSettings", "SWGChirpChatModSettings");
     
-    ::SWGrpx-100::setValue(&datv_mod_settings, pJson["DATVModSettings"], "SWGDATVModSettings", "SWGDATVModSettings");
+    ::SWGRPX100::setValue(&datv_mod_settings, pJson["DATVModSettings"], "SWGDATVModSettings", "SWGDATVModSettings");
     
-    ::SWGrpx-100::setValue(&datv_demod_settings, pJson["DATVDemodSettings"], "SWGDATVDemodSettings", "SWGDATVDemodSettings");
+    ::SWGRPX100::setValue(&datv_demod_settings, pJson["DATVDemodSettings"], "SWGDATVDemodSettings", "SWGDATVDemodSettings");
     
-    ::SWGrpx-100::setValue(&dab_demod_settings, pJson["DABDemodSettings"], "SWGDABDemodSettings", "SWGDABDemodSettings");
+    ::SWGRPX100::setValue(&dab_demod_settings, pJson["DABDemodSettings"], "SWGDABDemodSettings", "SWGDABDemodSettings");
     
-    ::SWGrpx-100::setValue(&dsd_demod_settings, pJson["DSDDemodSettings"], "SWGDSDDemodSettings", "SWGDSDDemodSettings");
+    ::SWGRPX100::setValue(&dsd_demod_settings, pJson["DSDDemodSettings"], "SWGDSDDemodSettings", "SWGDSDDemodSettings");
     
-    ::SWGrpx-100::setValue(&file_sink_settings, pJson["FileSinkSettings"], "SWGFileSinkSettings", "SWGFileSinkSettings");
+    ::SWGRPX100::setValue(&file_sink_settings, pJson["FileSinkSettings"], "SWGFileSinkSettings", "SWGFileSinkSettings");
     
-    ::SWGrpx-100::setValue(&file_source_settings, pJson["FileSourceSettings"], "SWGFileSourceSettings", "SWGFileSourceSettings");
+    ::SWGRPX100::setValue(&file_source_settings, pJson["FileSourceSettings"], "SWGFileSourceSettings", "SWGFileSourceSettings");
     
-    ::SWGrpx-100::setValue(&free_dv_demod_settings, pJson["FreeDVDemodSettings"], "SWGFreeDVDemodSettings", "SWGFreeDVDemodSettings");
+    ::SWGRPX100::setValue(&free_dv_demod_settings, pJson["FreeDVDemodSettings"], "SWGFreeDVDemodSettings", "SWGFreeDVDemodSettings");
     
-    ::SWGrpx-100::setValue(&free_dv_mod_settings, pJson["FreeDVModSettings"], "SWGFreeDVModSettings", "SWGFreeDVModSettings");
+    ::SWGRPX100::setValue(&free_dv_mod_settings, pJson["FreeDVModSettings"], "SWGFreeDVModSettings", "SWGFreeDVModSettings");
     
-    ::SWGrpx-100::setValue(&freq_tracker_settings, pJson["FreqTrackerSettings"], "SWGFreqTrackerSettings", "SWGFreqTrackerSettings");
+    ::SWGRPX100::setValue(&freq_tracker_settings, pJson["FreqTrackerSettings"], "SWGFreqTrackerSettings", "SWGFreqTrackerSettings");
     
-    ::SWGrpx-100::setValue(&interferometer_settings, pJson["InterferometerSettings"], "SWGInterferometerSettings", "SWGInterferometerSettings");
+    ::SWGRPX100::setValue(&interferometer_settings, pJson["InterferometerSettings"], "SWGInterferometerSettings", "SWGInterferometerSettings");
     
-    ::SWGrpx-100::setValue(&ieee_802_15_4_mod_settings, pJson["IEEE_802_15_4_ModSettings"], "SWGIEEE_802_15_4_ModSettings", "SWGIEEE_802_15_4_ModSettings");
+    ::SWGRPX100::setValue(&ieee_802_15_4_mod_settings, pJson["IEEE_802_15_4_ModSettings"], "SWGIEEE_802_15_4_ModSettings", "SWGIEEE_802_15_4_ModSettings");
     
-    ::SWGrpx-100::setValue(&nfm_demod_settings, pJson["NFMDemodSettings"], "SWGNFMDemodSettings", "SWGNFMDemodSettings");
+    ::SWGRPX100::setValue(&nfm_demod_settings, pJson["NFMDemodSettings"], "SWGNFMDemodSettings", "SWGNFMDemodSettings");
     
-    ::SWGrpx-100::setValue(&nfm_mod_settings, pJson["NFMModSettings"], "SWGNFMModSettings", "SWGNFMModSettings");
+    ::SWGRPX100::setValue(&nfm_mod_settings, pJson["NFMModSettings"], "SWGNFMModSettings", "SWGNFMModSettings");
     
-    ::SWGrpx-100::setValue(&noise_figure_settings, pJson["NoiseFigureSettings"], "SWGNoiseFigureSettings", "SWGNoiseFigureSettings");
+    ::SWGRPX100::setValue(&noise_figure_settings, pJson["NoiseFigureSettings"], "SWGNoiseFigureSettings", "SWGNoiseFigureSettings");
     
-    ::SWGrpx-100::setValue(&local_sink_settings, pJson["LocalSinkSettings"], "SWGLocalSinkSettings", "SWGLocalSinkSettings");
+    ::SWGRPX100::setValue(&local_sink_settings, pJson["LocalSinkSettings"], "SWGLocalSinkSettings", "SWGLocalSinkSettings");
     
-    ::SWGrpx-100::setValue(&local_source_settings, pJson["LocalSourceSettings"], "SWGLocalSourceSettings", "SWGLocalSourceSettings");
+    ::SWGRPX100::setValue(&local_source_settings, pJson["LocalSourceSettings"], "SWGLocalSourceSettings", "SWGLocalSourceSettings");
     
-    ::SWGrpx-100::setValue(&packet_demod_settings, pJson["PacketDemodSettings"], "SWGPacketDemodSettings", "SWGPacketDemodSettings");
+    ::SWGRPX100::setValue(&packet_demod_settings, pJson["PacketDemodSettings"], "SWGPacketDemodSettings", "SWGPacketDemodSettings");
     
-    ::SWGrpx-100::setValue(&packet_mod_settings, pJson["PacketModSettings"], "SWGPacketModSettings", "SWGPacketModSettings");
+    ::SWGRPX100::setValue(&packet_mod_settings, pJson["PacketModSettings"], "SWGPacketModSettings", "SWGPacketModSettings");
     
-    ::SWGrpx-100::setValue(&pager_demod_settings, pJson["PagerDemodSettings"], "SWGPagerDemodSettings", "SWGPagerDemodSettings");
+    ::SWGRPX100::setValue(&pager_demod_settings, pJson["PagerDemodSettings"], "SWGPagerDemodSettings", "SWGPagerDemodSettings");
     
-    ::SWGrpx-100::setValue(&radio_clock_settings, pJson["RadioClockSettings"], "SWGRadioClockSettings", "SWGRadioClockSettings");
+    ::SWGRPX100::setValue(&radio_clock_settings, pJson["RadioClockSettings"], "SWGRadioClockSettings", "SWGRadioClockSettings");
     
-    ::SWGrpx-100::setValue(&remote_sink_settings, pJson["RemoteSinkSettings"], "SWGRemoteSinkSettings", "SWGRemoteSinkSettings");
+    ::SWGRPX100::setValue(&remote_sink_settings, pJson["RemoteSinkSettings"], "SWGRemoteSinkSettings", "SWGRemoteSinkSettings");
     
-    ::SWGrpx-100::setValue(&remote_source_settings, pJson["RemoteSourceSettings"], "SWGRemoteSourceSettings", "SWGRemoteSourceSettings");
+    ::SWGRPX100::setValue(&remote_source_settings, pJson["RemoteSourceSettings"], "SWGRemoteSourceSettings", "SWGRemoteSourceSettings");
     
-    ::SWGrpx-100::setValue(&sig_mf_file_sink_settings, pJson["SigMFFileSinkSettings"], "SWGSigMFFileSinkSettings", "SWGSigMFFileSinkSettings");
+    ::SWGRPX100::setValue(&sig_mf_file_sink_settings, pJson["SigMFFileSinkSettings"], "SWGSigMFFileSinkSettings", "SWGSigMFFileSinkSettings");
     
-    ::SWGrpx-100::setValue(&ssb_mod_settings, pJson["SSBModSettings"], "SWGSSBModSettings", "SWGSSBModSettings");
+    ::SWGRPX100::setValue(&ssb_mod_settings, pJson["SSBModSettings"], "SWGSSBModSettings", "SWGSSBModSettings");
     
-    ::SWGrpx-100::setValue(&ssb_demod_settings, pJson["SSBDemodSettings"], "SWGSSBDemodSettings", "SWGSSBDemodSettings");
+    ::SWGRPX100::setValue(&ssb_demod_settings, pJson["SSBDemodSettings"], "SWGSSBDemodSettings", "SWGSSBDemodSettings");
     
-    ::SWGrpx-100::setValue(&udp_source_settings, pJson["UDPSourceSettings"], "SWGUDPSourceSettings", "SWGUDPSourceSettings");
+    ::SWGRPX100::setValue(&udp_source_settings, pJson["UDPSourceSettings"], "SWGUDPSourceSettings", "SWGUDPSourceSettings");
     
-    ::SWGrpx-100::setValue(&udp_sink_settings, pJson["UDPSinkSettings"], "SWGUDPSinkSettings", "SWGUDPSinkSettings");
+    ::SWGRPX100::setValue(&udp_sink_settings, pJson["UDPSinkSettings"], "SWGUDPSinkSettings", "SWGUDPSinkSettings");
     
-    ::SWGrpx-100::setValue(&vor_demod_settings, pJson["VORDemodSettings"], "SWGVORDemodSettings", "SWGVORDemodSettings");
+    ::SWGRPX100::setValue(&vor_demod_settings, pJson["VORDemodSettings"], "SWGVORDemodSettings", "SWGVORDemodSettings");
     
-    ::SWGrpx-100::setValue(&vor_demod_sc_settings, pJson["VORDemodSCSettings"], "SWGVORDemodSCSettings", "SWGVORDemodSCSettings");
+    ::SWGRPX100::setValue(&vor_demod_sc_settings, pJson["VORDemodSCSettings"], "SWGVORDemodSCSettings", "SWGVORDemodSCSettings");
     
-    ::SWGrpx-100::setValue(&wfm_demod_settings, pJson["WFMDemodSettings"], "SWGWFMDemodSettings", "SWGWFMDemodSettings");
+    ::SWGRPX100::setValue(&wfm_demod_settings, pJson["WFMDemodSettings"], "SWGWFMDemodSettings", "SWGWFMDemodSettings");
     
-    ::SWGrpx-100::setValue(&wfm_mod_settings, pJson["WFMModSettings"], "SWGWFMModSettings", "SWGWFMModSettings");
+    ::SWGRPX100::setValue(&wfm_mod_settings, pJson["WFMModSettings"], "SWGWFMModSettings", "SWGWFMModSettings");
     
 }
 

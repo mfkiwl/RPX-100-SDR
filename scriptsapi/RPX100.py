@@ -1,5 +1,5 @@
 """
-Constants that refer to rpx-100 software
+Constants that refer to RPX100 software
 """
 
 # Device keys depending on hardware type (deviceHwType)

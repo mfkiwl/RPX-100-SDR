@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGPreferences::SWGPreferences(QString* json) {
     init();
@@ -111,25 +111,25 @@ SWGPreferences::fromJson(QString &json) {
 
 void
 SWGPreferences::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&source_device, pJson["sourceDevice"], "QString", "QString");
+    ::SWGRPX100::setValue(&source_device, pJson["sourceDevice"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&source_index, pJson["sourceIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&source_index, pJson["sourceIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&audio_type, pJson["audioType"], "QString", "QString");
+    ::SWGRPX100::setValue(&audio_type, pJson["audioType"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&audio_device, pJson["audioDevice"], "QString", "QString");
+    ::SWGRPX100::setValue(&audio_device, pJson["audioDevice"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&latitude, pJson["latitude"], "float", "");
+    ::SWGRPX100::setValue(&latitude, pJson["latitude"], "float", "");
     
-    ::SWGrpx-100::setValue(&longitude, pJson["longitude"], "float", "");
+    ::SWGRPX100::setValue(&longitude, pJson["longitude"], "float", "");
     
-    ::SWGrpx-100::setValue(&console_min_log_level, pJson["consoleMinLogLevel"], "qint32", "");
+    ::SWGRPX100::setValue(&console_min_log_level, pJson["consoleMinLogLevel"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&use_log_file, pJson["useLogFile"], "qint32", "");
+    ::SWGRPX100::setValue(&use_log_file, pJson["useLogFile"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&log_file_name, pJson["logFileName"], "QString", "QString");
+    ::SWGRPX100::setValue(&log_file_name, pJson["logFileName"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&file_min_log_level, pJson["fileMinLogLevel"], "qint32", "");
+    ::SWGRPX100::setValue(&file_min_log_level, pJson["fileMinLogLevel"], "qint32", "");
     
 }
 

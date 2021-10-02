@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGPERTesterSettings::SWGPERTesterSettings(QString* json) {
     init();
@@ -159,41 +159,41 @@ SWGPERTesterSettings::fromJson(QString &json) {
 
 void
 SWGPERTesterSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&packet_count, pJson["packetCount"], "qint32", "");
+    ::SWGRPX100::setValue(&packet_count, pJson["packetCount"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&interval, pJson["interval"], "float", "");
+    ::SWGRPX100::setValue(&interval, pJson["interval"], "float", "");
     
-    ::SWGrpx-100::setValue(&start, pJson["start"], "qint32", "");
+    ::SWGRPX100::setValue(&start, pJson["start"], "qint32", "");
     
     
-    ::SWGrpx-100::setValue(&satellites, pJson["satellites"], "QList", "QString");
-    ::SWGrpx-100::setValue(&packet, pJson["packet"], "QString", "QString");
+    ::SWGRPX100::setValue(&satellites, pJson["satellites"], "QList", "QString");
+    ::SWGRPX100::setValue(&packet, pJson["packet"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&ignore_leading_bytes, pJson["ignoreLeadingBytes"], "qint32", "");
+    ::SWGRPX100::setValue(&ignore_leading_bytes, pJson["ignoreLeadingBytes"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&ignore_trailing_bytes, pJson["ignoreTrailingBytes"], "qint32", "");
+    ::SWGRPX100::setValue(&ignore_trailing_bytes, pJson["ignoreTrailingBytes"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&tx_udp_address, pJson["txUDPAddress"], "QString", "QString");
+    ::SWGRPX100::setValue(&tx_udp_address, pJson["txUDPAddress"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&tx_udp_port, pJson["txUDPPort"], "qint32", "");
+    ::SWGRPX100::setValue(&tx_udp_port, pJson["txUDPPort"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rx_udp_address, pJson["rxUDPAddress"], "QString", "QString");
+    ::SWGRPX100::setValue(&rx_udp_address, pJson["rxUDPAddress"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&rx_udp_port, pJson["rxUDPPort"], "qint32", "");
+    ::SWGRPX100::setValue(&rx_udp_port, pJson["rxUDPPort"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&title, pJson["title"], "QString", "QString");
+    ::SWGRPX100::setValue(&title, pJson["title"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
+    ::SWGRPX100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
+    ::SWGRPX100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
+    ::SWGRPX100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_feature_set_index, pJson["reverseAPIFeatureSetIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_feature_set_index, pJson["reverseAPIFeatureSetIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&reverse_api_feature_index, pJson["reverseAPIFeatureIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&reverse_api_feature_index, pJson["reverseAPIFeatureIndex"], "qint32", "");
     
 }
 

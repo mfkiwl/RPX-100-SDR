@@ -445,7 +445,7 @@ bool PerseusInput::applySettings(const PerseusSettings& settings, bool force)
 }
 
 int PerseusInput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -455,7 +455,7 @@ int PerseusInput::webapiRunGet(
 
 int PerseusInput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -473,11 +473,11 @@ int PerseusInput::webapiRun(
 }
 
 int PerseusInput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPerseusSettings(new SWGrpx-100::SWGPerseusSettings());
+    response.setPerseusSettings(new SWGRPX100::SWGPerseusSettings());
     response.getPerseusSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -486,7 +486,7 @@ int PerseusInput::webapiSettingsGet(
 int PerseusInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -509,7 +509,7 @@ int PerseusInput::webapiSettingsPutPatch(
 void PerseusInput::webapiUpdateDeviceSettings(
     PerseusSettings& settings,
     const QStringList& deviceSettingsKeys,
-    SWGrpx-100::SWGDeviceSettings& response)
+    SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getPerseusSettings()->getCenterFrequency();
@@ -561,17 +561,17 @@ void PerseusInput::webapiUpdateDeviceSettings(
 }
 
 int PerseusInput::webapiReportGet(
-        SWGrpx-100::SWGDeviceReport& response,
+        SWGRPX100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPerseusReport(new SWGrpx-100::SWGPerseusReport());
+    response.setPerseusReport(new SWGRPX100::SWGPerseusReport());
     response.getPerseusReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void PerseusInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const PerseusSettings& settings)
+void PerseusInput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const PerseusSettings& settings)
 {
     response.getPerseusSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getPerseusSettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -597,25 +597,25 @@ void PerseusInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& res
     response.getPerseusSettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void PerseusInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
+void PerseusInput::webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response)
 {
-    response.getPerseusReport()->setSampleRates(new QList<SWGrpx-100::SWGSampleRate*>);
+    response.getPerseusReport()->setSampleRates(new QList<SWGRPX100::SWGSampleRate*>);
 
     for (std::vector<uint32_t>::const_iterator it = getSampleRates().begin(); it != getSampleRates().end(); ++it)
     {
-        response.getPerseusReport()->getSampleRates()->append(new SWGrpx-100::SWGSampleRate);
+        response.getPerseusReport()->getSampleRates()->append(new SWGRPX100::SWGSampleRate);
         response.getPerseusReport()->getSampleRates()->back()->setRate(*it);
     }
 }
 
 void PerseusInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const PerseusSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("Perseus"));
-    swgDeviceSettings->setPerseusSettings(new SWGrpx-100::SWGPerseusSettings());
-    SWGrpx-100::SWGPerseusSettings *swgPerseusSettings = swgDeviceSettings->getPerseusSettings();
+    swgDeviceSettings->setPerseusSettings(new SWGRPX100::SWGPerseusSettings());
+    SWGRPX100::SWGPerseusSettings *swgPerseusSettings = swgDeviceSettings->getPerseusSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -653,7 +653,7 @@ void PerseusInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
         swgPerseusSettings->setTransverterMode(settings.m_transverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -674,12 +674,12 @@ void PerseusInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
 
 void PerseusInput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("Perseus"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

@@ -151,7 +151,7 @@ The resulting filter chain sequence is represented in (A.3)
 
 <h2>B. Spectrum display</h2>
 
-This is the spectrum (frequency domain) display. This display and controls are identical to all spectrum displays in the software. Further details on spectrum controls can be found [here](https://github.com/f4exb/rpx-100/tree/master/sdrgui#4-spectrum-display-control)
+This is the spectrum (frequency domain) display. This display and controls are identical to all spectrum displays in the software. Further details on spectrum controls can be found [here](https://github.com/f4exb/RPX100/tree/master/sdrgui#4-spectrum-display-control)
 
 <h2>C. Scope display</h2>
 

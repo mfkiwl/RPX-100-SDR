@@ -17,7 +17,7 @@ import time
 from datetime import datetime
 from optparse import OptionParser
 
-import rpx-100
+import RPX100
 
 OPTIONS = None
 API_URI = None
@@ -59,9 +59,9 @@ def get_input_options(args=None):
         args = sys.argv[1:]
 
     parser = OptionParser(usage="usage: %%prog [-t]\n")
-    parser.add_option("-a", "--address", dest="address", help="rpx-100 web base address. Default: 127.0.0.1", metavar="ADDRESS", type="string")
-    parser.add_option("-p", "--api-port", dest="api_port", help="rpx-100 API port. Default: 8091", metavar="PORT", type="int")
-    parser.add_option("-w", "--ws-port", dest="ws_port", help="rpx-100 websocket spectrum server port. Default: 8887", metavar="PORT", type="int")
+    parser.add_option("-a", "--address", dest="address", help="RPX100 web base address. Default: 127.0.0.1", metavar="ADDRESS", type="string")
+    parser.add_option("-p", "--api-port", dest="api_port", help="RPX100 API port. Default: 8091", metavar="PORT", type="int")
+    parser.add_option("-w", "--ws-port", dest="ws_port", help="RPX100 websocket spectrum server port. Default: 8887", metavar="PORT", type="int")
     parser.add_option("-c", "--config-file", dest="config_file", help="JSON configuration file. Mandatory", metavar="FILE", type="string")
     parser.add_option("-j", "--psd-in", dest="psd_input_file", help="JSON file containing PSD floor information.", metavar="FILE", type="string")
     parser.add_option("-J", "--psd-out", dest="psd_output_file", help="Write PSD floor information to JSON file.", metavar="FILE", type="string")
@@ -357,11 +357,11 @@ def set_channel_frequency(channel):
     channel_index = channel['index']
     channel_id = channel['id']
     df = channel['frequency'] - CONFIG['device_frequency']
-    url = f'{API_URI}/rpx-100/deviceset/{deviceset_index}/channel/{channel_index}/settings'
+    url = f'{API_URI}/RPX100/deviceset/{deviceset_index}/channel/{channel_index}/settings'
     payload = {
-        rpx-100.CHANNEL_TYPES[channel_id]['settings']: {
-            rpx-100.CHANNEL_TYPES[channel_id]['df_key']: df,
-            rpx-100.CHANNEL_TYPES[channel_id]['mute_key']: 0
+        RPX100.CHANNEL_TYPES[channel_id]['settings']: {
+            RPX100.CHANNEL_TYPES[channel_id]['df_key']: df,
+            RPX100.CHANNEL_TYPES[channel_id]['mute_key']: 0
         },
         'channelType': channel_id,
         'direction': 0
@@ -375,10 +375,10 @@ def set_channel_mute(channel):
     deviceset_index = CONFIG['deviceset_index']
     channel_index = channel['index']
     channel_id = channel['id']
-    url = f'{API_URI}/rpx-100/deviceset/{deviceset_index}/channel/{channel_index}/settings'
+    url = f'{API_URI}/RPX100/deviceset/{deviceset_index}/channel/{channel_index}/settings'
     payload = {
-        rpx-100.CHANNEL_TYPES[channel_id]['settings']: {
-            rpx-100.CHANNEL_TYPES[channel_id]['mute_key']: 1
+        RPX100.CHANNEL_TYPES[channel_id]['settings']: {
+            RPX100.CHANNEL_TYPES[channel_id]['mute_key']: 1
         },
         'channelType': channel_id,
         'direction': 0
@@ -389,7 +389,7 @@ def set_channel_mute(channel):
 
 # ======================================================================
 def get_deviceset_info(deviceset_index):
-    url = f'{API_URI}/rpx-100/deviceset/{deviceset_index}'
+    url = f'{API_URI}/RPX100/deviceset/{deviceset_index}'
     r = requests.get(url=url)
     if r.status_code // 100 != 2:
         raise SuperScannerAPIError(f'Get deviceset {deviceset_index} info failed')
@@ -431,7 +431,7 @@ def main():
         API_URI = f'http://{OPTIONS.address}:{OPTIONS.api_port}'
         WS_URI = f'ws://{OPTIONS.address}:{OPTIONS.ws_port}'
 
-        make_config() # complete config with device set information from rpx-100
+        make_config() # complete config with device set information from RPX100
 
         ws = websocket.WebSocketApp(WS_URI,
                                   on_message = on_ws_message,

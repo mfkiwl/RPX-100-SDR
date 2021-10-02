@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-This plugin reads a file of I/Q samples that have been previously saved with the file record button of other sampling source devices. The plugin supports rpx-100's own .sdriq file format as well as signed 16-bit PCM, 2 channel .wav files (including support for optional auxi headers, containing centre frequency).
+This plugin reads a file of I/Q samples that have been previously saved with the file record button of other sampling source devices. The plugin supports RPX100's own .sdriq file format as well as signed 16-bit PCM, 2 channel .wav files (including support for optional auxi headers, containing centre frequency).
 
 An .sdriq file starts with a 32 byte header of all unsigned integer of various sizes containing meta data:
 

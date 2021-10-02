@@ -34,9 +34,9 @@ const PluginDescriptor Blderf2InputPlugin::m_pluginDescriptor = {
     QStringLiteral("BladeRF2 Input"),
     QStringLiteral("4.19.0"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 static constexpr const char* const m_hardwareID = "BladeRF2";

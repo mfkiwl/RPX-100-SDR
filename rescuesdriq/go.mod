@@ -1,4 +1,4 @@
-module github.com/f4exb/rpx-100/rescuesdriq
+module github.com/f4exb/RPX100/rescuesdriq
 
 go 1.13
 

@@ -22,7 +22,7 @@ Device start / stop button.
 
 <h3>2: Sample rate</h3>
 
-This is the sample rate at which IQ samples are transfered from the device to rpx-100, in kS/s (k).
+This is the sample rate at which IQ samples are transfered from the device to RPX100, in kS/s (k).
 
 <h3>3: Center frequency</h3>
 

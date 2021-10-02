@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGATVDemodSettings::SWGATVDemodSettings(QString* json) {
     init();
@@ -222,71 +222,71 @@ SWGATVDemodSettings::fromJson(QString &json) {
 
 void
 SWGATVDemodSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&fps_index, pJson["fpsIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&fps_index, pJson["fpsIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&half_image, pJson["halfImage"], "qint32", "");
+    ::SWGRPX100::setValue(&half_image, pJson["halfImage"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rf_bandwidth_factor, pJson["RFBandwidthFactor"], "qint32", "");
+    ::SWGRPX100::setValue(&rf_bandwidth_factor, pJson["RFBandwidthFactor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&opp_bandwidth_factor, pJson["OppBandwidthFactor"], "qint32", "");
+    ::SWGRPX100::setValue(&opp_bandwidth_factor, pJson["OppBandwidthFactor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&nb_lines_index, pJson["nbLinesIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&nb_lines_index, pJson["nbLinesIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&int_frequency_offset, pJson["intFrequencyOffset"], "qint32", "");
+    ::SWGRPX100::setValue(&int_frequency_offset, pJson["intFrequencyOffset"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&enm_modulation, pJson["enmModulation"], "qint32", "");
+    ::SWGRPX100::setValue(&enm_modulation, pJson["enmModulation"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&flt_rf_bandwidth, pJson["fltRFBandwidth"], "float", "");
+    ::SWGRPX100::setValue(&flt_rf_bandwidth, pJson["fltRFBandwidth"], "float", "");
     
-    ::SWGrpx-100::setValue(&flt_rf_opp_bandwidth, pJson["fltRFOppBandwidth"], "float", "");
+    ::SWGRPX100::setValue(&flt_rf_opp_bandwidth, pJson["fltRFOppBandwidth"], "float", "");
     
-    ::SWGrpx-100::setValue(&bln_fft_filtering, pJson["blnFFTFiltering"], "qint32", "");
+    ::SWGRPX100::setValue(&bln_fft_filtering, pJson["blnFFTFiltering"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&flt_bfo_frequency, pJson["fltBFOFrequency"], "float", "");
+    ::SWGRPX100::setValue(&flt_bfo_frequency, pJson["fltBFOFrequency"], "float", "");
     
-    ::SWGrpx-100::setValue(&fm_deviation, pJson["fmDeviation"], "float", "");
+    ::SWGRPX100::setValue(&fm_deviation, pJson["fmDeviation"], "float", "");
     
-    ::SWGrpx-100::setValue(&am_scaling_factor, pJson["amScalingFactor"], "qint32", "");
+    ::SWGRPX100::setValue(&am_scaling_factor, pJson["amScalingFactor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&am_offset_factor, pJson["amOffsetFactor"], "qint32", "");
+    ::SWGRPX100::setValue(&am_offset_factor, pJson["amOffsetFactor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&int_sample_rate, pJson["intSampleRate"], "qint32", "");
+    ::SWGRPX100::setValue(&int_sample_rate, pJson["intSampleRate"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&enm_atv_standard, pJson["enmATVStandard"], "qint32", "");
+    ::SWGRPX100::setValue(&enm_atv_standard, pJson["enmATVStandard"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&int_number_of_lines, pJson["intNumberOfLines"], "qint32", "");
+    ::SWGRPX100::setValue(&int_number_of_lines, pJson["intNumberOfLines"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&flt_line_duration, pJson["fltLineDuration"], "float", "");
+    ::SWGRPX100::setValue(&flt_line_duration, pJson["fltLineDuration"], "float", "");
     
-    ::SWGrpx-100::setValue(&flt_top_duration, pJson["fltTopDuration"], "float", "");
+    ::SWGRPX100::setValue(&flt_top_duration, pJson["fltTopDuration"], "float", "");
     
-    ::SWGrpx-100::setValue(&flt_frame_per_s, pJson["fltFramePerS"], "float", "");
+    ::SWGRPX100::setValue(&flt_frame_per_s, pJson["fltFramePerS"], "float", "");
     
-    ::SWGrpx-100::setValue(&flt_ratio_of_rows_to_display, pJson["fltRatioOfRowsToDisplay"], "float", "");
+    ::SWGRPX100::setValue(&flt_ratio_of_rows_to_display, pJson["fltRatioOfRowsToDisplay"], "float", "");
     
-    ::SWGrpx-100::setValue(&flt_volt_level_synchro_top, pJson["fltVoltLevelSynchroTop"], "float", "");
+    ::SWGRPX100::setValue(&flt_volt_level_synchro_top, pJson["fltVoltLevelSynchroTop"], "float", "");
     
-    ::SWGrpx-100::setValue(&flt_volt_level_synchro_black, pJson["fltVoltLevelSynchroBlack"], "float", "");
+    ::SWGRPX100::setValue(&flt_volt_level_synchro_black, pJson["fltVoltLevelSynchroBlack"], "float", "");
     
-    ::SWGrpx-100::setValue(&bln_h_sync, pJson["blnHSync"], "qint32", "");
+    ::SWGRPX100::setValue(&bln_h_sync, pJson["blnHSync"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&bln_v_sync, pJson["blnVSync"], "qint32", "");
+    ::SWGRPX100::setValue(&bln_v_sync, pJson["blnVSync"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&bln_invert_video, pJson["blnInvertVideo"], "qint32", "");
+    ::SWGRPX100::setValue(&bln_invert_video, pJson["blnInvertVideo"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&int_video_tab_index, pJson["intVideoTabIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&int_video_tab_index, pJson["intVideoTabIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&int_tv_sample_rate, pJson["intTVSampleRate"], "qint32", "");
+    ::SWGRPX100::setValue(&int_tv_sample_rate, pJson["intTVSampleRate"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&int_number_sample_per_line, pJson["intNumberSamplePerLine"], "qint32", "");
+    ::SWGRPX100::setValue(&int_number_sample_per_line, pJson["intNumberSamplePerLine"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
+    ::SWGRPX100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&title, pJson["title"], "QString", "QString");
+    ::SWGRPX100::setValue(&title, pJson["title"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&udp_address, pJson["udpAddress"], "QString", "QString");
+    ::SWGRPX100::setValue(&udp_address, pJson["udpAddress"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&udp_port, pJson["udpPort"], "qint32", "");
+    ::SWGRPX100::setValue(&udp_port, pJson["udpPort"], "qint32", "");
     
 }
 

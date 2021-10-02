@@ -1,25 +1,25 @@
-name: rpx-100
+name: RPX100
 version: 4.6.0
-summary: rpx-100 + LimeSDR
-description: rpx-100 is an Open Source Qt5 / OpenGL 3.0+ SDR and signal analyzer frontend to various hardware.
+summary: RPX100 + LimeSDR
+description: RPX100 is an Open Source Qt5 / OpenGL 3.0+ SDR and signal analyzer frontend to various hardware.
 confinement: strict
 grade: stable
 
 apps:
-    rpx-100:
-        command: desktop-launch rpx-100
+    RPX100:
+        command: desktop-launch RPX100
         plugs: [network, network-bind, home, unity7, opengl, raw-usb]
 
     LimeUtil:
         command: LimeUtil
         plugs: [network, network-bind, home, raw-usb]
 
-    rpx-100srv:
-        command: rpx-100srv
+    RPX100srv:
+        command: RPX100srv
         plugs: [network, network-bind, home, raw-usb]
 
-    rpx-100bench:
-        command: rpx-100bench
+    RPX100bench:
+        command: RPX100bench
 
 parts:
 
@@ -40,9 +40,9 @@ parts:
         stage-packages:
             - libstdc++6
 
-    rpx-100:
+    RPX100:
         plugin: cmake
-        source: https://github.com/f4exb/rpx-100
+        source: https://github.com/f4exb/RPX100
         source-type: git
         source-tag: v4.5.6
         after: [desktop-qt5, limesuite, mbelib, serialdv, dsdcc, codec2, cm265cc, gcc7]
@@ -50,7 +50,7 @@ parts:
             - -DDEBUG_OUTPUT=ON
             - -DBUILD_TYPE=RELEASE
             - -DRX_SAMPLE_24BIT=ON
-            - -DCMAKE_CXX_COMPILER=/usr/bin/g++-7  #rpx-100 fails to compile with with gcc5
+            - -DCMAKE_CXX_COMPILER=/usr/bin/g++-7  #RPX100 fails to compile with with gcc5
         build-packages:
             - libfftw3-dev
             - libusb-1.0-0-dev
@@ -75,7 +75,7 @@ parts:
             - libavformat-dev
             - libopus-dev
 
-    gcc7:			#rpx-100 fails to compile with with gcc5, install gcc7
+    gcc7:			#RPX100 fails to compile with with gcc5, install gcc7
         plugin: nil
         override-pull: |
             sudo add-apt-repository ppa:ubuntu-toolchain-r/test

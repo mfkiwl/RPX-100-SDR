@@ -6,8 +6,8 @@ OPTIND=1         # Reset in case getopts has been used previously in the shell.
 show_help() {
   cat << EOF
   Usage: ${0##*/} [-b branch] [-c label] [-t tag] [-h]
-  Build rpx-100 image.
-  -b name    Branch name (default rpx-100)
+  Build RPX100 image.
+  -b name    Branch name (default RPX100)
   -c label   Arbitrary clone label. Clone again if different from the last label (default current timestamp)
   -t tag     Docker image tag. Use git tag or commit hash (default latest)
   -f file    Specify a Dockerfile (default is Dockerfile in current directory i.e. '.')
@@ -15,7 +15,7 @@ show_help() {
 EOF
 }
 
-branch_name="rpx-100"
+branch_name="RPX100"
 clone_label=$(date)
 image_tag="latest"
 uid=$(id -u)
@@ -43,7 +43,7 @@ shift $((OPTIND-1))
 [ "${1:-}" = "--" ] && shift
 # End of get options
 
-IMAGE_NAME=rpx-100/swagger/codegen:${image_tag}
+IMAGE_NAME=RPX100/swagger/codegen:${image_tag}
 DOCKER_BUILDKIT=1 docker build \
     --build-arg branch=${branch_name} \
     --build-arg clone_label="${clone_label}" \

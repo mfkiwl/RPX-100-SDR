@@ -66,7 +66,7 @@ UDP port number to forward received messages to.
 
 <h3>12: UDP format</h3>
 
-The format the messages are forwared via UDP in. This can be either binary (which is useful for rpx-100's PERTester feature) or NMEA (which is useful for 3rd party applications such as OpenCPN).
+The format the messages are forwared via UDP in. This can be either binary (which is useful for RPX100's PERTester feature) or NMEA (which is useful for 3rd party applications such as OpenCPN).
 
 <h3>Received Messages Table</h3>
 

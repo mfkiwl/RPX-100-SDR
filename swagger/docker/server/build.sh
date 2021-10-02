@@ -6,14 +6,14 @@ OPTIND=1         # Reset in case getopts has been used previously in the shell.
 show_help() {
   cat << EOF
   Usage: ${0##*/} [-b name] [-c label] [-t version] [-h]
-  Build rpx-100 image.
+  Build RPX100 image.
   -t tag     Docker image tag version (default latest)
   -f file    Specify a Dockerfile (default is Dockerfile in current directory i.e. '.')
   -h         Print this help.
 EOF
 }
 
-image_name="rpx-100/swagger/server"
+image_name="RPX100/swagger/server"
 image_tag="latest"
 uid=$(id -u)
 docker_file="."

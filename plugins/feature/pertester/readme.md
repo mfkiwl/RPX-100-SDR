@@ -42,7 +42,7 @@ Specify the interval in seconds between packet transmissions.
 
 Specify the contents of the packet to transmit and expect to be received. Data should be entered in hexidecimal bytes (E.g: 00 11 22 33 44).
 
-The exact format required will depend on the underlying protocol being used. For AX.25 using the Packet modulator, LoRo using the ChirpChat modulator, AIS and 802.15.4, it is not necessary to include the trailing CRC, as this is appended automatically by the rpx-100 modulators.
+The exact format required will depend on the underlying protocol being used. For AX.25 using the Packet modulator, LoRo using the ChirpChat modulator, AIS and 802.15.4, it is not necessary to include the trailing CRC, as this is appended automatically by the RPX100 modulators.
 
 Aside from hex values, a number of variables can be used:
 
@@ -97,8 +97,8 @@ The statistics fields display the statistics for the current test:
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to set the azimuth and elevation from the command line:
 
-    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "PERTester",  "PERTesterSettings": { "packetCount": 100 }}'
+    curl -X PATCH "http://127.0.0.1:8091/RPX100/featureset/0/feature/0/settings" -d '{"featureType": "PERTester",  "PERTesterSettings": { "packetCount": 100 }}'
 
 To start sending the test:
 
-    curl -X POST "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/run"
+    curl -X POST "http://127.0.0.1:8091/RPX100/featureset/0/feature/0/run"

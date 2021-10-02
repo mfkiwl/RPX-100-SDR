@@ -1,9 +1,9 @@
-rpx-100 (6.16.5-1) unstable; urgency=medium
+RPX100 (6.16.5-1) unstable; urgency=medium
 
-  * API: added PUT, PATCH, POST /rpx-100/featureset/{featureSetIndex}/preset. Issue #998.
-  * API: added GET /rpx-100/featurepresets and DELETE /rpx-100/featurepreset. Issue #998.
+  * API: added PUT, PATCH, POST /RPX100/featureset/{featureSetIndex}/preset. Issue #998.
+  * API: added GET /RPX100/featurepresets and DELETE /RPX100/featurepreset. Issue #998.
   * API: added feature sets in the instance summary
-  * API: added /rpx-100/features (GET) to get the list of available feature plugins
+  * API: added /RPX100/features (GET) to get the list of available feature plugins
   * SDRplay V3: fixes for API
   * Satellite Tracker: fixed compilation in server mode. Fixes #996
   * Satellite Tracker: various enhancements. PR #997.
@@ -11,15 +11,15 @@ rpx-100 (6.16.5-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 05 Sep 2021 20:27:06 +0200
 
-rpx-100 (6.16.4-1) unstable; urgency=medium
+RPX100 (6.16.4-1) unstable; urgency=medium
 
-  * API: fixed GET /rpx-100/featuresets
-  * API: implemented POST/DELETE /rpx-100/featureset. Fixes #988.
+  * API: fixed GET /RPX100/featuresets
+  * API: implemented POST/DELETE /RPX100/featureset. Fixes #988.
   * Implemented multiple feature sets in GUI
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 22 Aug 2021 08:16:44 +0200
 
-rpx-100 (6.16.3-1) unstable; urgency=medium
+RPX100 (6.16.3-1) unstable; urgency=medium
 
   * Metis scan: scan all network interfaces. Fixes #977
   * GLScopeGUI: fixed UI. Fixes #969
@@ -27,7 +27,7 @@ rpx-100 (6.16.3-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 21 Aug 2021 09:32:23 +0200
 
-rpx-100 (6.16.2-1) unstable; urgency=medium
+RPX100 (6.16.2-1) unstable; urgency=medium
 
   * Pager demod: Add support for character set mapping. PR #966
   * Pager demod: Add extra Hebrew charaters. PR #975
@@ -40,7 +40,7 @@ rpx-100 (6.16.2-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 08 Aug 2021 04:25:47 +0200
 
-rpx-100 (6.16.1-1) unstable; urgency=medium
+RPX100 (6.16.1-1) unstable; urgency=medium
 
   * AIS: fixed window size when scope is visible. PR #962. Issue #981
   * Other fixes in AIS demod. PR #962
@@ -50,7 +50,7 @@ rpx-100 (6.16.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 17 Jul 2021 08:23:22 +0200
 
-rpx-100 (6.16.0-1) unstable; urgency=medium
+RPX100 (6.16.0-1) unstable; urgency=medium
 
   * New Pager demodulator. PR #960
   * AIS feature: use course if heading is not available
@@ -67,7 +67,7 @@ rpx-100 (6.16.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 13 Jul 2021 20:20:58 +0200
 
-rpx-100 (6.15.1-1) unstable; urgency=medium
+RPX100 (6.15.1-1) unstable; urgency=medium
 
   * Demod Analyzer: fixed sample rate handling. Fixes #931
   * Enable LimeRFE on Windows. PR #942
@@ -81,7 +81,7 @@ rpx-100 (6.15.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 04 Jul 2021 03:28:04 +0200
 
-rpx-100 (6.15.0-1) unstable; urgency=medium
+RPX100 (6.15.0-1) unstable; urgency=medium
 
   * New Radio Clock plugin. PRs #394, #936  and #939
   * Add image zooming to APT demodulator. PR #941
@@ -95,7 +95,7 @@ rpx-100 (6.15.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 27 Jun 2021 17:12:08 +0200
 
-rpx-100 (6.14.0-1) unstable; urgency=medium
+RPX100 (6.14.0-1) unstable; urgency=medium
 
   * New noise figure Rx channel plugin PR #917 and #919
   * GLscope rework featuring a multiple I/Q stream input. Issues #898 and #872
@@ -105,7 +105,7 @@ rpx-100 (6.14.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 11 Jun 2021 17:44:52 +0200
 
-rpx-100 (6.13.0-1) unstable; urgency=medium
+RPX100 (6.13.0-1) unstable; urgency=medium
 
   * New antenna tool feature PR #906
   * Sat tracker: fix rotator max azimuth and elevation settings in GUI. PR #900
@@ -117,7 +117,7 @@ rpx-100 (6.13.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 28 May 2021 10:25:48 +0200
 
-rpx-100 (6.12.1-1) unstable; urgency=medium
+RPX100 (6.12.1-1) unstable; urgency=medium
 
   * AIS: Fix decoding of AIS class B messages PR #895
   * AIS: Add display of ship type from class B messages. PR #895
@@ -125,7 +125,7 @@ rpx-100 (6.12.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 11 May 2021 19:52:27 +0200
 
-rpx-100 (6.12.0-1) unstable; urgency=medium
+RPX100 (6.12.0-1) unstable; urgency=medium
 
   * New AIS mod, demod and feature plugins. PR #891. Implements #858.
   * PlutoSDR MIMO. Fixes in REST API
@@ -133,14 +133,14 @@ rpx-100 (6.12.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 11 May 2021 08:48:43 +0200
 
-rpx-100 (6.11.0-1) unstable; urgency=medium
+RPX100 (6.11.0-1) unstable; urgency=medium
 
   * New PlutoSDR MIMO plugin for Pluto+. Implements #869.
   * Fixed center interpolator by 64. Fixs #884.
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 05 May 2021 19:50:17 +0200
 
-rpx-100 (6.10.3-1) unstable; urgency=medium
+RPX100 (6.10.3-1) unstable; urgency=medium
 
   * Satellite tracker plugin: Fixed memory leaks. PR #979, Fixes #877.
   * More memory leak fixes in some plugins. PR #879.
@@ -150,7 +150,7 @@ rpx-100 (6.10.3-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 01 May 2021 09:03:34 +0200
 
-rpx-100 (6.10.2-1) unstable; urgency=medium
+RPX100 (6.10.2-1) unstable; urgency=medium
 
   * Satellite and Star tracker plugins: dark theme option for charts as default
   * Spectrum: increase maximum FFT size to 32k
@@ -163,7 +163,7 @@ rpx-100 (6.10.2-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 25 Apr 2021 19:01:51 +0200
 
-rpx-100 (6.10.1-1) unstable; urgency=medium
+RPX100 (6.10.1-1) unstable; urgency=medium
 
   * DAB/DAB+ demodulator plugin build in Windows package. PR #854 fixes #853
   * DSD Demodulator: set fixed 48kS/s for requested channel SR. Fixes #752
@@ -171,7 +171,7 @@ rpx-100 (6.10.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 19 Apr 2021 21:48:14 +0200
 
-rpx-100 (6.10.0-1) unstable; urgency=medium
+RPX100 (6.10.0-1) unstable; urgency=medium
 
   * New DAB/DAB+ demodulator plugin. PR #850
   * DATV modulator: avoid SR=0. PR #851 fixes #849
@@ -182,7 +182,7 @@ rpx-100 (6.10.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 18 Apr 2021 20:36:50 +0200
 
-rpx-100 (6.9.0-1) unstable; urgency=medium
+RPX100 (6.9.0-1) unstable; urgency=medium
 
   * New SDRPlay v3 source plugin. PR #839
   * NFM modulator. Implemented DCS. Part of #792
@@ -192,7 +192,7 @@ rpx-100 (6.9.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 13 Apr 2021 08:17:46 +0200
 
-rpx-100 (6.8.0-1) unstable; urgency=medium
+RPX100 (6.8.0-1) unstable; urgency=medium
 
   * New Packet Error Tester feature plugin. PR #836
   * DATV modulator plugin: DVB-S2 implementation. PR #826
@@ -203,7 +203,7 @@ rpx-100 (6.8.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 08 Apr 2021 17:26:09 +0200
 
-rpx-100 (6.7.0-1) unstable; urgency=medium
+RPX100 (6.7.0-1) unstable; urgency=medium
 
   * New DATV modulator plugin: DVB-S modulator. PR #810
   * FileInput: Sample rate fixes, PR #803
@@ -218,7 +218,7 @@ rpx-100 (6.7.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 29 Mar 2021 19:09:55 +0200
 
-rpx-100 (6.6.2-1) unstable; urgency=medium
+RPX100 (6.6.2-1) unstable; urgency=medium
 
   * FileSink: File name handling in settings and API. PR #798
   * FileRecord: cut file only if sample rate changes. Implements #795
@@ -226,7 +226,7 @@ rpx-100 (6.6.2-1) unstable; urgency=medium
   * DATV: implemented soft LDPC external tool. Issue #785
   * Spectrum: removed FPS no limit setting. Fixes #793
 
-rpx-100 (6.6.1-1) unstable; urgency=medium
+RPX100 (6.6.1-1) unstable; urgency=medium
 
   * GS-232 Controller feature: added ERC-M controller support. PR #788
   * Added missing swagger files from recent updates. PR #788
@@ -236,7 +236,7 @@ rpx-100 (6.6.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 03 Mar 2021 12:47:45 +0100
 
-rpx-100 (6.6.0-1) unstable; urgency=medium
+RPX100 (6.6.0-1) unstable; urgency=medium
 
   * New APT demodulator for NOAA satellites. PR #787
   * New Satellite tracker feature plugin. PR #787
@@ -248,7 +248,7 @@ rpx-100 (6.6.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 28 Feb 2021 18:43:09 +0100
 
-rpx-100 (6.5.5-1) unstable; urgency=medium
+RPX100 (6.5.5-1) unstable; urgency=medium
 
   * Spectrum frequency zooming: Implements #773
   * Spectrum time and power zomming. Implements #779
@@ -256,11 +256,11 @@ rpx-100 (6.5.5-1) unstable; urgency=medium
   * FileSink: fixed spectrum GUI center frequency setting (baseband to GUI communication)
   * FileSink: give .sdriq extension to provided file name automatically. Fixes #780
   * SigMFFileSink: give .sigmf-meta extension to provided file name automatically.
-  * SigMFFileSink: append data if file exists and has been recorded with rpx-100. Implements #781
+  * SigMFFileSink: append data if file exists and has been recorded with RPX100. Implements #781
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 20 Feb 2021 17:28:46 +0100
 
-rpx-100 (6.5.4-1) unstable; urgency=medium
+RPX100 (6.5.4-1) unstable; urgency=medium
 
    * Spectrum: more FPS capping options. Implements #772
    * Spectrum: autoscaling. Implements #771
@@ -269,7 +269,7 @@ rpx-100 (6.5.4-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 13 Feb 2021 09:05:18 +0100
 
-rpx-100 (6.5.3-1) unstable; urgency=medium
+RPX100 (6.5.3-1) unstable; urgency=medium
 
    * More Star Tracker updates. PR #762
    * AirspyHF: added decimation by 128 and 256. PR #764
@@ -283,14 +283,14 @@ rpx-100 (6.5.3-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 07 Feb 2021 10:00:23 +0100
 
-rpx-100 (6.5.2-1) unstable; urgency=medium
+RPX100 (6.5.2-1) unstable; urgency=medium
 
    * StarTracker feature: more updates. PR #761
    * SigMFFileSink: fixed spectrum GUI
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 30 Jan 2021 17:58:02 +0100
 
-rpx-100 (6.5.1-1) unstable; urgency=medium
+RPX100 (6.5.1-1) unstable; urgency=medium
 
    * StarTracker feature: many enhancements. PR #757
    * Packet demod: Fixed issue #750. PR #756
@@ -300,7 +300,7 @@ rpx-100 (6.5.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 23 Jan 2021 10:37:33 +0100
 
-rpx-100 (6.5.0-1) unstable; urgency=medium
+RPX100 (6.5.0-1) unstable; urgency=medium
 
    * New PacketDemod Rx channel plugin. PR #746
    * New APRS feature plugin. PR #746
@@ -309,7 +309,7 @@ rpx-100 (6.5.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 14 Jan 2021 22:32:52 +0100
 
-rpx-100 (6.4.0-1) unstable; urgency=medium
+RPX100 (6.4.0-1) unstable; urgency=medium
 
    * New demodulation analyzer feature plugin. Implements #695
    * GLShaderTVArray: fixed regression introduced by commit a08e18b
@@ -317,21 +317,21 @@ rpx-100 (6.4.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 21 Dec 2020 09:35:39 +0100
 
-rpx-100 (6.3.3-1) unstable; urgency=medium
+RPX100 (6.3.3-1) unstable; urgency=medium
 
    * AFC: use message pipes for channel settings feedback. Updated channel plugins.
    * Message pipes: implemented message queues recycling when features disappear.
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 13 Dec 2020 18:59:52 +0100
 
-rpx-100 (6.3.2-1) unstable; urgency=medium
+RPX100 (6.3.2-1) unstable; urgency=medium
 
    * Fixed MSVC compilation of message pipes.
    * TVScreen: removed cleanup() call in destructor. May fix #728.
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 12 Dec 2020 20:19:52 +0100
 
-rpx-100 (6.3.1-1) unstable; urgency=medium
+RPX100 (6.3.1-1) unstable; urgency=medium
 
    * Implemented garbage collector for message pipes. Applies to VORLocalizer.
    * FreeDV: removed useless set callback functions. Use mutex appropriately. Issue #728
@@ -340,14 +340,14 @@ rpx-100 (6.3.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 12 Dec 2020 14:45:22 +0100
 
-rpx-100 (6.3.0-1) unstable; urgency=medium
+RPX100 (6.3.0-1) unstable; urgency=medium
 
    * Single channel VOR demodulator plugin. Issue #729
    * VOR localizer feature plugin. Issue #729
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 08 Dec 2020 07:30:36 +0100
 
-rpx-100 (6.2.0-1) unstable; urgency=medium
+RPX100 (6.2.0-1) unstable; urgency=medium
 
    * New VOR demodulator plugin. PR #723
    * Remote plugins build fix on ARM64. Fixes #720
@@ -356,7 +356,7 @@ rpx-100 (6.2.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 26 Nov 2020 05:49:14 +0100
 
-rpx-100 (6.1.0-1) unstable; urgency=medium
+RPX100 (6.1.0-1) unstable; urgency=medium
 
    * Fixes for clang-cl build and LTO optimization. PR #717
    * Cmake arch detection and compilation options rework. PR #714 and #715
@@ -367,20 +367,20 @@ rpx-100 (6.1.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 22 Nov 2020 19:06:29 +0100
 
-rpx-100 (6.0.2-1) unstable; urgency=medium
+RPX100 (6.0.2-1) unstable; urgency=medium
 
    * GLSpectrum: fixed settings and waterfall share serialization. Reinstate #609
    * Fixed main cmake and correct warnings. Implements #663
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 15 Nov 2020 20:58:44 +0100
 
-rpx-100 (6.0.1-1) unstable; urgency=medium
+RPX100 (6.0.1-1) unstable; urgency=medium
 
    * Audio Input: reworked threading model and mono handling. Issue #706
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 13 Nov 2020 22:19:29 +0100
 
-rpx-100 (6.0.0-1) unstable; urgency=medium
+RPX100 (6.0.0-1) unstable; urgency=medium
 
    * Merge back v5 branch and upgrade version to v6
    * ChirpChat modulator/demodulator replacing LoRa. Issues #309 and #471
@@ -400,7 +400,7 @@ rpx-100 (6.0.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 12 Nov 2020 21:26:29 +0100
 
-rpx-100 (4.21.3-1) unstable; urgency=medium
+RPX100 (4.21.3-1) unstable; urgency=medium
 
    * Package SoapySDR modules for Windows. PR #687
    * CI: Add docker build. PR #673
@@ -412,7 +412,7 @@ rpx-100 (4.21.3-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 09 Nov 2020 13:07:51 +0100
 
-rpx-100 (4.21.2-1) unstable; urgency=medium
+RPX100 (4.21.2-1) unstable; urgency=medium
 
    * Windows package: upgrade to VS 2019 and Qt 5.15.1. PR #683
    * Package builds: migrate to Ninja. PR #683
@@ -424,7 +424,7 @@ rpx-100 (4.21.2-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 06 Nov 2020 05:21:24 +0100
 
-rpx-100 (4.21.1-1) unstable; urgency=medium
+RPX100 (4.21.1-1) unstable; urgency=medium
 
    * ADS-B demod: optimization of sync word correlation. Implements #675
    * ADS-B: added 2MS/s sample rate
@@ -438,7 +438,7 @@ rpx-100 (4.21.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 03 Nov 2020 12:11:25 +0100
 
-rpx-100 (4.21.0-1) unstable; urgency=medium
+RPX100 (4.21.0-1) unstable; urgency=medium
 
    * New ADS-B demodulator and decoder. PR #671
    * New GS-232 controller (feature). PR #671
@@ -449,7 +449,7 @@ rpx-100 (4.21.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 28 Oct 2020 07:40:44 +0100
 
-rpx-100 (4.20.0-1) unstable; urgency=medium
+RPX100 (4.20.0-1) unstable; urgency=medium
 
    * New IEEE 802.15.4 modulator. PR #654
    * Packet modulator fixes. PR #655
@@ -458,14 +458,14 @@ rpx-100 (4.20.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 11 Oct 2020 20:39:16 +0200
 
-rpx-100 (4.19.0-1) unstable; urgency=medium
+RPX100 (4.19.0-1) unstable; urgency=medium
 
    * USRP support. PR #652
    * Removal of PluginInstanceGUI and related refactoring
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 06 Oct 2020 05:14:29 +0200
 
-rpx-100 (4.18.0-1) unstable; urgency=medium
+RPX100 (4.18.0-1) unstable; urgency=medium
 
    * New feature plugins framework. Implements #632
    * Simple PTT feature plugin. Implements #635
@@ -474,7 +474,7 @@ rpx-100 (4.18.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 29 Sep 2020 06:40:35 +0200
 
-rpx-100 (4.17.0-1) unstable; urgency=medium
+RPX100 (4.17.0-1) unstable; urgency=medium
 
    * Packet modulator: new channel Tx plugin
    * DATV demod: Spectrum point and click is used fix. Fixes issue #637
@@ -485,21 +485,21 @@ rpx-100 (4.17.0-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 26 Sep 2020 07:12:43 +0200
 
-rpx-100 (4.16.1-1) unstable; urgency=medium
+RPX100 (4.16.1-1) unstable; urgency=medium
 
    * BladeRF2: fixed global gain setting. Fixes issue #630
    * BladeRF2: REST API: add scale in range report
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 16 Sep 2020 11:07:43 +0200
 
-rpx-100 (4.16.0-1) unstable; urgency=medium
+RPX100 (4.16.0-1) unstable; urgency=medium
 
    * Specialized channels dock. Implements #628
    * Specialized sampling devices dock. Implements #629
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 13 Sep 2020 22:14:52 +0200
 
-rpx-100 (4.15.5-1) unstable; urgency=medium
+RPX100 (4.15.5-1) unstable; urgency=medium
 
    * RigCtl plugin: support of hamlib rigctl protocol. Issue #602
    * REST API: changed uint64 to int64 integer formats. Fixes #624
@@ -508,14 +508,14 @@ rpx-100 (4.15.5-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 11 Sep 2020 11:32:50 +0200
 
-rpx-100 (4.15.4-1) unstable; urgency=medium
+RPX100 (4.15.4-1) unstable; urgency=medium
 
    * GLSpectrum: fixed settings and waterfall share serialization. Fixes #609
    * DATV decoder: fixed UDP sender dropping packets. Fixes issue #579
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 29 Aug 2020 17:10:35 +0200
 
-rpx-100 (4.15.3-1) unstable; urgency=medium
+RPX100 (4.15.3-1) unstable; urgency=medium
 
    * RemoteInput: option to join multicast group. Implements #611
    * FileSource: file record length in microsedoncs. Implements #614
@@ -523,7 +523,7 @@ rpx-100 (4.15.3-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 27 Aug 2020 07:56:13 +0200
 
-rpx-100 (4.15.2-1) unstable; urgency=medium
+RPX100 (4.15.2-1) unstable; urgency=medium
 
    * UDP Source: added ability to join multicast group. Implements #610
    * Fixed SDRIQ file recorder adding header multiple times
@@ -533,7 +533,7 @@ rpx-100 (4.15.2-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 25 Aug 2020 19:02:34 +0200
 
-rpx-100 (4.15.1-1) unstable; urgency=medium
+RPX100 (4.15.1-1) unstable; urgency=medium
 
    * ATV Demod: implementation of arbitrary sample rate. Implements #594
    * ATV Demodulator: implement double bufferin
@@ -545,14 +545,14 @@ rpx-100 (4.15.1-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 20 Aug 2020 11:59:46 +0200
 
-rpx-100 (4.15.0-1) unstable; urgency=medium
+RPX100 (4.15.0-1) unstable; urgency=medium
 
    * Added FileSink channel plugin. Implements #543.
    * ATV Demod: introducing of new analog TV shader
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 09 Aug 2020 04:47:52 +0200
 
-rpx-100 (4.14.20-1) unstable; urgency=medium
+RPX100 (4.14.20-1) unstable; urgency=medium
 
    * ATV Modulator: fixed 819 lines system
    * Plugins with audio: fixed audio sample rate handling. Fixes #585
@@ -560,7 +560,7 @@ rpx-100 (4.14.20-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 03 Aug 2020 11:20:10 +0200
 
-rpx-100 (4.14.19-1) unstable; urgency=medium
+RPX100 (4.14.19-1) unstable; urgency=medium
 
    * DSD Demod: removed DMR Basic Privacy feature. Implements #574
    * ATV Modulator: complete vertical sync rework. Implements #578
@@ -569,7 +569,7 @@ rpx-100 (4.14.19-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 01 Aug 2020 03:11:26 +0200
 
-rpx-100 (4.14.18-1) unstable; urgency=medium
+RPX100 (4.14.18-1) unstable; urgency=medium
 
    * ATV Demod: improvements of HSync and VSync algorithms. Fixes #459
    * ATV Demod: further bug fixes and performance improvements
@@ -579,7 +579,7 @@ rpx-100 (4.14.18-1) unstable; urgency=medium
 
   -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 21 Jul 2020 06:40:13 +0200
 
-rpx-100 (4.14.17-1) unstable; urgency=medium
+RPX100 (4.14.17-1) unstable; urgency=medium
 
    * Channel Analyzer: fixed sink apply channel settings. Fixes #569 and #570
    * Channel Analyzer: improved baseband thread management
@@ -591,7 +591,7 @@ rpx-100 (4.14.17-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 13 Jul 2020 22:12:45 +0200
 
-rpx-100 (5.7.10-1) unstable; urgency=medium
+RPX100 (5.7.10-1) unstable; urgency=medium
 
    * ATV demod: fixed initialization issues. Fixes #560
    * GLSpectrum: synchronize spectrum with the GUI spectrum freeze button. Fixes issue #561
@@ -600,7 +600,7 @@ rpx-100 (5.7.10-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 12 Jul 2020 18:26:55 +0200
 
-rpx-100 (4.14.15-1) unstable; urgency=medium
+RPX100 (4.14.15-1) unstable; urgency=medium
 
    * GLScope: marker feature. Implements #497
    * GLSpectrum: marker feature. Implements #557
@@ -608,7 +608,7 @@ rpx-100 (4.14.15-1) unstable; urgency=medium
 
 -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 06 Jul 2020 17:33:24 +0200
 
-rpx-100 (4.14.14-1) unstable; urgency=medium
+RPX100 (4.14.14-1) unstable; urgency=medium
 
    * Add 10 MHz digit to wideband channel plugins. Implements #531
    * Initialize m_audioSampleRate in constructors where missing. Fixes #554
@@ -616,13 +616,13 @@ rpx-100 (4.14.14-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 01 Jul 2020 18:02:33 +0200
 
-rpx-100 (4.14.13-1) unstable; urgency=medium
+RPX100 (4.14.13-1) unstable; urgency=medium
 
    * Remote input: adjust buffer size depending on sample rate. Implements #534
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 28 Jun 2020 08:32:53 +0200
 
-rpx-100 (4.14.12-1) unstable; urgency=medium
+RPX100 (4.14.12-1) unstable; urgency=medium
 
    * RTL-SDR: Bias tee support. Implements #533
    * Frequency tracker: added tracking delta frequency in API report. Implements #550
@@ -630,13 +630,13 @@ rpx-100 (4.14.12-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 27 Jun 2020 08:50:27 +0200
 
-rpx-100 (4.14.11-1) unstable; urgency=medium
+RPX100 (4.14.11-1) unstable; urgency=medium
 
    * I/Q swap option on transverter. Implements #493
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 24 Jun 2020 01:45:23 +0200
 
-rpx-100 (4.14.10-1) unstable; urgency=medium
+RPX100 (4.14.10-1) unstable; urgency=medium
 
    * Fixed Soapy SDR find module. Implements issue #519
    * Added SWSCALE to the list of required FFMpeg modules. Implements issue #437
@@ -645,19 +645,19 @@ rpx-100 (4.14.10-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 20 Jun 2020 04:12:35 +0200
 
-rpx-100 (4.14.9-1) unstable; urgency=medium
+RPX100 (4.14.9-1) unstable; urgency=medium
 
    * DSD demod: implemented DMR basic privacy (dsdcc 1.8.7)
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 15 Jun 2020 19:03:39 +0200
 
-rpx-100 (4.14.8-1) unstable; urgency=medium
+RPX100 (4.14.8-1) unstable; urgency=medium
 
    * RTP audio: fixed codec setting when usinf REST API. Fixes #526
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 23 May 2020 23:01:15 +0200
 
-rpx-100 (4.14.7-1) unstable; urgency=medium
+RPX100 (4.14.7-1) unstable; urgency=medium
 
    * PlutoSDR: fixed handling of open device status. Fixes issue #510
    * Prevent use of not existent devices. Fixes issue #510 partially
@@ -666,7 +666,7 @@ rpx-100 (4.14.7-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 20 May 2020 11:35:17 +0200
 
-rpx-100 (4.14.6-1) unstable; urgency=medium
+RPX100 (4.14.6-1) unstable; urgency=medium
 
    * Spectrum analyzer code reorganization
    * FFTFactory: add mutex for thread safety. Implements issue #514
@@ -674,7 +674,7 @@ rpx-100 (4.14.6-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 16 May 2020 06:35:17 +0200
 
-rpx-100 (4.14.5-1) unstable; urgency=medium
+RPX100 (4.14.5-1) unstable; urgency=medium
 
    * DATV demod: applied some recent changes in leansdr
    * Fixed incorrect frequency display when transverter is engaged. Fixes issue #509
@@ -683,7 +683,7 @@ rpx-100 (4.14.5-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 28 Apr 2020 03:35:17 +0200
 
-rpx-100 (4.14.4-1) unstable; urgency=medium
+RPX100 (4.14.4-1) unstable; urgency=medium
 
   * XTRX: REST API: fixed wrong setting object
   * XTRX: fixed sample rate setting
@@ -697,14 +697,14 @@ rpx-100 (4.14.4-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 20 Apr 2020 05:35:17 +0200
 
-rpx-100 (4.14.3-1) unstable; urgency=medium
+RPX100 (4.14.3-1) unstable; urgency=medium
 
   * Sample sources GUI file record: right click to choose file. Implements #483.
   * BladeRF2: REST API: implemented actions (was missing)
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 01 Apr 2020 19:05:22 +0200
 
-rpx-100 (4.14.2-1) unstable; urgency=medium
+RPX100 (4.14.2-1) unstable; urgency=medium
 
   * Removed cm256cc dependency and therefore remote plugins for Mac OS. Fixes #492
   * REST API: removed useless SWGDevicesetApi files. Fixes #491
@@ -712,26 +712,26 @@ rpx-100 (4.14.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 28 Mar 2020 19:05:22 +0100
 
-rpx-100 (4.14.1-1) unstable; urgency=medium
+RPX100 (4.14.1-1) unstable; urgency=medium
 
   * FFT factory with option to use fftwf wisdom file. Impements issue #482.
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 16 Mar 2020 21:01:22 +0100
 
-rpx-100 (4.14.0-1) unstable; urgency=medium
+RPX100 (4.14.0-1) unstable; urgency=medium
 
   * REST API device and channel actions. Implements #485.
   * LimeRFE USB: added cellular band 3 and improved API documentation
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 11 Mar 2020 15:14:22 +0100
 
-rpx-100 (4.13.2-1) unstable; urgency=medium
+RPX100 (4.13.2-1) unstable; urgency=medium
 
   * CI/CD implmentation with Appveyor
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 01 Mar 2020 05:14:22 +0100
 
-rpx-100 (4.13.1-1) unstable; urgency=medium
+RPX100 (4.13.1-1) unstable; urgency=medium
 
   * LimeRFE USB support: fixed attenuator and AM/FM notch settings
   * FileSource: fixed various issues with settings with GUI and REST API. Fixes issue #481
@@ -742,32 +742,32 @@ rpx-100 (4.13.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 26 Feb 2020 22:14:22 +0100
 
-rpx-100 (4.13.0-1) unstable; urgency=medium
+RPX100 (4.13.0-1) unstable; urgency=medium
 
   * LimeRFE USB support
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 22 Jan 2020 12:14:22 +0100
 
-rpx-100 (4.12.5-1) unstable; urgency=medium
+RPX100 (4.12.5-1) unstable; urgency=medium
 
   * Removed MIMO plugins and related code
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 01 Jan 2020 06:14:22 +0100
 
-rpx-100 (4.12.4-1) unstable; urgency=medium
+RPX100 (4.12.4-1) unstable; urgency=medium
 
   * Debian build: moved librtlsdr to external libraries
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 17 Dec 2019 19:14:22 +0100
 
-rpx-100 (4.12.3-1) unstable; urgency=medium
+RPX100 (4.12.3-1) unstable; urgency=medium
 
   * Added possibility to specify devices that cannot be discovered automatically
   * Server: fixed sink device set creation and added MIMO creation
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 15 Dec 2019 23:14:22 +0100
 
-rpx-100 (4.12.2-1) unstable; urgency=medium
+RPX100 (4.12.2-1) unstable; urgency=medium
 
   * Refactoring of Rx channels code with better separation of concerns
   * ATV demod: complete refactoring
@@ -777,7 +777,7 @@ rpx-100 (4.12.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 14 Dec 2019 06:14:22 +0100
 
-rpx-100 (4.12.1-1) unstable; urgency=medium
+RPX100 (4.12.1-1) unstable; urgency=medium
 
   * Tx plugins: further refactoring and fixes
   * Scope: added DOA projections and updated ChannelAnalzyer
@@ -787,7 +787,7 @@ rpx-100 (4.12.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 19 Nov 2019 22:14:22 +0100
 
-rpx-100 (4.12.0-1) unstable; urgency=medium
+RPX100 (4.12.0-1) unstable; urgency=medium
 
   * Refactoring of Tx part with new FIFO and code reorganization
   * Corrected network manager process memory leaks
@@ -795,7 +795,7 @@ rpx-100 (4.12.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 15 Nov 2019 00:14:22 +0100
 
-rpx-100 (4.11.12-1) unstable; urgency=medium
+RPX100 (4.11.12-1) unstable; urgency=medium
 
   * Test sink output plugin
   * ChannelAnalyzer: set trace length to FFT length  when auto-correlation by IFFT is used
@@ -805,7 +805,7 @@ rpx-100 (4.11.12-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 01 Nov 2019 14:14:22 +0100
 
-rpx-100 (4.11.11-1) unstable; urgency=medium
+RPX100 (4.11.11-1) unstable; urgency=medium
 
   * Channel Analyzer polar grid option for XY display (Issue #424)
   * Fixed MacOS build
@@ -813,7 +813,7 @@ rpx-100 (4.11.11-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 23 Oct 2019 20:14:22 +0200
 
-rpx-100 (4.11.10-1) unstable; urgency=medium
+RPX100 (4.11.10-1) unstable; urgency=medium
 
   * Plugins device enumeration optimization
   * Scope: added possibility to change trace chunk size
@@ -826,7 +826,7 @@ rpx-100 (4.11.10-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 09 Oct 2019 05:14:22 +0200
 
-rpx-100 (4.11.9-1) unstable; urgency=medium
+RPX100 (4.11.9-1) unstable; urgency=medium
 
   * Fixed regression in v4.11.7 due to FIFO system
   * Upgraded SerialDV. Removed unused attribute in LocalSink GUI
@@ -834,7 +834,7 @@ rpx-100 (4.11.9-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 10 Sep 2019 21:04:06 +0200
 
-rpx-100 (4.11.8-1) unstable; urgency=medium
+RPX100 (4.11.8-1) unstable; urgency=medium
 
   * HackRF: implemented transverter functionality
   * FreeDV demod: fixed spectrum span and channel id
@@ -842,7 +842,7 @@ rpx-100 (4.11.8-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 31 Aug 2019 06:04:06 +0200
 
-rpx-100 (4.11.7-1) unstable; urgency=medium
+RPX100 (4.11.7-1) unstable; urgency=medium
 
   * GLSpectrum and GLScope: fixed possible issues with mutex handling
   * Channel Analyzer: use FFTW engine with Hamming window for auto correlation
@@ -851,25 +851,25 @@ rpx-100 (4.11.7-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 24 Aug 2019 06:04:06 +0200
 
-rpx-100 (4.11.6-1) unstable; urgency=medium
+RPX100 (4.11.6-1) unstable; urgency=medium
 
   * REST API /sdrange/config endpoint with GET, PUT, PATCH. Implements #241
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 12 Aug 2019 05:04:06 +0200
 
-rpx-100 (4.11.5-1) unstable; urgency=medium
+RPX100 (4.11.5-1) unstable; urgency=medium
 
   * CW keyer from keyboard. Audio monitor AM, NFM, SSB modulators. Implements #385
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 30 Jul 2019 23:04:06 +0200
 
-rpx-100 (4.11.4-1) unstable; urgency=medium
+RPX100 (4.11.4-1) unstable; urgency=medium
 
   * DATV demod: option to output transport stream to UDP. Implements #313
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 28 Jul 2019 09:04:06 +0200
 
-rpx-100 (4.11.3-1) unstable; urgency=medium
+RPX100 (4.11.3-1) unstable; urgency=medium
 
   * PlutoSDR input: options for HW DC and IQ corrections. Implements #378
   * DATV demod: fix DVB-S FEC 7/8 not recognized from the GUI. Fixes #383
@@ -878,7 +878,7 @@ rpx-100 (4.11.3-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 25 Jul 2019 21:04:06 +0200
 
-rpx-100 (4.11.2-1) unstable; urgency=medium
+RPX100 (4.11.2-1) unstable; urgency=medium
 
   * New AMBE devices support including AMBE servers
   * Fixed closing main window with the corner X
@@ -887,41 +887,41 @@ rpx-100 (4.11.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 23 Jul 2019 21:04:06 +0200
 
-rpx-100 (4.11.1-1) unstable; urgency=medium
+RPX100 (4.11.1-1) unstable; urgency=medium
 
   * DATV demod: implemented DVB-S2 (experimental)
   * SSB modulator: use real audio compressor with just an on off toggle
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 18 Jul 2019 00:04:06 +0200
 
-rpx-100 (4.11.0-1) unstable; urgency=medium
+RPX100 (4.11.0-1) unstable; urgency=medium
 
   * File Source channel plugin
   * Flatpak build update
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 09 Jul 2019 23:04:06 +0200
 
-rpx-100 (4.10.5-1) unstable; urgency=medium
+RPX100 (4.10.5-1) unstable; urgency=medium
 
   * Windows: removed console display
   * Fixed REST API issues in some plugins
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 05 Jul 2019 20:04:06 +0200
 
-rpx-100 (4.10.4-1) unstable; urgency=medium
+RPX100 (4.10.4-1) unstable; urgency=medium
 
   * Airspy: fixed sample rates auto detection
   * Attempt to fix device user arguments processing. Issue #372
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 30 Jun 2019 02:04:06 +0200
 
-rpx-100 (4.10.3-1) unstable; urgency=medium
+RPX100 (4.10.3-1) unstable; urgency=medium
 
   * Windows build: fixed RTL-SDR support
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 28 Jun 2019 20:44:06 +0200
 
-rpx-100 (4.10.2-1) unstable; urgency=medium
+RPX100 (4.10.2-1) unstable; urgency=medium
 
   * Windows MSVC with cmake build introduction
   * Fixed BladeRF support with libbladeRF 2018.10-rc1
@@ -930,7 +930,7 @@ rpx-100 (4.10.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 26 Jun 2019 20:44:06 +0200
 
-rpx-100 (4.10.1-1) unstable; urgency=medium
+RPX100 (4.10.1-1) unstable; urgency=medium
 
   * Implemented device user arguments
   * PVS-Studio static analysis corrections (5)
@@ -938,7 +938,7 @@ rpx-100 (4.10.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 15 Jun 2019 06:44:06 +0200
 
-rpx-100 (4.10.0-1) unstable; urgency=medium
+RPX100 (4.10.0-1) unstable; urgency=medium
 
   * Support for KiwiSDR
   * SSB demod: reworked AGC to handle the threshold gate properly
@@ -946,7 +946,7 @@ rpx-100 (4.10.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 09 Jun 2019 16:44:06 +0200
 
-rpx-100 (4.9.1-1) unstable; urgency=medium
+RPX100 (4.9.1-1) unstable; urgency=medium
 
   * WFM demod: variable RF bandwidth. Implements #320
   * Fixed buddies list handling at buddy termination time. Fixes #359
@@ -954,21 +954,21 @@ rpx-100 (4.9.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 06 Jun 2019 20:44:06 +0200
 
-rpx-100 (4.9.0-1) unstable; urgency=medium
+RPX100 (4.9.0-1) unstable; urgency=medium
 
   * New build system introduction
   * NFM demod: fixed low-pass audio filter
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 01 Jun 2019 20:44:06 +0200
 
-rpx-100 (4.8.2-1) unstable; urgency=medium
+RPX100 (4.8.2-1) unstable; urgency=medium
 
   * SSB demod: fixes
   * Audio input: set default volume factor to 1.0 (was 0.15)
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 30 May 2019 20:44:06 +0100
 
-rpx-100 (4.8.1-1) unstable; urgency=medium
+RPX100 (4.8.1-1) unstable; urgency=medium
 
   * AM demod: fixed audio interpolator. Issue #354
   * Interpolation to audio for NFM and SSB demods allowing the use of a 48k audio sink regardless of the channel sample rate
@@ -978,46 +978,46 @@ rpx-100 (4.8.1-1) unstable; urgency=medium
   * Added a splash screen on startup. Issue #343
   * SoapySDR output: support floating point type samples. Issue #345
   * NFM demod: made high pass audio filter optional to be able to pass DC to other programs via audio. Issue #343
-  * Added UHD rules in udev (and moved away to rpx-100-docker). Issue #343
+  * Added UHD rules in udev (and moved away to RPX100-docker). Issue #343
   * Use Qt precise timer for test and file sources
   * "hidden" `--mimo` option to activate MIMO functionality (MIMO device set). Makes it optional until it can be officialy released
   * Updated some base classes to adequately support new MIMO devices
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 20 May 2019 20:44:06 +0200
 
-rpx-100 (4.8.0-1) unstable; urgency=medium
+RPX100 (4.8.0-1) unstable; urgency=medium
 
   * Local output plugin
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 10 May 2019 20:44:06 +0200
 
-rpx-100 (4.7.2-1) unstable; urgency=medium
+RPX100 (4.7.2-1) unstable; urgency=medium
 
   * Unique DeviceAPI interface for sources and sinks
   * REST API: fixes over last version
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 08 May 2019 22:14:18 +0200
 
-rpx-100 (4.7.1-1) unstable; urgency=medium
+RPX100 (4.7.1-1) unstable; urgency=medium
 
   * SSB modulator: fixed compressor overloading
   * REST API: tx, nbStreams and streamIndex names change
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 07 May 2019 14:14:18 +0200
 
-rpx-100 (4.7.0-1) unstable; urgency=medium
+RPX100 (4.7.0-1) unstable; urgency=medium
 
   * New Frequency Tracker Rx channel plugin
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 05 May 2019 16:14:18 +0200
 
-rpx-100 (4.6.0-1) unstable; urgency=medium
+RPX100 (4.6.0-1) unstable; urgency=medium
 
   * New LocalSink and LocalInput plugin pair to use sub basebands internally
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 02 May 2019 11:14:18 +0200
 
-rpx-100 (4.5.6-1) unstable; urgency=medium
+RPX100 (4.5.6-1) unstable; urgency=medium
 
   * Remote channel sink: implemented decimation with possible center shift. Issue #331
   * Remote input: fixed version display
@@ -1025,7 +1025,7 @@ rpx-100 (4.5.6-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 28 Apr 2019 20:14:18 +0200
 
-rpx-100 (4.5.5-1) unstable; urgency=medium
+RPX100 (4.5.5-1) unstable; urgency=medium
 
   * FreeDV: fixes in REST API
   * LimeSDR: fixed Rx and Tx antenna labels for Lime mini
@@ -1033,25 +1033,25 @@ rpx-100 (4.5.5-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 20 Apr 2019 20:14:18 +0200
 
-rpx-100 (4.5.4-1) unstable; urgency=medium
+RPX100 (4.5.4-1) unstable; urgency=medium
 
   * Fixed RTL-SDR gain setting sequence. Fixes issue #321.
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 05 Apr 2019 20:14:18 +0200
 
-rpx-100 (4.5.3-1) unstable; urgency=medium
+RPX100 (4.5.3-1) unstable; urgency=medium
 
   * Fixed HackRF Rx/Tx frequency setting. Fixes issue #318.
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 01 Apr 2019 20:14:18 +0200
 
-rpx-100 (4.5.2-1) unstable; urgency=medium
+RPX100 (4.5.2-1) unstable; urgency=medium
 
   * Send device and channel index in reverse API. Implements issue #312.
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 25 Mar 2019 20:14:18 +0100
 
-rpx-100 (4.5.1-1) unstable; urgency=medium
+RPX100 (4.5.1-1) unstable; urgency=medium
 
   * DATV demod: implemented audio processing
   * Perseus: fixed cold start flawed init sequence
@@ -1062,41 +1062,41 @@ rpx-100 (4.5.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 22 Mar 2019 20:14:18 +0100
 
-rpx-100 (4.5.0-1) unstable; urgency=medium
+RPX100 (4.5.0-1) unstable; urgency=medium
 
   * Implemented a FreeDV modulator and demodulator
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 03 Mar 2019 20:14:18 +0100
 
-rpx-100 (4.4.5-1) unstable; urgency=medium
+RPX100 (4.4.5-1) unstable; urgency=medium
 
   * UDP/RTP audio: added G722 and Opus support
   * Debian build: fixed missing sources in dsdcc, libiio and limesuite
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 19 Feb 2019 22:14:18 +0100
 
-rpx-100 (4.4.4-1) unstable; urgency=medium
+RPX100 (4.4.4-1) unstable; urgency=medium
 
   * SoapySDR: fixed some GUI issues
   * UDP/RTP audio: added decimation and PCM A-law and Mu-law compression
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 15 Feb 2019 10:14:18 +0100
 
-rpx-100 (4.4.3-1) unstable; urgency=medium
+RPX100 (4.4.3-1) unstable; urgency=medium
 
   * Migration of SDRDaemon* devices to Remote* devices
   * PlutoSDR: get LP filter bandwidth from device
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 03 Feb 2019 10:14:18 +0100
 
-rpx-100 (4.4.2-1) unstable; urgency=medium
+RPX100 (4.4.2-1) unstable; urgency=medium
 
   * Migration of Daemon* channels to Remote* channels
   * XTRX: fixed GPS status retrieval
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 25 Jan 2019 21:14:18 +0100
 
-rpx-100 (4.4.1-1) unstable; urgency=medium
+RPX100 (4.4.1-1) unstable; urgency=medium
 
   * AirspyHF: Implemented new settings that come along newer version of libairspyhf
   * Fixed many glitches in the REST API device settings handling
@@ -1108,13 +1108,13 @@ rpx-100 (4.4.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 02 Jan 2019 21:14:18 +0100
 
-rpx-100 (4.4.0-1) unstable; urgency=medium
+RPX100 (4.4.0-1) unstable; urgency=medium
 
   * XTRX support
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 02 Jan 2019 21:14:18 +0100
 
-rpx-100 (4.3.2-1) unstable; urgency=medium
+RPX100 (4.3.2-1) unstable; urgency=medium
 
   * Reverse API to forward device and channel changes to external application
   * Funcube dongle: fixed segfault when stopping device
@@ -1123,7 +1123,7 @@ rpx-100 (4.3.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 09 Dec 2018 21:14:18 +0100
 
-rpx-100 (4.3.1-1) unstable; urgency=medium
+RPX100 (4.3.1-1) unstable; urgency=medium
 
   * RTL-SDR: offset tuning support
   * SoapySDR support: 250 ms minimum timeout
@@ -1131,7 +1131,7 @@ rpx-100 (4.3.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 30 Nov 2018 21:14:18 +0100
 
-rpx-100 (4.3.0-1) unstable; urgency=medium
+RPX100 (4.3.0-1) unstable; urgency=medium
 
   * SoapySDR support
   * BladeRF2 corrections
@@ -1140,7 +1140,7 @@ rpx-100 (4.3.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 22 Nov 2018 21:14:18 +0100
 
-rpx-100 (4.2.4-1) unstable; urgency=medium
+RPX100 (4.2.4-1) unstable; urgency=medium
 
   * LimeSDR: use LimeSuite 18.10.0 for builds
   * DSD demod: use 1 dB steps for squelch
@@ -1149,7 +1149,7 @@ rpx-100 (4.2.4-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 27 Oct 2018 21:14:18 +0200
 
-rpx-100 (4.2.3-1) unstable; urgency=medium
+RPX100 (4.2.3-1) unstable; urgency=medium
 
   * Scope: fixed channel rate affecting scope in memory mode. Issue #227
   * Spectrum: limit depth to 1000 when in moving average mode to avoid RAM exhaustion
@@ -1157,7 +1157,7 @@ rpx-100 (4.2.3-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 19 Oct 2018 21:14:18 +0200
 
-rpx-100 (4.2.2-1) unstable; urgency=medium
+RPX100 (4.2.2-1) unstable; urgency=medium
 
   * Spectrum: option to get max over a number of FFTs. Implements issue #207
   * File Input: fixed wrong times displays due to 32 bit integer ovevlow. Issue #206
@@ -1165,7 +1165,7 @@ rpx-100 (4.2.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 14 Oct 2018 21:14:18 +0200
 
-rpx-100 (4.2.1-1) unstable; urgency=medium
+RPX100 (4.2.1-1) unstable; urgency=medium
 
   * FileRecord improvement with robust header and some fixes. Fixes issue #206
   * BladeRF2 MO Tx fix so that the two channels are used effectively. Fixes issue #225
@@ -1173,14 +1173,14 @@ rpx-100 (4.2.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 10 Oct 2018 21:14:18 +0200
 
-rpx-100 (4.2.0-1) unstable; urgency=medium
+RPX100 (4.2.0-1) unstable; urgency=medium
 
   * LibbladeRF 2.0 support with BladeRF Micro
   * Scope: corrected trace memory index position
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 7 Oct 2018 21:14:18 +0200
 
-rpx-100 (4.1.0-1) unstable; urgency=medium
+RPX100 (4.1.0-1) unstable; urgency=medium
 
   * Integrated SDRdaemon with a pair of new channel plugins
   * Exchanged UDP sink and source names for better consistency
@@ -1188,7 +1188,7 @@ rpx-100 (4.1.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 16 Sep 2018 21:14:18 +0200
 
-rpx-100 (4.0.7-1) unstable; urgency=medium
+RPX100 (4.0.7-1) unstable; urgency=medium
 
   * Scope: removed old scope objects
   * Web API: reduced HTTP server debug messages
@@ -1196,7 +1196,7 @@ rpx-100 (4.0.7-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 19 Aug 2018 21:14:18 +0200
 
-rpx-100 (4.0.6-1) unstable; urgency=medium
+RPX100 (4.0.6-1) unstable; urgency=medium
 
   * Web API: RTL-SDR: fixed RF bandwidth setting
   * Web API: enhanced DV serial and AM demod interfaces
@@ -1206,13 +1206,13 @@ rpx-100 (4.0.6-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 07 Aug 2018 19:14:18 +0200
 
-rpx-100 (4.0.5-1) unstable; urgency=medium
+RPX100 (4.0.5-1) unstable; urgency=medium
 
   * Web API: handle pre-flight requests
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 22 Jul 2018 09:14:18 +0200
 
-rpx-100 (4.0.4-1) unstable; urgency=medium
+RPX100 (4.0.4-1) unstable; urgency=medium
 
   * Fixed PlutoSDR output sample width. Fixes issue #198
   * Web API: implemented CORS
@@ -1220,20 +1220,20 @@ rpx-100 (4.0.4-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 18 Jul 2018 19:14:18 +0200
 
-rpx-100 (4.0.3-1) unstable; urgency=medium
+RPX100 (4.0.3-1) unstable; urgency=medium
 
   * Spectrum: linear mode for spectrum
   * Scope: fixed power display overlay
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 08 Jul 2018 15:14:18 +0200
 
-rpx-100 (4.0.2-1) unstable; urgency=medium
+RPX100 (4.0.2-1) unstable; urgency=medium
 
   * Spectrum: added averaging
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 01 Jul 2018 21:14:18 +0200
 
-rpx-100 (4.0.1-1) unstable; urgency=medium
+RPX100 (4.0.1-1) unstable; urgency=medium
 
   * DSD demod: added NXDN support
   * DATV demod: include it only if FFmpeg > 3.1 is installed
@@ -1242,7 +1242,7 @@ rpx-100 (4.0.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 23 Jun 2018 09:14:18 +0200
 
-rpx-100 (4.0.0-1) unstable; urgency=medium
+RPX100 (4.0.0-1) unstable; urgency=medium
 
   * Finalization of REST API and server instance
   * Removal of old ChannelAnalyzer and TCPSrc plugins
@@ -1251,7 +1251,7 @@ rpx-100 (4.0.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 09 Jun 2018 20:14:18 +0200
 
-rpx-100 (3.14.7-1) unstable; urgency=medium
+RPX100 (3.14.7-1) unstable; urgency=medium
 
   * ChanelAnalyzerNG: added PLL option and source selection with auto correlation
   * RTL-SDR: fixed inf/sup decimators
@@ -1259,7 +1259,7 @@ rpx-100 (3.14.7-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 20 May 2018 20:14:18 +0200
 
-rpx-100 (3.14.6-1) unstable; urgency=medium
+RPX100 (3.14.6-1) unstable; urgency=medium
 
   * Fixed keyboard input for negative values on realtive integer value dials
   * Get rid of ugly native dialogs
@@ -1269,7 +1269,7 @@ rpx-100 (3.14.6-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 11 May 2018 20:14:18 +0200
 
-rpx-100 (3.14.5-1) unstable; urgency=medium
+RPX100 (3.14.5-1) unstable; urgency=medium
 
   * DSD demod: allow audio rates integer multiples of 8k other than 48k
   * Added a benchmark program testing decimators
@@ -1279,7 +1279,7 @@ rpx-100 (3.14.5-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 06 May 2018 20:14:18 +0200
 
-rpx-100 (3.14.4-1) unstable; urgency=medium
+RPX100 (3.14.4-1) unstable; urgency=medium
 
   * AM demod: squelch buffer to open at start of valid squelch
   * NFM demod: same as AM with squelch noise tail cut
@@ -1288,7 +1288,7 @@ rpx-100 (3.14.4-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 22 Apr 2018 17:14:18 +0200
 
-rpx-100 (3.14.3-1) unstable; urgency=medium
+RPX100 (3.14.3-1) unstable; urgency=medium
 
   * LimeSDR: compiled with LimeSuite release 18.04.1
   * LimeSDR: implemented transverter dialog (issue #157)
@@ -1298,7 +1298,7 @@ rpx-100 (3.14.3-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 20 Apr 2018 20:14:18 +0200
 
-rpx-100 (3.14.2-1) unstable; urgency=medium
+RPX100 (3.14.2-1) unstable; urgency=medium
 
   * Web API: settings and report for all channel Tx plugins
   * Server: AirspyHF, BladeRF and all channel Tx plugins support
@@ -1308,7 +1308,7 @@ rpx-100 (3.14.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 15 Apr 2018 12:14:18 +0200
 
-rpx-100 (3.14.1-1) unstable; urgency=medium
+RPX100 (3.14.1-1) unstable; urgency=medium
 
   * NFM: fixed lowpass filter initialization (CTCSS)
   * DSD demod: set FM deviation independent from RF bandwidth
@@ -1317,7 +1317,7 @@ rpx-100 (3.14.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 01 Apr 2018 12:14:18 +0200
 
-rpx-100 (3.14.0-1) unstable; urgency=medium
+RPX100 (3.14.0-1) unstable; urgency=medium
 
   * New audio devices management
   * DATV demod: fixed message handling and thus screen initialization issue
@@ -1326,7 +1326,7 @@ rpx-100 (3.14.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 30 Mar 2018 16:14:18 +0200
 
-rpx-100 (3.13.1-1) unstable; urgency=medium
+RPX100 (3.13.1-1) unstable; urgency=medium
 
   * Web API: settings and report enry points for AM demod and AirspyHF
   * Web API: client Python script scanner example
@@ -1334,7 +1334,7 @@ rpx-100 (3.13.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 25 Mar 2018 06:14:18 +0100
 
-rpx-100 (3.13.0-1) unstable; urgency=medium
+RPX100 (3.13.0-1) unstable; urgency=medium
 
   * DATV (Digital Amateur TV) demodulator.
   * Option to use RTP protocol for UDP audio for AM, NFM, SSB, WFM.
@@ -1343,7 +1343,7 @@ rpx-100 (3.13.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 11 Mar 2018 06:14:18 +0100
 
-rpx-100 (3.12.0-1) unstable; urgency=medium
+RPX100 (3.12.0-1) unstable; urgency=medium
 
   * Perseus support.
   * 24 bit Rx DSP Debian builds
@@ -1353,13 +1353,13 @@ rpx-100 (3.12.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 11 Feb 2018 12:14:18 +0100
 
-rpx-100 (3.11.1-1) unstable; urgency=medium
+RPX100 (3.11.1-1) unstable; urgency=medium
 
   * Replaced hardcoded bit scaling literals by defines. 24 bit sample option.
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 28 Jan 2018 12:14:18 +0100
 
-rpx-100 (3.11.0-1) unstable; urgency=medium
+RPX100 (3.11.0-1) unstable; urgency=medium
 
   * AirspyHF: support
   * Refactored 8 bit samples shifting during decimation (RTL-SDR and HackRF Rx)
@@ -1370,7 +1370,7 @@ rpx-100 (3.11.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 20 Jan 2018 12:14:18 +0100
 
-rpx-100 (3.10.1-1) unstable; urgency=medium
+RPX100 (3.10.1-1) unstable; urgency=medium
 
   * LimeSDR: fixed segfault when stopping one device in multiple stream confguration
   * PlutoSDR: fixed segfault when stopping one device in multiple stream confguration
@@ -1380,7 +1380,7 @@ rpx-100 (3.10.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 07 Jan 2018 23:14:18 +0100
 
-rpx-100 (3.10.0-1) unstable; urgency=medium
+RPX100 (3.10.0-1) unstable; urgency=medium
 
   * Implemented external command handling from the GUI
   * AM, SSB demodulators and SSB modulator: fix sample rate handling
@@ -1390,7 +1390,7 @@ rpx-100 (3.10.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 07 Jan 2018 09:14:18 +0100
 
-rpx-100 (3.9.1-1) unstable; urgency=medium
+RPX100 (3.9.1-1) unstable; urgency=medium
 
   * Transmission: make source channels working concurrently in multiple channel
   * Transmission: connect source channel directly to device FIFO in single channel
@@ -1399,7 +1399,7 @@ rpx-100 (3.9.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Tue, 02 Jan 2018 18:14:18 +0100
 
-rpx-100 (3.9.0-1) unstable; urgency=medium
+RPX100 (3.9.0-1) unstable; urgency=medium
 
   * Server: proof of concept
   * DSD demodulator: added optional high pass filter on audio (uese dsdcc v1.7.3)
@@ -1409,14 +1409,14 @@ rpx-100 (3.9.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 30 Dec 2017 17:14:18 +0100
 
-rpx-100 (3.8.6-1) unstable; urgency=medium
+RPX100 (3.8.6-1) unstable; urgency=medium
 
   * LimeSDR: fixed second channel solo or first one streaming
   * Web API: implemented some device plugins methods: RTLSDR, Lime
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 10 Dec 2017 12:14:18 +0100
 
-rpx-100 (3.8.5-1) unstable; urgency=medium
+RPX100 (3.8.5-1) unstable; urgency=medium
 
   * SSB mod/demod: improve LSB/USB experience
   * Web API: online static documentation page
@@ -1427,7 +1427,7 @@ rpx-100 (3.8.5-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 02 Dec 2017 12:14:18 +0100
 
-rpx-100 (3.8.4-1) unstable; urgency=medium
+RPX100 (3.8.4-1) unstable; urgency=medium
 
   * Optimize channel marker signal handling. Applied to all mods and demods
   * Fixed value dials direct digits setting
@@ -1435,7 +1435,7 @@ rpx-100 (3.8.4-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 18 Nov 2017 12:14:18 +0100
 
-rpx-100 (3.8.3-1) unstable; urgency=medium
+RPX100 (3.8.3-1) unstable; urgency=medium
 
   * ChannelAnalyzerNG: fixed GUI displays when channel sample rate changes
   * SSB demod: fixed low cutoff channel marker display
@@ -1444,40 +1444,40 @@ rpx-100 (3.8.3-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 12 Nov 2017 18:14:18 +0100
 
-rpx-100 (3.8.2-1) unstable; urgency=medium
+RPX100 (3.8.2-1) unstable; urgency=medium
 
   * WFM Demod: fixed segfault due to sequence of actions in demod constructor
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 08 Nov 2017 18:14:18 +0100
 
-rpx-100 (3.8.1-1) unstable; urgency=medium
+RPX100 (3.8.1-1) unstable; urgency=medium
 
   * SSB Mod: refactored bandwidths settings and fixed segfault
   * LimeSDR: implemented external clock reference input option
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 05 Nov 2017 18:14:18 +0100
 
-rpx-100 (3.8.0-1) unstable; urgency=medium
+RPX100 (3.8.0-1) unstable; urgency=medium
 
   * Redesigned the device handling to accomodate multi channel devices like LimeSDR
   * Refactoring: Separate DeviceAPI from the GUI
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 02 Nov 2017 18:14:18 +0100
 
-rpx-100 (3.7.8-1) unstable; urgency=medium
+RPX100 (3.7.8-1) unstable; urgency=medium
 
   * PlutoSDR: restored and fixed Tx support
   * LimeSDR: reworked the start/stop stream so it does not need the workaround delay
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 28 Oct 2017 18:14:18 +0100
 
-rpx-100 (3.7.7-1) unstable; urgency=medium
+RPX100 (3.7.7-1) unstable; urgency=medium
 
   * PlutoSDR: removed Tx support
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 27 Oct 2017 23:14:18 +0200
 
-rpx-100 (3.7.6-1) unstable; urgency=medium
+RPX100 (3.7.6-1) unstable; urgency=medium
 
   * LimeSDR: attempt to fix lockup conditions when Rx and Tx run concurrently
   * LimeSDR: handle hardware decimation and sample rate Rx/Tx relation correctly
@@ -1486,7 +1486,7 @@ rpx-100 (3.7.6-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 21 Oct 2017 23:14:18 +0200
 
-rpx-100 (3.7.5-1) unstable; urgency=medium
+RPX100 (3.7.5-1) unstable; urgency=medium
 
   * CW keyer: make ramp as 20% of dot length to smoothen even more
   * Fixed BFM demod frequency shift
@@ -1494,13 +1494,13 @@ rpx-100 (3.7.5-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 14 Oct 2017 23:14:18 +0200
 
-rpx-100 (3.7.4-1) unstable; urgency=medium
+RPX100 (3.7.4-1) unstable; urgency=medium
 
   * GUI and demod separation step 1 full
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 08 Oct 2017 23:14:18 +0200
 
-rpx-100 (3.7.3-1) unstable; urgency=medium
+RPX100 (3.7.3-1) unstable; urgency=medium
 
   * For Airspy, Funcube Pro and Pro+, PlutoSDR Rx and Tx, RTLSDR:
   * Button and dialog to set frequency translation for transverter operation
@@ -1508,14 +1508,14 @@ rpx-100 (3.7.3-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 04 Oct 2017 23:14:18 +0200
 
-rpx-100 (3.7.2-1) unstable; urgency=medium
+RPX100 (3.7.2-1) unstable; urgency=medium
 
   * PlutoSDR: Remove from device enumeration if device is not accessible
   * RTLSDR: Fixed gains retrieval in the GUI
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 23 Sep 2017 05:14:18 +0200
 
-rpx-100 (3.7.1-1) unstable; urgency=medium
+RPX100 (3.7.1-1) unstable; urgency=medium
 
   * PlutoSDR: Tx support
   * LimeSDR: use version 17.09 of LimeSuite providing bug fixes
@@ -1524,14 +1524,14 @@ rpx-100 (3.7.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 21 Sep 2017 21:14:18 +0200
 
-rpx-100 (3.7.0-1) unstable; urgency=medium
+RPX100 (3.7.0-1) unstable; urgency=medium
 
   * PlutoSDR: Rx support
   * GUI segregation: preliminary works
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 17 Sep 2017 23:14:18 +0200
 
-rpx-100 (3.6.1-1) unstable; urgency=medium
+RPX100 (3.6.1-1) unstable; urgency=medium
 
   * Basic channel settings dialog with title+color update and UDP parameters
   * Applied to UDPSink, UDPSource, DSDDemod, AMDemod, BFMDemod, NFMDemod
@@ -1539,21 +1539,21 @@ rpx-100 (3.6.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 31 Aug 2017 23:14:18 +0200
 
-rpx-100 (3.6.0-1) unstable; urgency=medium
+RPX100 (3.6.0-1) unstable; urgency=medium
 
   * UDPSink Tx plugin: new
   * LimeSDR output: fixed Tx not stopping on stop (issue #50)
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 17 Aug 2017 23:14:18 +0200
 
-rpx-100 (3.5.5-1) unstable; urgency=medium
+RPX100 (3.5.5-1) unstable; urgency=medium
 
   * Output plugins: use fixed time length for sample FIFO of ~0.25s
   * Audio modulators: reduce audio input file buffer to 0.1s
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 13 Aug 2017 23:14:18 +0200
 
-rpx-100 (3.5.4-1) unstable; urgency=medium
+RPX100 (3.5.4-1) unstable; urgency=medium
 
   * LimeSDR: fixed NCO lower boundary calculation by flooring to zero
   * LimeSDR: corrected NCO de-tune when sample rate or hardware decim/interp changes
@@ -1562,14 +1562,14 @@ rpx-100 (3.5.4-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 06 Aug 2017 23:14:18 +0200
 
-rpx-100 (3.5.3-1) unstable; urgency=medium
+RPX100 (3.5.3-1) unstable; urgency=medium
 
   * SSB demod: anded optional AGC
   * ChannelAnalyzerNG: better handling of LSB in the UI
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 31 Jul 2017 09:14:18 +0200
 
-rpx-100 (3.5.2-1) unstable; urgency=medium
+RPX100 (3.5.2-1) unstable; urgency=medium
 
   * HackRF: stop Rx before start Tx automatically and vice versa
   * HackRF: added option on Rx to drive Tx frequency change
@@ -1577,7 +1577,7 @@ rpx-100 (3.5.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 22 Jul 2017 09:14:18 +0200
 
-rpx-100 (3.5.1-1) unstable; urgency=medium
+RPX100 (3.5.1-1) unstable; urgency=medium
 
   * LimeSDR input: added individual gains control and ADC rate display
   * LimeSDR output: added DAC rate display
@@ -1587,7 +1587,7 @@ rpx-100 (3.5.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 01 Jul 2017 19:14:18 +0200
 
-rpx-100 (3.5.0-1) unstable; urgency=medium
+RPX100 (3.5.0-1) unstable; urgency=medium
 
   * SDRdaemonSink plugin connecting to a distant sdrdaemontx instance
   * SDRdemonFEC plugin renamed to SDRdaemonSource
@@ -1598,13 +1598,13 @@ rpx-100 (3.5.0-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 11 Jun 2017 19:14:18 +0200
 
-rpx-100 (3.4.5-1) unstable; urgency=medium
+RPX100 (3.4.5-1) unstable; urgency=medium
 
   * Removed default constuctors in Moving average and AGC classes
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 11 May 2017 21:14:18 +0100
 
-rpx-100 (3.4.4-1) unstable; urgency=medium
+RPX100 (3.4.4-1) unstable; urgency=medium
 
   * LimeSDR output: fixed timeout value on LMS_SendStream
   * LimeSDR: various fixes to make it run smoothly
@@ -1614,14 +1614,14 @@ rpx-100 (3.4.4-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 08 May 2017 21:14:18 +0100
 
-rpx-100 (3.4.3-1) unstable; urgency=medium
+RPX100 (3.4.3-1) unstable; urgency=medium
 
   * DSD demod: use version 1.7.1 of dsdcc with PLL for symbol synchronization as an option
   * LimeSDR: fixed antenna selection in both input and output plugins
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 08 May 2017 23:14:18 +0100
 
-rpx-100 (3.4.2-1) unstable; urgency=medium
+RPX100 (3.4.2-1) unstable; urgency=medium
 
   * DSD demod: use version 1.7.0 of dsdcc with PLL for symbol synchronization
   * DSD demod: kernel >= 4.4.52 workaround for SerialDV
@@ -1629,7 +1629,7 @@ rpx-100 (3.4.2-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 26 Apr 2017 23:14:18 +0100
 
-rpx-100 (3.4.1-1) unstable; urgency=medium
+RPX100 (3.4.1-1) unstable; urgency=medium
 
   * Optimization of halfband interpolation FIR fitler processing
   * HackRF support: fixed start/stop sequence
@@ -1638,128 +1638,128 @@ rpx-100 (3.4.1-1) unstable; urgency=medium
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 26 Apr 2017 23:14:18 +0100
 
-rpx-100 (3.4.0-1) unstable; urgency=medium
+RPX100 (3.4.0-1) unstable; urgency=medium
 
   * LimeSDR support with redesign of source and sink management
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 17 Apr 2017 23:14:18 +0100
 
-rpx-100 (3.3.4-1) unstable; urgency=medium
+RPX100 (3.3.4-1) unstable; urgency=medium
 
   * ATV Demod: fixed issue #22. Segfault when starting the plugin while the
   * source is running
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Mon, 10 Apr 2017 21:14:18 +0100
 
-rpx-100 (3.3.3-1) unstable; urgency=medium
+RPX100 (3.3.3-1) unstable; urgency=medium
 
   * HackRF, BladeRF, RTLSDR plugins: continuous sample rate setting
   * ATV: implemented narrow band modes
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 9 Apr 2017 23:14:18 +0100
 
-rpx-100 (3.3.2-1) unstable; urgency=medium
+RPX100 (3.3.2-1) unstable; urgency=medium
 
   * ATV plugins: added 405 lines, 20 and 16 FPS  modes
   * ATV demodulator: added a scope panel in a tab combo with the TV screen
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 22 Mar 2017 23:14:18 +0100
 
-rpx-100 (3.3.1-1) unstable; urgency=medium
+RPX100 (3.3.1-1) unstable; urgency=medium
 
   * ATV plugins: SSB and vestigiial sideband support
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 19 Mar 2017 23:14:18 +0100
 
-rpx-100 (3.3.0-1) unstable; urgency=medium
+RPX100 (3.3.0-1) unstable; urgency=medium
 
   * NFM demod: new discriminator and optional FM deviation based squelch
   * ATV modulator
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 15 Mar 2017 23:14:18 +0100
 
-rpx-100 (3.2.0-1) unstable; urgency=medium
+RPX100 (3.2.0-1) unstable; urgency=medium
 
   * ATV demodulator for amateur Analog TV
   * New channel analyzer Channel Analyzer NG with a new generation signal scope
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 02 Mar 2017 23:14:18 +0100
 
-rpx-100 (3.1.1-1) unstable; urgency=medium
+RPX100 (3.1.1-1) unstable; urgency=medium
 
   * DSD demod: adapt to dsdcc version 1.6
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Fri, 13 Jan 2017 03:14:18 +0100
 
-rpx-100 (3.1.0-1) unstable; urgency=medium
+RPX100 (3.1.0-1) unstable; urgency=medium
 
   * HackRF Tx support
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 08 Jan 2017 23:14:18 +0100
 
-rpx-100 (3.0.1-1) unstable; urgency=medium
+RPX100 (3.0.1-1) unstable; urgency=medium
 
   * Fixed audio preferences dialog and handling
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sat, 07 Jan 2017 11:14:18 +0100
 
-rpx-100 (3.0.0-1) unstable; urgency=medium
+RPX100 (3.0.0-1) unstable; urgency=medium
 
   * Implemented real Tx devices (BladeRF and HackRF) for real transmission
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 01 Jan 2017 23:14:18 +0100
 
-rpx-100 (2.5.2-1) unstable; urgency=medium
+RPX100 (2.5.2-1) unstable; urgency=medium
 
   * Changed modulators source device feeding
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 25 Dec 2016 23:14:18 +0100
 
-rpx-100 (2.5.1-1) unstable; urgency=medium
+RPX100 (2.5.1-1) unstable; urgency=medium
 
   * WFM Modulator
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 18 Dec 2016 23:14:18 +0100
 
-rpx-100 (2.5.0-1) unstable; urgency=medium
+RPX100 (2.5.0-1) unstable; urgency=medium
 
   * SSB Modulator
   * CW Keyer
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Thu, 15 Dec 2016 23:14:18 +0100
 
-rpx-100 (2.4.0-1) unstable; urgency=medium
+RPX100 (2.4.0-1) unstable; urgency=medium
 
   * NFM Modulator
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 05 Dec 2016 23:14:18 +0100
 
-rpx-100 (2.3.1-1) unstable; urgency=medium
+RPX100 (2.3.1-1) unstable; urgency=medium
 
   * AM Modulator: support file input
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 27 Nov 2016 23:14:18 +0100
 
-rpx-100 (2.3.0-1) unstable; urgency=medium
+RPX100 (2.3.0-1) unstable; urgency=medium
 
   * SDRplay support: new input source plugin
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Sun, 13 Nov 2016 23:14:18 +0100
 
-rpx-100 (2.2.2-1) unstable; urgency=medium
+RPX100 (2.2.2-1) unstable; urgency=medium
 
   * Baseband Halfband FIR filter optimizations
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 11 Nov 2016 12:25:34 +0100
 
-rpx-100 (2.2.1-1) unstable; urgency=medium
+RPX100 (2.2.1-1) unstable; urgency=medium
 
   * Baseband Tx support (phase 2)
   * Code optimizations
 
  -- Edouard Griffiths, F4EXB <f4exb06@gmail.com>  Wed, 02 Nov 2016 14:15:15 +0100
 
-rpx-100 (2.2.0-1) unstable; urgency=medium
+RPX100 (2.2.0-1) unstable; urgency=medium
 
   * Initial release as a Debian package
   * Embryonic Tx support (phase 1)

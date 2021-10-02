@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -17,7 +17,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGInstanceApi::SWGInstanceApi() {}
 
@@ -31,7 +31,7 @@ SWGInstanceApi::SWGInstanceApi(QString host, QString basePath) {
 void
 SWGInstanceApi::instanceAMBEDevicesDelete() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/ambe/devices");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/ambe/devices");
 
 
 
@@ -83,7 +83,7 @@ SWGInstanceApi::instanceAMBEDevicesDeleteCallback(SWGHttpRequestWorker * worker)
 void
 SWGInstanceApi::instanceAMBEDevicesGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/ambe/devices");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/ambe/devices");
 
 
 
@@ -135,7 +135,7 @@ SWGInstanceApi::instanceAMBEDevicesGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceAMBEDevicesPatch(SWGAMBEDevices& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/ambe/devices");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/ambe/devices");
 
 
 
@@ -190,7 +190,7 @@ SWGInstanceApi::instanceAMBEDevicesPatchCallback(SWGHttpRequestWorker * worker) 
 void
 SWGInstanceApi::instanceAMBEDevicesPut(SWGAMBEDevices& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/ambe/devices");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/ambe/devices");
 
 
 
@@ -245,7 +245,7 @@ SWGInstanceApi::instanceAMBEDevicesPutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceAMBESerialGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/ambe/serial");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/ambe/serial");
 
 
 
@@ -297,7 +297,7 @@ SWGInstanceApi::instanceAMBESerialGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceAudioGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/audio");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/audio");
 
 
 
@@ -349,7 +349,7 @@ SWGInstanceApi::instanceAudioGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceAudioInputCleanupPatch() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/audio/input/cleanup");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/audio/input/cleanup");
 
 
 
@@ -401,7 +401,7 @@ SWGInstanceApi::instanceAudioInputCleanupPatchCallback(SWGHttpRequestWorker * wo
 void
 SWGInstanceApi::instanceAudioInputDelete(SWGAudioInputDevice& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/audio/input/parameters");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/audio/input/parameters");
 
 
 
@@ -456,7 +456,7 @@ SWGInstanceApi::instanceAudioInputDeleteCallback(SWGHttpRequestWorker * worker) 
 void
 SWGInstanceApi::instanceAudioInputPatch(SWGAudioInputDevice& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/audio/input/parameters");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/audio/input/parameters");
 
 
 
@@ -511,7 +511,7 @@ SWGInstanceApi::instanceAudioInputPatchCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceAudioOutputCleanupPatch() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/audio/output/cleanup");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/audio/output/cleanup");
 
 
 
@@ -563,7 +563,7 @@ SWGInstanceApi::instanceAudioOutputCleanupPatchCallback(SWGHttpRequestWorker * w
 void
 SWGInstanceApi::instanceAudioOutputDelete(SWGAudioOutputDevice& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/audio/output/parameters");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/audio/output/parameters");
 
 
 
@@ -618,7 +618,7 @@ SWGInstanceApi::instanceAudioOutputDeleteCallback(SWGHttpRequestWorker * worker)
 void
 SWGInstanceApi::instanceAudioOutputPatch(SWGAudioOutputDevice& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/audio/output/parameters");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/audio/output/parameters");
 
 
 
@@ -673,7 +673,7 @@ SWGInstanceApi::instanceAudioOutputPatchCallback(SWGHttpRequestWorker * worker) 
 void
 SWGInstanceApi::instanceChannels(qint32 direction) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/channels");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/channels");
 
 
     if (fullPath.indexOf("?") > 0)
@@ -733,7 +733,7 @@ SWGInstanceApi::instanceChannelsCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceConfigGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/config");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/config");
 
 
 
@@ -785,7 +785,7 @@ SWGInstanceApi::instanceConfigGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceConfigPatch(SWGInstanceConfigResponse& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/config");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/config");
 
 
 
@@ -840,7 +840,7 @@ SWGInstanceApi::instanceConfigPatchCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceConfigPut(SWGInstanceConfigResponse& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/config");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/config");
 
 
 
@@ -895,7 +895,7 @@ SWGInstanceApi::instanceConfigPutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceDelete() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100");
 
 
 
@@ -947,7 +947,7 @@ SWGInstanceApi::instanceDeleteCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceDeviceSetsGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/devicesets");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/devicesets");
 
 
 
@@ -999,7 +999,7 @@ SWGInstanceApi::instanceDeviceSetsGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceDevices(qint32 direction) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/devices");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/devices");
 
 
     if (fullPath.indexOf("?") > 0)
@@ -1059,7 +1059,7 @@ SWGInstanceApi::instanceDevicesCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceFeaturePresetDelete(SWGFeaturePresetIdentifier& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featurepreset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featurepreset");
 
 
 
@@ -1114,7 +1114,7 @@ SWGInstanceApi::instanceFeaturePresetDeleteCallback(SWGHttpRequestWorker * worke
 void
 SWGInstanceApi::instanceFeaturePresetGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featurepresets");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featurepresets");
 
 
 
@@ -1166,7 +1166,7 @@ SWGInstanceApi::instanceFeaturePresetGetCallback(SWGHttpRequestWorker * worker) 
 void
 SWGInstanceApi::instanceFeatureSetsGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/featuresets");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/featuresets");
 
 
 
@@ -1218,7 +1218,7 @@ SWGInstanceApi::instanceFeatureSetsGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceFeatures() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/features");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/features");
 
 
 
@@ -1270,7 +1270,7 @@ SWGInstanceApi::instanceFeaturesCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceLimeRFEConfigGet(QString* serial) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/limerfe/config");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/limerfe/config");
 
 
     if (fullPath.indexOf("?") > 0)
@@ -1330,7 +1330,7 @@ SWGInstanceApi::instanceLimeRFEConfigGetCallback(SWGHttpRequestWorker * worker) 
 void
 SWGInstanceApi::instanceLimeRFEConfigPut(SWGLimeRFESettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/limerfe/config");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/limerfe/config");
 
 
 
@@ -1385,7 +1385,7 @@ SWGInstanceApi::instanceLimeRFEConfigPutCallback(SWGHttpRequestWorker * worker) 
 void
 SWGInstanceApi::instanceLimeRFEPowerGet(QString* serial) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/limerfe/power");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/limerfe/power");
 
 
     if (fullPath.indexOf("?") > 0)
@@ -1445,7 +1445,7 @@ SWGInstanceApi::instanceLimeRFEPowerGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceLimeRFERunPut(SWGLimeRFESettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/limerfe/run");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/limerfe/run");
 
 
 
@@ -1500,7 +1500,7 @@ SWGInstanceApi::instanceLimeRFERunPutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceLimeRFESerialGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/limerfe/serial");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/limerfe/serial");
 
 
 
@@ -1552,7 +1552,7 @@ SWGInstanceApi::instanceLimeRFESerialGetCallback(SWGHttpRequestWorker * worker) 
 void
 SWGInstanceApi::instanceLocationGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/location");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/location");
 
 
 
@@ -1604,7 +1604,7 @@ SWGInstanceApi::instanceLocationGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceLocationPut(SWGLocationInformation& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/location");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/location");
 
 
 
@@ -1659,7 +1659,7 @@ SWGInstanceApi::instanceLocationPutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceLoggingGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/logging");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/logging");
 
 
 
@@ -1711,7 +1711,7 @@ SWGInstanceApi::instanceLoggingGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceLoggingPut(SWGLoggingInfo& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/logging");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/logging");
 
 
 
@@ -1766,7 +1766,7 @@ SWGInstanceApi::instanceLoggingPutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instancePresetDelete(SWGPresetIdentifier& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/preset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/preset");
 
 
 
@@ -1821,7 +1821,7 @@ SWGInstanceApi::instancePresetDeleteCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instancePresetFilePost(SWGPresetExport& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/preset/file");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/preset/file");
 
 
 
@@ -1876,7 +1876,7 @@ SWGInstanceApi::instancePresetFilePostCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instancePresetFilePut(SWGPresetImport& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/preset/file");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/preset/file");
 
 
 
@@ -1931,7 +1931,7 @@ SWGInstanceApi::instancePresetFilePutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instancePresetGet() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/presets");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/presets");
 
 
 
@@ -1983,7 +1983,7 @@ SWGInstanceApi::instancePresetGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instancePresetPatch(SWGPresetTransfer& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/preset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/preset");
 
 
 
@@ -2038,7 +2038,7 @@ SWGInstanceApi::instancePresetPatchCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instancePresetPost(SWGPresetTransfer& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/preset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/preset");
 
 
 
@@ -2093,7 +2093,7 @@ SWGInstanceApi::instancePresetPostCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instancePresetPut(SWGPresetTransfer& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100/preset");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100/preset");
 
 
 
@@ -2148,7 +2148,7 @@ SWGInstanceApi::instancePresetPutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGInstanceApi::instanceSummary() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/rpx-100");
+    fullPath.append(this->host).append(this->basePath).append("/RPX100");
 
 
 

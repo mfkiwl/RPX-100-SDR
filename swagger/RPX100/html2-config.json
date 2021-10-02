@@ -1,7 +1,7 @@
 {
-    "perlModuleName": "SWGrpx-100",
-    "pythonPackageName": "swagger_rpx-100",
-    "packageName": "SWGrpx-100",
-    "invokerPackage": "SWGrpx-100",
-    "phpInvokerPackage": "SWGrpx-100"
+    "perlModuleName": "SWGRPX100",
+    "pythonPackageName": "swagger_RPX100",
+    "packageName": "SWGRPX100",
+    "invokerPackage": "SWGRPX100",
+    "phpInvokerPackage": "SWGRPX100"
 }

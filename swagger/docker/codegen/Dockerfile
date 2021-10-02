@@ -32,7 +32,7 @@ RUN sudo mkdir /opt/build /opt/install \
 FROM base as codegen_clone
 ARG clone_label
 WORKDIR /opt/build
-RUN git clone --depth 1 https://github.com/f4exb/swagger-codegen.git -b rpx-100 \
+RUN git clone --depth 1 https://github.com/f4exb/swagger-codegen.git -b RPX100 \
     && cd swagger-codegen \
     && mkdir build \
     && echo "${clone_label}" > build/clone_label.txt
@@ -46,8 +46,8 @@ RUN mkdir -p /opt/install/swagger \
     && cp ./modules/swagger-codegen-cli/target/swagger-codegen-cli.jar /opt/install/swagger
 
 FROM base as codegen
-RUN mkdir -p /opt/build/rpx-100/swagger/rpx-100
+RUN mkdir -p /opt/build/RPX100/swagger/RPX100
 COPY --from=codegen_build --chown=appuser /opt/install/swagger /opt/install/swagger
 COPY swagger-codegen /opt/install/swagger
 
-WORKDIR /opt/build/rpx-100/swagger/rpx-100
+WORKDIR /opt/build/RPX100/swagger/RPX100

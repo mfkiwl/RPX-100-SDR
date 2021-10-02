@@ -94,8 +94,8 @@ UDP port number to receive packets to be transmitted on.
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to transmit a packet from the command line:
 
-    curl -X POST "http://127.0.0.1:8091/rpx-100/deviceset/1/channel/0/actions" -d '{"channelType": "PacketMod",  "direction": 1, "PacketModActions": { "tx": { "callsign": "MYCALL", "to": "APRS", "via": "WIDE2-2", "data": ">Using rpx-100 API to transmit" }}}'
+    curl -X POST "http://127.0.0.1:8091/RPX100/deviceset/1/channel/0/actions" -d '{"channelType": "PacketMod",  "direction": 1, "PacketModActions": { "tx": { "callsign": "MYCALL", "to": "APRS", "via": "WIDE2-2", "data": ">Using RPX100 API to transmit" }}}'
 
 Or to set the mode to 9600 FSK:
 
-    curl -X PATCH "http://127.0.0.1:8091/rpx-100/deviceset/1/channel/0/settings" -d '{"channelType": "PacketMod", "direction": 1, "PacketModSettings": {"mode": "9600 FSK"}}'
+    curl -X PATCH "http://127.0.0.1:8091/RPX100/deviceset/1/channel/0/settings" -d '{"channelType": "PacketMod", "direction": 1, "PacketModSettings": {"mode": "9600 FSK"}}'

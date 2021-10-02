@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 """
-  rpx-100 REST API client script
+  RPX100 REST API client script
 
   Simple scanner for AM and NFM channels. Builds an array of equally spaced channels. Moves device center frequency
   so that adjacent parts of the spectrum are scanned by the array of channels. Stops when any of the channels
   is active. Resumes when none of the channels is active.
 
-  Uses /rpx-100/deviceset/{deviceSetIndex}/channels/report API to get channel information (since v3.13.1)
+  Uses /RPX100/deviceset/{deviceSetIndex}/channels/report API to get channel information (since v3.13.1)
 """
 
 import requests, json, traceback, sys
@@ -16,7 +16,7 @@ import time
 import datetime
 import numpy as np
 
-base_url = "http://127.0.0.1:8091/rpx-100"
+base_url = "http://127.0.0.1:8091/RPX100"
 deviceset_url = ""
 verbosity = 2
 
@@ -305,7 +305,7 @@ def main():
             exit(0)
 
         global base_url
-        base_url = "http://%s/rpx-100" % options.address
+        base_url = "http://%s/RPX100" % options.address
 
         # Set Rx
 

@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGFeatureSettings::SWGFeatureSettings(QString* json) {
     init();
@@ -161,37 +161,37 @@ SWGFeatureSettings::fromJson(QString &json) {
 
 void
 SWGFeatureSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&feature_type, pJson["featureType"], "QString", "QString");
+    ::SWGRPX100::setValue(&feature_type, pJson["featureType"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&originator_feature_set_index, pJson["originatorFeatureSetIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&originator_feature_set_index, pJson["originatorFeatureSetIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&originator_feature_index, pJson["originatorFeatureIndex"], "qint32", "");
+    ::SWGRPX100::setValue(&originator_feature_index, pJson["originatorFeatureIndex"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&afc_settings, pJson["AFCSettings"], "SWGAFCSettings", "SWGAFCSettings");
+    ::SWGRPX100::setValue(&afc_settings, pJson["AFCSettings"], "SWGAFCSettings", "SWGAFCSettings");
     
-    ::SWGrpx-100::setValue(&ais_settings, pJson["AISSettings"], "SWGAISSettings", "SWGAISSettings");
+    ::SWGRPX100::setValue(&ais_settings, pJson["AISSettings"], "SWGAISSettings", "SWGAISSettings");
     
-    ::SWGrpx-100::setValue(&antenna_tools_settings, pJson["AntennaToolsSettings"], "SWGAntennaToolsSettings", "SWGAntennaToolsSettings");
+    ::SWGRPX100::setValue(&antenna_tools_settings, pJson["AntennaToolsSettings"], "SWGAntennaToolsSettings", "SWGAntennaToolsSettings");
     
-    ::SWGrpx-100::setValue(&aprs_settings, pJson["APRSSettings"], "SWGAPRSSettings", "SWGAPRSSettings");
+    ::SWGRPX100::setValue(&aprs_settings, pJson["APRSSettings"], "SWGAPRSSettings", "SWGAPRSSettings");
     
-    ::SWGrpx-100::setValue(&demod_analyzer_settings, pJson["DemodAnalyzerSettings"], "SWGDemodAnalyzerSettings", "SWGDemodAnalyzerSettings");
+    ::SWGRPX100::setValue(&demod_analyzer_settings, pJson["DemodAnalyzerSettings"], "SWGDemodAnalyzerSettings", "SWGDemodAnalyzerSettings");
     
-    ::SWGrpx-100::setValue(&gs232_controller_settings, pJson["GS232ControllerSettings"], "SWGGS232ControllerSettings", "SWGGS232ControllerSettings");
+    ::SWGRPX100::setValue(&gs232_controller_settings, pJson["GS232ControllerSettings"], "SWGGS232ControllerSettings", "SWGGS232ControllerSettings");
     
-    ::SWGrpx-100::setValue(&map_settings, pJson["MapSettings"], "SWGMapSettings", "SWGMapSettings");
+    ::SWGRPX100::setValue(&map_settings, pJson["MapSettings"], "SWGMapSettings", "SWGMapSettings");
     
-    ::SWGrpx-100::setValue(&per_tester_settings, pJson["PERTesterSettings"], "SWGPERTesterSettings", "SWGPERTesterSettings");
+    ::SWGRPX100::setValue(&per_tester_settings, pJson["PERTesterSettings"], "SWGPERTesterSettings", "SWGPERTesterSettings");
     
-    ::SWGrpx-100::setValue(&rig_ctl_server_settings, pJson["RigCtlServerSettings"], "SWGRigCtlServerSettings", "SWGRigCtlServerSettings");
+    ::SWGRPX100::setValue(&rig_ctl_server_settings, pJson["RigCtlServerSettings"], "SWGRigCtlServerSettings", "SWGRigCtlServerSettings");
     
-    ::SWGrpx-100::setValue(&satellite_tracker_settings, pJson["SatelliteTrackerSettings"], "SWGSatelliteTrackerSettings", "SWGSatelliteTrackerSettings");
+    ::SWGRPX100::setValue(&satellite_tracker_settings, pJson["SatelliteTrackerSettings"], "SWGSatelliteTrackerSettings", "SWGSatelliteTrackerSettings");
     
-    ::SWGrpx-100::setValue(&star_tracker_settings, pJson["StarTrackerSettings"], "SWGStarTrackerSettings", "SWGStarTrackerSettings");
+    ::SWGRPX100::setValue(&star_tracker_settings, pJson["StarTrackerSettings"], "SWGStarTrackerSettings", "SWGStarTrackerSettings");
     
-    ::SWGrpx-100::setValue(&simple_ptt_settings, pJson["SimplePTTSettings"], "SWGSimplePTTSettings", "SWGSimplePTTSettings");
+    ::SWGRPX100::setValue(&simple_ptt_settings, pJson["SimplePTTSettings"], "SWGSimplePTTSettings", "SWGSimplePTTSettings");
     
-    ::SWGrpx-100::setValue(&vor_localizer_settings, pJson["VORLocalizerSettings"], "SWGVORLocalizerSettings", "SWGVORLocalizerSettings");
+    ::SWGRPX100::setValue(&vor_localizer_settings, pJson["VORLocalizerSettings"], "SWGVORLocalizerSettings", "SWGVORLocalizerSettings");
     
 }
 

@@ -995,11 +995,11 @@ bool USRPInput::applySettings(const USRPInputSettings& settings, bool preGetStre
 }
 
 int USRPInput::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUsrpInputSettings(new SWGrpx-100::SWGUSRPInputSettings());
+    response.setUsrpInputSettings(new SWGRPX100::SWGUSRPInputSettings());
     response.getUsrpInputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -1008,7 +1008,7 @@ int USRPInput::webapiSettingsGet(
 int USRPInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -1031,7 +1031,7 @@ int USRPInput::webapiSettingsPutPatch(
 void USRPInput::webapiUpdateDeviceSettings(
         USRPInputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("antennaPath")) {
         settings.m_antennaPath = *response.getUsrpInputSettings()->getAntennaPath();
@@ -1086,7 +1086,7 @@ void USRPInput::webapiUpdateDeviceSettings(
     }
 }
 
-void USRPInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const USRPInputSettings& settings)
+void USRPInput::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const USRPInputSettings& settings)
 {
     response.getUsrpInputSettings()->setAntennaPath(new QString(settings.m_antennaPath));
     response.getUsrpInputSettings()->setCenterFrequency(settings.m_centerFrequency);
@@ -1114,18 +1114,18 @@ void USRPInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& respon
 }
 
 int USRPInput::webapiReportGet(
-        SWGrpx-100::SWGDeviceReport& response,
+        SWGRPX100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUsrpInputReport(new SWGrpx-100::SWGUSRPInputReport());
+    response.setUsrpInputReport(new SWGRPX100::SWGUSRPInputReport());
     response.getUsrpInputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
 int USRPInput::webapiRunGet(
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1135,7 +1135,7 @@ int USRPInput::webapiRunGet(
 
 int USRPInput::webapiRun(
         bool run,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1152,7 +1152,7 @@ int USRPInput::webapiRun(
     return 200;
 }
 
-void USRPInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
+void USRPInput::webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response)
 {
     bool success = false;
     bool active = false;
@@ -1173,12 +1173,12 @@ void USRPInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 
 void USRPInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const USRPInputSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("USRP"));
-    swgDeviceSettings->setUsrpInputSettings(new SWGrpx-100::SWGUSRPInputSettings());
-    SWGrpx-100::SWGUSRPInputSettings *swgUsrpInputSettings = swgDeviceSettings->getUsrpInputSettings();
+    swgDeviceSettings->setUsrpInputSettings(new SWGRPX100::SWGUSRPInputSettings());
+    SWGRPX100::SWGUSRPInputSettings *swgUsrpInputSettings = swgDeviceSettings->getUsrpInputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1222,7 +1222,7 @@ void USRPInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, co
         swgUsrpInputSettings->setTransverterMode(settings.m_transverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1243,12 +1243,12 @@ void USRPInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, co
 
 void USRPInput::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("USRP"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

@@ -26,11 +26,11 @@ ChirpChatDemodWebAPIAdapter::~ChirpChatDemodWebAPIAdapter()
 {}
 
 int ChirpChatDemodWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setChirpChatDemodSettings(new SWGrpx-100::SWGChirpChatDemodSettings());
+    response.setChirpChatDemodSettings(new SWGRPX100::SWGChirpChatDemodSettings());
     response.getChirpChatDemodSettings()->init();
     ChirpChatDemod::webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -39,7 +39,7 @@ int ChirpChatDemodWebAPIAdapter::webapiSettingsGet(
 int ChirpChatDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGrpx-100::SWGChannelSettings& response,
+        SWGRPX100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

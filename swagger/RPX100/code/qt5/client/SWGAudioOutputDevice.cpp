@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGAudioOutputDevice::SWGAudioOutputDevice(QString* json) {
     init();
@@ -117,29 +117,29 @@ SWGAudioOutputDevice::fromJson(QString &json) {
 
 void
 SWGAudioOutputDevice::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&name, pJson["name"], "QString", "QString");
+    ::SWGRPX100::setValue(&name, pJson["name"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&index, pJson["index"], "qint32", "");
+    ::SWGRPX100::setValue(&index, pJson["index"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&sample_rate, pJson["sampleRate"], "qint32", "");
+    ::SWGRPX100::setValue(&sample_rate, pJson["sampleRate"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&is_system_default, pJson["isSystemDefault"], "qint32", "");
+    ::SWGRPX100::setValue(&is_system_default, pJson["isSystemDefault"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&default_unregistered, pJson["defaultUnregistered"], "qint32", "");
+    ::SWGRPX100::setValue(&default_unregistered, pJson["defaultUnregistered"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&copy_to_udp, pJson["copyToUDP"], "qint32", "");
+    ::SWGRPX100::setValue(&copy_to_udp, pJson["copyToUDP"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&udp_uses_rtp, pJson["udpUsesRTP"], "qint32", "");
+    ::SWGRPX100::setValue(&udp_uses_rtp, pJson["udpUsesRTP"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&udp_channel_mode, pJson["udpChannelMode"], "qint32", "");
+    ::SWGRPX100::setValue(&udp_channel_mode, pJson["udpChannelMode"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&udp_channel_codec, pJson["udpChannelCodec"], "qint32", "");
+    ::SWGRPX100::setValue(&udp_channel_codec, pJson["udpChannelCodec"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&udp_decimation_factor, pJson["udpDecimationFactor"], "qint32", "");
+    ::SWGRPX100::setValue(&udp_decimation_factor, pJson["udpDecimationFactor"], "qint32", "");
     
-    ::SWGrpx-100::setValue(&udp_address, pJson["udpAddress"], "QString", "QString");
+    ::SWGRPX100::setValue(&udp_address, pJson["udpAddress"], "QString", "QString");
     
-    ::SWGrpx-100::setValue(&udp_port, pJson["udpPort"], "qint32", "");
+    ::SWGRPX100::setValue(&udp_port, pJson["udpPort"], "qint32", "");
     
 }
 

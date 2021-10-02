@@ -1,6 +1,6 @@
 /**
- * rpx-100
- * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * RPX100
+ * This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGrpx-100 {
+namespace SWGRPX100 {
 
 SWGInstanceConfigResponse::SWGInstanceConfigResponse(QString* json) {
     init();
@@ -107,18 +107,18 @@ SWGInstanceConfigResponse::fromJson(QString &json) {
 
 void
 SWGInstanceConfigResponse::fromJsonObject(QJsonObject &pJson) {
-    ::SWGrpx-100::setValue(&preferences, pJson["preferences"], "SWGPreferences", "SWGPreferences");
+    ::SWGRPX100::setValue(&preferences, pJson["preferences"], "SWGPreferences", "SWGPreferences");
     
-    ::SWGrpx-100::setValue(&working_preset, pJson["workingPreset"], "SWGPreset", "SWGPreset");
+    ::SWGRPX100::setValue(&working_preset, pJson["workingPreset"], "SWGPreset", "SWGPreset");
     
-    ::SWGrpx-100::setValue(&working_feature_set_preset, pJson["workingFeatureSetPreset"], "SWGFeatureSetPreset", "SWGFeatureSetPreset");
+    ::SWGRPX100::setValue(&working_feature_set_preset, pJson["workingFeatureSetPreset"], "SWGFeatureSetPreset", "SWGFeatureSetPreset");
     
     
-    ::SWGrpx-100::setValue(&presets, pJson["presets"], "QList", "SWGPreset");
+    ::SWGRPX100::setValue(&presets, pJson["presets"], "QList", "SWGPreset");
     
-    ::SWGrpx-100::setValue(&commands, pJson["commands"], "QList", "SWGCommand");
+    ::SWGRPX100::setValue(&commands, pJson["commands"], "QList", "SWGCommand");
     
-    ::SWGrpx-100::setValue(&featuresetpresets, pJson["featuresetpresets"], "QList", "SWGFeatureSetPreset");
+    ::SWGRPX100::setValue(&featuresetpresets, pJson["featuresetpresets"], "QList", "SWGFeatureSetPreset");
 }
 
 QString

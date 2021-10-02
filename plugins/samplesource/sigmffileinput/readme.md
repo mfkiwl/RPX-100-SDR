@@ -2,11 +2,11 @@
 
 <h2>Introduction</h2>
 
-This plugin reads a file of samples in [SigMF](https://github.com/gnuradio/SigMF/blob/master/sigmf-spec.md) format. rpx-100 [SigMF file sink plugin](../../channelrx/sigmffilesink/readme.md) can save I/Q data in SigMF format. When files are recorded with rpx-100 the rpx-100 specific SigMF standard extensions are available among which variable sample rate.
+This plugin reads a file of samples in [SigMF](https://github.com/gnuradio/SigMF/blob/master/sigmf-spec.md) format. RPX100 [SigMF file sink plugin](../../channelrx/sigmffilesink/readme.md) can save I/Q data in SigMF format. When files are recorded with RPX100 the RPX100 specific SigMF standard extensions are available among which variable sample rate.
 
 This plugin supports single stream files having one `.sigmf-meta` file and only one `.sigmf-data` file. Thus it does not implement the `multirecordings` extension.
 
-It adds a dependency to the [libsigmf library](https://github.com/f4exb/libsigmf) more specifically the `f4exb` fork that supports `multirecordings` and `rpx-100` extensions.
+It adds a dependency to the [libsigmf library](https://github.com/f4exb/libsigmf) more specifically the `f4exb` fork that supports `multirecordings` and `RPX100` extensions.
 
 Note: this plugin is officially supported since version 6.
 
@@ -28,7 +28,7 @@ This is the center frequency of reception in Hz of the track (or capture) being 
 
 <h3>3: Track sample rate</h3>
 
-This is the sample rate in S/s of the track being  played currently. It is possibly suffixed by a thousands mutiplier ('k' for kHz, 'M' for MHz). Recording SigMF files in rpx-100 offers the possibility to change sample rate within the same record creating a new track.
+This is the sample rate in S/s of the track being  played currently. It is possibly suffixed by a thousands mutiplier ('k' for kHz, 'M' for MHz). Recording SigMF files in RPX100 offers the possibility to change sample rate within the same record creating a new track.
 
 <h3>4: Open file</h3>
 
@@ -50,17 +50,17 @@ Opens a pop-up display with the complete global information contained in the met
 
 <h4>2: Recoding summary information</h4>
 
-If the recoding was made with rpx-100 it will show information about the instance that created the file.
+If the recoding was made with RPX100 it will show information about the instance that created the file.
 
-  - GUI (`rpx-100`) or server (`rpx-100Srv`) instance
+  - GUI (`RPX100`) or server (`RPX100Srv`) instance
   - Number of sample bits (`16` or `24`)
   - Version
 
-It the recording was not made with rpx-100 it will just display `Not recorded with rpx-100`
+It the recording was not made with RPX100 it will just display `Not recorded with RPX100`
 
 <h4>3: Sample rate</h4>
 
-This is the sample rate of the track currently being played or the global sample rate if the recording was not made by rpx-100.
+This is the sample rate of the track currently being played or the global sample rate if the recording was not made by RPX100.
 
 <h4>4: Sample format</h4>
 
@@ -71,7 +71,7 @@ This is the sample format of the recording
     - `i`: signed integer
     - `u`: unsigned integer
     - `f`: floating point (4 bytes or single precision)
-  - Sample size in bits followed by `b`. This is the actual range of samples in bits. When record is made with 24 bit samples version of rpx-100 it shows `24` although the sample size in the file is actually 32 bits.
+  - Sample size in bits followed by `b`. This is the actual range of samples in bits. When record is made with 24 bit samples version of RPX100 it shows `24` although the sample size in the file is actually 32 bits.
 
 <h4>5: CRC indicator</h4>
 
@@ -109,7 +109,7 @@ Shows the center frequency of the track in Hz. It is possibly suffixed with a th
 
 <h4>5: Track sample rate</h4>
 
-If the file was recorded by rpx-100 the sample rate can vary between tracks else it is global for the whole record and will show this value for all tracks. Sample rate is in S/s possibly suffixed with a thousands multiplier (`k` for kHz, `M` for MHz).
+If the file was recorded by RPX100 the sample rate can vary between tracks else it is global for the whole record and will show this value for all tracks. Sample rate is in S/s possibly suffixed with a thousands multiplier (`k` for kHz, `M` for MHz).
 
 <h4>6: Track duration time</h4>
 

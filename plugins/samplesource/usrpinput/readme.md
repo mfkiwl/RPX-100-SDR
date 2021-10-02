@@ -19,7 +19,7 @@ Device start / stop button.
 
 <h3>2A: Sample rate</h3>
 
-This is the sample rate at which IQ samples are transfered the device to rpx-100, in kS/s (k) or MS/s (M). 
+This is the sample rate at which IQ samples are transfered the device to RPX100, in kS/s (k) or MS/s (M). 
 
 <h3>2B: Stream sample rate</h3>
 

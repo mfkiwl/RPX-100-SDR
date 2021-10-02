@@ -77,8 +77,8 @@ Transmits a frame containing the payload set in the data field.
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to transmit a frame from the command line:
 
-    curl -X POST "http://127.0.0.1:8091/rpx-100/deviceset/1/channel/0/actions" -d '{"channelType": "IEEE_802_15_4_Mod",  "direction": 1, "IEEE_802_15_4_ModActions": { "tx": { "data": "02 00 00" }}}'
+    curl -X POST "http://127.0.0.1:8091/RPX100/deviceset/1/channel/0/actions" -d '{"channelType": "IEEE_802_15_4_Mod",  "direction": 1, "IEEE_802_15_4_ModActions": { "tx": { "data": "02 00 00" }}}'
 
 Or to set the PHY to 20kbps BPSK:
 
-    curl -X PATCH "http://127.0.0.1:8091/rpx-100/deviceset/1/channel/0/settings" -d '{"channelType": "IEEE_802_15_4_Mod", "direction": 1, "IEEE_802_15_4_ModSettings": {"phy": "20kbps BPSK"}}'
+    curl -X PATCH "http://127.0.0.1:8091/RPX100/deviceset/1/channel/0/settings" -d '{"channelType": "IEEE_802_15_4_Mod", "direction": 1, "IEEE_802_15_4_ModSettings": {"phy": "20kbps BPSK"}}'

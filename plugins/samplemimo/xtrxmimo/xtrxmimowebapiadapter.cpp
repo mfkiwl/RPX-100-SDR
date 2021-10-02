@@ -29,11 +29,11 @@ XTRXMIMOWebAPIAdapter::~XTRXMIMOWebAPIAdapter()
 {}
 
 int XTRXMIMOWebAPIAdapter::webapiSettingsGet(
-        SWGrpx-100::SWGDeviceSettings& response,
+        SWGRPX100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setXtrxMimoSettings(new SWGrpx-100::SWGXtrxMIMOSettings());
+    response.setXtrxMimoSettings(new SWGRPX100::SWGXtrxMIMOSettings());
     response.getXtrxMimoSettings()->init();
     XTRXMIMO::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int XTRXMIMOWebAPIAdapter::webapiSettingsGet(
 int XTRXMIMOWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response, // query + response
+        SWGRPX100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force;

@@ -947,11 +947,11 @@ void BladeRF2MIMO::getTxGlobalGainRange(int& min, int& max, int& step, float& sc
 }
 
 int BladeRF2MIMO::webapiSettingsGet(
-                SWGrpx-100::SWGDeviceSettings& response,
+                SWGRPX100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBladeRf2MimoSettings(new SWGrpx-100::SWGBladeRF2MIMOSettings());
+    response.setBladeRf2MimoSettings(new SWGRPX100::SWGBladeRF2MIMOSettings());
     response.getBladeRf2MimoSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -960,7 +960,7 @@ int BladeRF2MIMO::webapiSettingsGet(
 int BladeRF2MIMO::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGrpx-100::SWGDeviceSettings& response, // query + response
+                SWGRPX100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -983,7 +983,7 @@ int BladeRF2MIMO::webapiSettingsPutPatch(
 void BladeRF2MIMO::webapiUpdateDeviceSettings(
         BladeRF2MIMOSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGrpx-100::SWGDeviceSettings& response)
+        SWGRPX100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("devSampleRate")) {
         settings.m_devSampleRate = response.getBladeRf2MimoSettings()->getDevSampleRate();
@@ -1077,7 +1077,7 @@ void BladeRF2MIMO::webapiUpdateDeviceSettings(
     }
 }
 
-void BladeRF2MIMO::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const BladeRF2MIMOSettings& settings)
+void BladeRF2MIMO::webapiFormatDeviceSettings(SWGRPX100::SWGDeviceSettings& response, const BladeRF2MIMOSettings& settings)
 {
     response.getBladeRf2MimoSettings()->setDevSampleRate(settings.m_devSampleRate);
     response.getBladeRf2MimoSettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -1121,7 +1121,7 @@ void BladeRF2MIMO::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& res
 
 int BladeRF2MIMO::webapiRunGet(
         int subsystemIndex,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if ((subsystemIndex == 0) || (subsystemIndex == 1))
@@ -1140,7 +1140,7 @@ int BladeRF2MIMO::webapiRunGet(
 int BladeRF2MIMO::webapiRun(
         bool run,
         int subsystemIndex,
-        SWGrpx-100::SWGDeviceState& response,
+        SWGRPX100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if ((subsystemIndex == 0) || (subsystemIndex == 1))
@@ -1166,12 +1166,12 @@ int BladeRF2MIMO::webapiRun(
 
 void BladeRF2MIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const BladeRF2MIMOSettings& settings, bool force)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("BladeRF2"));
-    swgDeviceSettings->setBladeRf2MimoSettings(new SWGrpx-100::SWGBladeRF2MIMOSettings());
-    SWGrpx-100::SWGBladeRF2MIMOSettings *swgBladeRF2MIMOSettings = swgDeviceSettings->getBladeRf2MimoSettings();
+    swgDeviceSettings->setBladeRf2MimoSettings(new SWGRPX100::SWGBladeRF2MIMOSettings());
+    SWGRPX100::SWGBladeRF2MIMOSettings *swgBladeRF2MIMOSettings = swgDeviceSettings->getBladeRf2MimoSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1253,7 +1253,7 @@ void BladeRF2MIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
         swgBladeRF2MIMOSettings->setTxTransverterMode(settings.m_txTransverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1274,12 +1274,12 @@ void BladeRF2MIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
 
 void BladeRF2MIMO::webapiReverseSendStartStop(bool start)
 {
-    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
+    SWGRPX100::SWGDeviceSettings *swgDeviceSettings = new SWGRPX100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("BladeRF2"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);
@@ -1302,16 +1302,16 @@ void BladeRF2MIMO::webapiReverseSendStartStop(bool start)
     delete swgDeviceSettings;
 }
 
-int BladeRF2MIMO::webapiReportGet(SWGrpx-100::SWGDeviceReport& response, QString& errorMessage)
+int BladeRF2MIMO::webapiReportGet(SWGRPX100::SWGDeviceReport& response, QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBladeRf2MimoReport(new SWGrpx-100::SWGBladeRF2MIMOReport());
+    response.setBladeRf2MimoReport(new SWGRPX100::SWGBladeRF2MIMOReport());
     response.getBladeRf2MimoReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
+void BladeRF2MIMO::webapiFormatDeviceReport(SWGRPX100::SWGDeviceReport& response)
 {
     if (m_dev)
     {
@@ -1321,7 +1321,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getBandwidthRangeRx(min, max, step, scale);
 
-        response.getBladeRf2MimoReport()->setBandwidthRangeRx(new SWGrpx-100::SWGRange);
+        response.getBladeRf2MimoReport()->setBandwidthRangeRx(new SWGRPX100::SWGRange);
         response.getBladeRf2MimoReport()->getBandwidthRangeRx()->setMin(min);
         response.getBladeRf2MimoReport()->getBandwidthRangeRx()->setMax(max);
         response.getBladeRf2MimoReport()->getBandwidthRangeRx()->setStep(step);
@@ -1329,7 +1329,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getFrequencyRangeRx(f_min, f_max, step, scale);
 
-        response.getBladeRf2MimoReport()->setFrequencyRangeRx(new SWGrpx-100::SWGFrequencyRange);
+        response.getBladeRf2MimoReport()->setFrequencyRangeRx(new SWGRPX100::SWGFrequencyRange);
         response.getBladeRf2MimoReport()->getFrequencyRangeRx()->setMin(f_min);
         response.getBladeRf2MimoReport()->getFrequencyRangeRx()->setMax(f_max);
         response.getBladeRf2MimoReport()->getFrequencyRangeRx()->setStep(step);
@@ -1337,7 +1337,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getGlobalGainRangeRx(min, max, step, scale);
 
-        response.getBladeRf2MimoReport()->setGlobalGainRangeRx(new SWGrpx-100::SWGRange);
+        response.getBladeRf2MimoReport()->setGlobalGainRangeRx(new SWGRPX100::SWGRange);
         response.getBladeRf2MimoReport()->getGlobalGainRangeRx()->setMin(min);
         response.getBladeRf2MimoReport()->getGlobalGainRangeRx()->setMax(max);
         response.getBladeRf2MimoReport()->getGlobalGainRangeRx()->setStep(step);
@@ -1345,7 +1345,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getSampleRateRangeRx(min, max, step, scale);
 
-        response.getBladeRf2MimoReport()->setSampleRateRangeRx(new SWGrpx-100::SWGRange);
+        response.getBladeRf2MimoReport()->setSampleRateRangeRx(new SWGRPX100::SWGRange);
         response.getBladeRf2MimoReport()->getSampleRateRangeRx()->setMin(min);
         response.getBladeRf2MimoReport()->getSampleRateRangeRx()->setMax(max);
         response.getBladeRf2MimoReport()->getSampleRateRangeRx()->setStep(step);
@@ -1353,7 +1353,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getBandwidthRangeTx(min, max, step, scale);
 
-        response.getBladeRf2MimoReport()->setBandwidthRangeTx(new SWGrpx-100::SWGRange);
+        response.getBladeRf2MimoReport()->setBandwidthRangeTx(new SWGRPX100::SWGRange);
         response.getBladeRf2MimoReport()->getBandwidthRangeTx()->setMin(min);
         response.getBladeRf2MimoReport()->getBandwidthRangeTx()->setMax(max);
         response.getBladeRf2MimoReport()->getBandwidthRangeTx()->setStep(step);
@@ -1361,7 +1361,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getFrequencyRangeTx(f_min, f_max, step, scale);
 
-        response.getBladeRf2MimoReport()->setFrequencyRangeTx(new SWGrpx-100::SWGFrequencyRange);
+        response.getBladeRf2MimoReport()->setFrequencyRangeTx(new SWGRPX100::SWGFrequencyRange);
         response.getBladeRf2MimoReport()->getFrequencyRangeTx()->setMin(f_min);
         response.getBladeRf2MimoReport()->getFrequencyRangeTx()->setMax(f_max);
         response.getBladeRf2MimoReport()->getFrequencyRangeTx()->setStep(step);
@@ -1369,7 +1369,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getGlobalGainRangeTx(min, max, step, scale);
 
-        response.getBladeRf2MimoReport()->setGlobalGainRangeTx(new SWGrpx-100::SWGRange);
+        response.getBladeRf2MimoReport()->setGlobalGainRangeTx(new SWGRPX100::SWGRange);
         response.getBladeRf2MimoReport()->getGlobalGainRangeTx()->setMin(min);
         response.getBladeRf2MimoReport()->getGlobalGainRangeTx()->setMax(max);
         response.getBladeRf2MimoReport()->getGlobalGainRangeTx()->setStep(step);
@@ -1377,7 +1377,7 @@ void BladeRF2MIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& respons
 
         m_dev->getSampleRateRangeTx(min, max, step, scale);
 
-        response.getBladeRf2MimoReport()->setSampleRateRangeTx(new SWGrpx-100::SWGRange);
+        response.getBladeRf2MimoReport()->setSampleRateRangeTx(new SWGRPX100::SWGRange);
         response.getBladeRf2MimoReport()->getSampleRateRangeTx()->setMin(min);
         response.getBladeRf2MimoReport()->getSampleRateRangeTx()->setMax(max);
         response.getBladeRf2MimoReport()->getSampleRateRangeTx()->setStep(step);

@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-The rigctl server plugin allows rpx-100 to be controlled via [Hamlib](http://hamlib.sourceforge.net/manuals/hamlib.html)'s rigctld protocol. This allows other software that implements the rigctld protocol, such at the satellite tracking software GPredict, to control rpx-100, to adjust for doppler or to automatically switch between different satellite frequencies and modes.
+The rigctl server plugin allows RPX100 to be controlled via [Hamlib](http://hamlib.sourceforge.net/manuals/hamlib.html)'s rigctld protocol. This allows other software that implements the rigctld protocol, such at the satellite tracking software GPredict, to control RPX100, to adjust for doppler or to automatically switch between different satellite frequencies and modes.
 
 <h2>Interface</h2>
 
@@ -14,7 +14,7 @@ This button starts or stops the plugin
 
 <h3>2: Enable rigctrl server</h3>
 
-Checking this option will enable the rigctrl server in rpx-100. The default is disabled.
+Checking this option will enable the rigctrl server in RPX100. The default is disabled.
 
 <h3>3: Refresh list of devices and channels</h3>
 
@@ -22,11 +22,11 @@ Use this button to refresh the list of devices (4) and channels (5)
 
 <h3>4: Select device set</h3>
 
-Specify the rpx-100 device set that will be controlled by received rigctl commands. Defaults to R0.
+Specify the RPX100 device set that will be controlled by received rigctl commands. Defaults to R0.
 
 <h3>5: Select channel</h3>
 
-The channel index specifies the rpx-100 channel that will be controlled by received rigctl commands. Defaults to 0.
+The channel index specifies the RPX100 channel that will be controlled by received rigctl commands. Defaults to 0.
 
 <h3>6: Port</h3>
 
@@ -54,7 +54,7 @@ The following rigctrl commands are supported:
 
 <h2>Example rigctrl Session</h2>
 
-Run rpx-100 and from the Preferences menu select rigctrl. Check "Enable rigctrl server" and press OK.
+Run RPX100 and from the Preferences menu select rigctrl. Check "Enable rigctrl server" and press OK.
 
 In a terminal window, run:
 

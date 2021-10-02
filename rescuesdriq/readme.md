@@ -2,7 +2,7 @@
 
 <h2>Usage</h2>
 
-This utility attempts to repair .sdriq files, that have their header corrupted, or were created using old versions of rpx-100. Since version 4.2.1 a CRC32 checksum is present and the file will not be played if the check of the header content against the CRC32 fails. In version 6.16.2 the timestamp resolution was increased from seconds to milliseconds since 1970-01-01 00:00:00.000.
+This utility attempts to repair .sdriq files, that have their header corrupted, or were created using old versions of RPX100. Since version 4.2.1 a CRC32 checksum is present and the file will not be played if the check of the header content against the CRC32 fails. In version 6.16.2 the timestamp resolution was increased from seconds to milliseconds since 1970-01-01 00:00:00.000.
 
 The header is composed as follows:
 
