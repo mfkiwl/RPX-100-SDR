@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../sdrgui/resources/res.qrc">
-    <normaloff>:/sdrangel_icon.png</normaloff>:/sdrangel_icon.png</iconset>
+    <normaloff>:/rpx-100_icon.png</normaloff>:/rpx-100_icon.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

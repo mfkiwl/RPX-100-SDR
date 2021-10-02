@@ -41,7 +41,7 @@ namespace qtwebapp {
     class LoggerWithFile;
 }
 
-namespace SWGSDRangel
+namespace SWGrpx-100
 {
     class SWGChannelReport;
     class SWGChannelSettings;
@@ -444,22 +444,22 @@ public:
 
     public:
         const ChannelAPI *getChannelAPI() const { return m_channelAPI; }
-        SWGSDRangel::SWGChannelReport *getSWGReport() const { return m_swgReport; }
+        SWGrpx-100::SWGChannelReport *getSWGReport() const { return m_swgReport; }
 
         static MsgChannelReport* create(
             const ChannelAPI *channelAPI,
-            SWGSDRangel::SWGChannelReport *swgReport)
+            SWGrpx-100::SWGChannelReport *swgReport)
         {
             return new MsgChannelReport(channelAPI, swgReport);
         }
 
     private:
         const ChannelAPI *m_channelAPI;
-        SWGSDRangel::SWGChannelReport *m_swgReport;
+        SWGrpx-100::SWGChannelReport *m_swgReport;
 
         MsgChannelReport(
             const ChannelAPI *channelAPI,
-            SWGSDRangel::SWGChannelReport *swgReport
+            SWGrpx-100::SWGChannelReport *swgReport
         ) :
             Message(),
             m_channelAPI(channelAPI),
@@ -509,13 +509,13 @@ public:
     public:
         const ChannelAPI *getChannelAPI() const { return m_channelAPI; }
         const QList<QString>& getChannelSettingsKeys() const { return m_channelSettingsKeys; }
-        SWGSDRangel::SWGChannelSettings *getSWGSettings() const { return m_swgSettings; }
+        SWGrpx-100::SWGChannelSettings *getSWGSettings() const { return m_swgSettings; }
         bool getForce() const { return m_force; }
 
         static MsgChannelSettings* create(
             const ChannelAPI *channelAPI,
             const QList<QString>& channelSettingsKey,
-            SWGSDRangel::SWGChannelSettings *swgSettings,
+            SWGrpx-100::SWGChannelSettings *swgSettings,
             bool force)
         {
             return new MsgChannelSettings(channelAPI, channelSettingsKey, swgSettings, force);
@@ -524,13 +524,13 @@ public:
     private:
         const ChannelAPI *m_channelAPI;
         QList<QString> m_channelSettingsKeys;
-        SWGSDRangel::SWGChannelSettings *m_swgSettings;
+        SWGrpx-100::SWGChannelSettings *m_swgSettings;
         bool m_force;
 
         MsgChannelSettings(
             const ChannelAPI *channelAPI,
             const QList<QString>& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings *swgSettings,
+            SWGrpx-100::SWGChannelSettings *swgSettings,
             bool force
         ) :
             Message(),
@@ -547,18 +547,18 @@ public:
 
     public:
         const PipeEndPoint *getPipeSource() const { return m_pipeSource; }
-        SWGSDRangel::SWGMapItem *getSWGMapItem() const { return m_swgMapItem; }
+        SWGrpx-100::SWGMapItem *getSWGMapItem() const { return m_swgMapItem; }
 
-        static MsgMapItem* create(const PipeEndPoint *pipeSource, SWGSDRangel::SWGMapItem *swgMapItem)
+        static MsgMapItem* create(const PipeEndPoint *pipeSource, SWGrpx-100::SWGMapItem *swgMapItem)
         {
             return new MsgMapItem(pipeSource, swgMapItem);
         }
 
     private:
         const PipeEndPoint *m_pipeSource;
-        SWGSDRangel::SWGMapItem *m_swgMapItem;
+        SWGrpx-100::SWGMapItem *m_swgMapItem;
 
-        MsgMapItem(const PipeEndPoint *pipeSource, SWGSDRangel::SWGMapItem *swgMapItem) :
+        MsgMapItem(const PipeEndPoint *pipeSource, SWGrpx-100::SWGMapItem *swgMapItem) :
             Message(),
             m_pipeSource(pipeSource),
             m_swgMapItem(swgMapItem)
@@ -604,18 +604,18 @@ public:
 
     public:
         const PipeEndPoint *getPipeSource() const { return m_pipeSource; }
-        SWGSDRangel::SWGTargetAzimuthElevation *getSWGTargetAzimuthElevation() const { return m_swgTargetAzimuthElevation; }
+        SWGrpx-100::SWGTargetAzimuthElevation *getSWGTargetAzimuthElevation() const { return m_swgTargetAzimuthElevation; }
 
-        static MsgTargetAzimuthElevation* create(const PipeEndPoint *pipeSource, SWGSDRangel::SWGTargetAzimuthElevation *swgTargetAzimuthElevation)
+        static MsgTargetAzimuthElevation* create(const PipeEndPoint *pipeSource, SWGrpx-100::SWGTargetAzimuthElevation *swgTargetAzimuthElevation)
         {
             return new MsgTargetAzimuthElevation(pipeSource, swgTargetAzimuthElevation);
         }
 
     private:
         const PipeEndPoint *m_pipeSource;
-        SWGSDRangel::SWGTargetAzimuthElevation *m_swgTargetAzimuthElevation;
+        SWGrpx-100::SWGTargetAzimuthElevation *m_swgTargetAzimuthElevation;
 
-        MsgTargetAzimuthElevation(const PipeEndPoint *pipeSource, SWGSDRangel::SWGTargetAzimuthElevation *swgTargetAzimuthElevation) :
+        MsgTargetAzimuthElevation(const PipeEndPoint *pipeSource, SWGrpx-100::SWGTargetAzimuthElevation *swgTargetAzimuthElevation) :
             Message(),
             m_pipeSource(pipeSource),
             m_swgTargetAzimuthElevation(swgTargetAzimuthElevation)

@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define BLADERF2OUTPUT_DEVICE_TYPE_ID "sdrangel.samplesink.bladerf2output"
+#define BLADERF2OUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.bladerf2output"
 
 class BladeRF2OutputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

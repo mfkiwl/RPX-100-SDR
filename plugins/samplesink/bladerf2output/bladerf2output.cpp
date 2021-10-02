@@ -944,11 +944,11 @@ int BladeRF2Output::getNbChannels()
 }
 
 int BladeRF2Output::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBladeRf2OutputSettings(new SWGSDRangel::SWGBladeRF2OutputSettings());
+    response.setBladeRf2OutputSettings(new SWGrpx-100::SWGBladeRF2OutputSettings());
     response.getBladeRf2OutputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -957,7 +957,7 @@ int BladeRF2Output::webapiSettingsGet(
 int BladeRF2Output::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -980,7 +980,7 @@ int BladeRF2Output::webapiSettingsPutPatch(
 void BladeRF2Output::webapiUpdateDeviceSettings(
         BladeRF2OutputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getBladeRf2OutputSettings()->getCenterFrequency();
@@ -1023,16 +1023,16 @@ void BladeRF2Output::webapiUpdateDeviceSettings(
     }
 }
 
-int BladeRF2Output::webapiReportGet(SWGSDRangel::SWGDeviceReport& response, QString& errorMessage)
+int BladeRF2Output::webapiReportGet(SWGrpx-100::SWGDeviceReport& response, QString& errorMessage)
 {
     (void) errorMessage;
-    response.setBladeRf2OutputReport(new SWGSDRangel::SWGBladeRF2OutputReport());
+    response.setBladeRf2OutputReport(new SWGrpx-100::SWGBladeRF2OutputReport());
     response.getBladeRf2OutputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void BladeRF2Output::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const BladeRF2OutputSettings& settings)
+void BladeRF2Output::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const BladeRF2OutputSettings& settings)
 {
     response.getBladeRf2OutputSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getBladeRf2OutputSettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -1056,7 +1056,7 @@ void BladeRF2Output::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     response.getBladeRf2OutputSettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void BladeRF2Output::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void BladeRF2Output::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     DeviceBladeRF2 *device = m_deviceShared.m_dev;
 
@@ -1068,7 +1068,7 @@ void BladeRF2Output::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
         device->getBandwidthRangeTx(min, max, step, scale);
 
-        response.getBladeRf2OutputReport()->setBandwidthRange(new SWGSDRangel::SWGRange);
+        response.getBladeRf2OutputReport()->setBandwidthRange(new SWGrpx-100::SWGRange);
         response.getBladeRf2OutputReport()->getBandwidthRange()->setMin(min);
         response.getBladeRf2OutputReport()->getBandwidthRange()->setMax(max);
         response.getBladeRf2OutputReport()->getBandwidthRange()->setStep(step);
@@ -1076,7 +1076,7 @@ void BladeRF2Output::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
         device->getFrequencyRangeTx(f_min, f_max, step, scale);
 
-        response.getBladeRf2OutputReport()->setFrequencyRange(new SWGSDRangel::SWGFrequencyRange);
+        response.getBladeRf2OutputReport()->setFrequencyRange(new SWGrpx-100::SWGFrequencyRange);
         response.getBladeRf2OutputReport()->getFrequencyRange()->setMin(f_min);
         response.getBladeRf2OutputReport()->getFrequencyRange()->setMax(f_max);
         response.getBladeRf2OutputReport()->getFrequencyRange()->setStep(step);
@@ -1084,7 +1084,7 @@ void BladeRF2Output::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
         device->getGlobalGainRangeTx(min, max, step, scale);
 
-        response.getBladeRf2OutputReport()->setGlobalGainRange(new SWGSDRangel::SWGRange);
+        response.getBladeRf2OutputReport()->setGlobalGainRange(new SWGrpx-100::SWGRange);
         response.getBladeRf2OutputReport()->getGlobalGainRange()->setMin(min);
         response.getBladeRf2OutputReport()->getGlobalGainRange()->setMax(max);
         response.getBladeRf2OutputReport()->getGlobalGainRange()->setStep(step);
@@ -1092,7 +1092,7 @@ void BladeRF2Output::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
         device->getSampleRateRangeTx(min, max, step, scale);
 
-        response.getBladeRf2OutputReport()->setSampleRateRange(new SWGSDRangel::SWGRange);
+        response.getBladeRf2OutputReport()->setSampleRateRange(new SWGrpx-100::SWGRange);
         response.getBladeRf2OutputReport()->getSampleRateRange()->setMin(min);
         response.getBladeRf2OutputReport()->getSampleRateRange()->setMax(max);
         response.getBladeRf2OutputReport()->getSampleRateRange()->setStep(step);
@@ -1101,7 +1101,7 @@ void BladeRF2Output::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 }
 
 int BladeRF2Output::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1111,7 +1111,7 @@ int BladeRF2Output::webapiRunGet(
 
 int BladeRF2Output::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1130,12 +1130,12 @@ int BladeRF2Output::webapiRun(
 
 void BladeRF2Output::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const BladeRF2OutputSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("BladeRF2"));
-    swgDeviceSettings->setBladeRf2OutputSettings(new SWGSDRangel::SWGBladeRF2OutputSettings());
-    SWGSDRangel::SWGBladeRF2OutputSettings *swgBladeRF2OutputSettings = swgDeviceSettings->getBladeRf2OutputSettings();
+    swgDeviceSettings->setBladeRf2OutputSettings(new SWGrpx-100::SWGBladeRF2OutputSettings());
+    SWGrpx-100::SWGBladeRF2OutputSettings *swgBladeRF2OutputSettings = swgDeviceSettings->getBladeRf2OutputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1167,7 +1167,7 @@ void BladeRF2Output::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
         swgBladeRF2OutputSettings->setTransverterMode(settings.m_transverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1188,12 +1188,12 @@ void BladeRF2Output::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
 
 void BladeRF2Output::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("BladeRF2"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

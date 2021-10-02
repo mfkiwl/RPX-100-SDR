@@ -29,11 +29,11 @@ PerseusWebAPIAdapter::~PerseusWebAPIAdapter()
 {}
 
 int PerseusWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPerseusSettings(new SWGSDRangel::SWGPerseusSettings());
+    response.setPerseusSettings(new SWGrpx-100::SWGPerseusSettings());
     response.getPerseusSettings()->init();
     PerseusInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int PerseusWebAPIAdapter::webapiSettingsGet(
 int PerseusWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

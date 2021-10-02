@@ -27,7 +27,7 @@ class BasebandSampleSink;
 class FreqTrackerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.channel.freqtracker")
+	Q_PLUGIN_METADATA(IID "rpx-100.channel.freqtracker")
 
 public:
 	explicit FreqTrackerPlugin(QObject* parent = nullptr);

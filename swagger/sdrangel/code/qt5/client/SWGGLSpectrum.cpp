@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGGLSpectrum::SWGGLSpectrum(QString* json) {
     init();
@@ -180,55 +180,55 @@ SWGGLSpectrum::fromJson(QString &json) {
 
 void
 SWGGLSpectrum::fromJsonObject(QJsonObject &pJson) {
-    ::SWGSDRangel::setValue(&fft_size, pJson["fftSize"], "qint32", "");
+    ::SWGrpx-100::setValue(&fft_size, pJson["fftSize"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&fft_overlap, pJson["fftOverlap"], "qint32", "");
+    ::SWGrpx-100::setValue(&fft_overlap, pJson["fftOverlap"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&fft_window, pJson["fftWindow"], "qint32", "");
+    ::SWGrpx-100::setValue(&fft_window, pJson["fftWindow"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&ref_level, pJson["refLevel"], "float", "");
+    ::SWGrpx-100::setValue(&ref_level, pJson["refLevel"], "float", "");
     
-    ::SWGSDRangel::setValue(&power_range, pJson["powerRange"], "float", "");
+    ::SWGrpx-100::setValue(&power_range, pJson["powerRange"], "float", "");
     
-    ::SWGSDRangel::setValue(&fps_period_ms, pJson["fpsPeriodMs"], "qint32", "");
+    ::SWGrpx-100::setValue(&fps_period_ms, pJson["fpsPeriodMs"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&display_waterfall, pJson["displayWaterfall"], "qint32", "");
+    ::SWGrpx-100::setValue(&display_waterfall, pJson["displayWaterfall"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&inverted_waterfall, pJson["invertedWaterfall"], "qint32", "");
+    ::SWGrpx-100::setValue(&inverted_waterfall, pJson["invertedWaterfall"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&display_max_hold, pJson["displayMaxHold"], "qint32", "");
+    ::SWGrpx-100::setValue(&display_max_hold, pJson["displayMaxHold"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&display_histogram, pJson["displayHistogram"], "qint32", "");
+    ::SWGrpx-100::setValue(&display_histogram, pJson["displayHistogram"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&decay, pJson["decay"], "qint32", "");
+    ::SWGrpx-100::setValue(&decay, pJson["decay"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&display_grid, pJson["displayGrid"], "qint32", "");
+    ::SWGrpx-100::setValue(&display_grid, pJson["displayGrid"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&display_grid_intensity, pJson["displayGridIntensity"], "qint32", "");
+    ::SWGrpx-100::setValue(&display_grid_intensity, pJson["displayGridIntensity"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&decay_divisor, pJson["decayDivisor"], "qint32", "");
+    ::SWGrpx-100::setValue(&decay_divisor, pJson["decayDivisor"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&histogram_stroke, pJson["histogramStroke"], "qint32", "");
+    ::SWGrpx-100::setValue(&histogram_stroke, pJson["histogramStroke"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&display_current, pJson["displayCurrent"], "qint32", "");
+    ::SWGrpx-100::setValue(&display_current, pJson["displayCurrent"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&display_trace_intensity, pJson["displayTraceIntensity"], "qint32", "");
+    ::SWGrpx-100::setValue(&display_trace_intensity, pJson["displayTraceIntensity"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&waterfall_share, pJson["waterfallShare"], "float", "");
+    ::SWGrpx-100::setValue(&waterfall_share, pJson["waterfallShare"], "float", "");
     
-    ::SWGSDRangel::setValue(&averaging_mode, pJson["averagingMode"], "qint32", "");
+    ::SWGrpx-100::setValue(&averaging_mode, pJson["averagingMode"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&averaging_value, pJson["averagingValue"], "qint32", "");
+    ::SWGrpx-100::setValue(&averaging_value, pJson["averagingValue"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&linear, pJson["linear"], "qint32", "");
+    ::SWGrpx-100::setValue(&linear, pJson["linear"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&ssb, pJson["ssb"], "qint32", "");
+    ::SWGrpx-100::setValue(&ssb, pJson["ssb"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&usb, pJson["usb"], "qint32", "");
+    ::SWGrpx-100::setValue(&usb, pJson["usb"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&ws_spectrum_address, pJson["wsSpectrumAddress"], "QString", "QString");
+    ::SWGrpx-100::setValue(&ws_spectrum_address, pJson["wsSpectrumAddress"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&ws_spectrum_port, pJson["wsSpectrumPort"], "qint32", "");
+    ::SWGrpx-100::setValue(&ws_spectrum_port, pJson["wsSpectrumPort"], "qint32", "");
     
 }
 

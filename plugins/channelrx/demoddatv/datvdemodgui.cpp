@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / SDRAngel                                                          //
+// for F4EXB / rpx-100                                                          //
 // using LeanSDR Framework (C) 2016 F4DAV                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -37,7 +37,7 @@
 #include "datvdvbs2ldpcdialog.h"
 #include "datvdemodgui.h"
 
-const char* const DATVDemodGUI::m_strChannelID = "sdrangel.channel.demoddatv";
+const char* const DATVDemodGUI::m_strChannelID = "rpx-100.channel.demoddatv";
 
 DATVDemodGUI* DATVDemodGUI::create(PluginAPI* objPluginAPI,
         DeviceUISet *deviceUISet,

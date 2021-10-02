@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define REMOTEOUTPUT_DEVICE_TYPE_ID "sdrangel.samplesink.remoteoutput"
+#define REMOTEOUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.remoteoutput"
 
 class PluginAPI;
 class DeviceAPI;

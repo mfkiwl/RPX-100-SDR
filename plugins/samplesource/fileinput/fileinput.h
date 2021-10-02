@@ -297,36 +297,36 @@ public:
     quint64 getStartingTimeStamp() const;
 
 	virtual int webapiSettingsGet(
-	            SWGSDRangel::SWGDeviceSettings& response,
+	            SWGrpx-100::SWGDeviceSettings& response,
 	            QString& errorMessage);
 
 	virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGDeviceReport& response,
+            SWGrpx-100::SWGDeviceReport& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGSDRangel::SWGDeviceSettings& response,
+            SWGrpx-100::SWGDeviceSettings& response,
             const FileInputSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             FileInputSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response);
+            SWGrpx-100::SWGDeviceSettings& response);
 
 	private:
 	DeviceAPI *m_deviceAPI;
@@ -350,7 +350,7 @@ public:
 	void openFileStream();
 	void seekFileStream(int seekMillis);
 	bool applySettings(const FileInputSettings& settings, bool force = false);
-    void webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const FileInputSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 	bool handleMessage(const Message& message);

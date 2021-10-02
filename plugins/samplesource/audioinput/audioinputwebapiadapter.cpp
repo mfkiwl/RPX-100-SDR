@@ -27,11 +27,11 @@ AudioInputWebAPIAdapter::~AudioInputWebAPIAdapter()
 {}
 
 int AudioInputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAudioInputSettings(new SWGSDRangel::SWGAudioInputSettings());
+    response.setAudioInputSettings(new SWGrpx-100::SWGAudioInputSettings());
     response.getAudioInputSettings()->init();
     AudioInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -40,7 +40,7 @@ int AudioInputWebAPIAdapter::webapiSettingsGet(
 int AudioInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

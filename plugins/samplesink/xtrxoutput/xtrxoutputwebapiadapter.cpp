@@ -29,11 +29,11 @@ XTRXOutputWebAPIAdapter::~XTRXOutputWebAPIAdapter()
 {}
 
 int XTRXOutputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setXtrxOutputSettings(new SWGSDRangel::SWGXtrxOutputSettings());
+    response.setXtrxOutputSettings(new SWGrpx-100::SWGXtrxOutputSettings());
     response.getXtrxOutputSettings()->init();
     XTRXOutput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int XTRXOutputWebAPIAdapter::webapiSettingsGet(
 int XTRXOutputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force;

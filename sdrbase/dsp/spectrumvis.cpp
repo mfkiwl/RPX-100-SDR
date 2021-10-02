@@ -941,7 +941,7 @@ void SpectrumVis::handleConfigureWSSpectrum(const QString& address, uint16_t por
     }
 }
 
-int SpectrumVis::webapiSpectrumSettingsGet(SWGSDRangel::SWGGLSpectrum& response, QString& errorMessage) const
+int SpectrumVis::webapiSpectrumSettingsGet(SWGrpx-100::SWGGLSpectrum& response, QString& errorMessage) const
 {
     (void) errorMessage;
     response.init();
@@ -952,7 +952,7 @@ int SpectrumVis::webapiSpectrumSettingsGet(SWGSDRangel::SWGGLSpectrum& response,
 int SpectrumVis::webapiSpectrumSettingsPutPatch(
     bool force,
     const QStringList& spectrumSettingsKeys,
-    SWGSDRangel::SWGGLSpectrum& response, // query + response
+    SWGrpx-100::SWGGLSpectrum& response, // query + response
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -972,7 +972,7 @@ int SpectrumVis::webapiSpectrumSettingsPutPatch(
     return 200;
 }
 
-int SpectrumVis::webapiSpectrumServerGet(SWGSDRangel::SWGSpectrumServer& response, QString& errorMessage) const
+int SpectrumVis::webapiSpectrumServerGet(SWGrpx-100::SWGSpectrumServer& response, QString& errorMessage) const
 {
     (void) errorMessage;
     bool serverRunning = m_wsSpectrum.socketOpened();
@@ -996,11 +996,11 @@ int SpectrumVis::webapiSpectrumServerGet(SWGSDRangel::SWGSpectrumServer& respons
 
     if (peerHosts.size() > 0)
     {
-        response.setClients(new QList<SWGSDRangel::SWGSpectrumServer_clients*>);
+        response.setClients(new QList<SWGrpx-100::SWGSpectrumServer_clients*>);
 
         for (int i = 0; i < peerHosts.size(); i++)
         {
-            response.getClients()->push_back(new SWGSDRangel::SWGSpectrumServer_clients);
+            response.getClients()->push_back(new SWGrpx-100::SWGSpectrumServer_clients);
             response.getClients()->back()->setAddress(new QString(peerHosts.at(i).toString()));
             response.getClients()->back()->setPort(peerPorts.at(i));
         }
@@ -1009,7 +1009,7 @@ int SpectrumVis::webapiSpectrumServerGet(SWGSDRangel::SWGSpectrumServer& respons
     return 200;
 }
 
-int SpectrumVis::webapiSpectrumServerPost(SWGSDRangel::SWGSuccessResponse& response, QString& errorMessage)
+int SpectrumVis::webapiSpectrumServerPost(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage)
 {
     (void) errorMessage;
     MsgConfigureWSpectrumOpenClose *msg = MsgConfigureWSpectrumOpenClose::create(true);
@@ -1025,7 +1025,7 @@ int SpectrumVis::webapiSpectrumServerPost(SWGSDRangel::SWGSuccessResponse& respo
     return 200;
 }
 
-int SpectrumVis::webapiSpectrumServerDelete(SWGSDRangel::SWGSuccessResponse& response, QString& errorMessage)
+int SpectrumVis::webapiSpectrumServerDelete(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage)
 {
     (void) errorMessage;
     MsgConfigureWSpectrumOpenClose *msg = MsgConfigureWSpectrumOpenClose::create(false);
@@ -1041,7 +1041,7 @@ int SpectrumVis::webapiSpectrumServerDelete(SWGSDRangel::SWGSuccessResponse& res
     return 200;
 }
 
-void SpectrumVis::webapiFormatSpectrumSettings(SWGSDRangel::SWGGLSpectrum& response, const SpectrumSettings& settings)
+void SpectrumVis::webapiFormatSpectrumSettings(SWGrpx-100::SWGGLSpectrum& response, const SpectrumSettings& settings)
 {
     response.setFftSize(settings.m_fftSize);
     response.setFftOverlap(settings.m_fftOverlap);
@@ -1078,7 +1078,7 @@ void SpectrumVis::webapiFormatSpectrumSettings(SWGSDRangel::SWGGLSpectrum& respo
 void SpectrumVis::webapiUpdateSpectrumSettings(
     SpectrumSettings& settings,
     const QStringList& spectrumSettingsKeys,
-    SWGSDRangel::SWGGLSpectrum& response)
+    SWGrpx-100::SWGGLSpectrum& response)
 {
     if (spectrumSettingsKeys.contains("fftSize")) {
         settings.m_fftSize = response.getFftSize();

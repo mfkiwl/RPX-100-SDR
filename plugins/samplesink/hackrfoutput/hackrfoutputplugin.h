@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define HACKRFOUTPUT_DEVICE_TYPE_ID "sdrangel.samplesink.hackrf"
+#define HACKRFOUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.hackrf"
 
 class PluginAPI;
 

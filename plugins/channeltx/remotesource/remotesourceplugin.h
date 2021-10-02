@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class RemoteSourcePlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channeltx.remotesrc")
+    Q_PLUGIN_METADATA(IID "rpx-100.channeltx.remotesrc")
 
 public:
     explicit RemoteSourcePlugin(QObject* parent = 0);

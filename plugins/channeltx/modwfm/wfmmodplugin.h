@@ -26,7 +26,7 @@ class DeviceAPI;
 class WFMModPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.channeltx.wfmmod")
+	Q_PLUGIN_METADATA(IID "rpx-100.channeltx.wfmmod")
 
 public:
 	explicit WFMModPlugin(QObject* parent = NULL);

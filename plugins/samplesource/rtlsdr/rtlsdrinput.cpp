@@ -574,11 +574,11 @@ void RTLSDRInput::set_ds_mode(int on)
 }
 
 int RTLSDRInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRtlSdrSettings(new SWGSDRangel::SWGRtlSdrSettings());
+    response.setRtlSdrSettings(new SWGrpx-100::SWGRtlSdrSettings());
     response.getRtlSdrSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -587,7 +587,7 @@ int RTLSDRInput::webapiSettingsGet(
 int RTLSDRInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -610,7 +610,7 @@ int RTLSDRInput::webapiSettingsPutPatch(
 void RTLSDRInput::webapiUpdateDeviceSettings(
         RTLSDRSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("agc")) {
         settings.m_agc = response.getRtlSdrSettings()->getAgc() != 0;
@@ -677,7 +677,7 @@ void RTLSDRInput::webapiUpdateDeviceSettings(
     }
 }
 
-void RTLSDRInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const RTLSDRSettings& settings)
+void RTLSDRInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const RTLSDRSettings& settings)
 {
     response.getRtlSdrSettings()->setAgc(settings.m_agc ? 1 : 0);
     response.getRtlSdrSettings()->setCenterFrequency(settings.m_centerFrequency);
@@ -710,7 +710,7 @@ void RTLSDRInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& res
 }
 
 int RTLSDRInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -720,7 +720,7 @@ int RTLSDRInput::webapiRunGet(
 
 int RTLSDRInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -738,35 +738,35 @@ int RTLSDRInput::webapiRun(
 }
 
 int RTLSDRInput::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRtlSdrReport(new SWGSDRangel::SWGRtlSdrReport());
+    response.setRtlSdrReport(new SWGrpx-100::SWGRtlSdrReport());
     response.getRtlSdrReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void RTLSDRInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void RTLSDRInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
-    response.getRtlSdrReport()->setGains(new QList<SWGSDRangel::SWGGain*>);
+    response.getRtlSdrReport()->setGains(new QList<SWGrpx-100::SWGGain*>);
 
     for (std::vector<int>::const_iterator it = getGains().begin(); it != getGains().end(); ++it)
     {
-        response.getRtlSdrReport()->getGains()->append(new SWGSDRangel::SWGGain);
+        response.getRtlSdrReport()->getGains()->append(new SWGrpx-100::SWGGain);
         response.getRtlSdrReport()->getGains()->back()->setGainCb(*it);
     }
 }
 
 void RTLSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const RTLSDRSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setDeviceHwType(new QString("RTLSDR"));
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
-    swgDeviceSettings->setRtlSdrSettings(new SWGSDRangel::SWGRtlSdrSettings());
-    SWGSDRangel::SWGRtlSdrSettings *swgRtlSdrSettings = swgDeviceSettings->getRtlSdrSettings();
+    swgDeviceSettings->setRtlSdrSettings(new SWGrpx-100::SWGRtlSdrSettings());
+    SWGrpx-100::SWGRtlSdrSettings *swgRtlSdrSettings = swgDeviceSettings->getRtlSdrSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -822,7 +822,7 @@ void RTLSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
         swgRtlSdrSettings->setBiasTee(settings.m_biasTee ? 1 : 0);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -843,12 +843,12 @@ void RTLSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
 
 void RTLSDRInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setDeviceHwType(new QString("RTLSDR"));
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

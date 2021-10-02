@@ -121,8 +121,8 @@ Transmits the message.
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to transmit a message from the command line:
 
-    curl -X POST "http://127.0.0.1:8091/sdrangel/deviceset/1/channel/0/actions" -d '{"channelType": "AISMod",  "direction": 1, "AISModActions": { "tx": { "data": "000000000000000000000000000000000" }}}'
+    curl -X POST "http://127.0.0.1:8091/rpx-100/deviceset/1/channel/0/actions" -d '{"channelType": "AISMod",  "direction": 1, "AISModActions": { "tx": { "data": "000000000000000000000000000000000" }}}'
 
 Or to set the FM deviation:
 
-    curl -X PATCH "http://127.0.0.1:8091/sdrangel/deviceset/1/channel/0/settings" -d '{"channelType": "AISMod", "direction": 1, "AISModSettings": {"fmDeviation": 4800}}'
+    curl -X PATCH "http://127.0.0.1:8091/rpx-100/deviceset/1/channel/0/settings" -d '{"channelType": "AISMod", "direction": 1, "AISModSettings": {"fmDeviation": 4800}}'

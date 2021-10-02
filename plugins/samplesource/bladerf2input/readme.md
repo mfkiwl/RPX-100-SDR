@@ -8,9 +8,9 @@ This input sample source plugin gets its samples from a [BladeRF 2.0 micro devic
 
 The plugin will be built only if the [BladeRF host library](https://github.com/Nuand/bladeRF) is installed in your system. If you build it from source and install it in a custom location say: `/opt/install/libbladeRF` you will have to add `-DBLADERF_INCLUDE_DIR=/opt/install/libbladeRF` to the cmake command line.
 
-The FPGA .rbf file should be copied to the folder where the `sdrangel` binary resides. You can download FPGA images from [here](https://www.nuand.com/fpga_images/)
+The FPGA .rbf file should be copied to the folder where the `rpx-100` binary resides. You can download FPGA images from [here](https://www.nuand.com/fpga_images/)
 
-The BladeRF Host library is also provided by many Linux distributions (check its version) and is built in the SDRangel binary releases.
+The BladeRF Host library is also provided by many Linux distributions (check its version) and is built in the rpx-100 binary releases.
 
 <h2>Interface</h2>
 

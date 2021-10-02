@@ -17,11 +17,11 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>SDRangel</string>
+   <string>rpx-100</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources/res.qrc">
-    <normaloff>:/sdrangel_icon.png</normaloff>:/sdrangel_icon.png</iconset>
+    <normaloff>:/rpx-100_icon.png</normaloff>:/rpx-100_icon.png</iconset>
   </property>
   <property name="animated">
    <bool>true</bool>
@@ -802,7 +802,7 @@
   </action>
   <action name="action_About">
    <property name="text">
-    <string>&amp;About SDRangel...</string>
+    <string>&amp;About rpx-100...</string>
    </property>
    <property name="font">
     <font>

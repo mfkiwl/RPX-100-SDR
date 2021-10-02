@@ -27,11 +27,11 @@ MapWebAPIAdapter::~MapWebAPIAdapter()
 {}
 
 int MapWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setMapSettings(new SWGSDRangel::SWGMapSettings());
+    response.setMapSettings(new SWGrpx-100::SWGMapSettings());
     response.getMapSettings()->init();
     Map::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int MapWebAPIAdapter::webapiSettingsGet(
 int MapWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

@@ -436,7 +436,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/httpserver
     ${CMAKE_SOURCE_DIR}/logging
     ${CMAKE_SOURCE_DIR}/qrtplib
-    ${CMAKE_SOURCE_DIR}/swagger/sdrangel/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
     ${Boost_INCLUDE_DIRS}
     ${OPUS_INCLUDE_DIRS}
 )

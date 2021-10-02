@@ -35,7 +35,7 @@
 MESSAGE_CLASS_DEFINITION(Interferometer::MsgConfigureInterferometer, Message)
 MESSAGE_CLASS_DEFINITION(Interferometer::MsgBasebandNotification, Message)
 
-const char* const Interferometer::m_channelIdURI = "sdrangel.channel.interferometer";
+const char* const Interferometer::m_channelIdURI = "rpx-100.channel.interferometer";
 const char* const Interferometer::m_channelId = "Interferometer";
 const int Interferometer::m_fftSize = 4096;
 
@@ -272,11 +272,11 @@ void Interferometer::applyChannelSettings(uint32_t log2Decim, uint32_t filterCha
 }
 
 int Interferometer::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setInterferometerSettings(new SWGSDRangel::SWGInterferometerSettings());
+    response.setInterferometerSettings(new SWGrpx-100::SWGInterferometerSettings());
     response.getInterferometerSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -285,7 +285,7 @@ int Interferometer::webapiSettingsGet(
 int Interferometer::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -309,7 +309,7 @@ int Interferometer::webapiSettingsPutPatch(
 void Interferometer::webapiUpdateChannelSettings(
         InterferometerSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("rgbColor")) {
         settings.m_rgbColor = response.getInterferometerSettings()->getRgbColor();
@@ -344,7 +344,7 @@ void Interferometer::webapiUpdateChannelSettings(
     }
 }
 
-void Interferometer::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const InterferometerSettings& settings)
+void Interferometer::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const InterferometerSettings& settings)
 {
     response.getInterferometerSettings()->setRgbColor(settings.m_rgbColor);
 
@@ -371,10 +371,10 @@ void Interferometer::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings
 
 void Interferometer::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const InterferometerSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -404,7 +404,7 @@ void Interferometer::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -418,7 +418,7 @@ void Interferometer::sendChannelSettings(
 
 void Interferometer::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const InterferometerSettings& settings,
         bool force
 )
@@ -427,8 +427,8 @@ void Interferometer::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("Interferometer"));
-    swgChannelSettings->setInterferometerSettings(new SWGSDRangel::SWGInterferometerSettings());
-    SWGSDRangel::SWGInterferometerSettings *swgInterferometerSettings = swgChannelSettings->getInterferometerSettings();
+    swgChannelSettings->setInterferometerSettings(new SWGrpx-100::SWGInterferometerSettings());
+    SWGrpx-100::SWGInterferometerSettings *swgInterferometerSettings = swgChannelSettings->getInterferometerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

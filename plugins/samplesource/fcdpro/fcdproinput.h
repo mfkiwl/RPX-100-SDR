@@ -107,32 +107,32 @@ public:
 	virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGSDRangel::SWGDeviceSettings& response,
+            SWGrpx-100::SWGDeviceSettings& response,
             const FCDProSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             FCDProSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response);
+            SWGrpx-100::SWGDeviceSettings& response);
 
     void set_center_freq(double freq);
 	void set_bias_t(bool on);

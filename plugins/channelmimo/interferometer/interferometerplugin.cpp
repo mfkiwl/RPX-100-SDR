@@ -32,9 +32,9 @@ const PluginDescriptor InterferometerPlugin::m_pluginDescriptor = {
     QStringLiteral("Interferometer"),
     QStringLiteral("6.15.0"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 InterferometerPlugin::InterferometerPlugin(QObject* parent) :

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / SDRAngel                                                          //
+// for F4EXB / rpx-100                                                          //
 // using LeanSDR Framework (C) 2016 F4DAV                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -71,23 +71,23 @@ public:
     }
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             const DATVDemodSettings& settings);
 
     static void webapiUpdateChannelSettings(
             DATVDemodSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     void setMessageQueueToGUI(MessageQueue* queue) override
     {
@@ -159,7 +159,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const DATVDemodSettings& settings,
         bool force
     );

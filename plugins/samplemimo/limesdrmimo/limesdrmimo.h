@@ -230,38 +230,38 @@ public:
 	virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGDeviceReport& response,
+            SWGrpx-100::SWGDeviceReport& response,
             QString& errorMessage);
 
     virtual int webapiRunGet(
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGSDRangel::SWGDeviceSettings& response,
+            SWGrpx-100::SWGDeviceSettings& response,
             const LimeSDRMIMOSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             LimeSDRMIMOSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response);
+            SWGrpx-100::SWGDeviceSettings& response);
 
     bool isRecording(unsigned int istream) const { (void) istream; return false; }
 
@@ -331,7 +331,7 @@ private:
     bool setTxDeviceCenterFrequency(struct bladerf *dev, quint64 freq_hz, int loPpmTenths);
     void applyTxCalibration(unsigned int channel, qint32 devSampleRate);
     void applyTxLPCalibration(unsigned int channel, float lpfBW);
-    void webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const LimeSDRMIMOSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

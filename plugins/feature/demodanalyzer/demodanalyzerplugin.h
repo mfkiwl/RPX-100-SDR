@@ -27,7 +27,7 @@ class WebAPIAdapterInterface;
 class DemodAnalyzerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.feature.demodanalyzer")
+	Q_PLUGIN_METADATA(IID "rpx-100.feature.demodanalyzer")
 
 public:
 	explicit DemodAnalyzerPlugin(QObject* parent = nullptr);

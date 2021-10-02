@@ -1,7 +1,7 @@
 {
-    "perlModuleName": "SWGSDRangel",
-    "pythonPackageName": "swagger_sdrangel",
-    "packageName": "SWGSDRangel",
-    "invokerPackage": "SWGSDRangel",
-    "phpInvokerPackage": "SWGSDRangel"
+    "perlModuleName": "SWGrpx-100",
+    "pythonPackageName": "swagger_rpx-100",
+    "packageName": "SWGrpx-100",
+    "invokerPackage": "SWGrpx-100",
+    "phpInvokerPackage": "SWGrpx-100"
 }

@@ -42,7 +42,7 @@
 MESSAGE_CLASS_DEFINITION(AISDemod::MsgConfigureAISDemod, Message)
 MESSAGE_CLASS_DEFINITION(AISDemod::MsgMessage, Message)
 
-const char * const AISDemod::m_channelIdURI = "sdrangel.channel.aisdemod";
+const char * const AISDemod::m_channelIdURI = "rpx-100.channel.aisdemod";
 const char * const AISDemod::m_channelId = "AISDemod";
 
 AISDemod::AISDemod(DeviceAPI *deviceAPI) :
@@ -307,11 +307,11 @@ void AISDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int AISDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisDemodSettings(new SWGSDRangel::SWGAISDemodSettings());
+    response.setAisDemodSettings(new SWGrpx-100::SWGAISDemodSettings());
     response.getAisDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -320,7 +320,7 @@ int AISDemod::webapiSettingsGet(
 int AISDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -345,7 +345,7 @@ int AISDemod::webapiSettingsPutPatch(
 void AISDemod::webapiUpdateChannelSettings(
         AISDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getAisDemodSettings()->getInputFrequencyOffset();
@@ -397,7 +397,7 @@ void AISDemod::webapiUpdateChannelSettings(
     }
 }
 
-void AISDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const AISDemodSettings& settings)
+void AISDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const AISDemodSettings& settings)
 {
     response.getAisDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getAisDemodSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -431,10 +431,10 @@ void AISDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& resp
 
 void AISDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AISDemodSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -456,7 +456,7 @@ void AISDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
 
 void AISDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const AISDemodSettings& settings,
         bool force
 )
@@ -465,8 +465,8 @@ void AISDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("AISDemod"));
-    swgChannelSettings->setAisDemodSettings(new SWGSDRangel::SWGAISDemodSettings());
-    SWGSDRangel::SWGAISDemodSettings *swgAISDemodSettings = swgChannelSettings->getAisDemodSettings();
+    swgChannelSettings->setAisDemodSettings(new SWGrpx-100::SWGAISDemodSettings());
+    SWGrpx-100::SWGAISDemodSettings *swgAISDemodSettings = swgChannelSettings->getAisDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

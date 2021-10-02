@@ -8,13 +8,13 @@
  When going from Tx to Rx (release) the device set index specified must be the Tx one
  Defaults are Rx at index 0 and Tx at index 1
 
- Default web API base address is http://127.0.0.1:8091/sdrangel (default of sdrangel web API)
+ Default web API base address is http://127.0.0.1:8091/rpx-100 (default of rpx-100 web API)
  You may change the address and port portion with the -a parameter. Ex: -a 44.168.40.128:8888
 '''
 import requests, json, traceback, sys, time
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/sdrangel"
+base_url = "http://127.0.0.1:8091/rpx-100"
 
 
 # ======================================================================
@@ -97,7 +97,7 @@ def main():
     try:
         options = getInputOptions()
         global base_url
-        base_url = "http://%s/sdrangel" % options.address
+        base_url = "http://%s/rpx-100" % options.address
         r = requests.get(url=base_url + "/devicesets")
         if r.status_code / 100 == 2:
             rj = r.json()

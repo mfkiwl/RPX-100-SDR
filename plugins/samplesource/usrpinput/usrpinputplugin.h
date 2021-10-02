@@ -24,7 +24,7 @@
 
 class PluginAPI;
 
-#define USRP_DEVICE_TYPE_ID "sdrangel.samplesource.usrp"
+#define USRP_DEVICE_TYPE_ID "rpx-100.samplesource.usrp"
 
 class USRPInputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

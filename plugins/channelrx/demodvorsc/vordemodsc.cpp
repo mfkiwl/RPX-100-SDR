@@ -43,7 +43,7 @@
 
 MESSAGE_CLASS_DEFINITION(VORDemodSC::MsgConfigureVORDemod, Message)
 
-const char * const VORDemodSC::m_channelIdURI = "sdrangel.channel.vordemodsc";
+const char * const VORDemodSC::m_channelIdURI = "rpx-100.channel.vordemodsc";
 const char * const VORDemodSC::m_channelId = "VORDemodSC";
 
 VORDemodSC::VORDemodSC(DeviceAPI *deviceAPI) :
@@ -293,11 +293,11 @@ bool VORDemodSC::deserialize(const QByteArray& data)
 }
 
 int VORDemodSC::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setVorDemodScSettings(new SWGSDRangel::SWGVORDemodSCSettings());
+    response.setVorDemodScSettings(new SWGrpx-100::SWGVORDemodSCSettings());
     response.getVorDemodScSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -306,7 +306,7 @@ int VORDemodSC::webapiSettingsGet(
 int VORDemodSC::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -331,7 +331,7 @@ int VORDemodSC::webapiSettingsPutPatch(
 void VORDemodSC::webapiUpdateChannelSettings(
         VORDemodSCSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getVorDemodScSettings()->getInputFrequencyOffset();
@@ -382,17 +382,17 @@ void VORDemodSC::webapiUpdateChannelSettings(
 }
 
 int VORDemodSC::webapiReportGet(
-        SWGSDRangel::SWGChannelReport& response,
+        SWGrpx-100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setVorDemodScReport(new SWGSDRangel::SWGVORDemodSCReport());
+    response.setVorDemodScReport(new SWGrpx-100::SWGVORDemodSCReport());
     response.getVorDemodScReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void VORDemodSC::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const VORDemodSCSettings& settings)
+void VORDemodSC::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const VORDemodSCSettings& settings)
 {
     response.getVorDemodScSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getVorDemodScSettings()->setNavId(settings.m_navId);
@@ -429,7 +429,7 @@ void VORDemodSC::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& re
     response.getVorDemodScSettings()->setIdentThreshold(settings.m_identThreshold);
 }
 
-void VORDemodSC::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void VORDemodSC::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -459,10 +459,10 @@ void VORDemodSC::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& respon
 
 void VORDemodSC::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const VORDemodSCSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -492,7 +492,7 @@ void VORDemodSC::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -510,10 +510,10 @@ void VORDemodSC::sendChannelReport(QList<MessageQueue*> *messageQueues)
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelReport *swgChannelReport = new SWGSDRangel::SWGChannelReport();
+        SWGrpx-100::SWGChannelReport *swgChannelReport = new SWGrpx-100::SWGChannelReport();
         swgChannelReport->setDirection(0);
         swgChannelReport->setChannelType(new QString(m_channelId));
-        swgChannelReport->setVorDemodScReport(new SWGSDRangel::SWGVORDemodSCReport());
+        swgChannelReport->setVorDemodScReport(new SWGrpx-100::SWGVORDemodSCReport());
         webapiFormatChannelReport(*swgChannelReport);
         MainCore::MsgChannelReport *msg = MainCore::MsgChannelReport::create(this, swgChannelReport);
         (*it)->push(msg);
@@ -522,7 +522,7 @@ void VORDemodSC::sendChannelReport(QList<MessageQueue*> *messageQueues)
 
 void VORDemodSC::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const VORDemodSCSettings& settings,
         bool force
 )
@@ -531,8 +531,8 @@ void VORDemodSC::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("VORDemodSC"));
-    swgChannelSettings->setVorDemodScSettings(new SWGSDRangel::SWGVORDemodSCSettings());
-    SWGSDRangel::SWGVORDemodSCSettings *swgVORDemodSCSettings = swgChannelSettings->getVorDemodScSettings();
+    swgChannelSettings->setVorDemodScSettings(new SWGrpx-100::SWGVORDemodSCSettings());
+    SWGrpx-100::SWGVORDemodSCSettings *swgVORDemodSCSettings = swgChannelSettings->getVorDemodScSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

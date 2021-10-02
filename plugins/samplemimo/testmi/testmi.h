@@ -109,34 +109,34 @@ public:
 	virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiRunGet(
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGSDRangel::SWGDeviceSettings& response,
+            SWGrpx-100::SWGDeviceSettings& response,
             const TestMISettings& settings);
 
     static void webapiUpdateDeviceSettings(
             TestMISettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response);
+            SWGrpx-100::SWGDeviceSettings& response);
 
 private:
     struct DeviceSettingsKeys

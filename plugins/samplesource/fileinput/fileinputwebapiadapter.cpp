@@ -29,11 +29,11 @@ FileInputWebAPIAdapter::~FileInputWebAPIAdapter()
 {}
 
 int FileInputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileInputSettings(new SWGSDRangel::SWGFileInputSettings());
+    response.setFileInputSettings(new SWGrpx-100::SWGFileInputSettings());
     response.getFileInputSettings()->init();
     FileInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int FileInputWebAPIAdapter::webapiSettingsGet(
 int FileInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

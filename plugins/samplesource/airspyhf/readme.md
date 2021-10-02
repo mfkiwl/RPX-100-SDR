@@ -50,11 +50,11 @@ This resets the LO ppm correction (zero the value).
 
 <h3>4: Internal DC correction</h3>
 
-Internal SDRangel DC correction. This is useless if libairspy DSP is engaged (13)
+Internal rpx-100 DC correction. This is useless if libairspy DSP is engaged (13)
 
 <h3>5: Internal IQ imbalance correction</h3>
 
-Internal SDRangel IQ imbalance correction. This is useless if libairspy DSP is engaged (13)
+Internal rpx-100 IQ imbalance correction. This is useless if libairspy DSP is engaged (13)
 
 <h3>6: Band select</h3>
 

@@ -32,7 +32,7 @@
 
 class DeviceAPI;
 
-namespace SWGSDRangel
+namespace SWGrpx-100
 {
     class SWGChannelSettings;
     class SWGChannelReport;
@@ -70,7 +70,7 @@ public:
      * API adapter for the channel settings GET requests
      */
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage)
     {
         (void) response;
@@ -83,7 +83,7 @@ public:
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage)
     {
         (void) force;
@@ -96,7 +96,7 @@ public:
      * API adapter for the channel report GET requests
      */
     virtual int webapiReportGet(
-            SWGSDRangel::SWGChannelReport& response,
+            SWGrpx-100::SWGChannelReport& response,
             QString& errorMessage)
     {
         (void) response;
@@ -108,7 +108,7 @@ public:
      */
     virtual int webapiActionsPost(
             const QStringList& channelActionsKeys,
-            SWGSDRangel::SWGChannelActions& query,
+            SWGrpx-100::SWGChannelActions& query,
             QString& errorMessage)
     {
         (void) query;

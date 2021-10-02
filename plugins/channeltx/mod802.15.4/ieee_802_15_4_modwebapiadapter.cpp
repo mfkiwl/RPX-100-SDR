@@ -27,11 +27,11 @@ IEEE_802_15_4_ModWebAPIAdapter::~IEEE_802_15_4_ModWebAPIAdapter()
 {}
 
 int IEEE_802_15_4_ModWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setIeee802154ModSettings(new SWGSDRangel::SWGIEEE_802_15_4_ModSettings());
+    response.setIeee802154ModSettings(new SWGrpx-100::SWGIEEE_802_15_4_ModSettings());
     response.getIeee802154ModSettings()->init();
     IEEE_802_15_4_Mod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int IEEE_802_15_4_ModWebAPIAdapter::webapiSettingsGet(
 int IEEE_802_15_4_ModWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

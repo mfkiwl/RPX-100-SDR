@@ -14,9 +14,9 @@ const PluginDescriptor SSBPlugin::m_pluginDescriptor = {
 	QStringLiteral("SSB Demodulator"),
 	QStringLiteral("6.16.0"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 SSBPlugin::SSBPlugin(QObject* parent) :

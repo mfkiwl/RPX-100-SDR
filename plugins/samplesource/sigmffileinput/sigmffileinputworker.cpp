@@ -359,7 +359,7 @@ void SigMFFileInputWorker::setConverter()
             }
         }
     }
-    else if ((m_metaInfo->m_dataType.m_signed) && (m_samplesize == 24))  // i24 (SDRangel special)
+    else if ((m_metaInfo->m_dataType.m_signed) && (m_samplesize == 24))  // i24 (rpx-100 special)
     {
         m_sigMFConverter = new SigMFConverter<int32_t, SDR_RX_SAMP_SZ, 24, true, false, false>();
     }

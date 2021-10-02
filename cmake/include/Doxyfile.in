@@ -1,19 +1,19 @@
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "SDRAngel"
-PROJECT_NUMBER         = @sdrangel_VERSION_MAJOR@.@sdrangel_VERSION_MINOR@.@sdrangel_VERSION_PATCH@
+PROJECT_NAME           = "rpx-100"
+PROJECT_NUMBER         = @rpx-100_VERSION_MAJOR@.@rpx-100_VERSION_MINOR@.@rpx-100_VERSION_PATCH@
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Developer docs for SDRangel, an Open Source Qt5 / OpenGL 3.0+ SDR and signal analyzer frontend to various hardware."
+PROJECT_BRIEF          = "Developer docs for rpx-100, an Open Source Qt5 / OpenGL 3.0+ SDR and signal analyzer frontend to various hardware."
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is included in
 # the documentation. The maximum height of the logo should not exceed 55 pixels
 # and the maximum width should not exceed 200 pixels. Doxygen will copy the logo
 # to the output directory.
 
-PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/sdrbase/resources/webapi/sdrangel_logo.png
+PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/sdrbase/resources/webapi/rpx-100_logo.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -718,7 +718,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             = @CMAKE_SOURCE_DIR@/devices @CMAKE_SOURCE_DIR@/swagger/sdrangel/ @CMAKE_SOURCE_DIR@/plugins/channelrx/chanalyzer/ @CMAKE_SOURCE_DIR@/swagger/sdrangel/api/controllers @CMAKE_SOURCE_DIR@/swagger/sdrangel/test/api/controllers @CMAKE_SOURCE_DIR@/doc/img/ @CMAKE_SOURCE_DIR@/sdrbase/resources/webapi/ @CMAKE_SOURCE_DIR@/sdrbase/resources/webapi/doc/swagger-ui/ @CMAKE_SOURCE_DIR@/sdrgui/resources/ @CMAKE_SOURCE_DIR@
+IMAGE_PATH             = @CMAKE_SOURCE_DIR@/devices @CMAKE_SOURCE_DIR@/swagger/rpx-100/ @CMAKE_SOURCE_DIR@/plugins/channelrx/chanalyzer/ @CMAKE_SOURCE_DIR@/swagger/rpx-100/api/controllers @CMAKE_SOURCE_DIR@/swagger/rpx-100/test/api/controllers @CMAKE_SOURCE_DIR@/doc/img/ @CMAKE_SOURCE_DIR@/sdrbase/resources/webapi/ @CMAKE_SOURCE_DIR@/sdrbase/resources/webapi/doc/swagger-ui/ @CMAKE_SOURCE_DIR@/sdrgui/resources/ @CMAKE_SOURCE_DIR@
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program

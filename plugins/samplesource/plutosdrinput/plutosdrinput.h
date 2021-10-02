@@ -100,36 +100,36 @@ public:
     virtual bool handleMessage(const Message& message);
 
     virtual int webapiRunGet(
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGDeviceReport& response,
+            SWGrpx-100::SWGDeviceReport& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGSDRangel::SWGDeviceSettings& response,
+            SWGrpx-100::SWGDeviceSettings& response,
             const PlutoSDRInputSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             PlutoSDRInputSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response);
+            SWGrpx-100::SWGDeviceSettings& response);
 
     uint32_t getADCSampleRate() const { return m_deviceSampleRates.m_addaConnvRate; }
     uint32_t getFIRSampleRate() const { return m_deviceSampleRates.m_hb1Rate; }
@@ -159,7 +159,7 @@ public:
     void suspendBuddies();
     void resumeBuddies();
     bool applySettings(const PlutoSDRInputSettings& settings, bool force = false);
-    void webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const PlutoSDRInputSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

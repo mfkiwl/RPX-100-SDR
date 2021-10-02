@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGATVModSettings::SWGATVModSettings(QString* json) {
     init();
@@ -208,63 +208,63 @@ SWGATVModSettings::fromJson(QString &json) {
 
 void
 SWGATVModSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGSDRangel::setValue(&input_frequency_offset, pJson["inputFrequencyOffset"], "qint64", "");
+    ::SWGrpx-100::setValue(&input_frequency_offset, pJson["inputFrequencyOffset"], "qint64", "");
     
-    ::SWGSDRangel::setValue(&rf_bandwidth, pJson["rfBandwidth"], "float", "");
+    ::SWGrpx-100::setValue(&rf_bandwidth, pJson["rfBandwidth"], "float", "");
     
-    ::SWGSDRangel::setValue(&rf_opp_bandwidth, pJson["rfOppBandwidth"], "float", "");
+    ::SWGrpx-100::setValue(&rf_opp_bandwidth, pJson["rfOppBandwidth"], "float", "");
     
-    ::SWGSDRangel::setValue(&atv_std, pJson["atvStd"], "qint32", "");
+    ::SWGrpx-100::setValue(&atv_std, pJson["atvStd"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&nb_lines, pJson["nbLines"], "qint32", "");
+    ::SWGrpx-100::setValue(&nb_lines, pJson["nbLines"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&fps, pJson["fps"], "qint32", "");
+    ::SWGrpx-100::setValue(&fps, pJson["fps"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&atv_mod_input, pJson["atvModInput"], "qint32", "");
+    ::SWGrpx-100::setValue(&atv_mod_input, pJson["atvModInput"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&uniform_level, pJson["uniformLevel"], "float", "");
+    ::SWGrpx-100::setValue(&uniform_level, pJson["uniformLevel"], "float", "");
     
-    ::SWGSDRangel::setValue(&atv_modulation, pJson["atvModulation"], "qint32", "");
+    ::SWGrpx-100::setValue(&atv_modulation, pJson["atvModulation"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&video_play_loop, pJson["videoPlayLoop"], "qint32", "");
+    ::SWGrpx-100::setValue(&video_play_loop, pJson["videoPlayLoop"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&video_play, pJson["videoPlay"], "qint32", "");
+    ::SWGrpx-100::setValue(&video_play, pJson["videoPlay"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&camera_play, pJson["cameraPlay"], "qint32", "");
+    ::SWGrpx-100::setValue(&camera_play, pJson["cameraPlay"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&channel_mute, pJson["channelMute"], "qint32", "");
+    ::SWGrpx-100::setValue(&channel_mute, pJson["channelMute"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&inverted_video, pJson["invertedVideo"], "qint32", "");
+    ::SWGrpx-100::setValue(&inverted_video, pJson["invertedVideo"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&rf_scaling_factor, pJson["rfScalingFactor"], "float", "");
+    ::SWGrpx-100::setValue(&rf_scaling_factor, pJson["rfScalingFactor"], "float", "");
     
-    ::SWGSDRangel::setValue(&fm_excursion, pJson["fmExcursion"], "float", "");
+    ::SWGrpx-100::setValue(&fm_excursion, pJson["fmExcursion"], "float", "");
     
-    ::SWGSDRangel::setValue(&force_decimator, pJson["forceDecimator"], "qint32", "");
+    ::SWGrpx-100::setValue(&force_decimator, pJson["forceDecimator"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&show_overlay_text, pJson["showOverlayText"], "qint32", "");
+    ::SWGrpx-100::setValue(&show_overlay_text, pJson["showOverlayText"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&overlay_text, pJson["overlayText"], "QString", "QString");
+    ::SWGrpx-100::setValue(&overlay_text, pJson["overlayText"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
+    ::SWGrpx-100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&title, pJson["title"], "QString", "QString");
+    ::SWGrpx-100::setValue(&title, pJson["title"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&image_file_name, pJson["imageFileName"], "QString", "QString");
+    ::SWGrpx-100::setValue(&image_file_name, pJson["imageFileName"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&video_file_name, pJson["videoFileName"], "QString", "QString");
+    ::SWGrpx-100::setValue(&video_file_name, pJson["videoFileName"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&stream_index, pJson["streamIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&stream_index, pJson["streamIndex"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
+    ::SWGrpx-100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
+    ::SWGrpx-100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
+    ::SWGrpx-100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&reverse_api_device_index, pJson["reverseAPIDeviceIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&reverse_api_device_index, pJson["reverseAPIDeviceIndex"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&reverse_api_channel_index, pJson["reverseAPIChannelIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&reverse_api_channel_index, pJson["reverseAPIChannelIndex"], "qint32", "");
     
 }
 

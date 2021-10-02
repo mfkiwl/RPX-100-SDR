@@ -63,7 +63,7 @@ include_directories(
     ${AVUTIL_INCLUDE_DIRS}
     ${SWSCALE_INCLUDE_DIRS}
     ${SWRESAMPLE_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}/swagger/sdrangel/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
 )
 
 if (LINUX)

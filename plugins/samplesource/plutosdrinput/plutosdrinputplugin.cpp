@@ -35,9 +35,9 @@ const PluginDescriptor PlutoSDRInputPlugin::m_pluginDescriptor = {
 	QStringLiteral("PlutoSDR Input"),
 	QStringLiteral("4.19.0"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 static constexpr const char* const m_hardwareID = "PlutoSDR";

@@ -164,8 +164,8 @@ void SimplePTTWorker::sendPTT(bool tx)
 
 void SimplePTTWorker::updateHardware()
 {
-    SWGSDRangel::SWGSuccessResponse response;
-    SWGSDRangel::SWGErrorResponse error;
+    SWGrpx-100::SWGSuccessResponse response;
+    SWGrpx-100::SWGErrorResponse error;
     m_updateTimer.stop();
     m_mutex.unlock();
 
@@ -186,8 +186,8 @@ void SimplePTTWorker::updateHardware()
 
 bool SimplePTTWorker::turnDevice(bool on)
 {
-    SWGSDRangel::SWGDeviceState response;
-    SWGSDRangel::SWGErrorResponse error;
+    SWGrpx-100::SWGDeviceState response;
+    SWGrpx-100::SWGErrorResponse error;
     int httpCode;
     
     if (on) {

@@ -23,7 +23,7 @@
 #include <QDebug>
 
 #include "libsigmf/sigmf_core_generated.h"
-#include "libsigmf/sigmf_sdrangel_generated.h"
+#include "libsigmf/sigmf_rpx-100_generated.h"
 #include "libsigmf/sigmf.h"
 
 #include "dsp/dspcommands.h"
@@ -46,8 +46,8 @@ SigMFFileRecord::SigMFFileRecord() :
 {
     qDebug("SigMFFileRecord::SigMFFileRecord: test");
 	setObjectName("SigMFFileSink");
-    m_metaRecord = new sigmf::SigMF<sigmf::Global<core::DescrT, sdrangel::DescrT>,
-            sigmf::Capture<core::DescrT, sdrangel::DescrT>,
+    m_metaRecord = new sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
+            sigmf::Capture<core::DescrT, rpx-100::DescrT>,
             sigmf::Annotation<core::DescrT> >();
 }
 
@@ -66,8 +66,8 @@ SigMFFileRecord::SigMFFileRecord(const QString& fileName, const QString& hardwar
 {
     qDebug("SigMFFileRecord::SigMFFileRecord: %s", qPrintable(fileName));
     setObjectName("SigMFFileSink");
-    m_metaRecord = new sigmf::SigMF<sigmf::Global<core::DescrT, sdrangel::DescrT>,
-            sigmf::Capture<core::DescrT, sdrangel::DescrT>,
+    m_metaRecord = new sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
+            sigmf::Capture<core::DescrT, rpx-100::DescrT>,
             sigmf::Annotation<core::DescrT> >();
 }
 
@@ -119,9 +119,9 @@ void SigMFFileRecord::setFileName(const QString& fileName)
             {
                 from_json(json::parse(meta_buffer.str()), *m_metaRecord);
                 metaStream.close();
-                std::string sdrAngelVersion = m_metaRecord->global.access<sdrangel::GlobalT>().version;
+                std::string rpx-100Version = m_metaRecord->global.access<rpx-100::GlobalT>().version;
 
-                if (sdrAngelVersion.size() != 0)
+                if (rpx-100Version.size() != 0)
                 {
                     qDebug("SigMFFileRecord::setFileName: appending mode");
                     m_metaFile.open(m_metaFileName.toStdString().c_str(), std::ofstream::out);
@@ -130,7 +130,7 @@ void SigMFFileRecord::setFileName(const QString& fileName)
                     for (auto capture : m_metaRecord->captures)
                     {
                         uint64_t length = capture.get<core::DescrT>().length;
-                        int32_t sampleRate = capture.get<sdrangel::DescrT>().sample_rate;
+                        int32_t sampleRate = capture.get<rpx-100::DescrT>().sample_rate;
                         m_initialMsCount += (length * 1000) / sampleRate;
                     }
 
@@ -143,7 +143,7 @@ void SigMFFileRecord::setFileName(const QString& fileName)
                 }
                 else
                 {
-                    qDebug("SigMFFileRecord::setFileName: SigMF not recorded with SDRangel. Recreating files...");
+                    qDebug("SigMFFileRecord::setFileName: SigMF not recorded with rpx-100. Recreating files...");
                     m_initialBytesCount = 0;
                     m_initialMsCount = 0;
                     m_recordStart = true;
@@ -231,17 +231,17 @@ bool SigMFFileRecord::stopRecording()
 
 void SigMFFileRecord::makeHeader()
 {
-    m_metaRecord->global.access<core::GlobalT>().author = "SDRangel";
-    m_metaRecord->global.access<core::GlobalT>().description = "SDRangel SigMF I/Q recording file";
+    m_metaRecord->global.access<core::GlobalT>().author = "rpx-100";
+    m_metaRecord->global.access<core::GlobalT>().description = "rpx-100 SigMF I/Q recording file";
     m_metaRecord->global.access<core::GlobalT>().sample_rate = m_sampleRate;
     m_metaRecord->global.access<core::GlobalT>().hw = m_hardwareId.toStdString();
     m_metaRecord->global.access<core::GlobalT>().recorder = QString(QCoreApplication::applicationName()).toStdString();
     m_metaRecord->global.access<core::GlobalT>().version = "0.0.2";
-    m_metaRecord->global.access<sdrangel::GlobalT>().version = QString(QCoreApplication::applicationVersion()).toStdString();
-    m_metaRecord->global.access<sdrangel::GlobalT>().qt_version = QT_VERSION_STR;
-    m_metaRecord->global.access<sdrangel::GlobalT>().rx_bits = SDR_RX_SAMP_SZ;
-    m_metaRecord->global.access<sdrangel::GlobalT>().arch = QString(QSysInfo::currentCpuArchitecture()).toStdString();
-    m_metaRecord->global.access<sdrangel::GlobalT>().os = QString(QSysInfo::prettyProductName()).toStdString();
+    m_metaRecord->global.access<rpx-100::GlobalT>().version = QString(QCoreApplication::applicationVersion()).toStdString();
+    m_metaRecord->global.access<rpx-100::GlobalT>().qt_version = QT_VERSION_STR;
+    m_metaRecord->global.access<rpx-100::GlobalT>().rx_bits = SDR_RX_SAMP_SZ;
+    m_metaRecord->global.access<rpx-100::GlobalT>().arch = QString(QSysInfo::currentCpuArchitecture()).toStdString();
+    m_metaRecord->global.access<rpx-100::GlobalT>().os = QString(QSysInfo::prettyProductName()).toStdString();
     QString endianSuffix = QSysInfo::ByteOrder == QSysInfo::LittleEndian ? "le" : "be";
     int size = 8*sizeof(FixReal);
     m_metaRecord->global.access<core::GlobalT>().datatype = QString("ci%1_%2").arg(size).arg(endianSuffix).toStdString();
@@ -257,13 +257,13 @@ void SigMFFileRecord::makeCapture()
         // calculate SHA512 and write it to header
         // m_metaRecord->global.access<core::GlobalT>().sha512 = sw::sha512::file(m_sampleFileName.toStdString()); // skip takes too long
         // Add new capture
-        auto recording_capture = sigmf::Capture<core::DescrT, sdrangel::DescrT>();
+        auto recording_capture = sigmf::Capture<core::DescrT, rpx-100::DescrT>();
         recording_capture.get<core::DescrT>().frequency = m_centerFrequency;
         recording_capture.get<core::DescrT>().sample_start = m_sampleStart;
         recording_capture.get<core::DescrT>().length = m_sampleCount;
         recording_capture.get<core::DescrT>().datetime = m_captureStartDT.toString("yyyy-MM-ddTHH:mm:ss.zzzZ").toStdString();
-        recording_capture.get<sdrangel::DescrT>().sample_rate = m_sampleRate;
-        recording_capture.get<sdrangel::DescrT>().tsms = m_captureStartDT.toMSecsSinceEpoch();
+        recording_capture.get<rpx-100::DescrT>().sample_rate = m_sampleRate;
+        recording_capture.get<rpx-100::DescrT>().tsms = m_captureStartDT.toMSecsSinceEpoch();
         m_metaRecord->captures.emplace_back(recording_capture);
         m_sampleStart += m_sampleCount;
         // Flush meta to disk

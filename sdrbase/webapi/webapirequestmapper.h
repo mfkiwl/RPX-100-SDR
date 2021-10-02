@@ -30,7 +30,7 @@
 
 #include "export.h"
 
-namespace SWGSDRangel
+namespace SWGrpx-100
 {
     class SWGPresetTransfer;
     class SWGPresetIdentifier;
@@ -109,78 +109,78 @@ private:
     void featuresetFeatureReportService(const std::string& featureSetIndexStr, const std::string& featureIndexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response);
     void featuresetFeatureActionsService(const std::string& featureSetIndexStr, const std::string& featureIndexStr, qtwebapp::HttpRequest& request, qtwebapp::HttpResponse& response);
 
-    bool validatePresetTransfer(SWGSDRangel::SWGPresetTransfer& presetTransfer);
-    bool validatePresetIdentifer(SWGSDRangel::SWGPresetIdentifier& presetIdentifier);
-    bool validatePresetExport(SWGSDRangel::SWGPresetExport& presetExport);
-    bool validateSpectrumSettings(SWGSDRangel::SWGGLSpectrum& spectrumSettings, QJsonObject& jsonObject, QStringList& spectrumSettingsKeys);
-    bool validateDeviceListItem(SWGSDRangel::SWGDeviceListItem& deviceListItem, QJsonObject& jsonObject);
-    bool validateDeviceSettings(SWGSDRangel::SWGDeviceSettings& deviceSettings, QJsonObject& jsonObject, QStringList& deviceSettingsKeys);
-    bool validateDeviceActions(SWGSDRangel::SWGDeviceActions& deviceActions, QJsonObject& jsonObject, QStringList& deviceActionsKeys);
-    bool validateChannelSettings(SWGSDRangel::SWGChannelSettings& channelSettings, QJsonObject& jsonObject, QStringList& channelSettingsKeys);
-    bool validateChannelActions(SWGSDRangel::SWGChannelActions& channelActions, QJsonObject& jsonObject, QStringList& channelActionsKeys);
-    bool validateFeaturePresetTransfer(SWGSDRangel::SWGFeaturePresetTransfer& presetTransfer);
-    bool validateFeaturePresetIdentifer(SWGSDRangel::SWGFeaturePresetIdentifier& presetIdentifier);
-    bool validateFeatureSettings(SWGSDRangel::SWGFeatureSettings& featureSettings, QJsonObject& jsonObject, QStringList& featureSettingsKeys);
-    bool validateFeatureActions(SWGSDRangel::SWGFeatureActions& featureActions, QJsonObject& jsonObject, QStringList& featureActionsKeys);
-    bool validateAudioInputDevice(SWGSDRangel::SWGAudioInputDevice& audioInputDevice, QJsonObject& jsonObject, QStringList& audioInputDeviceKeys);
-    bool validateAudioOutputDevice(SWGSDRangel::SWGAudioOutputDevice& audioOutputDevice, QJsonObject& jsonObject, QStringList& audioOutputDeviceKeys);
-    bool validateAMBEDevices(SWGSDRangel::SWGAMBEDevices& ambeDevices, QJsonObject& jsonObject);
-    bool validateLimeRFEConfig(SWGSDRangel::SWGLimeRFESettings& limeRFESettings, QJsonObject& jsonObject, QStringList& limeRFESettingsKeys);
-    bool validateConfig(SWGSDRangel::SWGInstanceConfigResponse& config, QJsonObject& jsonObject, WebAPIAdapterInterface::ConfigKeys& configKeys);
+    bool validatePresetTransfer(SWGrpx-100::SWGPresetTransfer& presetTransfer);
+    bool validatePresetIdentifer(SWGrpx-100::SWGPresetIdentifier& presetIdentifier);
+    bool validatePresetExport(SWGrpx-100::SWGPresetExport& presetExport);
+    bool validateSpectrumSettings(SWGrpx-100::SWGGLSpectrum& spectrumSettings, QJsonObject& jsonObject, QStringList& spectrumSettingsKeys);
+    bool validateDeviceListItem(SWGrpx-100::SWGDeviceListItem& deviceListItem, QJsonObject& jsonObject);
+    bool validateDeviceSettings(SWGrpx-100::SWGDeviceSettings& deviceSettings, QJsonObject& jsonObject, QStringList& deviceSettingsKeys);
+    bool validateDeviceActions(SWGrpx-100::SWGDeviceActions& deviceActions, QJsonObject& jsonObject, QStringList& deviceActionsKeys);
+    bool validateChannelSettings(SWGrpx-100::SWGChannelSettings& channelSettings, QJsonObject& jsonObject, QStringList& channelSettingsKeys);
+    bool validateChannelActions(SWGrpx-100::SWGChannelActions& channelActions, QJsonObject& jsonObject, QStringList& channelActionsKeys);
+    bool validateFeaturePresetTransfer(SWGrpx-100::SWGFeaturePresetTransfer& presetTransfer);
+    bool validateFeaturePresetIdentifer(SWGrpx-100::SWGFeaturePresetIdentifier& presetIdentifier);
+    bool validateFeatureSettings(SWGrpx-100::SWGFeatureSettings& featureSettings, QJsonObject& jsonObject, QStringList& featureSettingsKeys);
+    bool validateFeatureActions(SWGrpx-100::SWGFeatureActions& featureActions, QJsonObject& jsonObject, QStringList& featureActionsKeys);
+    bool validateAudioInputDevice(SWGrpx-100::SWGAudioInputDevice& audioInputDevice, QJsonObject& jsonObject, QStringList& audioInputDeviceKeys);
+    bool validateAudioOutputDevice(SWGrpx-100::SWGAudioOutputDevice& audioOutputDevice, QJsonObject& jsonObject, QStringList& audioOutputDeviceKeys);
+    bool validateAMBEDevices(SWGrpx-100::SWGAMBEDevices& ambeDevices, QJsonObject& jsonObject);
+    bool validateLimeRFEConfig(SWGrpx-100::SWGLimeRFESettings& limeRFESettings, QJsonObject& jsonObject, QStringList& limeRFESettingsKeys);
+    bool validateConfig(SWGrpx-100::SWGInstanceConfigResponse& config, QJsonObject& jsonObject, WebAPIAdapterInterface::ConfigKeys& configKeys);
 
     bool appendFeatureSetPresetKeys(
-        SWGSDRangel::SWGFeatureSetPreset *preset,
+        SWGrpx-100::SWGFeatureSetPreset *preset,
         const QJsonObject& presetJson,
         WebAPIAdapterInterface::FeatureSetPresetKeys& featureSetPresetKeys
     );
 
     bool appendPresetKeys(
-            SWGSDRangel::SWGPreset *preset,
+            SWGrpx-100::SWGPreset *preset,
             const QJsonObject& presetJson,
             WebAPIAdapterInterface::PresetKeys& presetKeys);
 
     bool appendPresetFeatureKeys(
-        SWGSDRangel::SWGFeatureConfig *feature,
+        SWGrpx-100::SWGFeatureConfig *feature,
         const QJsonObject& featureSettingsJson,
         WebAPIAdapterInterface::FeatureKeys& featureKeys
     );
 
     bool appendPresetChannelKeys(
-            SWGSDRangel::SWGChannelConfig *channel,
+            SWGrpx-100::SWGChannelConfig *channel,
             const QJsonObject& channelSettngsJson,
             WebAPIAdapterInterface::ChannelKeys& channelKeys
     );
 
     bool getChannelSettings(
         const QString& channelSettingsKey,
-        SWGSDRangel::SWGChannelSettings *channelSettings,
+        SWGrpx-100::SWGChannelSettings *channelSettings,
         const QJsonObject& channelSettingsJson,
         QStringList& channelSettingsKeys
     );
 
     bool getChannelActions(
         const QString& channelActionsKey,
-        SWGSDRangel::SWGChannelActions *channelActions,
+        SWGrpx-100::SWGChannelActions *channelActions,
         const QJsonObject& channelActionsJson,
         QStringList& channelSettingsKeys
     );
 
     bool appendPresetDeviceKeys(
-            SWGSDRangel::SWGDeviceConfig *device,
+            SWGrpx-100::SWGDeviceConfig *device,
             const QJsonObject& deviceSettngsJson,
             WebAPIAdapterInterface::DeviceKeys& devicelKeys
     );
 
     bool getDeviceSettings(
         const QString& deviceSettingsKey,
-        SWGSDRangel::SWGDeviceSettings *deviceSettings,
+        SWGrpx-100::SWGDeviceSettings *deviceSettings,
         const QJsonObject& deviceSettingsJson,
         QStringList& deviceActionsKeys
     );
 
     bool getDeviceActions(
         const QString& deviceActionsKey,
-        SWGSDRangel::SWGDeviceActions *deviceActions,
+        SWGrpx-100::SWGDeviceActions *deviceActions,
         const QJsonObject& deviceActionsJson,
         QStringList& deviceActionsKeys
     );
@@ -198,41 +198,41 @@ private:
 
     bool getFeatureSettings(
         const QString& featureSettingsKey,
-        SWGSDRangel::SWGFeatureSettings *featureSettings,
+        SWGrpx-100::SWGFeatureSettings *featureSettings,
         const QJsonObject& featureSettingsJson,
         QStringList& featureSettingsKeys
     );
 
     bool getFeatureActions(
         const QString& featureActionsKey,
-        SWGSDRangel::SWGFeatureActions *featureActions,
+        SWGrpx-100::SWGFeatureActions *featureActions,
         const QJsonObject& featureActionsJson,
         QStringList& featureSettingsKeys
     );
 
     bool parseJsonBody(QString& jsonStr, QJsonObject& jsonObject, qtwebapp::HttpResponse& response);
 
-    void resetSpectrumSettings(SWGSDRangel::SWGGLSpectrum& spectrumSettings);
-    void resetDeviceSettings(SWGSDRangel::SWGDeviceSettings& deviceSettings);
-    void resetDeviceReport(SWGSDRangel::SWGDeviceReport& deviceReport);
-    void resetDeviceActions(SWGSDRangel::SWGDeviceActions& deviceActions);
-    void resetChannelSettings(SWGSDRangel::SWGChannelSettings& deviceSettings);
-    void resetChannelReport(SWGSDRangel::SWGChannelReport& channelReport);
-    void resetChannelActions(SWGSDRangel::SWGChannelActions& channelActions);
-    void resetAudioInputDevice(SWGSDRangel::SWGAudioInputDevice& audioInputDevice);
-    void resetAudioOutputDevice(SWGSDRangel::SWGAudioOutputDevice& audioOutputDevice);
-    void resetFeatureSettings(SWGSDRangel::SWGFeatureSettings& deviceSettings);
-    void resetFeatureReport(SWGSDRangel::SWGFeatureReport& featureReport);
-    void resetFeatureActions(SWGSDRangel::SWGFeatureActions& featureActions);
+    void resetSpectrumSettings(SWGrpx-100::SWGGLSpectrum& spectrumSettings);
+    void resetDeviceSettings(SWGrpx-100::SWGDeviceSettings& deviceSettings);
+    void resetDeviceReport(SWGrpx-100::SWGDeviceReport& deviceReport);
+    void resetDeviceActions(SWGrpx-100::SWGDeviceActions& deviceActions);
+    void resetChannelSettings(SWGrpx-100::SWGChannelSettings& deviceSettings);
+    void resetChannelReport(SWGrpx-100::SWGChannelReport& channelReport);
+    void resetChannelActions(SWGrpx-100::SWGChannelActions& channelActions);
+    void resetAudioInputDevice(SWGrpx-100::SWGAudioInputDevice& audioInputDevice);
+    void resetAudioOutputDevice(SWGrpx-100::SWGAudioOutputDevice& audioOutputDevice);
+    void resetFeatureSettings(SWGrpx-100::SWGFeatureSettings& deviceSettings);
+    void resetFeatureReport(SWGrpx-100::SWGFeatureReport& featureReport);
+    void resetFeatureActions(SWGrpx-100::SWGFeatureActions& featureActions);
 
     void processChannelAnalyzerSettings(
-        SWGSDRangel::SWGChannelSettings *channelSettings,
+        SWGrpx-100::SWGChannelSettings *channelSettings,
         const QJsonObject& channelSettingsJson,
         QStringList& channelSettingsKeys
     );
 
     void processSoapySDRSettings(
-        SWGSDRangel::SWGDeviceSettings *deviceSettings,
+        SWGrpx-100::SWGDeviceSettings *deviceSettings,
         QJsonObject& deviceSettingsJson,
         QStringList& deviceSettingsKeys,
         bool inputElseOutput

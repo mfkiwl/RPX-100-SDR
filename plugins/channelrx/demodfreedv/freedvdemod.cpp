@@ -39,7 +39,7 @@
 MESSAGE_CLASS_DEFINITION(FreeDVDemod::MsgConfigureFreeDVDemod, Message)
 MESSAGE_CLASS_DEFINITION(FreeDVDemod::MsgResyncFreeDVDemod, Message)
 
-const char* const FreeDVDemod::m_channelIdURI = "sdrangel.channel.freedvdemod";
+const char* const FreeDVDemod::m_channelIdURI = "rpx-100.channel.freedvdemod";
 const char* const FreeDVDemod::m_channelId = "FreeDVDemod";
 
 FreeDVDemod::FreeDVDemod(DeviceAPI *deviceAPI) :
@@ -254,11 +254,11 @@ bool FreeDVDemod::deserialize(const QByteArray& data)
 }
 
 int FreeDVDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreeDvDemodSettings(new SWGSDRangel::SWGFreeDVDemodSettings());
+    response.setFreeDvDemodSettings(new SWGrpx-100::SWGFreeDVDemodSettings());
     response.getFreeDvDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -267,7 +267,7 @@ int FreeDVDemod::webapiSettingsGet(
 int FreeDVDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -292,7 +292,7 @@ int FreeDVDemod::webapiSettingsPutPatch(
 void FreeDVDemod::webapiUpdateChannelSettings(
         FreeDVDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getFreeDvDemodSettings()->getInputFrequencyOffset();
@@ -345,17 +345,17 @@ void FreeDVDemod::webapiUpdateChannelSettings(
 }
 
 int FreeDVDemod::webapiReportGet(
-        SWGSDRangel::SWGChannelReport& response,
+        SWGrpx-100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreeDvDemodReport(new SWGSDRangel::SWGFreeDVDemodReport());
+    response.setFreeDvDemodReport(new SWGrpx-100::SWGFreeDVDemodReport());
     response.getFreeDvDemodReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void FreeDVDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const FreeDVDemodSettings& settings)
+void FreeDVDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const FreeDVDemodSettings& settings)
 {
     response.getFreeDvDemodSettings()->setAudioMute(settings.m_audioMute ? 1 : 0);
     response.getFreeDvDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
@@ -393,7 +393,7 @@ void FreeDVDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& r
     response.getFreeDvDemodSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void FreeDVDemod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void FreeDVDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -407,10 +407,10 @@ void FreeDVDemod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& respo
 
 void FreeDVDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const FreeDVDemodSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -440,7 +440,7 @@ void FreeDVDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -454,7 +454,7 @@ void FreeDVDemod::sendChannelSettings(
 
 void FreeDVDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const FreeDVDemodSettings& settings,
         bool force
 )
@@ -463,8 +463,8 @@ void FreeDVDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setFreeDvDemodSettings(new SWGSDRangel::SWGFreeDVDemodSettings());
-    SWGSDRangel::SWGFreeDVDemodSettings *swgFreeDVDemodSettings = swgChannelSettings->getFreeDvDemodSettings();
+    swgChannelSettings->setFreeDvDemodSettings(new SWGrpx-100::SWGFreeDVDemodSettings());
+    SWGrpx-100::SWGFreeDVDemodSettings *swgFreeDVDemodSettings = swgChannelSettings->getFreeDvDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

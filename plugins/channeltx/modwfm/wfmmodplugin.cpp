@@ -30,9 +30,9 @@ const PluginDescriptor WFMModPlugin::m_pluginDescriptor = {
     QStringLiteral("WFM Modulator"),
     QStringLiteral("6.4.0"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 WFMModPlugin::WFMModPlugin(QObject* parent) :

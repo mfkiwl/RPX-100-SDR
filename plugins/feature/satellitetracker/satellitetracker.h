@@ -34,7 +34,7 @@ class SatelliteTrackerWorker;
 class QNetworkAccessManager;
 class QNetworkReply;
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
     class SWGDeviceState;
     class SWGSatelliteDeviceSettingsList;
 }
@@ -131,27 +131,27 @@ public:
     virtual bool deserialize(const QByteArray& data);
 
     virtual int webapiRun(bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     static void webapiFormatFeatureSettings(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         const SatelliteTrackerSettings& settings);
 
     static void webapiUpdateFeatureSettings(
             SatelliteTrackerSettings& settings,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response);
+            SWGrpx-100::SWGFeatureSettings& response);
 
     static QDateTime currentDateTimeUtc();
     static QDateTime currentDateTime();
@@ -195,8 +195,8 @@ private:
     void updateSatellitesReply(QNetworkReply *reply);
     void updateTransmittersReply(QNetworkReply *reply);
     void updateTLEsReply(QNetworkReply *reply);
-    static QList<SWGSDRangel::SWGSatelliteDeviceSettingsList*>* getSWGSatelliteDeviceSettingsList(const SatelliteTrackerSettings& settings);
-    static QHash<QString, QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *> getSatelliteDeviceSettings(QList<SWGSDRangel::SWGSatelliteDeviceSettingsList*>* list);
+    static QList<SWGrpx-100::SWGSatelliteDeviceSettingsList*>* getSWGSatelliteDeviceSettingsList(const SatelliteTrackerSettings& settings);
+    static QHash<QString, QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *> getSatelliteDeviceSettings(QList<SWGrpx-100::SWGSatelliteDeviceSettingsList*>* list);
 
 private slots:
     void networkManagerFinished(QNetworkReply *reply);

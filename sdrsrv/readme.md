@@ -1,14 +1,14 @@
-<h1>SDRangel Server</h1>
+<h1>rpx-100 Server</h1>
 
-This folder holds the objects specific to the server (headless) version of SDRangel. The `MainServer` class is the headless equivalent of the `MainWindow` class in the GUI version and plays the same central role. Plugins are built specifically without GUI and are located in the `pluginssrv` folder.
+This folder holds the objects specific to the server (headless) version of rpx-100. The `MainServer` class is the headless equivalent of the `MainWindow` class in the GUI version and plays the same central role. Plugins are built specifically without GUI and are located in the `pluginssrv` folder.
 
-This document focuses on the functional description of SDRangel server. More details on the technical architecture can be found in the developer's documentation.
+This document focuses on the functional description of rpx-100 server. More details on the technical architecture can be found in the developer's documentation.
 
 The main motivations are:
-  - be able to run SDRangel on hardware with less CPU/GPU requirements in particular without OpenGL support.
+  - be able to run rpx-100 on hardware with less CPU/GPU requirements in particular without OpenGL support.
   - be used in sophisticated remote transponders or repeaters in a headless server configuration.
-  - possibility to use Docker technology to host SDRangel server instances in a distributed environment.
-  - possibility to use SDRangel remotely for the RF device interface even more distributed architectures can be supported to share workload in a cluster.
+  - possibility to use Docker technology to host rpx-100 server instances in a distributed environment.
+  - possibility to use rpx-100 remotely for the RF device interface even more distributed architectures can be supported to share workload in a cluster.
   - using the Web REST API interface developers with web technology skills can implement their own GUI.
 
 <h2>Plugins supported</h2>
@@ -67,19 +67,19 @@ The main motivations are:
 
 <h2>Interface</h2>
 
-You can control the SDRangel application (server or GUI) by the means of the REST API. For SDRangel server the REST API is the only interface as there is no GUI. The network interface on which the REST API server listens can be controlled with the `-a` option and its port with the `-p` option. By default the server listens on the loopback address `127.0.0.1` and port `8091`
+You can control the rpx-100 application (server or GUI) by the means of the REST API. For rpx-100 server the REST API is the only interface as there is no GUI. The network interface on which the REST API server listens can be controlled with the `-a` option and its port with the `-p` option. By default the server listens on the loopback address `127.0.0.1` and port `8091`
 
 <h3>Documentation</h3>
 
-The API documentation is accessible online when the SDRangel application (GUI or server) is running at the address and port specified in the program options. The default is [http://127.0.0.1:8091](http://127.0.0.1:8091).
+The API documentation is accessible online when the rpx-100 application (GUI or server) is running at the address and port specified in the program options. The default is [http://127.0.0.1:8091](http://127.0.0.1:8091).
 
 The documentation home page dispays two links on the left:
 
 ![API documentation home](../doc/img/APIdocHome.png)
 
   - **Static HTML2 documentation**: classical HTML based documentation
-  - **Interactive SwaggerUI documentation**: dynamic interactive documentation using the [SwaggerUI](https://swagger.io/tools/swagger-ui/) interface. It offers a way to visualize and interact with the running SDRangel application API’s resources.
+  - **Interactive SwaggerUI documentation**: dynamic interactive documentation using the [SwaggerUI](https://swagger.io/tools/swagger-ui/) interface. It offers a way to visualize and interact with the running rpx-100 application API’s resources.
 
 <h3>Python examples</h3>
 
-In the `swagger/sdrangel/examples/` directory you can check various examples of Python scripts interacting with an instance of SDRangel using the REST API.
+In the `swagger/rpx-100/examples/` directory you can check various examples of Python scripts interacting with an instance of rpx-100 using the REST API.

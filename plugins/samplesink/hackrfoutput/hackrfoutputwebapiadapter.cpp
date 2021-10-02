@@ -29,11 +29,11 @@ HackRFOutputWebAPIAdapter::~HackRFOutputWebAPIAdapter()
 {}
 
 int HackRFOutputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setHackRfOutputSettings(new SWGSDRangel::SWGHackRFOutputSettings());
+    response.setHackRfOutputSettings(new SWGrpx-100::SWGHackRFOutputSettings());
     response.getHackRfOutputSettings()->init();
     HackRFOutput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int HackRFOutputWebAPIAdapter::webapiSettingsGet(
 int HackRFOutputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

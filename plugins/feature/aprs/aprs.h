@@ -34,7 +34,7 @@ class APRSWorker;
 class QNetworkAccessManager;
 class QNetworkReply;
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
     class SWGDeviceState;
 }
 
@@ -95,27 +95,27 @@ public:
     virtual bool deserialize(const QByteArray& data);
 
     virtual int webapiRun(bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     static void webapiFormatFeatureSettings(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         const APRSSettings& settings);
 
     static void webapiUpdateFeatureSettings(
             APRSSettings& settings,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response);
+            SWGrpx-100::SWGFeatureSettings& response);
 
     static const char* const m_featureIdURI;
     static const char* const m_featureId;

@@ -47,7 +47,7 @@
 
 MESSAGE_CLASS_DEFINITION(FreqTracker::MsgConfigureFreqTracker, Message)
 
-const char* const FreqTracker::m_channelIdURI = "sdrangel.channel.freqtracker";
+const char* const FreqTracker::m_channelIdURI = "rpx-100.channel.freqtracker";
 const char* const FreqTracker::m_channelId = "FreqTracker";
 const int FreqTracker::m_udpBlockSize = 512;
 
@@ -294,11 +294,11 @@ bool FreqTracker::deserialize(const QByteArray& data)
 }
 
 int FreqTracker::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreqTrackerSettings(new SWGSDRangel::SWGFreqTrackerSettings());
+    response.setFreqTrackerSettings(new SWGrpx-100::SWGFreqTrackerSettings());
     response.getFreqTrackerSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -307,7 +307,7 @@ int FreqTracker::webapiSettingsGet(
 int FreqTracker::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -332,7 +332,7 @@ int FreqTracker::webapiSettingsPutPatch(
 void FreqTracker::webapiUpdateChannelSettings(
         FreqTrackerSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getFreqTrackerSettings()->getInputFrequencyOffset();
@@ -402,17 +402,17 @@ void FreqTracker::webapiUpdateChannelSettings(
 }
 
 int FreqTracker::webapiReportGet(
-        SWGSDRangel::SWGChannelReport& response,
+        SWGrpx-100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreqTrackerReport(new SWGSDRangel::SWGFreqTrackerReport());
+    response.setFreqTrackerReport(new SWGrpx-100::SWGFreqTrackerReport());
     response.getFreqTrackerReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void FreqTracker::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const FreqTrackerSettings& settings)
+void FreqTracker::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const FreqTrackerSettings& settings)
 {
     response.getFreqTrackerSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getFreqTrackerSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -448,7 +448,7 @@ void FreqTracker::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& r
     response.getFreqTrackerSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void FreqTracker::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void FreqTracker::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -463,10 +463,10 @@ void FreqTracker::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& respo
 
 void FreqTracker::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const FreqTrackerSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -496,7 +496,7 @@ void FreqTracker::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -510,7 +510,7 @@ void FreqTracker::sendChannelSettings(
 
 void FreqTracker::webapiFormatChannelSettings(
     QList<QString>& channelSettingsKeys,
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings,
     const FreqTrackerSettings& settings,
     bool force)
 {
@@ -518,8 +518,8 @@ void FreqTracker::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("FreqTracker"));
-    swgChannelSettings->setFreqTrackerSettings(new SWGSDRangel::SWGFreqTrackerSettings());
-    SWGSDRangel::SWGFreqTrackerSettings *swgFreqTrackerSettings = swgChannelSettings->getFreqTrackerSettings();
+    swgChannelSettings->setFreqTrackerSettings(new SWGrpx-100::SWGFreqTrackerSettings());
+    SWGrpx-100::SWGFreqTrackerSettings *swgFreqTrackerSettings = swgChannelSettings->getFreqTrackerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

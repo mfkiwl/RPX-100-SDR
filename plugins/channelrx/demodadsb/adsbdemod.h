@@ -91,27 +91,27 @@ public:
     }
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGChannelReport& response,
+            SWGrpx-100::SWGChannelReport& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         const ADSBDemodSettings& settings);
 
     static void webapiUpdateChannelSettings(
             ADSBDemodSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     void getMagSqLevels(double& avg, double& peak, int& nbSamples) { m_basebandSink->getMagSqLevels(avg, peak, nbSamples); }
     void setMessageQueueToGUI(MessageQueue* queue) override {
@@ -143,7 +143,7 @@ private:
     QNetworkRequest m_networkRequest;
 
     void applySettings(const ADSBDemodSettings& settings, bool force = false);
-    void webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response);
+    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const ADSBDemodSettings& settings, bool force);
 
 private slots:

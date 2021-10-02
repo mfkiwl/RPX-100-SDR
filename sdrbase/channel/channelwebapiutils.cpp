@@ -41,7 +41,7 @@
 // Get device center frequency
 bool ChannelWebAPIUtils::getCenterFrequency(unsigned int deviceIndex, double &frequencyInHz)
 {
-    SWGSDRangel::SWGDeviceSettings deviceSettingsResponse;
+    SWGrpx-100::SWGDeviceSettings deviceSettingsResponse;
     QString errorResponse;
     int httpRC;
     DeviceSet *deviceSet;
@@ -98,7 +98,7 @@ bool ChannelWebAPIUtils::getCenterFrequency(unsigned int deviceIndex, double &fr
 // Set device center frequency
 bool ChannelWebAPIUtils::setCenterFrequency(unsigned int deviceIndex, double frequencyInHz)
 {
-    SWGSDRangel::SWGDeviceSettings deviceSettingsResponse;
+    SWGrpx-100::SWGDeviceSettings deviceSettingsResponse;
     QString errorResponse;
     int httpRC;
     DeviceSet *deviceSet;
@@ -158,7 +158,7 @@ bool ChannelWebAPIUtils::setCenterFrequency(unsigned int deviceIndex, double fre
         deviceSettingsKeys.append("centerFrequency");
         deviceSettingsResponse.init();
         deviceSettingsResponse.fromJsonObject(*jsonObj);
-        SWGSDRangel::SWGErrorResponse errorResponse2;
+        SWGrpx-100::SWGErrorResponse errorResponse2;
 
         DeviceSampleSource *source = deviceSet->m_deviceAPI->getSampleSource();
 
@@ -187,7 +187,7 @@ bool ChannelWebAPIUtils::setCenterFrequency(unsigned int deviceIndex, double fre
 // Start acquisition
 bool ChannelWebAPIUtils::run(unsigned int deviceIndex, int subsystemIndex)
 {
-    SWGSDRangel::SWGDeviceState runResponse;
+    SWGrpx-100::SWGDeviceState runResponse;
     QString errorResponse;
     int httpRC;
     DeviceSet *deviceSet;
@@ -237,7 +237,7 @@ bool ChannelWebAPIUtils::run(unsigned int deviceIndex, int subsystemIndex)
 // Stop acquisition
 bool ChannelWebAPIUtils::stop(unsigned int deviceIndex, int subsystemIndex)
 {
-    SWGSDRangel::SWGDeviceState runResponse;
+    SWGrpx-100::SWGDeviceState runResponse;
     QString errorResponse;
     int httpRC;
     DeviceSet *deviceSet;
@@ -287,7 +287,7 @@ bool ChannelWebAPIUtils::stop(unsigned int deviceIndex, int subsystemIndex)
 // Get input frequency offset for a channel
 bool ChannelWebAPIUtils::getFrequencyOffset(unsigned int deviceIndex, int channelIndex, int& offset)
 {
-    SWGSDRangel::SWGChannelSettings channelSettingsResponse;
+    SWGrpx-100::SWGChannelSettings channelSettingsResponse;
     QString errorResponse;
     int httpRC;
     QJsonObject *jsonObj;
@@ -317,7 +317,7 @@ bool ChannelWebAPIUtils::getFrequencyOffset(unsigned int deviceIndex, int channe
 // Set input frequency offset for a channel
 bool ChannelWebAPIUtils::setFrequencyOffset(unsigned int deviceIndex, int channelIndex, int offset)
 {
-    SWGSDRangel::SWGChannelSettings channelSettingsResponse;
+    SWGrpx-100::SWGChannelSettings channelSettingsResponse;
     QString errorResponse;
     int httpRC;
     QJsonObject *jsonObj;
@@ -363,11 +363,11 @@ bool ChannelWebAPIUtils::startStopFileSinks(unsigned int deviceIndex, bool start
     int channelIndex = 0;
     while(nullptr != (channel = mainCore->getChannel(deviceIndex, channelIndex)))
     {
-        if (ChannelUtils::compareChannelURIs(channel->getURI(), "sdrangel.channel.filesink"))
+        if (ChannelUtils::compareChannelURIs(channel->getURI(), "rpx-100.channel.filesink"))
         {
             QStringList channelActionKeys = {"record"};
-            SWGSDRangel::SWGChannelActions channelActions;
-            SWGSDRangel::SWGFileSinkActions *fileSinkAction = new SWGSDRangel::SWGFileSinkActions();
+            SWGrpx-100::SWGChannelActions channelActions;
+            SWGrpx-100::SWGFileSinkActions *fileSinkAction = new SWGrpx-100::SWGFileSinkActions();
             QString errorResponse;
             int httpRC;
 
@@ -397,12 +397,12 @@ bool ChannelWebAPIUtils::satelliteAOS(const QString name, bool northToSouthPass)
         int channelIndex = 0;
         while(nullptr != (channel = mainCore->getChannel(deviceIndex, channelIndex)))
         {
-            if (ChannelUtils::compareChannelURIs(channel->getURI(), "sdrangel.channel.aptdemod"))
+            if (ChannelUtils::compareChannelURIs(channel->getURI(), "rpx-100.channel.aptdemod"))
             {
                 QStringList channelActionKeys = {"aos"};
-                SWGSDRangel::SWGChannelActions channelActions;
-                SWGSDRangel::SWGAPTDemodActions *aptDemodAction = new SWGSDRangel::SWGAPTDemodActions();
-                SWGSDRangel::SWGAPTDemodActions_aos *aosAction = new SWGSDRangel::SWGAPTDemodActions_aos();
+                SWGrpx-100::SWGChannelActions channelActions;
+                SWGrpx-100::SWGAPTDemodActions *aptDemodAction = new SWGrpx-100::SWGAPTDemodActions();
+                SWGrpx-100::SWGAPTDemodActions_aos *aosAction = new SWGrpx-100::SWGAPTDemodActions_aos();
                 QString errorResponse;
                 int httpRC;
 
@@ -436,12 +436,12 @@ bool ChannelWebAPIUtils::satelliteLOS(const QString name)
         int channelIndex = 0;
         while(nullptr != (channel = mainCore->getChannel(deviceIndex, channelIndex)))
         {
-            if (ChannelUtils::compareChannelURIs(channel->getURI(), "sdrangel.channel.aptdemod"))
+            if (ChannelUtils::compareChannelURIs(channel->getURI(), "rpx-100.channel.aptdemod"))
             {
                 QStringList channelActionKeys = {"los"};
-                SWGSDRangel::SWGChannelActions channelActions;
-                SWGSDRangel::SWGAPTDemodActions *aptDemodAction = new SWGSDRangel::SWGAPTDemodActions();
-                SWGSDRangel::SWGAPTDemodActions_los *losAction = new SWGSDRangel::SWGAPTDemodActions_los();
+                SWGrpx-100::SWGChannelActions channelActions;
+                SWGrpx-100::SWGAPTDemodActions *aptDemodAction = new SWGrpx-100::SWGAPTDemodActions();
+                SWGrpx-100::SWGAPTDemodActions_los *losAction = new SWGrpx-100::SWGAPTDemodActions_los();
                 QString errorResponse;
                 int httpRC;
 

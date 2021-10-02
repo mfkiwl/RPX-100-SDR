@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class AISPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.feature.ais")
+	Q_PLUGIN_METADATA(IID "rpx-100.feature.ais")
 
 public:
 	explicit AISPlugin(QObject* parent = nullptr);

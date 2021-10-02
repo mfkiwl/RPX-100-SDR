@@ -257,9 +257,9 @@ const QByteArray* Preset::findBestDeviceConfig(
 		int sourceSequence) const
 {
 	// Special case for SoapySDR based on serial (driver name)
-	if (sourceId == "sdrangel.samplesource.soapysdrinput") {
+	if (sourceId == "rpx-100.samplesource.soapysdrinput") {
 		return findBestDeviceConfigSoapy(sourceId, sourceSerial);
-	} else if (sourceId == "sdrangel.samplesource.soapysdroutput") {
+	} else if (sourceId == "rpx-100.samplesource.soapysdroutput") {
 		return findBestDeviceConfigSoapy(sourceId, sourceSerial);
 	}
 

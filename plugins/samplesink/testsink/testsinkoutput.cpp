@@ -240,7 +240,7 @@ void TestSinkOutput::applySettings(const TestSinkSettings& settings, bool force)
 }
 
 int TestSinkOutput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -250,7 +250,7 @@ int TestSinkOutput::webapiRunGet(
 
 int TestSinkOutput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;

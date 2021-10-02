@@ -8,7 +8,7 @@ This input sample source plugin gets its samples from a [RTLSDR device](http://w
 
 The plugin will be built only if the [RTLSDR host library](https://github.com/f4exb/librtlsdr) is installed in your system. If you build it from source and install it in a custom location say: `/opt/install/librtlsdr` you will have to add `-DRTLSDR_DIR=/opt/install/librtlsdr` to the cmake command line.
 
-If you want to benefit from the direct sampling you will have to compile and install this library else the RTLSDR library is also provided by many Linux distributions. The SDRangel binary releases are compiled with the direct sampling option.
+If you want to benefit from the direct sampling you will have to compile and install this library else the RTLSDR library is also provided by many Linux distributions. The rpx-100 binary releases are compiled with the direct sampling option.
 
 <h2>Interface</h2>
 

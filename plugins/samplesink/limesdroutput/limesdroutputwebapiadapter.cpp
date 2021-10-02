@@ -29,11 +29,11 @@ LimeSDROutputWebAPIAdapter::~LimeSDROutputWebAPIAdapter()
 {}
 
 int LimeSDROutputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLimeSdrOutputSettings(new SWGSDRangel::SWGLimeSdrOutputSettings());
+    response.setLimeSdrOutputSettings(new SWGrpx-100::SWGLimeSdrOutputSettings());
     response.getLimeSdrOutputSettings()->init();
     LimeSDROutput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int LimeSDROutputWebAPIAdapter::webapiSettingsGet(
 int LimeSDROutputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

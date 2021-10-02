@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define TESTSOURCE_DEVICE_TYPE_ID "sdrangel.samplesource.testsource"
+#define TESTSOURCE_DEVICE_TYPE_ID "rpx-100.samplesource.testsource"
 
 class TestSourcePlugin : public QObject, public PluginInterface {
 	Q_OBJECT

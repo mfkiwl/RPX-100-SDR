@@ -27,16 +27,16 @@ WFMModWebAPIAdapter::~WFMModWebAPIAdapter()
 {}
 
 int WFMModWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setWfmModSettings(new SWGSDRangel::SWGWFMModSettings());
+    response.setWfmModSettings(new SWGrpx-100::SWGWFMModSettings());
     response.getWfmModSettings()->init();
     WFMMod::webapiFormatChannelSettings(response, m_settings);
 
     const CWKeyerSettings& cwKeyerSettings = m_settings.getCWKeyerSettings();
-    SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings = response.getWfmModSettings()->getCwKeyer();
+    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getWfmModSettings()->getCwKeyer();
     apiCwKeyerSettings->init();
     CWKeyer::webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
@@ -46,7 +46,7 @@ int WFMModWebAPIAdapter::webapiSettingsGet(
 int WFMModWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action
@@ -56,7 +56,7 @@ int WFMModWebAPIAdapter::webapiSettingsPutPatch(
     if (channelSettingsKeys.contains("cwKeyer"))
     {
         CWKeyerSettings newCWKeyerSettings;
-        SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings = response.getWfmModSettings()->getCwKeyer();
+        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getWfmModSettings()->getCwKeyer();
         CWKeyer::webapiSettingsPutPatch(channelSettingsKeys, newCWKeyerSettings, apiCwKeyerSettings);
         m_settings.setCWKeyerSettings(newCWKeyerSettings);
         const QByteArray& serializedNewSettings = m_settings.serialize(); // effectively update CW keyer settings

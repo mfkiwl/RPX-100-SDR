@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define TESTSINK_DEVICE_TYPE_ID "sdrangel.samplesink.testsink"
+#define TESTSINK_DEVICE_TYPE_ID "rpx-100.samplesink.testsink"
 
 class PluginAPI;
 class DeviceAPI;

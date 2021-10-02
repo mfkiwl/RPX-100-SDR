@@ -41,7 +41,7 @@
 
 MESSAGE_CLASS_DEFINITION(AMDemod::MsgConfigureAMDemod, Message)
 
-const char* const AMDemod::m_channelIdURI = "sdrangel.channel.amdemod";
+const char* const AMDemod::m_channelIdURI = "rpx-100.channel.amdemod";
 const char* const AMDemod::m_channelId = "AMDemod";
 const int AMDemod::m_udpBlockSize = 512;
 
@@ -286,11 +286,11 @@ void AMDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int AMDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAmDemodSettings(new SWGSDRangel::SWGAMDemodSettings());
+    response.setAmDemodSettings(new SWGrpx-100::SWGAMDemodSettings());
     response.getAmDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -299,7 +299,7 @@ int AMDemod::webapiSettingsGet(
 int AMDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -324,7 +324,7 @@ int AMDemod::webapiSettingsPutPatch(
 void AMDemod::webapiUpdateChannelSettings(
         AMDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("audioMute")) {
         settings.m_audioMute = response.getAmDemodSettings()->getAudioMute() != 0;
@@ -386,17 +386,17 @@ void AMDemod::webapiUpdateChannelSettings(
 }
 
 int AMDemod::webapiReportGet(
-        SWGSDRangel::SWGChannelReport& response,
+        SWGrpx-100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAmDemodReport(new SWGSDRangel::SWGAMDemodReport());
+    response.setAmDemodReport(new SWGrpx-100::SWGAMDemodReport());
     response.getAmDemodReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void AMDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const AMDemodSettings& settings)
+void AMDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const AMDemodSettings& settings)
 {
     response.getAmDemodSettings()->setAudioMute(settings.m_audioMute ? 1 : 0);
     response.getAmDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
@@ -434,7 +434,7 @@ void AMDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& respo
     response.getAmDemodSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void AMDemod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void AMDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -448,10 +448,10 @@ void AMDemod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
 
 void AMDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AMDemodSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -481,7 +481,7 @@ void AMDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -495,7 +495,7 @@ void AMDemod::sendChannelSettings(
 
 void AMDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const AMDemodSettings& settings,
         bool force
 )
@@ -504,8 +504,8 @@ void AMDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("AMDemod"));
-    swgChannelSettings->setAmDemodSettings(new SWGSDRangel::SWGAMDemodSettings());
-    SWGSDRangel::SWGAMDemodSettings *swgAMDemodSettings = swgChannelSettings->getAmDemodSettings();
+    swgChannelSettings->setAmDemodSettings(new SWGrpx-100::SWGAMDemodSettings());
+    SWGrpx-100::SWGAMDemodSettings *swgAMDemodSettings = swgChannelSettings->getAmDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

@@ -18,7 +18,7 @@ set(gs232controller_HEADERS
 )
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}/swagger/sdrangel/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
 )
 
 if(NOT SERVER_MODE)
@@ -60,5 +60,5 @@ install(TARGETS ${TARGET_NAME} DESTINATION ${INSTALL_FOLDER})
 if(WIN32)
   # Run deployqt for serial libraries
   include(DeployQt)
-  windeployqt(${TARGET_NAME} ${SDRANGEL_BINARY_BIN_DIR} ${PROJECT_SOURCE_DIR}/../../../sdrgui/resources)
+  windeployqt(${TARGET_NAME} ${rpx-100_BINARY_BIN_DIR} ${PROJECT_SOURCE_DIR}/../../../sdrgui/resources)
 endif()

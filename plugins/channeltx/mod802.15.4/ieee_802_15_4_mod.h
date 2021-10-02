@@ -116,32 +116,32 @@ public:
     }
 
     virtual int webapiSettingsGet(
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-                SWGSDRangel::SWGChannelReport& response,
+                SWGrpx-100::SWGChannelReport& response,
                 QString& errorMessage);
 
     virtual int webapiActionsPost(
             const QStringList& channelActionsKeys,
-            SWGSDRangel::SWGChannelActions& query,
+            SWGrpx-100::SWGChannelActions& query,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         const IEEE_802_15_4_ModSettings& settings);
 
     static void webapiUpdateChannelSettings(
             IEEE_802_15_4_ModSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     SpectrumVis *getSpectrumVis() { return &m_spectrumVis; }
     ScopeVis *getScopeSink();
@@ -168,7 +168,7 @@ private:
     QUdpSocket *m_udpSocket;
 
     void applySettings(const IEEE_802_15_4_ModSettings& settings, bool force = false);
-    void webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response);
+    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const IEEE_802_15_4_ModSettings& settings, bool force);
     void sendChannelSettings(
         QList<MessageQueue*> *messageQueues,
@@ -178,7 +178,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const IEEE_802_15_4_ModSettings& settings,
         bool force
     );

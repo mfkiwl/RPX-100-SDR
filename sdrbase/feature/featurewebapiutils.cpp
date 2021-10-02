@@ -29,13 +29,13 @@
 // Find the specified target on the map
 bool FeatureWebAPIUtils::mapFind(const QString& target, int featureSetIndex, int featureIndex)
 {
-    Feature *feature = FeatureWebAPIUtils::getFeature(featureSetIndex, featureIndex, "sdrangel.feature.map");
+    Feature *feature = FeatureWebAPIUtils::getFeature(featureSetIndex, featureIndex, "rpx-100.feature.map");
     if (feature != nullptr)
     {
         QString errorMessage;
         QStringList featureActionKeys = {"find"};
-        SWGSDRangel::SWGFeatureActions query;
-        SWGSDRangel::SWGMapActions *mapActions = new SWGSDRangel::SWGMapActions();
+        SWGrpx-100::SWGFeatureActions query;
+        SWGrpx-100::SWGMapActions *mapActions = new SWGrpx-100::SWGMapActions();
 
         mapActions->setFind(new QString(target));
         query.setMapActions(mapActions);
@@ -111,12 +111,12 @@ bool FeatureWebAPIUtils::satelliteAOS(const QString name, const QDateTime aos, c
         for (int fi = 0; fi < (*it)->getNumberOfFeatures(); fi++)
         {
             Feature *feature = (*it)->getFeatureAt(fi);
-            if (feature->getURI() == "sdrangel.feature.pertester")
+            if (feature->getURI() == "rpx-100.feature.pertester")
             {
                 QStringList featureActionKeys = {"aos"};
-                SWGSDRangel::SWGFeatureActions featureActions;
-                SWGSDRangel::SWGPERTesterActions *perTesterFeatureAction = new SWGSDRangel::SWGPERTesterActions();
-                SWGSDRangel::SWGPERTesterActions_aos *aosAction = new SWGSDRangel::SWGPERTesterActions_aos();
+                SWGrpx-100::SWGFeatureActions featureActions;
+                SWGrpx-100::SWGPERTesterActions *perTesterFeatureAction = new SWGrpx-100::SWGPERTesterActions();
+                SWGrpx-100::SWGPERTesterActions_aos *aosAction = new SWGrpx-100::SWGPERTesterActions_aos();
                 QString errorResponse;
                 int httpRC;
 

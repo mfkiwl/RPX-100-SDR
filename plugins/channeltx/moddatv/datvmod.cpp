@@ -54,7 +54,7 @@ MESSAGE_CLASS_DEFINITION(DATVMod::MsgConfigureTsFileSourceStreamTiming, Message)
 MESSAGE_CLASS_DEFINITION(DATVMod::MsgGetUDPBitrate, Message)
 MESSAGE_CLASS_DEFINITION(DATVMod::MsgGetUDPBufferUtilization, Message)
 
-const char* const DATVMod::m_channelIdURI = "sdrangel.channeltx.moddatv";
+const char* const DATVMod::m_channelIdURI = "rpx-100.channeltx.moddatv";
 const char* const DATVMod::m_channelId = "DATVMod";
 
 DATVMod::DATVMod(DeviceAPI *deviceAPI) :
@@ -323,11 +323,11 @@ bool DATVMod::deserialize(const QByteArray& data)
 }
 
 int DATVMod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDatvModSettings(new SWGSDRangel::SWGDATVModSettings());
+    response.setDatvModSettings(new SWGrpx-100::SWGDATVModSettings());
     response.getDatvModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -336,7 +336,7 @@ int DATVMod::webapiSettingsGet(
 int DATVMod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -376,7 +376,7 @@ int DATVMod::webapiSettingsPutPatch(
 void DATVMod::webapiUpdateChannelSettings(
         DATVModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getDatvModSettings()->getInputFrequencyOffset();
@@ -447,17 +447,17 @@ void DATVMod::webapiUpdateChannelSettings(
 }
 
 int DATVMod::webapiReportGet(
-        SWGSDRangel::SWGChannelReport& response,
+        SWGrpx-100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDatvModReport(new SWGSDRangel::SWGDATVModReport());
+    response.setDatvModReport(new SWGrpx-100::SWGDATVModReport());
     response.getDatvModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void DATVMod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const DATVModSettings& settings)
+void DATVMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const DATVModSettings& settings)
 {
     response.getDatvModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getDatvModSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -495,7 +495,7 @@ void DATVMod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& respo
     response.getDatvModSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void DATVMod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void DATVMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     response.getDatvModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getDatvModReport()->setChannelSampleRate(m_basebandSource->getChannelSampleRate());
@@ -503,10 +503,10 @@ void DATVMod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
 
 void DATVMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const DATVModSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -536,7 +536,7 @@ void DATVMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -550,7 +550,7 @@ void DATVMod::sendChannelSettings(
 
 void DATVMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const DATVModSettings& settings,
         bool force
 )
@@ -559,8 +559,8 @@ void DATVMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setDatvModSettings(new SWGSDRangel::SWGDATVModSettings());
-    SWGSDRangel::SWGDATVModSettings *swgDATVModSettings = swgChannelSettings->getDatvModSettings();
+    swgChannelSettings->setDatvModSettings(new SWGrpx-100::SWGDATVModSettings());
+    SWGrpx-100::SWGDATVModSettings *swgDATVModSettings = swgChannelSettings->getDatvModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

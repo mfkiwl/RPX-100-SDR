@@ -365,7 +365,7 @@ This can be specified as a decimal (E.g. 12.23) or in hours, minutes and seconds
         <item>
          <widget class="QToolButton" name="useMyPosition">
           <property name="toolTip">
-           <string>Set latitude, longitude and height from My Position in SDRangel preferences</string>
+           <string>Set latitude, longitude and height from My Position in rpx-100 preferences</string>
           </property>
           <property name="text">
            <string/>

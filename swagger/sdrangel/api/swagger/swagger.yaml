@@ -1,12 +1,12 @@
 swagger: "2.0"
 info:
   description: >
-    This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube
+    This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube
 
       ---
       Limitations and specifcities:
 
-      * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.
+      * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.
       * Preset import and export from/to file is a server only feature.
       * Device set focus is a GUI only feature.
       * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator
@@ -16,9 +16,9 @@ info:
       ---
 
   version: "6.0.0"
-  title: SDRangel
+  title: rpx-100
   contact:
-    url: "https://github.com/f4exb/sdrangel"
+    url: "https://github.com/f4exb/rpx-100"
     email: "f4exb06@gmail.com"
 # basePath prefixes all resource paths
 basePath: /
@@ -35,11 +35,11 @@ produces:
 
 paths:
 
-  /sdrangel:
+  /rpx-100:
     # binds a127 app logic to a route
     x-swagger-router-controller: instance
     get:
-      description: SDRangel instance summary
+      description: rpx-100 instance summary
       # used as the method name of the controller
       operationId: instanceSummary
       tags:
@@ -55,14 +55,14 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
     delete:
-      description: Stop SDRangel instance (server only)
+      description: Stop rpx-100 instance (server only)
       # used as the method name of the controller
       operationId: instanceDelete
       tags:
         - Instance
       responses:
         "202":
-          description: Message to stop the SDRangel instance was sent successfully
+          description: Message to stop the rpx-100 instance was sent successfully
           schema:
             # a pointer to a definition
             $ref: "#/definitions/InstanceSummaryResponse"
@@ -75,7 +75,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/config:
+  /rpx-100/config:
     x-swagger-router-controller: instance
     get:
       description: Get the Preferences, Presets and Commands of the MainSettings saved by Qt. Supports config backup.
@@ -139,7 +139,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/devices:
+  /rpx-100/devices:
     x-swagger-router-controller: instance
     get:
       description: Get a list of sampling devices that can be used to take part in a device set
@@ -162,7 +162,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/channels:
+  /rpx-100/channels:
     x-swagger-router-controller: instance
     get:
       description: Get a list of channel plugins available in this instance
@@ -185,7 +185,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/features:
+  /rpx-100/features:
     x-swagger-router-controller: instance
     get:
       description: Get a list of feature plugins available in this instance
@@ -202,7 +202,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/logging:
+  /rpx-100/logging:
     x-swagger-router-controller: instance
     get:
       description: Get logging information for this instance
@@ -246,7 +246,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/audio:
+  /rpx-100/audio:
     x-swagger-router-controller: instance
     get:
       description: Get audio devices list available to this instance
@@ -263,7 +263,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/audio/input/parameters:
+  /rpx-100/audio/input/parameters:
     x-swagger-router-controller: instance
     patch:
       description: Set audio input device paramaters
@@ -321,7 +321,7 @@ paths:
           $ref: "#/responses/Response_501"
 
 
-  /sdrangel/audio/input/cleanup:
+  /rpx-100/audio/input/cleanup:
     x-swagger-router-controller: instance
     patch:
       description: Remove registered parameters for devices not in  list of available input devices for this instance
@@ -338,7 +338,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/audio/output/parameters:
+  /rpx-100/audio/output/parameters:
     x-swagger-router-controller: instance
     patch:
       description: Set audio output device parameters
@@ -395,7 +395,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/audio/output/cleanup:
+  /rpx-100/audio/output/cleanup:
     x-swagger-router-controller: instance
     patch:
       description: Remove registered parameters for devices not in  list of available output devices for this instance
@@ -412,7 +412,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/location:
+  /rpx-100/location:
     x-swagger-router-controller: instance
     get:
       description: Get instance geolocation information
@@ -454,7 +454,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/ambe/serial:
+  /rpx-100/ambe/serial:
     x-swagger-router-controller: instance
     get:
       description: get a list of available DV serial devices
@@ -471,7 +471,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/ambe/devices:
+  /rpx-100/ambe/devices:
     x-swagger-router-controller: instance
     get:
       description: get the list of AMBE devices (serial or address) used for AMBE frames decoding in digital voice modes
@@ -548,7 +548,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/limerfe/serial:
+  /rpx-100/limerfe/serial:
     x-swagger-router-controller: instance
     get:
       description: get a list of available serial interfaces to LimeRFE device
@@ -565,7 +565,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/limerfe/config:
+  /rpx-100/limerfe/config:
     x-swagger-router-controller: instance
     get:
       description: get LimeRFE configuration
@@ -615,7 +615,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/limerfe/run:
+  /rpx-100/limerfe/run:
     x-swagger-router-controller: instance
     put:
       description: set Rx and Tx on or off
@@ -643,7 +643,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/limerfe/power:
+  /rpx-100/limerfe/power:
     x-swagger-router-controller: instance
     get:
       description: get forward and reflected relative powers in centi-Bels
@@ -670,7 +670,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/presets:
+  /rpx-100/presets:
     x-swagger-router-controller: instance
     get:
       description: List all presets in the instance
@@ -687,7 +687,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/preset:
+  /rpx-100/preset:
     x-swagger-router-controller: instance
     patch:
       description: Load a preset in a device set
@@ -818,7 +818,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/preset/file:
+  /rpx-100/preset/file:
     x-swagger-router-controller: instance
     put:
       description: import a preset from file as a new preset (server only).
@@ -883,7 +883,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featurepresets:
+  /rpx-100/featurepresets:
     x-swagger-router-controller: instance
     get:
       description: List all feature presets in the instance
@@ -900,7 +900,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featurepreset:
+  /rpx-100/featurepreset:
     x-swagger-router-controller: instance
     delete:
       description: Deletes a feature preset
@@ -934,7 +934,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/devicesets:
+  /rpx-100/devicesets:
     x-swagger-router-controller: instance
     get:
       description: Get summary information about device sets opened in the instance
@@ -951,7 +951,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featuresets:
+  /rpx-100/featuresets:
     x-swagger-router-controller: instance
     get:
       description: Get summary information about feature sets opened in the instance
@@ -968,7 +968,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset:
+  /rpx-100/deviceset:
     x-swagger-router-controller: instance
     post:
       description: Add (append) a new device set with default values
@@ -1009,7 +1009,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}:
+  /rpx-100/deviceset/{deviceSetIndex}:
     x-swagger-router-controller: deviceset
     get:
       description: Get device set information
@@ -1036,7 +1036,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/focus:
+  /rpx-100/deviceset/{deviceSetIndex}/focus:
     x-swagger-router-controller: deviceset
     patch:
       description: Set focus on device set (GUI only)
@@ -1067,7 +1067,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/spectrum/settings:
+  /rpx-100/deviceset/{deviceSetIndex}/spectrum/settings:
     x-swagger-router-controller: deviceset
     get:
       description: Get main spectrum settings
@@ -1154,7 +1154,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/spectrum/server:
+  /rpx-100/deviceset/{deviceSetIndex}/spectrum/server:
     x-swagger-router-controller: deviceset
     get:
       description: Get main spectrum websocket server status
@@ -1239,7 +1239,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/device:
+  /rpx-100/deviceset/{deviceSetIndex}/device:
     x-swagger-router-controller: deviceset
     put:
       description: Set the device used in the device set
@@ -1276,7 +1276,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/device/settings:
+  /rpx-100/deviceset/{deviceSetIndex}/device/settings:
     x-swagger-router-controller: deviceset
     get:
       description: Get device settings
@@ -1363,7 +1363,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/device/run:
+  /rpx-100/deviceset/{deviceSetIndex}/device/run:
     x-swagger-router-controller: deviceset
     get:
       description: get device run status for a single subsystem device (Rx or Tx)
@@ -1462,7 +1462,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run:
+  /rpx-100/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run:
     x-swagger-router-controller: deviceset
     get:
       description: get device run status for a multi-subsystem device (Rx/Tx combination i.e. MIMO)
@@ -1576,7 +1576,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/device/report:
+  /rpx-100/deviceset/{deviceSetIndex}/device/report:
     x-swagger-router-controller: deviceset
     get:
       description: get the device report
@@ -1608,7 +1608,7 @@ paths:
           $ref: "#/responses/Response_501"
 
 
-  /sdrangel/deviceset/{deviceSetIndex}/channels/report:
+  /rpx-100/deviceset/{deviceSetIndex}/channels/report:
     x-swagger-router-controller: deviceset
     get:
       description: get channels report
@@ -1639,7 +1639,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/device/actions:
+  /rpx-100/deviceset/{deviceSetIndex}/device/actions:
     x-swagger-router-controller: deviceset
     post:
       description: post an action on a device
@@ -1676,7 +1676,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/channel:
+  /rpx-100/deviceset/{deviceSetIndex}/channel:
     x-swagger-router-controller: deviceset
     post:
       description: add a channel
@@ -1713,7 +1713,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}:
+  /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}:
     x-swagger-router-controller: deviceset
     delete:
       description: delete a channel
@@ -1749,7 +1749,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings:
+  /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings:
     x-swagger-router-controller: deviceset
     get:
       description: get a channel settings
@@ -1863,7 +1863,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/report:
+  /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/report:
     x-swagger-router-controller: deviceset
     get:
       description: get a channel report
@@ -1899,7 +1899,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions:
+  /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions:
     x-swagger-router-controller: deviceset
     post:
       description: post an action or actions on a channel
@@ -1941,7 +1941,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset:
+  /rpx-100/featureset:
     x-swagger-router-controller: instance
     post:
       description: Add (append) a new feature set
@@ -1976,7 +1976,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}:
+  /rpx-100/featureset/{featureSetIndex}:
     x-swagger-router-controller: featureset
     get:
       description: Get feature set information
@@ -2003,7 +2003,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}/feature:
+  /rpx-100/featureset/{featureSetIndex}/feature:
     x-swagger-router-controller: featureset
     post:
       description: add a feature
@@ -2040,7 +2040,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}/preset:
+  /rpx-100/featureset/{featureSetIndex}/preset:
     x-swagger-router-controller: featureset
     patch:
       description: Load a preset in a feature set
@@ -2155,7 +2155,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}/feature/{featureIndex}:
+  /rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}:
     x-swagger-router-controller: featureset
     delete:
       description: delete a feature
@@ -2191,7 +2191,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}/feature/{featureIndex}/run:
+  /rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/run:
     x-swagger-router-controller: featureset
     get:
       description: get feature run status
@@ -2293,7 +2293,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}/feature/{featureIndex}/settings:
+  /rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/settings:
     x-swagger-router-controller: featureset
     get:
       description: get a feature settings
@@ -2407,7 +2407,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}/feature/{featureIndex}/report:
+  /rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/report:
     x-swagger-router-controller: featureset
     get:
       description: get a feature report
@@ -2443,7 +2443,7 @@ paths:
         "501":
           $ref: "#/responses/Response_501"
 
-  /sdrangel/featureset/{featureSetIndex}/feature/{featureIndex}/actions:
+  /rpx-100/featureset/{featureSetIndex}/feature/{featureIndex}/actions:
     x-swagger-router-controller: featureset
     post:
       description: post an action or actions on a channel
@@ -2492,7 +2492,7 @@ paths:
 definitions:
 
   InstanceSummaryResponse:
-    description: "Summarized information about this SDRangel instance"
+    description: "Summarized information about this rpx-100 instance"
     required:
       - version
       - qtVersion
@@ -2517,10 +2517,10 @@ definitions:
         description: "Number of samples significant bits in software Tx DSP"
         type: integer
       pid:
-        description: "PID of the SDRangel instance"
+        description: "PID of the rpx-100 instance"
         type: integer
       appname:
-        description: "Application name: SDRangel for a GUI instance and SDRangelSrv for a server instance"
+        description: "Application name: rpx-100 for a GUI instance and rpx-100Srv for a server instance"
         type: string
       architecture:
         description: "Codename of the CPU architecture on which the instance is running (available with Qt >= 5.4)"
@@ -2558,7 +2558,7 @@ definitions:
           $ref: "http://swgserver:8081/api/swagger/include/FeatureSetPreset.yaml#/FeatureSetPreset"
 
   InstanceDevicesResponse:
-    description: "Summarized information about logical devices from hardware devices attached to this SDRangel instance"
+    description: "Summarized information about logical devices from hardware devices attached to this rpx-100 instance"
     required:
       - devicecount
     properties:
@@ -2571,7 +2571,7 @@ definitions:
           $ref: "#/definitions/DeviceListItem"
 
   InstanceChannelsResponse:
-    description: "Summarized information about channel plugins available in this SDRangel instance"
+    description: "Summarized information about channel plugins available in this rpx-100 instance"
     required:
       - channelcount
     properties:
@@ -2584,7 +2584,7 @@ definitions:
           $ref: "#/definitions/ChannelListItem"
 
   InstanceFeaturesResponse:
-    description: "Summarized information about feature plugins available in this SDRangel instance"
+    description: "Summarized information about feature plugins available in this rpx-100 instance"
     required:
       - featurecount
     properties:

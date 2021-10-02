@@ -24,19 +24,19 @@ bool DeviceUtils::compareDeviceURIs(const QString& registerdDeviceURI, const QSt
 
 QString DeviceUtils::getRegisteredDeviceURI(const QString& xDeviceURI)
 {
-    if (xDeviceURI == "sdrangel.samplesource.bladerf") {
-        return "sdrangel.samplesource.bladerf1input";
-    } else if ((xDeviceURI == "sdrangel.samplesource.bladerf1output")
-            || (xDeviceURI == "sdrangel.samplesource.bladerfoutput")) {
-        return "sdrangel.samplesink.bladerf1output";
-    } else if (xDeviceURI == "sdrangel.samplesource.bladerf2output") {
-        return "sdrangel.samplesink.bladerf2output";
-    } else if (xDeviceURI == "sdrangel.samplesource.filesource") {
-        return "sdrangel.samplesource.fileinput";
-    } else if (xDeviceURI == "sdrangel.samplesource.hackrfoutput") {
-        return "sdrangel.samplesink.hackrf";
-    } else if (xDeviceURI == "sdrangel.samplesource.localoutput") {
-        return "sdrangel.samplesink.localoutput";
+    if (xDeviceURI == "rpx-100.samplesource.bladerf") {
+        return "rpx-100.samplesource.bladerf1input";
+    } else if ((xDeviceURI == "rpx-100.samplesource.bladerf1output")
+            || (xDeviceURI == "rpx-100.samplesource.bladerfoutput")) {
+        return "rpx-100.samplesink.bladerf1output";
+    } else if (xDeviceURI == "rpx-100.samplesource.bladerf2output") {
+        return "rpx-100.samplesink.bladerf2output";
+    } else if (xDeviceURI == "rpx-100.samplesource.filesource") {
+        return "rpx-100.samplesource.fileinput";
+    } else if (xDeviceURI == "rpx-100.samplesource.hackrfoutput") {
+        return "rpx-100.samplesink.hackrf";
+    } else if (xDeviceURI == "rpx-100.samplesource.localoutput") {
+        return "rpx-100.samplesink.localoutput";
     } else  {
         return xDeviceURI;
     }

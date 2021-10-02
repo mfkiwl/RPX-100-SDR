@@ -99,36 +99,36 @@ public:
     virtual bool handleMessage(const Message& message);
 
     virtual int webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGDeviceReport& response,
+            SWGrpx-100::SWGDeviceReport& response,
             QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGSDRangel::SWGDeviceSettings& response,
+            SWGrpx-100::SWGDeviceSettings& response,
             const PerseusSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             PerseusSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response);
+            SWGrpx-100::SWGDeviceSettings& response);
 
     const std::vector<uint32_t>& getSampleRates() const { return m_sampleRates; }
 
@@ -150,7 +150,7 @@ private:
     void closeDevice();
     void setDeviceCenterFrequency(quint64 freq, const PerseusSettings& settings);
     bool applySettings(const PerseusSettings& settings, bool force = false);
-    void webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const PerseusSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

@@ -24,7 +24,7 @@
 
 class PluginAPI;
 
-#define KIWISDR_DEVICE_TYPE_ID "sdrangel.samplesource.kiwisdrsource"
+#define KIWISDR_DEVICE_TYPE_ID "rpx-100.samplesource.kiwisdrsource"
 
 class KiwiSDRPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

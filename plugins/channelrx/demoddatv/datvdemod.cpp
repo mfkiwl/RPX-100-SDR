@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / SDRAngel                                                          //
+// for F4EXB / rpx-100                                                          //
 // using LeanSDR Framework (C) 2016 F4DAV                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -30,7 +30,7 @@
 #include "datvdemod.h"
 #include "maincore.h"
 
-const char* const DATVDemod::m_channelIdURI = "sdrangel.channel.demoddatv";
+const char* const DATVDemod::m_channelIdURI = "rpx-100.channel.demoddatv";
 const char* const DATVDemod::m_channelId = "DATVDemod";
 
 MESSAGE_CLASS_DEFINITION(DATVDemod::MsgConfigureDATVDemod, Message)
@@ -140,11 +140,11 @@ uint32_t DATVDemod::getNumberOfDeviceStreams() const
 }
 
 int DATVDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDatvDemodSettings(new SWGSDRangel::SWGDATVDemodSettings());
+    response.setDatvDemodSettings(new SWGrpx-100::SWGDATVDemodSettings());
     response.getDatvDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -153,7 +153,7 @@ int DATVDemod::webapiSettingsGet(
 int DATVDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -179,7 +179,7 @@ int DATVDemod::webapiSettingsPutPatch(
 void DATVDemod::webapiUpdateChannelSettings(
         DATVDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("rgbColor")) {
         settings.m_rgbColor = response.getDatvDemodSettings()->getRgbColor();
@@ -282,7 +282,7 @@ void DATVDemod::webapiUpdateChannelSettings(
     }
 }
 
-void DATVDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const DATVDemodSettings& settings)
+void DATVDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const DATVDemodSettings& settings)
 {
     response.getDatvDemodSettings()->setRgbColor(settings.m_rgbColor);
 
@@ -357,7 +357,7 @@ void DATVDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -371,7 +371,7 @@ void DATVDemod::sendChannelSettings(
 
 void DATVDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const DATVDemodSettings& settings,
         bool force
 )
@@ -380,8 +380,8 @@ void DATVDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("DATVDemod"));
-    swgChannelSettings->setDatvDemodSettings(new SWGSDRangel::SWGDATVDemodSettings());
-    SWGSDRangel::SWGDATVDemodSettings *swgDATVDemodSettings = swgChannelSettings->getDatvDemodSettings();
+    swgChannelSettings->setDatvDemodSettings(new SWGrpx-100::SWGDATVDemodSettings());
+    SWGrpx-100::SWGDATVDemodSettings *swgDATVDemodSettings = swgChannelSettings->getDatvDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

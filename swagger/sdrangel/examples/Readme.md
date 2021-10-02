@@ -7,34 +7,34 @@ These are all Python scripts using python-requests so you have to install this p
 Adds a channel to a device set specifying device set index and channel type.
 
   - Operation ID: `devicesetChannelPost`
-  - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel`
+  - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel`
   - HTTP method: `POST`
 
 <h2>config.py</h2>
 
-Configure a SDRangel instance with a sequence of API calls defined as a list in a JSON file. See `test.json` for an example.
+Configure a rpx-100 instance with a sequence of API calls defined as a list in a JSON file. See `test.json` for an example.
 
 It uses the following APIs:
 
   - To select a device in a device set:
     - Operation ID: `devicesetDevicePut`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device`
     - HTTP method: `PUT`
   - To load a preset in a device set:
     - Operation ID: `instancePresetPatch`
-    - URI: `/sdrangel/preset`
+    - URI: `/rpx-100/preset`
     - HTTP method: `PATCH`
   - To create a new device set:
     - OperationID: `instanceDeviceSetPost`
-    - URI: `/sdrangel/deviceset`
+    - URI: `/rpx-100/deviceset`
     - HTTP method: `POST`
   - Activate the DV serial dongle support for digital voice modes
     - OperationID: `instanceDVSerialPatch`
-    - URI: `/sdrangel/dvserial`
+    - URI: `/rpx-100/dvserial`
     - HTTP method: `PATCH`
   - Start a device streaming
     - OperationID: `devicesetDeviceRunPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `POST`
 
 <h2>limesdr_tx.py</h2>
@@ -45,23 +45,23 @@ It uses the following APIs:
 
   - To create a new device set:
     - OperationID: `instanceDeviceSetPost`
-    - URI: `/sdrangel/deviceset`
+    - URI: `/rpx-100/deviceset`
     - HTTP method: `POST`
   - To select a device in a device set:
     - Operation ID: `devicesetDevicePut`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device`
     - HTTP method: `PUT`
   - To create a new channel:
     - Operation ID: `devicesetChannelPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel`
     - HTTP method: `POST`
   - To change the settings of a channel:
     - OperationID: `devicesetChannelSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `PATCH`
   - Start a device streaming
     - OperationID: `devicesetDeviceRunPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `POST`
 
 <h2>nfm_test.py</h2>
@@ -72,15 +72,15 @@ It uses the following APIs:
 
   - To create a new channel:
     - Operation ID: `devicesetChannelPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel`
     - HTTP method: `POST`
   - To create a new device set:
     - OperationID: `instanceDeviceSetsPost`
-    - URI: `/sdrangel/devicesets`
+    - URI: `/rpx-100/devicesets`
     - HTTP method: `POST`
   - To change the settings of a channel:
     - OperationID: `devicesetChannelSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `PATCH`
 
 <h2>ptt_active.py</h2>
@@ -103,15 +103,15 @@ It uses the following APIs:
 
   - Get information on device sets:
     - Operation ID: `instanceDeviceSetsGet`
-    - URI: `/sdrangel/devicesets`
+    - URI: `/rpx-100/devicesets`
     - HTTP method: `GET`
   - Start a device streaming
     - OperationID: `devicesetDeviceRunPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `POST`
   - Stop a device streaming
     - OperationID: `devicesetDeviceRunDelete`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `DELETE`
 
 <h2>randomize_colors.py</h2>
@@ -122,20 +122,20 @@ It uses the following APIs:
 
   - Get information on a device set
     - Operation ID: `devicesetGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}`
     - HTTP method: `GET`
   - To get the settings of a channel:
     - OperationID: `devicesetChannelSettingsGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `GET`
   - To change the settings of a channel:
     - OperationID: `devicesetChannelSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `PATCH`
 
 <h2>reverseapi.py</h2>
 
-This script runs continuously to act as the server side of SDRangel reverse API feature. It will respond with a copy of the settings when forwarding channel or device settings which is a valid reply and will also send back a valid reply when forwarding the device start/stop actions. The reverse API feature was implemented in version 4.3.2 and you can learn more about it in the Wiki.
+This script runs continuously to act as the server side of rpx-100 reverse API feature. It will respond with a copy of the settings when forwarding channel or device settings which is a valid reply and will also send back a valid reply when forwarding the device start/stop actions. The reverse API feature was implemented in version 4.3.2 and you can learn more about it in the Wiki.
 
 It uses Python flask package for the server so you will need to either install it system wide or better create your own virtual environment and use the `pip install flask` command once your virtual environment is activated. If you know Python then you know what a virtual environment is about.
 
@@ -146,7 +146,7 @@ export FLASK_APP=reverseapi.py
 export FLASK_ENV=development
 flask run
 ```
-By default the server will listen on port 5000. It was used to conveniently test the reverse API but actually does not do much. It can serve as a base to implement more complex scenarios to control other devices or software or other instances of SDRangel.
+By default the server will listen on port 5000. It was used to conveniently test the reverse API but actually does not do much. It can serve as a base to implement more complex scenarios to control other devices or software or other instances of rpx-100.
 
 <h2>rtlsdr_settings.py</h2>
 
@@ -156,19 +156,19 @@ It uses the following APIs:
 
   - Get information on a device set:
     - Operation ID: `devicesetGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}`
     - HTTP method: `GET`
   - To select a device in a device set:
     - Operation ID: `devicesetDevicePut`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device`
     - HTTP method: `PUT`
   - To get the settings of a device:
     - OperationID: `devicesetDeviceSettingsGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/settings`
     - HTTP method: `GET`
   - To change the settings of a device:
     - OperationID: `devicesetDeviceSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/settings`
     - HTTP method: `PATCH`
 
 <h2>rx_test.py</h2>
@@ -179,39 +179,39 @@ It uses the following APIs:
 
   - Create a new device set:
     - Operation ID: `devicesetPost`
-    - URI: `/sdrangel/deviceset`
+    - URI: `/rpx-100/deviceset`
     - HTTP method: `POST`
   - Get information on a device set:
     - Operation ID: `devicesetGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}`
     - HTTP method: `GET`
   - To select a device in a device set:
     - Operation ID: `devicesetDevicePut`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device`
     - HTTP method: `PUT`
   - To get the settings of a device:
     - OperationID: `devicesetDeviceSettingsGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/settings`
     - HTTP method: `GET`
   - To change the settings of a device:
     - OperationID: `devicesetDeviceSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/settings`
     - HTTP method: `PATCH`
   - To create a new channel:
     - Operation ID: `devicesetChannelPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel`
     - HTTP method: `POST`
   - To get the settings of a channel:
     - OperationID: `devicesetChannelSettingsGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `GET`
   - To change the settings of a channel:
     - OperationID: `devicesetChannelSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `PATCH`
   - Start a device streaming
     - OperationID: `devicesetDeviceRunPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `POST`
 
 <h2>rx_tx_test.py</h2>
@@ -237,7 +237,7 @@ In addition to some APIs being used in other script it uses:
 
   - Get channels reports:
     - Operation ID: `devicesetChannelsReportGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channels/report`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channels/report`
     - HTTP method: `GET`
 
 <h2>start_stop.py</h2>
@@ -248,26 +248,26 @@ It uses the following APIs:
 
   - Get information on device sets:
     - Operation ID: `instanceDeviceSetsGet`
-    - URI: `/sdrangel/devicesets`
+    - URI: `/rpx-100/devicesets`
     - HTTP method: `GET`
   - Start a device streaming
     - OperationID: `devicesetDeviceRunPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `POST`
   - Stop a device streaming
     - OperationID: `devicesetDeviceRunDelete`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `DELETE`
 
 <h2>stop_server.py</h2>
 
-This works with a server instance only i.e. `sdrangelsrv`. It will shutdown the instance nicely as you would do with the exit menu or Ctl-Q in the GUI application.
+This works with a server instance only i.e. `rpx-100srv`. It will shutdown the instance nicely as you would do with the exit menu or Ctl-Q in the GUI application.
 
 It uses this API:
 
   - Stop a server instance
     - OperationID: `instanceDelete`
-    - URI: `/sdrangel`
+    - URI: `/rpx-100`
     - HTTP method: `DELETE`
 
 <h2>tx_test.py</h2>
@@ -278,37 +278,37 @@ It uses the following APIs:
 
   - Create a new device set:
     - Operation ID: `devicesetPost`
-    - URI: `/sdrangel/deviceset`
+    - URI: `/rpx-100/deviceset`
     - HTTP method: `POST`
   - Get information on a device set:
     - Operation ID: `devicesetGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}`
     - HTTP method: `GET`
   - To select a device in a device set:
     - Operation ID: `devicesetDevicePut`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device`
     - HTTP method: `PUT`
   - To get the settings of a device:
     - OperationID: `devicesetDeviceSettingsGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/settings`
     - HTTP method: `GET`
   - To change the settings of a device:
     - OperationID: `devicesetDeviceSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/settings`
     - HTTP method: `PATCH`
   - To create a new channel:
     - Operation ID: `devicesetChannelPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel`
     - HTTP method: `POST`
   - To get the settings of a channel:
     - OperationID: `devicesetChannelSettingsGet`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `GET`
   - To change the settings of a channel:
     - OperationID: `devicesetChannelSettingsPatch`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings`
     - HTTP method: `PATCH`
   - Start a device streaming
     - OperationID: `devicesetDeviceRunPost`
-    - URI: `/sdrangel/deviceset/{deviceSetIndex}/device/run`
+    - URI: `/rpx-100/deviceset/{deviceSetIndex}/device/run`
     - HTTP method: `POST`

@@ -28,7 +28,7 @@
 
 #include "export.h"
 
-namespace SWGSDRangel
+namespace SWGrpx-100
 {
     class SWGInstanceSummaryResponse;
     class SWGInstanceConfigResponse;
@@ -124,12 +124,12 @@ public:
     virtual ~WebAPIAdapterInterface() {}
 
     /**
-     * Handler of /sdrangel (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /rpx-100 (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceSummary(
-            SWGSDRangel::SWGInstanceSummaryResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGInstanceSummaryResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -138,12 +138,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /rpx-100 (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -152,12 +152,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/config (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /rpx-100/config (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceConfigGet(
-            SWGSDRangel::SWGInstanceConfigResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGInstanceConfigResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -166,15 +166,15 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/config (PUT, PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /rpx-100/config (PUT, PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceConfigPutPatch(
         bool force, // PUT else PATCH
-        SWGSDRangel::SWGInstanceConfigResponse& query,
+        SWGrpx-100::SWGInstanceConfigResponse& query,
         const ConfigKeys& configKeys,
-        SWGSDRangel::SWGSuccessResponse& response,
-        SWGSDRangel::SWGErrorResponse& error
+        SWGrpx-100::SWGSuccessResponse& response,
+        SWGrpx-100::SWGErrorResponse& error
     )
     {
         (void) force;
@@ -187,13 +187,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/devices (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceDevices
+     * Handler of /rpx-100/devices (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceDevices
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDevices(
             int direction,
-            SWGSDRangel::SWGInstanceDevicesResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGInstanceDevicesResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) direction;
         (void) response;
@@ -203,13 +203,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/channels (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/channels (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceChannels(
             int direction,
-            SWGSDRangel::SWGInstanceChannelsResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGInstanceChannelsResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) direction;
         (void) response;
@@ -219,12 +219,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/features (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/features (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatures(
-            SWGSDRangel::SWGInstanceFeaturesResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGInstanceFeaturesResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -233,12 +233,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/logging (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/logging (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLoggingGet(
-            SWGSDRangel::SWGLoggingInfo& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLoggingInfo& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -247,13 +247,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/logging (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/logging (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLoggingPut(
-            SWGSDRangel::SWGLoggingInfo& query,
-            SWGSDRangel::SWGLoggingInfo& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLoggingInfo& query,
+            SWGrpx-100::SWGLoggingInfo& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -263,12 +263,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/audio (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/audio (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioGet(
-            SWGSDRangel::SWGAudioDevices& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGAudioDevices& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -277,13 +277,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/audio/input/parameters (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/audio/input/parameters (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputPatch(
-            SWGSDRangel::SWGAudioInputDevice& response,
+            SWGrpx-100::SWGAudioInputDevice& response,
             const QStringList& audioInputKeys,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         (void) audioInputKeys;
@@ -293,13 +293,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/audio/output/parameters (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/audio/output/parameters (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputPatch(
-            SWGSDRangel::SWGAudioOutputDevice& response,
+            SWGrpx-100::SWGAudioOutputDevice& response,
             const QStringList& audioOutputKeys,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         (void) audioOutputKeys;
@@ -309,12 +309,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/audio/input/parameters (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/audio/input/parameters (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputDelete(
-            SWGSDRangel::SWGAudioInputDevice& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGAudioInputDevice& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -323,12 +323,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/audio/output/paramaters (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/audio/output/paramaters (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputDelete(
-            SWGSDRangel::SWGAudioOutputDevice& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGAudioOutputDevice& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -337,12 +337,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/audio/input/cleanup (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/audio/input/cleanup (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputCleanupPatch(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -351,12 +351,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/audio/output/cleanup (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/audio/output/cleanup (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputCleanupPatch(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -365,12 +365,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/location (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/location (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLocationGet(
-            SWGSDRangel::SWGLocationInformation& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLocationInformation& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -379,12 +379,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/location (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/location (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLocationPut(
-            SWGSDRangel::SWGLocationInformation& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLocationInformation& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -393,12 +393,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/ambe/serial (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/ambe/serial (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBESerialGet(
-            SWGSDRangel::SWGDVSerialDevices& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDVSerialDevices& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -407,12 +407,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/ambe/devices (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/ambe/devices (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesGet(
-            SWGSDRangel::SWGAMBEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGAMBEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
         error.init();
@@ -421,13 +421,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/ambe/devices (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/ambe/devices (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesPut(
-            SWGSDRangel::SWGAMBEDevices& query,
-            SWGSDRangel::SWGAMBEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGAMBEDevices& query,
+            SWGrpx-100::SWGAMBEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -437,13 +437,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/ambe/devices (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/ambe/devices (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesPatch(
-            SWGSDRangel::SWGAMBEDevices& query,
-            SWGSDRangel::SWGAMBEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGAMBEDevices& query,
+            SWGrpx-100::SWGAMBEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -453,12 +453,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/ambe/devices (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/ambe/devices (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -467,12 +467,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/limerfe/serial (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/limerfe/serial (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFESerialGet(
-            SWGSDRangel::SWGLimeRFEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLimeRFEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -481,13 +481,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/limerfe/config (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/limerfe/config (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFEConfigGet(
             const QString& serial,
-            SWGSDRangel::SWGLimeRFESettings& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLimeRFESettings& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) serial;
         (void) response;
@@ -497,13 +497,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/limerfe/config (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/limerfe/config (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFEConfigPut(
-            SWGSDRangel::SWGLimeRFESettings& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLimeRFESettings& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -513,13 +513,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/limerfe/run (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/limerfe/run (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFERunPut(
-            SWGSDRangel::SWGLimeRFESettings& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLimeRFESettings& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -529,13 +529,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/limerfe/power (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/limerfe/power (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFEPowerGet(
             const QString& serial,
-            SWGSDRangel::SWGLimeRFEPower& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGLimeRFEPower& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) serial;
         (void) response;
@@ -545,12 +545,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/presets (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/presets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetsGet(
-            SWGSDRangel::SWGPresets& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGPresets& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -559,13 +559,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/preset (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/preset (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPatch(
-            SWGSDRangel::SWGPresetTransfer& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGPresetTransfer& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -575,13 +575,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/preset (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/preset (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPut(
-            SWGSDRangel::SWGPresetTransfer& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGPresetTransfer& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -591,13 +591,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/preset (POST) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/preset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPost(
-            SWGSDRangel::SWGPresetTransfer& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGPresetTransfer& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -607,12 +607,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/preset (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/preset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetDelete(
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -621,13 +621,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/preset/file (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/preset/file (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetFilePut(
-            SWGSDRangel::SWGPresetImport& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGPresetImport& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -637,13 +637,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/preset/file (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/preset/file (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetFilePost(
-            SWGSDRangel::SWGPresetExport& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGPresetExport& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) query;
         (void) response;
@@ -653,12 +653,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featurepresets (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/featurepresets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeaturePresetsGet(
-            SWGSDRangel::SWGFeaturePresets& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeaturePresets& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -667,12 +667,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featurepreset (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/featurepreset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeaturePresetDelete(
-            SWGSDRangel::SWGFeaturePresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeaturePresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -681,12 +681,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/devicesets (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/devicesets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetsGet(
-            SWGSDRangel::SWGDeviceSetList& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceSetList& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -695,13 +695,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset (POST) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetPost(
             int direction,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) direction;
         (void) response;
@@ -711,12 +711,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -725,12 +725,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featurets (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/featurets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetsGet(
-            SWGSDRangel::SWGFeatureSetList& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeatureSetList& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -739,12 +739,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset (POST) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/featureset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetPost(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -753,12 +753,12 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) response;
     	error.init();
@@ -767,13 +767,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex} (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex} (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceSet& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceSet& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -783,13 +783,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/focus (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/focus (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetFocusPatch(
             int deviceSetIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -799,13 +799,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/spectrum/settings (GET)
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/settings (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumSettingsGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGGLSpectrum& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGGLSpectrum& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -815,15 +815,15 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/spectrum/settings (PUT, PATCH)
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/settings (PUT, PATCH)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumSettingsPutPatch(
             int deviceSetIndex,
             bool force, //!< true to force settings = put else patch
             const QStringList& spectrumSettingsKeys,
-            SWGSDRangel::SWGGLSpectrum& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGGLSpectrum& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) force;
@@ -835,13 +835,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/spectrum/server (GET)
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/server (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumServerGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGSpectrumServer& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSpectrumServer& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -851,13 +851,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/spectrum/server (POST)
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/server (POST)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumServerPost(
             int deviceSetIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -867,13 +867,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/spectrum/server (DELETE)
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/server (DELETE)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumServerDelete(
             int deviceSetIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -883,14 +883,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/device (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/device (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDevicePut(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceListItem& query,
-            SWGSDRangel::SWGDeviceListItem& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceListItem& query,
+            SWGrpx-100::SWGDeviceListItem& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) query;
@@ -901,13 +901,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/device/settings (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/settings (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSettingsGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceSettings& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceSettings& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -917,15 +917,15 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/device/settings (PUT, PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/settings (PUT, PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSettingsPutPatch(
             int deviceSetIndex,
             bool force, //!< true to force settings = put else patch
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceSettings& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) force;
@@ -937,13 +937,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/device/run (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/run (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceRunGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -953,14 +953,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSubsystemRunGet(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) subsystemIndex;
@@ -971,13 +971,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/device/run (POST) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/run (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceRunPost(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -987,14 +987,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (POST) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSubsystemRunPost(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) subsystemIndex;
@@ -1005,13 +1005,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/device/run (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/run (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceRunDelete(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1021,14 +1021,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSubsystemRunDelete(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) subsystemIndex;
@@ -1039,13 +1039,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/device/report (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/report (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceReportGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceReport& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceReport& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1055,13 +1055,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{devicesetIndex}/channels/report (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{devicesetIndex}/channels/report (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelsReportGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGChannelsDetail& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGChannelsDetail& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1071,15 +1071,15 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{deviceSetIndex}/device/actions (POST)
+     * Handler of /rpx-100/deviceset/{deviceSetIndex}/device/actions (POST)
      * post action(s) on device
      */
     virtual int devicesetDeviceActionsPost(
             int deviceSetIndex,
             const QStringList& deviceActionsKeys,
-            SWGSDRangel::SWGDeviceActions& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error
+            SWGrpx-100::SWGDeviceActions& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error
     )
     {
         (void) deviceSetIndex;
@@ -1092,14 +1092,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{deviceSetIndex}/channel (POST) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelPost(
             int deviceSetIndex,
-            SWGSDRangel::SWGChannelSettings& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGChannelSettings& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) query;
@@ -1110,14 +1110,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex} (DELETE) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex} (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelDelete(
             int deviceSetIndex,
             int channelIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1129,14 +1129,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelSettingsGet(
             int deviceSetIndex,
             int channelIndex,
-            SWGSDRangel::SWGChannelSettings& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGChannelSettings& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1147,7 +1147,7 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (PUT, PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (PUT, PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelSettingsPutPatch(
@@ -1155,8 +1155,8 @@ public:
             int channelIndex,
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGChannelSettings& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1170,14 +1170,14 @@ public:
 
 
     /**
-     * Handler of /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelReportGet(
             int deviceSetIndex,
             int channelIndex,
-            SWGSDRangel::SWGChannelReport& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGChannelReport& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1188,16 +1188,16 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions (POST)
+     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions (POST)
      * posts an action on the channel (default 501: not implemented)
      */
     virtual int devicesetChannelActionsPost(
             int deviceSetIndex,
             int channelIndex,
             const QStringList& channelActionsKeys,
-            SWGSDRangel::SWGChannelActions& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGChannelActions& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) channelIndex;
@@ -1210,13 +1210,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex} (GET)
+     * Handler of /rpx-100/featureset/{featuresetIndex} (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGFeatureSet& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeatureSet& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) deviceSetIndex;
         (void) response;
@@ -1226,14 +1226,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature (POST)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature (POST)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeaturePost(
             int featureSetIndex,
-            SWGSDRangel::SWGFeatureSettings& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeatureSettings& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1244,14 +1244,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureDelete(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1263,14 +1263,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureRunGet(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1282,14 +1282,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/run (POST)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (POST)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureRunPost(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1301,14 +1301,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/run (DELETE)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (DELETE)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureRunDelete(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1320,13 +1320,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/preset (PATCH) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/featureset/{featuresetIndex}/preset (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetPresetPatch(
             int featureSetIndex,
-            SWGSDRangel::SWGFeaturePresetIdentifier& query,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeaturePresetIdentifier& query,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1336,13 +1336,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/preset (PUT) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/featureset/{featuresetIndex}/preset (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetPresetPut(
             int featureSetIndex,
-            SWGSDRangel::SWGFeaturePresetIdentifier& query,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeaturePresetIdentifier& query,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1352,13 +1352,13 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/preset (POST) swagger/sdrangel/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /rpx-100/featureset/{featuresetIndex}/preset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetPresetPost(
             int featureSetIndex,
-            SWGSDRangel::SWGFeaturePresetIdentifier& query,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeaturePresetIdentifier& query,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) query;
@@ -1368,14 +1368,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/settings (GET)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/settings (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureSettingsGet(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGFeatureSettings& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeatureSettings& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1386,7 +1386,7 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/settings (PUT, PATCH)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/settings (PUT, PATCH)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureSettingsPutPatch(
@@ -1394,8 +1394,8 @@ public:
             int featureIndex,
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeatureSettings& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1408,14 +1408,14 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/report (GET)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/report (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureReportGet(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGFeatureReport& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeatureReport& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;
@@ -1426,16 +1426,16 @@ public:
     }
 
     /**
-     * Handler of /sdrangel/featureset/{featuresetIndex}/feature/{featureIndex}/actions (POST)
+     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/actions (POST)
      * posts an action on the channel (default 501: not implemented)
      */
     virtual int featuresetFeatureActionsPost(
             int featureSetIndex,
             int featureIndex,
             const QStringList& featureActionsKeys,
-            SWGSDRangel::SWGFeatureActions& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error)
+            SWGrpx-100::SWGFeatureActions& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error)
     {
         (void) featureSetIndex;
         (void) featureIndex;

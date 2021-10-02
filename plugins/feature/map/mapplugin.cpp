@@ -32,9 +32,9 @@ const PluginDescriptor MapPlugin::m_pluginDescriptor = {
     QStringLiteral("Map"),
     QStringLiteral("6.12.0"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 MapPlugin::MapPlugin(QObject* parent) :

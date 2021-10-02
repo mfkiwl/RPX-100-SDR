@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define AIRSPY_DEVICE_TYPE_ID "sdrangel.samplesource.airspy"
+#define AIRSPY_DEVICE_TYPE_ID "rpx-100.samplesource.airspy"
 
 class PluginAPI;
 

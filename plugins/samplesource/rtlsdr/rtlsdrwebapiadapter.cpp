@@ -29,11 +29,11 @@ RTLSDRWebAPIAdapter::~RTLSDRWebAPIAdapter()
 {}
 
 int RTLSDRWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRtlSdrSettings(new SWGSDRangel::SWGRtlSdrSettings());
+    response.setRtlSdrSettings(new SWGrpx-100::SWGRtlSdrSettings());
     response.getRtlSdrSettings()->init();
     RTLSDRInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int RTLSDRWebAPIAdapter::webapiSettingsGet(
 int RTLSDRWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

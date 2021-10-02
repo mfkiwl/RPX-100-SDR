@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -19,7 +19,7 @@
 #include <QDateTime>
 
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 void
 setValue(void* value, QJsonValue obj, QString type, QString complexType) {
@@ -130,7 +130,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
     else if(type.startsWith("SWG") && obj.isObject()) {
         // complex type
         QJsonObject jsonObj = obj.toObject();
-        SWGObject * so = (SWGObject*)::SWGSDRangel::create(complexType);
+        SWGObject * so = (SWGObject*)::SWGrpx-100::create(complexType);
         if(so != nullptr) {
             so->fromJsonObject(jsonObj);
             SWGObject **val = static_cast<SWGObject**>(value);
@@ -149,7 +149,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr) {
                 // it's an object
-                SWGObject * val = (SWGObject*)::SWGSDRangel::create(complexType);
+                SWGObject * val = (SWGObject*)::SWGrpx-100::create(complexType);
                 QJsonObject t = jval.toObject();
                 val->fromJsonObject(t);
                 (*output)->append(val);
@@ -161,7 +161,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 qint32 val;
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("qint32"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("qint32"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -171,7 +171,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 qint64 val;
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("qint64"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("qint64"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -181,7 +181,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 bool val;
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("bool"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("bool"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -191,7 +191,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 float val;
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("float"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("float"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -201,7 +201,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 double val;
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("double"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("double"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -214,7 +214,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 QString * val = new QString();
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("QString"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("QString"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -227,7 +227,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 QDate * val = new QDate();
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("QDate"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("QDate"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -240,7 +240,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             QJsonArray arr = obj.toArray();
             for (const QJsonValue & jval : arr){
                 QDateTime * val = new QDateTime();
-                ::SWGSDRangel::setValue(&val, jval, QStringLiteral("QDateTime"), QStringLiteral(""));
+                ::SWGrpx-100::setValue(&val, jval, QStringLiteral("QDateTime"), QStringLiteral(""));
                 (*output)->push_back(val);
             }
         }
@@ -256,9 +256,9 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
             auto varmap = obj.toObject().toVariantMap();
             if(varmap.count() > 0){
                 for(auto itemkey : varmap.keys() ){
-                    auto  val = (SWGObject*)::SWGSDRangel::create(complexType);
+                    auto  val = (SWGObject*)::SWGrpx-100::create(complexType);
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, complexType, complexType);
+                    ::SWGrpx-100::setValue(&val, jsonval, complexType, complexType);
                     (*output)->insert(itemkey, val);
                 }
             }
@@ -271,7 +271,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     qint32 val;
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("qint32"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("qint32"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -284,7 +284,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     qint64 val;
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("qint64"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("qint64"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -297,7 +297,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     bool val;
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("bool"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("bool"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -310,7 +310,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     float val;
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("float"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("float"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -323,7 +323,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     double val;
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("double"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("double"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -339,7 +339,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     QString * val = new QString();
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("QString"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("QString"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -355,7 +355,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     QDate * val = new QDate();
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("QDate"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("QDate"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -371,7 +371,7 @@ setValue(void* value, QJsonValue obj, QString type, QString complexType) {
                 for(auto itemkey : varmap.keys() ){
                     QDateTime * val = new QDateTime();
                     auto  jsonval = QJsonValue::fromVariant(varmap.value(itemkey));
-                    ::SWGSDRangel::setValue(&val, jsonval, QStringLiteral("QDateTime"), QStringLiteral(""));
+                    ::SWGrpx-100::setValue(&val, jsonval, QStringLiteral("QDateTime"), QStringLiteral(""));
                     (*output)->insert( itemkey, val);
                 }
             }
@@ -509,66 +509,66 @@ toJsonMap(QMap<QString, void*>* value, QJsonObject* output, QString innerName, Q
     if(innerType.startsWith("SWG")){
         auto items = reinterpret_cast< QMap<QString, SWGObject*> *>(value);
         for(auto itemkey: items->keys()) {
-            ::SWGSDRangel::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
         }
     }
     else if(QStringLiteral("QString").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, QString*> *>(value);
         for(auto itemkey: items->keys()) {
-            ::SWGSDRangel::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
         }
     }
     else if(QStringLiteral("QDate").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, QDate*> *>(value);
         for(auto itemkey: items->keys()) {
-            ::SWGSDRangel::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
         }
     }
     else if(QStringLiteral("QDateTime").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, QDateTime*> *>(value);
         for(auto itemkey: items->keys()) {
-            ::SWGSDRangel::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
         }
     }
     else if(QStringLiteral("QByteArray").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, QByteArray*> *>(value);
         for(auto itemkey: items->keys()) {
-            ::SWGSDRangel::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, items->value(itemkey), &mapobj, innerType);
         }
     }
     else if(QStringLiteral("qint32").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, qint32> *>(value);
         for(auto itemkey: items->keys()) {
             auto val = items->value(itemkey);
-            ::SWGSDRangel::toJsonValue(itemkey, &val, &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, &val, &mapobj, innerType);
         }
     }
     else if(QStringLiteral("qint64").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, qint64> *>(value);
         for(auto itemkey: items->keys()) {
             auto val = items->value(itemkey);
-            ::SWGSDRangel::toJsonValue(itemkey, &val, &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, &val, &mapobj, innerType);
         }
     }
     else if(QStringLiteral("bool").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, bool> *>(value);
         for(auto itemkey: items->keys()) {
             auto val = items->value(itemkey);
-            ::SWGSDRangel::toJsonValue(itemkey, &val, &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, &val, &mapobj, innerType);
         }
     }
     else if(QStringLiteral("float").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, float> *>(value);
         for(auto itemkey: items->keys()) {
             auto val = items->value(itemkey);
-            ::SWGSDRangel::toJsonValue(itemkey, &val, &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, &val, &mapobj, innerType);
         }
     }
     else if(QStringLiteral("double").compare(innerType) == 0) {
         auto items = reinterpret_cast< QMap<QString, double> *>(value);
         for(auto itemkey: items->keys() ) {
             auto val = items->value(itemkey);
-            ::SWGSDRangel::toJsonValue(itemkey, &val, &mapobj, innerType);
+            ::SWGrpx-100::toJsonValue(itemkey, &val, &mapobj, innerType);
         }
     }
     output->insert(innerName, mapobj);

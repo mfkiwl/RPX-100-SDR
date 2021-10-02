@@ -125,7 +125,10 @@
         <file>webapi/doc/swagger-ui/swagger-ui.js</file>
         <file>webapi/doc/swagger-ui/swagger-ui.js.map</file>
         <file>webapi/index.html</file>
-        <file>webapi/sdrangel_logo.png</file>
+        <file>webapi/rpx-100_logo.png</file>
         <file>webapi/OEVSV_small.png</file>
+        <file>webapi/logo128.png</file>
+        <file>webapi/outofband.ico</file>
+        <file>webapi/TU.jpg</file>
     </qresource>
 </RCC>

@@ -36,429 +36,429 @@ public:
     virtual ~WebAPIAdapter();
 
     virtual int instanceSummary(
-            SWGSDRangel::SWGInstanceSummaryResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGInstanceSummaryResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceConfigGet(
-            SWGSDRangel::SWGInstanceConfigResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGInstanceConfigResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceConfigPutPatch(
             bool force, // PUT else PATCH
-            SWGSDRangel::SWGInstanceConfigResponse& query,
+            SWGrpx-100::SWGInstanceConfigResponse& query,
             const ConfigKeys& configKeys,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceDevices(
             int direction,
-            SWGSDRangel::SWGInstanceDevicesResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGInstanceDevicesResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceChannels(
             int direction,
-            SWGSDRangel::SWGInstanceChannelsResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGInstanceChannelsResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceFeatures(
-            SWGSDRangel::SWGInstanceFeaturesResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGInstanceFeaturesResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLoggingGet(
-            SWGSDRangel::SWGLoggingInfo& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLoggingInfo& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLoggingPut(
-            SWGSDRangel::SWGLoggingInfo& query,
-            SWGSDRangel::SWGLoggingInfo& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLoggingInfo& query,
+            SWGrpx-100::SWGLoggingInfo& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAudioGet(
-            SWGSDRangel::SWGAudioDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGAudioDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAudioInputPatch(
-            SWGSDRangel::SWGAudioInputDevice& response,
+            SWGrpx-100::SWGAudioInputDevice& response,
             const QStringList& audioInputKeys,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAudioOutputPatch(
-            SWGSDRangel::SWGAudioOutputDevice& response,
+            SWGrpx-100::SWGAudioOutputDevice& response,
             const QStringList& audioOutputKeys,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAudioInputDelete(
-            SWGSDRangel::SWGAudioInputDevice& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGAudioInputDevice& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAudioOutputDelete(
-            SWGSDRangel::SWGAudioOutputDevice& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGAudioOutputDevice& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAudioInputCleanupPatch(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAudioOutputCleanupPatch(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLocationGet(
-            SWGSDRangel::SWGLocationInformation& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLocationInformation& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLocationPut(
-            SWGSDRangel::SWGLocationInformation& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLocationInformation& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceDVSerialGet(
-            SWGSDRangel::SWGDVSerialDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDVSerialDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceDVSerialPatch(
             bool dvserial,
-            SWGSDRangel::SWGDVSerialDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDVSerialDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAMBESerialGet(
-            SWGSDRangel::SWGDVSerialDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDVSerialDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAMBEDevicesGet(
-            SWGSDRangel::SWGAMBEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGAMBEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAMBEDevicesPut(
-            SWGSDRangel::SWGAMBEDevices& query,
-            SWGSDRangel::SWGAMBEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGAMBEDevices& query,
+            SWGrpx-100::SWGAMBEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAMBEDevicesPatch(
-            SWGSDRangel::SWGAMBEDevices& query,
-            SWGSDRangel::SWGAMBEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGAMBEDevices& query,
+            SWGrpx-100::SWGAMBEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceAMBEDevicesDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
 #ifdef HAS_LIMERFEUSB
     virtual int instanceLimeRFESerialGet(
-            SWGSDRangel::SWGLimeRFEDevices& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLimeRFEDevices& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLimeRFEConfigGet(
             const QString& serial,
-            SWGSDRangel::SWGLimeRFESettings& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLimeRFESettings& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLimeRFEConfigPut(
-            SWGSDRangel::SWGLimeRFESettings& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLimeRFESettings& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLimeRFERunPut(
-            SWGSDRangel::SWGLimeRFESettings& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLimeRFESettings& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceLimeRFEPowerGet(
             const QString& serial,
-            SWGSDRangel::SWGLimeRFEPower& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGLimeRFEPower& response,
+            SWGrpx-100::SWGErrorResponse& error);
 #endif
 
     virtual int instancePresetsGet(
-            SWGSDRangel::SWGPresets& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGPresets& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instancePresetPatch(
-            SWGSDRangel::SWGPresetTransfer& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGPresetTransfer& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instancePresetPut(
-            SWGSDRangel::SWGPresetTransfer& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGPresetTransfer& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instancePresetPost(
-            SWGSDRangel::SWGPresetTransfer& query,
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGPresetTransfer& query,
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instancePresetDelete(
-            SWGSDRangel::SWGPresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGPresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceFeaturePresetsGet(
-            SWGSDRangel::SWGFeaturePresets& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeaturePresets& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceFeaturePresetDelete(
-            SWGSDRangel::SWGFeaturePresetIdentifier& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeaturePresetIdentifier& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceDeviceSetsGet(
-            SWGSDRangel::SWGDeviceSetList& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceSetList& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceFeatureSetsGet(
-            SWGSDRangel::SWGFeatureSetList& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeatureSetList& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceDeviceSetPost(
             int direction,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceDeviceSetDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceFeatureSetPost(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int instanceFeatureSetDelete(
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceSet& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceSet& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetFocusPatch(
             int deviceSetIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetSpectrumSettingsGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGGLSpectrum& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGGLSpectrum& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetSpectrumSettingsPutPatch(
             int deviceSetIndex,
             bool force, //!< true to force settings = put else patch
             const QStringList& spectrumSettingsKeys,
-            SWGSDRangel::SWGGLSpectrum& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGGLSpectrum& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetSpectrumServerGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGSpectrumServer& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSpectrumServer& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetSpectrumServerPost(
             int deviceSetIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetSpectrumServerDelete(
             int deviceSetIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDevicePut(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceListItem& query,
-            SWGSDRangel::SWGDeviceListItem& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceListItem& query,
+            SWGrpx-100::SWGDeviceListItem& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceSettingsGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceSettings& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceSettings& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceActionsPost(
             int deviceSetIndex,
             const QStringList& deviceActionsKeys,
-            SWGSDRangel::SWGDeviceActions& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceActions& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceSettingsPutPatch(
             int deviceSetIndex,
             bool force,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceSettings& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceRunGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceRunPost(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceRunDelete(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceSubsystemRunGet(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceSubsystemRunPost(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceSubsystemRunDelete(
             int deviceSetIndex,
             int subsystemIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetDeviceReportGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGDeviceReport& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceReport& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetChannelsReportGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGChannelsDetail& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGChannelsDetail& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetChannelPost(
             int deviceSetIndex,
-            SWGSDRangel::SWGChannelSettings& query,
-			SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGChannelSettings& query,
+			SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetChannelDelete(
             int deviceSetIndex,
             int channelIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetChannelSettingsGet(
             int deviceSetIndex,
             int channelIndex,
-            SWGSDRangel::SWGChannelSettings& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGChannelSettings& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetChannelActionsPost(
             int deviceSetIndex,
             int channelIndex,
             const QStringList& channelActionsKeys,
-            SWGSDRangel::SWGChannelActions& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGChannelActions& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetChannelSettingsPutPatch(
             int deviceSetIndex,
             int channelIndex,
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGChannelSettings& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int devicesetChannelReportGet(
             int deviceSetIndex,
             int channelIndex,
-            SWGSDRangel::SWGChannelReport& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGChannelReport& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetGet(
             int deviceSetIndex,
-            SWGSDRangel::SWGFeatureSet& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeatureSet& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeaturePost(
             int featureSetIndex,
-            SWGSDRangel::SWGFeatureSettings& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeatureSettings& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureDelete(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureRunGet(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureRunPost(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureRunDelete(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGDeviceState& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGDeviceState& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetPresetPatch(
             int featureSetIndex,
-            SWGSDRangel::SWGFeaturePresetIdentifier& query,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeaturePresetIdentifier& query,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetPresetPut(
             int featureSetIndex,
-            SWGSDRangel::SWGFeaturePresetIdentifier& query,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeaturePresetIdentifier& query,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetPresetPost(
             int featureSetIndex,
-            SWGSDRangel::SWGFeaturePresetIdentifier& query,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeaturePresetIdentifier& query,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureSettingsGet(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGFeatureSettings& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeatureSettings& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureSettingsPutPatch(
             int featureSetIndex,
             int featureIndex,
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeatureSettings& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureReportGet(
             int featureSetIndex,
             int featureIndex,
-            SWGSDRangel::SWGFeatureReport& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeatureReport& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
     virtual int featuresetFeatureActionsPost(
             int featureSetIndex,
             int featureIndex,
             const QStringList& featureActionsKeys,
-            SWGSDRangel::SWGFeatureActions& query,
-            SWGSDRangel::SWGSuccessResponse& response,
-            SWGSDRangel::SWGErrorResponse& error);
+            SWGrpx-100::SWGFeatureActions& query,
+            SWGrpx-100::SWGSuccessResponse& response,
+            SWGrpx-100::SWGErrorResponse& error);
 
 private:
     MainCore *m_mainCore;
 
-    void getDeviceSetList(SWGSDRangel::SWGDeviceSetList* deviceSetList);
-    void getDeviceSet(SWGSDRangel::SWGDeviceSet *swgDeviceSet, const DeviceSet* deviceSet, int deviceSetIndex);
-    void getChannelsDetail(SWGSDRangel::SWGChannelsDetail *channelsDetail, const DeviceSet* deviceSet);
-    void getFeatureSetList(SWGSDRangel::SWGFeatureSetList* featureSetList);
-    void getFeatureSet(SWGSDRangel::SWGFeatureSet *swgFeatureSet, const FeatureSet* featureSet, int featureSetIndex);
+    void getDeviceSetList(SWGrpx-100::SWGDeviceSetList* deviceSetList);
+    void getDeviceSet(SWGrpx-100::SWGDeviceSet *swgDeviceSet, const DeviceSet* deviceSet, int deviceSetIndex);
+    void getChannelsDetail(SWGrpx-100::SWGChannelsDetail *channelsDetail, const DeviceSet* deviceSet);
+    void getFeatureSetList(SWGrpx-100::SWGFeatureSetList* featureSetList);
+    void getFeatureSet(SWGrpx-100::SWGFeatureSet *swgFeatureSet, const FeatureSet* featureSet, int featureSetIndex);
     static QtMsgType getMsgTypeFromString(const QString& msgTypeString);
     static void getMsgTypeString(const QtMsgType& msgType, QString& level);
 };

@@ -26,7 +26,7 @@
 
 #include "export.h"
 
-namespace SWGSDRangel
+namespace SWGrpx-100
 {
     class SWGFeatureSettings;
 }
@@ -43,7 +43,7 @@ public:
      * API adapter for the channel settings GET requests
      */
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage)
     {
         (void) response;
@@ -56,7 +56,7 @@ public:
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage)
     {
         (void) force;

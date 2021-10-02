@@ -9,7 +9,7 @@ The Star Tracker feature plugin is for use in radio astronomy and EME (Earth-Moo
 * The overhead position of the Sun, Moon and selected star can be displayed on the Map Feature.
 * It can display local Sidereal time, solar flux density and sky temperature.
 * It can plot the line of sight through the Milky Way.
-* The plugin can communicate with Stellarium, allowing Stellarium to control SDRangel as though it was a telescope and for the direction the antenna is pointing to be displayed in Stellarium.
+* The plugin can communicate with Stellarium, allowing Stellarium to control rpx-100 as though it was a telescope and for the direction the antenna is pointing to be displayed in Stellarium.
 
 <h2>Settings</h2>
 
@@ -29,7 +29,7 @@ Pressing this button downloads the Solar flux density data from the DRAO and Lea
 
 <h3>4: Set latitude and longitude from My Position</h3>
 
-When clicked, it sets the latitude, longitude and height fields to the values from SDRangel's My Position preferences.
+When clicked, it sets the latitude, longitude and height fields to the values from rpx-100's My Position preferences.
 
 <h3>5: Show settings dialog</h3>
 
@@ -216,18 +216,18 @@ Then in Stellarium:
 * Press "Configure telescopes..."
 * Press "Add a new telescope"
 * Set "Telescope controlled by" to "External software or a remote computer"
-* Set "Name" to "SDRangel" (Optional)
+* Set "Name" to "rpx-100" (Optional)
 * Set "Coordinate system" to "J2000 (default)"
 * Press OK
 * Press Connect
 * Enter Right Ascension/Declination or press "Current object" to get RA/Dec of currently selected object
 * Press "Slew" to send the RA/Dec to Star Tracker
 
-Star Tracker will continually send the RA/Dec of its target to Stellarium and this should be displayed in Stellarium with a crosshair/reticle and the label SDRangel (or whatever name you entered for the telescope).
+Star Tracker will continually send the RA/Dec of its target to Stellarium and this should be displayed in Stellarium with a crosshair/reticle and the label rpx-100 (or whatever name you entered for the telescope).
 
-To see the rough field of view of your antenna, open the Ocular configuration window and under Eyepieces, add a new eyepiece with name SDRangel.
+To see the rough field of view of your antenna, open the Ocular configuration window and under Eyepieces, add a new eyepiece with name rpx-100.
 Set aFOV to the half-power beam width of your antenna, focal length to 100 and field stop to 0.
-Then select the SDRangel telescope reticle and press Ocular view.
+Then select the rpx-100 telescope reticle and press Ocular view.
 
 <h2>Attribution</h2>
 
@@ -249,15 +249,15 @@ Icons are by Freepik from Flaticon https://www.flaticon.com/
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to set the target to the Moon at the current time:
 
-    curl -X PATCH "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/settings" -d '{"featureType": "StarTracker",  "StarTrackerSettings": { "target": "Moon", "dateTime": "" }}'
+    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "StarTracker",  "StarTrackerSettings": { "target": "Moon", "dateTime": "" }}'
 
 Or to a custom RA and declination on a given date and time:
 
-    curl -X PATCH "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/settings" -d '{"featureType": "StarTracker",  "StarTrackerSettings": { "target": "Custom", "ra": "03h32m59.35s", "dec": "54d34m45.05s", "dateTime": "1921-04-15T10:17:05" }}'
+    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "StarTracker",  "StarTrackerSettings": { "target": "Custom", "ra": "03h32m59.35s", "dec": "54d34m45.05s", "dateTime": "1921-04-15T10:17:05" }}'
 
 To start tracking:
 
-    curl -X POST "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/run"
+    curl -X POST "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/run"
 
 <h2>Developer Notes</h2>
 

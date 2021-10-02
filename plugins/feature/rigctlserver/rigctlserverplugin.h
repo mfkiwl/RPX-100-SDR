@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class RigCtlServerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.feature.rigctlserver")
+	Q_PLUGIN_METADATA(IID "rpx-100.feature.rigctlserver")
 
 public:
 	explicit RigCtlServerPlugin(QObject* parent = nullptr);

@@ -26,8 +26,8 @@ const char *fcd_traits<ProPlus>::qtDeviceName = "FUNcube_Dongle_V2.0";
 const char *fcd_traits<Pro>::hardwareID = "FCDPro";
 const char *fcd_traits<ProPlus>::hardwareID = "FCDPro+";
 
-const char *fcd_traits<Pro>::interfaceIID = "sdrangel.samplesource.fcdpro";
-const char *fcd_traits<ProPlus>::interfaceIID = "sdrangel.samplesource.fcdproplus";
+const char *fcd_traits<Pro>::interfaceIID = "rpx-100.samplesource.fcdpro";
+const char *fcd_traits<ProPlus>::interfaceIID = "rpx-100.samplesource.fcdproplus";
 
 const char *fcd_traits<Pro>::displayedName = "FunCube Dongle Pro";
 const char *fcd_traits<ProPlus>::displayedName = "FunCube Dongle Pro+";

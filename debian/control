@@ -1,9 +1,9 @@
-Source: sdrangel
+Source: rpx-100
 Maintainer: Edouard Griffiths, F4EXB <f4exb06@gmail.com>
 Section: hamradio
 Priority: optional
 Standards-Version: 3.9.2
-Homepage: https://github.com/f4exb/sdrangel
+Homepage: https://github.com/f4exb/rpx-100
 Build-Depends: debhelper (>= 9),
  libfftw3-dev,
  qtbase5-dev,
@@ -49,7 +49,7 @@ Build-Depends: debhelper (>= 9),
 #   - more dependencies based on version; newer has more devices
 #   - manage dependencies not present upstream
 
-Package: sdrangel
+Package: rpx-100
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libasound2, libgl1-mesa-glx, libqt5multimedia5-plugins, pulseaudio, ffmpeg
 Description: SDR/Analyzer/Generator front-end for various hardware
@@ -66,4 +66,4 @@ Description: SDR/Analyzer/Generator front-end for various hardware
  Transmission modes supported:
    Analog: AM, ATV, NFM, SSB, WFM
    Digital: DVB-S, Packet (AX.25), AIS, 802.15.4
-Homepage: https://github.com/f4exb/sdrangel
+Homepage: https://github.com/f4exb/rpx-100

@@ -17,17 +17,17 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.          //
 ///////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SDRGUI_SDRANGELSPLASH_H
-#define SDRGUI_SDRANGELSPLASH_H
+#ifndef SDRGUI_rpx-100SPLASH_H
+#define SDRGUI_rpx-100SPLASH_H
 
 #include <QSplashScreen>
 #include <QPainter>
 
-class SDRangelSplash : public QSplashScreen
+class rpx-100Splash : public QSplashScreen
 {
 public:
-    SDRangelSplash(const QPixmap& pixmap);
-    ~SDRangelSplash();
+    rpx-100Splash(const QPixmap& pixmap);
+    ~rpx-100Splash();
     virtual void drawContents(QPainter *painter);
     void showStatusMessage(const QString &message, const QColor &color = Qt::black);
     void setMessageRect(QRect rect, int alignment = Qt::AlignLeft);
@@ -38,4 +38,4 @@ private:
     QRect rect;
 };
 
-#endif // SDRGUI_SDRANGELSPLASHSCREEN_H
+#endif // SDRGUI_rpx-100SPLASHSCREEN_H

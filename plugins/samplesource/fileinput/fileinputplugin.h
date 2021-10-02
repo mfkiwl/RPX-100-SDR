@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define FILEINPUT_DEVICE_TYPE_ID "sdrangel.samplesource.fileinput"
+#define FILEINPUT_DEVICE_TYPE_ID "rpx-100.samplesource.fileinput"
 
 class PluginAPI;
 

@@ -29,11 +29,11 @@ LocalInputWebAPIAdapter::~LocalInputWebAPIAdapter()
 {}
 
 int LocalInputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalInputSettings(new SWGSDRangel::SWGLocalInputSettings());
+    response.setLocalInputSettings(new SWGrpx-100::SWGLocalInputSettings());
     response.getLocalInputSettings()->init();
     LocalInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int LocalInputWebAPIAdapter::webapiSettingsGet(
 int LocalInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

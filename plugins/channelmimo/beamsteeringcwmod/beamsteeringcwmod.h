@@ -120,23 +120,23 @@ public:
     MessageQueue *getMessageQueueToGUI() { return m_guiMessageQueue; }
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         const BeamSteeringCWModSettings& settings);
 
     static void webapiUpdateChannelSettings(
             BeamSteeringCWModSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     static const char* const m_channelIdURI;
     static const char* const m_channelId;
@@ -171,7 +171,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const BeamSteeringCWModSettings& settings,
         bool force
     );

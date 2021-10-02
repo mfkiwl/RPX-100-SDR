@@ -34,7 +34,7 @@
 MESSAGE_CLASS_DEFINITION(RigCtlServer::MsgConfigureRigCtlServer, Message)
 MESSAGE_CLASS_DEFINITION(RigCtlServer::MsgStartStop, Message)
 
-const char* const RigCtlServer::m_featureIdURI = "sdrangel.feature.rigctlserver";
+const char* const RigCtlServer::m_featureIdURI = "rpx-100.feature.rigctlserver";
 const char* const RigCtlServer::m_featureId = "RigCtlServer";
 
 RigCtlServer::RigCtlServer(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -211,7 +211,7 @@ void RigCtlServer::applySettings(const RigCtlServerSettings& settings, bool forc
 }
 
 int RigCtlServer::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -222,11 +222,11 @@ int RigCtlServer::webapiRun(bool run,
 }
 
 int RigCtlServer::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRigCtlServerSettings(new SWGSDRangel::SWGRigCtlServerSettings());
+    response.setRigCtlServerSettings(new SWGrpx-100::SWGRigCtlServerSettings());
     response.getRigCtlServerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -235,7 +235,7 @@ int RigCtlServer::webapiSettingsGet(
 int RigCtlServer::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -258,7 +258,7 @@ int RigCtlServer::webapiSettingsPutPatch(
 }
 
 void RigCtlServer::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const RigCtlServerSettings& settings)
 {
     response.getRigCtlServerSettings()->setEnabled(settings.m_enabled ? 1 : 0);
@@ -290,7 +290,7 @@ void RigCtlServer::webapiFormatFeatureSettings(
 void RigCtlServer::webapiUpdateFeatureSettings(
     RigCtlServerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("enabled")) {
         settings.m_enabled = response.getRigCtlServerSettings()->getEnabled();
@@ -332,12 +332,12 @@ void RigCtlServer::webapiUpdateFeatureSettings(
 
 void RigCtlServer::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const RigCtlServerSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("RigCtlServer"));
-    swgFeatureSettings->setRigCtlServerSettings(new SWGSDRangel::SWGRigCtlServerSettings());
-    SWGSDRangel::SWGRigCtlServerSettings *swgRigCtlServerSettings = swgFeatureSettings->getRigCtlServerSettings();
+    swgFeatureSettings->setRigCtlServerSettings(new SWGrpx-100::SWGRigCtlServerSettings());
+    SWGrpx-100::SWGRigCtlServerSettings *swgRigCtlServerSettings = swgFeatureSettings->getRigCtlServerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -363,7 +363,7 @@ void RigCtlServer::webapiReverseSendSettings(QList<QString>& featureSettingsKeys
         swgRigCtlServerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

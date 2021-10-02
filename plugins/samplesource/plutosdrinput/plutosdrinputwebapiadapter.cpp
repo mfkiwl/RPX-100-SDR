@@ -29,11 +29,11 @@ PlutoSDRInputWebAPIAdapter::~PlutoSDRInputWebAPIAdapter()
 {}
 
 int PlutoSDRInputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPlutoSdrInputSettings(new SWGSDRangel::SWGPlutoSdrInputSettings());
+    response.setPlutoSdrInputSettings(new SWGrpx-100::SWGPlutoSdrInputSettings());
     response.getPlutoSdrInputSettings()->init();
     PlutoSDRInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int PlutoSDRInputWebAPIAdapter::webapiSettingsGet(
 int PlutoSDRInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

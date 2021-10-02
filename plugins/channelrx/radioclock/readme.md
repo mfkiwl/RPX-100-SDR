@@ -9,7 +9,7 @@ This plugin can be used to receive the time and date as broadcast on Low Frequen
 * [TDF](https://en.wikipedia.org/wiki/TDF_time_signal) - France - 162kHz
 * [WWVB](https://en.wikipedia.org/wiki/WWVB) - USA - 60kHz
 
-If you'd like other transmitters to be supported, please upload a .sdriq file to SDRangel's [github issue tracker](https://github.com/f4exb/sdrangel/issues).
+If you'd like other transmitters to be supported, please upload a .sdriq file to rpx-100's [github issue tracker](https://github.com/f4exb/rpx-100/issues).
 
 Typically, it will take two minutes before the time is able to be displayed (up to one minute to find the minute marker, then another minute to receive the timecode).
 

@@ -26,11 +26,11 @@ DSDDemodWebAPIAdapter::~DSDDemodWebAPIAdapter()
 {}
 
 int DSDDemodWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDsdDemodSettings(new SWGSDRangel::SWGDSDDemodSettings());
+    response.setDsdDemodSettings(new SWGrpx-100::SWGDSDDemodSettings());
     response.getDsdDemodSettings()->init();
     DSDDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int DSDDemodWebAPIAdapter::webapiSettingsGet(
 int DSDDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

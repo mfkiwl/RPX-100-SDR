@@ -22,108 +22,108 @@
 #include "webapiutils.h"
 
 const QMap<QString, QString> WebAPIUtils::m_channelURIToSettingsKey = {
-    {"sdrangel.channel.adsbdemod", "ADSBDemodSettings"},
-    {"sdrangel.channel.modais", "AISModSettings"},
-    {"sdrangel.channel.aisdemod", "AISDemodSettings"},
-    {"sdrangel.channel.aptdemod", "APTDemodSettings"},
-    {"sdrangel.channel.amdemod", "AMDemodSettings"},
-    {"sdrangel.channel.aptdemod", "APTDemodSettings"},
-    {"de.maintech.sdrangelove.channel.am", "AMDemodSettings"}, // remap
-    {"sdrangel.channeltx.modam", "AMModSettings"},
-    {"sdrangel.channeltx.modatv", "ATVModSettings"},
-    {"sdrangel.channeltx.moddatv", "DATVModSettings"},
-    {"sdrangel.channel.bfm", "BFMDemodSettings"},
-    {"sdrangel.channel.chanalyzer", "ChannelAnalyzerSettings"},
-    {"sdrangel.channel.chanalyzerng", "ChannelAnalyzerSettings"}, // remap
-    {"org.f4exb.sdrangelove.channel.chanalyzer", "ChannelAnalyzerSettings"}, // remap
-    {"sdrangel.channel.chirpchatdemod", "ChirpChatDemodSettings"},
-    {"sdrangel.channel.modchirpchat", "ChirpChatModSettings"},
-    {"sdrangel.channel.demodatv", "ATVDemodSettings"},
-    {"sdrangel.channel.demoddatv", "DATVDemodSettings"},
-    {"sdrangel.channel.dabdemod", "DABDemodSettings"},
-    {"sdrangel.channel.dsddemod", "DSDDemodSettings"},
-    {"sdrangel.channel.filesink", "FileSinkSettings"},
-    {"sdrangel.channeltx.filesource", "FileSourceSettings"},
-    {"sdrangel.channel.freedvdemod", "FreeDVDemodSettings"},
-    {"sdrangel.channeltx.freedvmod", "FreeDVModSettings"},
-    {"sdrangel.channel.freqtracker", "FreqTrackerSettings"},
-    {"sdrangel.channel.nfmdemod", "NFMDemodSettings"},
-    {"de.maintech.sdrangelove.channel.nfm", "NFMDemodSettings"}, // remap
-    {"sdrangel.channeltx.modnfm", "NFMModSettings"},
-    {"sdrangel.channel.noisefigure", "NoiseFigureSettings"},
-    {"sdrangel.demod.localsink", "LocalSinkSettings"},
-    {"sdrangel.channel.localsink", "LocalSinkSettings"}, // remap
-    {"sdrangel.channel.localsource", "LocalSourceSettings"},
-    {"sdrangel.channel.packetdemod", "PacketDemodSettings"},
-    {"sdrangel.channel.pagerdemod", "PagerDemodSettings"},
-    {"sdrangel.channeltx.modpacket", "PacketModSettings"},
-    {"sdrangel.channeltx.mod802.15.4", "IEEE_802_15_4_ModSettings"},
-    {"sdrangel.channel.radioclock", "RadioClockSettings"},
-    {"sdrangel.demod.remotesink", "RemoteSinkSettings"},
-    {"sdrangel.channeltx.remotesource", "RemoteSourceSettings"},
-    {"sdrangel.channeltx.modssb", "SSBModSettings"},
-    {"sdrangel.channel.ssbdemod", "SSBDemodSettings"},
-    {"de.maintech.sdrangelove.channel.ssb", "SSBDemodSettings"}, // remap
-    {"sdrangel.channeltx.udpsource", "UDPSourceSettings"},
-    {"sdrangel.channeltx.udpsink", "UDPSinkSettings"}, // remap
-    {"sdrangel.channel.udpsink", "UDPSinkSettings"},
-    {"sdrangel.channel.udpsrc", "UDPSourceSettings"}, // remap
-    {"sdrangel.channel.vordemod", "VORDemodSettings"},
-    {"sdrangel.channel.wfmdemod", "WFMDemodSettings"},
-    {"de.maintech.sdrangelove.channel.wfm", "WFMDemodSettings"}, // remap
-    {"sdrangel.channeltx.modwfm", "WFMModSettings"},
-    {"sdrangel.channel.beamsteeringcwmod", "BeamSteeringCWModSettings"},
-    {"sdrangel.channelmimo.interferometer", "InterferometerSettings"},
-    {"sdrangel.channel.sigmffilesink", "SigMFFileSinkSettings"}
+    {"rpx-100.channel.adsbdemod", "ADSBDemodSettings"},
+    {"rpx-100.channel.modais", "AISModSettings"},
+    {"rpx-100.channel.aisdemod", "AISDemodSettings"},
+    {"rpx-100.channel.aptdemod", "APTDemodSettings"},
+    {"rpx-100.channel.amdemod", "AMDemodSettings"},
+    {"rpx-100.channel.aptdemod", "APTDemodSettings"},
+    {"de.maintech.rpx-100ove.channel.am", "AMDemodSettings"}, // remap
+    {"rpx-100.channeltx.modam", "AMModSettings"},
+    {"rpx-100.channeltx.modatv", "ATVModSettings"},
+    {"rpx-100.channeltx.moddatv", "DATVModSettings"},
+    {"rpx-100.channel.bfm", "BFMDemodSettings"},
+    {"rpx-100.channel.chanalyzer", "ChannelAnalyzerSettings"},
+    {"rpx-100.channel.chanalyzerng", "ChannelAnalyzerSettings"}, // remap
+    {"org.f4exb.rpx-100ove.channel.chanalyzer", "ChannelAnalyzerSettings"}, // remap
+    {"rpx-100.channel.chirpchatdemod", "ChirpChatDemodSettings"},
+    {"rpx-100.channel.modchirpchat", "ChirpChatModSettings"},
+    {"rpx-100.channel.demodatv", "ATVDemodSettings"},
+    {"rpx-100.channel.demoddatv", "DATVDemodSettings"},
+    {"rpx-100.channel.dabdemod", "DABDemodSettings"},
+    {"rpx-100.channel.dsddemod", "DSDDemodSettings"},
+    {"rpx-100.channel.filesink", "FileSinkSettings"},
+    {"rpx-100.channeltx.filesource", "FileSourceSettings"},
+    {"rpx-100.channel.freedvdemod", "FreeDVDemodSettings"},
+    {"rpx-100.channeltx.freedvmod", "FreeDVModSettings"},
+    {"rpx-100.channel.freqtracker", "FreqTrackerSettings"},
+    {"rpx-100.channel.nfmdemod", "NFMDemodSettings"},
+    {"de.maintech.rpx-100ove.channel.nfm", "NFMDemodSettings"}, // remap
+    {"rpx-100.channeltx.modnfm", "NFMModSettings"},
+    {"rpx-100.channel.noisefigure", "NoiseFigureSettings"},
+    {"rpx-100.demod.localsink", "LocalSinkSettings"},
+    {"rpx-100.channel.localsink", "LocalSinkSettings"}, // remap
+    {"rpx-100.channel.localsource", "LocalSourceSettings"},
+    {"rpx-100.channel.packetdemod", "PacketDemodSettings"},
+    {"rpx-100.channel.pagerdemod", "PagerDemodSettings"},
+    {"rpx-100.channeltx.modpacket", "PacketModSettings"},
+    {"rpx-100.channeltx.mod802.15.4", "IEEE_802_15_4_ModSettings"},
+    {"rpx-100.channel.radioclock", "RadioClockSettings"},
+    {"rpx-100.demod.remotesink", "RemoteSinkSettings"},
+    {"rpx-100.channeltx.remotesource", "RemoteSourceSettings"},
+    {"rpx-100.channeltx.modssb", "SSBModSettings"},
+    {"rpx-100.channel.ssbdemod", "SSBDemodSettings"},
+    {"de.maintech.rpx-100ove.channel.ssb", "SSBDemodSettings"}, // remap
+    {"rpx-100.channeltx.udpsource", "UDPSourceSettings"},
+    {"rpx-100.channeltx.udpsink", "UDPSinkSettings"}, // remap
+    {"rpx-100.channel.udpsink", "UDPSinkSettings"},
+    {"rpx-100.channel.udpsrc", "UDPSourceSettings"}, // remap
+    {"rpx-100.channel.vordemod", "VORDemodSettings"},
+    {"rpx-100.channel.wfmdemod", "WFMDemodSettings"},
+    {"de.maintech.rpx-100ove.channel.wfm", "WFMDemodSettings"}, // remap
+    {"rpx-100.channeltx.modwfm", "WFMModSettings"},
+    {"rpx-100.channel.beamsteeringcwmod", "BeamSteeringCWModSettings"},
+    {"rpx-100.channelmimo.interferometer", "InterferometerSettings"},
+    {"rpx-100.channel.sigmffilesink", "SigMFFileSinkSettings"}
 };
 
 const QMap<QString, QString> WebAPIUtils::m_deviceIdToSettingsKey = {
-    {"sdrangel.samplesource.airspy", "airspySettings"},
-    {"sdrangel.samplesource.airspyhf", "airspyHFSettings"},
-    {"sdrangel.samplesource.audioinput", "audioInputSettings"},
-    {"sdrangel.samplesink.audiooutput", "audioOutputSettings"},
-    {"sdrangel.samplesource.bladerf1input", "bladeRF1InputSettings"},
-    {"sdrangel.samplesource.bladerf", "bladeRF1InputSettings"}, // remap
-    {"sdrangel.samplesink.bladerf1output", "bladeRF1OutputSettings"},
-    {"sdrangel.samplesource.bladerf1output", "bladeRF1OutputSettings"}, // remap
-    {"sdrangel.samplesource.bladerfoutput", "bladeRF1OutputSettings"}, // remap
-    {"sdrangel.samplesource.bladerf2input", "bladeRF2InputSettings"},
-    {"sdrangel.samplesink.bladerf2output", "bladeRF2OutputSettings"},
-    {"sdrangel.samplesource.bladerf2output", "bladeRF2OutputSettings"}, // remap
-    {"sdrangel.samplemimo.bladerf2mimo", "bladeRF2MIMOSettings"},
-    {"sdrangel.samplesource.fcdpro", "fcdProSettings"},
-    {"sdrangel.samplesource.fcdproplus", "fcdProPlusSettings"},
-    {"sdrangel.samplesource.fileinput", "fileInputSettings"},
-    {"sdrangel.samplesource.filesource", "fileInputSettings"}, // remap
-    {"sdrangel.samplesource.hackrf", "hackRFInputSettings"},
-    {"sdrangel.samplesink.hackrf", "hackRFOutputSettings"},
-    {"sdrangel.samplesource.hackrfoutput", "hackRFOutputSettings"}, // remap
-    {"sdrangel.samplesource.kiwisdrsource", "kiwiSDRSettings"},
-    {"sdrangel.samplesource.limesdr", "limeSdrInputSettings"},
-    {"sdrangel.samplesink.limesdr", "limeSdrOutputSettings"},
-    {"sdrangel.samplesource.localinput", "localInputSettings"},
-    {"sdrangel.samplesink.localoutput", "localOutputSettings"},
-    {"sdrangel.samplesource.localoutput", "localOutputSettings"}, // remap
-    {"sdrangel.samplemimo.metismiso", "metisMISOSettings"},
-    {"sdrangel.samplesource.perseus", "perseusSettings"},
-    {"sdrangel.samplesource.plutosdr", "plutoSdrInputSettings"},
-    {"sdrangel.samplesink.plutosdr", "plutoSdrOutputSettings"},
-    {"sdrangel.samplesource.rtlsdr", "rtlSdrSettings"},
-    {"sdrangel.samplesource.remoteinput", "remoteInputSettings"},
-    {"sdrangel.samplesink.remoteoutput", "remoteOutputSettings"},
-    {"sdrangel.samplesource.sdrplay", "sdrPlaySettings"},
-    {"sdrangel.samplesource.sdrplayv3", "sdrPlayV3Settings"},
-    {"sdrangel.samplesource.sigmffileinput", "sigMFFileInputSettings"},
-    {"sdrangel.samplesource.soapysdrinput", "soapySDRInputSettings"},
-    {"sdrangel.samplesink.soapysdroutput", "soapySDROutputSettings"},
-    {"sdrangel.samplesource.testsource", "testSourceSettings"},
-    {"sdrangel.samplemimo.testmi", "testMISettings"},
-    {"sdrangel.samplemimo.testmosync", "testMOSyncSettings"},
-    {"sdrangel.samplesource.usrp", "usrpInputSettings"},
-    {"sdrangel.samplesink.usrp", "usrpOutputSettings"},
-    {"sdrangel.samplesource.xtrx", "xtrxInputSettings"},
-    {"sdrangel.samplesink.xtrx", "xtrxOutputSettings"},
-    {"sdrangel.samplemimo.xtrxmimo", "xtrxMIMOSettings"}
+    {"rpx-100.samplesource.airspy", "airspySettings"},
+    {"rpx-100.samplesource.airspyhf", "airspyHFSettings"},
+    {"rpx-100.samplesource.audioinput", "audioInputSettings"},
+    {"rpx-100.samplesink.audiooutput", "audioOutputSettings"},
+    {"rpx-100.samplesource.bladerf1input", "bladeRF1InputSettings"},
+    {"rpx-100.samplesource.bladerf", "bladeRF1InputSettings"}, // remap
+    {"rpx-100.samplesink.bladerf1output", "bladeRF1OutputSettings"},
+    {"rpx-100.samplesource.bladerf1output", "bladeRF1OutputSettings"}, // remap
+    {"rpx-100.samplesource.bladerfoutput", "bladeRF1OutputSettings"}, // remap
+    {"rpx-100.samplesource.bladerf2input", "bladeRF2InputSettings"},
+    {"rpx-100.samplesink.bladerf2output", "bladeRF2OutputSettings"},
+    {"rpx-100.samplesource.bladerf2output", "bladeRF2OutputSettings"}, // remap
+    {"rpx-100.samplemimo.bladerf2mimo", "bladeRF2MIMOSettings"},
+    {"rpx-100.samplesource.fcdpro", "fcdProSettings"},
+    {"rpx-100.samplesource.fcdproplus", "fcdProPlusSettings"},
+    {"rpx-100.samplesource.fileinput", "fileInputSettings"},
+    {"rpx-100.samplesource.filesource", "fileInputSettings"}, // remap
+    {"rpx-100.samplesource.hackrf", "hackRFInputSettings"},
+    {"rpx-100.samplesink.hackrf", "hackRFOutputSettings"},
+    {"rpx-100.samplesource.hackrfoutput", "hackRFOutputSettings"}, // remap
+    {"rpx-100.samplesource.kiwisdrsource", "kiwiSDRSettings"},
+    {"rpx-100.samplesource.limesdr", "limeSdrInputSettings"},
+    {"rpx-100.samplesink.limesdr", "limeSdrOutputSettings"},
+    {"rpx-100.samplesource.localinput", "localInputSettings"},
+    {"rpx-100.samplesink.localoutput", "localOutputSettings"},
+    {"rpx-100.samplesource.localoutput", "localOutputSettings"}, // remap
+    {"rpx-100.samplemimo.metismiso", "metisMISOSettings"},
+    {"rpx-100.samplesource.perseus", "perseusSettings"},
+    {"rpx-100.samplesource.plutosdr", "plutoSdrInputSettings"},
+    {"rpx-100.samplesink.plutosdr", "plutoSdrOutputSettings"},
+    {"rpx-100.samplesource.rtlsdr", "rtlSdrSettings"},
+    {"rpx-100.samplesource.remoteinput", "remoteInputSettings"},
+    {"rpx-100.samplesink.remoteoutput", "remoteOutputSettings"},
+    {"rpx-100.samplesource.sdrplay", "sdrPlaySettings"},
+    {"rpx-100.samplesource.sdrplayv3", "sdrPlayV3Settings"},
+    {"rpx-100.samplesource.sigmffileinput", "sigMFFileInputSettings"},
+    {"rpx-100.samplesource.soapysdrinput", "soapySDRInputSettings"},
+    {"rpx-100.samplesink.soapysdroutput", "soapySDROutputSettings"},
+    {"rpx-100.samplesource.testsource", "testSourceSettings"},
+    {"rpx-100.samplemimo.testmi", "testMISettings"},
+    {"rpx-100.samplemimo.testmosync", "testMOSyncSettings"},
+    {"rpx-100.samplesource.usrp", "usrpInputSettings"},
+    {"rpx-100.samplesink.usrp", "usrpOutputSettings"},
+    {"rpx-100.samplesource.xtrx", "xtrxInputSettings"},
+    {"rpx-100.samplesink.xtrx", "xtrxOutputSettings"},
+    {"rpx-100.samplemimo.xtrxmimo", "xtrxMIMOSettings"}
 };
 
 const QMap<QString, QString> WebAPIUtils::m_channelTypeToSettingsKey = {
@@ -280,16 +280,16 @@ const QMap<QString, QString> WebAPIUtils::m_featureTypeToActionsKey = {
 };
 
 const QMap<QString, QString> WebAPIUtils::m_featureURIToSettingsKey = {
-    {"sdrangel.feature.ais", "AISSSettings"},
-    {"sdrangel.feature.antennatools", "AntennaToolsSettings"},
-    {"sdrangel.feature.aprs", "APRSSettings"},
-    {"sdrangel.feature.gs232controller", "GS232ControllerSettings"},
-    {"sdrangel.feature.map", "MapSettings"},
-    {"sdrangel.feature.pertester", "PERTesterSettings"},
-    {"sdrangel.feature.satellitetracker", "SatelliteTrackerSettings"},
-    {"sdrangel.feature.simpleptt", "SimplePTTSettings"},
-    {"sdrangel.feature.startracker", "StarTrackerSettings"},
-    {"sdrangel.feature.rigctlserver", "RigCtlServerSettings"}
+    {"rpx-100.feature.ais", "AISSSettings"},
+    {"rpx-100.feature.antennatools", "AntennaToolsSettings"},
+    {"rpx-100.feature.aprs", "APRSSettings"},
+    {"rpx-100.feature.gs232controller", "GS232ControllerSettings"},
+    {"rpx-100.feature.map", "MapSettings"},
+    {"rpx-100.feature.pertester", "PERTesterSettings"},
+    {"rpx-100.feature.satellitetracker", "SatelliteTrackerSettings"},
+    {"rpx-100.feature.simpleptt", "SimplePTTSettings"},
+    {"rpx-100.feature.startracker", "StarTrackerSettings"},
+    {"rpx-100.feature.rigctlserver", "RigCtlServerSettings"}
 };
 
 // Get integer value from within JSON object

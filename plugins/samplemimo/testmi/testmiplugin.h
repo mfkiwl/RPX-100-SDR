@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define TESTMI_DEVICE_TYPE_ID "sdrangel.samplemimo.testmi"
+#define TESTMI_DEVICE_TYPE_ID "rpx-100.samplemimo.testmi"
 
 class TestMIPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

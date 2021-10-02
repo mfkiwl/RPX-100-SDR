@@ -1403,11 +1403,11 @@ bool LimeSDRInput::applySettings(const LimeSDRInputSettings& settings, bool forc
 }
 
 int LimeSDRInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLimeSdrInputSettings(new SWGSDRangel::SWGLimeSdrInputSettings());
+    response.setLimeSdrInputSettings(new SWGrpx-100::SWGLimeSdrInputSettings());
     response.getLimeSdrInputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -1416,7 +1416,7 @@ int LimeSDRInput::webapiSettingsGet(
 int LimeSDRInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -1439,7 +1439,7 @@ int LimeSDRInput::webapiSettingsPutPatch(
 void LimeSDRInput::webapiUpdateDeviceSettings(
         LimeSDRInputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("antennaPath")) {
         settings.m_antennaPath = (LimeSDRInputSettings::PathRFE) response.getLimeSdrInputSettings()->getAntennaPath();
@@ -1527,7 +1527,7 @@ void LimeSDRInput::webapiUpdateDeviceSettings(
     }
 }
 
-void LimeSDRInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const LimeSDRInputSettings& settings)
+void LimeSDRInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const LimeSDRInputSettings& settings)
 {
     response.getLimeSdrInputSettings()->setAntennaPath((int) settings.m_antennaPath);
     response.getLimeSdrInputSettings()->setCenterFrequency(settings.m_centerFrequency);
@@ -1566,18 +1566,18 @@ void LimeSDRInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& re
 }
 
 int LimeSDRInput::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLimeSdrInputReport(new SWGSDRangel::SWGLimeSdrInputReport());
+    response.setLimeSdrInputReport(new SWGrpx-100::SWGLimeSdrInputReport());
     response.getLimeSdrInputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
 int LimeSDRInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1587,7 +1587,7 @@ int LimeSDRInput::webapiRunGet(
 
 int LimeSDRInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1604,7 +1604,7 @@ int LimeSDRInput::webapiRun(
     return 200;
 }
 
-void LimeSDRInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void LimeSDRInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     bool success = false;
     double temp = 0.0;
@@ -1646,12 +1646,12 @@ void LimeSDRInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& respon
 
 void LimeSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const LimeSDRInputSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("LimeSDR"));
-    swgDeviceSettings->setLimeSdrInputSettings(new SWGSDRangel::SWGLimeSdrInputSettings());
-    SWGSDRangel::SWGLimeSdrInputSettings *swgLimeSdrInputSettings = swgDeviceSettings->getLimeSdrInputSettings();
+    swgDeviceSettings->setLimeSdrInputSettings(new SWGrpx-100::SWGLimeSdrInputSettings());
+    SWGrpx-100::SWGLimeSdrInputSettings *swgLimeSdrInputSettings = swgDeviceSettings->getLimeSdrInputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1728,7 +1728,7 @@ void LimeSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
         swgLimeSdrInputSettings->setGpioPins(settings.m_gpioPins & 0xFF);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1749,12 +1749,12 @@ void LimeSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
 
 void LimeSDRInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("LimeSDR"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

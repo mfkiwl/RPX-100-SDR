@@ -30,9 +30,9 @@ const PluginDescriptor FreeDVModPlugin::m_pluginDescriptor = {
     QStringLiteral("FreeDV Modulator"),
     QStringLiteral("6.3.3"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 FreeDVModPlugin::FreeDVModPlugin(QObject* parent) :

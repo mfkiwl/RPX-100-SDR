@@ -49,43 +49,43 @@ public:
     void setPluginManager(const PluginManager *pluginManager) { m_pluginManager = pluginManager; }
 
     static void webapiFormatPreferences(
-        SWGSDRangel::SWGPreferences *apiPreferences,
+        SWGrpx-100::SWGPreferences *apiPreferences,
         const Preferences& preferences
     );
     void webapiFormatPreset(
-        SWGSDRangel::SWGPreset *apiPreset,
+        SWGrpx-100::SWGPreset *apiPreset,
         const Preset& preset
     );
     void webapiFormatFeatureSetPreset(
-        SWGSDRangel::SWGFeatureSetPreset *apiPreset,
+        SWGrpx-100::SWGFeatureSetPreset *apiPreset,
         const FeatureSetPreset& preset
     );
     static void webapiFormatCommand(
-        SWGSDRangel::SWGCommand *apiCommand,
+        SWGrpx-100::SWGCommand *apiCommand,
         const Command& command
     );
     static void webapiInitConfig(
         MainSettings& mainSettings
     );
     static void webapiUpdatePreferences(
-        SWGSDRangel::SWGPreferences *apiPreferences,
+        SWGrpx-100::SWGPreferences *apiPreferences,
         const QStringList& preferenceKeys,
         Preferences& preferences
     );
     void webapiUpdatePreset(
         bool force,
-        SWGSDRangel::SWGPreset *apiPreset,
+        SWGrpx-100::SWGPreset *apiPreset,
         const WebAPIAdapterInterface::PresetKeys& presetKeys,
         Preset *preset
     );
     void webapiUpdateFeatureSetPreset(
         bool force,
-        SWGSDRangel::SWGFeatureSetPreset *apiPreset,
+        SWGrpx-100::SWGFeatureSetPreset *apiPreset,
         const WebAPIAdapterInterface::FeatureSetPresetKeys& presetKeys,
         FeatureSetPreset *preset
     );
     static void webapiUpdateCommand(
-        SWGSDRangel::SWGCommand *apiCommand,
+        SWGrpx-100::SWGCommand *apiCommand,
         const WebAPIAdapterInterface::CommandKeys& commandKeys,
         Command& command
     );

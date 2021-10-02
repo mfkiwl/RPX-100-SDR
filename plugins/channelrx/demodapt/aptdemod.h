@@ -203,28 +203,28 @@ public:
     }
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiActionsPost(
             const QStringList& channelActionsKeys,
-            SWGSDRangel::SWGChannelActions& query,
+            SWGrpx-100::SWGChannelActions& query,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             const APTDemodSettings& settings);
 
     static void webapiUpdateChannelSettings(
             APTDemodSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     double getMagSq() const { return m_basebandSink->getMagSq(); }
 
@@ -256,7 +256,7 @@ private:
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const APTDemodSettings& settings, bool force);
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const APTDemodSettings& settings,
         bool force
     );

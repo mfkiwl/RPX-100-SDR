@@ -617,7 +617,7 @@ struct airspy_device *AirspyInput::open_airspy_from_sequence(int sequence)
 }
 
 int AirspyInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -627,7 +627,7 @@ int AirspyInput::webapiRunGet(
 
 int AirspyInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -645,11 +645,11 @@ int AirspyInput::webapiRun(
 }
 
 int AirspyInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAirspySettings(new SWGSDRangel::SWGAirspySettings());
+    response.setAirspySettings(new SWGrpx-100::SWGAirspySettings());
     response.getAirspySettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -658,7 +658,7 @@ int AirspyInput::webapiSettingsGet(
 int AirspyInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -681,7 +681,7 @@ int AirspyInput::webapiSettingsPutPatch(
 void AirspyInput::webapiUpdateDeviceSettings(
         AirspySettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getAirspySettings()->getCenterFrequency();
@@ -748,17 +748,17 @@ void AirspyInput::webapiUpdateDeviceSettings(
 }
 
 int AirspyInput::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAirspyReport(new SWGSDRangel::SWGAirspyReport());
+    response.setAirspyReport(new SWGrpx-100::SWGAirspyReport());
     response.getAirspyReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void AirspyInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const AirspySettings& settings)
+void AirspyInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const AirspySettings& settings)
 {
     response.getAirspySettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getAirspySettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -789,25 +789,25 @@ void AirspyInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& res
     response.getAirspySettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void AirspyInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void AirspyInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
-    response.getAirspyReport()->setSampleRates(new QList<SWGSDRangel::SWGSampleRate*>);
+    response.getAirspyReport()->setSampleRates(new QList<SWGrpx-100::SWGSampleRate*>);
 
     for (std::vector<uint32_t>::const_iterator it = getSampleRates().begin(); it != getSampleRates().end(); ++it)
     {
-        response.getAirspyReport()->getSampleRates()->append(new SWGSDRangel::SWGSampleRate);
+        response.getAirspyReport()->getSampleRates()->append(new SWGrpx-100::SWGSampleRate);
         response.getAirspyReport()->getSampleRates()->back()->setRate(*it);
     }
 }
 
 void AirspyInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const AirspySettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("Airspy"));
-    swgDeviceSettings->setAirspySettings(new SWGSDRangel::SWGAirspySettings());
-    SWGSDRangel::SWGAirspySettings *swgAirspySettings = swgDeviceSettings->getAirspySettings();
+    swgDeviceSettings->setAirspySettings(new SWGrpx-100::SWGAirspySettings());
+    SWGrpx-100::SWGAirspySettings *swgAirspySettings = swgDeviceSettings->getAirspySettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -860,7 +860,7 @@ void AirspyInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
         swgAirspySettings->setTransverterMode(settings.m_transverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -881,12 +881,12 @@ void AirspyInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
 
 void AirspyInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("Airspy"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

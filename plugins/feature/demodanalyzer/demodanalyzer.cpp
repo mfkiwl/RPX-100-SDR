@@ -43,7 +43,7 @@ MESSAGE_CLASS_DEFINITION(DemodAnalyzer::MsgReportChannels, Message)
 MESSAGE_CLASS_DEFINITION(DemodAnalyzer::MsgSelectChannel, Message)
 MESSAGE_CLASS_DEFINITION(DemodAnalyzer::MsgReportSampleRate, Message)
 
-const char* const DemodAnalyzer::m_featureIdURI = "sdrangel.feature.demodanalyzer";
+const char* const DemodAnalyzer::m_featureIdURI = "rpx-100.feature.demodanalyzer";
 const char* const DemodAnalyzer::m_featureId = "DemodAnalyzer";
 
 DemodAnalyzer::DemodAnalyzer(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -353,7 +353,7 @@ void DemodAnalyzer::setChannel(ChannelAPI *selectedChannel)
 }
 
 int DemodAnalyzer::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -364,11 +364,11 @@ int DemodAnalyzer::webapiRun(bool run,
 }
 
 int DemodAnalyzer::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDemodAnalyzerSettings(new SWGSDRangel::SWGDemodAnalyzerSettings());
+    response.setDemodAnalyzerSettings(new SWGrpx-100::SWGDemodAnalyzerSettings());
     response.getDemodAnalyzerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -377,7 +377,7 @@ int DemodAnalyzer::webapiSettingsGet(
 int DemodAnalyzer::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -400,7 +400,7 @@ int DemodAnalyzer::webapiSettingsPutPatch(
 }
 
 void DemodAnalyzer::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const DemodAnalyzerSettings& settings)
 {
     if (response.getDemodAnalyzerSettings()->getTitle()) {
@@ -427,7 +427,7 @@ void DemodAnalyzer::webapiFormatFeatureSettings(
 void DemodAnalyzer::webapiUpdateFeatureSettings(
     DemodAnalyzerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("log2Decim")) {
         settings.m_log2Decim = response.getDemodAnalyzerSettings()->getLog2Decim();
@@ -457,12 +457,12 @@ void DemodAnalyzer::webapiUpdateFeatureSettings(
 
 void DemodAnalyzer::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const DemodAnalyzerSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("DemodAnalyzer"));
-    swgFeatureSettings->setDemodAnalyzerSettings(new SWGSDRangel::SWGDemodAnalyzerSettings());
-    SWGSDRangel::SWGDemodAnalyzerSettings *swgDemodAnalyzerSettings = swgFeatureSettings->getDemodAnalyzerSettings();
+    swgFeatureSettings->setDemodAnalyzerSettings(new SWGrpx-100::SWGDemodAnalyzerSettings());
+    SWGrpx-100::SWGDemodAnalyzerSettings *swgDemodAnalyzerSettings = swgFeatureSettings->getDemodAnalyzerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -476,7 +476,7 @@ void DemodAnalyzer::webapiReverseSendSettings(QList<QString>& featureSettingsKey
         swgDemodAnalyzerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

@@ -29,9 +29,9 @@ const PluginDescriptor ChirpChatPlugin::m_pluginDescriptor = {
 	QStringLiteral("ChirpChat Demodulator"),
 	QStringLiteral("6.7.0"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 ChirpChatPlugin::ChirpChatPlugin(QObject* parent) :

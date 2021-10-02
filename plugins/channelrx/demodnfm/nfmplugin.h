@@ -10,7 +10,7 @@ class BasebandSampleSink;
 class NFMPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.channel.nfmdemod")
+	Q_PLUGIN_METADATA(IID "rpx-100.channel.nfmdemod")
 
 public:
 	explicit NFMPlugin(QObject* parent = NULL);

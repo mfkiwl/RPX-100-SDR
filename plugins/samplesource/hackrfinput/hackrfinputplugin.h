@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define HACKRF_DEVICE_TYPE_ID "sdrangel.samplesource.hackrf"
+#define HACKRF_DEVICE_TYPE_ID "rpx-100.samplesource.hackrf"
 
 class PluginAPI;
 

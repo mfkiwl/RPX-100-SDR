@@ -26,11 +26,11 @@ SimplePTTWebAPIAdapter::~SimplePTTWebAPIAdapter()
 {}
 
 int SimplePTTWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSimplePttSettings(new SWGSDRangel::SWGSimplePTTSettings());
+    response.setSimplePttSettings(new SWGrpx-100::SWGSimplePTTSettings());
     response.getSimplePttSettings()->init();
     SimplePTT::webapiFormatFeatureSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int SimplePTTWebAPIAdapter::webapiSettingsGet(
 int SimplePTTWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

@@ -29,7 +29,7 @@ PlutoSDRMIMOWebAPIAdapter::~PlutoSDRMIMOWebAPIAdapter()
 {}
 
 int PlutoSDRMIMOWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -40,7 +40,7 @@ int PlutoSDRMIMOWebAPIAdapter::webapiSettingsGet(
 int PlutoSDRMIMOWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force;

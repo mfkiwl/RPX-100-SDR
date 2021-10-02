@@ -30,11 +30,11 @@ USRPInputWebAPIAdapter::~USRPInputWebAPIAdapter()
 {}
 
 int USRPInputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUsrpInputSettings(new SWGSDRangel::SWGUSRPInputSettings());
+    response.setUsrpInputSettings(new SWGrpx-100::SWGUSRPInputSettings());
     response.getUsrpInputSettings()->init();
     USRPInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -43,7 +43,7 @@ int USRPInputWebAPIAdapter::webapiSettingsGet(
 int USRPInputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

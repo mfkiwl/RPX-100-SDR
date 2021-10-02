@@ -51,7 +51,7 @@
 MESSAGE_CLASS_DEFINITION(IEEE_802_15_4_Mod::MsgConfigureIEEE_802_15_4_Mod, Message)
 MESSAGE_CLASS_DEFINITION(IEEE_802_15_4_Mod::MsgTXIEEE_802_15_4_Mod, Message)
 
-const char* const IEEE_802_15_4_Mod::m_channelIdURI = "sdrangel.channeltx.mod802.15.4";
+const char* const IEEE_802_15_4_Mod::m_channelIdURI = "rpx-100.channeltx.mod802.15.4";
 const char* const IEEE_802_15_4_Mod::m_channelId = "IEEE_802_15_4_Mod";
 
 IEEE_802_15_4_Mod::IEEE_802_15_4_Mod(DeviceAPI *deviceAPI) :
@@ -277,11 +277,11 @@ bool IEEE_802_15_4_Mod::deserialize(const QByteArray& data)
 }
 
 int IEEE_802_15_4_Mod::webapiSettingsGet(
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setIeee802154ModSettings(new SWGSDRangel::SWGIEEE_802_15_4_ModSettings());
+    response.setIeee802154ModSettings(new SWGrpx-100::SWGIEEE_802_15_4_ModSettings());
     response.getIeee802154ModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
 
@@ -291,7 +291,7 @@ int IEEE_802_15_4_Mod::webapiSettingsGet(
 int IEEE_802_15_4_Mod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -315,7 +315,7 @@ int IEEE_802_15_4_Mod::webapiSettingsPutPatch(
 void IEEE_802_15_4_Mod::webapiUpdateChannelSettings(
         IEEE_802_15_4_ModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getIeee802154ModSettings()->getInputFrequencyOffset();
@@ -377,11 +377,11 @@ void IEEE_802_15_4_Mod::webapiUpdateChannelSettings(
 }
 
 int IEEE_802_15_4_Mod::webapiReportGet(
-                SWGSDRangel::SWGChannelReport& response,
+                SWGrpx-100::SWGChannelReport& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setIeee802154ModReport(new SWGSDRangel::SWGIEEE_802_15_4_ModReport());
+    response.setIeee802154ModReport(new SWGrpx-100::SWGIEEE_802_15_4_ModReport());
     response.getIeee802154ModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
@@ -389,16 +389,16 @@ int IEEE_802_15_4_Mod::webapiReportGet(
 
 int IEEE_802_15_4_Mod::webapiActionsPost(
         const QStringList& channelActionsKeys,
-        SWGSDRangel::SWGChannelActions& query,
+        SWGrpx-100::SWGChannelActions& query,
         QString& errorMessage)
 {
-    SWGSDRangel::SWGIEEE_802_15_4_ModActions *swgIEEE_802_15_4_ModActions = query.getIeee802154ModActions();
+    SWGrpx-100::SWGIEEE_802_15_4_ModActions *swgIEEE_802_15_4_ModActions = query.getIeee802154ModActions();
 
     if (swgIEEE_802_15_4_ModActions)
     {
         if (channelActionsKeys.contains("tx"))
         {
-            SWGSDRangel::SWGIEEE_802_15_4_ModActions_tx* tx = swgIEEE_802_15_4_ModActions->getTx();
+            SWGrpx-100::SWGIEEE_802_15_4_ModActions_tx* tx = swgIEEE_802_15_4_ModActions->getTx();
             QString *dataP = tx->getData();
             if (dataP != nullptr)
             {
@@ -427,7 +427,7 @@ int IEEE_802_15_4_Mod::webapiActionsPost(
     }
 }
 
-void IEEE_802_15_4_Mod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const IEEE_802_15_4_ModSettings& settings)
+void IEEE_802_15_4_Mod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const IEEE_802_15_4_ModSettings& settings)
 {
     response.getIeee802154ModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getIeee802154ModSettings()->setPhy(new QString(settings.getPHY()));
@@ -461,7 +461,7 @@ void IEEE_802_15_4_Mod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSetti
     response.getIeee802154ModSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void IEEE_802_15_4_Mod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void IEEE_802_15_4_Mod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     response.getIeee802154ModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getIeee802154ModReport()->setChannelSampleRate(m_basebandSource->getChannelSampleRate());
@@ -469,10 +469,10 @@ void IEEE_802_15_4_Mod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport&
 
 void IEEE_802_15_4_Mod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const IEEE_802_15_4_ModSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -502,7 +502,7 @@ void IEEE_802_15_4_Mod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -516,7 +516,7 @@ void IEEE_802_15_4_Mod::sendChannelSettings(
 
 void IEEE_802_15_4_Mod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const IEEE_802_15_4_ModSettings& settings,
         bool force
 )
@@ -525,8 +525,8 @@ void IEEE_802_15_4_Mod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setIeee802154ModSettings(new SWGSDRangel::SWGIEEE_802_15_4_ModSettings());
-    SWGSDRangel::SWGIEEE_802_15_4_ModSettings *swgIEEE_802_15_4_ModSettings = swgChannelSettings->getIeee802154ModSettings();
+    swgChannelSettings->setIeee802154ModSettings(new SWGrpx-100::SWGIEEE_802_15_4_ModSettings());
+    SWGrpx-100::SWGIEEE_802_15_4_ModSettings *swgIEEE_802_15_4_ModSettings = swgChannelSettings->getIeee802154ModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

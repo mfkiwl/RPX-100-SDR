@@ -1,8 +1,8 @@
 {
-  "name": "sdrangel",
+  "name": "rpx-100",
   "version": "4.0.0",
   "private": true,
-  "description": "New Swagger API Project for SDRangel",
+  "description": "New Swagger API Project for rpx-100",
   "keywords": [],
   "author": "",
   "license": "",

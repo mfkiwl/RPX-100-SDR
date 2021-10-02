@@ -40,7 +40,7 @@ MESSAGE_CLASS_DEFINITION(AFC::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(AFC::MsgDeviceTrack, Message)
 MESSAGE_CLASS_DEFINITION(AFC::MsgDevicesApply, Message)
 
-const char* const AFC::m_featureIdURI = "sdrangel.feature.afc";
+const char* const AFC::m_featureIdURI = "rpx-100.feature.afc";
 const char* const AFC::m_featureId = "AFC";
 
 AFC::AFC(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -120,7 +120,7 @@ bool AFC::handleMessage(const Message& cmd)
     else if (MainCore::MsgChannelSettings::match(cmd))
     {
         MainCore::MsgChannelSettings& cfg = (MainCore::MsgChannelSettings&) cmd;
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = cfg.getSWGSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = cfg.getSWGSettings();
         QString *channelType  = swgChannelSettings->getChannelType();
         qDebug() << "AFC::handleMessage: MainCore::MsgChannelSettings: " << *channelType;
 
@@ -269,7 +269,7 @@ void AFC::applySettings(const AFCSettings& settings, bool force)
 }
 
 int AFC::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -280,11 +280,11 @@ int AFC::webapiRun(bool run,
 }
 
 int AFC::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAfcSettings(new SWGSDRangel::SWGAFCSettings());
+    response.setAfcSettings(new SWGrpx-100::SWGAFCSettings());
     response.getAfcSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -293,7 +293,7 @@ int AFC::webapiSettingsGet(
 int AFC::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -316,11 +316,11 @@ int AFC::webapiSettingsPutPatch(
 }
 
 int AFC::webapiReportGet(
-    SWGSDRangel::SWGFeatureReport& response,
+    SWGrpx-100::SWGFeatureReport& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAfcReport(new SWGSDRangel::SWGAFCReport());
+    response.setAfcReport(new SWGrpx-100::SWGAFCReport());
     response.getAfcReport()->init();
     webapiFormatFeatureReport(response);
     return 200;
@@ -328,10 +328,10 @@ int AFC::webapiReportGet(
 
 int AFC::webapiActionsPost(
     const QStringList& featureActionsKeys,
-    SWGSDRangel::SWGFeatureActions& query,
+    SWGrpx-100::SWGFeatureActions& query,
     QString& errorMessage)
 {
-    SWGSDRangel::SWGAFCActions *swgAFCActions = query.getAfcActions();
+    SWGrpx-100::SWGAFCActions *swgAFCActions = query.getAfcActions();
 
     if (swgAFCActions)
     {
@@ -367,7 +367,7 @@ int AFC::webapiActionsPost(
 }
 
 void AFC::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const AFCSettings& settings)
 {
     if (response.getAfcSettings()->getTitle()) {
@@ -401,7 +401,7 @@ void AFC::webapiFormatFeatureSettings(
 void AFC::webapiUpdateFeatureSettings(
     AFCSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("title")) {
         settings.m_title = *response.getAfcSettings()->getTitle();
@@ -447,7 +447,7 @@ void AFC::webapiUpdateFeatureSettings(
     }
 }
 
-void AFC::webapiFormatFeatureReport(SWGSDRangel::SWGFeatureReport& response)
+void AFC::webapiFormatFeatureReport(SWGrpx-100::SWGFeatureReport& response)
 {
     response.getAfcReport()->setTrackerChannelIndex(m_trackerIndexInDeviceSet);
     response.getAfcReport()->setTrackerDeviceFrequency(m_worker->getTrackerDeviceFrequency());
@@ -456,12 +456,12 @@ void AFC::webapiFormatFeatureReport(SWGSDRangel::SWGFeatureReport& response)
 
 void AFC::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AFCSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("AFC"));
-    swgFeatureSettings->setAfcSettings(new SWGSDRangel::SWGAFCSettings());
-    SWGSDRangel::SWGAFCSettings *swgAFCSettings = swgFeatureSettings->getAfcSettings();
+    swgFeatureSettings->setAfcSettings(new SWGrpx-100::SWGAFCSettings());
+    SWGrpx-100::SWGAFCSettings *swgAFCSettings = swgFeatureSettings->getAfcSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -493,7 +493,7 @@ void AFC::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const A
         swgAFCSettings->setTrackerAdjustPeriod(settings.m_trackerAdjustPeriod);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)
@@ -543,7 +543,7 @@ void AFC::trackerDeviceChange(int deviceIndex)
     {
         ChannelAPI *channel = m_trackerDeviceSet->getChannelAt(i);
 
-        if (channel->getURI() == "sdrangel.channel.freqtracker")
+        if (channel->getURI() == "rpx-100.channel.freqtracker")
         {
             MessageQueue *messageQueue = mainCore->getMessagePipes().registerChannelToFeature(channel, this, "settings");
             QObject::connect(
@@ -568,7 +568,7 @@ void AFC::trackedDeviceChange(int deviceIndex)
     {
         ChannelAPI *channel = m_trackedDeviceSet->getChannelAt(i);
 
-        if (channel->getURI() != "sdrangel.channel.freqtracker")
+        if (channel->getURI() != "rpx-100.channel.freqtracker")
         {
             MessageQueue *messageQueue = mainCore->getMessagePipes().registerChannelToFeature(channel, this, "settings");
             QObject::connect(

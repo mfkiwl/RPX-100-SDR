@@ -39,7 +39,7 @@ MESSAGE_CLASS_DEFINITION(SatelliteTracker::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(SatelliteTracker::MsgUpdateSatData, Message)
 MESSAGE_CLASS_DEFINITION(SatelliteTracker::MsgSatData, Message)
 
-const char* const SatelliteTracker::m_featureIdURI = "sdrangel.feature.satellitetracker";
+const char* const SatelliteTracker::m_featureIdURI = "rpx-100.feature.satellitetracker";
 const char* const SatelliteTracker::m_featureId = "SatelliteTracker";
 
 SatelliteTracker::SatelliteTracker(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -325,7 +325,7 @@ void SatelliteTracker::applySettings(const SatelliteTrackerSettings& settings, b
 }
 
 int SatelliteTracker::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -336,11 +336,11 @@ int SatelliteTracker::webapiRun(bool run,
 }
 
 int SatelliteTracker::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSatelliteTrackerSettings(new SWGSDRangel::SWGSatelliteTrackerSettings());
+    response.setSatelliteTrackerSettings(new SWGrpx-100::SWGSatelliteTrackerSettings());
     response.getSatelliteTrackerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -349,7 +349,7 @@ int SatelliteTracker::webapiSettingsGet(
 int SatelliteTracker::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -391,9 +391,9 @@ static QStringList convertPtrsToStringList(QList<QString *> *listIn)
 }
 
 // Convert struct SatelliteDeviceSettings to Swagger
-QList<SWGSDRangel::SWGSatelliteDeviceSettingsList*>* SatelliteTracker::getSWGSatelliteDeviceSettingsList(const SatelliteTrackerSettings& settings)
+QList<SWGrpx-100::SWGSatelliteDeviceSettingsList*>* SatelliteTracker::getSWGSatelliteDeviceSettingsList(const SatelliteTrackerSettings& settings)
 {
-    QList <SWGSDRangel::SWGSatelliteDeviceSettingsList*>* deviceSettingsList = new QList<SWGSDRangel::SWGSatelliteDeviceSettingsList*>();
+    QList <SWGrpx-100::SWGSatelliteDeviceSettingsList*>* deviceSettingsList = new QList<SWGrpx-100::SWGSatelliteDeviceSettingsList*>();
     QHashIterator<QString, QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *> i(settings.m_deviceSettings);
     while (i.hasNext())
     {
@@ -401,12 +401,12 @@ QList<SWGSDRangel::SWGSatelliteDeviceSettingsList*>* SatelliteTracker::getSWGSat
         QList<SatelliteTrackerSettings::SatelliteDeviceSettings*>* l = i.value();
         if (l->size() > 0)
         {
-            SWGSDRangel::SWGSatelliteDeviceSettingsList* dsl = new SWGSDRangel::SWGSatelliteDeviceSettingsList();
+            SWGrpx-100::SWGSatelliteDeviceSettingsList* dsl = new SWGrpx-100::SWGSatelliteDeviceSettingsList();
             dsl->setSatellite(new QString(i.key()));
-            QList<SWGSDRangel::SWGSatelliteDeviceSettings*>* ds = new QList<SWGSDRangel::SWGSatelliteDeviceSettings*>();
+            QList<SWGrpx-100::SWGSatelliteDeviceSettings*>* ds = new QList<SWGrpx-100::SWGSatelliteDeviceSettings*>();
             for (int j = 0; j < l->size(); j++)
             {
-                SWGSDRangel::SWGSatelliteDeviceSettings* deviceSettings = new SWGSDRangel::SWGSatelliteDeviceSettings();
+                SWGrpx-100::SWGSatelliteDeviceSettings* deviceSettings = new SWGrpx-100::SWGSatelliteDeviceSettings();
                 deviceSettings->setDeviceSet(new QString(l->at(j)->m_deviceSet));
                 deviceSettings->setPresetGroup(new QString(l->at(j)->m_presetGroup));
                 deviceSettings->setPresetDescription(new QString(l->at(j)->m_presetDescription));
@@ -442,17 +442,17 @@ static QString getString(QString *sp)
 }
 
 // Convert Swagger device settings to struct SatelliteDeviceSettings
-QHash<QString, QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *> SatelliteTracker::getSatelliteDeviceSettings(QList<SWGSDRangel::SWGSatelliteDeviceSettingsList*>* list)
+QHash<QString, QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *> SatelliteTracker::getSatelliteDeviceSettings(QList<SWGrpx-100::SWGSatelliteDeviceSettingsList*>* list)
 {
     QHash<QString, QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *> hash;
 
     for (int i = 0; i < list->size(); i++)
     {
-        SWGSDRangel::SWGSatelliteDeviceSettingsList* satList = list->at(i);
+        SWGrpx-100::SWGSatelliteDeviceSettingsList* satList = list->at(i);
         if (satList->getSatellite())
         {
             QString satellite = *satList->getSatellite();
-            QList<SWGSDRangel::SWGSatelliteDeviceSettings*>* swgDeviceSettingsList = satList->getDeviceSettings();
+            QList<SWGrpx-100::SWGSatelliteDeviceSettings*>* swgDeviceSettingsList = satList->getDeviceSettings();
             if (swgDeviceSettingsList)
             {
                 QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *deviceSettingsList = new QList<SatelliteTrackerSettings::SatelliteDeviceSettings *>();
@@ -491,7 +491,7 @@ QHash<QString, QList<SatelliteTrackerSettings::SatelliteDeviceSettings *> *> Sat
 }
 
 void SatelliteTracker::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const SatelliteTrackerSettings& settings)
 {
     response.getSatelliteTrackerSettings()->setLatitude(settings.m_latitude);
@@ -546,7 +546,7 @@ void SatelliteTracker::webapiFormatFeatureSettings(
 void SatelliteTracker::webapiUpdateFeatureSettings(
     SatelliteTrackerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("latitude")) {
         settings.m_latitude = response.getSatelliteTrackerSettings()->getLatitude();
@@ -657,12 +657,12 @@ void SatelliteTracker::webapiUpdateFeatureSettings(
 
 void SatelliteTracker::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const SatelliteTrackerSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("SatelliteTracker"));
-    swgFeatureSettings->setSatelliteTrackerSettings(new SWGSDRangel::SWGSatelliteTrackerSettings());
-    SWGSDRangel::SWGSatelliteTrackerSettings *swgSatelliteTrackerSettings = swgFeatureSettings->getSatelliteTrackerSettings();
+    swgFeatureSettings->setSatelliteTrackerSettings(new SWGrpx-100::SWGSatelliteTrackerSettings());
+    SWGrpx-100::SWGSatelliteTrackerSettings *swgSatelliteTrackerSettings = swgFeatureSettings->getSatelliteTrackerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -748,7 +748,7 @@ void SatelliteTracker::webapiReverseSendSettings(QList<QString>& featureSettings
         swgSatelliteTrackerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

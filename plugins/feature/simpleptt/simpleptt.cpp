@@ -35,7 +35,7 @@ MESSAGE_CLASS_DEFINITION(SimplePTT::MsgConfigureSimplePTT, Message)
 MESSAGE_CLASS_DEFINITION(SimplePTT::MsgPTT, Message)
 MESSAGE_CLASS_DEFINITION(SimplePTT::MsgStartStop, Message)
 
-const char* const SimplePTT::m_featureIdURI = "sdrangel.feature.simpleptt";
+const char* const SimplePTT::m_featureIdURI = "rpx-100.feature.simpleptt";
 const char* const SimplePTT::m_featureId = "SimplePTT";
 
 SimplePTT::SimplePTT(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -197,7 +197,7 @@ void SimplePTT::applySettings(const SimplePTTSettings& settings, bool force)
 }
 
 int SimplePTT::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -208,11 +208,11 @@ int SimplePTT::webapiRun(bool run,
 }
 
 int SimplePTT::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSimplePttSettings(new SWGSDRangel::SWGSimplePTTSettings());
+    response.setSimplePttSettings(new SWGrpx-100::SWGSimplePTTSettings());
     response.getSimplePttSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -221,7 +221,7 @@ int SimplePTT::webapiSettingsGet(
 int SimplePTT::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -244,11 +244,11 @@ int SimplePTT::webapiSettingsPutPatch(
 }
 
 int SimplePTT::webapiReportGet(
-    SWGSDRangel::SWGFeatureReport& response,
+    SWGrpx-100::SWGFeatureReport& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSimplePttReport(new SWGSDRangel::SWGSimplePTTReport());
+    response.setSimplePttReport(new SWGrpx-100::SWGSimplePTTReport());
     response.getSimplePttReport()->init();
     webapiFormatFeatureReport(response);
     return 200;
@@ -256,10 +256,10 @@ int SimplePTT::webapiReportGet(
 
 int SimplePTT::webapiActionsPost(
     const QStringList& featureActionsKeys,
-    SWGSDRangel::SWGFeatureActions& query,
+    SWGrpx-100::SWGFeatureActions& query,
     QString& errorMessage)
 {
-    SWGSDRangel::SWGSimplePTTActions *swgSimplePTTActions = query.getSimplePttActions();
+    SWGrpx-100::SWGSimplePTTActions *swgSimplePTTActions = query.getSimplePttActions();
 
     if (swgSimplePTTActions)
     {
@@ -287,7 +287,7 @@ int SimplePTT::webapiActionsPost(
 }
 
 void SimplePTT::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const SimplePTTSettings& settings)
 {
     if (response.getSimplePttSettings()->getTitle()) {
@@ -318,7 +318,7 @@ void SimplePTT::webapiFormatFeatureSettings(
 void SimplePTT::webapiUpdateFeatureSettings(
     SimplePTTSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("title")) {
         settings.m_title = *response.getSimplePttSettings()->getTitle();
@@ -355,19 +355,19 @@ void SimplePTT::webapiUpdateFeatureSettings(
     }
 }
 
-void SimplePTT::webapiFormatFeatureReport(SWGSDRangel::SWGFeatureReport& response)
+void SimplePTT::webapiFormatFeatureReport(SWGrpx-100::SWGFeatureReport& response)
 {
     response.getSimplePttReport()->setPtt(m_ptt ? 1 : 0);
 }
 
 void SimplePTT::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const SimplePTTSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("SimplePTT"));
-    swgFeatureSettings->setSimplePttSettings(new SWGSDRangel::SWGSimplePTTSettings());
-    SWGSDRangel::SWGSimplePTTSettings *swgSimplePTTSettings = swgFeatureSettings->getSimplePttSettings();
+    swgFeatureSettings->setSimplePttSettings(new SWGrpx-100::SWGSimplePTTSettings());
+    SWGrpx-100::SWGSimplePTTSettings *swgSimplePTTSettings = swgFeatureSettings->getSimplePttSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -390,7 +390,7 @@ void SimplePTT::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, c
         swgSimplePTTSettings->setTx2RxDelayMs(settings.m_tx2RxDelayMs);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

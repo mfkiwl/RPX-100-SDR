@@ -48,7 +48,7 @@ MESSAGE_CLASS_DEFINITION(APTDemod::MsgImage, Message)
 MESSAGE_CLASS_DEFINITION(APTDemod::MsgLine, Message)
 MESSAGE_CLASS_DEFINITION(APTDemod::MsgResetDecoder, Message)
 
-const char * const APTDemod::m_channelIdURI = "sdrangel.channel.aptdemod";
+const char * const APTDemod::m_channelIdURI = "rpx-100.channel.aptdemod";
 const char * const APTDemod::m_channelId = "APTDemod";
 
 APTDemod::APTDemod(DeviceAPI *deviceAPI) :
@@ -330,11 +330,11 @@ bool APTDemod::deserialize(const QByteArray& data)
 }
 
 int APTDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAptDemodSettings(new SWGSDRangel::SWGAPTDemodSettings());
+    response.setAptDemodSettings(new SWGrpx-100::SWGAPTDemodSettings());
     response.getAptDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -343,7 +343,7 @@ int APTDemod::webapiSettingsGet(
 int APTDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -368,7 +368,7 @@ int APTDemod::webapiSettingsPutPatch(
 void APTDemod::webapiUpdateChannelSettings(
         APTDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getAptDemodSettings()->getInputFrequencyOffset();
@@ -438,7 +438,7 @@ void APTDemod::webapiUpdateChannelSettings(
     }
 }
 
-void APTDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const APTDemodSettings& settings)
+void APTDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const APTDemodSettings& settings)
 {
     response.getAptDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getAptDemodSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -479,10 +479,10 @@ void APTDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& resp
 
 void APTDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const APTDemodSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -504,7 +504,7 @@ void APTDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
 
 void APTDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const APTDemodSettings& settings,
         bool force
 )
@@ -513,8 +513,8 @@ void APTDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("APTDemod"));
-    swgChannelSettings->setAptDemodSettings(new SWGSDRangel::SWGAPTDemodSettings());
-    SWGSDRangel::SWGAPTDemodSettings *swgAPTDemodSettings = swgChannelSettings->getAptDemodSettings();
+    swgChannelSettings->setAptDemodSettings(new SWGrpx-100::SWGAPTDemodSettings());
+    SWGrpx-100::SWGAPTDemodSettings *swgAPTDemodSettings = swgChannelSettings->getAptDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -573,16 +573,16 @@ void APTDemod::webapiFormatChannelSettings(
 
 int APTDemod::webapiActionsPost(
         const QStringList& channelActionsKeys,
-        SWGSDRangel::SWGChannelActions& query,
+        SWGrpx-100::SWGChannelActions& query,
         QString& errorMessage)
 {
-    SWGSDRangel::SWGAPTDemodActions *swgAPTDemodActions = query.getAptDemodActions();
+    SWGrpx-100::SWGAPTDemodActions *swgAPTDemodActions = query.getAptDemodActions();
 
     if (swgAPTDemodActions)
     {
         if (channelActionsKeys.contains("aos"))
         {
-            SWGSDRangel::SWGAPTDemodActions_aos* aos = swgAPTDemodActions->getAos();
+            SWGrpx-100::SWGAPTDemodActions_aos* aos = swgAPTDemodActions->getAos();
             QString *satelliteName = aos->getSatelliteName();
             qDebug() << "APTDemod::webapiActionsPost - AOS " << *satelliteName;
             if (satelliteName != nullptr)
@@ -616,7 +616,7 @@ int APTDemod::webapiActionsPost(
         }
         else if (channelActionsKeys.contains("los"))
         {
-            SWGSDRangel::SWGAPTDemodActions_los* los = swgAPTDemodActions->getLos();
+            SWGrpx-100::SWGAPTDemodActions_los* los = swgAPTDemodActions->getLos();
             QString *satelliteName = los->getSatelliteName();
             qDebug() << "APTDemod::webapiActionsPost - LOS " << *satelliteName;
 

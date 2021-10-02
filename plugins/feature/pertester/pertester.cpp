@@ -43,7 +43,7 @@ MESSAGE_CLASS_DEFINITION(PERTester::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(PERTester::MsgResetStats, Message)
 MESSAGE_CLASS_DEFINITION(PERTester::MsgReportWorker, Message)
 
-const char* const PERTester::m_featureIdURI = "sdrangel.feature.pertester";
+const char* const PERTester::m_featureIdURI = "rpx-100.feature.pertester";
 const char* const PERTester::m_featureId = "PERTester";
 
 PERTester::PERTester(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -251,7 +251,7 @@ void PERTester::applySettings(const PERTesterSettings& settings, bool force)
 }
 
 int PERTester::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -262,11 +262,11 @@ int PERTester::webapiRun(bool run,
 }
 
 int PERTester::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPerTesterSettings(new SWGSDRangel::SWGPERTesterSettings());
+    response.setPerTesterSettings(new SWGrpx-100::SWGPERTesterSettings());
     response.getPerTesterSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -275,7 +275,7 @@ int PERTester::webapiSettingsGet(
 int PERTester::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -317,7 +317,7 @@ static QStringList convertPtrsToStringList(QList<QString *> *listIn)
 }
 
 void PERTester::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const PERTesterSettings& settings)
 {
     response.getPerTesterSettings()->setPacketCount(settings.m_packetCount);
@@ -353,7 +353,7 @@ void PERTester::webapiFormatFeatureSettings(
 void PERTester::webapiUpdateFeatureSettings(
     PERTesterSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("packetCount")) {
         settings.m_packetCount = response.getPerTesterSettings()->getPacketCount();
@@ -407,12 +407,12 @@ void PERTester::webapiUpdateFeatureSettings(
 
 void PERTester::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const PERTesterSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("PERTester"));
-    swgFeatureSettings->setPerTesterSettings(new SWGSDRangel::SWGPERTesterSettings());
-    SWGSDRangel::SWGPERTesterSettings *swgPERTesterSettings = swgFeatureSettings->getPerTesterSettings();
+    swgFeatureSettings->setPerTesterSettings(new SWGrpx-100::SWGPERTesterSettings());
+    SWGrpx-100::SWGPERTesterSettings *swgPERTesterSettings = swgFeatureSettings->getPerTesterSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -457,7 +457,7 @@ void PERTester::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, c
         swgPERTesterSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)
@@ -479,16 +479,16 @@ void PERTester::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, c
 
 int PERTester::webapiActionsPost(
         const QStringList& featureActionsKeys,
-        SWGSDRangel::SWGFeatureActions& query,
+        SWGrpx-100::SWGFeatureActions& query,
         QString& errorMessage)
 {
-    SWGSDRangel::SWGPERTesterActions *swgPERTesterActions = query.getPerTesterActions();
+    SWGrpx-100::SWGPERTesterActions *swgPERTesterActions = query.getPerTesterActions();
 
     if (swgPERTesterActions)
     {
         if (featureActionsKeys.contains("aos"))
         {
-            SWGSDRangel::SWGPERTesterActions_aos* aos = swgPERTesterActions->getAos();
+            SWGrpx-100::SWGPERTesterActions_aos* aos = swgPERTesterActions->getAos();
             QString *satelliteName = aos->getSatelliteName();
             if (satelliteName != nullptr)
             {

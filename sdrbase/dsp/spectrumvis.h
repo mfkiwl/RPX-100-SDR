@@ -37,7 +37,7 @@
 class GLSpectrumInterface;
 class MessageQueue;
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
     class SWGGLSpectrum;
     class SWGSpectrumServer;
     class SWGSuccessResponse;
@@ -161,15 +161,15 @@ public:
     void setMessageQueueToGUI(MessageQueue *queue) { m_guiMessageQueue = queue; }
     MessageQueue *getMessageQueueToGUI() { return m_guiMessageQueue; }
 
-    int webapiSpectrumSettingsGet(SWGSDRangel::SWGGLSpectrum& response, QString& errorMessage) const;
+    int webapiSpectrumSettingsGet(SWGrpx-100::SWGGLSpectrum& response, QString& errorMessage) const;
     int webapiSpectrumSettingsPutPatch(
             bool force,
             const QStringList& spectrumSettingsKeys,
-            SWGSDRangel::SWGGLSpectrum& response, // query + response
+            SWGrpx-100::SWGGLSpectrum& response, // query + response
             QString& errorMessage);
-    int webapiSpectrumServerGet(SWGSDRangel::SWGSpectrumServer& response, QString& errorMessage) const;
-    int webapiSpectrumServerPost(SWGSDRangel::SWGSuccessResponse& response, QString& errorMessage);
-    int webapiSpectrumServerDelete(SWGSDRangel::SWGSuccessResponse& response, QString& errorMessage);
+    int webapiSpectrumServerGet(SWGrpx-100::SWGSpectrumServer& response, QString& errorMessage) const;
+    int webapiSpectrumServerPost(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage);
+    int webapiSpectrumServerDelete(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage);
 
 private:
     class MsgConfigureScalingFactor : public Message
@@ -252,11 +252,11 @@ private:
     void handleWSOpenClose(bool openClose);
     void handleConfigureWSSpectrum(const QString& address, uint16_t port);
 
-    static void webapiFormatSpectrumSettings(SWGSDRangel::SWGGLSpectrum& response, const SpectrumSettings& settings);
+    static void webapiFormatSpectrumSettings(SWGrpx-100::SWGGLSpectrum& response, const SpectrumSettings& settings);
     static void webapiUpdateSpectrumSettings(
             SpectrumSettings& settings,
             const QStringList& spectrumSettingsKeys,
-            SWGSDRangel::SWGGLSpectrum& response);
+            SWGrpx-100::SWGGLSpectrum& response);
 };
 
 #endif // INCLUDE_SPECTRUMVIS_H

@@ -133,32 +133,32 @@ public:
     }
 
     virtual int webapiSettingsGet(
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage);
 
     virtual int webapiReportGet(
-                SWGSDRangel::SWGChannelReport& response,
+                SWGrpx-100::SWGChannelReport& response,
                 QString& errorMessage);
 
     virtual int webapiActionsPost(
             const QStringList& channelActionsKeys,
-            SWGSDRangel::SWGChannelActions& query,
+            SWGrpx-100::SWGChannelActions& query,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         const AISModSettings& settings);
 
     static void webapiUpdateChannelSettings(
             AISModSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     SpectrumVis *getSpectrumVis() { return &m_spectrumVis; }
     ScopeVis *getScopeSink();
@@ -185,7 +185,7 @@ private:
 
     void applySettings(const AISModSettings& settings, bool force = false);
     void sendSampleRateToDemodAnalyzer();
-    void webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response);
+    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AISModSettings& settings, bool force);
     void sendChannelSettings(
         QList<MessageQueue*> *messageQueues,
@@ -195,7 +195,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const AISModSettings& settings,
         bool force
     );

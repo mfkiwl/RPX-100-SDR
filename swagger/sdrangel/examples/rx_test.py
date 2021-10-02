@@ -3,7 +3,7 @@
 import requests, json, traceback, sys, time
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/sdrangel"
+base_url = "http://127.0.0.1:8091/rpx-100"
 
 requests_methods = {
     "GET": requests.get,
@@ -345,7 +345,7 @@ def main():
         options = getInputOptions()
 
         global base_url
-        base_url = "http://%s/sdrangel" % options.address
+        base_url = "http://%s/rpx-100" % options.address
         deviceset_url = "/deviceset/%d" % options.device_index
 
         if options.create:

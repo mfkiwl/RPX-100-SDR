@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it sdrangel_swgcodegen /bin/bash
+docker exec -it rpx-100_swgcodegen /bin/bash

@@ -37,7 +37,7 @@ class QNetworkReply;
 class QThread;
 class DeviceAPI;
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
     class SWGRDSReport;
 }
 
@@ -113,27 +113,27 @@ public:
     RDSParser& getRDSParser() { return m_basebandSink->getRDSParser(); }
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGChannelReport& response,
+            SWGrpx-100::SWGChannelReport& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             const BFMDemodSettings& settings);
 
     static void webapiUpdateChannelSettings(
             BFMDemodSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     uint32_t getNumberOfDeviceStreams() const;
 
@@ -155,8 +155,8 @@ private:
 
 	void applySettings(const BFMDemodSettings& settings, bool force = false);
 
-    void webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response);
-    void webapiFormatRDSReport(SWGSDRangel::SWGRDSReport *report);
+    void webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response);
+    void webapiFormatRDSReport(SWGrpx-100::SWGRDSReport *report);
     void webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const BFMDemodSettings& settings, bool force);
     void sendChannelSettings(
         QList<MessageQueue*> *messageQueues,
@@ -166,7 +166,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const BFMDemodSettings& settings,
         bool force
     );

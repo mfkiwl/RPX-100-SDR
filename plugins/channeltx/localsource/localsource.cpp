@@ -39,7 +39,7 @@
 MESSAGE_CLASS_DEFINITION(LocalSource::MsgConfigureLocalSource, Message)
 MESSAGE_CLASS_DEFINITION(LocalSource::MsgBasebandSampleRateNotification, Message)
 
-const char* const LocalSource::m_channelIdURI = "sdrangel.channel.localsource";
+const char* const LocalSource::m_channelIdURI = "rpx-100.channel.localsource";
 const char* const LocalSource::m_channelId = "LocalSource";
 
 LocalSource::LocalSource(DeviceAPI *deviceAPI) :
@@ -334,11 +334,11 @@ void LocalSource::calculateFrequencyOffset(uint32_t log2Interp, uint32_t filterC
 }
 
 int LocalSource::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalSourceSettings(new SWGSDRangel::SWGLocalSourceSettings());
+    response.setLocalSourceSettings(new SWGrpx-100::SWGLocalSourceSettings());
     response.getLocalSourceSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -347,7 +347,7 @@ int LocalSource::webapiSettingsGet(
 int LocalSource::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -372,7 +372,7 @@ int LocalSource::webapiSettingsPutPatch(
 void LocalSource::webapiUpdateChannelSettings(
         LocalSourceSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("localDeviceIndex")) {
         settings.m_localDeviceIndex = response.getLocalSourceSettings()->getLocalDeviceIndex();
@@ -416,7 +416,7 @@ void LocalSource::webapiUpdateChannelSettings(
     }
 }
 
-void LocalSource::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const LocalSourceSettings& settings)
+void LocalSource::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const LocalSourceSettings& settings)
 {
     response.getLocalSourceSettings()->setLocalDeviceIndex(settings.m_localDeviceIndex);
     response.getLocalSourceSettings()->setRgbColor(settings.m_rgbColor);
@@ -445,10 +445,10 @@ void LocalSource::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& r
 
 void LocalSource::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const LocalSourceSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -478,7 +478,7 @@ void LocalSource::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -492,7 +492,7 @@ void LocalSource::sendChannelSettings(
 
 void LocalSource::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const LocalSourceSettings& settings,
         bool force
 )
@@ -501,8 +501,8 @@ void LocalSource::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setLocalSourceSettings(new SWGSDRangel::SWGLocalSourceSettings());
-    SWGSDRangel::SWGLocalSourceSettings *swgLocalSourceSettings = swgChannelSettings->getLocalSourceSettings();
+    swgChannelSettings->setLocalSourceSettings(new SWGrpx-100::SWGLocalSourceSettings());
+    SWGrpx-100::SWGLocalSourceSettings *swgLocalSourceSettings = swgChannelSettings->getLocalSourceSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

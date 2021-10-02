@@ -42,7 +42,7 @@ MESSAGE_CLASS_DEFINITION(GS232Controller::MsgConfigureGS232Controller, Message)
 MESSAGE_CLASS_DEFINITION(GS232Controller::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(GS232Controller::MsgReportWorker, Message)
 
-const char* const GS232Controller::m_featureIdURI = "sdrangel.feature.gs232controller";
+const char* const GS232Controller::m_featureIdURI = "rpx-100.feature.gs232controller";
 const char* const GS232Controller::m_featureId = "GS232Controller";
 
 GS232Controller::GS232Controller(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -149,7 +149,7 @@ bool GS232Controller::handleMessage(const Message& cmd)
                 else
                 {
                     // No GUI, so save target - applySettings will propagate to worker
-                    SWGSDRangel::SWGTargetAzimuthElevation *swgTarget = msg.getSWGTargetAzimuthElevation();
+                    SWGrpx-100::SWGTargetAzimuthElevation *swgTarget = msg.getSWGTargetAzimuthElevation();
                     m_settings.m_azimuth = swgTarget->getAzimuth();
                     m_settings.m_elevation = swgTarget->getElevation();
                     applySettings(m_settings);
@@ -308,7 +308,7 @@ void GS232Controller::applySettings(const GS232ControllerSettings& settings, boo
 }
 
 int GS232Controller::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -319,11 +319,11 @@ int GS232Controller::webapiRun(bool run,
 }
 
 int GS232Controller::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setGs232ControllerSettings(new SWGSDRangel::SWGGS232ControllerSettings());
+    response.setGs232ControllerSettings(new SWGrpx-100::SWGGS232ControllerSettings());
     response.getGs232ControllerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -332,7 +332,7 @@ int GS232Controller::webapiSettingsGet(
 int GS232Controller::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -354,7 +354,7 @@ int GS232Controller::webapiSettingsPutPatch(
 }
 
 void GS232Controller::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const GS232ControllerSettings& settings)
 {
     response.getGs232ControllerSettings()->setAzimuth(settings.m_azimuth);
@@ -392,7 +392,7 @@ void GS232Controller::webapiFormatFeatureSettings(
 void GS232Controller::webapiUpdateFeatureSettings(
     GS232ControllerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("azimuth")) {
         settings.m_azimuth = response.getGs232ControllerSettings()->getAzimuth();
@@ -455,12 +455,12 @@ void GS232Controller::webapiUpdateFeatureSettings(
 
 void GS232Controller::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const GS232ControllerSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("GS232Controller"));
-    swgFeatureSettings->setGs232ControllerSettings(new SWGSDRangel::SWGGS232ControllerSettings());
-    SWGSDRangel::SWGGS232ControllerSettings *swgGS232ControllerSettings = swgFeatureSettings->getGs232ControllerSettings();
+    swgFeatureSettings->setGs232ControllerSettings(new SWGrpx-100::SWGGS232ControllerSettings());
+    SWGrpx-100::SWGGS232ControllerSettings *swgGS232ControllerSettings = swgFeatureSettings->getGs232ControllerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -513,7 +513,7 @@ void GS232Controller::webapiReverseSendSettings(QList<QString>& featureSettingsK
         swgGS232ControllerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

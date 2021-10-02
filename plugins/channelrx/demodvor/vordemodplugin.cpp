@@ -31,9 +31,9 @@ const PluginDescriptor VORDemodPlugin::m_pluginDescriptor = {
     QStringLiteral("VOR Demodulator"),
     QStringLiteral("6.10.0"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 VORDemodPlugin::VORDemodPlugin(QObject* parent) :

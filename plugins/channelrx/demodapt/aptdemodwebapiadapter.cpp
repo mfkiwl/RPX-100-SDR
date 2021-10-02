@@ -27,11 +27,11 @@ APTDemodWebAPIAdapter::~APTDemodWebAPIAdapter()
 {}
 
 int APTDemodWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAptDemodSettings(new SWGSDRangel::SWGAPTDemodSettings());
+    response.setAptDemodSettings(new SWGrpx-100::SWGAPTDemodSettings());
     response.getAptDemodSettings()->init();
     APTDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int APTDemodWebAPIAdapter::webapiSettingsGet(
 int APTDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

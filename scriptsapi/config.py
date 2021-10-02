@@ -15,7 +15,7 @@ Each command is a JSON document with the following keys:
 import requests, traceback, sys, json, time
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/sdrangel"
+base_url = "http://127.0.0.1:8091/rpx-100"
 
 requests_methods = {
     "GET": requests.get,
@@ -45,7 +45,7 @@ def main():
         options = getInputOptions()
 
         global base_url
-        base_url = "http://%s/sdrangel" % options.address
+        base_url = "http://%s/rpx-100" % options.address
 
         with open(options.json_file) as json_file:
             commands = json.load(json_file)

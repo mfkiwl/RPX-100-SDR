@@ -123,7 +123,7 @@ Use these buttons to confirm ("OK") or dismiss ("Cancel") your changes.
 
 <h3>6: Software LO ppm correction</h3>
 
-Use this slider to adjust SDRangel internal LO correction in ppm. It can be varied from -100.0 to 100.0 in 0.1 steps and is applied in software when calculating the frequency at which the LO should be set.
+Use this slider to adjust rpx-100 internal LO correction in ppm. It can be varied from -100.0 to 100.0 in 0.1 steps and is applied in software when calculating the frequency at which the LO should be set.
 
 <h2>A: SoapySDR variable interface</h2>
 

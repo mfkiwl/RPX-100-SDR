@@ -47,7 +47,7 @@ MESSAGE_CLASS_DEFINITION(NoiseFigure::MsgNFMeasurement, Message)
 MESSAGE_CLASS_DEFINITION(NoiseFigure::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(NoiseFigure::MsgFinished, Message)
 
-const char * const NoiseFigure::m_channelIdURI = "sdrangel.channel.noisefigure";
+const char * const NoiseFigure::m_channelIdURI = "rpx-100.channel.noisefigure";
 const char * const NoiseFigure::m_channelId = "NoiseFigure";
 
 NoiseFigure::NoiseFigure(DeviceAPI *deviceAPI) :
@@ -532,11 +532,11 @@ bool NoiseFigure::deserialize(const QByteArray& data)
 }
 
 int NoiseFigure::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setNoiseFigureSettings(new SWGSDRangel::SWGNoiseFigureSettings());
+    response.setNoiseFigureSettings(new SWGrpx-100::SWGNoiseFigureSettings());
     response.getNoiseFigureSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -545,7 +545,7 @@ int NoiseFigure::webapiSettingsGet(
 int NoiseFigure::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -570,7 +570,7 @@ int NoiseFigure::webapiSettingsPutPatch(
 void NoiseFigure::webapiUpdateChannelSettings(
         NoiseFigureSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getNoiseFigureSettings()->getInputFrequencyOffset();
@@ -640,7 +640,7 @@ void NoiseFigure::webapiUpdateChannelSettings(
     }
 }
 
-void NoiseFigure::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const NoiseFigureSettings& settings)
+void NoiseFigure::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const NoiseFigureSettings& settings)
 {
     response.getNoiseFigureSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
 
@@ -667,10 +667,10 @@ void NoiseFigure::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& r
 
 void NoiseFigure::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const NoiseFigureSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -692,7 +692,7 @@ void NoiseFigure::webapiReverseSendSettings(QList<QString>& channelSettingsKeys,
 
 void NoiseFigure::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const NoiseFigureSettings& settings,
         bool force
 )
@@ -701,8 +701,8 @@ void NoiseFigure::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("NoiseFigure"));
-    swgChannelSettings->setNoiseFigureSettings(new SWGSDRangel::SWGNoiseFigureSettings());
-    SWGSDRangel::SWGNoiseFigureSettings *swgNoiseFigureSettings = swgChannelSettings->getNoiseFigureSettings();
+    swgChannelSettings->setNoiseFigureSettings(new SWGrpx-100::SWGNoiseFigureSettings());
+    SWGrpx-100::SWGNoiseFigureSettings *swgNoiseFigureSettings = swgChannelSettings->getNoiseFigureSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

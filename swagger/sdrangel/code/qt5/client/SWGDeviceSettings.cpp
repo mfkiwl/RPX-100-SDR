@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGDeviceSettings::SWGDeviceSettings(QString* json) {
     init();
@@ -364,95 +364,95 @@ SWGDeviceSettings::fromJson(QString &json) {
 
 void
 SWGDeviceSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGSDRangel::setValue(&device_hw_type, pJson["deviceHwType"], "QString", "QString");
+    ::SWGrpx-100::setValue(&device_hw_type, pJson["deviceHwType"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&direction, pJson["direction"], "qint32", "");
+    ::SWGrpx-100::setValue(&direction, pJson["direction"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&originator_index, pJson["originatorIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&originator_index, pJson["originatorIndex"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&airspy_settings, pJson["airspySettings"], "SWGAirspySettings", "SWGAirspySettings");
+    ::SWGrpx-100::setValue(&airspy_settings, pJson["airspySettings"], "SWGAirspySettings", "SWGAirspySettings");
     
-    ::SWGSDRangel::setValue(&airspy_hf_settings, pJson["airspyHFSettings"], "SWGAirspyHFSettings", "SWGAirspyHFSettings");
+    ::SWGrpx-100::setValue(&airspy_hf_settings, pJson["airspyHFSettings"], "SWGAirspyHFSettings", "SWGAirspyHFSettings");
     
-    ::SWGSDRangel::setValue(&audio_input_settings, pJson["audioInputSettings"], "SWGAudioInputSettings", "SWGAudioInputSettings");
+    ::SWGrpx-100::setValue(&audio_input_settings, pJson["audioInputSettings"], "SWGAudioInputSettings", "SWGAudioInputSettings");
     
-    ::SWGSDRangel::setValue(&audio_output_settings, pJson["audioOutputSettings"], "SWGAudioOutputSettings", "SWGAudioOutputSettings");
+    ::SWGrpx-100::setValue(&audio_output_settings, pJson["audioOutputSettings"], "SWGAudioOutputSettings", "SWGAudioOutputSettings");
     
-    ::SWGSDRangel::setValue(&blade_rf1_input_settings, pJson["bladeRF1InputSettings"], "SWGBladeRF1InputSettings", "SWGBladeRF1InputSettings");
+    ::SWGrpx-100::setValue(&blade_rf1_input_settings, pJson["bladeRF1InputSettings"], "SWGBladeRF1InputSettings", "SWGBladeRF1InputSettings");
     
-    ::SWGSDRangel::setValue(&blade_rf2_input_settings, pJson["bladeRF2InputSettings"], "SWGBladeRF2InputSettings", "SWGBladeRF2InputSettings");
+    ::SWGrpx-100::setValue(&blade_rf2_input_settings, pJson["bladeRF2InputSettings"], "SWGBladeRF2InputSettings", "SWGBladeRF2InputSettings");
     
-    ::SWGSDRangel::setValue(&blade_rf1_output_settings, pJson["bladeRF1OutputSettings"], "SWGBladeRF1OutputSettings", "SWGBladeRF1OutputSettings");
+    ::SWGrpx-100::setValue(&blade_rf1_output_settings, pJson["bladeRF1OutputSettings"], "SWGBladeRF1OutputSettings", "SWGBladeRF1OutputSettings");
     
-    ::SWGSDRangel::setValue(&blade_rf2_output_settings, pJson["bladeRF2OutputSettings"], "SWGBladeRF2OutputSettings", "SWGBladeRF2OutputSettings");
+    ::SWGrpx-100::setValue(&blade_rf2_output_settings, pJson["bladeRF2OutputSettings"], "SWGBladeRF2OutputSettings", "SWGBladeRF2OutputSettings");
     
-    ::SWGSDRangel::setValue(&blade_rf2_mimo_settings, pJson["bladeRF2MIMOSettings"], "SWGBladeRF2MIMOSettings", "SWGBladeRF2MIMOSettings");
+    ::SWGrpx-100::setValue(&blade_rf2_mimo_settings, pJson["bladeRF2MIMOSettings"], "SWGBladeRF2MIMOSettings", "SWGBladeRF2MIMOSettings");
     
-    ::SWGSDRangel::setValue(&fcd_pro_settings, pJson["fcdProSettings"], "SWGFCDProSettings", "SWGFCDProSettings");
+    ::SWGrpx-100::setValue(&fcd_pro_settings, pJson["fcdProSettings"], "SWGFCDProSettings", "SWGFCDProSettings");
     
-    ::SWGSDRangel::setValue(&fcd_pro_plus_settings, pJson["fcdProPlusSettings"], "SWGFCDProPlusSettings", "SWGFCDProPlusSettings");
+    ::SWGrpx-100::setValue(&fcd_pro_plus_settings, pJson["fcdProPlusSettings"], "SWGFCDProPlusSettings", "SWGFCDProPlusSettings");
     
-    ::SWGSDRangel::setValue(&file_input_settings, pJson["fileInputSettings"], "SWGFileInputSettings", "SWGFileInputSettings");
+    ::SWGrpx-100::setValue(&file_input_settings, pJson["fileInputSettings"], "SWGFileInputSettings", "SWGFileInputSettings");
     
-    ::SWGSDRangel::setValue(&file_output_settings, pJson["fileOutputSettings"], "SWGFileOutputSettings", "SWGFileOutputSettings");
+    ::SWGrpx-100::setValue(&file_output_settings, pJson["fileOutputSettings"], "SWGFileOutputSettings", "SWGFileOutputSettings");
     
-    ::SWGSDRangel::setValue(&hack_rf_input_settings, pJson["hackRFInputSettings"], "SWGHackRFInputSettings", "SWGHackRFInputSettings");
+    ::SWGrpx-100::setValue(&hack_rf_input_settings, pJson["hackRFInputSettings"], "SWGHackRFInputSettings", "SWGHackRFInputSettings");
     
-    ::SWGSDRangel::setValue(&hack_rf_output_settings, pJson["hackRFOutputSettings"], "SWGHackRFOutputSettings", "SWGHackRFOutputSettings");
+    ::SWGrpx-100::setValue(&hack_rf_output_settings, pJson["hackRFOutputSettings"], "SWGHackRFOutputSettings", "SWGHackRFOutputSettings");
     
-    ::SWGSDRangel::setValue(&kiwi_sdr_settings, pJson["kiwiSDRSettings"], "SWGKiwiSDRSettings", "SWGKiwiSDRSettings");
+    ::SWGrpx-100::setValue(&kiwi_sdr_settings, pJson["kiwiSDRSettings"], "SWGKiwiSDRSettings", "SWGKiwiSDRSettings");
     
-    ::SWGSDRangel::setValue(&lime_sdr_input_settings, pJson["limeSdrInputSettings"], "SWGLimeSdrInputSettings", "SWGLimeSdrInputSettings");
+    ::SWGrpx-100::setValue(&lime_sdr_input_settings, pJson["limeSdrInputSettings"], "SWGLimeSdrInputSettings", "SWGLimeSdrInputSettings");
     
-    ::SWGSDRangel::setValue(&lime_sdr_output_settings, pJson["limeSdrOutputSettings"], "SWGLimeSdrOutputSettings", "SWGLimeSdrOutputSettings");
+    ::SWGrpx-100::setValue(&lime_sdr_output_settings, pJson["limeSdrOutputSettings"], "SWGLimeSdrOutputSettings", "SWGLimeSdrOutputSettings");
     
-    ::SWGSDRangel::setValue(&lime_sdr_mimo_settings, pJson["limeSdrMIMOSettings"], "SWGLimeSdrMIMOSettings", "SWGLimeSdrMIMOSettings");
+    ::SWGrpx-100::setValue(&lime_sdr_mimo_settings, pJson["limeSdrMIMOSettings"], "SWGLimeSdrMIMOSettings", "SWGLimeSdrMIMOSettings");
     
-    ::SWGSDRangel::setValue(&local_input_settings, pJson["localInputSettings"], "SWGLocalInputSettings", "SWGLocalInputSettings");
+    ::SWGrpx-100::setValue(&local_input_settings, pJson["localInputSettings"], "SWGLocalInputSettings", "SWGLocalInputSettings");
     
-    ::SWGSDRangel::setValue(&local_output_settings, pJson["localOutputSettings"], "SWGLocalOutputSettings", "SWGLocalOutputSettings");
+    ::SWGrpx-100::setValue(&local_output_settings, pJson["localOutputSettings"], "SWGLocalOutputSettings", "SWGLocalOutputSettings");
     
-    ::SWGSDRangel::setValue(&metis_miso_settings, pJson["metisMISOSettings"], "SWGMetisMISOSettings", "SWGMetisMISOSettings");
+    ::SWGrpx-100::setValue(&metis_miso_settings, pJson["metisMISOSettings"], "SWGMetisMISOSettings", "SWGMetisMISOSettings");
     
-    ::SWGSDRangel::setValue(&perseus_settings, pJson["perseusSettings"], "SWGPerseusSettings", "SWGPerseusSettings");
+    ::SWGrpx-100::setValue(&perseus_settings, pJson["perseusSettings"], "SWGPerseusSettings", "SWGPerseusSettings");
     
-    ::SWGSDRangel::setValue(&pluto_sdr_input_settings, pJson["plutoSdrInputSettings"], "SWGPlutoSdrInputSettings", "SWGPlutoSdrInputSettings");
+    ::SWGrpx-100::setValue(&pluto_sdr_input_settings, pJson["plutoSdrInputSettings"], "SWGPlutoSdrInputSettings", "SWGPlutoSdrInputSettings");
     
-    ::SWGSDRangel::setValue(&pluto_sdr_output_settings, pJson["plutoSdrOutputSettings"], "SWGPlutoSdrOutputSettings", "SWGPlutoSdrOutputSettings");
+    ::SWGrpx-100::setValue(&pluto_sdr_output_settings, pJson["plutoSdrOutputSettings"], "SWGPlutoSdrOutputSettings", "SWGPlutoSdrOutputSettings");
     
-    ::SWGSDRangel::setValue(&pluto_sdr_mimo_settings, pJson["plutoSdrMIMOSettings"], "SWGPlutoSdrMIMOSettings", "SWGPlutoSdrMIMOSettings");
+    ::SWGrpx-100::setValue(&pluto_sdr_mimo_settings, pJson["plutoSdrMIMOSettings"], "SWGPlutoSdrMIMOSettings", "SWGPlutoSdrMIMOSettings");
     
-    ::SWGSDRangel::setValue(&rtl_sdr_settings, pJson["rtlSdrSettings"], "SWGRtlSdrSettings", "SWGRtlSdrSettings");
+    ::SWGrpx-100::setValue(&rtl_sdr_settings, pJson["rtlSdrSettings"], "SWGRtlSdrSettings", "SWGRtlSdrSettings");
     
-    ::SWGSDRangel::setValue(&remote_output_settings, pJson["remoteOutputSettings"], "SWGRemoteOutputSettings", "SWGRemoteOutputSettings");
+    ::SWGrpx-100::setValue(&remote_output_settings, pJson["remoteOutputSettings"], "SWGRemoteOutputSettings", "SWGRemoteOutputSettings");
     
-    ::SWGSDRangel::setValue(&remote_input_settings, pJson["remoteInputSettings"], "SWGRemoteInputSettings", "SWGRemoteInputSettings");
+    ::SWGrpx-100::setValue(&remote_input_settings, pJson["remoteInputSettings"], "SWGRemoteInputSettings", "SWGRemoteInputSettings");
     
-    ::SWGSDRangel::setValue(&sdr_play_settings, pJson["sdrPlaySettings"], "SWGSDRPlaySettings", "SWGSDRPlaySettings");
+    ::SWGrpx-100::setValue(&sdr_play_settings, pJson["sdrPlaySettings"], "SWGSDRPlaySettings", "SWGSDRPlaySettings");
     
-    ::SWGSDRangel::setValue(&sdr_play_v3_settings, pJson["sdrPlayV3Settings"], "SWGSDRPlayV3Settings", "SWGSDRPlayV3Settings");
+    ::SWGrpx-100::setValue(&sdr_play_v3_settings, pJson["sdrPlayV3Settings"], "SWGSDRPlayV3Settings", "SWGSDRPlayV3Settings");
     
-    ::SWGSDRangel::setValue(&sig_mf_file_input_settings, pJson["sigMFFileInputSettings"], "SWGSigMFFileInputSettings", "SWGSigMFFileInputSettings");
+    ::SWGrpx-100::setValue(&sig_mf_file_input_settings, pJson["sigMFFileInputSettings"], "SWGSigMFFileInputSettings", "SWGSigMFFileInputSettings");
     
-    ::SWGSDRangel::setValue(&soapy_sdr_input_settings, pJson["soapySDRInputSettings"], "SWGSoapySDRInputSettings", "SWGSoapySDRInputSettings");
+    ::SWGrpx-100::setValue(&soapy_sdr_input_settings, pJson["soapySDRInputSettings"], "SWGSoapySDRInputSettings", "SWGSoapySDRInputSettings");
     
-    ::SWGSDRangel::setValue(&soapy_sdr_output_settings, pJson["soapySDROutputSettings"], "SWGSoapySDROutputSettings", "SWGSoapySDROutputSettings");
+    ::SWGrpx-100::setValue(&soapy_sdr_output_settings, pJson["soapySDROutputSettings"], "SWGSoapySDROutputSettings", "SWGSoapySDROutputSettings");
     
-    ::SWGSDRangel::setValue(&test_mi_settings, pJson["testMISettings"], "SWGTestMISettings", "SWGTestMISettings");
+    ::SWGrpx-100::setValue(&test_mi_settings, pJson["testMISettings"], "SWGTestMISettings", "SWGTestMISettings");
     
-    ::SWGSDRangel::setValue(&test_mo_sync_settings, pJson["testMOSyncSettings"], "SWGTestMOSyncSettings", "SWGTestMOSyncSettings");
+    ::SWGrpx-100::setValue(&test_mo_sync_settings, pJson["testMOSyncSettings"], "SWGTestMOSyncSettings", "SWGTestMOSyncSettings");
     
-    ::SWGSDRangel::setValue(&test_source_settings, pJson["testSourceSettings"], "SWGTestSourceSettings", "SWGTestSourceSettings");
+    ::SWGrpx-100::setValue(&test_source_settings, pJson["testSourceSettings"], "SWGTestSourceSettings", "SWGTestSourceSettings");
     
-    ::SWGSDRangel::setValue(&usrp_input_settings, pJson["usrpInputSettings"], "SWGUSRPInputSettings", "SWGUSRPInputSettings");
+    ::SWGrpx-100::setValue(&usrp_input_settings, pJson["usrpInputSettings"], "SWGUSRPInputSettings", "SWGUSRPInputSettings");
     
-    ::SWGSDRangel::setValue(&usrp_output_settings, pJson["usrpOutputSettings"], "SWGUSRPOutputSettings", "SWGUSRPOutputSettings");
+    ::SWGrpx-100::setValue(&usrp_output_settings, pJson["usrpOutputSettings"], "SWGUSRPOutputSettings", "SWGUSRPOutputSettings");
     
-    ::SWGSDRangel::setValue(&xtrx_input_settings, pJson["xtrxInputSettings"], "SWGXtrxInputSettings", "SWGXtrxInputSettings");
+    ::SWGrpx-100::setValue(&xtrx_input_settings, pJson["xtrxInputSettings"], "SWGXtrxInputSettings", "SWGXtrxInputSettings");
     
-    ::SWGSDRangel::setValue(&xtrx_output_settings, pJson["xtrxOutputSettings"], "SWGXtrxOutputSettings", "SWGXtrxOutputSettings");
+    ::SWGrpx-100::setValue(&xtrx_output_settings, pJson["xtrxOutputSettings"], "SWGXtrxOutputSettings", "SWGXtrxOutputSettings");
     
-    ::SWGSDRangel::setValue(&xtrx_mimo_settings, pJson["xtrxMIMOSettings"], "SWGXtrxMIMOSettings", "SWGXtrxMIMOSettings");
+    ::SWGrpx-100::setValue(&xtrx_mimo_settings, pJson["xtrxMIMOSettings"], "SWGXtrxMIMOSettings", "SWGXtrxMIMOSettings");
     
 }
 

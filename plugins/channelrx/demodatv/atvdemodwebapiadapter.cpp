@@ -25,11 +25,11 @@ ATVDemodWebAPIAdapter::~ATVDemodWebAPIAdapter()
 {}
 
 int ATVDemodWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAtvDemodSettings(new SWGSDRangel::SWGATVDemodSettings());
+    response.setAtvDemodSettings(new SWGrpx-100::SWGATVDemodSettings());
     response.getAtvDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -38,7 +38,7 @@ int ATVDemodWebAPIAdapter::webapiSettingsGet(
 int ATVDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;
@@ -48,7 +48,7 @@ int ATVDemodWebAPIAdapter::webapiSettingsPutPatch(
 }
 
 void ATVDemodWebAPIAdapter::webapiFormatChannelSettings(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         const ATVDemodSettings& settings)
 {
     response.getAtvDemodSettings()->setBlnFftFiltering(settings.m_fftFiltering ? 1 : 0);
@@ -80,7 +80,7 @@ void ATVDemodWebAPIAdapter::webapiFormatChannelSettings(
 void ATVDemodWebAPIAdapter::webapiUpdateChannelSettings(
         ATVDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("blnFFTFiltering")) {
         settings.m_fftFiltering = response.getAtvDemodSettings()->getBlnFftFiltering() != 0;

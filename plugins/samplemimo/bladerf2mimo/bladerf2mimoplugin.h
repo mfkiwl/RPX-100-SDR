@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define BLADERF2MIMO_DEVICE_TYPE_ID "sdrangel.samplemimo.bladerf2mimo"
+#define BLADERF2MIMO_DEVICE_TYPE_ID "rpx-100.samplemimo.bladerf2mimo"
 
 class BladeRF2MIMOPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

@@ -2,11 +2,11 @@
 
 <h2>Introduction</h2>
 
-This output sample sink plugin sends its samples over the network to a SDRangel instance's Remote source channel using UDP connection.
+This output sample sink plugin sends its samples over the network to a rpx-100 instance's Remote source channel using UDP connection.
 
 Forward Error Correction with a Cauchy MDS block erasure codec is used to prevent block loss. This can make the UDP transmission more robust particularly over WiFi links.
 
-The remote SDRangel instance to which the data stream is sent is controlled via its REST API using a separate control software for example [SDRangelcli](https://github.com/f4exb/sdrangelcli)
+The remote rpx-100 instance to which the data stream is sent is controlled via its REST API using a separate control software for example [rpx-100cli](https://github.com/f4exb/rpx-100cli)
 
 The sample size used in the I/Q stream is the Rx sample size of the local instance. Possible conversion takes place in the remote Remote source channel plugin to match the Rx sample size of the remote instance. Best performace is obtained when both instances use the same sample size.
 
@@ -125,15 +125,15 @@ The "Remote" label is lit in green when the connection is successful
 
 <h4>9.2: API IP address</h4>
 
-IP address of the remote SDRangel instance REST API
+IP address of the remote rpx-100 instance REST API
 
 <h4>9.3: API port</h4>
 
-Port of the remote SDRangel instance REST API
+Port of the remote rpx-100 instance REST API
 
 <h4>9.4: Get information button</h4>
 
-When the return key is hit within the address (9.2) or port (9.3) the changes are effective immediately. You can also use this button to set again these values. Clicking on this button will send a request to the API to get the remote SDRangel instance information that is displayed in the API message box (8)
+When the return key is hit within the address (9.2) or port (9.3) the changes are effective immediately. You can also use this button to set again these values. Clicking on this button will send a request to the API to get the remote rpx-100 instance information that is displayed in the API message box (8)
 
 <h3>10: Local data address and port</h3>
 
@@ -141,11 +141,11 @@ When the return key is hit within the address (9.2) or port (9.3) the changes ar
 
 <h4>10.1: Data IP address</h4>
 
-IP address of the local network interface the remote SDRangel instance sends the data to
+IP address of the local network interface the remote rpx-100 instance sends the data to
 
 <h4>10.2: Data port</h4>
 
-Local port the remote SDRangel instance sends the data to
+Local port the remote rpx-100 instance sends the data to
 
 <h4>10.3: Validation button</h4>
 

@@ -32,9 +32,9 @@ const PluginDescriptor LocalSourcePlugin::m_pluginDescriptor = {
     QStringLiteral("Local channel source"),
     QStringLiteral("6.3.3"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 LocalSourcePlugin::LocalSourcePlugin(QObject* parent) :

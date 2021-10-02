@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGChannelReport::SWGChannelReport(QString* json) {
     init();
@@ -296,75 +296,75 @@ SWGChannelReport::fromJson(QString &json) {
 
 void
 SWGChannelReport::fromJsonObject(QJsonObject &pJson) {
-    ::SWGSDRangel::setValue(&channel_type, pJson["channelType"], "QString", "QString");
+    ::SWGrpx-100::setValue(&channel_type, pJson["channelType"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&direction, pJson["direction"], "qint32", "");
+    ::SWGrpx-100::setValue(&direction, pJson["direction"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&adsb_demod_report, pJson["ADSBDemodReport"], "SWGADSBDemodReport", "SWGADSBDemodReport");
+    ::SWGrpx-100::setValue(&adsb_demod_report, pJson["ADSBDemodReport"], "SWGADSBDemodReport", "SWGADSBDemodReport");
     
-    ::SWGSDRangel::setValue(&ais_demod_report, pJson["AISDemodReport"], "SWGAISDemodReport", "SWGAISDemodReport");
+    ::SWGrpx-100::setValue(&ais_demod_report, pJson["AISDemodReport"], "SWGAISDemodReport", "SWGAISDemodReport");
     
-    ::SWGSDRangel::setValue(&ais_mod_report, pJson["AISModReport"], "SWGAISModReport", "SWGAISModReport");
+    ::SWGrpx-100::setValue(&ais_mod_report, pJson["AISModReport"], "SWGAISModReport", "SWGAISModReport");
     
-    ::SWGSDRangel::setValue(&am_demod_report, pJson["AMDemodReport"], "SWGAMDemodReport", "SWGAMDemodReport");
+    ::SWGrpx-100::setValue(&am_demod_report, pJson["AMDemodReport"], "SWGAMDemodReport", "SWGAMDemodReport");
     
-    ::SWGSDRangel::setValue(&am_mod_report, pJson["AMModReport"], "SWGAMModReport", "SWGAMModReport");
+    ::SWGrpx-100::setValue(&am_mod_report, pJson["AMModReport"], "SWGAMModReport", "SWGAMModReport");
     
-    ::SWGSDRangel::setValue(&atv_mod_report, pJson["ATVModReport"], "SWGATVModReport", "SWGATVModReport");
+    ::SWGrpx-100::setValue(&atv_mod_report, pJson["ATVModReport"], "SWGATVModReport", "SWGATVModReport");
     
-    ::SWGSDRangel::setValue(&bfm_demod_report, pJson["BFMDemodReport"], "SWGBFMDemodReport", "SWGBFMDemodReport");
+    ::SWGrpx-100::setValue(&bfm_demod_report, pJson["BFMDemodReport"], "SWGBFMDemodReport", "SWGBFMDemodReport");
     
-    ::SWGSDRangel::setValue(&chirp_chat_demod_report, pJson["ChirpChatDemodReport"], "SWGChirpChatDemodReport", "SWGChirpChatDemodReport");
+    ::SWGrpx-100::setValue(&chirp_chat_demod_report, pJson["ChirpChatDemodReport"], "SWGChirpChatDemodReport", "SWGChirpChatDemodReport");
     
-    ::SWGSDRangel::setValue(&chirp_chat_mod_report, pJson["ChirpChatModReport"], "SWGChirpChatModReport", "SWGChirpChatModReport");
+    ::SWGrpx-100::setValue(&chirp_chat_mod_report, pJson["ChirpChatModReport"], "SWGChirpChatModReport", "SWGChirpChatModReport");
     
-    ::SWGSDRangel::setValue(&datv_mod_report, pJson["DATVModReport"], "SWGDATVModReport", "SWGDATVModReport");
+    ::SWGrpx-100::setValue(&datv_mod_report, pJson["DATVModReport"], "SWGDATVModReport", "SWGDATVModReport");
     
-    ::SWGSDRangel::setValue(&dsd_demod_report, pJson["DSDDemodReport"], "SWGDSDDemodReport", "SWGDSDDemodReport");
+    ::SWGrpx-100::setValue(&dsd_demod_report, pJson["DSDDemodReport"], "SWGDSDDemodReport", "SWGDSDDemodReport");
     
-    ::SWGSDRangel::setValue(&ieee_802_15_4_mod_report, pJson["IEEE_802_15_4_ModReport"], "SWGIEEE_802_15_4_ModReport", "SWGIEEE_802_15_4_ModReport");
+    ::SWGrpx-100::setValue(&ieee_802_15_4_mod_report, pJson["IEEE_802_15_4_ModReport"], "SWGIEEE_802_15_4_ModReport", "SWGIEEE_802_15_4_ModReport");
     
-    ::SWGSDRangel::setValue(&file_sink_report, pJson["FileSinkReport"], "SWGFileSinkReport", "SWGFileSinkReport");
+    ::SWGrpx-100::setValue(&file_sink_report, pJson["FileSinkReport"], "SWGFileSinkReport", "SWGFileSinkReport");
     
-    ::SWGSDRangel::setValue(&file_source_report, pJson["FileSourceReport"], "SWGFileSourceReport", "SWGFileSourceReport");
+    ::SWGrpx-100::setValue(&file_source_report, pJson["FileSourceReport"], "SWGFileSourceReport", "SWGFileSourceReport");
     
-    ::SWGSDRangel::setValue(&free_dv_demod_report, pJson["FreeDVDemodReport"], "SWGFreeDVDemodReport", "SWGFreeDVDemodReport");
+    ::SWGrpx-100::setValue(&free_dv_demod_report, pJson["FreeDVDemodReport"], "SWGFreeDVDemodReport", "SWGFreeDVDemodReport");
     
-    ::SWGSDRangel::setValue(&free_dv_mod_report, pJson["FreeDVModReport"], "SWGFreeDVModReport", "SWGFreeDVModReport");
+    ::SWGrpx-100::setValue(&free_dv_mod_report, pJson["FreeDVModReport"], "SWGFreeDVModReport", "SWGFreeDVModReport");
     
-    ::SWGSDRangel::setValue(&freq_tracker_report, pJson["FreqTrackerReport"], "SWGFreqTrackerReport", "SWGFreqTrackerReport");
+    ::SWGrpx-100::setValue(&freq_tracker_report, pJson["FreqTrackerReport"], "SWGFreqTrackerReport", "SWGFreqTrackerReport");
     
-    ::SWGSDRangel::setValue(&nfm_demod_report, pJson["NFMDemodReport"], "SWGNFMDemodReport", "SWGNFMDemodReport");
+    ::SWGrpx-100::setValue(&nfm_demod_report, pJson["NFMDemodReport"], "SWGNFMDemodReport", "SWGNFMDemodReport");
     
-    ::SWGSDRangel::setValue(&nfm_mod_report, pJson["NFMModReport"], "SWGNFMModReport", "SWGNFMModReport");
+    ::SWGrpx-100::setValue(&nfm_mod_report, pJson["NFMModReport"], "SWGNFMModReport", "SWGNFMModReport");
     
-    ::SWGSDRangel::setValue(&noise_figure_report, pJson["NoiseFigureReport"], "SWGNoiseFigureReport", "SWGNoiseFigureReport");
+    ::SWGrpx-100::setValue(&noise_figure_report, pJson["NoiseFigureReport"], "SWGNoiseFigureReport", "SWGNoiseFigureReport");
     
-    ::SWGSDRangel::setValue(&ssb_demod_report, pJson["SSBDemodReport"], "SWGSSBDemodReport", "SWGSSBDemodReport");
+    ::SWGrpx-100::setValue(&ssb_demod_report, pJson["SSBDemodReport"], "SWGSSBDemodReport", "SWGSSBDemodReport");
     
-    ::SWGSDRangel::setValue(&radio_clock_report, pJson["RadioClockReport"], "SWGRadioClockReport", "SWGRadioClockReport");
+    ::SWGrpx-100::setValue(&radio_clock_report, pJson["RadioClockReport"], "SWGRadioClockReport", "SWGRadioClockReport");
     
-    ::SWGSDRangel::setValue(&remote_source_report, pJson["RemoteSourceReport"], "SWGRemoteSourceReport", "SWGRemoteSourceReport");
+    ::SWGrpx-100::setValue(&remote_source_report, pJson["RemoteSourceReport"], "SWGRemoteSourceReport", "SWGRemoteSourceReport");
     
-    ::SWGSDRangel::setValue(&packet_mod_report, pJson["PacketModReport"], "SWGPacketModReport", "SWGPacketModReport");
+    ::SWGrpx-100::setValue(&packet_mod_report, pJson["PacketModReport"], "SWGPacketModReport", "SWGPacketModReport");
     
-    ::SWGSDRangel::setValue(&pager_demod_report, pJson["PagerDemodReport"], "SWGPagerDemodReport", "SWGPagerDemodReport");
+    ::SWGrpx-100::setValue(&pager_demod_report, pJson["PagerDemodReport"], "SWGPagerDemodReport", "SWGPagerDemodReport");
     
-    ::SWGSDRangel::setValue(&sig_mf_file_sink_report, pJson["SigMFFileSinkReport"], "SWGSigMFFileSinkReport", "SWGSigMFFileSinkReport");
+    ::SWGrpx-100::setValue(&sig_mf_file_sink_report, pJson["SigMFFileSinkReport"], "SWGSigMFFileSinkReport", "SWGSigMFFileSinkReport");
     
-    ::SWGSDRangel::setValue(&ssb_mod_report, pJson["SSBModReport"], "SWGSSBModReport", "SWGSSBModReport");
+    ::SWGrpx-100::setValue(&ssb_mod_report, pJson["SSBModReport"], "SWGSSBModReport", "SWGSSBModReport");
     
-    ::SWGSDRangel::setValue(&udp_source_report, pJson["UDPSourceReport"], "SWGUDPSourceReport", "SWGUDPSourceReport");
+    ::SWGrpx-100::setValue(&udp_source_report, pJson["UDPSourceReport"], "SWGUDPSourceReport", "SWGUDPSourceReport");
     
-    ::SWGSDRangel::setValue(&udp_sink_report, pJson["UDPSinkReport"], "SWGUDPSinkReport", "SWGUDPSinkReport");
+    ::SWGrpx-100::setValue(&udp_sink_report, pJson["UDPSinkReport"], "SWGUDPSinkReport", "SWGUDPSinkReport");
     
-    ::SWGSDRangel::setValue(&vor_demod_report, pJson["VORDemodReport"], "SWGVORDemodReport", "SWGVORDemodReport");
+    ::SWGrpx-100::setValue(&vor_demod_report, pJson["VORDemodReport"], "SWGVORDemodReport", "SWGVORDemodReport");
     
-    ::SWGSDRangel::setValue(&vor_demod_sc_report, pJson["VORDemodSCReport"], "SWGVORDemodSCReport", "SWGVORDemodSCReport");
+    ::SWGrpx-100::setValue(&vor_demod_sc_report, pJson["VORDemodSCReport"], "SWGVORDemodSCReport", "SWGVORDemodSCReport");
     
-    ::SWGSDRangel::setValue(&wfm_demod_report, pJson["WFMDemodReport"], "SWGWFMDemodReport", "SWGWFMDemodReport");
+    ::SWGrpx-100::setValue(&wfm_demod_report, pJson["WFMDemodReport"], "SWGWFMDemodReport", "SWGWFMDemodReport");
     
-    ::SWGSDRangel::setValue(&wfm_mod_report, pJson["WFMModReport"], "SWGWFMModReport", "SWGWFMModReport");
+    ::SWGrpx-100::setValue(&wfm_mod_report, pJson["WFMModReport"], "SWGWFMModReport", "SWGWFMModReport");
     
 }
 

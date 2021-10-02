@@ -4,8 +4,8 @@
 
 The Satellite Tracker feature plugin can be used to:
 
-* Track satellites, pointing antennas at them via SDRangel's Rotator Controller Features
-* Control SDRangel by loading presets, starting/stopping acquisition and setting center frequencies on AOS (Acquisition of Signal) for each satellite
+* Track satellites, pointing antennas at them via rpx-100's Rotator Controller Features
+* Control rpx-100 by loading presets, starting/stopping acquisition and setting center frequencies on AOS (Acquisition of Signal) for each satellite
 * Adjust channels' input frequency offset to account for Doppler shift
 * Display polar and elevation/azimuth vs time plots for satellite passes
 * Display the overhead position of satellites on the Map Feature, along with the ground track of the satellites
@@ -36,15 +36,15 @@ When clicked, the TLE (two line element) files selected in the Settings dialog a
 
 Satellite positions can only be predicted with limited accuracy, so the TLEs need to be updated frequently for accurate positioning. This could be daily, weekly or monthly depending upon the individual satellite. This downloads around 1MB of data.
 
-<h3>5: Show SDRangel Control dialog</h3>
+<h3>5: Show rpx-100 Control dialog</h3>
 
-Pressing this button displays the SDRangel Control dialog.
+Pressing this button displays the rpx-100 Control dialog.
 
-![SDRangel Control dialog](../../../doc/img/SatelliteTracker_plugin_control.png)
+![rpx-100 Control dialog](../../../doc/img/SatelliteTracker_plugin_control.png)
 
 This dialog determines the actions the Satellite Tracker will take when AOS or LOS occurs for a satellite. First, select a satellite from the dropdown box. Information about the satellite's transmit and receive modes should appear in the field at the bottom of the dialog, if available in the SatNogs database.
 
-To perform an action on an SDRangel device set on AOS or LOS, press the "Add device set" button. This will add a new, allowing you to select:
+To perform an action on an rpx-100 device set on AOS or LOS, press the "Add device set" button. This will add a new, allowing you to select:
 
 * The device set that will be controlled. This will list all currently open device sets. You can also type the name of a new device set.
 * The preset to load on AOS. This allows preset device settings (E.g. centre frequency) and demodulators to be opened when the satellite becomes visible.
@@ -76,7 +76,7 @@ Satellite information at the bottom of the dialog comes from the SatNogs databas
 
 <h3>7: Set latitude and longitude from My Position</h3>
 
-When clicked, it sets the latitude, longitude and height fields to the values from SDRangel's My Position preferences.
+When clicked, it sets the latitude, longitude and height fields to the values from rpx-100's My Position preferences.
 
 <h3>8: Show Settings dialog</h3>
 
@@ -95,9 +95,9 @@ On the Settings tab, you can set:
 * The maximum elevation angle in degrees supported by your rotator. 180 degree support is beneficial for passes that pass through 360/0 degrees, to avoid the rotator having to do a complete rotation mid pass.
 * A speech warning to be given on AOS. ${name} will be substituted with the name of the satellite, ${duration} the pass duration and ${elevation} the maximum elevation of the pass.
 * A speech warning to be given on LOS. ${name} will be substituted with the name of the satellite.
-* A command/script to be executed on AOS. This applies to all satellites. It is also possible to set a per-satellite command in the SDRangel Control dialog.
-* A command/script to be executed on LOS. This applies to all satellites. It is also possible to set a per-satellite command in the SDRangel Control dialog.
-* The Doppler correction period in seconds, which controls how frequently Doppler correction is applied. Which channels have Doppler correction applied is set on a per-channel basis in the SDRangel Control dialog.
+* A command/script to be executed on AOS. This applies to all satellites. It is also possible to set a per-satellite command in the rpx-100 Control dialog.
+* A command/script to be executed on LOS. This applies to all satellites. It is also possible to set a per-satellite command in the rpx-100 Control dialog.
+* The Doppler correction period in seconds, which controls how frequently Doppler correction is applied. Which channels have Doppler correction applied is set on a per-channel basis in the rpx-100 Control dialog.
 
 ![Satellite tracker settings dialog](../../../doc/img/SatelliteTracker_plugin_settingsdialog2.png)
 
@@ -202,12 +202,12 @@ Icons are by Freepik from Flaticon https://www.flaticon.com/
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to set the satellites to track:
 
-    curl -X PATCH "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/settings" -d '{"featureType": "SatelliteTracker",  "SatelliteTrackerSettings": { "satellites": [ "NOAA 15", "NOAA 19" ] }}'
+    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "SatelliteTracker",  "SatelliteTrackerSettings": { "satellites": [ "NOAA 15", "NOAA 19" ] }}'
 
 And how to set the target:
 
-    curl -X PATCH "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/settings" -d '{"featureType": "SatelliteTracker",  "SatelliteTrackerSettings": { "target": "NOAA 15"  }}'
+    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "SatelliteTracker",  "SatelliteTrackerSettings": { "target": "NOAA 15"  }}'
 
 Or, to set the device settings:
 
-    curl -X PATCH "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/settings" -d '{"featureType": "SatelliteTracker",  "SatelliteTrackerSettings": {  "deviceSettings": [ {  "satellite": "ISS",  "deviceSettings": [ { "deviceSet": "R0", "doppler": [0], "frequency": 0, "presetDescription": Sat", "presetFrequency": 145.825, "presetGroup": "ISS Digi", "startOnAOS": 1, "startStopFileSinks": 1, "stopOnLOS": 1}] } ] }}'
+    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "SatelliteTracker",  "SatelliteTrackerSettings": {  "deviceSettings": [ {  "satellite": "ISS",  "deviceSettings": [ { "deviceSet": "R0", "doppler": [0], "frequency": 0, "presetDescription": Sat", "presetFrequency": 145.825, "presetGroup": "ISS Digi", "startOnAOS": 1, "startStopFileSinks": 1, "stopOnLOS": 1}] } ] }}'

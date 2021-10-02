@@ -739,7 +739,7 @@ bool SDRPlayV3Input::setDeviceCenterFrequency(quint64 freq_hz)
 }
 
 int SDRPlayV3Input::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -749,7 +749,7 @@ int SDRPlayV3Input::webapiRunGet(
 
 int SDRPlayV3Input::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -767,11 +767,11 @@ int SDRPlayV3Input::webapiRun(
 }
 
 int SDRPlayV3Input::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSdrPlayV3Settings(new SWGSDRangel::SWGSDRPlayV3Settings());
+    response.setSdrPlayV3Settings(new SWGrpx-100::SWGSDRPlayV3Settings());
     response.getSdrPlayV3Settings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -780,7 +780,7 @@ int SDRPlayV3Input::webapiSettingsGet(
 int SDRPlayV3Input::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -803,7 +803,7 @@ int SDRPlayV3Input::webapiSettingsPutPatch(
 void SDRPlayV3Input::webapiUpdateDeviceSettings(
         SDRPlayV3Settings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getSdrPlayV3Settings()->getCenterFrequency();
@@ -876,7 +876,7 @@ void SDRPlayV3Input::webapiUpdateDeviceSettings(
     }
 }
 
-void SDRPlayV3Input::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const SDRPlayV3Settings& settings)
+void SDRPlayV3Input::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const SDRPlayV3Settings& settings)
 {
     response.getSdrPlayV3Settings()->setCenterFrequency(settings.m_centerFrequency);
     response.getSdrPlayV3Settings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -910,31 +910,31 @@ void SDRPlayV3Input::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
 }
 
 int SDRPlayV3Input::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSdrPlayV3Report(new SWGSDRangel::SWGSDRPlayV3Report());
+    response.setSdrPlayV3Report(new SWGrpx-100::SWGSDRPlayV3Report());
     response.getSdrPlayV3Report()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void SDRPlayV3Input::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void SDRPlayV3Input::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
-    response.getSdrPlayV3Report()->setIntermediateFrequencies(new QList<SWGSDRangel::SWGFrequency*>);
+    response.getSdrPlayV3Report()->setIntermediateFrequencies(new QList<SWGrpx-100::SWGFrequency*>);
 
     for (unsigned int i = 0; i < SDRPlayV3IF::getNbIFs(); i++)
     {
-        response.getSdrPlayV3Report()->getIntermediateFrequencies()->append(new SWGSDRangel::SWGFrequency);
+        response.getSdrPlayV3Report()->getIntermediateFrequencies()->append(new SWGrpx-100::SWGFrequency);
         response.getSdrPlayV3Report()->getIntermediateFrequencies()->back()->setFrequency(SDRPlayV3IF::getIF(i));
     }
 
-    response.getSdrPlayV3Report()->setBandwidths(new QList<SWGSDRangel::SWGBandwidth*>);
+    response.getSdrPlayV3Report()->setBandwidths(new QList<SWGrpx-100::SWGBandwidth*>);
 
     for (unsigned int i = 0; i < SDRPlayV3Bandwidths::getNbBandwidths(); i++)
     {
-        response.getSdrPlayV3Report()->getBandwidths()->append(new SWGSDRangel::SWGBandwidth);
+        response.getSdrPlayV3Report()->getBandwidths()->append(new SWGrpx-100::SWGBandwidth);
         response.getSdrPlayV3Report()->getBandwidths()->back()->setBandwidth(SDRPlayV3Bandwidths::getBandwidth(i));
     }
 
@@ -963,12 +963,12 @@ void SDRPlayV3Input::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
 void SDRPlayV3Input::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const SDRPlayV3Settings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("SDRplayV3"));
-    swgDeviceSettings->setSdrPlayV3Settings(new SWGSDRangel::SWGSDRPlayV3Settings());
-    SWGSDRangel::SWGSDRPlayV3Settings *swgSDRPlayV3Settings = swgDeviceSettings->getSdrPlayV3Settings();
+    swgDeviceSettings->setSdrPlayV3Settings(new SWGrpx-100::SWGSDRPlayV3Settings());
+    SWGrpx-100::SWGSDRPlayV3Settings *swgSDRPlayV3Settings = swgDeviceSettings->getSdrPlayV3Settings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1027,7 +1027,7 @@ void SDRPlayV3Input::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
         swgSDRPlayV3Settings->setAntenna(settings.m_antenna);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1048,12 +1048,12 @@ void SDRPlayV3Input::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
 
 void SDRPlayV3Input::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("SDRplayV3"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

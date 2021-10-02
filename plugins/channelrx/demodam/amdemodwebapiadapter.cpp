@@ -26,11 +26,11 @@ AMDemodWebAPIAdapter::~AMDemodWebAPIAdapter()
 {}
 
 int AMDemodWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAmDemodSettings(new SWGSDRangel::SWGAMDemodSettings());
+    response.setAmDemodSettings(new SWGrpx-100::SWGAMDemodSettings());
     response.getAmDemodSettings()->init();
     AMDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int AMDemodWebAPIAdapter::webapiSettingsGet(
 int AMDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

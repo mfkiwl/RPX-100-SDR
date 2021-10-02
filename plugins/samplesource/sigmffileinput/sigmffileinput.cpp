@@ -26,7 +26,7 @@
 #include <QTimeZone>
 
 #include "libsigmf/sigmf_core_generated.h"
-#include "libsigmf/sigmf_sdrangel_generated.h"
+#include "libsigmf/sigmf_rpx-100_generated.h"
 #include "libsigmf/sigmf.h"
 
 #include "SWGDeviceSettings.h"
@@ -134,8 +134,8 @@ bool SigMFFileInput::openFileStreams(const QString& fileName)
 
     uint64_t dataFileSize = m_dataStream.tellg();
 
-    sigmf::SigMF<sigmf::Global<core::DescrT, sdrangel::DescrT>,
-            sigmf::Capture<core::DescrT, sdrangel::DescrT>,
+    sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
+            sigmf::Capture<core::DescrT, rpx-100::DescrT>,
             sigmf::Annotation<core::DescrT> > metaRecord;
 
     std::ostringstream meta_buffer;
@@ -203,8 +203,8 @@ bool SigMFFileInput::openFileStreams(const QString& fileName)
 }
 
 void SigMFFileInput::extractMeta(
-    sigmf::SigMF<sigmf::Global<core::DescrT, sdrangel::DescrT>,
-    sigmf::Capture<core::DescrT, sdrangel::DescrT>,
+    sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
+    sigmf::Capture<core::DescrT, rpx-100::DescrT>,
     sigmf::Annotation<core::DescrT> >* metaRecord,
     uint64_t dataFileSize
 )
@@ -226,17 +226,17 @@ void SigMFFileInput::extractMeta(
     m_metaInfo.m_recorder = QString::fromStdString(metaRecord->global.access<core::GlobalT>().recorder);
     m_metaInfo.m_license = QString::fromStdString(metaRecord->global.access<core::GlobalT>().license);
     m_metaInfo.m_hw = QString::fromStdString(metaRecord->global.access<core::GlobalT>().hw);
-    // sdrangel
-    m_metaInfo.m_sdrAngelVersion = QString::fromStdString(metaRecord->global.access<sdrangel::GlobalT>().version);
-    m_metaInfo.m_qtVersion = QString::fromStdString(metaRecord->global.access<sdrangel::GlobalT>().qt_version);
-    m_metaInfo.m_rxBits = metaRecord->global.access<sdrangel::GlobalT>().rx_bits;
-    m_metaInfo.m_arch = QString::fromStdString(metaRecord->global.access<sdrangel::GlobalT>().arch);
-    m_metaInfo.m_os = QString::fromStdString(metaRecord->global.access<sdrangel::GlobalT>().os);
+    // rpx-100
+    m_metaInfo.m_rpx-100Version = QString::fromStdString(metaRecord->global.access<rpx-100::GlobalT>().version);
+    m_metaInfo.m_qtVersion = QString::fromStdString(metaRecord->global.access<rpx-100::GlobalT>().qt_version);
+    m_metaInfo.m_rxBits = metaRecord->global.access<rpx-100::GlobalT>().rx_bits;
+    m_metaInfo.m_arch = QString::fromStdString(metaRecord->global.access<rpx-100::GlobalT>().arch);
+    m_metaInfo.m_os = QString::fromStdString(metaRecord->global.access<rpx-100::GlobalT>().os);
     // lists
     m_metaInfo.m_nbCaptures = metaRecord->captures.size();
     m_metaInfo.m_nbAnnotations = metaRecord->annotations.size();
-    // correct sample bits if sdrangel
-    if (m_metaInfo.m_sdrAngelVersion.size() > 0)
+    // correct sample bits if rpx-100
+    if (m_metaInfo.m_rpx-100Version.size() > 0)
     {
         if (m_metaInfo.m_dataType.m_sampleBits == 32) {
             m_metaInfo.m_dataType.m_sampleBits = 24;
@@ -250,8 +250,8 @@ void SigMFFileInput::extractMeta(
 }
 
 void SigMFFileInput::extractCaptures(
-    sigmf::SigMF<sigmf::Global<core::DescrT, sdrangel::DescrT>,
-    sigmf::Capture<core::DescrT, sdrangel::DescrT>,
+    sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
+    sigmf::Capture<core::DescrT, rpx-100::DescrT>,
     sigmf::Annotation<core::DescrT> >* metaRecord
 )
 {
@@ -259,7 +259,7 @@ void SigMFFileInput::extractCaptures(
     std::regex datetime_reg("(\\d{4})-(\\d\\d)-(\\d\\d)T(\\d\\d):(\\d\\d):(\\d\\d)(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?");
     std::smatch datetime_match;
 
-    sigmf::SigMFVector<sigmf::Capture<core::DescrT, sdrangel::DescrT>>::iterator it =
+    sigmf::SigMFVector<sigmf::Capture<core::DescrT, rpx-100::DescrT>>::iterator it =
         metaRecord->captures.begin();
     uint64_t lastSampleStart = 0;
     unsigned int i = 0;
@@ -272,16 +272,16 @@ void SigMFFileInput::extractCaptures(
         m_captures.back().m_sampleStart = it->get<core::DescrT>().sample_start;
         m_captureStarts.push_back(m_captures.back().m_sampleStart);
         m_captures.back().m_cumulativeTime = cumulativeTime;
-        int sdrangelSampleRate = it->get<sdrangel::DescrT>().sample_rate;
+        int rpx-100SampleRate = it->get<rpx-100::DescrT>().sample_rate;
         double globalSampleRate = metaRecord->global.access<core::GlobalT>().sample_rate;
 
-        if (sdrangelSampleRate == 0) {
+        if (rpx-100SampleRate == 0) {
             m_captures.back().m_sampleRate = globalSampleRate < 0 ? -globalSampleRate : globalSampleRate;
         } else {
-            m_captures.back().m_sampleRate = sdrangelSampleRate;
+            m_captures.back().m_sampleRate = rpx-100SampleRate;
         }
 
-        uint64_t tsms = it->get<sdrangel::DescrT>().tsms;
+        uint64_t tsms = it->get<rpx-100::DescrT>().tsms;
 
         if (tsms)
         {
@@ -852,11 +852,11 @@ bool SigMFFileInput::applySettings(const SigMFFileInputSettings& settings, bool 
 }
 
 int SigMFFileInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSigMfFileInputSettings(new SWGSDRangel::SWGSigMFFileInputSettings());
+    response.setSigMfFileInputSettings(new SWGrpx-100::SWGSigMFFileInputSettings());
     response.getSigMfFileInputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -865,7 +865,7 @@ int SigMFFileInput::webapiSettingsGet(
 int SigMFFileInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -888,7 +888,7 @@ int SigMFFileInput::webapiSettingsPutPatch(
 void SigMFFileInput::webapiUpdateDeviceSettings(
         SigMFFileInputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("fileName")) {
         settings.m_fileName = *response.getSigMfFileInputSettings()->getFileName();
@@ -917,7 +917,7 @@ void SigMFFileInput::webapiUpdateDeviceSettings(
 }
 
 int SigMFFileInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -927,7 +927,7 @@ int SigMFFileInput::webapiRunGet(
 
 int SigMFFileInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -945,11 +945,11 @@ int SigMFFileInput::webapiRun(
 }
 
 int SigMFFileInput::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSigMfFileInputReport(new SWGSDRangel::SWGSigMFFileInputReport());
+    response.setSigMfFileInputReport(new SWGrpx-100::SWGSigMFFileInputReport());
     response.getSigMfFileInputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
@@ -957,10 +957,10 @@ int SigMFFileInput::webapiReportGet(
 
 int SigMFFileInput::webapiActionsPost(
         const QStringList& deviceActionsKeys,
-        SWGSDRangel::SWGDeviceActions& query,
+        SWGrpx-100::SWGDeviceActions& query,
         QString& errorMessage)
 {
-    SWGSDRangel::SWGSigMFFileInputActions *swgSigMFFileInputActions = query.getSigMfFileInputActions();
+    SWGrpx-100::SWGSigMFFileInputActions *swgSigMFFileInputActions = query.getSigMfFileInputActions();
 
     if (swgSigMFFileInputActions)
     {
@@ -1034,7 +1034,7 @@ int SigMFFileInput::webapiActionsPost(
     }
 }
 
-void SigMFFileInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const SigMFFileInputSettings& settings)
+void SigMFFileInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const SigMFFileInputSettings& settings)
 {
     response.getSigMfFileInputSettings()->setFileName(new QString(settings.m_fileName));
     response.getSigMfFileInputSettings()->setAccelerationFactor(settings.m_accelerationFactor);
@@ -1053,7 +1053,7 @@ void SigMFFileInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     response.getSigMfFileInputSettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void SigMFFileInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void SigMFFileInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     if (!m_metaStream.is_open()) {
         return;
@@ -1072,12 +1072,12 @@ void SigMFFileInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
     if (response.getSigMfFileInputReport()->getCaptures()) {
         response.getSigMfFileInputReport()->getCaptures()->clear();
     } else {
-        response.getSigMfFileInputReport()->setCaptures(new QList<SWGSDRangel::SWGCapture*>);
+        response.getSigMfFileInputReport()->setCaptures(new QList<SWGrpx-100::SWGCapture*>);
     }
 
     for (; it != m_captures.end(); ++it)
     {
-        response.getSigMfFileInputReport()->getCaptures()->append(new SWGSDRangel::SWGCapture);
+        response.getSigMfFileInputReport()->getCaptures()->append(new SWGrpx-100::SWGCapture);
         response.getSigMfFileInputReport()->getCaptures()->back()->setTsms(it->m_tsms);
         response.getSigMfFileInputReport()->getCaptures()->back()->setCenterFrequency(it->m_centerFrequency);
         response.getSigMfFileInputReport()->getCaptures()->back()->setSampleRate(it->m_sampleRate);
@@ -1121,12 +1121,12 @@ void SigMFFileInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
 void SigMFFileInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const SigMFFileInputSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("SigMFFileInput"));
-    swgDeviceSettings->setSigMfFileInputSettings(new SWGSDRangel::SWGSigMFFileInputSettings());
-    SWGSDRangel::SWGSigMFFileInputSettings *swgSigMFFileInputSettings = swgDeviceSettings->getSigMfFileInputSettings();
+    swgDeviceSettings->setSigMfFileInputSettings(new SWGrpx-100::SWGSigMFFileInputSettings());
+    SWGrpx-100::SWGSigMFFileInputSettings *swgSigMFFileInputSettings = swgDeviceSettings->getSigMfFileInputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1143,7 +1143,7 @@ void SigMFFileInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
         swgSigMFFileInputSettings->setFileName(new QString(settings.m_fileName));
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1164,12 +1164,12 @@ void SigMFFileInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
 
 void SigMFFileInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("SigMFFileInput"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

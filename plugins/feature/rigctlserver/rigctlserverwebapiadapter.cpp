@@ -27,11 +27,11 @@ RigCtlServerWebAPIAdapter::~RigCtlServerWebAPIAdapter()
 {}
 
 int RigCtlServerWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRigCtlServerSettings(new SWGSDRangel::SWGRigCtlServerSettings());
+    response.setRigCtlServerSettings(new SWGrpx-100::SWGRigCtlServerSettings());
     response.getRigCtlServerSettings()->init();
     RigCtlServer::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int RigCtlServerWebAPIAdapter::webapiSettingsGet(
 int RigCtlServerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

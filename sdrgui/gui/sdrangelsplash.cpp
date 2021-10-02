@@ -17,32 +17,32 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.          //
 ///////////////////////////////////////////////////////////////////////////////////
 
-#include "sdrangelsplash.h"
+#include "rpx-100splash.h"
 
-SDRangelSplash::SDRangelSplash(const QPixmap& pixmap)
+rpx-100Splash::rpx-100Splash(const QPixmap& pixmap)
 {
    QSplashScreen::setPixmap(pixmap);
 };
 
-SDRangelSplash::~SDRangelSplash()
+rpx-100Splash::~rpx-100Splash()
 {
 };
 
-void SDRangelSplash::drawContents(QPainter *painter)
+void rpx-100Splash::drawContents(QPainter *painter)
 {
     QPixmap textPix = QSplashScreen::pixmap();
     painter->setPen(this->color);
     painter->drawText(this->rect, this->alignement, this->message);
 };
 
-void SDRangelSplash::showStatusMessage(const QString &message, const QColor &color)
+void rpx-100Splash::showStatusMessage(const QString &message, const QColor &color)
 {
     this->message = message;
     this->color = color;
     this->showMessage(this->message, this->alignement, this->color);
 };
 
-void SDRangelSplash::setMessageRect(QRect rect, int alignement)
+void rpx-100Splash::setMessageRect(QRect rect, int alignement)
 {
     this->rect = rect;
     this->alignement = alignement;

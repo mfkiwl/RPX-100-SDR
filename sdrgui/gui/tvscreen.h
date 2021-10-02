@@ -1,6 +1,6 @@
 ﻿///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / SDRAngel                                                          //
+// for F4EXB / rpx-100                                                          //
 //                                                                               //
 // OpenGL interface modernization.                                               //
 // See: http://doc.qt.io/qt-5/qopenglshaderprogram.html                          //

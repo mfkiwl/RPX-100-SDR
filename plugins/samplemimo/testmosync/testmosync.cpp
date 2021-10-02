@@ -318,7 +318,7 @@ bool TestMOSync::applySettings(const TestMOSyncSettings& settings, bool force)
 
 int TestMOSync::webapiRunGet(
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -340,7 +340,7 @@ int TestMOSync::webapiRunGet(
 int TestMOSync::webapiRun(
         bool run,
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if (subsystemIndex == 1)
@@ -365,11 +365,11 @@ int TestMOSync::webapiRun(
 }
 
 int TestMOSync::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setTestMoSyncSettings(new SWGSDRangel::SWGTestMOSyncSettings());
+    response.setTestMoSyncSettings(new SWGrpx-100::SWGTestMOSyncSettings());
     response.getTestMoSyncSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -378,7 +378,7 @@ int TestMOSync::webapiSettingsGet(
 int TestMOSync::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -399,7 +399,7 @@ int TestMOSync::webapiSettingsPutPatch(
 }
 
 void TestMOSync::webapiFormatDeviceSettings(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         const TestMOSyncSettings& settings)
 {
     response.getTestMoSyncSettings()->setCenterFrequency(settings.m_centerFrequency);
@@ -411,7 +411,7 @@ void TestMOSync::webapiFormatDeviceSettings(
 void TestMOSync::webapiUpdateDeviceSettings(
         TestMOSyncSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getTestMoSyncSettings()->getCenterFrequency();

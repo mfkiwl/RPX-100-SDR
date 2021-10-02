@@ -185,8 +185,8 @@ void VorLocalizerWorker::applySettings(const VORLocalizerSettings& settings, boo
 
 void VorLocalizerWorker::updateHardware()
 {
-    SWGSDRangel::SWGSuccessResponse response;
-    SWGSDRangel::SWGErrorResponse error;
+    SWGrpx-100::SWGSuccessResponse response;
+    SWGrpx-100::SWGErrorResponse error;
     m_updateTimer.stop();
     m_mutex.unlock();
 }
@@ -412,8 +412,8 @@ void VorLocalizerWorker::allocateChannel(ChannelAPI *channel, int vorFrequency, 
 
 void VorLocalizerWorker::setDeviceFrequency(int deviceIndex, double targetFrequency)
 {
-    SWGSDRangel::SWGDeviceSettings deviceSettingsResponse;
-    SWGSDRangel::SWGErrorResponse errorResponse;
+    SWGrpx-100::SWGDeviceSettings deviceSettingsResponse;
+    SWGrpx-100::SWGErrorResponse errorResponse;
     int httpRC;
 
     // Get current device center frequency
@@ -437,7 +437,7 @@ void VorLocalizerWorker::setDeviceFrequency(int deviceIndex, double targetFreque
     deviceSettingsKeys.append("centerFrequency");
     deviceSettingsResponse.init();
     deviceSettingsResponse.fromJsonObject(*jsonObj);
-    SWGSDRangel::SWGErrorResponse errorResponse2;
+    SWGrpx-100::SWGErrorResponse errorResponse2;
 
     httpRC = m_webAPIAdapterInterface->devicesetDeviceSettingsPutPatch(
         deviceIndex,
@@ -460,8 +460,8 @@ void VorLocalizerWorker::setDeviceFrequency(int deviceIndex, double targetFreque
 
 void VorLocalizerWorker::setChannelShift(int deviceIndex, int channelIndex, double targetOffset, int vorNavId)
 {
-    SWGSDRangel::SWGChannelSettings channelSettingsResponse;
-    SWGSDRangel::SWGErrorResponse errorResponse;
+    SWGrpx-100::SWGChannelSettings channelSettingsResponse;
+    SWGrpx-100::SWGErrorResponse errorResponse;
     int httpRC;
 
     // Get channel settings containg inputFrequencyOffset, so we can patch them
@@ -536,8 +536,8 @@ void VorLocalizerWorker::setAudioMute(int vorNavId, bool audioMute)
         return;
     }
 
-    SWGSDRangel::SWGChannelSettings channelSettingsResponse;
-    SWGSDRangel::SWGErrorResponse errorResponse;
+    SWGrpx-100::SWGChannelSettings channelSettingsResponse;
+    SWGrpx-100::SWGErrorResponse errorResponse;
     int httpRC;
     int deviceIndex = m_channelAllocations[vorNavId].m_deviceIndex;
     int channelIndex = m_channelAllocations[vorNavId].m_channelIndex;

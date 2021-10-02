@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class AntennaToolsPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.feature.antennatools")
+    Q_PLUGIN_METADATA(IID "rpx-100.feature.antennatools")
 
 public:
     explicit AntennaToolsPlugin(QObject* parent = nullptr);

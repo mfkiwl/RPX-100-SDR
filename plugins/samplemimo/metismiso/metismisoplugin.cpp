@@ -34,9 +34,9 @@ const PluginDescriptor MetisMISOPlugin::m_pluginDescriptor = {
 	QStringLiteral("Metis MISO"),
 	QStringLiteral("6.16.3"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 static constexpr const char* const m_hardwareID = "MetisMISO";

@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define XTRXOUTPUT_DEVICE_TYPE_ID "sdrangel.samplesink.xtrx"
+#define XTRXOUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.xtrx"
 
 class XTRXOutputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

@@ -18,7 +18,7 @@ set(pertester_HEADERS
 )
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}/swagger/sdrangel/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
 )
 
 if(NOT SERVER_MODE)

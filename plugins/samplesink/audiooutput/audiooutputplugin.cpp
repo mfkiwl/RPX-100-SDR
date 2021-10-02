@@ -33,9 +33,9 @@ const PluginDescriptor AudioOutputPlugin::m_pluginDescriptor = {
 	QString("Audio output"),
 	QString("6.8.0"),
 	QString("(c) Edouard Griffiths, F4EXB"),
-	QString("https://github.com/f4exb/sdrangel"),
+	QString("https://github.com/f4exb/rpx-100"),
 	true,
-	QString("https://github.com/f4exb/sdrangel")
+	QString("https://github.com/f4exb/rpx-100")
 };
 
 const QString AudioOutputPlugin::m_hardwareID = "AudioOutput";

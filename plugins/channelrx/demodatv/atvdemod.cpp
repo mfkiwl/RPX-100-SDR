@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2017 F4HKW                                                      //
-// for F4EXB / SDRAngel                                                          //
+// for F4EXB / rpx-100                                                          //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -29,7 +29,7 @@
 
 MESSAGE_CLASS_DEFINITION(ATVDemod::MsgConfigureATVDemod, Message)
 
-const char* const ATVDemod::m_channelIdURI = "sdrangel.channel.demodatv";
+const char* const ATVDemod::m_channelIdURI = "rpx-100.channel.demodatv";
 const char* const ATVDemod::m_channelId = "ATVDemod";
 
 ATVDemod::ATVDemod(DeviceAPI *deviceAPI) :

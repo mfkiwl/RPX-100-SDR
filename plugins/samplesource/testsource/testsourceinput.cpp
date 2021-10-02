@@ -434,7 +434,7 @@ bool TestSourceInput::applySettings(const TestSourceSettings& settings, bool for
 }
 
 int TestSourceInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -444,7 +444,7 @@ int TestSourceInput::webapiRunGet(
 
 int TestSourceInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -462,11 +462,11 @@ int TestSourceInput::webapiRun(
 }
 
 int TestSourceInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setTestSourceSettings(new SWGSDRangel::SWGTestSourceSettings());
+    response.setTestSourceSettings(new SWGrpx-100::SWGTestSourceSettings());
     response.getTestSourceSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -475,7 +475,7 @@ int TestSourceInput::webapiSettingsGet(
 int TestSourceInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -498,7 +498,7 @@ int TestSourceInput::webapiSettingsPutPatch(
 void TestSourceInput::webapiUpdateDeviceSettings(
     TestSourceSettings& settings,
     const QStringList& deviceSettingsKeys,
-    SWGSDRangel::SWGDeviceSettings& response)
+    SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getTestSourceSettings()->getCenterFrequency();
@@ -570,7 +570,7 @@ void TestSourceInput::webapiUpdateDeviceSettings(
     }
 }
 
-void TestSourceInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const TestSourceSettings& settings)
+void TestSourceInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const TestSourceSettings& settings)
 {
     response.getTestSourceSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getTestSourceSettings()->setFrequencyShift(settings.m_frequencyShift);
@@ -603,12 +603,12 @@ void TestSourceInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings&
 
 void TestSourceInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const TestSourceSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));
-    swgDeviceSettings->setTestSourceSettings(new SWGSDRangel::SWGTestSourceSettings());
-    SWGSDRangel::SWGTestSourceSettings *swgTestSourceSettings = swgDeviceSettings->getTestSourceSettings();
+    swgDeviceSettings->setTestSourceSettings(new SWGrpx-100::SWGTestSourceSettings());
+    SWGrpx-100::SWGTestSourceSettings *swgTestSourceSettings = swgDeviceSettings->getTestSourceSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -661,7 +661,7 @@ void TestSourceInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKe
         swgTestSourceSettings->setPhaseImbalance(settings.m_phaseImbalance);
     };
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -684,12 +684,12 @@ void TestSourceInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKe
 
 void TestSourceInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

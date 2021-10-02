@@ -120,11 +120,11 @@ public:
     static void webapiSettingsPutPatch(
         const QStringList& channelSettingsKeys,
         CWKeyerSettings& cwKeyerSettings,
-        SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings
+        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings
     );
 
     static void webapiFormatChannelSettings(
-        SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings,
+        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings,
         const CWKeyerSettings& cwKeyerSettings
     );
 

@@ -37,9 +37,9 @@ const PluginDescriptor USRPOutputPlugin::m_pluginDescriptor = {
     QStringLiteral("URSP Output"),
     QStringLiteral("4.21.0"),
     QStringLiteral("(c) Jon Beniston, M7RCE and Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 static constexpr const char* const m_hardwareID = "USRP";

@@ -22,7 +22,7 @@ set(modatv_HEADERS
 
 include_directories(
 	${OpenCV_INCLUDE_DIRS}
-        ${CMAKE_SOURCE_DIR}/swagger/sdrangel/code/qt5/client
+        ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
 )
 
 if(NOT SERVER_MODE)

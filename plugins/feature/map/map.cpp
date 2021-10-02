@@ -37,7 +37,7 @@
 MESSAGE_CLASS_DEFINITION(Map::MsgConfigureMap, Message)
 MESSAGE_CLASS_DEFINITION(Map::MsgFind, Message)
 
-const char* const Map::m_featureIdURI = "sdrangel.feature.map";
+const char* const Map::m_featureIdURI = "rpx-100.feature.map";
 const char* const Map::m_featureId = "Map";
 
 Map::Map(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -160,7 +160,7 @@ void Map::applySettings(const MapSettings& settings, bool force)
 }
 
 int Map::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) run;
@@ -170,11 +170,11 @@ int Map::webapiRun(bool run,
 }
 
 int Map::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setMapSettings(new SWGSDRangel::SWGMapSettings());
+    response.setMapSettings(new SWGrpx-100::SWGMapSettings());
     response.getMapSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -183,7 +183,7 @@ int Map::webapiSettingsGet(
 int Map::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -206,10 +206,10 @@ int Map::webapiSettingsPutPatch(
 
 int Map::webapiActionsPost(
     const QStringList& featureActionsKeys,
-    SWGSDRangel::SWGFeatureActions& query,
+    SWGrpx-100::SWGFeatureActions& query,
     QString& errorMessage)
 {
-    SWGSDRangel::SWGMapActions *swgMapActions = query.getMapActions();
+    SWGrpx-100::SWGMapActions *swgMapActions = query.getMapActions();
 
     if (swgMapActions)
     {
@@ -231,7 +231,7 @@ int Map::webapiActionsPost(
 }
 
 void Map::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const MapSettings& settings)
 {
     response.getMapSettings()->setDisplayNames(settings.m_displayNames ? 1 : 0);
@@ -259,7 +259,7 @@ void Map::webapiFormatFeatureSettings(
 void Map::webapiUpdateFeatureSettings(
     MapSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("displayNames")) {
         settings.m_displayNames = response.getMapSettings()->getDisplayNames();
@@ -289,12 +289,12 @@ void Map::webapiUpdateFeatureSettings(
 
 void Map::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const MapSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("Map"));
-    swgFeatureSettings->setMapSettings(new SWGSDRangel::SWGMapSettings());
-    SWGSDRangel::SWGMapSettings *swgMapSettings = swgFeatureSettings->getMapSettings();
+    swgFeatureSettings->setMapSettings(new SWGrpx-100::SWGMapSettings());
+    SWGrpx-100::SWGMapSettings *swgMapSettings = swgFeatureSettings->getMapSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -308,7 +308,7 @@ void Map::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const M
         swgMapSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

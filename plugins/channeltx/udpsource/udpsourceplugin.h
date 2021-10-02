@@ -28,7 +28,7 @@ class BasebandSampleSource;
 class UDPSourcePlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.channeltx.udpsink")
+	Q_PLUGIN_METADATA(IID "rpx-100.channeltx.udpsink")
 
 public:
 	explicit UDPSourcePlugin(QObject* parent = 0);

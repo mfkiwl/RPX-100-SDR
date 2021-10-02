@@ -28,7 +28,7 @@ class BasebandSampleSource;
 class LocalSourcePlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.demod.localsource")
+    Q_PLUGIN_METADATA(IID "rpx-100.demod.localsource")
 
 public:
     explicit LocalSourcePlugin(QObject* parent = 0);

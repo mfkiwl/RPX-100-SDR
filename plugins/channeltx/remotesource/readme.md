@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-This plugin receives I/Q samples from UDP and copies them to the baseband to be transmitted by the sink output device. It uses SDRangel remote format and possible FEC protection.
+This plugin receives I/Q samples from UDP and copies them to the baseband to be transmitted by the sink output device. It uses rpx-100 remote format and possible FEC protection.
 
 <h2>Build</h2>
 

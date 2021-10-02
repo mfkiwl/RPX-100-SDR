@@ -45,7 +45,7 @@
 
 MESSAGE_CLASS_DEFINITION(DSDDemod::MsgConfigureDSDDemod, Message)
 
-const char* const DSDDemod::m_channelIdURI = "sdrangel.channel.dsddemod";
+const char* const DSDDemod::m_channelIdURI = "rpx-100.channel.dsddemod";
 const char* const DSDDemod::m_channelId = "DSDDemod";
 const int DSDDemod::m_udpBlockSize = 512;
 
@@ -312,11 +312,11 @@ void DSDDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int DSDDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDsdDemodSettings(new SWGSDRangel::SWGDSDDemodSettings());
+    response.setDsdDemodSettings(new SWGrpx-100::SWGDSDDemodSettings());
     response.getDsdDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -325,7 +325,7 @@ int DSDDemod::webapiSettingsGet(
 int DSDDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -350,7 +350,7 @@ int DSDDemod::webapiSettingsPutPatch(
 void DSDDemod::webapiUpdateChannelSettings(
         DSDDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getDsdDemodSettings()->getInputFrequencyOffset();
@@ -439,17 +439,17 @@ void DSDDemod::webapiUpdateChannelSettings(
 }
 
 int DSDDemod::webapiReportGet(
-        SWGSDRangel::SWGChannelReport& response,
+        SWGrpx-100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDsdDemodReport(new SWGSDRangel::SWGDSDDemodReport());
+    response.setDsdDemodReport(new SWGrpx-100::SWGDSDDemodReport());
     response.getDsdDemodReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void DSDDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const DSDDemodSettings& settings)
+void DSDDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const DSDDemodSettings& settings)
 {
     response.getDsdDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getDsdDemodSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -499,7 +499,7 @@ void DSDDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& resp
 
 }
 
-void DSDDemod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void DSDDemod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     double magsqAvg, magsqPeak;
     int nbMagsqSamples;
@@ -522,10 +522,10 @@ void DSDDemod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response
 
 void DSDDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const DSDDemodSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -555,7 +555,7 @@ void DSDDemod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -569,7 +569,7 @@ void DSDDemod::sendChannelSettings(
 
 void DSDDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const DSDDemodSettings& settings,
         bool force
 )
@@ -578,8 +578,8 @@ void DSDDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setDsdDemodSettings(new SWGSDRangel::SWGDSDDemodSettings());
-    SWGSDRangel::SWGDSDDemodSettings *swgDSDDemodSettings = swgChannelSettings->getDsdDemodSettings();
+    swgChannelSettings->setDsdDemodSettings(new SWGrpx-100::SWGDSDDemodSettings());
+    SWGrpx-100::SWGDSDDemodSettings *swgDSDDemodSettings = swgChannelSettings->getDsdDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

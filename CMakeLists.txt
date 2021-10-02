@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13.0)
 
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
 
-project(sdrangel)
+project(rpx-100)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
 
@@ -14,12 +14,12 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # configure version
-set(sdrangel_VERSION_MAJOR "6")
-set(sdrangel_VERSION_MINOR "16")
-set(sdrangel_VERSION_PATCH "5")
-set(sdrangel_VERSION_SUFFIX "")
+set(rpx-100_VERSION_MAJOR "6")
+set(rpx-100_VERSION_MINOR "16")
+set(rpx-100_VERSION_PATCH "5")
+set(rpx-100_VERSION_SUFFIX "")
 
-# SDRAngel cmake options
+# rpx-100 cmake options
 option(DEBUG_OUTPUT "Print debug messages" OFF)
 option(SANITIZE_ADDRESS "Activate memory address sanitization" OFF)
 option(RX_SAMPLE_24BIT "Internal 24 bit Rx DSP" ON)
@@ -54,7 +54,7 @@ endif()
 # Set additional project information
 set(COMPANY "f4exb")
 add_definitions("-DCOMPANY=\"${COMPANY}\"")
-set(APPLICATION_NAME "SDRangel")
+set(APPLICATION_NAME "rpx-100")
 add_definitions("-DAPPLICATION_NAME=\"${APPLICATION_NAME}\"")
 set(APPLICATION_MAINTAINER="Edouard Griffiths, F4EXB <f4exb06@gmail.com>")
 set(COPYRIGHT "Copyright (c) 2019 Edouard Griffiths. All rights reserved.")
@@ -72,25 +72,25 @@ if(GIT_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/.git/")
     OUTPUT_STRIP_TRAILING_WHITESPACE)
   if(NOT res)
         string(REGEX REPLACE "^v([0-9]+)\.([0-9]+)\.([0-9]+)" "" git_commit ${out})
-        set(sdrangel_VERSION_SUFFIX "${git_commit}")
+        set(rpx-100_VERSION_SUFFIX "${git_commit}")
     endif()
 endif()
 
-set(sdrangel_VERSION "${sdrangel_VERSION_MAJOR}.${sdrangel_VERSION_MINOR}.${sdrangel_VERSION_PATCH}${sdrangel_VERSION_SUFFIX}")
-message(STATUS "${APPLICATION_NAME} Version: ${sdrangel_VERSION}")
-add_definitions("-DSDRANGEL_LIB_VERSION=\"${sdrangel_VERSION_MAJOR}.${sdrangel_VERSION_MINOR}.${sdrangel_VERSION_PATCH}\"")
-add_definitions("-DSDRANGEL_VERSION=\"${sdrangel_VERSION}\"")
+set(rpx-100_VERSION "${rpx-100_VERSION_MAJOR}.${rpx-100_VERSION_MINOR}.${rpx-100_VERSION_PATCH}${rpx-100_VERSION_SUFFIX}")
+message(STATUS "${APPLICATION_NAME} Version: ${rpx-100_VERSION}")
+add_definitions("-Drpx-100_LIB_VERSION=\"${rpx-100_VERSION_MAJOR}.${rpx-100_VERSION_MINOR}.${rpx-100_VERSION_PATCH}\"")
+add_definitions("-Drpx-100_VERSION=\"${rpx-100_VERSION}\"")
 
 # configure CPACK information
 set(CPACK_PACKAGE_NAME "${CMAKE_PROJECT_NAME}")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "SDR Rx/Tx software for Airspy, Airspy HF+, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay, USRP and FunCube")
 set(CPACK_PACKAGE_VENDOR "${COMPANY}")
-set(CPACK_PACKAGE_CONTACT "https://github.com/f4exb/sdrangel")
+set(CPACK_PACKAGE_CONTACT "https://github.com/f4exb/rpx-100")
 set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_SOURCE_DIR}/Readme.md")
-set(CPACK_PACKAGE_VERSION "${sdrangel_VERSION_MAJOR}.${sdrangel_VERSION_MINOR}.${sdrangel_VERSION_PATCH}${sdrangel_VERSION_SUFFIX}")
-set(CPACK_PACKAGE_VERSION_MAJOR ${sdrangel_VERSION_MAJOR})
-set(CPACK_PACKAGE_VERSION_MINOR ${sdrangel_VERSION_MINOR})
-set(CPACK_PACKAGE_VERSION_PATCH ${sdrangel_VERSION_PATCH})
+set(CPACK_PACKAGE_VERSION "${rpx-100_VERSION_MAJOR}.${rpx-100_VERSION_MINOR}.${rpx-100_VERSION_PATCH}${rpx-100_VERSION_SUFFIX}")
+set(CPACK_PACKAGE_VERSION_MAJOR ${rpx-100_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${rpx-100_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${rpx-100_VERSION_PATCH})
 set(CPACK_SOURCE_STRIP_FILES true)
 set(CPACK_STRIP_FILES true)
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
@@ -115,18 +115,18 @@ endif()
 
 # declare build structures
 # !! change sdrbase/plugins/pluginmanager.cpp too !!
-set(SDRANGEL_BINARY_BIN_DIR "${CMAKE_BINARY_DIR}/bin")
-set(SDRANGEL_BINARY_LIB_DIR "${CMAKE_BINARY_DIR}/lib")
+set(rpx-100_BINARY_BIN_DIR "${CMAKE_BINARY_DIR}/bin")
+set(rpx-100_BINARY_LIB_DIR "${CMAKE_BINARY_DIR}/lib")
 if(WIN32)
-  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${SDRANGEL_BINARY_BIN_DIR}")
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${rpx-100_BINARY_BIN_DIR}")
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 else()
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 endif()
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${SDRANGEL_BINARY_LIB_DIR}")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${SDRANGEL_BINARY_LIB_DIR}")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${rpx-100_BINARY_LIB_DIR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${rpx-100_BINARY_LIB_DIR}")
 if(WIN32)
   set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG "${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
   set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
@@ -134,8 +134,8 @@ if(WIN32)
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELWITHDEBINFO "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
-  set(BUILD_PLUGINS_RUNTIME_DIR "${SDRANGEL_BINARY_BIN_DIR}/plugins")
-  set(BUILD_PLUGINSSRV_RUNTIME_DIR "${SDRANGEL_BINARY_BIN_DIR}/pluginssrv")
+  set(BUILD_PLUGINS_RUNTIME_DIR "${rpx-100_BINARY_BIN_DIR}/plugins")
+  set(BUILD_PLUGINSSRV_RUNTIME_DIR "${rpx-100_BINARY_BIN_DIR}/pluginssrv")
 endif()
 set(BUILD_PLUGINS_DIR "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/plugins")
 set(BUILD_PLUGINSSRV_DIR "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/pluginssrv")
@@ -519,29 +519,29 @@ else()
   message(STATUS "Doxygen not found, developer documentation can not be generated")
 endif()
 
-############ build sdrangel benchmark ################
-set(sdrangelbench_SOURCES
+############ build rpx-100 benchmark ################
+set(rpx-100bench_SOURCES
   appbench/main.cpp
 )
 
-add_executable(sdrangelbench
-  ${sdrangelbench_SOURCES}
+add_executable(rpx-100bench
+  ${rpx-100bench_SOURCES}
 )
 
-target_link_libraries(sdrangelbench
+target_link_libraries(rpx-100bench
   Qt5::Multimedia
   sdrbench
   logging
 )
-############ build sdrangel gui ################
+############ build rpx-100 gui ################
 if (BUILD_GUI)
-    set(sdrangel_SOURCES
+    set(rpx-100_SOURCES
         app/main.cpp
-        sdrgui/resources/sdrangel.rc
+        sdrgui/resources/rpx-100.rc
     )
 
   add_executable(${CMAKE_PROJECT_NAME}
-    ${sdrangel_SOURCES}
+    ${rpx-100_SOURCES}
     )
 
   target_link_libraries(${CMAKE_PROJECT_NAME}
@@ -559,17 +559,17 @@ if (BUILD_GUI)
   endif()
 endif()
 
-############ build sdrangel server ################
+############ build rpx-100 server ################
 if (BUILD_SERVER)
-  set(sdrangelsrv_SOURCES
+  set(rpx-100srv_SOURCES
     appsrv/main.cpp
     )
 
-    add_executable(sdrangelsrv
-        ${sdrangelsrv_SOURCES}
+    add_executable(rpx-100srv
+        ${rpx-100srv_SOURCES}
     )
 
-    target_link_libraries(sdrangelsrv
+    target_link_libraries(rpx-100srv
         Qt5::Multimedia
         sdrbase
         sdrsrv
@@ -578,12 +578,12 @@ if (BUILD_SERVER)
 endif()
 
 ############ install ##################
-install(TARGETS sdrangelbench DESTINATION ${INSTALL_BIN_DIR})
+install(TARGETS rpx-100bench DESTINATION ${INSTALL_BIN_DIR})
 if (BUILD_GUI)
       install(TARGETS ${CMAKE_PROJECT_NAME} DESTINATION ${INSTALL_BIN_DIR})
 endif()
 if (BUILD_SERVER)
-  install(TARGETS sdrangelsrv DESTINATION ${INSTALL_BIN_DIR})
+  install(TARGETS rpx-100srv DESTINATION ${INSTALL_BIN_DIR})
 endif()
 
 # install external libraries dependencies (Linux)
@@ -592,7 +592,7 @@ if (LINUX AND ENABLE_EXTERNAL_LIBRARIES)
 endif()
 if(WIN32)
   include(DeployQt)
-  windeployqt(${CMAKE_PROJECT_NAME} ${SDRANGEL_BINARY_BIN_DIR} ${PROJECT_SOURCE_DIR}/sdrgui/resources)
+  windeployqt(${CMAKE_PROJECT_NAME} ${rpx-100_BINARY_BIN_DIR} ${PROJECT_SOURCE_DIR}/sdrgui/resources)
 endif()
 
 # install documentation

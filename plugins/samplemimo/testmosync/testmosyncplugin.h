@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define TESTMOSYNC_DEVICE_TYPE_ID "sdrangel.samplemimo.testmosync"
+#define TESTMOSYNC_DEVICE_TYPE_ID "rpx-100.samplemimo.testmosync"
 
 class TestMOSyncPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

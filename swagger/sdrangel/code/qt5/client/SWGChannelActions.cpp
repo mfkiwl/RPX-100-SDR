@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGChannelActions::SWGChannelActions(QString* json) {
     init();
@@ -124,27 +124,27 @@ SWGChannelActions::fromJson(QString &json) {
 
 void
 SWGChannelActions::fromJsonObject(QJsonObject &pJson) {
-    ::SWGSDRangel::setValue(&channel_type, pJson["channelType"], "QString", "QString");
+    ::SWGrpx-100::setValue(&channel_type, pJson["channelType"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&direction, pJson["direction"], "qint32", "");
+    ::SWGrpx-100::setValue(&direction, pJson["direction"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&originator_device_set_index, pJson["originatorDeviceSetIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&originator_device_set_index, pJson["originatorDeviceSetIndex"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&originator_channel_index, pJson["originatorChannelIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&originator_channel_index, pJson["originatorChannelIndex"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&ais_mod_actions, pJson["AISModActions"], "SWGAISModActions", "SWGAISModActions");
+    ::SWGrpx-100::setValue(&ais_mod_actions, pJson["AISModActions"], "SWGAISModActions", "SWGAISModActions");
     
-    ::SWGSDRangel::setValue(&apt_demod_actions, pJson["APTDemodActions"], "SWGAPTDemodActions", "SWGAPTDemodActions");
+    ::SWGrpx-100::setValue(&apt_demod_actions, pJson["APTDemodActions"], "SWGAPTDemodActions", "SWGAPTDemodActions");
     
-    ::SWGSDRangel::setValue(&file_sink_actions, pJson["FileSinkActions"], "SWGFileSinkActions", "SWGFileSinkActions");
+    ::SWGrpx-100::setValue(&file_sink_actions, pJson["FileSinkActions"], "SWGFileSinkActions", "SWGFileSinkActions");
     
-    ::SWGSDRangel::setValue(&file_source_actions, pJson["FileSourceActions"], "SWGFileSourceActions", "SWGFileSourceActions");
+    ::SWGrpx-100::setValue(&file_source_actions, pJson["FileSourceActions"], "SWGFileSourceActions", "SWGFileSourceActions");
     
-    ::SWGSDRangel::setValue(&ieee_802_15_4_mod_actions, pJson["IEEE_802_15_4_ModActions"], "SWGIEEE_802_15_4_ModActions", "SWGIEEE_802_15_4_ModActions");
+    ::SWGrpx-100::setValue(&ieee_802_15_4_mod_actions, pJson["IEEE_802_15_4_ModActions"], "SWGIEEE_802_15_4_ModActions", "SWGIEEE_802_15_4_ModActions");
     
-    ::SWGSDRangel::setValue(&packet_mod_actions, pJson["PacketModActions"], "SWGPacketModActions", "SWGPacketModActions");
+    ::SWGrpx-100::setValue(&packet_mod_actions, pJson["PacketModActions"], "SWGPacketModActions", "SWGPacketModActions");
     
-    ::SWGSDRangel::setValue(&sig_mf_file_sink_actions, pJson["SigMFFileSinkActions"], "SWGSigMFFileSinkActions", "SWGSigMFFileSinkActions");
+    ::SWGrpx-100::setValue(&sig_mf_file_sink_actions, pJson["SigMFFileSinkActions"], "SWGSigMFFileSinkActions", "SWGSigMFFileSinkActions");
     
 }
 

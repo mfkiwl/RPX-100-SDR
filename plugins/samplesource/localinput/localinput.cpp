@@ -236,7 +236,7 @@ void LocalInput::applySettings(const LocalInputSettings& settings, bool force)
 }
 
 int LocalInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -246,7 +246,7 @@ int LocalInput::webapiRunGet(
 
 int LocalInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -264,11 +264,11 @@ int LocalInput::webapiRun(
 }
 
 int LocalInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalInputSettings(new SWGSDRangel::SWGLocalInputSettings());
+    response.setLocalInputSettings(new SWGrpx-100::SWGLocalInputSettings());
     response.getLocalInputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -277,7 +277,7 @@ int LocalInput::webapiSettingsGet(
 int LocalInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -300,7 +300,7 @@ int LocalInput::webapiSettingsPutPatch(
 void LocalInput::webapiUpdateDeviceSettings(
         LocalInputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("dcBlock")) {
         settings.m_dcBlock = response.getLocalInputSettings()->getDcBlock() != 0;
@@ -322,7 +322,7 @@ void LocalInput::webapiUpdateDeviceSettings(
     }
 }
 
-void LocalInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const LocalInputSettings& settings)
+void LocalInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const LocalInputSettings& settings)
 {
     response.getLocalInputSettings()->setDcBlock(settings.m_dcBlock ? 1 : 0);
     response.getLocalInputSettings()->setIqCorrection(settings.m_iqCorrection);
@@ -340,17 +340,17 @@ void LocalInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& resp
 }
 
 int LocalInput::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setLocalInputReport(new SWGSDRangel::SWGLocalInputReport());
+    response.setLocalInputReport(new SWGrpx-100::SWGLocalInputReport());
     response.getLocalInputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void LocalInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void LocalInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     response.getLocalInputReport()->setCenterFrequency(m_centerFrequency);
     response.getLocalInputReport()->setSampleRate(m_sampleRate);
@@ -358,12 +358,12 @@ void LocalInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response
 
 void LocalInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const LocalInputSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("LocalInput"));
-    swgDeviceSettings->setLocalInputSettings(new SWGSDRangel::SWGLocalInputSettings());
-    SWGSDRangel::SWGLocalInputSettings *swgLocalInputSettings = swgDeviceSettings->getLocalInputSettings();
+    swgDeviceSettings->setLocalInputSettings(new SWGrpx-100::SWGLocalInputSettings());
+    SWGrpx-100::SWGLocalInputSettings *swgLocalInputSettings = swgDeviceSettings->getLocalInputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -374,7 +374,7 @@ void LocalInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
         swgLocalInputSettings->setIqCorrection(settings.m_iqCorrection ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -395,12 +395,12 @@ void LocalInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
 
 void LocalInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("LocalInput"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

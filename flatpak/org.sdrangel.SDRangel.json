@@ -1,11 +1,11 @@
 {
-  "app-id": "org.sdrangel.SDRangel",
+  "app-id": "org.rpx-100.rpx-100",
   "runtime": "org.kde.Platform",
   "runtime-version": "5.12",
   "sdk": "org.kde.Sdk",
-  "command": "sdrangel",
-  "rename-desktop-file": "sdrangel.desktop",
-  "rename-icon": "sdrangel_icon",
+  "command": "rpx-100",
+  "rename-desktop-file": "rpx-100.desktop",
+  "rename-icon": "rpx-100_icon",
   "copy-icon": true,
   "finish-args": [
     "--filesystem=xdg-documents",
@@ -494,7 +494,7 @@
       ]
     },
     {
-      "name": "sdrangel",
+      "name": "rpx-100",
       "buildsystem": "cmake-ninja",
       "config-opts": [
         "-Wno-dev",
@@ -513,11 +513,11 @@
         },
         {
           "type": "file",
-          "path": "org.sdrangel.SDRangel.appdata.xml"
+          "path": "org.rpx-100.rpx-100.appdata.xml"
         }
       ],
       "post-install": [
-        "install -Dm644 org.sdrangel.SDRangel.appdata.xml /app/share/appdata/org.sdrangel.SDRangel.appdata.xml"
+        "install -Dm644 org.rpx-100.rpx-100.appdata.xml /app/share/appdata/org.rpx-100.rpx-100.appdata.xml"
       ]
     }
   ]

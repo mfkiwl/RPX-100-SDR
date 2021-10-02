@@ -26,12 +26,12 @@ SigMFFileSinkWebAPIAdapter::~SigMFFileSinkWebAPIAdapter()
 {}
 
 int SigMFFileSinkWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
     (void) response;
-    response.setSigMfFileSinkSettings(new SWGSDRangel::SWGSigMFFileSinkSettings());
+    response.setSigMfFileSinkSettings(new SWGrpx-100::SWGSigMFFileSinkSettings());
     response.getSigMfFileSinkSettings()->init();
     SigMFFileSink::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int SigMFFileSinkWebAPIAdapter::webapiSettingsGet(
 int SigMFFileSinkWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

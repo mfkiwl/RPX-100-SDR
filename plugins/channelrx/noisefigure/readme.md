@@ -118,7 +118,7 @@ The noise source may be a device from the 346 family (E.g. Keysight 346B or Nois
 The ENR calibration data indicates the difference in power output when the noise source is powered off compared with when it is powered on. As the first setup step, this calibration data should
 be entered in to the ENR dialog (11).
 
-Next, we need to setup how the SDRangel powers on and off the noise source. This is set in the Noise Source Control Dialog (12).
+Next, we need to setup how the rpx-100 powers on and off the noise source. This is set in the Noise Source Control Dialog (12).
 For a 346 device, a programmable power supply outputting 28V would be used. Providing the VISA libraries are installed (see below), we can send SCPI commands to enable and disable the PSU's output.
 As an example, for a Rigol DP832, we can set the channel 1 output to be 28V and enable it, with:
 

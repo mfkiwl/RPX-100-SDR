@@ -893,11 +893,11 @@ bool PlutoSDRMIMO::applySettings(const PlutoSDRMIMOSettings& settings, bool forc
 }
 
 int PlutoSDRMIMO::webapiSettingsGet(
-    SWGSDRangel::SWGDeviceSettings& response,
+    SWGrpx-100::SWGDeviceSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPlutoSdrMimoSettings(new SWGSDRangel::SWGPlutoSdrMIMOSettings());
+    response.setPlutoSdrMimoSettings(new SWGrpx-100::SWGPlutoSdrMIMOSettings());
     response.getPlutoSdrMimoSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -906,7 +906,7 @@ int PlutoSDRMIMO::webapiSettingsGet(
 int PlutoSDRMIMO::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -929,7 +929,7 @@ int PlutoSDRMIMO::webapiSettingsPutPatch(
 void PlutoSDRMIMO::webapiUpdateDeviceSettings(
         PlutoSDRMIMOSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("devSampleRate")) {
         settings.m_devSampleRate = response.getPlutoSdrMimoSettings()->getDevSampleRate();
@@ -1059,7 +1059,7 @@ void PlutoSDRMIMO::webapiUpdateDeviceSettings(
     }
 }
 
-void PlutoSDRMIMO::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const PlutoSDRMIMOSettings& settings)
+void PlutoSDRMIMO::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const PlutoSDRMIMOSettings& settings)
 {
     response.getPlutoSdrMimoSettings()->setDevSampleRate(settings.m_devSampleRate);
     response.getPlutoSdrMimoSettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -1113,7 +1113,7 @@ void PlutoSDRMIMO::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& re
 
 int PlutoSDRMIMO::webapiRunGet(
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if ((subsystemIndex == 0) || (subsystemIndex == 1))
@@ -1131,7 +1131,7 @@ int PlutoSDRMIMO::webapiRunGet(
 int PlutoSDRMIMO::webapiRun(
         bool run,
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if ((subsystemIndex == 0) || (subsystemIndex == 1))
@@ -1157,12 +1157,12 @@ int PlutoSDRMIMO::webapiRun(
 
 void PlutoSDRMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const PlutoSDRMIMOSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("PlutoSDR"));
-    swgDeviceSettings->setPlutoSdrMimoSettings(new SWGSDRangel::SWGPlutoSdrMIMOSettings());
-    SWGSDRangel::SWGPlutoSdrMIMOSettings *swgPlutoSDRMIMOSettings = swgDeviceSettings->getPlutoSdrMimoSettings();
+    swgDeviceSettings->setPlutoSdrMimoSettings(new SWGrpx-100::SWGPlutoSdrMIMOSettings());
+    SWGrpx-100::SWGPlutoSdrMIMOSettings *swgPlutoSDRMIMOSettings = swgDeviceSettings->getPlutoSdrMimoSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1281,7 +1281,7 @@ void PlutoSDRMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
         swgPlutoSDRMIMOSettings->setTx1AntennaPath((int) settings.m_tx1AntennaPath);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1302,12 +1302,12 @@ void PlutoSDRMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
 
 void PlutoSDRMIMO::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("PlutoSDR"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);
@@ -1330,16 +1330,16 @@ void PlutoSDRMIMO::webapiReverseSendStartStop(bool start)
     delete swgDeviceSettings;
 }
 
-int PlutoSDRMIMO::webapiReportGet(SWGSDRangel::SWGDeviceReport& response, QString& errorMessage)
+int PlutoSDRMIMO::webapiReportGet(SWGrpx-100::SWGDeviceReport& response, QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPlutoSdrMimoReport(new SWGSDRangel::SWGPlutoSdrMIMOReport());
+    response.setPlutoSdrMimoReport(new SWGrpx-100::SWGPlutoSdrMIMOReport());
     response.getPlutoSdrMimoReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void PlutoSDRMIMO::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void PlutoSDRMIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     response.getPlutoSdrMimoReport()->setAdcRate(getADCSampleRate());
     std::string rssiStr;

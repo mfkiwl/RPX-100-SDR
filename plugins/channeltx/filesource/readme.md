@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-This plugin reads a file of I/Q samples that have been previously saved with the file record button of other sampling source devices. File formats supported include SDRangel's `.sdriq` and signed 16-bit PCM `.wav` files.
+This plugin reads a file of I/Q samples that have been previously saved with the file record button of other sampling source devices. File formats supported include rpx-100's `.sdriq` and signed 16-bit PCM `.wav` files.
 
 `.sqriq` files start with a 32 byte header of all unsigned integer of various sizes containing meta data:
 

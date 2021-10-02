@@ -26,11 +26,11 @@ RemoteSinkWebAPIAdapter::~RemoteSinkWebAPIAdapter()
 {}
 
 int RemoteSinkWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteSinkSettings(new SWGSDRangel::SWGRemoteSinkSettings());
+    response.setRemoteSinkSettings(new SWGrpx-100::SWGRemoteSinkSettings());
     response.getRemoteSinkSettings()->init();
     RemoteSink::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int RemoteSinkWebAPIAdapter::webapiSettingsGet(
 int RemoteSinkWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

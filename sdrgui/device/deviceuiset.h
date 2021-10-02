@@ -40,7 +40,7 @@ class ChannelAPI;
 class ChannelGUI;
 class Preset;
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
     class SWGGLSpectrum;
     class SWGSpectrumServer;
     class SWGSuccessResponse;
@@ -91,15 +91,15 @@ public:
     int getNumberOfAvailableMIMOChannels() const { return m_nbAvailableMIMOChannels; }
 
     // REST API
-    int webapiSpectrumSettingsGet(SWGSDRangel::SWGGLSpectrum& response, QString& errorMessage) const;
+    int webapiSpectrumSettingsGet(SWGrpx-100::SWGGLSpectrum& response, QString& errorMessage) const;
     int webapiSpectrumSettingsPutPatch(
             bool force,
             const QStringList& spectrumSettingsKeys,
-            SWGSDRangel::SWGGLSpectrum& response, // query + response
+            SWGrpx-100::SWGGLSpectrum& response, // query + response
             QString& errorMessage);
-    int webapiSpectrumServerGet(SWGSDRangel::SWGSpectrumServer& response, QString& errorMessage) const;
-    int webapiSpectrumServerPost(SWGSDRangel::SWGSuccessResponse& response, QString& errorMessage);
-    int webapiSpectrumServerDelete(SWGSDRangel::SWGSuccessResponse& response, QString& errorMessage);
+    int webapiSpectrumServerGet(SWGrpx-100::SWGSpectrumServer& response, QString& errorMessage) const;
+    int webapiSpectrumServerPost(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage);
+    int webapiSpectrumServerDelete(SWGrpx-100::SWGSuccessResponse& response, QString& errorMessage);
 
 private:
     struct ChannelInstanceRegistration

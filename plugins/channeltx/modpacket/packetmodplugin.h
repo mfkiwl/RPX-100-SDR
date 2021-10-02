@@ -28,7 +28,7 @@ class BasebandSampleSource;
 class PacketModPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channeltx.packetmod")
+    Q_PLUGIN_METADATA(IID "rpx-100.channeltx.packetmod")
 
 public:
     explicit PacketModPlugin(QObject* parent = 0);

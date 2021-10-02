@@ -8,7 +8,7 @@ This input sample source plugin gets its samples from a [XTRX device](https://xt
 
 XTRX is a 2x2 MIMO device so it has two receiving channels that can run concurrently. To activate the second channel when the first is already active just open a new source tab in the main window (Devices -> Add source device) and select the same LimeSDR device. You may need to change frequency back and forth in case reception is not working properly.
 
-&#9888; There are USB errors when first starting with XTRX after plugging it in. The only way to work around this is to restart SDRangel application.
+&#9888; There are USB errors when first starting with XTRX after plugging it in. The only way to work around this is to restart rpx-100 application.
 
 &#9888; Reception may stall sometimes particularly with sample rates lower than 5 MS/s and also after changes. You may need to stop and restart the device (stop/start button) to recover.
 

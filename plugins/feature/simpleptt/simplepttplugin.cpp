@@ -31,9 +31,9 @@ const PluginDescriptor SimplePTTPlugin::m_pluginDescriptor = {
 	QStringLiteral("Simple PTT"),
 	QStringLiteral("6.5.1"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 SimplePTTPlugin::SimplePTTPlugin(QObject* parent) :

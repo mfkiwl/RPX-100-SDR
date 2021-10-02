@@ -31,9 +31,9 @@ const PluginDescriptor DATVModPlugin::m_pluginDescriptor = {
     QStringLiteral("DATV Modulator"),
     QStringLiteral("6.16.2"),
     QStringLiteral("(c) Jon Beniston, M7RCE, Edouard Griffiths, F4EXB. DVB-S2 by G4GUO"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 DATVModPlugin::DATVModPlugin(QObject* parent) :

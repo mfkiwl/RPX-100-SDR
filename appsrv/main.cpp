@@ -59,7 +59,7 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
 
     QCoreApplication::setOrganizationName("oe3bia");
     QCoreApplication::setApplicationName("RPX-100");
-    QCoreApplication::setApplicationVersion(SDRANGEL_VERSION);
+    QCoreApplication::setApplicationVersion(rpx-100_VERSION);
 
 #ifndef _WIN32
     int catchSignals[] = {SIGQUIT, SIGINT, SIGTERM, SIGHUP};

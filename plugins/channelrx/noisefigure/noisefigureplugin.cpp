@@ -31,9 +31,9 @@ const PluginDescriptor NoiseFigurePlugin::m_pluginDescriptor = {
     QStringLiteral("Noise Figure"),
     QStringLiteral("6.15.1"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 NoiseFigurePlugin::NoiseFigurePlugin(QObject* parent) :

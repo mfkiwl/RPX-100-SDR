@@ -52,7 +52,7 @@ MESSAGE_CLASS_DEFINITION(DABDemod::MsgDABMOTData, Message)
 MESSAGE_CLASS_DEFINITION(DABDemod::MsgDABReset, Message)
 MESSAGE_CLASS_DEFINITION(DABDemod::MsgDABResetService, Message)
 
-const char * const DABDemod::m_channelIdURI = "sdrangel.channel.dabdemod";
+const char * const DABDemod::m_channelIdURI = "rpx-100.channel.dabdemod";
 const char * const DABDemod::m_channelId = "DABDemod";
 
 DABDemod::DABDemod(DeviceAPI *deviceAPI) :
@@ -373,11 +373,11 @@ void DABDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int DABDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDabDemodSettings(new SWGSDRangel::SWGDABDemodSettings());
+    response.setDabDemodSettings(new SWGrpx-100::SWGDABDemodSettings());
     response.getDabDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -386,7 +386,7 @@ int DABDemod::webapiSettingsGet(
 int DABDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -411,7 +411,7 @@ int DABDemod::webapiSettingsPutPatch(
 void DABDemod::webapiUpdateChannelSettings(
         DABDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getDabDemodSettings()->getInputFrequencyOffset();
@@ -457,7 +457,7 @@ void DABDemod::webapiUpdateChannelSettings(
     }
 }
 
-void DABDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const DABDemodSettings& settings)
+void DABDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const DABDemodSettings& settings)
 {
     response.getDabDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getDabDemodSettings()->setRfBandwidth(settings.m_rfBandwidth);
@@ -489,10 +489,10 @@ void DABDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& resp
 
 void DABDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const DABDemodSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -514,7 +514,7 @@ void DABDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
 
 void DABDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const DABDemodSettings& settings,
         bool force
 )
@@ -523,8 +523,8 @@ void DABDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("DABDemod"));
-    swgChannelSettings->setDabDemodSettings(new SWGSDRangel::SWGDABDemodSettings());
-    SWGSDRangel::SWGDABDemodSettings *swgDABDemodSettings = swgChannelSettings->getDabDemodSettings();
+    swgChannelSettings->setDabDemodSettings(new SWGrpx-100::SWGDABDemodSettings());
+    SWGrpx-100::SWGDABDemodSettings *swgDABDemodSettings = swgChannelSettings->getDabDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

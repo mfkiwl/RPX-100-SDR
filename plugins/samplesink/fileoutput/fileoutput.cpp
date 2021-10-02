@@ -346,11 +346,11 @@ void FileOutput::applySettings(const FileOutputSettings& settings, bool force)
 }
 
 int FileOutput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileOutputSettings(new SWGSDRangel::SWGFileOutputSettings());
+    response.setFileOutputSettings(new SWGrpx-100::SWGFileOutputSettings());
     response.getFileOutputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -359,7 +359,7 @@ int FileOutput::webapiSettingsGet(
 int FileOutput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -380,7 +380,7 @@ int FileOutput::webapiSettingsPutPatch(
 }
 
 int FileOutput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -390,7 +390,7 @@ int FileOutput::webapiRunGet(
 
 int FileOutput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -407,7 +407,7 @@ int FileOutput::webapiRun(
     return 200;
 }
 
-void FileOutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const FileOutputSettings& settings)
+void FileOutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const FileOutputSettings& settings)
 {
     response.getFileOutputSettings()->setFileName(new QString(settings.m_fileName));
     response.getFileOutputSettings()->setCenterFrequency(settings.m_centerFrequency);
@@ -429,7 +429,7 @@ void FileOutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& resp
 void FileOutput::webapiUpdateDeviceSettings(
         FileOutputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("fileName")) {
         settings.m_fileName = *response.getFileOutputSettings()->getFileName();
@@ -459,12 +459,12 @@ void FileOutput::webapiUpdateDeviceSettings(
 
 void FileOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const FileOutputSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("FileOutput"));
-    swgDeviceSettings->setFileOutputSettings(new SWGSDRangel::SWGFileOutputSettings());
-    SWGSDRangel::SWGFileOutputSettings *swgFileOutputSettings = swgDeviceSettings->getFileOutputSettings();
+    swgDeviceSettings->setFileOutputSettings(new SWGrpx-100::SWGFileOutputSettings());
+    SWGrpx-100::SWGFileOutputSettings *swgFileOutputSettings = swgDeviceSettings->getFileOutputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -481,7 +481,7 @@ void FileOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
         swgFileOutputSettings->setFileName(new QString(settings.m_fileName));
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -502,12 +502,12 @@ void FileOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
 
 void FileOutput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("FileOutput"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

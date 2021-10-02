@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class APTDemodPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channel.aptdemod")
+    Q_PLUGIN_METADATA(IID "rpx-100.channel.aptdemod")
 
 public:
     explicit APTDemodPlugin(QObject* parent = NULL);

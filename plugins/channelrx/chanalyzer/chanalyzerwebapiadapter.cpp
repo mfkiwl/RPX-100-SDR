@@ -30,18 +30,18 @@ ChannelAnalyzerWebAPIAdapter::~ChannelAnalyzerWebAPIAdapter()
 {}
 
 int ChannelAnalyzerWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setChannelAnalyzerSettings(new SWGSDRangel::SWGChannelAnalyzerSettings());
+    response.setChannelAnalyzerSettings(new SWGrpx-100::SWGChannelAnalyzerSettings());
     response.getChannelAnalyzerSettings()->init();
     webapiFormatChannelSettings(response, m_settings, m_glScopeSettings, m_SpectrumSettings);
     return 200;
 }
 
 void ChannelAnalyzerWebAPIAdapter::webapiFormatChannelSettings(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         const ChannelAnalyzerSettings& settings,
         const GLScopeSettings& scopeSettings,
         const SpectrumSettings& spectrumSettings)
@@ -67,7 +67,7 @@ void ChannelAnalyzerWebAPIAdapter::webapiFormatChannelSettings(
     response.getChannelAnalyzerSettings()->setTitle(new QString(settings.m_title));
 
     // scope
-    SWGSDRangel::SWGGLScope *swgScope = new SWGSDRangel::SWGGLScope();
+    SWGrpx-100::SWGGLScope *swgScope = new SWGrpx-100::SWGGLScope();
     swgScope->init();
     response.getChannelAnalyzerSettings()->setScopeConfig(swgScope);
     swgScope->setDisplayMode(scopeSettings.m_displayMode);
@@ -79,12 +79,12 @@ void ChannelAnalyzerWebAPIAdapter::webapiFormatChannelSettings(
     swgScope->setTrigPre(scopeSettings.m_trigPre);
 
     // array of traces
-    swgScope->setTracesData(new QList<SWGSDRangel::SWGTraceData *>);
+    swgScope->setTracesData(new QList<SWGrpx-100::SWGTraceData *>);
     std::vector<GLScopeSettings::TraceData>::const_iterator traceIt = scopeSettings.m_tracesData.begin();
 
     for (; traceIt != scopeSettings.m_tracesData.end(); ++traceIt)
     {
-        swgScope->getTracesData()->append(new SWGSDRangel::SWGTraceData);
+        swgScope->getTracesData()->append(new SWGrpx-100::SWGTraceData);
         swgScope->getTracesData()->back()->setStreamIndex(traceIt->m_streamIndex);
         swgScope->getTracesData()->back()->setAmp(traceIt->m_amp);
         swgScope->getTracesData()->back()->setHasTextOverlay(traceIt->m_hasTextOverlay ? 1 : 0);
@@ -104,12 +104,12 @@ void ChannelAnalyzerWebAPIAdapter::webapiFormatChannelSettings(
     }
 
     // array of triggers
-    swgScope->setTriggersData(new QList<SWGSDRangel::SWGTriggerData *>);
+    swgScope->setTriggersData(new QList<SWGrpx-100::SWGTriggerData *>);
     std::vector<GLScopeSettings::TriggerData>::const_iterator triggerIt = scopeSettings.m_triggersData.begin();
 
     for (; triggerIt != scopeSettings.m_triggersData.end(); ++triggerIt)
     {
-        swgScope->getTriggersData()->append(new SWGSDRangel::SWGTriggerData);
+        swgScope->getTriggersData()->append(new SWGrpx-100::SWGTriggerData);
         swgScope->getTriggersData()->back()->setStreamIndex(triggerIt->m_streamIndex);
         swgScope->getTriggersData()->back()->setInputIndex(triggerIt->m_inputIndex);
         swgScope->getTriggersData()->back()->setProjectionType((int) triggerIt->m_projectionType);
@@ -131,7 +131,7 @@ void ChannelAnalyzerWebAPIAdapter::webapiFormatChannelSettings(
     }
 
     // spectrum
-    SWGSDRangel::SWGGLSpectrum *swgSpectrum = new SWGSDRangel::SWGGLSpectrum();
+    SWGrpx-100::SWGGLSpectrum *swgSpectrum = new SWGrpx-100::SWGGLSpectrum();
     swgSpectrum->init();
     response.getChannelAnalyzerSettings()->setSpectrumConfig(swgSpectrum);
     swgSpectrum->setAveragingMode((int) spectrumSettings.m_averagingMode);
@@ -153,7 +153,7 @@ void ChannelAnalyzerWebAPIAdapter::webapiFormatChannelSettings(
 int ChannelAnalyzerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;
@@ -167,7 +167,7 @@ void ChannelAnalyzerWebAPIAdapter::webapiUpdateChannelSettings(
         GLScopeSettings& scopeSettings,
         SpectrumSettings& spectrumSettings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("bandwidth")) {
         settings.m_bandwidth = response.getChannelAnalyzerSettings()->getBandwidth();
@@ -253,14 +253,14 @@ void ChannelAnalyzerWebAPIAdapter::webapiUpdateChannelSettings(
         // traces
         if (channelSettingsKeys.contains("scopeConfig.tracesData"))
         {
-            QList<SWGSDRangel::SWGTraceData *> *tracesData = response.getChannelAnalyzerSettings()->getScopeConfig()->getTracesData();
+            QList<SWGrpx-100::SWGTraceData *> *tracesData = response.getChannelAnalyzerSettings()->getScopeConfig()->getTracesData();
             scopeSettings.m_tracesData.clear();
 
             for (int i = 0; i < 10; i++) // no more than 10 traces anyway
             {
                 if (channelSettingsKeys.contains(QString("scopeConfig.tracesData[%1]").arg(i)))
                 {
-                    SWGSDRangel::SWGTraceData *traceData = tracesData->at(i);
+                    SWGrpx-100::SWGTraceData *traceData = tracesData->at(i);
                     scopeSettings.m_tracesData.push_back(GLScopeSettings::TraceData());
 
                     if (channelSettingsKeys.contains(QString("scopeConfig.tracesData[%1].streamIndex").arg(i))) {
@@ -318,14 +318,14 @@ void ChannelAnalyzerWebAPIAdapter::webapiUpdateChannelSettings(
         // triggers
         if (channelSettingsKeys.contains("scopeConfig.triggersData"))
         {
-            QList<SWGSDRangel::SWGTriggerData *> *triggersData = response.getChannelAnalyzerSettings()->getScopeConfig()->getTriggersData();
+            QList<SWGrpx-100::SWGTriggerData *> *triggersData = response.getChannelAnalyzerSettings()->getScopeConfig()->getTriggersData();
             scopeSettings.m_triggersData.clear();
 
             for (int i = 0; i < 10; i++) // no more than 10 triggers anyway
             {
                 if (channelSettingsKeys.contains(QString("scopeConfig.triggersData[%1]").arg(i)))
                 {
-                    SWGSDRangel::SWGTriggerData *triggerData = triggersData->at(i);
+                    SWGrpx-100::SWGTriggerData *triggerData = triggersData->at(i);
                     scopeSettings.m_triggersData.push_back(GLScopeSettings::TriggerData());
 
                     if (channelSettingsKeys.contains(QString("scopeConfig.triggersData[%1].streamIndex").arg(i))) {

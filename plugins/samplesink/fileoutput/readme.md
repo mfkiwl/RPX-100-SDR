@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-This sample sink plugin sends its samples to file in the SDRangel .sdriq format.
+This sample sink plugin sends its samples to file in the rpx-100 .sdriq format.
 
 The format is S16LE or S32LE I/Q samples. Thus there are 4 or 8 bytes per sample. Depending on sample size I and Q values are 16 bit signed integers for 16 bit sample size or 32 bit signed integers for 24 bit sample size. The file starts with a context header containing information about center frequency, sample rate and timestamp of the start of the recording. This header has a length which is a multiple of a sample size (normally 32 bytes thus 8 32-bit samples). Thus this file can be used as a raw I/Q file with S16LE samples tolerating a glitch at the start corresponding to the 8 "random" samples. For example in GNURadio you can simply specify your file source format as short complex.
 

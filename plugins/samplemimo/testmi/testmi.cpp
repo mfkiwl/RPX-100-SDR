@@ -520,7 +520,7 @@ bool TestMI::applySettings(const TestMISettings& settings, bool force)
 
 int TestMI::webapiRunGet(
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if (subsystemIndex == 0)
@@ -538,7 +538,7 @@ int TestMI::webapiRunGet(
 int TestMI::webapiRun(
         bool run,
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if (subsystemIndex == 0)
@@ -564,11 +564,11 @@ int TestMI::webapiRun(
 }
 
 int TestMI::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setTestMiSettings(new SWGSDRangel::SWGTestMISettings());
+    response.setTestMiSettings(new SWGrpx-100::SWGTestMISettings());
     response.getTestMiSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -577,7 +577,7 @@ int TestMI::webapiSettingsGet(
 int TestMI::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -600,12 +600,12 @@ int TestMI::webapiSettingsPutPatch(
 void TestMI::webapiUpdateDeviceSettings(
         TestMISettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("streams"))
     {
-        QList<SWGSDRangel::SWGTestMiStreamSettings*> *streamsSettings = response.getTestMiSettings()->getStreams();
-        QList<SWGSDRangel::SWGTestMiStreamSettings*>::const_iterator it = streamsSettings->begin();
+        QList<SWGrpx-100::SWGTestMiStreamSettings*> *streamsSettings = response.getTestMiSettings()->getStreams();
+        QList<SWGrpx-100::SWGTestMiStreamSettings*>::const_iterator it = streamsSettings->begin();
 
         for (; it != streamsSettings->end(); ++it)
         {
@@ -685,15 +685,15 @@ void TestMI::webapiUpdateDeviceSettings(
     }
 }
 
-void TestMI::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const TestMISettings& settings)
+void TestMI::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const TestMISettings& settings)
 {
     std::vector<TestMIStreamSettings>::const_iterator it = settings.m_streams.begin();
     int istream = 0;
 
     for (; it != settings.m_streams.end(); ++it, istream++)
     {
-        QList<SWGSDRangel::SWGTestMiStreamSettings*> *streams = response.getTestMiSettings()->getStreams();
-        streams->append(new SWGSDRangel::SWGTestMiStreamSettings);
+        QList<SWGrpx-100::SWGTestMiStreamSettings*> *streams = response.getTestMiSettings()->getStreams();
+        streams->append(new SWGrpx-100::SWGTestMiStreamSettings);
         streams->back()->init();
         streams->back()->setStreamIndex(istream);
         streams->back()->setCenterFrequency(it->m_centerFrequency);
@@ -728,12 +728,12 @@ void TestMI::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response
 
 void TestMI::webapiReverseSendSettings(const DeviceSettingsKeys& deviceSettingsKeys, const TestMISettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));
-    swgDeviceSettings->setTestMiSettings(new SWGSDRangel::SWGTestMISettings());
-    SWGSDRangel::SWGTestMISettings *swgTestMISettings = swgDeviceSettings->getTestMiSettings();
+    swgDeviceSettings->setTestMiSettings(new SWGrpx-100::SWGTestMISettings());
+    SWGrpx-100::SWGTestMISettings *swgTestMISettings = swgDeviceSettings->getTestMiSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -744,8 +744,8 @@ void TestMI::webapiReverseSendSettings(const DeviceSettingsKeys& deviceSettingsK
     {
         if ((it->size() > 0) || force)
         {
-            QList<SWGSDRangel::SWGTestMiStreamSettings*> *streams = swgTestMISettings->getStreams();
-            streams->append(new SWGSDRangel::SWGTestMiStreamSettings);
+            QList<SWGrpx-100::SWGTestMiStreamSettings*> *streams = swgTestMISettings->getStreams();
+            streams->append(new SWGrpx-100::SWGTestMiStreamSettings);
             streams->back()->init();
             streams->back()->setStreamIndex(istream);
             const QList<QString>& streamSettingsKeys = *it;
@@ -801,7 +801,7 @@ void TestMI::webapiReverseSendSettings(const DeviceSettingsKeys& deviceSettingsK
         }
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -822,12 +822,12 @@ void TestMI::webapiReverseSendSettings(const DeviceSettingsKeys& deviceSettingsK
 
 void TestMI::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("TestSource"));
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

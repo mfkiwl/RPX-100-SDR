@@ -33,9 +33,9 @@ const PluginDescriptor FCDProPlugin::m_pluginDescriptor = {
 	fcd_traits<Pro>::pluginDisplayedName,
 	fcd_traits<Pro>::pluginVersion,
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 FCDProPlugin::FCDProPlugin(QObject* parent) :

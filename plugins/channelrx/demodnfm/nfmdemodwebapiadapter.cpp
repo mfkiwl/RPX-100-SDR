@@ -26,11 +26,11 @@ NFMDemodWebAPIAdapter::~NFMDemodWebAPIAdapter()
 {}
 
 int NFMDemodWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setNfmDemodSettings(new SWGSDRangel::SWGNFMDemodSettings());
+    response.setNfmDemodSettings(new SWGrpx-100::SWGNFMDemodSettings());
     response.getNfmDemodSettings()->init();
     NFMDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int NFMDemodWebAPIAdapter::webapiSettingsGet(
 int NFMDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

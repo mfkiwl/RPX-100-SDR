@@ -27,11 +27,11 @@ DATVModWebAPIAdapter::~DATVModWebAPIAdapter()
 {}
 
 int DATVModWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDatvModSettings(new SWGSDRangel::SWGDATVModSettings());
+    response.setDatvModSettings(new SWGrpx-100::SWGDATVModSettings());
     response.getDatvModSettings()->init();
     DATVMod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int DATVModWebAPIAdapter::webapiSettingsGet(
 int DATVModWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

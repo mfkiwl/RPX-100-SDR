@@ -37,7 +37,7 @@
 
 MESSAGE_CLASS_DEFINITION(AIS::MsgConfigureAIS, Message)
 
-const char* const AIS::m_featureIdURI = "sdrangel.feature.ais";
+const char* const AIS::m_featureIdURI = "rpx-100.feature.ais";
 const char* const AIS::m_featureId = "AIS";
 
 AIS::AIS(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -163,11 +163,11 @@ void AIS::applySettings(const AISSettings& settings, bool force)
 }
 
 int AIS::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisSettings(new SWGSDRangel::SWGAISSettings());
+    response.setAisSettings(new SWGrpx-100::SWGAISSettings());
     response.getAisSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -176,7 +176,7 @@ int AIS::webapiSettingsGet(
 int AIS::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -198,7 +198,7 @@ int AIS::webapiSettingsPutPatch(
 }
 
 void AIS::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const AISSettings& settings)
 {
     if (response.getAisSettings()->getTitle()) {
@@ -224,7 +224,7 @@ void AIS::webapiFormatFeatureSettings(
 void AIS::webapiUpdateFeatureSettings(
     AISSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("title")) {
         settings.m_title = *response.getAisSettings()->getTitle();
@@ -251,12 +251,12 @@ void AIS::webapiUpdateFeatureSettings(
 
 void AIS::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const AISSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("AIS"));
-    swgFeatureSettings->setAisSettings(new SWGSDRangel::SWGAISSettings());
-    SWGSDRangel::SWGAISSettings *swgAISSettings = swgFeatureSettings->getAisSettings();
+    swgFeatureSettings->setAisSettings(new SWGrpx-100::SWGAISSettings());
+    SWGrpx-100::SWGAISSettings *swgAISSettings = swgFeatureSettings->getAisSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -267,7 +267,7 @@ void AIS::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const A
         swgAISSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

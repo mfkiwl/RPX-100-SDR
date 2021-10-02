@@ -27,11 +27,11 @@ AntennaToolsWebAPIAdapter::~AntennaToolsWebAPIAdapter()
 {}
 
 int AntennaToolsWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAntennaToolsSettings(new SWGSDRangel::SWGAntennaToolsSettings());
+    response.setAntennaToolsSettings(new SWGrpx-100::SWGAntennaToolsSettings());
     response.getAntennaToolsSettings()->init();
     AntennaTools::webapiFormatFeatureSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int AntennaToolsWebAPIAdapter::webapiSettingsGet(
 int AntennaToolsWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

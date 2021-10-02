@@ -36,20 +36,20 @@ include(ExternalProject)
 
 # default build destination in windows to avoid Release/Debug folder
 if (WIN32)
-    # the build will be output on the same folder of sdrangel
+    # the build will be output on the same folder of rpx-100
     set(COMMON_CMAKE_ARGS
-            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${SDRANGEL_BINARY_BIN_DIR}
-            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG=${SDRANGEL_BINARY_BIN_DIR}
-            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE=${SDRANGEL_BINARY_BIN_DIR}
-            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO=${SDRANGEL_BINARY_BIN_DIR}
-            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=${SDRANGEL_BINARY_LIB_DIR}
-            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG=${SDRANGEL_BINARY_LIB_DIR}
-            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE=${SDRANGEL_BINARY_LIB_DIR}
-            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELWITHDEBINFO=${SDRANGEL_BINARY_LIB_DIR}
-            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=${SDRANGEL_BINARY_LIB_DIR}
-            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG=${SDRANGEL_BINARY_LIB_DIR}
-            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE=${SDRANGEL_BINARY_LIB_DIR}
-            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY_RELWITHDEBINFO=${SDRANGEL_BINARY_LIB_DIR}
+            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${rpx-100_BINARY_BIN_DIR}
+            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG=${rpx-100_BINARY_BIN_DIR}
+            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE=${rpx-100_BINARY_BIN_DIR}
+            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO=${rpx-100_BINARY_BIN_DIR}
+            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=${rpx-100_BINARY_LIB_DIR}
+            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG=${rpx-100_BINARY_LIB_DIR}
+            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE=${rpx-100_BINARY_LIB_DIR}
+            -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELWITHDEBINFO=${rpx-100_BINARY_LIB_DIR}
+            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=${rpx-100_BINARY_LIB_DIR}
+            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG=${rpx-100_BINARY_LIB_DIR}
+            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE=${rpx-100_BINARY_LIB_DIR}
+            -DCMAKE_LIBRARY_OUTPUT_DIRECTORY_RELWITHDEBINFO=${rpx-100_BINARY_LIB_DIR}
             )
 elseif (LINUX)
     set(COMMON_CMAKE_ARGS
@@ -187,7 +187,7 @@ endif (AUTO_EXTERNAL_LIBRARIES)
 if (NOT WIN32 AND (NOT CODEC2_FOUND OR CODEC2_EXTERNAL))
     # needs speexdsp
     if (WIN32)
-        set(CODEC2_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/codec2.lib" CACHE INTERNAL "")
+        set(CODEC2_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/codec2.lib" CACHE INTERNAL "")
     elseif (LINUX)
         set(CODEC2_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libcodec2${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     endif ()
@@ -205,7 +205,7 @@ if (NOT WIN32 AND (NOT CODEC2_FOUND OR CODEC2_EXTERNAL))
     set(CODEC2_EXTERNAL ON CACHE INTERNAL "")
     set(CODEC2_INCLUDE_DIR "${source_dir}/src" "${binary_dir}" CACHE INTERNAL "")
     if (WIN32)
-        set(CODEC2_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/codec2.lib" CACHE INTERNAL "")
+        set(CODEC2_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/codec2.lib" CACHE INTERNAL "")
         makeCopy("${source_dir}/src" "${source_dir}/src/codec2" codec2)
     elseif (LINUX)
         set(CODEC2_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libcodec2${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
@@ -220,7 +220,7 @@ endif (NOT WIN32 AND (NOT CODEC2_FOUND OR CODEC2_EXTERNAL))
 if (NOT APPLE AND (NOT CM256CC_FOUND OR CM256CC_EXTERNAL))
     # needs boost
     if (WIN32)
-        set(CM256CC_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/cm256cc.lib" CACHE INTERNAL "")
+        set(CM256CC_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/cm256cc.lib" CACHE INTERNAL "")
     elseif (LINUX)
         set(CM256CC_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libcm256cc${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     endif ()
@@ -244,7 +244,7 @@ if (NOT APPLE AND (NOT CM256CC_FOUND OR CM256CC_EXTERNAL))
     # we need cm256cc/library.h
     set(CM256CC_INCLUDE_DIR "${EXTERNAL_BUILD_LIBRARIES}/cm256cc/src" CACHE INTERNAL "")
     if (WIN32)
-        install(FILES "${SDRANGEL_BINARY_BIN_DIR}/cm256cc${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+        install(FILES "${rpx-100_BINARY_BIN_DIR}/cm256cc${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
     elseif (APPLE) # kept in case of relaxation of APPLE exclusion
         set(CM256CC_LIBRARIES "${binary_dir}/libcm256cc${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
         install(DIRECTORY "${binary_dir}/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -256,7 +256,7 @@ endif (NOT APPLE AND (NOT CM256CC_FOUND OR CM256CC_EXTERNAL))
 if ((NOT LIBDSDCC_FOUND OR LIBDSDCC_EXTERNAL) AND (NOT LIBMBE_FOUND OR LIBMBE_EXTERNAL))
     set(USE_MBELIB OFF)
     if (WIN32)
-        set(LIBMBE_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/libmbe.lib" CACHE INTERNAL "")
+        set(LIBMBE_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/libmbe.lib" CACHE INTERNAL "")
     elseif (LINUX)
         set(LIBMBE_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libmbe${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     endif ()
@@ -276,7 +276,7 @@ if ((NOT LIBDSDCC_FOUND OR LIBDSDCC_EXTERNAL) AND (NOT LIBMBE_FOUND OR LIBMBE_EX
     set(LIBMBE_EXTERNAL ON CACHE INTERNAL "")
     set(LIBMBE_INCLUDE_DIR "${source_dir}" CACHE INTERNAL "")
     if (WIN32)
-        install(FILES "${SDRANGEL_BINARY_BIN_DIR}/libmbe${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+        install(FILES "${rpx-100_BINARY_BIN_DIR}/libmbe${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
     elseif (APPLE)
         set(LIBMBE_LIBRARIES "${binary_dir}/libmbe${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
         install(DIRECTORY "${binary_dir}/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -288,7 +288,7 @@ endif ((NOT LIBDSDCC_FOUND OR LIBDSDCC_EXTERNAL) AND (NOT LIBMBE_FOUND OR LIBMBE
 if (NOT LIBSERIALDV_FOUND OR LIBSERIALDV_EXTERNAL)
     # Works on MacOS with a dummy serialDV
     if (WIN32)
-        set(LIBSERIALDV_LIBRARY "${SDRANGEL_BINARY_LIB_DIR}/serialdv.lib" CACHE INTERNAL "")
+        set(LIBSERIALDV_LIBRARY "${rpx-100_BINARY_LIB_DIR}/serialdv.lib" CACHE INTERNAL "")
     elseif (LINUX)
         set(LIBSERIALDV_LIBRARY "${EXTERNAL_BUILD_LIBRARIES}/lib/libserialdv${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     endif ()
@@ -308,7 +308,7 @@ if (NOT LIBSERIALDV_FOUND OR LIBSERIALDV_EXTERNAL)
     set(LIBSERIALDV_INCLUDE_DIR "${source_dir}" CACHE INTERNAL "")
     if (WIN32)
         makeCopyDir("${source_dir}" "${source_dir}/dsp" serialdv)
-        install(FILES "${SDRANGEL_BINARY_BIN_DIR}/serialdv${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+        install(FILES "${rpx-100_BINARY_BIN_DIR}/serialdv${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
     elseif (LINUX)
         # because sdrbase/dsp/dvserialworker.h use dsp/dvcontroller.h
         # so we need a link
@@ -326,7 +326,7 @@ endif (NOT LIBSERIALDV_FOUND OR LIBSERIALDV_EXTERNAL)
 
 if ((NOT LIBDSDCC_FOUND OR LIBDSDCC_EXTERNAL) AND LIBMBE_FOUND)
     if (WIN32)
-        set(LIBDSDCC_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/dsdcc.lib" CACHE INTERNAL "")
+        set(LIBDSDCC_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/dsdcc.lib" CACHE INTERNAL "")
     elseif (LINUX)
         set(LIBDSDCC_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libdsdcc${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     endif ()
@@ -350,7 +350,7 @@ if ((NOT LIBDSDCC_FOUND OR LIBDSDCC_EXTERNAL) AND LIBMBE_FOUND)
     set(LIBDSDCC_EXTERNAL ON CACHE INTERNAL "")
     set(LIBDSDCC_INCLUDE_DIR "${EXTERNAL_BUILD_LIBRARIES}/dsdcc/src" CACHE INTERNAL "")
     if (WIN32)
-        install(FILES "${SDRANGEL_BINARY_BIN_DIR}/dsdcc${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+        install(FILES "${rpx-100_BINARY_BIN_DIR}/dsdcc${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
     elseif (APPLE)
         set(LIBDSDCC_LIBRARIES "${binary_dir}/libdsdcc${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
         install(DIRECTORY "${binary_dir}/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -361,7 +361,7 @@ endif ((NOT LIBDSDCC_FOUND OR LIBDSDCC_EXTERNAL) AND LIBMBE_FOUND)
 
 # For APT demodulator
 if (WIN32)
-    set(APT_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/apt.lib" CACHE INTERNAL "")
+    set(APT_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/apt.lib" CACHE INTERNAL "")
 elseif (LINUX)
     set(APT_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libapt${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
 endif()
@@ -379,7 +379,7 @@ set(APT_FOUND ON CACHE INTERNAL "")
 set(APT_EXTERNAL ON CACHE INTERNAL "")
 set(APT_INCLUDE_DIR "${EXTERNAL_BUILD_LIBRARIES}/apt/src/apt/src" CACHE INTERNAL "")
 if (WIN32)
-    install(FILES "${SDRANGEL_BINARY_BIN_DIR}/apt${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+    install(FILES "${rpx-100_BINARY_BIN_DIR}/apt${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
 elseif (APPLE)
     set(APT_LIBRARIES "${binary_dir}/libapt${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     install(DIRECTORY "${binary_dir}/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -391,7 +391,7 @@ endif ()
 # No tags for this in github - but doesn't change often
 # Fails to build with CMAKE_INTERPROCEDURAL_OPTIMIZATION=ON on Windows
 if (WIN32)
-    set(SGP4_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/sgp4s.lib" CACHE INTERNAL "")
+    set(SGP4_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/sgp4s.lib" CACHE INTERNAL "")
 elseif (LINUX)
     set(SGP4_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libsgp4s${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
 endif()
@@ -409,7 +409,7 @@ set(SGP4_FOUND ON CACHE INTERNAL "")
 set(SGP4_EXTERNAL ON CACHE INTERNAL "")
 set(SGP4_INCLUDE_DIR "${EXTERNAL_BUILD_LIBRARIES}/sgp4/src/sgp4/libsgp4" CACHE INTERNAL "")
 if (WIN32)
-    install(FILES "${SDRANGEL_BINARY_BIN_DIR}/sgp4s${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+    install(FILES "${rpx-100_BINARY_BIN_DIR}/sgp4s${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
 elseif (APPLE)
     set(SGP4_LIBRARIES "${binary_dir}/libsgp4s${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     install(DIRECTORY "${binary_dir}/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -437,7 +437,7 @@ if (WIN32)
     set(PTHREADS4W_EXTERNAL ON CACHE INTERNAL "")
     set(PTHREADS4W_INCLUDE_DIR "${source_dir}" CACHE INTERNAL "")
     set(PTHREADS4W_LIBRARIES "${source_dir}/pthreadVC2.lib" CACHE INTERNAL "")
-    makeCopy("${source_dir}/pthreadVC2${CMAKE_SHARED_LIBRARY_SUFFIX}" "${SDRANGEL_BINARY_BIN_DIR}/pthreadVC2${CMAKE_SHARED_LIBRARY_SUFFIX}" pthreads4w)
+    makeCopy("${source_dir}/pthreadVC2${CMAKE_SHARED_LIBRARY_SUFFIX}" "${rpx-100_BINARY_BIN_DIR}/pthreadVC2${CMAKE_SHARED_LIBRARY_SUFFIX}" pthreads4w)
     # needed by bladerf
     makeCopy("${source_dir}/pthreadVC2${CMAKE_SHARED_LIBRARY_SUFFIX}" "${source_dir}/dll/x64/pthreadVC2${CMAKE_SHARED_LIBRARY_SUFFIX}" pthreads4w)
     install(FILES "${source_dir}/pthreadVC2${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
@@ -446,7 +446,7 @@ endif (WIN32)
 # For DAB demodulator
 if (ZLIB_FOUND AND FAAD_FOUND)
     if (WIN32)
-        set(DAB_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/dab_lib.lib" CACHE INTERNAL "")
+        set(DAB_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/dab_lib.lib" CACHE INTERNAL "")
     elseif (LINUX)
         set(DAB_LIBRARIES "${EXTERNAL_BUILD_LIBRARIES}/lib/libdab_lib${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
     endif()
@@ -492,7 +492,7 @@ if (ZLIB_FOUND AND FAAD_FOUND)
     set(DAB_EXTERNAL ON CACHE INTERNAL "")
     set(DAB_INCLUDE_DIR "${EXTERNAL_BUILD_LIBRARIES}/dab/src/dab" CACHE INTERNAL "")
     if (WIN32)
-        install(FILES "${SDRANGEL_BINARY_BIN_DIR}/dab_lib${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+        install(FILES "${rpx-100_BINARY_BIN_DIR}/dab_lib${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
     elseif (APPLE)
         set(DAB_LIBRARIES "${binary_dir}/libdab_lib${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
         install(DIRECTORY "${binary_dir}/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -656,7 +656,7 @@ if (WIN32 OR APPLE)
     if (ENABLE_RTLSDR)
         set(RTLSDR_LIBUSB_INCLUDE "${LIBUSB_INCLUDE_DIR}")
         if (WIN32)
-            set(LIBRTLSDR_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/rtlsdr.lib" CACHE INTERNAL "")
+            set(LIBRTLSDR_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/rtlsdr.lib" CACHE INTERNAL "")
             set(RTLSDR_LIBUSB_INCLUDE "${LIBUSB_INCLUDE_DIR}/libusb-1.0")
         endif ()
         # needs pkgconfig and libusb
@@ -681,7 +681,7 @@ if (WIN32 OR APPLE)
         set(LIBRTLSDR_EXTERNAL ON CACHE INTERNAL "")
         set(LIBRTLSDR_INCLUDE_DIR "${source_dir}/include" CACHE INTERNAL "")
         if (WIN32)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/rtlsdr${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/rtlsdr${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
         elseif (APPLE)
             set(LIBRTLSDR_LIBRARIES "${binary_dir}/src/librtlsdr${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
             install(DIRECTORY "${binary_dir}/src/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -693,7 +693,7 @@ if (WIN32 OR APPLE)
     if (ENABLE_LIMESUITE)
         # needs pkgconfig, libusb
         if (WIN32)
-            set(LIMESUITE_LIBRARY "${SDRANGEL_BINARY_LIB_DIR}/LimeSuite.lib" CACHE INTERNAL "")
+            set(LIMESUITE_LIBRARY "${rpx-100_BINARY_LIB_DIR}/LimeSuite.lib" CACHE INTERNAL "")
         endif ()
         ExternalProject_Add(limesuite
                 GIT_REPOSITORY https://github.com/f4exb/LimeSuite.git
@@ -719,7 +719,7 @@ if (WIN32 OR APPLE)
         set(LIMESUITE_EXTERNAL ON CACHE INTERNAL "")
         set(LIMESUITE_INCLUDE_DIR "${source_dir}/src" CACHE INTERNAL "")
         if (WIN32)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/LimeSuite${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/LimeSuite${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
             makeCopy("${source_dir}/src/limeRFE/limeRFE.h" "${source_dir}/src/lime/limeRFE.h" limesuite)
         elseif (APPLE)
             set(LIMESUITE_LIBRARY "${binary_dir}/src/libLimeSuite${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
@@ -731,7 +731,7 @@ if (WIN32 OR APPLE)
 
     if (ENABLE_SOAPYSDR)
         if (WIN32)
-            set(SOAPYSDR_LIBRARY "${SDRANGEL_BINARY_LIB_DIR}/SoapySDR.lib" CACHE INTERNAL "")
+            set(SOAPYSDR_LIBRARY "${rpx-100_BINARY_LIB_DIR}/SoapySDR.lib" CACHE INTERNAL "")
         endif ()
         ExternalProject_Add(soapysdr
                 GIT_REPOSITORY https://github.com/pothosware/SoapySDR.git
@@ -751,8 +751,8 @@ if (WIN32 OR APPLE)
         set(SOAPYSDR_EXTERNAL ON CACHE INTERNAL "")
         set(SOAPYSDR_INCLUDE_DIR "${source_dir}/include" CACHE INTERNAL "")
         if (WIN32)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/SoapySDR${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
-            install(DIRECTORY "${SDRANGEL_BINARY_LIB_DIR}/SoapySDR" DESTINATION "${INSTALL_LIB_DIR}/lib")
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/SoapySDR${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            install(DIRECTORY "${rpx-100_BINARY_LIB_DIR}/SoapySDR" DESTINATION "${INSTALL_LIB_DIR}/lib")
         elseif (APPLE)
             set(SOAPYSDR_LIBRARY "${binary_dir}/lib/libSoapySDR${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
             install(DIRECTORY "${binary_dir}/lib/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -764,7 +764,7 @@ if (WIN32 OR APPLE)
     if (ENABLE_AIRSPY)
         set(AIRSPY_LIBUSB_INCLUDE_DIR ${LIBUSB_INCLUDE_DIR})
         if (WIN32)
-            set(LIBAIRSPY_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/airspy.lib" CACHE INTERNAL "")
+            set(LIBAIRSPY_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/airspy.lib" CACHE INTERNAL "")
             set(AIRSPY_LIBUSB_INCLUDE_DIR ${LIBUSB_INCLUDE_DIR}/libusb-1.0)
         endif ()
         # needs libusb, pthreads
@@ -790,8 +790,8 @@ if (WIN32 OR APPLE)
         set(LIBAIRSPY_INCLUDE_DIR "${source_dir}/libairspy/src" CACHE INTERNAL "")
         if (WIN32)
             makeCopyDir("${source_dir}/libairspy/src" "${source_dir}/libairspy/src/libairspy" airspy)
-            makeCopy("${binary_dir}/../airspy-tools/src/airspy${CMAKE_SHARED_LIBRARY_SUFFIX}" "${SDRANGEL_BINARY_BIN_DIR}/airspy${CMAKE_SHARED_LIBRARY_SUFFIX}" airspy)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/airspy${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            makeCopy("${binary_dir}/../airspy-tools/src/airspy${CMAKE_SHARED_LIBRARY_SUFFIX}" "${rpx-100_BINARY_BIN_DIR}/airspy${CMAKE_SHARED_LIBRARY_SUFFIX}" airspy)
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/airspy${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
         elseif (APPLE)
             set(LIBAIRSPY_LIBRARIES "${binary_dir}/libairspy/src/libairspy${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
             makeLink("${source_dir}/libairspy/src" "${source_dir}/libairspy/src/libairspy" airspy)
@@ -804,7 +804,7 @@ if (WIN32 OR APPLE)
     if (ENABLE_AIRSPYHF)
         set(AIRSPYHF_LIBUSB_INCLUDE_DIR ${LIBUSB_INCLUDE_DIR})
         if (WIN32)
-            set(LIBAIRSPYHF_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/airspyhf.lib" CACHE INTERNAL "")
+            set(LIBAIRSPYHF_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/airspyhf.lib" CACHE INTERNAL "")
             set(AIRSPYHF_LIBUSB_INCLUDE_DIR ${LIBUSB_INCLUDE_DIR}/libusb-1.0)
         endif ()
         # needs pkgconfig, libusb, pthreads
@@ -829,7 +829,7 @@ if (WIN32 OR APPLE)
         set(LIBAIRSPYHF_INCLUDE_DIR "${source_dir}/libairspyhf/src" CACHE INTERNAL "")
         if (WIN32)
             makeCopyDir("${source_dir}/libairspyhf/src" "${source_dir}/libairspyhf/src/libairspyhf" airspyhf)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/airspyhf${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/airspyhf${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
         elseif (APPLE)
             set(LIBAIRSPYHF_LIBRARIES "${binary_dir}/libairspyhf/src/libairspyhf${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
             makeLink("${source_dir}/libairspyhf/src" "${source_dir}/libairspyhf/src/libairspyhf" airspyhf)
@@ -843,7 +843,7 @@ if (WIN32 OR APPLE)
         # needs pkgconfig, libusb, fftw, pthreads
         if (WIN32)
             set(HACKRF_LIBUSB_INCLUDE_DIR ${LIBUSB_INCLUDE_DIR}/libusb-1.0)
-            set(LIBHACKRF_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/hackrf.lib" CACHE INTERNAL "")
+            set(LIBHACKRF_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/hackrf.lib" CACHE INTERNAL "")
         else ()
             set(HACKRF_LIBUSB_INCLUDE_DIR ${LIBUSB_INCLUDE_DIR})
         endif ()
@@ -873,7 +873,7 @@ if (WIN32 OR APPLE)
         if (WIN32)
             # include "libhackrf/hackrf.h"
             makeCopyDir("${source_dir}/host/libhackrf/src" "${source_dir}/host/libhackrf/libhackrf" hackrf)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/hackrf${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/hackrf${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
         elseif (APPLE)
             set(LIBHACKRF_LIBRARIES "${binary_dir}/src/libhackrf${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
             # include "libhackrf/hackrf.h"
@@ -917,8 +917,8 @@ if (WIN32 OR APPLE)
         set(LIBXML2_INCLUDE_DIR "${source_dir}/include" CACHE INTERNAL "")
         if (WIN32)
             set(LIBXML2_LIBRARIES "${source_dir}/win32/bin.msvc/libxml2.lib" CACHE INTERNAL "")
-            set(LIBIIO_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/libiio.lib" CACHE INTERNAL "")
-            makeCopy("${source_dir}/win32/bin.msvc/libxml2${CMAKE_SHARED_LIBRARY_SUFFIX}" "${SDRANGEL_BINARY_BIN_DIR}/libxml2${CMAKE_SHARED_LIBRARY_SUFFIX}" libxml2)
+            set(LIBIIO_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/libiio.lib" CACHE INTERNAL "")
+            makeCopy("${source_dir}/win32/bin.msvc/libxml2${CMAKE_SHARED_LIBRARY_SUFFIX}" "${rpx-100_BINARY_BIN_DIR}/libxml2${CMAKE_SHARED_LIBRARY_SUFFIX}" libxml2)
             install(FILES "${source_dir}/win32/bin.msvc/libxml2${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
         elseif (APPLE)
             set(LIBXML2_LIBRARIES "${source_dir}/.libs/libxml2${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
@@ -955,7 +955,7 @@ if (WIN32 OR APPLE)
         set(LIBIIO_EXTERNAL ON CACHE INTERNAL "")
         set(LIBIIO_INCLUDE_DIR "${source_dir}" CACHE INTERNAL "")
         if (WIN32)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/libiio${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/libiio${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
         elseif (APPLE)
             set(LIBIIO_LIBRARIES "${binary_dir}/libiio${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
             install(DIRECTORY "${binary_dir}/" DESTINATION "${INSTALL_LIB_DIR}"
@@ -970,7 +970,7 @@ if (WIN32 OR APPLE)
     if (ENABLE_BLADERF)
         # needs pkgconfig, libusb, pthreads
         if (WIN32)
-            set(LIBBLADERF_LIBRARIES "${SDRANGEL_BINARY_LIB_DIR}/bladeRF.lib" CACHE INTERNAL "")
+            set(LIBBLADERF_LIBRARIES "${rpx-100_BINARY_LIB_DIR}/bladeRF.lib" CACHE INTERNAL "")
         endif ()
         ExternalProject_Add(bladerf
                 GIT_REPOSITORY https://github.com/Nuand/bladeRF.git
@@ -1002,7 +1002,7 @@ if (WIN32 OR APPLE)
         set(LIBBLADERF_EXTERNAL ON CACHE INTERNAL "")
         set(LIBBLADERF_INCLUDE_DIRS "${source_dir}/host/libraries/libbladeRF/include" CACHE INTERNAL "")
         if (WIN32)
-            install(FILES "${SDRANGEL_BINARY_BIN_DIR}/bladeRF${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
+            install(FILES "${rpx-100_BINARY_BIN_DIR}/bladeRF${CMAKE_SHARED_LIBRARY_SUFFIX}" DESTINATION "${INSTALL_LIB_DIR}")
         elseif (APPLE)
             set(LIBBLADERF_LIBRARIES "${binary_dir}/host/output/libbladeRF${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
             install(DIRECTORY "${binary_dir}/host/output/" DESTINATION "${INSTALL_LIB_DIR}"

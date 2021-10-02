@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class FileSourcePlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channeltx.filesrc")
+    Q_PLUGIN_METADATA(IID "rpx-100.channeltx.filesrc")
 
 public:
     explicit FileSourcePlugin(QObject* parent = nullptr);

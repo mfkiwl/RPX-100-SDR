@@ -28,7 +28,7 @@ class MIMOChannel;
 class BeamSteeringCWModPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channelmimo.beamsteeringcwmod")
+    Q_PLUGIN_METADATA(IID "rpx-100.channelmimo.beamsteeringcwmod")
 
 public:
     explicit BeamSteeringCWModPlugin(QObject* parent = nullptr);

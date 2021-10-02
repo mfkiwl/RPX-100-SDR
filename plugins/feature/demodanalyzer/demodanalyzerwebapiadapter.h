@@ -33,13 +33,13 @@ public:
     virtual bool deserialize(const QByteArray& data) { return m_settings.deserialize(data); }
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
 private:

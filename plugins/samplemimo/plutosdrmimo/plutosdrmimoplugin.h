@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define PLUTOSDRMIMO_DEVICE_TYPE_ID "sdrangel.samplemimo.plutosdrmimo"
+#define PLUTOSDRMIMO_DEVICE_TYPE_ID "rpx-100.samplemimo.plutosdrmimo"
 
 class PlutoSDRMIMOPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

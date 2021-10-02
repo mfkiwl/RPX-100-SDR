@@ -10,12 +10,12 @@ from flask import request, jsonify
 app = Flask(__name__)
 
 
-@app.route('/sdrangel')
-def hello_sdrangel():
-    return 'Hello, SDRangel!'
+@app.route('/rpx-100')
+def hello_rpx-100():
+    return 'Hello, rpx-100!'
 
 
-@app.route('/sdrangel/deviceset/<int:deviceset_index>/device/run', methods=['GET', 'POST', 'DELETE'])
+@app.route('/rpx-100/deviceset/<int:deviceset_index>/device/run', methods=['GET', 'POST', 'DELETE'])
 def device_run(deviceset_index):
     ''' Reply with the expected reply of a working device '''
     originatorIndex = None
@@ -34,7 +34,7 @@ def device_run(deviceset_index):
         return f'RUN device {deviceset_index}'
 
 
-@app.route('/sdrangel/deviceset/<int:deviceset_index>/device/settings', methods=['GET', 'PATCH', 'PUT'])
+@app.route('/rpx-100/deviceset/<int:deviceset_index>/device/settings', methods=['GET', 'PATCH', 'PUT'])
 def device_settings(deviceset_index):
     ''' Reply with a copy of the device setting structure received '''
     content = request.get_json(silent=True)
@@ -49,7 +49,7 @@ def device_settings(deviceset_index):
         return f'GET settings for device {deviceset_index}'
 
 
-@app.route('/sdrangel/deviceset/<int:deviceset_index>/channel/<int:channel_index>/settings', methods=['GET', 'PATCH', 'PUT'])
+@app.route('/rpx-100/deviceset/<int:deviceset_index>/channel/<int:channel_index>/settings', methods=['GET', 'PATCH', 'PUT'])
 def channel_settings(deviceset_index, channel_index):
     ''' Reply with a copy of the channel setting structure received '''
     content = request.get_json(silent=True)

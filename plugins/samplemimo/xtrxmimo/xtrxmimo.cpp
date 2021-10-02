@@ -1300,11 +1300,11 @@ void XTRXMIMO::setTxDeviceCenterFrequency(xtrx_dev *dev, quint64 freq_hz)
 }
 
 int XTRXMIMO::webapiSettingsGet(
-    SWGSDRangel::SWGDeviceSettings& response,
+    SWGrpx-100::SWGDeviceSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setXtrxMimoSettings(new SWGSDRangel::SWGXtrxMIMOSettings());
+    response.setXtrxMimoSettings(new SWGrpx-100::SWGXtrxMIMOSettings());
     response.getXtrxMimoSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -1313,7 +1313,7 @@ int XTRXMIMO::webapiSettingsGet(
 int XTRXMIMO::webapiSettingsPutPatch(
     bool force,
     const QStringList& deviceSettingsKeys,
-    SWGSDRangel::SWGDeviceSettings& response, // query + response
+    SWGrpx-100::SWGDeviceSettings& response, // query + response
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -1336,7 +1336,7 @@ int XTRXMIMO::webapiSettingsPutPatch(
 void XTRXMIMO::webapiUpdateDeviceSettings(
     XTRXMIMOSettings& settings,
     const QStringList& deviceSettingsKeys,
-    SWGSDRangel::SWGDeviceSettings& response)
+    SWGrpx-100::SWGDeviceSettings& response)
 {
     // common
     if (deviceSettingsKeys.contains("extClock")) {
@@ -1483,7 +1483,7 @@ void XTRXMIMO::webapiUpdateDeviceSettings(
 }
 
 void XTRXMIMO::webapiFormatDeviceSettings(
-    SWGSDRangel::SWGDeviceSettings& response,
+    SWGrpx-100::SWGDeviceSettings& response,
     const XTRXMIMOSettings& settings)
 {
     // common
@@ -1548,11 +1548,11 @@ void XTRXMIMO::webapiFormatDeviceSettings(
 }
 
 int XTRXMIMO::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setXtrxInputReport(new SWGSDRangel::SWGXtrxInputReport());
+    response.setXtrxInputReport(new SWGrpx-100::SWGXtrxInputReport());
     response.getXtrxInputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
@@ -1560,7 +1560,7 @@ int XTRXMIMO::webapiReportGet(
 
 int XTRXMIMO::webapiRunGet(
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if ((subsystemIndex == 0) || (subsystemIndex == 1))
@@ -1579,7 +1579,7 @@ int XTRXMIMO::webapiRunGet(
 int XTRXMIMO::webapiRun(
         bool run,
         int subsystemIndex,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     if ((subsystemIndex == 0) || (subsystemIndex == 1))
@@ -1603,7 +1603,7 @@ int XTRXMIMO::webapiRun(
     }
 }
 
-void XTRXMIMO::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void XTRXMIMO::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     bool success = false;
     double temp = 0.0;
@@ -1637,12 +1637,12 @@ void XTRXMIMO::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
 
 void XTRXMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const XTRXMIMOSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("XTRX"));
-    swgDeviceSettings->setXtrxMimoSettings(new SWGSDRangel::SWGXtrxMIMOSettings());
-    SWGSDRangel::SWGXtrxMIMOSettings *swgXTRXMIMOSettings = swgDeviceSettings->getXtrxMimoSettings();
+    swgDeviceSettings->setXtrxMimoSettings(new SWGrpx-100::SWGXtrxMIMOSettings());
+    SWGrpx-100::SWGXtrxMIMOSettings *swgXTRXMIMOSettings = swgDeviceSettings->getXtrxMimoSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1787,7 +1787,7 @@ void XTRXMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, con
         swgXTRXMIMOSettings->setPwrmodeTx1(settings.m_pwrmodeTx1);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1808,12 +1808,12 @@ void XTRXMIMO::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, con
 
 void XTRXMIMO::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(2); // MIMO
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("XTRX"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

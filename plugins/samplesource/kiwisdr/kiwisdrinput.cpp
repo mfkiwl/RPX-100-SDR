@@ -304,7 +304,7 @@ bool KiwiSDRInput::applySettings(const KiwiSDRSettings& settings, bool force)
 }
 
 int KiwiSDRInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -314,7 +314,7 @@ int KiwiSDRInput::webapiRunGet(
 
 int KiwiSDRInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -332,11 +332,11 @@ int KiwiSDRInput::webapiRun(
 }
 
 int KiwiSDRInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setKiwiSdrSettings(new SWGSDRangel::SWGKiwiSDRSettings());
+    response.setKiwiSdrSettings(new SWGrpx-100::SWGKiwiSDRSettings());
     response.getKiwiSdrSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -345,7 +345,7 @@ int KiwiSDRInput::webapiSettingsGet(
 int KiwiSDRInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -368,7 +368,7 @@ int KiwiSDRInput::webapiSettingsPutPatch(
 void KiwiSDRInput::webapiUpdateDeviceSettings(
         KiwiSDRSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("gain")) {
         settings.m_gain = response.getKiwiSdrSettings()->getGain();
@@ -400,17 +400,17 @@ void KiwiSDRInput::webapiUpdateDeviceSettings(
 }
 
 int KiwiSDRInput::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setKiwiSdrReport(new SWGSDRangel::SWGKiwiSDRReport());
+    response.setKiwiSdrReport(new SWGrpx-100::SWGKiwiSDRReport());
     response.getKiwiSdrReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
-void KiwiSDRInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const KiwiSDRSettings& settings)
+void KiwiSDRInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const KiwiSDRSettings& settings)
 {
     response.getKiwiSdrSettings()->setGain(settings.m_gain);
     response.getKiwiSdrSettings()->setUseAgc(settings.m_useAGC ? 1 : 0);
@@ -435,19 +435,19 @@ void KiwiSDRInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& re
     response.getKiwiSdrSettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void KiwiSDRInput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void KiwiSDRInput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     response.getKiwiSdrReport()->setStatus(getStatus());
 }
 
 void KiwiSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const KiwiSDRSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("KiwiSDR"));
-    swgDeviceSettings->setKiwiSdrSettings(new SWGSDRangel::SWGKiwiSDRSettings());
-    SWGSDRangel::SWGKiwiSDRSettings *swgKiwiSDRSettings = swgDeviceSettings->getKiwiSdrSettings();
+    swgDeviceSettings->setKiwiSdrSettings(new SWGrpx-100::SWGKiwiSDRSettings());
+    SWGrpx-100::SWGKiwiSDRSettings *swgKiwiSDRSettings = swgDeviceSettings->getKiwiSdrSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -467,7 +467,7 @@ void KiwiSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
         swgKiwiSDRSettings->setServerAddress(new QString(settings.m_serverAddress));
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -488,12 +488,12 @@ void KiwiSDRInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
 
 void KiwiSDRInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("KiwiSDR"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

@@ -32,9 +32,9 @@ const PluginDescriptor AntennaToolsPlugin::m_pluginDescriptor = {
     QStringLiteral("Antenna Tools"),
     QStringLiteral("6.16.2"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 AntennaToolsPlugin::AntennaToolsPlugin(QObject* parent) :

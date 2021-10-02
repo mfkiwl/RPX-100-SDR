@@ -1,10 +1,10 @@
-# Swagger project for SDRangel
+# Swagger project for rpx-100
 
 <h1>What is Swagger?</h1>
 
 Swagger is an open source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services. [Link to Swagger website](https://swagger.io/)
 
-Swagger is used to design the SDRangel web API. You will find the Swagger framework for SDRangel here. 
+Swagger is used to design the rpx-100 web API. You will find the Swagger framework for rpx-100 here. 
 
 <h1>Install Swagger</h1>
 
@@ -114,7 +114,7 @@ The configuration option `-c` lets you specify a configuration file which is in 
 /opt/install/swagger/swagger-codegen config-help -l qt5cpp
 ```
 
-The following configuration files have been defined for generation in the SDRangel context:
+The following configuration files have been defined for generation in the rpx-100 context:
 
   - `qt5cpp-config.json` for Qt5/C++
   - `html2-config.json` for HTML2

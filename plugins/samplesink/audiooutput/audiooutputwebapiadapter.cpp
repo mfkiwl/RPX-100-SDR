@@ -26,11 +26,11 @@ AudioOutputWebAPIAdapter::~AudioOutputWebAPIAdapter()
 {}
 
 int AudioOutputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAudioOutputSettings(new SWGSDRangel::SWGAudioOutputSettings());
+    response.setAudioOutputSettings(new SWGrpx-100::SWGAudioOutputSettings());
     response.getAudioOutputSettings()->init();
     AudioOutput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -39,7 +39,7 @@ int AudioOutputWebAPIAdapter::webapiSettingsGet(
 int AudioOutputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class MapPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.feature.map")
+    Q_PLUGIN_METADATA(IID "rpx-100.feature.map")
 
 public:
     explicit MapPlugin(QObject* parent = nullptr);

@@ -3,8 +3,8 @@
 //                                                                               //
 // Remote sink channel (Rx) UDP sender thread                                    //
 //                                                                               //
-// SDRangel can work as a detached SDR front end. With this plugin it can        //
-// sends the I/Q samples stream to another SDRangel instance via UDP.            //
+// rpx-100 can work as a detached SDR front end. With this plugin it can        //
+// sends the I/Q samples stream to another rpx-100 instance via UDP.            //
 // It is controlled via a Web REST API.                                          //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -89,23 +89,23 @@ public:
     }
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response,
+            SWGrpx-100::SWGChannelSettings& response,
             QString& errorMessage);
 
     static void webapiFormatChannelSettings(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         const RemoteSinkSettings& settings);
 
     static void webapiUpdateChannelSettings(
             RemoteSinkSettings& settings,
             const QStringList& channelSettingsKeys,
-            SWGSDRangel::SWGChannelSettings& response);
+            SWGrpx-100::SWGChannelSettings& response);
 
     uint32_t getNumberOfDeviceStreams() const;
     int getBasebandSampleRate() const { return m_basebandSampleRate; }
@@ -141,7 +141,7 @@ private:
     );
     void webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const RemoteSinkSettings& settings,
         bool force
     );

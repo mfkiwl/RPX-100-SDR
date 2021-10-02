@@ -5,6 +5,6 @@ get_abs_dir() {
   echo "$(cd "$(dirname "$1")" && pwd)"
 }
 
-SDRANGEL_RESOURCES="$(get_abs_dir "$0")/../Resources"
-exec "$SDRANGEL_RESOURCES/sdrangel"
+rpx-100_RESOURCES="$(get_abs_dir "$0")/../Resources"
+exec "$rpx-100_RESOURCES/rpx-100"
 

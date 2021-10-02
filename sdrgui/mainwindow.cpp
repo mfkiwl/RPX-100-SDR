@@ -54,7 +54,7 @@
 #include "gui/audiodialog.h"
 #include "gui/loggingdialog.h"
 #include "gui/deviceuserargsdialog.h"
-#include "gui/sdrangelsplash.h"
+#include "gui/rpx-100splash.h"
 #include "gui/mypositiondialog.h"
 #include "gui/ambedevicesdialog.h"
 #include "dsp/dspengine.h"
@@ -118,8 +118,8 @@ MainWindow::MainWindow(qtwebapp::LoggerWithFile *logger, const MainParser& parse
     font.setPointSize(9);
     qApp->setFont(font);
 
-    QPixmap logoPixmap(":/sdrangel_logo.png");
-    SDRangelSplash *splash = new SDRangelSplash(logoPixmap);
+    QPixmap logoPixmap(":/rpx-100_logo.png");
+    rpx-100Splash *splash = new rpx-100Splash(logoPixmap);
     splash->setMessageRect(QRect(10, 80, 350, 16));
     splash->show();
     splash->showStatusMessage("starting...", Qt::white);
@@ -839,10 +839,10 @@ void MainWindow::createStatusBar()
 {
     QString qtVersionStr = QString("Qt %1 ").arg(QT_VERSION_STR);
 #if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
-    m_showSystemWidget = new QLabel("SDRangel " + qApp->applicationVersion() + " " + qtVersionStr
+    m_showSystemWidget = new QLabel("rpx-100 " + qApp->applicationVersion() + " " + qtVersionStr
             + QSysInfo::currentCpuArchitecture() + " " + QSysInfo::prettyProductName(), this);
 #else
-    m_showSystemWidget = new QLabel("SDRangel " + qApp->applicationVersion() + " " + qtVersionStr, this);
+    m_showSystemWidget = new QLabel("rpx-100 " + qApp->applicationVersion() + " " + qtVersionStr, this);
 #endif
     statusBar()->addPermanentWidget(m_showSystemWidget);
 

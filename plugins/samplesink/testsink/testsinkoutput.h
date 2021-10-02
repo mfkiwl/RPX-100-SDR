@@ -98,12 +98,12 @@ public:
 	virtual bool handleMessage(const Message& message);
 
     virtual int webapiRunGet(
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     SpectrumVis *getSpectrumVis() { return &m_spectrumVis; }

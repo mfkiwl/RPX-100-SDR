@@ -48,7 +48,7 @@ MESSAGE_CLASS_DEFINITION(AISMod::MsgConfigureAISMod, Message)
 MESSAGE_CLASS_DEFINITION(AISMod::MsgTXAISMod, Message)
 MESSAGE_CLASS_DEFINITION(AISMod::MsgTXPacketBytes, Message)
 
-const char* const AISMod::m_channelIdURI = "sdrangel.channel.modais";
+const char* const AISMod::m_channelIdURI = "rpx-100.channel.modais";
 const char* const AISMod::m_channelId = "AISMod";
 
 AISMod::AISMod(DeviceAPI *deviceAPI) :
@@ -368,11 +368,11 @@ void AISMod::sendSampleRateToDemodAnalyzer()
 }
 
 int AISMod::webapiSettingsGet(
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisModSettings(new SWGSDRangel::SWGAISModSettings());
+    response.setAisModSettings(new SWGrpx-100::SWGAISModSettings());
     response.getAisModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
 
@@ -382,7 +382,7 @@ int AISMod::webapiSettingsGet(
 int AISMod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -406,7 +406,7 @@ int AISMod::webapiSettingsPutPatch(
 void AISMod::webapiUpdateChannelSettings(
         AISModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getAisModSettings()->getInputFrequencyOffset();
@@ -513,11 +513,11 @@ void AISMod::webapiUpdateChannelSettings(
 }
 
 int AISMod::webapiReportGet(
-                SWGSDRangel::SWGChannelReport& response,
+                SWGrpx-100::SWGChannelReport& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisModReport(new SWGSDRangel::SWGAISModReport());
+    response.setAisModReport(new SWGrpx-100::SWGAISModReport());
     response.getAisModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
@@ -525,16 +525,16 @@ int AISMod::webapiReportGet(
 
 int AISMod::webapiActionsPost(
         const QStringList& channelActionsKeys,
-        SWGSDRangel::SWGChannelActions& query,
+        SWGrpx-100::SWGChannelActions& query,
         QString& errorMessage)
 {
-    SWGSDRangel::SWGAISModActions *swgAISModActions = query.getAisModActions();
+    SWGrpx-100::SWGAISModActions *swgAISModActions = query.getAisModActions();
 
     if (swgAISModActions)
     {
         if (channelActionsKeys.contains("tx"))
         {
-            SWGSDRangel::SWGAISModActions_tx* tx = swgAISModActions->getTx();
+            SWGrpx-100::SWGAISModActions_tx* tx = swgAISModActions->getTx();
             QString *dataP = tx->getData();
             if (dataP)
             {
@@ -564,7 +564,7 @@ int AISMod::webapiActionsPost(
     return 400;
 }
 
-void AISMod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const AISModSettings& settings)
+void AISMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const AISModSettings& settings)
 {
     response.getAisModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getAisModSettings()->setFmDeviation(settings.m_fmDeviation);
@@ -625,7 +625,7 @@ void AISMod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& respon
     response.getAisModSettings()->setUdpPort(settings.m_udpPort);
 }
 
-void AISMod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void AISMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     response.getAisModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getAisModReport()->setChannelSampleRate(m_basebandSource->getChannelSampleRate());
@@ -633,10 +633,10 @@ void AISMod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
 
 void AISMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const AISModSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -666,7 +666,7 @@ void AISMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -680,7 +680,7 @@ void AISMod::sendChannelSettings(
 
 void AISMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const AISModSettings& settings,
         bool force
 )
@@ -689,8 +689,8 @@ void AISMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setAisModSettings(new SWGSDRangel::SWGAISModSettings());
-    SWGSDRangel::SWGAISModSettings *swgAISModSettings = swgChannelSettings->getAisModSettings();
+    swgChannelSettings->setAisModSettings(new SWGrpx-100::SWGAISModSettings());
+    SWGrpx-100::SWGAISModSettings *swgAISModSettings = swgChannelSettings->getAisModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

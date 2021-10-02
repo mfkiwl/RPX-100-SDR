@@ -29,11 +29,11 @@ AirspyWebAPIAdapter::~AirspyWebAPIAdapter()
 {}
 
 int AirspyWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAirspySettings(new SWGSDRangel::SWGAirspySettings());
+    response.setAirspySettings(new SWGrpx-100::SWGAirspySettings());
     response.getAirspySettings()->init();
     AirspyInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int AirspyWebAPIAdapter::webapiSettingsGet(
 int AirspyWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

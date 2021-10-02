@@ -89,7 +89,7 @@ Use this button to refresh the list of devices.
 
 <h3>15: Select device set</h3>
 
-Specify the SDRangel device set that will be have its centre frequency set when an airport ATC frequency is clicked on the map. Typically, this device set would be a second SDR (as ATC frequencies are around 120MHz, so they can not be received simultaneously with 1090MHz for ADS-B) and have an AM Demodulator channel plugin.
+Specify the rpx-100 device set that will be have its centre frequency set when an airport ATC frequency is clicked on the map. Typically, this device set would be a second SDR (as ATC frequencies are around 120MHz, so they can not be received simultaneously with 1090MHz for ADS-B) and have an AM Demodulator channel plugin.
 
 <h3>ADS-B Data</h3>
 
@@ -147,7 +147,7 @@ Aircraft are only placed upon the map when a position can be calculated, which c
 * Left clicking on an aicraft will highlight the corresponding row in the table for the aircraft and the information box on the map will be coloured orange, rather than blue.
 * Double clicking on an aircraft will set it as the active target and the information box will be coloured green.
 * Left clicking the information box next to an aircraft will reveal more information. It can be closed by clicking it again.
-* Left clicking the information box next to an airport will reveal ATC frequencies for the airport (if the OurAirports database has been downloaded.). This information box can be closed by left clicking on the airport identifier. Double clicking on one of the listed frequencies, will set it as the centre frequency on the selected SDRangel device set (15). The Az/El row gives the azimuth and elevation of the airport from the location set under Preferences > My Position. Double clicking on this row will set the airport as the active target.
+* Left clicking the information box next to an airport will reveal ATC frequencies for the airport (if the OurAirports database has been downloaded.). This information box can be closed by left clicking on the airport identifier. Double clicking on one of the listed frequencies, will set it as the centre frequency on the selected rpx-100 device set (15). The Az/El row gives the azimuth and elevation of the airport from the location set under Preferences > My Position. Double clicking on this row will set the airport as the active target.
 
 <h2>Attribution</h2>
 

@@ -235,7 +235,7 @@ void SatelliteTrackerWorker::sendToMap(QList<MessageQueue*> *mapMessageQueues,
 
     for (; it != mapMessageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGMapItem *swgMapItem = new SWGSDRangel::SWGMapItem();
+        SWGrpx-100::SWGMapItem *swgMapItem = new SWGrpx-100::SWGMapItem();
         swgMapItem->setName(new QString(name));
         swgMapItem->setLatitude(lat);
         swgMapItem->setLongitude(lon);
@@ -246,10 +246,10 @@ void SatelliteTrackerWorker::sendToMap(QList<MessageQueue*> *mapMessageQueues,
         swgMapItem->setImageMinZoom(0);
         if (track != nullptr)
         {
-            QList<SWGSDRangel::SWGMapCoordinate *> *mapTrack = new QList<SWGSDRangel::SWGMapCoordinate *>();
+            QList<SWGrpx-100::SWGMapCoordinate *> *mapTrack = new QList<SWGrpx-100::SWGMapCoordinate *>();
             for (int i = 0; i < track->size(); i++)
             {
-                SWGSDRangel::SWGMapCoordinate* p = new SWGSDRangel::SWGMapCoordinate();
+                SWGrpx-100::SWGMapCoordinate* p = new SWGrpx-100::SWGMapCoordinate();
                 QGeoCoordinate *c = track->at(i);
                 p->setLatitude(c->latitude());
                 p->setLongitude(c->longitude());
@@ -260,10 +260,10 @@ void SatelliteTrackerWorker::sendToMap(QList<MessageQueue*> *mapMessageQueues,
         }
         if (predictedTrack != nullptr)
         {
-            QList<SWGSDRangel::SWGMapCoordinate *> *mapTrack = new QList<SWGSDRangel::SWGMapCoordinate *>();
+            QList<SWGrpx-100::SWGMapCoordinate *> *mapTrack = new QList<SWGrpx-100::SWGMapCoordinate *>();
             for (int i = 0; i < predictedTrack->size(); i++)
             {
-                SWGSDRangel::SWGMapCoordinate* p = new SWGSDRangel::SWGMapCoordinate();
+                SWGrpx-100::SWGMapCoordinate* p = new SWGrpx-100::SWGMapCoordinate();
                 QGeoCoordinate *c = predictedTrack->at(i);
                 p->setLatitude(c->latitude());
                 p->setLongitude(c->longitude());
@@ -387,7 +387,7 @@ void SatelliteTrackerWorker::update()
 
                         for (; it != rotatorMessageQueues->end(); ++it)
                         {
-                            SWGSDRangel::SWGTargetAzimuthElevation *swgTarget = new SWGSDRangel::SWGTargetAzimuthElevation();
+                            SWGrpx-100::SWGTargetAzimuthElevation *swgTarget = new SWGrpx-100::SWGTargetAzimuthElevation();
                             swgTarget->setName(new QString(m_settings.m_target));
                             swgTarget->setAzimuth(azimuth);
                             swgTarget->setElevation(elevation);

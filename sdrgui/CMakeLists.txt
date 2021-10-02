@@ -58,7 +58,7 @@ set(sdrgui_SOURCES
     gui/samplingdevicesdock.cpp
     gui/scaleengine.cpp
     gui/scaledimage.cpp
-    gui/sdrangelsplash.cpp
+    gui/rpx-100splash.cpp
     gui/spectrummarkersdialog.cpp
     gui/tickedslider.cpp
     gui/transverterbutton.cpp
@@ -147,7 +147,7 @@ set(sdrgui_HEADERS
     gui/samplingdevicesdock.h
     gui/scaleengine.h
     gui/scaledimage.h
-    gui/sdrangelsplash.h
+    gui/rpx-100splash.h
     gui/spectrummarkersdialog.h
     gui/tickedslider.h
     gui/transverterbutton.h
@@ -242,7 +242,7 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/sdrbase
   ${CMAKE_SOURCE_DIR}/logging
   ${CMAKE_SOURCE_DIR}/httpserver
-  ${CMAKE_SOURCE_DIR}/swagger/sdrangel/code/qt5/client
+  ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
   ${OPENGL_INCLUDE_DIR}
   ${Boost_INCLUDE_DIRS}
 )

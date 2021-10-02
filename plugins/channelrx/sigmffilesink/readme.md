@@ -4,18 +4,18 @@
 
 Use this plugin to record its channel IQ data in [SigMF](https://github.com/gnuradio/SigMF/blob/master/sigmf-spec.md) format. The baseband sample rate can be decimated by a factor of two and its center shifted to accomodate different requirements than recording the full baseband. More than one such plugin can be used in the same baseband to record different parts of the baseband spectrum. Of course in this case file output collision should be avoided.
 
-Such files can be read in SDRangel using the [SigMF file input plugin](../../samplesource/sigmffileinput/readme.md). This plugin will use extensions to the basic SigMF specification that are specific to SDRangel. However any other software if correctly implemented should ignore these extensions and still be able to read the file possibily with a loss in functionnality.
+Such files can be read in rpx-100 using the [SigMF file input plugin](../../samplesource/sigmffileinput/readme.md). This plugin will use extensions to the basic SigMF specification that are specific to rpx-100. However any other software if correctly implemented should ignore these extensions and still be able to read the file possibily with a loss in functionnality.
 
 As per SigMF specifications two files are created in fact.
   - One with `.sigmf-meta` extension contains meta data and details to find the different captures in the data file blob. It is written in JSON format and is human readable. You can refer to SigMF documentation in the link at top to read about the details.
-  - Another with `.sigmf-data` contains the IQ data as a blob indexed by structures in the `.sigmf-meta` file. Thus to the SigMF file reader data appears as a sequence of captures having idependent start time and length, center frequency and with SDRangel specific extensions independent sample rates.
+  - Another with `.sigmf-data` contains the IQ data as a blob indexed by structures in the `.sigmf-meta` file. Thus to the SigMF file reader data appears as a sequence of captures having idependent start time and length, center frequency and with rpx-100 specific extensions independent sample rates.
 
 If a filename is given without `.sigmf-meta` extension then the `.sigmf-meta` extension is appended automatically.
 If a filename is given with an extension different of `.sigmf-meta` then the extension is replaced by `.sigmf-meta` automatically.
 
-If the couple `.sigmf-meta`, `.sigmf-data` exists for a file set and it was recorded by SDRangel then new data will be appended as new captures.
+If the couple `.sigmf-meta`, `.sigmf-data` exists for a file set and it was recorded by rpx-100 then new data will be appended as new captures.
 
-It adds a dependency to the [libsigmf library](https://github.com/f4exb/libsigmf) more specifically the `f4exb` fork that supports `multirecordings` and `sdrangel` extensions.
+It adds a dependency to the [libsigmf library](https://github.com/f4exb/libsigmf) more specifically the `f4exb` fork that supports `multirecordings` and `rpx-100` extensions.
 
 <h2>Interface</h2>
 

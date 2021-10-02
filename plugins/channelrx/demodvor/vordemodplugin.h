@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class VORDemodPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channel.vordemod")
+    Q_PLUGIN_METADATA(IID "rpx-100.channel.vordemod")
 
 public:
     explicit VORDemodPlugin(QObject* parent = NULL);

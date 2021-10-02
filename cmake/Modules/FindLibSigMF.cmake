@@ -5,7 +5,7 @@ if (NOT LIBSIGMF_FOUND)
     pkg_check_modules(LIBSIGMF_PKG libsigmf)
 
     find_path (LIBSIGMF_INCLUDE_DIR
-        NAMES libsigmf/sigmf_sdrangel_generated.h
+        NAMES libsigmf/sigmf_rpx-100_generated.h
         HINTS ${LIBSIGMF_DIR}/include
               ${LIBSIGMF_PKG_INCLUDE_DIRS}
         PATHS /usr/include/libsigmf

@@ -26,11 +26,11 @@ RemoteSourceWebAPIAdapter::~RemoteSourceWebAPIAdapter()
 {}
 
 int RemoteSourceWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setRemoteSourceSettings(new SWGSDRangel::SWGRemoteSourceSettings());
+    response.setRemoteSourceSettings(new SWGrpx-100::SWGRemoteSourceSettings());
     response.getRemoteSourceSettings()->init();
     RemoteSource::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int RemoteSourceWebAPIAdapter::webapiSettingsGet(
 int RemoteSourceWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

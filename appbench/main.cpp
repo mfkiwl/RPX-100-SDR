@@ -61,8 +61,8 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
     QCoreApplication a(argc, argv);
 
     QCoreApplication::setOrganizationName(COMPANY);
-    QCoreApplication::setApplicationName("SDRangelBench");
-    QCoreApplication::setApplicationVersion(SDRANGEL_VERSION);
+    QCoreApplication::setApplicationName("rpx-100Bench");
+    QCoreApplication::setApplicationVersion(rpx-100_VERSION);
 
 #ifndef _WIN32
     int catchSignals[] = {SIGQUIT, SIGINT, SIGTERM, SIGHUP};
@@ -110,6 +110,6 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
         qtwebapp::LoggerWithFile *logger = new qtwebapp::LoggerWithFile(qApp);
         logger->installMsgHandler();
         int res = runQtApplication(argc, argv, logger);
-        qWarning("SDRangel quit.");
+        qWarning("rpx-100 quit.");
         return res;
       }

@@ -28,7 +28,7 @@
 
 MESSAGE_CLASS_DEFINITION(ChannelAnalyzer::MsgConfigureChannelAnalyzer, Message)
 
-const char* const ChannelAnalyzer::m_channelIdURI = "sdrangel.channel.chanalyzer";
+const char* const ChannelAnalyzer::m_channelIdURI = "rpx-100.channel.chanalyzer";
 const char* const ChannelAnalyzer::m_channelId = "ChannelAnalyzer";
 
 ChannelAnalyzer::ChannelAnalyzer(DeviceAPI *deviceAPI) :

@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class SatelliteTrackerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.feature.satellitetracker")
+	Q_PLUGIN_METADATA(IID "rpx-100.feature.satellitetracker")
 
 public:
 	explicit SatelliteTrackerPlugin(QObject* parent = nullptr);

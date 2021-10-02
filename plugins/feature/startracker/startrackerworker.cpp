@@ -384,7 +384,7 @@ void StarTrackerWorker::sendToMap(QList<MessageQueue*> *mapMessageQueues, QStrin
 
     for (; it != mapMessageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGMapItem *swgMapItem = new SWGSDRangel::SWGMapItem();
+        SWGrpx-100::SWGMapItem *swgMapItem = new SWGrpx-100::SWGMapItem();
         swgMapItem->setName(new QString(name));
         swgMapItem->setLatitude(lat);
         swgMapItem->setLongitude(lon);
@@ -514,7 +514,7 @@ void StarTrackerWorker::update()
 
         for (; it != mapMessageQueues->end(); ++it)
         {
-            SWGSDRangel::SWGTargetAzimuthElevation *swgTarget = new SWGSDRangel::SWGTargetAzimuthElevation();
+            SWGrpx-100::SWGTargetAzimuthElevation *swgTarget = new SWGrpx-100::SWGTargetAzimuthElevation();
             swgTarget->setName(new QString(m_settings.m_target));
             swgTarget->setAzimuth(aa.az);
             swgTarget->setElevation(aa.alt);

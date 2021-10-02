@@ -87,7 +87,7 @@ Note that it is not currently possible to support entering an API Key for Open S
 
 <h3>Map</h3>
 
-The map displays objects reported by other SDRangel channels and features, as well as beacon locations.
+The map displays objects reported by other rpx-100 channels and features, as well as beacon locations.
 
 * The "Home" antenna location is placed according to My Position set under the Preferences > My Position menu. The position is only updated when the Map plugin is first opened.
 * To pan around the map, click the left mouse button and drag. To zoom in or out, use the mouse scroll wheel.
@@ -109,8 +109,8 @@ Icons made by Google from Flaticon https://www.flaticon.com
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to centre the map on an object from the command line:
 
-    curl -X POST "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/actions" -d '{"featureType": "Map",  "MapActions": { "find": "M7RCE" }}'
+    curl -X POST "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/actions" -d '{"featureType": "Map",  "MapActions": { "find": "M7RCE" }}'
 
 And to centre the map at a particular latitude and longitude:
 
-    curl -X POST "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/actions" -d '{"featureType": "Map", "MapActions": { "find": "51.2 0.0" }}'
+    curl -X POST "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/actions" -d '{"featureType": "Map", "MapActions": { "find": "51.2 0.0" }}'

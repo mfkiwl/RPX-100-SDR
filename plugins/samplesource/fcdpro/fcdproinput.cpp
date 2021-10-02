@@ -811,7 +811,7 @@ void FCDProInput::set_gain6(int index)
 }
 
 int FCDProInput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -821,7 +821,7 @@ int FCDProInput::webapiRunGet(
 
 int FCDProInput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -839,11 +839,11 @@ int FCDProInput::webapiRun(
 }
 
 int FCDProInput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFcdProSettings(new SWGSDRangel::SWGFCDProSettings());
+    response.setFcdProSettings(new SWGrpx-100::SWGFCDProSettings());
     response.getFcdProSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -852,7 +852,7 @@ int FCDProInput::webapiSettingsGet(
 int FCDProInput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -875,7 +875,7 @@ int FCDProInput::webapiSettingsPutPatch(
 void FCDProInput::webapiUpdateDeviceSettings(
         FCDProSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getFcdProSettings()->getCenterFrequency();
@@ -966,7 +966,7 @@ void FCDProInput::webapiUpdateDeviceSettings(
     }
 }
 
-void FCDProInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const FCDProSettings& settings)
+void FCDProInput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const FCDProSettings& settings)
 {
     response.getFcdProSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getFcdProSettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -1008,12 +1008,12 @@ void FCDProInput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& res
 
 void FCDProInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const FCDProSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("FCDPro"));
-    swgDeviceSettings->setFcdProSettings(new SWGSDRangel::SWGFCDProSettings());
-    SWGSDRangel::SWGFCDProSettings *swgFCDProSettings = swgDeviceSettings->getFcdProSettings();
+    swgDeviceSettings->setFcdProSettings(new SWGrpx-100::SWGFCDProSettings());
+    SWGrpx-100::SWGFCDProSettings *swgFCDProSettings = swgDeviceSettings->getFcdProSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1093,7 +1093,7 @@ void FCDProInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
         swgFCDProSettings->setTransverterMode(settings.m_transverterMode ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1114,12 +1114,12 @@ void FCDProInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, 
 
 void FCDProInput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(0); // single Rx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("FCDPro"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

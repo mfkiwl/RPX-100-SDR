@@ -31,7 +31,7 @@ class SimplePTTWorker;
 class QNetworkAccessManager;
 class QNetworkReply;
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
     class SWGDeviceState;
 }
 
@@ -111,36 +111,36 @@ public:
     virtual bool deserialize(const QByteArray& data);
 
     virtual int webapiRun(bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiSettingsGet(
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiSettingsPutPatch(
             bool force,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response,
+            SWGrpx-100::SWGFeatureSettings& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGFeatureReport& response,
+            SWGrpx-100::SWGFeatureReport& response,
             QString& errorMessage);
 
     virtual int webapiActionsPost(
             const QStringList& featureActionsKeys,
-            SWGSDRangel::SWGFeatureActions& query,
+            SWGrpx-100::SWGFeatureActions& query,
             QString& errorMessage);
 
     static void webapiFormatFeatureSettings(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         const SimplePTTSettings& settings);
 
     static void webapiUpdateFeatureSettings(
             SimplePTTSettings& settings,
             const QStringList& featureSettingsKeys,
-            SWGSDRangel::SWGFeatureSettings& response);
+            SWGrpx-100::SWGFeatureSettings& response);
 
     static const char* const m_featureIdURI;
     static const char* const m_featureId;
@@ -157,7 +157,7 @@ private:
     void start();
     void stop();
     void applySettings(const SimplePTTSettings& settings, bool force = false);
-    void webapiFormatFeatureReport(SWGSDRangel::SWGFeatureReport& response);
+    void webapiFormatFeatureReport(SWGrpx-100::SWGFeatureReport& response);
     void webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const SimplePTTSettings& settings, bool force);
 
 private slots:

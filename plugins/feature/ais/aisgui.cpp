@@ -490,7 +490,7 @@ void AISGUI::updateVessels(AISMessage *ais)
 
             for (; it != mapMessageQueues->end(); ++it)
             {
-                SWGSDRangel::SWGMapItem *swgMapItem = new SWGSDRangel::SWGMapItem();
+                SWGrpx-100::SWGMapItem *swgMapItem = new SWGrpx-100::SWGMapItem();
                 swgMapItem->setName(new QString(QString("%1").arg(mmsiItem->text())));
                 swgMapItem->setLatitude(latitudeV.toFloat());
                 swgMapItem->setLongitude(longitudeV.toFloat());

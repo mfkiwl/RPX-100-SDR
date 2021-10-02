@@ -25,7 +25,7 @@ class PluginAPI;
 class DeviceAPI;
 class DeviceUISet;
 
-#define SOAPYSDRINPUT_DEVICE_TYPE_ID "sdrangel.samplesource.soapysdrinput"
+#define SOAPYSDRINPUT_DEVICE_TYPE_ID "rpx-100.samplesource.soapysdrinput"
 
 class SoapySDRInputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

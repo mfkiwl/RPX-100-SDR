@@ -25,7 +25,7 @@ Pressing this button shows the APRS Settings Dialog. This dialog allows you to e
 * The APRS-IS server the IGate should connect to. Please choose your local server. (noam = North America, euro = Europe, etc).
 * The callsign the IGate should connect with.
 * The passcode corresponding to the given callsign.
-* A serverside filter, that specifies which packets should be forwarded from the internet to SDRangel. See http://www.aprs-is.net/javAPRSFilter.aspx
+* A serverside filter, that specifies which packets should be forwarded from the internet to rpx-100. See http://www.aprs-is.net/javAPRSFilter.aspx
 m/50 will send you packets within 50 km of the last known position of the station corresponding to the callsign used to log in with.
 If you do not have a corresponding station, you can specify a location by passing a latitude and longitude. E.g: r/lat/lon/50
 * The units in which altitudes are displyed (Feet or metres).
@@ -48,4 +48,4 @@ APRS icons are from: https://github.com/hessu/aprs-symbols
 
 Full details of the API can be found in the Swagger documentation. Here is a quick example of how to enable the APRS-IS IGate:
 
-    curl -X PATCH "http://127.0.0.1:8091/sdrangel/featureset/0/feature/0/settings" -d '{"featureType": "APRS",  "APRSSettings": { "igateCallsign": "MYCALLSIGN", "igatePasscode": "12345", "igateFilter": "r/50.2/10.2/25", "igateEnabled": 1  }}'
+    curl -X PATCH "http://127.0.0.1:8091/rpx-100/featureset/0/feature/0/settings" -d '{"featureType": "APRS",  "APRSSettings": { "igateCallsign": "MYCALLSIGN", "igatePasscode": "12345", "igateFilter": "r/50.2/10.2/25", "igateEnabled": 1  }}'

@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define PERSEUS_DEVICE_TYPE_ID "sdrangel.samplesource.perseus"
+#define PERSEUS_DEVICE_TYPE_ID "rpx-100.samplesource.perseus"
 
 class PluginAPI;
 

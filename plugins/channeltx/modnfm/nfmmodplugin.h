@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class NFMModPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.channeltx.nfmmod")
+	Q_PLUGIN_METADATA(IID "rpx-100.channeltx.nfmmod")
 
 public:
 	explicit NFMModPlugin(QObject* parent = 0);

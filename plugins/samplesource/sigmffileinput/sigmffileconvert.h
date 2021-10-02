@@ -1094,7 +1094,7 @@ int SigMFConverter<uint16_t, 24, 16, false, true, false>::convert(FixReal *conve
 }
 
 // ======================================================
-// 24 bit signed integer input type - SDRangel exclusive
+// 24 bit signed integer input type - rpx-100 exclusive
 // ======================================================
 
 // s24 complex LE IQ => FixReal 16 bits
@@ -1114,7 +1114,7 @@ int SigMFConverter<int32_t, 16, 24, true, false, false>::convert(FixReal *conver
     return nbSamples;
 }
 
-// s24 complex LE IQ => FixReal 24 bits - SDRangel only
+// s24 complex LE IQ => FixReal 24 bits - rpx-100 only
 
 template<>
 int SigMFConverter<int32_t, 24, 24, true, false, false>::convert(FixReal *convertBuffer, const quint8* buf, int nbBytes)

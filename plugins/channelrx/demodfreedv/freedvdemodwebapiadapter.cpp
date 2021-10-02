@@ -26,11 +26,11 @@ FreeDVDemodWebAPIAdapter::~FreeDVDemodWebAPIAdapter()
 {}
 
 int FreeDVDemodWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreeDvDemodSettings(new SWGSDRangel::SWGFreeDVDemodSettings());
+    response.setFreeDvDemodSettings(new SWGrpx-100::SWGFreeDVDemodSettings());
     response.getFreeDvDemodSettings()->init();
     FreeDVDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int FreeDVDemodWebAPIAdapter::webapiSettingsGet(
 int FreeDVDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

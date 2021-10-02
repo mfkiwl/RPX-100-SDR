@@ -26,11 +26,11 @@ UDPSourceWebAPIAdapter::~UDPSourceWebAPIAdapter()
 {}
 
 int UDPSourceWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setUdpSourceSettings(new SWGSDRangel::SWGUDPSourceSettings());
+    response.setUdpSourceSettings(new SWGrpx-100::SWGUDPSourceSettings());
     response.getUdpSourceSettings()->init();
     UDPSource::webapiFormatChannelSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int UDPSourceWebAPIAdapter::webapiSettingsGet(
 int UDPSourceWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

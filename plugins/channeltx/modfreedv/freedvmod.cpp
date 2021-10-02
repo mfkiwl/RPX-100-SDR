@@ -48,7 +48,7 @@ MESSAGE_CLASS_DEFINITION(FreeDVMod::MsgConfigureFileSourceStreamTiming, Message)
 MESSAGE_CLASS_DEFINITION(FreeDVMod::MsgReportFileSourceStreamData, Message)
 MESSAGE_CLASS_DEFINITION(FreeDVMod::MsgReportFileSourceStreamTiming, Message)
 
-const char* const FreeDVMod::m_channelIdURI = "sdrangel.channeltx.freedvmod";
+const char* const FreeDVMod::m_channelIdURI = "rpx-100.channeltx.freedvmod";
 const char* const FreeDVMod::m_channelId = "FreeDVMod";
 
 FreeDVMod::FreeDVMod(DeviceAPI *deviceAPI) :
@@ -336,15 +336,15 @@ bool FreeDVMod::deserialize(const QByteArray& data)
 }
 
 int FreeDVMod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreeDvModSettings(new SWGSDRangel::SWGFreeDVModSettings());
+    response.setFreeDvModSettings(new SWGrpx-100::SWGFreeDVModSettings());
     response.getFreeDvModSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
 
-    SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
+    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
     const CWKeyerSettings& cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
     CWKeyer::webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
@@ -354,7 +354,7 @@ int FreeDVMod::webapiSettingsGet(
 int FreeDVMod::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& channelSettingsKeys,
-                SWGSDRangel::SWGChannelSettings& response,
+                SWGrpx-100::SWGChannelSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -363,7 +363,7 @@ int FreeDVMod::webapiSettingsPutPatch(
 
     if (channelSettingsKeys.contains("cwKeyer"))
     {
-        SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
+        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = response.getFreeDvModSettings()->getCwKeyer();
         CWKeyerSettings cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
         CWKeyer::webapiSettingsPutPatch(channelSettingsKeys, cwKeyerSettings, apiCwKeyerSettings);
 
@@ -394,7 +394,7 @@ int FreeDVMod::webapiSettingsPutPatch(
 void FreeDVMod::webapiUpdateChannelSettings(
         FreeDVModSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("inputFrequencyOffset")) {
         settings.m_inputFrequencyOffset = response.getFreeDvModSettings()->getInputFrequencyOffset();
@@ -453,17 +453,17 @@ void FreeDVMod::webapiUpdateChannelSettings(
 }
 
 int FreeDVMod::webapiReportGet(
-        SWGSDRangel::SWGChannelReport& response,
+        SWGrpx-100::SWGChannelReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFreeDvModReport(new SWGSDRangel::SWGFreeDVModReport());
+    response.setFreeDvModReport(new SWGrpx-100::SWGFreeDVModReport());
     response.getFreeDvModReport()->init();
     webapiFormatChannelReport(response);
     return 200;
 }
 
-void FreeDVMod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const FreeDVModSettings& settings)
+void FreeDVMod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const FreeDVModSettings& settings)
 {
     response.getFreeDvModSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
     response.getFreeDvModSettings()->setToneFrequency(settings.m_toneFrequency);
@@ -490,7 +490,7 @@ void FreeDVMod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& res
     }
 
     if (!response.getFreeDvModSettings()->getCwKeyer()) {
-        response.getFreeDvModSettings()->setCwKeyer(new SWGSDRangel::SWGCWKeyerSettings);
+        response.getFreeDvModSettings()->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings);
     }
 
     response.getFreeDvModSettings()->setUseReverseApi(settings.m_useReverseAPI ? 1 : 0);
@@ -506,7 +506,7 @@ void FreeDVMod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& res
     response.getFreeDvModSettings()->setReverseApiChannelIndex(settings.m_reverseAPIChannelIndex);
 }
 
-void FreeDVMod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& response)
+void FreeDVMod::webapiFormatChannelReport(SWGrpx-100::SWGChannelReport& response)
 {
     response.getFreeDvModReport()->setChannelPowerDb(CalcDb::dbPower(getMagSq()));
     response.getFreeDvModReport()->setAudioSampleRate(m_basebandSource->getAudioSampleRate());
@@ -515,10 +515,10 @@ void FreeDVMod::webapiFormatChannelReport(SWGSDRangel::SWGChannelReport& respons
 
 void FreeDVMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const FreeDVModSettings& settings, bool force)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -540,17 +540,17 @@ void FreeDVMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, c
 
 void FreeDVMod::webapiReverseSendCWSettings(const CWKeyerSettings& cwKeyerSettings)
 {
-    SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+    SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     swgChannelSettings->setDirection(1); // single source (Tx)
     swgChannelSettings->setChannelType(new QString("FreeDVMod"));
-    swgChannelSettings->setFreeDvModSettings(new SWGSDRangel::SWGFreeDVModSettings());
-    SWGSDRangel::SWGFreeDVModSettings *swgFreeDVModSettings = swgChannelSettings->getFreeDvModSettings();
+    swgChannelSettings->setFreeDvModSettings(new SWGrpx-100::SWGFreeDVModSettings());
+    SWGrpx-100::SWGFreeDVModSettings *swgFreeDVModSettings = swgChannelSettings->getFreeDvModSettings();
 
-    swgFreeDVModSettings->setCwKeyer(new SWGSDRangel::SWGCWKeyerSettings());
-    SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings = swgFreeDVModSettings->getCwKeyer();
+    swgFreeDVModSettings->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings());
+    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = swgFreeDVModSettings->getCwKeyer();
     m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex)
@@ -580,7 +580,7 @@ void FreeDVMod::sendChannelSettings(
 
     for (; it != messageQueues->end(); ++it)
     {
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
         webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
         MainCore::MsgChannelSettings *msg = MainCore::MsgChannelSettings::create(
             this,
@@ -594,7 +594,7 @@ void FreeDVMod::sendChannelSettings(
 
 void FreeDVMod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const FreeDVModSettings& settings,
         bool force
 )
@@ -603,8 +603,8 @@ void FreeDVMod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString(m_channelId));
-    swgChannelSettings->setFreeDvModSettings(new SWGSDRangel::SWGFreeDVModSettings());
-    SWGSDRangel::SWGFreeDVModSettings *swgFreeDVModSettings = swgChannelSettings->getFreeDvModSettings();
+    swgChannelSettings->setFreeDvModSettings(new SWGrpx-100::SWGFreeDVModSettings());
+    SWGrpx-100::SWGFreeDVModSettings *swgFreeDVModSettings = swgChannelSettings->getFreeDvModSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -651,8 +651,8 @@ void FreeDVMod::webapiFormatChannelSettings(
     if (force)
     {
         const CWKeyerSettings& cwKeyerSettings = m_basebandSource->getCWKeyer().getSettings();
-        swgFreeDVModSettings->setCwKeyer(new SWGSDRangel::SWGCWKeyerSettings());
-        SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings = swgFreeDVModSettings->getCwKeyer();
+        swgFreeDVModSettings->setCwKeyer(new SWGrpx-100::SWGCWKeyerSettings());
+        SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings = swgFreeDVModSettings->getCwKeyer();
         m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
     }
 }

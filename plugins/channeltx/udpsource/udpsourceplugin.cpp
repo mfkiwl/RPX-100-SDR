@@ -33,9 +33,9 @@ const PluginDescriptor UDPSourcePlugin::m_pluginDescriptor = {
 	QStringLiteral("UDP Channel Source"),
 	QStringLiteral("6.3.3"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 UDPSourcePlugin::UDPSourcePlugin(QObject* parent) :

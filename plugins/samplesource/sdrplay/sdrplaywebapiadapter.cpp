@@ -29,11 +29,11 @@ SDRPlayWebAPIAdapter::~SDRPlayWebAPIAdapter()
 {}
 
 int SDRPlayWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSdrPlaySettings(new SWGSDRangel::SWGSDRPlaySettings());
+    response.setSdrPlaySettings(new SWGrpx-100::SWGSDRPlaySettings());
     response.getSdrPlaySettings()->init();
     SDRPlayInput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int SDRPlayWebAPIAdapter::webapiSettingsGet(
 int SDRPlayWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

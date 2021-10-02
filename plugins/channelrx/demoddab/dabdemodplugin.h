@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class DABDemodPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channel.dabdemod")
+    Q_PLUGIN_METADATA(IID "rpx-100.channel.dabdemod")
 
 public:
     explicit DABDemodPlugin(QObject* parent = NULL);

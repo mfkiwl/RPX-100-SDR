@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class StarTrackerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.feature.startracker")
+	Q_PLUGIN_METADATA(IID "rpx-100.feature.startracker")
 
 public:
 	explicit StarTrackerPlugin(QObject* parent = nullptr);

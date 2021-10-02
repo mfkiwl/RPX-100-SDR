@@ -28,7 +28,7 @@ class BasebandSampleSource;
 class DATVModPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channeltx.moddatv")
+    Q_PLUGIN_METADATA(IID "rpx-100.channeltx.moddatv")
 
 public:
     explicit DATVModPlugin(QObject* parent = 0);

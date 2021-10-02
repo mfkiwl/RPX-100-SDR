@@ -15,7 +15,7 @@ RUN sudo mkdir /opt/build \
 WORKDIR /opt/build
 
 FROM base as codegen_server
-RUN mkdir -p /opt/build/sdrangel/swagger/sdrangel
+RUN mkdir -p /opt/build/rpx-100/swagger/rpx-100
 
-WORKDIR /opt/build/sdrangel/swagger/sdrangel
+WORKDIR /opt/build/rpx-100/swagger/rpx-100
 ENTRYPOINT [ "http-server", "-p 8081", "--cors"]

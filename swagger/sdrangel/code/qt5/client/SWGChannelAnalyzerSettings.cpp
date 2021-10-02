@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGChannelAnalyzerSettings::SWGChannelAnalyzerSettings(QString* json) {
     init();
@@ -164,47 +164,47 @@ SWGChannelAnalyzerSettings::fromJson(QString &json) {
 
 void
 SWGChannelAnalyzerSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGSDRangel::setValue(&frequency, pJson["frequency"], "qint32", "");
+    ::SWGrpx-100::setValue(&frequency, pJson["frequency"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&down_sample, pJson["downSample"], "qint32", "");
+    ::SWGrpx-100::setValue(&down_sample, pJson["downSample"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&down_sample_rate, pJson["downSampleRate"], "qint32", "");
+    ::SWGrpx-100::setValue(&down_sample_rate, pJson["downSampleRate"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&bandwidth, pJson["bandwidth"], "qint32", "");
+    ::SWGrpx-100::setValue(&bandwidth, pJson["bandwidth"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&low_cutoff, pJson["lowCutoff"], "qint32", "");
+    ::SWGrpx-100::setValue(&low_cutoff, pJson["lowCutoff"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&span_log2, pJson["spanLog2"], "qint32", "");
+    ::SWGrpx-100::setValue(&span_log2, pJson["spanLog2"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&ssb, pJson["ssb"], "qint32", "");
+    ::SWGrpx-100::setValue(&ssb, pJson["ssb"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&pll, pJson["pll"], "qint32", "");
+    ::SWGrpx-100::setValue(&pll, pJson["pll"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&fll, pJson["fll"], "qint32", "");
+    ::SWGrpx-100::setValue(&fll, pJson["fll"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&costas_loop, pJson["costasLoop"], "qint32", "");
+    ::SWGrpx-100::setValue(&costas_loop, pJson["costasLoop"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&rrc, pJson["rrc"], "qint32", "");
+    ::SWGrpx-100::setValue(&rrc, pJson["rrc"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&rrc_rolloff, pJson["rrcRolloff"], "qint32", "");
+    ::SWGrpx-100::setValue(&rrc_rolloff, pJson["rrcRolloff"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&pll_psk_order, pJson["pllPskOrder"], "qint32", "");
+    ::SWGrpx-100::setValue(&pll_psk_order, pJson["pllPskOrder"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&pll_bandwidth, pJson["pllBandwidth"], "float", "");
+    ::SWGrpx-100::setValue(&pll_bandwidth, pJson["pllBandwidth"], "float", "");
     
-    ::SWGSDRangel::setValue(&pll_damping_factor, pJson["pllDampingFactor"], "float", "");
+    ::SWGrpx-100::setValue(&pll_damping_factor, pJson["pllDampingFactor"], "float", "");
     
-    ::SWGSDRangel::setValue(&pll_loop_gain, pJson["pllLoopGain"], "float", "");
+    ::SWGrpx-100::setValue(&pll_loop_gain, pJson["pllLoopGain"], "float", "");
     
-    ::SWGSDRangel::setValue(&input_type, pJson["inputType"], "qint32", "");
+    ::SWGrpx-100::setValue(&input_type, pJson["inputType"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
+    ::SWGrpx-100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&title, pJson["title"], "QString", "QString");
+    ::SWGrpx-100::setValue(&title, pJson["title"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&spectrum_config, pJson["spectrumConfig"], "SWGGLSpectrum", "SWGGLSpectrum");
+    ::SWGrpx-100::setValue(&spectrum_config, pJson["spectrumConfig"], "SWGGLSpectrum", "SWGGLSpectrum");
     
-    ::SWGSDRangel::setValue(&scope_config, pJson["scopeConfig"], "SWGGLScope", "SWGGLScope");
+    ::SWGrpx-100::setValue(&scope_config, pJson["scopeConfig"], "SWGGLScope", "SWGGLScope");
     
 }
 

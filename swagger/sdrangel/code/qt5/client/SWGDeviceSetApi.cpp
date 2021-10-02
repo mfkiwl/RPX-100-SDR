@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -17,7 +17,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGDeviceSetApi::SWGDeviceSetApi() {}
 
@@ -31,7 +31,7 @@ SWGDeviceSetApi::SWGDeviceSetApi(QString host, QString basePath) {
 void
 SWGDeviceSetApi::devicesetChannelActionsPost(qint32 device_set_index, qint32 channel_index, SWGChannelActions& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -90,7 +90,7 @@ SWGDeviceSetApi::devicesetChannelActionsPostCallback(SWGHttpRequestWorker * work
 void
 SWGDeviceSetApi::devicesetChannelDelete(qint32 device_set_index, qint32 channel_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -146,7 +146,7 @@ SWGDeviceSetApi::devicesetChannelDeleteCallback(SWGHttpRequestWorker * worker) {
 void
 SWGDeviceSetApi::devicesetChannelPost(qint32 device_set_index, SWGChannelSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channel");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channel");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -203,7 +203,7 @@ SWGDeviceSetApi::devicesetChannelPostCallback(SWGHttpRequestWorker * worker) {
 void
 SWGDeviceSetApi::devicesetChannelReportGet(qint32 device_set_index, qint32 channel_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/report");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/report");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -259,7 +259,7 @@ SWGDeviceSetApi::devicesetChannelReportGetCallback(SWGHttpRequestWorker * worker
 void
 SWGDeviceSetApi::devicesetChannelSettingsGet(qint32 device_set_index, qint32 channel_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -315,7 +315,7 @@ SWGDeviceSetApi::devicesetChannelSettingsGetCallback(SWGHttpRequestWorker * work
 void
 SWGDeviceSetApi::devicesetChannelSettingsPatch(qint32 device_set_index, qint32 channel_index, SWGChannelSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -374,7 +374,7 @@ SWGDeviceSetApi::devicesetChannelSettingsPatchCallback(SWGHttpRequestWorker * wo
 void
 SWGDeviceSetApi::devicesetChannelSettingsPut(qint32 device_set_index, qint32 channel_index, SWGChannelSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -433,7 +433,7 @@ SWGDeviceSetApi::devicesetChannelSettingsPutCallback(SWGHttpRequestWorker * work
 void
 SWGDeviceSetApi::devicesetChannelsReportGet(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/channels/report");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/channels/report");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -487,7 +487,7 @@ SWGDeviceSetApi::devicesetChannelsReportGetCallback(SWGHttpRequestWorker * worke
 void
 SWGDeviceSetApi::devicesetDeviceActionsPost(qint32 device_set_index, SWGDeviceActions& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/actions");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/actions");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -544,7 +544,7 @@ SWGDeviceSetApi::devicesetDeviceActionsPostCallback(SWGHttpRequestWorker * worke
 void
 SWGDeviceSetApi::devicesetDevicePut(qint32 device_set_index, SWGDeviceListItem& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -601,7 +601,7 @@ SWGDeviceSetApi::devicesetDevicePutCallback(SWGHttpRequestWorker * worker) {
 void
 SWGDeviceSetApi::devicesetDeviceReportGet(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/report");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/report");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -655,7 +655,7 @@ SWGDeviceSetApi::devicesetDeviceReportGetCallback(SWGHttpRequestWorker * worker)
 void
 SWGDeviceSetApi::devicesetDeviceRunDelete(qint32 device_set_index, SWGDeviceSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/run");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/run");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -712,7 +712,7 @@ SWGDeviceSetApi::devicesetDeviceRunDeleteCallback(SWGHttpRequestWorker * worker)
 void
 SWGDeviceSetApi::devicesetDeviceRunGet(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/run");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/run");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -766,7 +766,7 @@ SWGDeviceSetApi::devicesetDeviceRunGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGDeviceSetApi::devicesetDeviceRunPost(qint32 device_set_index, SWGDeviceSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/run");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/run");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -823,7 +823,7 @@ SWGDeviceSetApi::devicesetDeviceRunPostCallback(SWGHttpRequestWorker * worker) {
 void
 SWGDeviceSetApi::devicesetDeviceSettingsGet(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -877,7 +877,7 @@ SWGDeviceSetApi::devicesetDeviceSettingsGetCallback(SWGHttpRequestWorker * worke
 void
 SWGDeviceSetApi::devicesetDeviceSettingsPatch(qint32 device_set_index, SWGDeviceSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -934,7 +934,7 @@ SWGDeviceSetApi::devicesetDeviceSettingsPatchCallback(SWGHttpRequestWorker * wor
 void
 SWGDeviceSetApi::devicesetDeviceSettingsPut(qint32 device_set_index, SWGDeviceSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/device/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/device/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -991,7 +991,7 @@ SWGDeviceSetApi::devicesetDeviceSettingsPutCallback(SWGHttpRequestWorker * worke
 void
 SWGDeviceSetApi::devicesetDeviceSubsystemRunDelete(qint32 device_set_index, qint32 subsystem_index, SWGDeviceSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1050,7 +1050,7 @@ SWGDeviceSetApi::devicesetDeviceSubsystemRunDeleteCallback(SWGHttpRequestWorker 
 void
 SWGDeviceSetApi::devicesetDeviceSubsystemRunGet(qint32 device_set_index, qint32 subsystem_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1106,7 +1106,7 @@ SWGDeviceSetApi::devicesetDeviceSubsystemRunGetCallback(SWGHttpRequestWorker * w
 void
 SWGDeviceSetApi::devicesetDeviceSubsystemRunPost(qint32 device_set_index, qint32 subsystem_index, SWGDeviceSettings& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/subdevice/{subsystemIndex}/run");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1165,7 +1165,7 @@ SWGDeviceSetApi::devicesetDeviceSubsystemRunPostCallback(SWGHttpRequestWorker * 
 void
 SWGDeviceSetApi::devicesetFocusPatch(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/focus");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/focus");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1219,7 +1219,7 @@ SWGDeviceSetApi::devicesetFocusPatchCallback(SWGHttpRequestWorker * worker) {
 void
 SWGDeviceSetApi::devicesetGet(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1273,7 +1273,7 @@ SWGDeviceSetApi::devicesetGetCallback(SWGHttpRequestWorker * worker) {
 void
 SWGDeviceSetApi::devicesetSpectrumServerDelete(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/spectrum/server");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/spectrum/server");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1327,7 +1327,7 @@ SWGDeviceSetApi::devicesetSpectrumServerDeleteCallback(SWGHttpRequestWorker * wo
 void
 SWGDeviceSetApi::devicesetSpectrumServerGet(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/spectrum/server");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/spectrum/server");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1381,7 +1381,7 @@ SWGDeviceSetApi::devicesetSpectrumServerGetCallback(SWGHttpRequestWorker * worke
 void
 SWGDeviceSetApi::devicesetSpectrumServerPost(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/spectrum/server");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/spectrum/server");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1435,7 +1435,7 @@ SWGDeviceSetApi::devicesetSpectrumServerPostCallback(SWGHttpRequestWorker * work
 void
 SWGDeviceSetApi::devicesetSpectrumSettingsGet(qint32 device_set_index) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/spectrum/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/spectrum/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1489,7 +1489,7 @@ SWGDeviceSetApi::devicesetSpectrumSettingsGetCallback(SWGHttpRequestWorker * wor
 void
 SWGDeviceSetApi::devicesetSpectrumSettingsPatch(qint32 device_set_index, SWGGLSpectrum& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/spectrum/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/spectrum/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1546,7 +1546,7 @@ SWGDeviceSetApi::devicesetSpectrumSettingsPatchCallback(SWGHttpRequestWorker * w
 void
 SWGDeviceSetApi::devicesetSpectrumSettingsPut(qint32 device_set_index, SWGGLSpectrum& body) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset/{deviceSetIndex}/spectrum/settings");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset/{deviceSetIndex}/spectrum/settings");
 
     QString device_set_indexPathParam("{"); device_set_indexPathParam.append("deviceSetIndex").append("}");
     fullPath.replace(device_set_indexPathParam, stringValue(device_set_index));
@@ -1603,7 +1603,7 @@ SWGDeviceSetApi::devicesetSpectrumSettingsPutCallback(SWGHttpRequestWorker * wor
 void
 SWGDeviceSetApi::instanceDeviceSetDelete() {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset");
 
 
 
@@ -1655,7 +1655,7 @@ SWGDeviceSetApi::instanceDeviceSetDeleteCallback(SWGHttpRequestWorker * worker) 
 void
 SWGDeviceSetApi::instanceDeviceSetPost(qint32 direction) {
     QString fullPath;
-    fullPath.append(this->host).append(this->basePath).append("/sdrangel/deviceset");
+    fullPath.append(this->host).append(this->basePath).append("/rpx-100/deviceset");
 
 
     if (fullPath.indexOf("?") > 0)

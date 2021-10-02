@@ -29,7 +29,7 @@
 #include "export.h"
 
 template<uint32_t HBFilterOrder>
-class SDRANGEL_API IntHalfbandFilterST {
+class rpx-100_API IntHalfbandFilterST {
 public:
     IntHalfbandFilterST();
 

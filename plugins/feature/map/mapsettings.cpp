@@ -32,11 +32,11 @@ const QStringList MapSettings::m_pipeTypes = {
 };
 
 const QStringList MapSettings::m_pipeURIs = {
-    QStringLiteral("sdrangel.channel.adsbdemod"),
-    QStringLiteral("sdrangel.feature.ais"),
-    QStringLiteral("sdrangel.feature.aprs"),
-    QStringLiteral("sdrangel.feature.startracker"),
-    QStringLiteral("sdrangel.feature.satellitetracker")
+    QStringLiteral("rpx-100.channel.adsbdemod"),
+    QStringLiteral("rpx-100.feature.ais"),
+    QStringLiteral("rpx-100.feature.aprs"),
+    QStringLiteral("rpx-100.feature.startracker"),
+    QStringLiteral("rpx-100.feature.satellitetracker")
 };
 
 // GUI combo box should match ordering in this list

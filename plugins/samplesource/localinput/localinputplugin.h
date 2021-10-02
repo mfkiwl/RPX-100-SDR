@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define LOCALINPUT_DEVICE_TYPE_ID "sdrangel.samplesource.localinput"
+#define LOCALINPUT_DEVICE_TYPE_ID "rpx-100.samplesource.localinput"
 
 class PluginAPI;
 

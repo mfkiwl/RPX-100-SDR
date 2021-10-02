@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2017 F4HKW                                                      //
-// for F4EXB / SDRAngel                                                          //
+// for F4EXB / rpx-100                                                          //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -29,7 +29,7 @@ class ATVDemodPlugin : public QObject, PluginInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "sdrangel.channel.demodatv")
+    Q_PLUGIN_METADATA(IID "rpx-100.channel.demodatv")
 
 public:
     explicit ATVDemodPlugin(QObject* ptrParent = NULL);

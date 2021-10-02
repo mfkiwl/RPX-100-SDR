@@ -29,11 +29,11 @@ FileOutputWebAPIAdapter::~FileOutputWebAPIAdapter()
 {}
 
 int FileOutputWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGDeviceSettings& response,
+        SWGrpx-100::SWGDeviceSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setFileOutputSettings(new SWGSDRangel::SWGFileOutputSettings());
+    response.setFileOutputSettings(new SWGrpx-100::SWGFileOutputSettings());
     response.getFileOutputSettings()->init();
     FileOutput::webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -42,7 +42,7 @@ int FileOutputWebAPIAdapter::webapiSettingsGet(
 int FileOutputWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response, // query + response
+        SWGrpx-100::SWGDeviceSettings& response, // query + response
         QString& errorMessage)
 {
     (void) force; // no action

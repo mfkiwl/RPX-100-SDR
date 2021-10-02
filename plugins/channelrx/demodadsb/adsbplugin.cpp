@@ -32,9 +32,9 @@ const PluginDescriptor ADSBPlugin::m_pluginDescriptor = {
     QStringLiteral("ADS-B Demodulator"),
     QStringLiteral("6.10.0"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 ADSBPlugin::ADSBPlugin(QObject* parent) :

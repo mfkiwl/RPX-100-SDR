@@ -34,7 +34,7 @@
 MESSAGE_CLASS_DEFINITION(StarTracker::MsgConfigureStarTracker, Message)
 MESSAGE_CLASS_DEFINITION(StarTracker::MsgStartStop, Message)
 
-const char* const StarTracker::m_featureIdURI = "sdrangel.feature.startracker";
+const char* const StarTracker::m_featureIdURI = "rpx-100.feature.startracker";
 const char* const StarTracker::m_featureId = "StarTracker";
 
 StarTracker::StarTracker(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -235,7 +235,7 @@ void StarTracker::applySettings(const StarTrackerSettings& settings, bool force)
 }
 
 int StarTracker::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -246,11 +246,11 @@ int StarTracker::webapiRun(bool run,
 }
 
 int StarTracker::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setStarTrackerSettings(new SWGSDRangel::SWGStarTrackerSettings());
+    response.setStarTrackerSettings(new SWGrpx-100::SWGStarTrackerSettings());
     response.getStarTrackerSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -259,7 +259,7 @@ int StarTracker::webapiSettingsGet(
 int StarTracker::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -281,7 +281,7 @@ int StarTracker::webapiSettingsPutPatch(
 }
 
 void StarTracker::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const StarTrackerSettings& settings)
 {
     response.getStarTrackerSettings()->setTarget(new QString(settings.m_target));
@@ -325,7 +325,7 @@ void StarTracker::webapiFormatFeatureSettings(
 void StarTracker::webapiUpdateFeatureSettings(
     StarTrackerSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("target")) {
         settings.m_target = *response.getStarTrackerSettings()->getTarget();
@@ -400,12 +400,12 @@ void StarTracker::webapiUpdateFeatureSettings(
 
 void StarTracker::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const StarTrackerSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("StarTracker"));
-    swgFeatureSettings->setStarTrackerSettings(new SWGSDRangel::SWGStarTrackerSettings());
-    SWGSDRangel::SWGStarTrackerSettings *swgStarTrackerSettings = swgFeatureSettings->getStarTrackerSettings();
+    swgFeatureSettings->setStarTrackerSettings(new SWGrpx-100::SWGStarTrackerSettings());
+    SWGrpx-100::SWGStarTrackerSettings *swgStarTrackerSettings = swgFeatureSettings->getStarTrackerSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -464,7 +464,7 @@ void StarTracker::webapiReverseSendSettings(QList<QString>& featureSettingsKeys,
         swgStarTrackerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

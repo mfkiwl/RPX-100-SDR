@@ -33,9 +33,9 @@ const PluginDescriptor FileInputPlugin::m_pluginDescriptor = {
 	QStringLiteral("File device input"),
     QStringLiteral("6.16.2"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 static constexpr const char* const m_hardwareID = "FileInput";

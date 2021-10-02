@@ -32,9 +32,9 @@ const PluginDescriptor DSDDemodPlugin::m_pluginDescriptor = {
 	QStringLiteral("DSD Demodulator"),
     QStringLiteral("6.10.1"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/sdrangel"),
+	QStringLiteral("https://github.com/f4exb/rpx-100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/sdrangel")
+	QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 DSDDemodPlugin::DSDDemodPlugin(QObject* parent) :

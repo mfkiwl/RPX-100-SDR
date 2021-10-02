@@ -611,7 +611,7 @@ void CWKeyer::applySettings(const CWKeyerSettings& settings, bool force)
 void CWKeyer::webapiSettingsPutPatch(
     const QStringList& channelSettingsKeys,
     CWKeyerSettings& cwKeyerSettings,
-    SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings
+    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings
 )
 {
     if (channelSettingsKeys.contains("cwKeyer.loop")) {
@@ -647,7 +647,7 @@ void CWKeyer::webapiSettingsPutPatch(
 }
 
 void CWKeyer::webapiFormatChannelSettings(
-    SWGSDRangel::SWGCWKeyerSettings *apiCwKeyerSettings,
+    SWGrpx-100::SWGCWKeyerSettings *apiCwKeyerSettings,
     const CWKeyerSettings& cwKeyerSettings
 )
 {

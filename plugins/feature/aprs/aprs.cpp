@@ -37,7 +37,7 @@
 MESSAGE_CLASS_DEFINITION(APRS::MsgConfigureAPRS, Message)
 MESSAGE_CLASS_DEFINITION(APRS::MsgReportWorker, Message)
 
-const char* const APRS::m_featureIdURI = "sdrangel.feature.aprs";
+const char* const APRS::m_featureIdURI = "rpx-100.feature.aprs";
 const char* const APRS::m_featureId = "APRS";
 
 APRS::APRS(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -222,7 +222,7 @@ void APRS::applySettings(const APRSSettings& settings, bool force)
 }
 
 int APRS::webapiRun(bool run,
-    SWGSDRangel::SWGDeviceState& response,
+    SWGrpx-100::SWGDeviceState& response,
     QString& errorMessage)
 {
     (void) run;
@@ -235,11 +235,11 @@ int APRS::webapiRun(bool run,
 }
 
 int APRS::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAprsSettings(new SWGSDRangel::SWGAPRSSettings());
+    response.setAprsSettings(new SWGrpx-100::SWGAPRSSettings());
     response.getAprsSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -248,7 +248,7 @@ int APRS::webapiSettingsGet(
 int APRS::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -271,7 +271,7 @@ int APRS::webapiSettingsPutPatch(
 }
 
 void APRS::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const APRSSettings& settings)
 {
     response.getAprsSettings()->setIgateServer(new QString(settings.m_igateServer));
@@ -304,7 +304,7 @@ void APRS::webapiFormatFeatureSettings(
 void APRS::webapiUpdateFeatureSettings(
     APRSSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("igateServer")) {
         settings.m_igateServer = *response.getAprsSettings()->getIgateServer();
@@ -346,12 +346,12 @@ void APRS::webapiUpdateFeatureSettings(
 
 void APRS::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const APRSSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("APRS"));
-    swgFeatureSettings->setAprsSettings(new SWGSDRangel::SWGAPRSSettings());
-    SWGSDRangel::SWGAPRSSettings *swgAPRSSettings = swgFeatureSettings->getAprsSettings();
+    swgFeatureSettings->setAprsSettings(new SWGrpx-100::SWGAPRSSettings());
+    SWGrpx-100::SWGAPRSSettings *swgAPRSSettings = swgFeatureSettings->getAprsSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -377,7 +377,7 @@ void APRS::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const 
         swgAPRSSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

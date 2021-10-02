@@ -1,6 +1,6 @@
 /**
- * SDRangel
- * This is the web REST/JSON API of SDRangel SDR software. SDRangel is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In SDRangel GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /sdrangel/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
+ * rpx-100
+ * This is the web REST/JSON API of rpx-100 SDR software. rpx-100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube    ---   Limitations and specifcities:    * In rpx-100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /rpx-100/deviceset with DELETE method.   * Preset import and export from/to file is a server only feature.   * Device set focus is a GUI only feature.   * The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator   * The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time   * The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time    --- 
  *
  * OpenAPI spec version: 6.0.0
  * Contact: f4exb06@gmail.com
@@ -20,7 +20,7 @@
 #include <QObject>
 #include <QDebug>
 
-namespace SWGSDRangel {
+namespace SWGrpx-100 {
 
 SWGSatelliteTrackerSettings::SWGSatelliteTrackerSettings(QString* json) {
     init();
@@ -268,75 +268,75 @@ SWGSatelliteTrackerSettings::fromJson(QString &json) {
 
 void
 SWGSatelliteTrackerSettings::fromJsonObject(QJsonObject &pJson) {
-    ::SWGSDRangel::setValue(&latitude, pJson["latitude"], "float", "");
+    ::SWGrpx-100::setValue(&latitude, pJson["latitude"], "float", "");
     
-    ::SWGSDRangel::setValue(&longitude, pJson["longitude"], "float", "");
+    ::SWGrpx-100::setValue(&longitude, pJson["longitude"], "float", "");
     
-    ::SWGSDRangel::setValue(&height_above_sea_level, pJson["heightAboveSeaLevel"], "float", "");
+    ::SWGrpx-100::setValue(&height_above_sea_level, pJson["heightAboveSeaLevel"], "float", "");
     
-    ::SWGSDRangel::setValue(&target, pJson["target"], "QString", "QString");
-    
-    
-    ::SWGSDRangel::setValue(&satellites, pJson["satellites"], "QList", "QString");
-    
-    ::SWGSDRangel::setValue(&tles, pJson["tles"], "QList", "QString");
-    ::SWGSDRangel::setValue(&date_time, pJson["dateTime"], "QString", "QString");
-    
-    ::SWGSDRangel::setValue(&min_aos_elevation, pJson["minAOSElevation"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&min_pass_elevation, pJson["minPassElevation"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&rotator_max_azimuth, pJson["rotatorMaxAzimuth"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&rotator_max_elevation, pJson["rotatorMaxElevation"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&az_el_units, pJson["azElUnits"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&ground_track_points, pJson["groundTrackPoints"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&date_format, pJson["dateFormat"], "QString", "QString");
-    
-    ::SWGSDRangel::setValue(&utc, pJson["utc"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&update_period, pJson["updatePeriod"], "float", "");
-    
-    ::SWGSDRangel::setValue(&doppler_period, pJson["dopplerPeriod"], "float", "");
-    
-    ::SWGSDRangel::setValue(&prediction_period, pJson["predictionPeriod"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&pass_start_time, pJson["passStartTime"], "QString", "QString");
-    
-    ::SWGSDRangel::setValue(&pass_finish_time, pJson["passFinishTime"], "QString", "QString");
-    
-    ::SWGSDRangel::setValue(&default_frequency, pJson["defaultFrequency"], "float", "");
-    
-    ::SWGSDRangel::setValue(&draw_on_map, pJson["drawOnMap"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&auto_target, pJson["autoTarget"], "qint32", "");
-    
-    ::SWGSDRangel::setValue(&aos_speech, pJson["aosSpeech"], "QString", "QString");
-    
-    ::SWGSDRangel::setValue(&los_speech, pJson["losSpeech"], "QString", "QString");
-    
-    ::SWGSDRangel::setValue(&aos_command, pJson["aosCommand"], "QString", "QString");
-    
-    ::SWGSDRangel::setValue(&los_command, pJson["losCommand"], "QString", "QString");
+    ::SWGrpx-100::setValue(&target, pJson["target"], "QString", "QString");
     
     
-    ::SWGSDRangel::setValue(&device_settings, pJson["deviceSettings"], "QList", "SWGSatelliteDeviceSettingsList");
-    ::SWGSDRangel::setValue(&title, pJson["title"], "QString", "QString");
+    ::SWGrpx-100::setValue(&satellites, pJson["satellites"], "QList", "QString");
     
-    ::SWGSDRangel::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
+    ::SWGrpx-100::setValue(&tles, pJson["tles"], "QList", "QString");
+    ::SWGrpx-100::setValue(&date_time, pJson["dateTime"], "QString", "QString");
     
-    ::SWGSDRangel::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
+    ::SWGrpx-100::setValue(&min_aos_elevation, pJson["minAOSElevation"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
+    ::SWGrpx-100::setValue(&min_pass_elevation, pJson["minPassElevation"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
+    ::SWGrpx-100::setValue(&rotator_max_azimuth, pJson["rotatorMaxAzimuth"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&reverse_api_feature_set_index, pJson["reverseAPIFeatureSetIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&rotator_max_elevation, pJson["rotatorMaxElevation"], "qint32", "");
     
-    ::SWGSDRangel::setValue(&reverse_api_feature_index, pJson["reverseAPIFeatureIndex"], "qint32", "");
+    ::SWGrpx-100::setValue(&az_el_units, pJson["azElUnits"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&ground_track_points, pJson["groundTrackPoints"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&date_format, pJson["dateFormat"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&utc, pJson["utc"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&update_period, pJson["updatePeriod"], "float", "");
+    
+    ::SWGrpx-100::setValue(&doppler_period, pJson["dopplerPeriod"], "float", "");
+    
+    ::SWGrpx-100::setValue(&prediction_period, pJson["predictionPeriod"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&pass_start_time, pJson["passStartTime"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&pass_finish_time, pJson["passFinishTime"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&default_frequency, pJson["defaultFrequency"], "float", "");
+    
+    ::SWGrpx-100::setValue(&draw_on_map, pJson["drawOnMap"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&auto_target, pJson["autoTarget"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&aos_speech, pJson["aosSpeech"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&los_speech, pJson["losSpeech"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&aos_command, pJson["aosCommand"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&los_command, pJson["losCommand"], "QString", "QString");
+    
+    
+    ::SWGrpx-100::setValue(&device_settings, pJson["deviceSettings"], "QList", "SWGSatelliteDeviceSettingsList");
+    ::SWGrpx-100::setValue(&title, pJson["title"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&rgb_color, pJson["rgbColor"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&use_reverse_api, pJson["useReverseAPI"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&reverse_api_address, pJson["reverseAPIAddress"], "QString", "QString");
+    
+    ::SWGrpx-100::setValue(&reverse_api_port, pJson["reverseAPIPort"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&reverse_api_feature_set_index, pJson["reverseAPIFeatureSetIndex"], "qint32", "");
+    
+    ::SWGrpx-100::setValue(&reverse_api_feature_index, pJson["reverseAPIFeatureIndex"], "qint32", "");
     
 }
 

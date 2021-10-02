@@ -32,9 +32,9 @@ const PluginDescriptor SatelliteTrackerPlugin::m_pluginDescriptor = {
     QStringLiteral("Satellite Tracker"),
     QStringLiteral("6.16.5"),
     QStringLiteral("(c) Jon Beniston, M7RCE and Daniel Warner (SGP4 library)"),
-    QStringLiteral("https://github.com/f4exb/sdrangel"),
+    QStringLiteral("https://github.com/f4exb/rpx-100"),
     true,
-    QStringLiteral("https://github.com/f4exb/sdrangel")
+    QStringLiteral("https://github.com/f4exb/rpx-100")
 };
 
 SatelliteTrackerPlugin::SatelliteTrackerPlugin(QObject* parent) :

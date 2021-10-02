@@ -405,41 +405,41 @@ public:
 	virtual bool handleMessage(const Message& message);
 
 	virtual int webapiSettingsGet(
-	            SWGSDRangel::SWGDeviceSettings& response,
+	            SWGrpx-100::SWGDeviceSettings& response,
 	            QString& errorMessage);
 
 	virtual int webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage);
 
     virtual int webapiRunGet(
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiActionsPost(
             const QStringList& deviceActionsKeys,
-            SWGSDRangel::SWGDeviceActions& query,
+            SWGrpx-100::SWGDeviceActions& query,
             QString& errorMessage);
 
     virtual int webapiRun(
             bool run,
-            SWGSDRangel::SWGDeviceState& response,
+            SWGrpx-100::SWGDeviceState& response,
             QString& errorMessage);
 
     virtual int webapiReportGet(
-            SWGSDRangel::SWGDeviceReport& response,
+            SWGrpx-100::SWGDeviceReport& response,
             QString& errorMessage);
 
     static void webapiFormatDeviceSettings(
-            SWGSDRangel::SWGDeviceSettings& response,
+            SWGrpx-100::SWGDeviceSettings& response,
             const SigMFFileInputSettings& settings);
 
     static void webapiUpdateDeviceSettings(
             SigMFFileInputSettings& settings,
             const QStringList& deviceSettingsKeys,
-            SWGSDRangel::SWGDeviceSettings& response);
+            SWGrpx-100::SWGDeviceSettings& response);
 
 private:
 	DeviceAPI *m_deviceAPI;
@@ -473,14 +473,14 @@ private:
     void stopWorker();
 	bool openFileStreams(const QString& fileName);
     void extractMeta(
-        sigmf::SigMF<sigmf::Global<core::DescrT, sdrangel::DescrT>,
-        sigmf::Capture<core::DescrT, sdrangel::DescrT>,
+        sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
+        sigmf::Capture<core::DescrT, rpx-100::DescrT>,
         sigmf::Annotation<core::DescrT> >* metaRecord,
         uint64_t dataFileSize
     );
     void extractCaptures(
-        sigmf::SigMF<sigmf::Global<core::DescrT, sdrangel::DescrT>,
-        sigmf::Capture<core::DescrT, sdrangel::DescrT>,
+        sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
+        sigmf::Capture<core::DescrT, rpx-100::DescrT>,
         sigmf::Annotation<core::DescrT> >* metaRecord
     );
     static void analyzeDataType(const std::string& dataTypeString, SigMFFileDataType& dataType);
@@ -490,7 +490,7 @@ private:
 	void seekTrackMillis(int seekMillis);
     void seekFileMillis(int seekMillis);
 	bool applySettings(const SigMFFileInputSettings& settings, bool force = false);
-    void webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response);
+    void webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response);
     void webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const SigMFFileInputSettings& settings, bool force);
     void webapiReverseSendStartStop(bool start);
 

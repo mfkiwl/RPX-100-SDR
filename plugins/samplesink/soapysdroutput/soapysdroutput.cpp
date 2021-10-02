@@ -1327,11 +1327,11 @@ bool SoapySDROutput::applySettings(const SoapySDROutputSettings& settings, bool 
 }
 
 int SoapySDROutput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSoapySdrOutputSettings(new SWGSDRangel::SWGSoapySDROutputSettings());
+    response.setSoapySdrOutputSettings(new SWGrpx-100::SWGSoapySDROutputSettings());
     response.getSoapySdrOutputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -1340,7 +1340,7 @@ int SoapySDROutput::webapiSettingsGet(
 int SoapySDROutput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -1363,7 +1363,7 @@ int SoapySDROutput::webapiSettingsPutPatch(
 void SoapySDROutput::webapiUpdateDeviceSettings(
         SoapySDROutputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getSoapySdrOutputSettings()->getCenterFrequency();
@@ -1392,7 +1392,7 @@ void SoapySDROutput::webapiUpdateDeviceSettings(
 
     if (deviceSettingsKeys.contains("tunableElements"))
     {
-        QList<SWGSDRangel::SWGArgValue*> *tunableElements = response.getSoapySdrOutputSettings()->getTunableElements();
+        QList<SWGrpx-100::SWGArgValue*> *tunableElements = response.getSoapySdrOutputSettings()->getTunableElements();
 
         for (const auto &itArg : *tunableElements)
         {
@@ -1412,7 +1412,7 @@ void SoapySDROutput::webapiUpdateDeviceSettings(
 
     if (deviceSettingsKeys.contains("individualGains"))
     {
-        QList<SWGSDRangel::SWGArgValue*> *individualGains = response.getSoapySdrOutputSettings()->getIndividualGains();
+        QList<SWGrpx-100::SWGArgValue*> *individualGains = response.getSoapySdrOutputSettings()->getIndividualGains();
 
         for (const auto &itArg : *individualGains)
         {
@@ -1448,7 +1448,7 @@ void SoapySDROutput::webapiUpdateDeviceSettings(
 
     if (deviceSettingsKeys.contains("streamArgSettings"))
     {
-        QList<SWGSDRangel::SWGArgValue*> *streamArgSettings = response.getSoapySdrOutputSettings()->getStreamArgSettings();
+        QList<SWGrpx-100::SWGArgValue*> *streamArgSettings = response.getSoapySdrOutputSettings()->getStreamArgSettings();
 
         for (const auto itArg : *streamArgSettings)
         {
@@ -1462,7 +1462,7 @@ void SoapySDROutput::webapiUpdateDeviceSettings(
 
     if (deviceSettingsKeys.contains("deviceArgSettings"))
     {
-        QList<SWGSDRangel::SWGArgValue*> *deviceArgSettings = response.getSoapySdrOutputSettings()->getDeviceArgSettings();
+        QList<SWGrpx-100::SWGArgValue*> *deviceArgSettings = response.getSoapySdrOutputSettings()->getDeviceArgSettings();
 
         for (const auto itArg : *deviceArgSettings)
         {
@@ -1488,17 +1488,17 @@ void SoapySDROutput::webapiUpdateDeviceSettings(
     }
 }
 
-int SoapySDROutput::webapiReportGet(SWGSDRangel::SWGDeviceReport& response, QString& errorMessage)
+int SoapySDROutput::webapiReportGet(SWGrpx-100::SWGDeviceReport& response, QString& errorMessage)
 {
     (void) errorMessage;
-    response.setSoapySdrOutputReport(new SWGSDRangel::SWGSoapySDRReport());
+    response.setSoapySdrOutputReport(new SWGrpx-100::SWGSoapySDRReport());
     response.getSoapySdrOutputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
 int SoapySDROutput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1508,7 +1508,7 @@ int SoapySDROutput::webapiRunGet(
 
 int SoapySDROutput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1525,7 +1525,7 @@ int SoapySDROutput::webapiRun(
     return 200;
 }
 
-void SoapySDROutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const SoapySDROutputSettings& settings)
+void SoapySDROutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const SoapySDROutputSettings& settings)
 {
     response.getSoapySdrOutputSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getSoapySdrOutputSettings()->setLOppmTenths(settings.m_LOppmTenths);
@@ -1543,12 +1543,12 @@ void SoapySDROutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     if (response.getSoapySdrOutputSettings()->getTunableElements()) {
         response.getSoapySdrOutputSettings()->getTunableElements()->clear();
     } else {
-        response.getSoapySdrOutputSettings()->setTunableElements(new QList<SWGSDRangel::SWGArgValue*>);
+        response.getSoapySdrOutputSettings()->setTunableElements(new QList<SWGrpx-100::SWGArgValue*>);
     }
 
     for (const auto itName : settings.m_tunableElements.keys())
     {
-        response.getSoapySdrOutputSettings()->getTunableElements()->append(new SWGSDRangel::SWGArgValue);
+        response.getSoapySdrOutputSettings()->getTunableElements()->append(new SWGrpx-100::SWGArgValue);
         response.getSoapySdrOutputSettings()->getTunableElements()->back()->setKey(new QString(  itName));
         double value = settings.m_tunableElements.value(itName);
         response.getSoapySdrOutputSettings()->getTunableElements()->back()->setValueString(new QString(tr("%1").arg(value)));
@@ -1561,12 +1561,12 @@ void SoapySDROutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     if (response.getSoapySdrOutputSettings()->getIndividualGains()) {
         response.getSoapySdrOutputSettings()->getIndividualGains()->clear();
     } else {
-        response.getSoapySdrOutputSettings()->setIndividualGains(new QList<SWGSDRangel::SWGArgValue*>);
+        response.getSoapySdrOutputSettings()->setIndividualGains(new QList<SWGrpx-100::SWGArgValue*>);
     }
 
     for (const auto itName : settings.m_individualGains.keys())
     {
-        response.getSoapySdrOutputSettings()->getIndividualGains()->append(new SWGSDRangel::SWGArgValue);
+        response.getSoapySdrOutputSettings()->getIndividualGains()->append(new SWGrpx-100::SWGArgValue);
         response.getSoapySdrOutputSettings()->getIndividualGains()->back()->setKey(new QString(itName));
         double value = settings.m_individualGains.value(itName);
         response.getSoapySdrOutputSettings()->getIndividualGains()->back()->setValueString(new QString(tr("%1").arg(value)));
@@ -1578,14 +1578,14 @@ void SoapySDROutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     response.getSoapySdrOutputSettings()->setAutoIqCorrection(settings.m_autoIQCorrection ? 1 : 0);
 
     if (!response.getSoapySdrOutputSettings()->getDcCorrection()) {
-        response.getSoapySdrOutputSettings()->setDcCorrection(new SWGSDRangel::SWGComplex());
+        response.getSoapySdrOutputSettings()->setDcCorrection(new SWGrpx-100::SWGComplex());
     }
 
     response.getSoapySdrOutputSettings()->getDcCorrection()->setReal(settings.m_dcCorrection.real());
     response.getSoapySdrOutputSettings()->getDcCorrection()->setImag(settings.m_dcCorrection.imag());
 
     if (!response.getSoapySdrOutputSettings()->getIqCorrection()) {
-        response.getSoapySdrOutputSettings()->setIqCorrection(new SWGSDRangel::SWGComplex());
+        response.getSoapySdrOutputSettings()->setIqCorrection(new SWGrpx-100::SWGComplex());
     }
 
     response.getSoapySdrOutputSettings()->getIqCorrection()->setReal(settings.m_iqCorrection.real());
@@ -1594,12 +1594,12 @@ void SoapySDROutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     if (response.getSoapySdrOutputSettings()->getStreamArgSettings()) {
         response.getSoapySdrOutputSettings()->getStreamArgSettings()->clear();
     } else {
-        response.getSoapySdrOutputSettings()->setStreamArgSettings(new QList<SWGSDRangel::SWGArgValue*>);
+        response.getSoapySdrOutputSettings()->setStreamArgSettings(new QList<SWGrpx-100::SWGArgValue*>);
     }
 
     for (const auto itName : settings.m_streamArgSettings.keys())
     {
-        response.getSoapySdrOutputSettings()->getStreamArgSettings()->append(new SWGSDRangel::SWGArgValue);
+        response.getSoapySdrOutputSettings()->getStreamArgSettings()->append(new SWGrpx-100::SWGArgValue);
         response.getSoapySdrOutputSettings()->getStreamArgSettings()->back()->setKey(new QString(itName));
         const QVariant& v = settings.m_streamArgSettings.value(itName);
         webapiFormatArgValue(v, response.getSoapySdrOutputSettings()->getStreamArgSettings()->back());
@@ -1608,12 +1608,12 @@ void SoapySDROutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     if (response.getSoapySdrOutputSettings()->getDeviceArgSettings()) {
         response.getSoapySdrOutputSettings()->getDeviceArgSettings()->clear();
     } else {
-        response.getSoapySdrOutputSettings()->setDeviceArgSettings(new QList<SWGSDRangel::SWGArgValue*>);
+        response.getSoapySdrOutputSettings()->setDeviceArgSettings(new QList<SWGrpx-100::SWGArgValue*>);
     }
 
     for (const auto itName : settings.m_deviceArgSettings.keys())
     {
-        response.getSoapySdrOutputSettings()->getDeviceArgSettings()->append(new SWGSDRangel::SWGArgValue);
+        response.getSoapySdrOutputSettings()->getDeviceArgSettings()->append(new SWGrpx-100::SWGArgValue);
         response.getSoapySdrOutputSettings()->getDeviceArgSettings()->back()->setKey(new QString(itName));
         const QVariant& v = settings.m_deviceArgSettings.value(itName);
         webapiFormatArgValue(v, response.getSoapySdrOutputSettings()->getDeviceArgSettings()->back());
@@ -1631,31 +1631,31 @@ void SoapySDROutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& 
     response.getSoapySdrOutputSettings()->setReverseApiDeviceIndex(settings.m_reverseAPIDeviceIndex);
 }
 
-void SoapySDROutput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void SoapySDROutput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     const DeviceSoapySDRParams::ChannelSettings* channelSettings = m_deviceShared.m_deviceParams->getTxChannelSettings(m_deviceShared.m_channel);
 
-    response.getSoapySdrOutputReport()->setDeviceSettingsArgs(new QList<SWGSDRangel::SWGArgInfo*>);
+    response.getSoapySdrOutputReport()->setDeviceSettingsArgs(new QList<SWGrpx-100::SWGArgInfo*>);
 
     for (const auto itArg : m_deviceShared.m_deviceParams->getDeviceArgs())
     {
-        response.getSoapySdrOutputReport()->getDeviceSettingsArgs()->append(new SWGSDRangel::SWGArgInfo);
+        response.getSoapySdrOutputReport()->getDeviceSettingsArgs()->append(new SWGrpx-100::SWGArgInfo);
         webapiFormatArgInfo(itArg, response.getSoapySdrOutputReport()->getDeviceSettingsArgs()->back());
     }
 
-    response.getSoapySdrOutputReport()->setStreamSettingsArgs(new QList<SWGSDRangel::SWGArgInfo*>);
+    response.getSoapySdrOutputReport()->setStreamSettingsArgs(new QList<SWGrpx-100::SWGArgInfo*>);
 
     for (const auto itArg : channelSettings->m_streamSettingsArgs)
     {
-        response.getSoapySdrOutputReport()->getStreamSettingsArgs()->append(new SWGSDRangel::SWGArgInfo);
+        response.getSoapySdrOutputReport()->getStreamSettingsArgs()->append(new SWGrpx-100::SWGArgInfo);
         webapiFormatArgInfo(itArg, response.getSoapySdrOutputReport()->getStreamSettingsArgs()->back());
     }
 
-    response.getSoapySdrOutputReport()->setFrequencySettingsArgs(new QList<SWGSDRangel::SWGArgInfo*>);
+    response.getSoapySdrOutputReport()->setFrequencySettingsArgs(new QList<SWGrpx-100::SWGArgInfo*>);
 
     for (const auto itArg : channelSettings->m_frequencySettingsArgs)
     {
-        response.getSoapySdrOutputReport()->getFrequencySettingsArgs()->append(new SWGSDRangel::SWGArgInfo);
+        response.getSoapySdrOutputReport()->getFrequencySettingsArgs()->append(new SWGrpx-100::SWGArgInfo);
         webapiFormatArgInfo(itArg, response.getSoapySdrOutputReport()->getFrequencySettingsArgs()->back());
     }
 
@@ -1676,19 +1676,19 @@ void SoapySDROutput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
     if ((channelSettings->m_gainRange.maximum() != 0.0) || (channelSettings->m_gainRange.minimum() != 0.0))
     {
-        response.getSoapySdrOutputReport()->setGainRange(new SWGSDRangel::SWGRangeFloat());
+        response.getSoapySdrOutputReport()->setGainRange(new SWGrpx-100::SWGRangeFloat());
         response.getSoapySdrOutputReport()->getGainRange()->setMin(channelSettings->m_gainRange.minimum());
         response.getSoapySdrOutputReport()->getGainRange()->setMax(channelSettings->m_gainRange.maximum());
     }
 
     if (channelSettings->m_gainSettings.size() != 0)
     {
-        response.getSoapySdrOutputReport()->setGainSettings(new QList<SWGSDRangel::SWGSoapySDRGainSetting*>);
+        response.getSoapySdrOutputReport()->setGainSettings(new QList<SWGrpx-100::SWGSoapySDRGainSetting*>);
 
         for (const auto itGain : channelSettings->m_gainSettings)
         {
-            response.getSoapySdrOutputReport()->getGainSettings()->append(new SWGSDRangel::SWGSoapySDRGainSetting());
-            response.getSoapySdrOutputReport()->getGainSettings()->back()->setRange(new SWGSDRangel::SWGRangeFloat());
+            response.getSoapySdrOutputReport()->getGainSettings()->append(new SWGrpx-100::SWGSoapySDRGainSetting());
+            response.getSoapySdrOutputReport()->getGainSettings()->back()->setRange(new SWGrpx-100::SWGRangeFloat());
             response.getSoapySdrOutputReport()->getGainSettings()->back()->getRange()->setMin(itGain.m_range.minimum());
             response.getSoapySdrOutputReport()->getGainSettings()->back()->getRange()->setMax(itGain.m_range.maximum());
             response.getSoapySdrOutputReport()->getGainSettings()->back()->setName(new QString(itGain.m_name.c_str()));
@@ -1697,16 +1697,16 @@ void SoapySDROutput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
     if (channelSettings->m_frequencySettings.size() != 0)
     {
-        response.getSoapySdrOutputReport()->setFrequencySettings(new QList<SWGSDRangel::SWGSoapySDRFrequencySetting*>);
+        response.getSoapySdrOutputReport()->setFrequencySettings(new QList<SWGrpx-100::SWGSoapySDRFrequencySetting*>);
 
         for (const auto itFreq : channelSettings->m_frequencySettings)
         {
-            response.getSoapySdrOutputReport()->getFrequencySettings()->append(new SWGSDRangel::SWGSoapySDRFrequencySetting());
-            response.getSoapySdrOutputReport()->getFrequencySettings()->back()->setRanges(new QList<SWGSDRangel::SWGRangeFloat*>);
+            response.getSoapySdrOutputReport()->getFrequencySettings()->append(new SWGrpx-100::SWGSoapySDRFrequencySetting());
+            response.getSoapySdrOutputReport()->getFrequencySettings()->back()->setRanges(new QList<SWGrpx-100::SWGRangeFloat*>);
 
             for (const auto itRange : itFreq.m_ranges)
             {
-                response.getSoapySdrOutputReport()->getFrequencySettings()->back()->getRanges()->append(new SWGSDRangel::SWGRangeFloat());
+                response.getSoapySdrOutputReport()->getFrequencySettings()->back()->getRanges()->append(new SWGrpx-100::SWGRangeFloat());
                 response.getSoapySdrOutputReport()->getFrequencySettings()->back()->getRanges()->back()->setMin(itRange.minimum());
                 response.getSoapySdrOutputReport()->getFrequencySettings()->back()->getRanges()->back()->setMax(itRange.maximum());
             }
@@ -1717,11 +1717,11 @@ void SoapySDROutput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
     if (channelSettings->m_ratesRanges.size() != 0)
     {
-        response.getSoapySdrOutputReport()->setRatesRanges(new QList<SWGSDRangel::SWGRangeFloat*>);
+        response.getSoapySdrOutputReport()->setRatesRanges(new QList<SWGrpx-100::SWGRangeFloat*>);
 
         for (const auto itRange : channelSettings->m_ratesRanges)
         {
-            response.getSoapySdrOutputReport()->getRatesRanges()->append(new SWGSDRangel::SWGRangeFloat());
+            response.getSoapySdrOutputReport()->getRatesRanges()->append(new SWGrpx-100::SWGRangeFloat());
             response.getSoapySdrOutputReport()->getRatesRanges()->back()->setMin(itRange.minimum());
             response.getSoapySdrOutputReport()->getRatesRanges()->back()->setMax(itRange.maximum());
         }
@@ -1729,18 +1729,18 @@ void SoapySDROutput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& resp
 
     if (channelSettings->m_bandwidthsRanges.size() != 0)
     {
-        response.getSoapySdrOutputReport()->setBandwidthsRanges(new QList<SWGSDRangel::SWGRangeFloat*>);
+        response.getSoapySdrOutputReport()->setBandwidthsRanges(new QList<SWGrpx-100::SWGRangeFloat*>);
 
         for (const auto itBandwidth : channelSettings->m_bandwidthsRanges)
         {
-            response.getSoapySdrOutputReport()->getBandwidthsRanges()->append(new SWGSDRangel::SWGRangeFloat());
+            response.getSoapySdrOutputReport()->getBandwidthsRanges()->append(new SWGrpx-100::SWGRangeFloat());
             response.getSoapySdrOutputReport()->getBandwidthsRanges()->back()->setMin(itBandwidth.minimum());
             response.getSoapySdrOutputReport()->getBandwidthsRanges()->back()->setMax(itBandwidth.maximum());
         }
     }
 }
 
-QVariant SoapySDROutput::webapiVariantFromArgValue(SWGSDRangel::SWGArgValue *argValue)
+QVariant SoapySDROutput::webapiVariantFromArgValue(SWGrpx-100::SWGArgValue *argValue)
 {
     if (*argValue->getValueType() == "bool") {
         return QVariant((bool) (*argValue->getValueString() == "1"));
@@ -1753,7 +1753,7 @@ QVariant SoapySDROutput::webapiVariantFromArgValue(SWGSDRangel::SWGArgValue *arg
     }
 }
 
-void SoapySDROutput::webapiFormatArgValue(const QVariant& v, SWGSDRangel::SWGArgValue *argValue)
+void SoapySDROutput::webapiFormatArgValue(const QVariant& v, SWGrpx-100::SWGArgValue *argValue)
 {
     if (v.type() == QVariant::Bool)
     {
@@ -1777,7 +1777,7 @@ void SoapySDROutput::webapiFormatArgValue(const QVariant& v, SWGSDRangel::SWGArg
     }
 }
 
-void SoapySDROutput::webapiFormatArgInfo(const SoapySDR::ArgInfo& arg, SWGSDRangel::SWGArgInfo *argInfo)
+void SoapySDROutput::webapiFormatArgInfo(const SoapySDR::ArgInfo& arg, SWGrpx-100::SWGArgInfo *argInfo)
 {
     argInfo->setKey(new QString(arg.key.c_str()));
 
@@ -1798,7 +1798,7 @@ void SoapySDROutput::webapiFormatArgInfo(const SoapySDR::ArgInfo& arg, SWGSDRang
 
     if ((arg.range.minimum() != 0.0) || (arg.range.maximum() != 0.0))
     {
-        argInfo->setRange(new SWGSDRangel::SWGRangeFloat());
+        argInfo->setRange(new SWGrpx-100::SWGRangeFloat());
         argInfo->getRange()->setMin(arg.range.minimum());
         argInfo->getRange()->setMax(arg.range.maximum());
     }
@@ -1818,13 +1818,13 @@ void SoapySDROutput::webapiFormatArgInfo(const SoapySDR::ArgInfo& arg, SWGSDRang
 
 void SoapySDROutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const SoapySDROutputSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // Single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("SoapySDR"));
-    swgDeviceSettings->setSoapySdrOutputSettings(new SWGSDRangel::SWGSoapySDROutputSettings());
+    swgDeviceSettings->setSoapySdrOutputSettings(new SWGrpx-100::SWGSoapySDROutputSettings());
     swgDeviceSettings->getSoapySdrOutputSettings()->init();
-    SWGSDRangel::SWGSoapySDROutputSettings *swgSoapySDROutputSettings = swgDeviceSettings->getSoapySdrOutputSettings();
+    SWGrpx-100::SWGSoapySDROutputSettings *swgSoapySDROutputSettings = swgDeviceSettings->getSoapySdrOutputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1866,18 +1866,18 @@ void SoapySDROutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
     }
     if (deviceSettingsKeys.contains("dcCorrection") || force)
     {
-        swgSoapySDROutputSettings->setDcCorrection(new SWGSDRangel::SWGComplex());
+        swgSoapySDROutputSettings->setDcCorrection(new SWGrpx-100::SWGComplex());
         swgSoapySDROutputSettings->getDcCorrection()->setReal(settings.m_dcCorrection.real());
         swgSoapySDROutputSettings->getDcCorrection()->setImag(settings.m_dcCorrection.imag());
     }
     if (deviceSettingsKeys.contains("iqCorrection") || force)
     {
-        swgSoapySDROutputSettings->setIqCorrection(new SWGSDRangel::SWGComplex());
+        swgSoapySDROutputSettings->setIqCorrection(new SWGrpx-100::SWGComplex());
         swgSoapySDROutputSettings->getIqCorrection()->setReal(settings.m_iqCorrection.real());
         swgSoapySDROutputSettings->getIqCorrection()->setImag(settings.m_iqCorrection.imag());
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1898,12 +1898,12 @@ void SoapySDROutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKey
 
 void SoapySDROutput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // Single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("SoapySDR"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

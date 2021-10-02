@@ -1165,11 +1165,11 @@ bool XTRXOutput::applySettings(const XTRXOutputSettings& settings, bool force, b
 }
 
 int XTRXOutput::webapiSettingsGet(
-                SWGSDRangel::SWGDeviceSettings& response,
+                SWGrpx-100::SWGDeviceSettings& response,
                 QString& errorMessage)
 {
     (void) errorMessage;
-    response.setXtrxOutputSettings(new SWGSDRangel::SWGXtrxOutputSettings());
+    response.setXtrxOutputSettings(new SWGrpx-100::SWGXtrxOutputSettings());
     response.getXtrxOutputSettings()->init();
     webapiFormatDeviceSettings(response, m_settings);
     return 200;
@@ -1178,7 +1178,7 @@ int XTRXOutput::webapiSettingsGet(
 int XTRXOutput::webapiSettingsPutPatch(
                 bool force,
                 const QStringList& deviceSettingsKeys,
-                SWGSDRangel::SWGDeviceSettings& response, // query + response
+                SWGrpx-100::SWGDeviceSettings& response, // query + response
                 QString& errorMessage)
 {
     (void) errorMessage;
@@ -1201,7 +1201,7 @@ int XTRXOutput::webapiSettingsPutPatch(
 void XTRXOutput::webapiUpdateDeviceSettings(
         XTRXOutputSettings& settings,
         const QStringList& deviceSettingsKeys,
-        SWGSDRangel::SWGDeviceSettings& response)
+        SWGrpx-100::SWGDeviceSettings& response)
 {
     if (deviceSettingsKeys.contains("centerFrequency")) {
         settings.m_centerFrequency = response.getXtrxOutputSettings()->getCenterFrequency();
@@ -1253,7 +1253,7 @@ void XTRXOutput::webapiUpdateDeviceSettings(
     }
 }
 
-void XTRXOutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& response, const XTRXOutputSettings& settings)
+void XTRXOutput::webapiFormatDeviceSettings(SWGrpx-100::SWGDeviceSettings& response, const XTRXOutputSettings& settings)
 {
     response.getXtrxOutputSettings()->setCenterFrequency(settings.m_centerFrequency);
     response.getXtrxOutputSettings()->setDevSampleRate(settings.m_devSampleRate);
@@ -1280,18 +1280,18 @@ void XTRXOutput::webapiFormatDeviceSettings(SWGSDRangel::SWGDeviceSettings& resp
 }
 
 int XTRXOutput::webapiReportGet(
-        SWGSDRangel::SWGDeviceReport& response,
+        SWGrpx-100::SWGDeviceReport& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setXtrxOutputReport(new SWGSDRangel::SWGXtrxOutputReport());
+    response.setXtrxOutputReport(new SWGrpx-100::SWGXtrxOutputReport());
     response.getXtrxOutputReport()->init();
     webapiFormatDeviceReport(response);
     return 200;
 }
 
 int XTRXOutput::webapiRunGet(
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1301,7 +1301,7 @@ int XTRXOutput::webapiRunGet(
 
 int XTRXOutput::webapiRun(
         bool run,
-        SWGSDRangel::SWGDeviceState& response,
+        SWGrpx-100::SWGDeviceState& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -1318,7 +1318,7 @@ int XTRXOutput::webapiRun(
     return 200;
 }
 
-void XTRXOutput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response)
+void XTRXOutput::webapiFormatDeviceReport(SWGrpx-100::SWGDeviceReport& response)
 {
     int ret;
     bool success = false;
@@ -1345,12 +1345,12 @@ void XTRXOutput::webapiFormatDeviceReport(SWGSDRangel::SWGDeviceReport& response
 
 void XTRXOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, const XTRXOutputSettings& settings, bool force)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // Single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("XTRX"));
-    swgDeviceSettings->setXtrxOutputSettings(new SWGSDRangel::SWGXtrxOutputSettings());
-    SWGSDRangel::SWGXtrxOutputSettings *swgXtrxOutputSettings = swgDeviceSettings->getXtrxOutputSettings();
+    swgDeviceSettings->setXtrxOutputSettings(new SWGrpx-100::SWGXtrxOutputSettings());
+    SWGrpx-100::SWGXtrxOutputSettings *swgXtrxOutputSettings = swgDeviceSettings->getXtrxOutputSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -1391,7 +1391,7 @@ void XTRXOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
         swgXtrxOutputSettings->setPwrmode(settings.m_pwrmode);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -1412,12 +1412,12 @@ void XTRXOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
 
 void XTRXOutput::webapiReverseSendStartStop(bool start)
 {
-    SWGSDRangel::SWGDeviceSettings *swgDeviceSettings = new SWGSDRangel::SWGDeviceSettings();
+    SWGrpx-100::SWGDeviceSettings *swgDeviceSettings = new SWGrpx-100::SWGDeviceSettings();
     swgDeviceSettings->setDirection(1); // Single Tx
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("XTRX"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

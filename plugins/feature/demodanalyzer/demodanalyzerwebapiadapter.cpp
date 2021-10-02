@@ -26,11 +26,11 @@ DemodAnalyzerWebAPIAdapter::~DemodAnalyzerWebAPIAdapter()
 {}
 
 int DemodAnalyzerWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setDemodAnalyzerSettings(new SWGSDRangel::SWGDemodAnalyzerSettings());
+    response.setDemodAnalyzerSettings(new SWGrpx-100::SWGDemodAnalyzerSettings());
     response.getDemodAnalyzerSettings()->init();
     DemodAnalyzer::webapiFormatFeatureSettings(response, m_settings);
 
@@ -40,7 +40,7 @@ int DemodAnalyzerWebAPIAdapter::webapiSettingsGet(
 int DemodAnalyzerWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& featureSettingsKeys,
-        SWGSDRangel::SWGFeatureSettings& response,
+        SWGrpx-100::SWGFeatureSettings& response,
         QString& errorMessage)
 {
     (void) force; // no action

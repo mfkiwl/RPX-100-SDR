@@ -27,11 +27,11 @@ AISDemodWebAPIAdapter::~AISDemodWebAPIAdapter()
 {}
 
 int AISDemodWebAPIAdapter::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAisDemodSettings(new SWGSDRangel::SWGAISDemodSettings());
+    response.setAisDemodSettings(new SWGrpx-100::SWGAISDemodSettings());
     response.getAisDemodSettings()->init();
     AISDemod::webapiFormatChannelSettings(response, m_settings);
 
@@ -41,7 +41,7 @@ int AISDemodWebAPIAdapter::webapiSettingsGet(
 int AISDemodWebAPIAdapter::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) force;

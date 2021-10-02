@@ -27,7 +27,7 @@ class DeviceUISet;
 class BFMPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "sdrangel.channel.bfm")
+	Q_PLUGIN_METADATA(IID "rpx-100.channel.bfm")
 
 public:
 	explicit BFMPlugin(QObject* parent = 0);

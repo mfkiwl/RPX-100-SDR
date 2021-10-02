@@ -36,7 +36,7 @@
 MESSAGE_CLASS_DEFINITION(PagerDemod::MsgConfigurePagerDemod, Message)
 MESSAGE_CLASS_DEFINITION(PagerDemod::MsgPagerMessage, Message)
 
-const char * const PagerDemod::m_channelIdURI = "sdrangel.channel.pagerdemod";
+const char * const PagerDemod::m_channelIdURI = "rpx-100.channel.pagerdemod";
 const char * const PagerDemod::m_channelId = "PagerDemod";
 
 PagerDemod::PagerDemod(DeviceAPI *deviceAPI) :
@@ -280,11 +280,11 @@ void PagerDemod::sendSampleRateToDemodAnalyzer()
 }
 
 int PagerDemod::webapiSettingsGet(
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
-    response.setPagerDemodSettings(new SWGSDRangel::SWGPagerDemodSettings());
+    response.setPagerDemodSettings(new SWGrpx-100::SWGPagerDemodSettings());
     response.getPagerDemodSettings()->init();
     webapiFormatChannelSettings(response, m_settings);
     return 200;
@@ -293,7 +293,7 @@ int PagerDemod::webapiSettingsGet(
 int PagerDemod::webapiSettingsPutPatch(
         bool force,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response,
+        SWGrpx-100::SWGChannelSettings& response,
         QString& errorMessage)
 {
     (void) errorMessage;
@@ -318,7 +318,7 @@ int PagerDemod::webapiSettingsPutPatch(
 void PagerDemod::webapiUpdateChannelSettings(
         PagerDemodSettings& settings,
         const QStringList& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings& response)
+        SWGrpx-100::SWGChannelSettings& response)
 {
     if (channelSettingsKeys.contains("baud")) {
         settings.m_baud = response.getPagerDemodSettings()->getBaud();
@@ -367,7 +367,7 @@ void PagerDemod::webapiUpdateChannelSettings(
     }
 }
 
-void PagerDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& response, const PagerDemodSettings& settings)
+void PagerDemod::webapiFormatChannelSettings(SWGrpx-100::SWGChannelSettings& response, const PagerDemodSettings& settings)
 {
     response.getPagerDemodSettings()->setBaud(settings.m_baud);
     response.getPagerDemodSettings()->setInputFrequencyOffset(settings.m_inputFrequencyOffset);
@@ -400,10 +400,10 @@ void PagerDemod::webapiFormatChannelSettings(SWGSDRangel::SWGChannelSettings& re
 
 void PagerDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const PagerDemodSettings& settings, bool force)
 {
-   SWGSDRangel::SWGChannelSettings *swgChannelSettings = new SWGSDRangel::SWGChannelSettings();
+   SWGrpx-100::SWGChannelSettings *swgChannelSettings = new SWGrpx-100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -425,7 +425,7 @@ void PagerDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, 
 
 void PagerDemod::webapiFormatChannelSettings(
         QList<QString>& channelSettingsKeys,
-        SWGSDRangel::SWGChannelSettings *swgChannelSettings,
+        SWGrpx-100::SWGChannelSettings *swgChannelSettings,
         const PagerDemodSettings& settings,
         bool force
 )
@@ -434,8 +434,8 @@ void PagerDemod::webapiFormatChannelSettings(
     swgChannelSettings->setOriginatorChannelIndex(getIndexInDeviceSet());
     swgChannelSettings->setOriginatorDeviceSetIndex(getDeviceSetIndex());
     swgChannelSettings->setChannelType(new QString("PagerDemod"));
-    swgChannelSettings->setPagerDemodSettings(new SWGSDRangel::SWGPagerDemodSettings());
-    SWGSDRangel::SWGPagerDemodSettings *swgPagerDemodSettings = swgChannelSettings->getPagerDemodSettings();
+    swgChannelSettings->setPagerDemodSettings(new SWGrpx-100::SWGPagerDemodSettings());
+    SWGrpx-100::SWGPagerDemodSettings *swgPagerDemodSettings = swgChannelSettings->getPagerDemodSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 

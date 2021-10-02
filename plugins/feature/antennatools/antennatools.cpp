@@ -34,7 +34,7 @@
 
 MESSAGE_CLASS_DEFINITION(AntennaTools::MsgConfigureAntennaTools, Message)
 
-const char* const AntennaTools::m_featureIdURI = "sdrangel.feature.antennatools";
+const char* const AntennaTools::m_featureIdURI = "rpx-100.feature.antennatools";
 const char* const AntennaTools::m_featureId = "AntennaTools";
 
 AntennaTools::AntennaTools(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -145,11 +145,11 @@ void AntennaTools::applySettings(const AntennaToolsSettings& settings, bool forc
 }
 
 int AntennaTools::webapiSettingsGet(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
-    response.setAntennaToolsSettings(new SWGSDRangel::SWGAntennaToolsSettings());
+    response.setAntennaToolsSettings(new SWGrpx-100::SWGAntennaToolsSettings());
     response.getAntennaToolsSettings()->init();
     webapiFormatFeatureSettings(response, m_settings);
     return 200;
@@ -158,7 +158,7 @@ int AntennaTools::webapiSettingsGet(
 int AntennaTools::webapiSettingsPutPatch(
     bool force,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     QString& errorMessage)
 {
     (void) errorMessage;
@@ -180,7 +180,7 @@ int AntennaTools::webapiSettingsPutPatch(
 }
 
 void AntennaTools::webapiFormatFeatureSettings(
-    SWGSDRangel::SWGFeatureSettings& response,
+    SWGrpx-100::SWGFeatureSettings& response,
     const AntennaToolsSettings& settings)
 {
     response.getAntennaToolsSettings()->setDipoleFrequencyMHz(settings.m_dipoleFrequencyMHz);
@@ -212,7 +212,7 @@ void AntennaTools::webapiFormatFeatureSettings(
 void AntennaTools::webapiUpdateFeatureSettings(
     AntennaToolsSettings& settings,
     const QStringList& featureSettingsKeys,
-    SWGSDRangel::SWGFeatureSettings& response)
+    SWGrpx-100::SWGFeatureSettings& response)
 {
     if (featureSettingsKeys.contains("dipoleFrequencyMHz")) {
         settings.m_dipoleFrequencyMHz = response.getAntennaToolsSettings()->getDipoleFrequencyMHz();
@@ -257,12 +257,12 @@ void AntennaTools::webapiUpdateFeatureSettings(
 
 void AntennaTools::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const AntennaToolsSettings& settings, bool force)
 {
-    SWGSDRangel::SWGFeatureSettings *swgFeatureSettings = new SWGSDRangel::SWGFeatureSettings();
+    SWGrpx-100::SWGFeatureSettings *swgFeatureSettings = new SWGrpx-100::SWGFeatureSettings();
     // swgFeatureSettings->setOriginatorFeatureIndex(getIndexInDeviceSet());
     // swgFeatureSettings->setOriginatorFeatureSetIndex(getDeviceSetIndex());
     swgFeatureSettings->setFeatureType(new QString("AntennaTools"));
-    swgFeatureSettings->setAntennaToolsSettings(new SWGSDRangel::SWGAntennaToolsSettings());
-    SWGSDRangel::SWGAntennaToolsSettings *swgAntennaToolsSettings = swgFeatureSettings->getAntennaToolsSettings();
+    swgFeatureSettings->setAntennaToolsSettings(new SWGrpx-100::SWGAntennaToolsSettings());
+    SWGrpx-100::SWGAntennaToolsSettings *swgAntennaToolsSettings = swgFeatureSettings->getAntennaToolsSettings();
 
     // transfer data that has been modified. When force is on transfer all data except reverse API data
 
@@ -291,7 +291,7 @@ void AntennaTools::webapiReverseSendSettings(QList<QString>& featureSettingsKeys
         swgAntennaToolsSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/sdrangel/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)
