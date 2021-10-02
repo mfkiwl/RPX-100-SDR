@@ -27,7 +27,7 @@
 
 
 
-namespace SWGrpx-100 {
+namespace SWGrpx100 {
 
 enum SWGHttpRequestVarLayout {NOT_SET, ADDRESS, URL_ENCODED, MULTIPART};
 
