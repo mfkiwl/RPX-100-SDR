@@ -30,14 +30,14 @@ MainParser::MainParser() :
     m_serverPortOption(QStringList() << "p" << "api-port",
         "Web API server port.",
         "port",
-        "8091"),
+        "80"),
     m_fftwfWisdomOption(QStringList() << "w" << "fftwf-wisdom",
         "FFTW Wisdom file.",
         "file",
         "")
 {
     m_serverAddress = "127.0.0.1";
-    m_serverPort = 8091;
+    m_serverPort = 80;
     m_mimoSupport = false;
     m_fftwfWindowFileName = "";
 
