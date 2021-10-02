@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class PacketDemodPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.packetdemod")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.packetdemod")
 
 public:
     explicit PacketDemodPlugin(QObject* parent = NULL);

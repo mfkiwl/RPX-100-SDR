@@ -207,7 +207,7 @@ void AFCGUI::updateDeviceSetLists()
         {
             ChannelAPI *channel = (*it)->getChannelAt(chi);
 
-            if (channel->getURI() == "rpx-100.channel.freqtracker")
+            if (channel->getURI() == "RPX100.channel.freqtracker")
             {
                 ui->trackerDevice->addItem(QString("R%1").arg(deviceIndex), deviceIndex);
                 break;

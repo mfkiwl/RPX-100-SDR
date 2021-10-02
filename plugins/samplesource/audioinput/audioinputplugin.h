@@ -22,7 +22,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define AUDIOINPUT_DEVICE_TYPE_ID "rpx-100.samplesource.audioinput"
+#define AUDIOINPUT_DEVICE_TYPE_ID "RPX100.samplesource.audioinput"
 
 class PluginAPI;
 

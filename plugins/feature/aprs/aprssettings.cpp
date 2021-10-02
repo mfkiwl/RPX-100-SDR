@@ -29,8 +29,8 @@ const QStringList APRSSettings::m_pipeTypes = {
 };
 
 const QStringList APRSSettings::m_pipeURIs = {
-    QStringLiteral("rpx-100.channel.packetdemod"),
-    QStringLiteral("rpx-100.channel.chirpchatdemod")
+    QStringLiteral("RPX100.channel.packetdemod"),
+    QStringLiteral("RPX100.channel.chirpchatdemod")
 };
 
 const QStringList APRSSettings::m_altitudeUnitNames = {

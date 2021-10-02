@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define LIMESDR_DEVICE_TYPE_ID "rpx-100.samplesource.limesdr"
+#define LIMESDR_DEVICE_TYPE_ID "RPX100.samplesource.limesdr"
 
 class LimeSDRInputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

@@ -24,7 +24,7 @@
 
 class PluginAPI;
 
-#define METISMISO_DEVICE_TYPE_ID "rpx-100.samplemimo.metismiso"
+#define METISMISO_DEVICE_TYPE_ID "RPX100.samplemimo.metismiso"
 
 class MetisMISOPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

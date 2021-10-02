@@ -52,7 +52,7 @@ MESSAGE_CLASS_DEFINITION(DABDemod::MsgDABMOTData, Message)
 MESSAGE_CLASS_DEFINITION(DABDemod::MsgDABReset, Message)
 MESSAGE_CLASS_DEFINITION(DABDemod::MsgDABResetService, Message)
 
-const char * const DABDemod::m_channelIdURI = "rpx-100.channel.dabdemod";
+const char * const DABDemod::m_channelIdURI = "RPX100.channel.dabdemod";
 const char * const DABDemod::m_channelId = "DABDemod";
 
 DABDemod::DABDemod(DeviceAPI *deviceAPI) :
@@ -492,7 +492,7 @@ void DABDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

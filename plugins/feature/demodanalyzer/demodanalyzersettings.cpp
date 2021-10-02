@@ -40,20 +40,20 @@ const QStringList DemodAnalyzerSettings::m_channelTypes = {
 };
 
 const QStringList DemodAnalyzerSettings::m_channelURIs = {
-    QStringLiteral("rpx-100.channel.aisdemod"),
-    QStringLiteral("rpx-100.channel.modais"),
-    QStringLiteral("rpx-100.channel.amdemod"),
-    QStringLiteral("rpx-100.channeltx.modam"),
-    QStringLiteral("rpx-100.channel.dabdemod"),
-    QStringLiteral("rpx-100.channel.dsddemod"),
-    QStringLiteral("rpx-100.channel.nfmdemod"),
-    QStringLiteral("rpx-100.channeltx.modnfm"),
-    QStringLiteral("rpx-100.channel.packetdemod"),
-    QStringLiteral("rpx-100.channeltx.modpacket"),
-    QStringLiteral("rpx-100.channel.ssbdemod"),
-    QStringLiteral("rpx-100.channeltx.modssb"),
-    QStringLiteral("rpx-100.channel.wfmdemod"),
-    QStringLiteral("rpx-100.channeltx.modwfm"),
+    QStringLiteral("RPX100.channel.aisdemod"),
+    QStringLiteral("RPX100.channel.modais"),
+    QStringLiteral("RPX100.channel.amdemod"),
+    QStringLiteral("RPX100.channeltx.modam"),
+    QStringLiteral("RPX100.channel.dabdemod"),
+    QStringLiteral("RPX100.channel.dsddemod"),
+    QStringLiteral("RPX100.channel.nfmdemod"),
+    QStringLiteral("RPX100.channeltx.modnfm"),
+    QStringLiteral("RPX100.channel.packetdemod"),
+    QStringLiteral("RPX100.channeltx.modpacket"),
+    QStringLiteral("RPX100.channel.ssbdemod"),
+    QStringLiteral("RPX100.channeltx.modssb"),
+    QStringLiteral("RPX100.channel.wfmdemod"),
+    QStringLiteral("RPX100.channeltx.modwfm"),
 };
 
 DemodAnalyzerSettings::DemodAnalyzerSettings() :

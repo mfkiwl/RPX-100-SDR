@@ -46,7 +46,7 @@ MESSAGE_CLASS_DEFINITION(FileSource::MsgConfigureFileSourceStreamTiming, Message
 MESSAGE_CLASS_DEFINITION(FileSource::MsgConfigureFileSourceSeek, Message)
 MESSAGE_CLASS_DEFINITION(FileSource::MsgReportFileSourceAcquisition, Message)
 
-const char* const FileSource::m_channelIdURI = "rpx-100.channeltx.filesource";
+const char* const FileSource::m_channelIdURI = "RPX100.channeltx.filesource";
 const char* const FileSource::m_channelId ="FileSource";
 
 FileSource::FileSource(DeviceAPI *deviceAPI) :
@@ -508,7 +508,7 @@ void FileSource::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, 
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

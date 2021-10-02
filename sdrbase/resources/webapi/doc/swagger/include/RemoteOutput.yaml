@@ -21,10 +21,10 @@ RemoteOutputSettings:
     dataPort:
       type: integer
     deviceIndex:
-      device: remote rpx-100 instance deviceset index
+      device: remote RPX100 instance deviceset index
       type: integer
     channelIndex:
-      device: remote rpx-100 instance channel index
+      device: remote RPX100 instance channel index
       type: integer
     useReverseAPI:
       description: Synchronize with reverse API (1 for yes, 0 for no)

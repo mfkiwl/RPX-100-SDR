@@ -27,7 +27,7 @@ class WebAPIAdapterInterface;
 class SimplePTTPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.feature.simpleptt")
+	Q_PLUGIN_METADATA(IID "RPX100.feature.simpleptt")
 
 public:
 	explicit SimplePTTPlugin(QObject* parent = nullptr);

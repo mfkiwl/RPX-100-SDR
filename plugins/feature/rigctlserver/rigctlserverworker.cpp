@@ -234,7 +234,7 @@ void RigCtlServerWorker::getCommand()
         else if (!strncmp(cmd, "M ", 2) || !(strncmp(cmd, "set_mode ", 9)))
         {
             // Set mode
-            // Map rigctrl mode name to rpx-100 modem name
+            // Map rigctrl mode name to RPX100 modem name
             const char *targetModem = nullptr;
             const char *targetMode = nullptr;
             int targetBW = -1;

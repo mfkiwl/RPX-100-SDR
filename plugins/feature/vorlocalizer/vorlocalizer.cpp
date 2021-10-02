@@ -43,7 +43,7 @@ MESSAGE_CLASS_DEFINITION(VORLocalizer::MsgAddVORChannel, Message)
 MESSAGE_CLASS_DEFINITION(VORLocalizer::MsgRemoveVORChannel, Message)
 MESSAGE_CLASS_DEFINITION(VORLocalizer::MsgRefreshChannels, Message)
 
-const char* const VORLocalizer::m_featureIdURI = "rpx-100.feature.vorlocalizer";
+const char* const VORLocalizer::m_featureIdURI = "RPX100.feature.vorlocalizer";
 const char* const VORLocalizer::m_featureId = "VORLocalizer";
 
 VORLocalizer::VORLocalizer(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -356,7 +356,7 @@ void VORLocalizer::updateChannels()
             {
                 ChannelAPI *channel = (*it)->getChannelAt(chi);
 
-                if (channel->getURI() == "rpx-100.channel.vordemodsc")
+                if (channel->getURI() == "RPX100.channel.vordemodsc")
                 {
                     if (!m_availableChannels.contains(channel))
                     {
@@ -548,7 +548,7 @@ void VORLocalizer::webapiReverseSendSettings(QList<QString>& channelSettingsKeys
         swgVORLocalizerSettings->setCenterShift(settings.m_centerShift);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

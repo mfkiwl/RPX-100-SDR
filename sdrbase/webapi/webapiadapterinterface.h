@@ -124,7 +124,7 @@ public:
     virtual ~WebAPIAdapterInterface() {}
 
     /**
-     * Handler of /rpx-100 (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /RPX100 (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceSummary(
@@ -138,7 +138,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100 (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /RPX100 (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDelete(
@@ -152,7 +152,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/config (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /RPX100/config (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceConfigGet(
@@ -166,7 +166,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/config (PUT, PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceSummary
+     * Handler of /RPX100/config (PUT, PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceSummary
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceConfigPutPatch(
@@ -187,7 +187,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/devices (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceDevices
+     * Handler of /RPX100/devices (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceDevices
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDevices(
@@ -203,7 +203,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/channels (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/channels (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceChannels(
@@ -219,7 +219,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/features (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/features (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatures(
@@ -233,7 +233,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/logging (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/logging (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLoggingGet(
@@ -247,7 +247,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/logging (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/logging (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLoggingPut(
@@ -263,7 +263,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/audio (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/audio (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioGet(
@@ -277,7 +277,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/audio/input/parameters (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/audio/input/parameters (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputPatch(
@@ -293,7 +293,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/audio/output/parameters (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/audio/output/parameters (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputPatch(
@@ -309,7 +309,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/audio/input/parameters (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/audio/input/parameters (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputDelete(
@@ -323,7 +323,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/audio/output/paramaters (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/audio/output/paramaters (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputDelete(
@@ -337,7 +337,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/audio/input/cleanup (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/audio/input/cleanup (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioInputCleanupPatch(
@@ -351,7 +351,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/audio/output/cleanup (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/audio/output/cleanup (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAudioOutputCleanupPatch(
@@ -365,7 +365,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/location (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/location (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLocationGet(
@@ -379,7 +379,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/location (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/location (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLocationPut(
@@ -393,7 +393,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/ambe/serial (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/ambe/serial (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBESerialGet(
@@ -407,7 +407,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/ambe/devices (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/ambe/devices (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesGet(
@@ -421,7 +421,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/ambe/devices (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/ambe/devices (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesPut(
@@ -437,7 +437,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/ambe/devices (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/ambe/devices (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesPatch(
@@ -453,7 +453,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/ambe/devices (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/ambe/devices (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceAMBEDevicesDelete(
@@ -467,7 +467,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/limerfe/serial (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/limerfe/serial (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFESerialGet(
@@ -481,7 +481,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/limerfe/config (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/limerfe/config (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFEConfigGet(
@@ -497,7 +497,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/limerfe/config (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/limerfe/config (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFEConfigPut(
@@ -513,7 +513,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/limerfe/run (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/limerfe/run (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFERunPut(
@@ -529,7 +529,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/limerfe/power (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/limerfe/power (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceLimeRFEPowerGet(
@@ -545,7 +545,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/presets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/presets (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetsGet(
@@ -559,7 +559,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/preset (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/preset (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPatch(
@@ -575,7 +575,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/preset (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/preset (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPut(
@@ -591,7 +591,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/preset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/preset (POST) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetPost(
@@ -607,7 +607,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/preset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/preset (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetDelete(
@@ -621,7 +621,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/preset/file (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/preset/file (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetFilePut(
@@ -637,7 +637,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/preset/file (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/preset/file (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instancePresetFilePost(
@@ -653,7 +653,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featurepresets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/featurepresets (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeaturePresetsGet(
@@ -667,7 +667,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featurepreset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/featurepreset (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeaturePresetDelete(
@@ -681,7 +681,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/devicesets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/devicesets (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetsGet(
@@ -695,7 +695,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset (POST) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetPost(
@@ -711,7 +711,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceDeviceSetDelete(
@@ -725,7 +725,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featurets (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/featurets (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetsGet(
@@ -739,7 +739,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/featureset (POST) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetPost(
@@ -753,7 +753,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int instanceFeatureSetDelete(
@@ -767,7 +767,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex} (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex} (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetGet(
@@ -783,7 +783,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/focus (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/focus (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetFocusPatch(
@@ -799,7 +799,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/settings (GET)
+     * Handler of /RPX100/deviceset/{devicesetIndex}/spectrum/settings (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumSettingsGet(
@@ -815,7 +815,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/settings (PUT, PATCH)
+     * Handler of /RPX100/deviceset/{devicesetIndex}/spectrum/settings (PUT, PATCH)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumSettingsPutPatch(
@@ -835,7 +835,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/server (GET)
+     * Handler of /RPX100/deviceset/{devicesetIndex}/spectrum/server (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumServerGet(
@@ -851,7 +851,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/server (POST)
+     * Handler of /RPX100/deviceset/{devicesetIndex}/spectrum/server (POST)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumServerPost(
@@ -867,7 +867,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/spectrum/server (DELETE)
+     * Handler of /RPX100/deviceset/{devicesetIndex}/spectrum/server (DELETE)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetSpectrumServerDelete(
@@ -883,7 +883,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/device (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/device (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDevicePut(
@@ -901,7 +901,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/settings (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/device/settings (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSettingsGet(
@@ -917,7 +917,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/settings (PUT, PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/device/settings (PUT, PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSettingsPutPatch(
@@ -937,7 +937,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/run (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/device/run (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceRunGet(
@@ -953,7 +953,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSubsystemRunGet(
@@ -971,7 +971,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/run (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/device/run (POST) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceRunPost(
@@ -987,7 +987,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (POST) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSubsystemRunPost(
@@ -1005,7 +1005,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/run (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/device/run (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceRunDelete(
@@ -1021,7 +1021,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/subdevice/{subsystemIndex}/run (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceSubsystemRunDelete(
@@ -1039,7 +1039,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/device/report (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/device/report (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetDeviceReportGet(
@@ -1055,7 +1055,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{devicesetIndex}/channels/report (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{devicesetIndex}/channels/report (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelsReportGet(
@@ -1071,7 +1071,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{deviceSetIndex}/device/actions (POST)
+     * Handler of /RPX100/deviceset/{deviceSetIndex}/device/actions (POST)
      * post action(s) on device
      */
     virtual int devicesetDeviceActionsPost(
@@ -1092,7 +1092,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{deviceSetIndex}/channel (POST) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelPost(
@@ -1110,7 +1110,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex} (DELETE) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{deviceSetIndex}/channel/{channelIndex} (DELETE) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelDelete(
@@ -1129,7 +1129,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelSettingsGet(
@@ -1147,7 +1147,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (PUT, PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (PUT, PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelSettingsPutPatch(
@@ -1170,7 +1170,7 @@ public:
 
 
     /**
-     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/deviceset/{deviceSetIndex}/channel/{channelIndex}/settings (GET) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int devicesetChannelReportGet(
@@ -1188,7 +1188,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions (POST)
+     * Handler of /RPX100/deviceset/{deviceSetIndex}/channel/{channelIndex}/actions (POST)
      * posts an action on the channel (default 501: not implemented)
      */
     virtual int devicesetChannelActionsPost(
@@ -1210,7 +1210,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex} (GET)
+     * Handler of /RPX100/featureset/{featuresetIndex} (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetGet(
@@ -1226,7 +1226,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature (POST)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature (POST)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeaturePost(
@@ -1244,7 +1244,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureDelete(
@@ -1263,7 +1263,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/run (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureRunGet(
@@ -1282,7 +1282,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (POST)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/run (POST)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureRunPost(
@@ -1301,7 +1301,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/run (DELETE)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/run (DELETE)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureRunDelete(
@@ -1320,7 +1320,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/preset (PATCH) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/featureset/{featuresetIndex}/preset (PATCH) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetPresetPatch(
@@ -1336,7 +1336,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/preset (PUT) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/featureset/{featuresetIndex}/preset (PUT) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetPresetPut(
@@ -1352,7 +1352,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/preset (POST) swagger/rpx-100/code/html2/index.html#api-Default-instanceChannels
+     * Handler of /RPX100/featureset/{featuresetIndex}/preset (POST) swagger/RPX100/code/html2/index.html#api-Default-instanceChannels
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetPresetPost(
@@ -1368,7 +1368,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/settings (GET)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/settings (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureSettingsGet(
@@ -1386,7 +1386,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/settings (PUT, PATCH)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/settings (PUT, PATCH)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureSettingsPutPatch(
@@ -1408,7 +1408,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/report (GET)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/report (GET)
      * returns the Http status code (default 501: not implemented)
      */
     virtual int featuresetFeatureReportGet(
@@ -1426,7 +1426,7 @@ public:
     }
 
     /**
-     * Handler of /rpx-100/featureset/{featuresetIndex}/feature/{featureIndex}/actions (POST)
+     * Handler of /RPX100/featureset/{featuresetIndex}/feature/{featureIndex}/actions (POST)
      * posts an action on the channel (default 501: not implemented)
      */
     virtual int featuresetFeatureActionsPost(

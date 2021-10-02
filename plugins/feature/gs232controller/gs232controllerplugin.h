@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class GS232ControllerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.feature.gs232controller")
+	Q_PLUGIN_METADATA(IID "RPX100.feature.gs232controller")
 
 public:
 	explicit GS232ControllerPlugin(QObject* parent = nullptr);

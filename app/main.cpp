@@ -35,7 +35,7 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
 */
 	QCoreApplication::setOrganizationName(COMPANY);
 	QCoreApplication::setApplicationName(APPLICATION_NAME);
-    QCoreApplication::setApplicationVersion(rpx-100_VERSION);
+    QCoreApplication::setApplicationVersion(RPX100_VERSION);
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
 	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // DPI support
@@ -136,6 +136,6 @@ int main(int argc, char* argv[])
     logger->installMsgHandler();
 	int res = runQtApplication(argc, argv, logger);
 	delete logger;
-	qWarning("rpx-100 quit.");
+	qWarning("RPX100 quit.");
 	return res;
 }

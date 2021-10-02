@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class ATVModPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channeltx.atvmod")
+    Q_PLUGIN_METADATA(IID "RPX100.channeltx.atvmod")
 
 public:
     explicit ATVModPlugin(QObject* parent = 0);

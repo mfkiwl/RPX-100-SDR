@@ -15,8 +15,8 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.          //
 ///////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __rpx-100_EXPORT_H
-#define __rpx-100_EXPORT_H
+#ifndef __RPX100_EXPORT_H
+#define __RPX100_EXPORT_H
 
 #if defined (__GNUC__) && (__GNUC__ >= 4)
 #  define __SDR_EXPORT   __attribute__((visibility("default")))
@@ -33,7 +33,7 @@
 
 /* The 'SDRBASE_API' controls the import/export of 'sdrbase' symbols and classes.
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  if defined sdrbase_EXPORTS
 #    define SDRBASE_API __SDR_EXPORT
 #  else
@@ -45,7 +45,7 @@
 
 /* the 'SDRGUI_API' controls the import/export of 'sdrgui' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef sdrgui_EXPORTS
 #    define SDRGUI_API __SDR_EXPORT
 #  else
@@ -57,7 +57,7 @@
 
 /* the 'SDRSRV_API' controls the import/export of 'sdrsrv' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef sdrsrv_EXPORTS
 #    define SDRSRV_API __SDR_EXPORT
 #  else
@@ -69,7 +69,7 @@
 
 /* the 'DEVICES_API' controls the import/export of 'devices' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef devices_EXPORTS
 #    define DEVICES_API __SDR_EXPORT
 #  else
@@ -81,7 +81,7 @@
 
 /* the 'HTTPSERVER_API' controls the import/export of 'httpserver' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef httpserver_EXPORTS
 #    define HTTPSERVER_API __SDR_EXPORT
 #  else
@@ -93,7 +93,7 @@
 
 /* the 'LOGGING_API' controls the import/export of 'logging' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef logging_EXPORTS
 #    define LOGGING_API __SDR_EXPORT
 #  else
@@ -105,7 +105,7 @@
 
 /* the 'QRTPLIB_API' controls the import/export of 'qrtplib' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef qrtplib_EXPORTS
 #    define QRTPLIB_API __SDR_EXPORT
 #  else
@@ -117,7 +117,7 @@
 
 /* the 'SWG_API' controls the import/export of 'swagger' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef swagger_EXPORTS
 #    define SWG_API __SDR_EXPORT
 #  else
@@ -129,7 +129,7 @@
 
 /* the 'SDRBENCH_API' controls the import/export of 'sdrbench' symbols
  */
-#if !defined(rpx-100_STATIC)
+#if !defined(RPX100_STATIC)
 #  ifdef sdrbench_EXPORTS
 #    define SDRBENCH_API __SDR_EXPORT
 #  else
@@ -140,4 +140,4 @@
 #endif
 
 
-#endif /* __rpx-100_EXPORT_H */
+#endif /* __RPX100_EXPORT_H */

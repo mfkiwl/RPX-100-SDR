@@ -35,7 +35,7 @@ MESSAGE_CLASS_DEFINITION(SimplePTT::MsgConfigureSimplePTT, Message)
 MESSAGE_CLASS_DEFINITION(SimplePTT::MsgPTT, Message)
 MESSAGE_CLASS_DEFINITION(SimplePTT::MsgStartStop, Message)
 
-const char* const SimplePTT::m_featureIdURI = "rpx-100.feature.simpleptt";
+const char* const SimplePTT::m_featureIdURI = "RPX100.feature.simpleptt";
 const char* const SimplePTT::m_featureId = "SimplePTT";
 
 SimplePTT::SimplePTT(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -390,7 +390,7 @@ void SimplePTT::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, c
         swgSimplePTTSettings->setTx2RxDelayMs(settings.m_tx2RxDelayMs);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

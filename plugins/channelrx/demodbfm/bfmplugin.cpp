@@ -33,9 +33,9 @@ const PluginDescriptor BFMPlugin::m_pluginDescriptor = {
 	QStringLiteral("Broadcast FM Demodulator"),
 	QStringLiteral("6.6.1"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/rpx-100"),
+	QStringLiteral("https://github.com/f4exb/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/rpx-100")
+	QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 BFMPlugin::BFMPlugin(QObject* parent) :

@@ -29,10 +29,10 @@ if(APPLE AND BUNDLE AND BUILD_GUI)
   set(CPACK_GENERATOR "Bundle")
   set(CPACK_BINARY_DRAGNDROP ON)
   set(CPACK_BUNDLE_NAME "${APPLICATION_NAME}")
-  set(CPACK_BUNDLE_ICON "${CMAKE_SOURCE_DIR}/cmake/cpack/rpx-100_icon.icns")
+  set(CPACK_BUNDLE_ICON "${CMAKE_SOURCE_DIR}/cmake/cpack/RPX100_icon.icns")
   set(CPACK_BUNDLE_PLIST "${CMAKE_BINARY_DIR}/Info.plist")
-  set(CPACK_BUNDLE_STARTUP_COMMAND "${CMAKE_SOURCE_DIR}/cmake/cpack/rpx-100.sh")
-  set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/cmake/cpack/rpx-100_icon.icns")
+  set(CPACK_BUNDLE_STARTUP_COMMAND "${CMAKE_SOURCE_DIR}/cmake/cpack/RPX100.sh")
+  set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/cmake/cpack/RPX100_icon.icns")
   set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}_${CPACK_MACOS_PACKAGE_ARCHITECTURE}_${CMAKE_SYSTEM_PROCESSOR}")
 
   # Copy Qt Plugins; fixup_bundle doesn't do that
@@ -80,16 +80,16 @@ Plugins = ../PlugIns
   endif()
 
   install(CODE "
-  file(GLOB_RECURSE rpx-100_PLUGINS
+  file(GLOB_RECURSE RPX100_PLUGINS
     \"\${CMAKE_INSTALL_PREFIX}/${INSTALL_PLUGINS_DIR}/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
-  file(GLOB_RECURSE rpx-100_PLUGINSSRV
+  file(GLOB_RECURSE RPX100_PLUGINSSRV
   \"\${CMAKE_INSTALL_PREFIX}/${INSTALL_PLUGINSSRV_DIR}/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
   file(GLOB_RECURSE QTPLUGINS \"\${CMAKE_INSTALL_PREFIX}/../PlugIns/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
   file(GLOB_RECURSE SOAPYSDR_PLUGINS \"\${CMAKE_INSTALL_PREFIX}/../Frameworks/SoapySDR/modules${SOAPY_SDR_ABI_VERSION}/*.so\")
 
   set(BU_CHMOD_BUNDLE_ITEMS ON)
   include(BundleUtilities)
-  fixup_bundle(\"\${CMAKE_INSTALL_PREFIX}/${CMAKE_PROJECT_NAME}\" \"\${rpx-100_PLUGINS};\${rpx-100_PLUGINSSRV};\${QTPLUGINS};\${SOAPYSDR_PLUGINS}\" \"${CMAKE_LIBRARY_OUTPUT_DIRECTORY};${MACOS_EXTERNAL_LIBS_FIXUP}\")
+  fixup_bundle(\"\${CMAKE_INSTALL_PREFIX}/${CMAKE_PROJECT_NAME}\" \"\${RPX100_PLUGINS};\${RPX100_PLUGINSSRV};\${QTPLUGINS};\${SOAPYSDR_PLUGINS}\" \"${CMAKE_LIBRARY_OUTPUT_DIRECTORY};${MACOS_EXTERNAL_LIBS_FIXUP}\")
 
   # remove non distribuitable file
   if(ENABLE_MIRSDRAPI AND OFF)
@@ -98,8 +98,8 @@ Plugins = ../PlugIns
   endif()
 
   # remove unused library
-  file(GLOB rpx-100_REMOVE_LIB \"\${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR}/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
-  foreach(file \${rpx-100_REMOVE_LIB})
+  file(GLOB RPX100_REMOVE_LIB \"\${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR}/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
+  foreach(file \${RPX100_REMOVE_LIB})
     file(REMOVE \"\${file}\")
   endforeach()
   " COMPONENT Runtime)
@@ -181,7 +181,7 @@ elseif(WIN32 OR MINGW)
   foreach(ffmpeg_dll ${FFMPEG_DLLS})
     get_filename_component(ffmpeg_dll_name "${ffmpeg_dll}"  NAME)
     add_custom_target(copy_ffmpeg_${ffmpeg_dll_name} ALL
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${ffmpeg_dll}" "${rpx-100_BINARY_BIN_DIR}/"
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${ffmpeg_dll}" "${RPX100_BINARY_BIN_DIR}/"
     )
   endforeach(ffmpeg_dll)
 
@@ -190,19 +190,19 @@ elseif(WIN32 OR MINGW)
   foreach(opencv_dll ${OPENCV_DLLS})
     get_filename_component(opencv_dll_name "${opencv_dll}"  NAME)
     add_custom_target(copy_ffmpeg_${opencv_dll_name} ALL
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${opencv_dll}" "${rpx-100_BINARY_BIN_DIR}/"
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${opencv_dll}" "${RPX100_BINARY_BIN_DIR}/"
     )
   endforeach(opencv_dll)
 
   if(ENABLE_SOAPYSDR AND SOAPYSDR_FOUND)
     # Soapy support libraries
-    file(MAKE_DIRECTORY ${rpx-100_BINARY_LIB_DIR}/SoapySDR)
-    file(MAKE_DIRECTORY ${rpx-100_BINARY_LIB_DIR}/SoapySDR/modules0.7)
+    file(MAKE_DIRECTORY ${RPX100_BINARY_LIB_DIR}/SoapySDR)
+    file(MAKE_DIRECTORY ${RPX100_BINARY_LIB_DIR}/SoapySDR/modules0.7)
     file(GLOB SOAPYSUPPORT_DLLS "${SOAPYSUPPORT_DIR}/lib/SoapySDR/modules0.7/*${CMAKE_SHARED_LIBRARY_SUFFIX}")
     foreach(soapysupport_dll ${SOAPYSUPPORT_DLLS})
       get_filename_component(soapysupport_dll_name "${soapysupport_dll}"  NAME)
       add_custom_target(copy_soapysupport_${soapysupport_dll_name} ALL
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${soapysupport_dll}" "${rpx-100_BINARY_LIB_DIR}/SoapySDR/modules0.7/"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${soapysupport_dll}" "${RPX100_BINARY_LIB_DIR}/SoapySDR/modules0.7/"
       )
     endforeach(soapysupport_dll)
   endif()
@@ -211,7 +211,7 @@ elseif(WIN32 OR MINGW)
   foreach(codec2_dll ${CODEC2_DLLS})
     get_filename_component(codec2_dll_name "${codec2_dll}"  NAME)
     add_custom_target(copy_codec2_${codec2_dll_name} ALL
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${codec2_dll}" "${rpx-100_BINARY_BIN_DIR}/"
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${codec2_dll}" "${RPX100_BINARY_BIN_DIR}/"
     )
   endforeach(codec2_dll)
 
@@ -220,7 +220,7 @@ elseif(WIN32 OR MINGW)
     foreach(uhd_dll ${UHD_DLLS})
       get_filename_component(uhd_dll_name "${uhd_dll}"  NAME)
       add_custom_target(copy_uhd_${uhd_dll_name} ALL
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${uhd_dll}" "${rpx-100_BINARY_BIN_DIR}/"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${uhd_dll}" "${RPX100_BINARY_BIN_DIR}/"
       )
     endforeach(uhd_dll)
   endif()
@@ -230,7 +230,7 @@ elseif(WIN32 OR MINGW)
     foreach(sdrplay_dll ${SDRPLAY_DLLS})
       get_filename_component(sdrplay_dll_name "${sdrplay_dll}"  NAME)
       add_custom_target(copy_sdrplay_${sdrplay_dll_name} ALL
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${sdrplay_dll}" "${rpx-100_BINARY_BIN_DIR}/"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${sdrplay_dll}" "${RPX100_BINARY_BIN_DIR}/"
       )
     endforeach(sdrplay_dll)
   endif()
@@ -239,7 +239,7 @@ elseif(WIN32 OR MINGW)
   foreach(openssl_dll ${OPENSSL_DLLS})
     get_filename_component(openssl_dll_name "${openssl_dll}"  NAME)
     add_custom_target(copy_openssl_${openssl_dll_name} ALL
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${openssl_dll}" "${rpx-100_BINARY_BIN_DIR}/"
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different "${openssl_dll}" "${RPX100_BINARY_BIN_DIR}/"
     )
   endforeach(openssl_dll)
 
@@ -247,12 +247,12 @@ elseif(WIN32 OR MINGW)
   if(BUILD_GUI)
     install(CODE "
       include(BundleUtilities)
-      fixup_bundle(\"${rpx-100_BINARY_BIN_DIR}/rpx-100${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
+      fixup_bundle(\"${RPX100_BINARY_BIN_DIR}/RPX100${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
     " COMPONENT Runtime)
   elseif(BUILD_SERVER)
     install(CODE "
       include(BundleUtilities)
-      fixup_bundle(\"${rpx-100_BINARY_BIN_DIR}/rpx-100srv${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
+      fixup_bundle(\"${RPX100_BINARY_BIN_DIR}/RPX100srv${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
     " COMPONENT Runtime)
   endif(BUILD_GUI)
 
@@ -260,12 +260,12 @@ elseif(WIN32 OR MINGW)
     if(BUILD_GUI)
       install(CODE "
         include(BundleUtilities)
-        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX}/rpx-100${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
+        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX}/RPX100${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
       " COMPONENT Runtime)
     elseif(BUILD_SERVER)
       install(CODE "
         include(BundleUtilities)
-        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX}/rpx-100srv${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
+        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX}/RPX100srv${CMAKE_EXECUTABLE_SUFFIX}\" \"\" \"${WINDOWS_FIXUP_BUNDLE_LIB_DIRS}\")
       " COMPONENT Runtime)
     endif(BUILD_GUI)
 
@@ -316,8 +316,8 @@ elseif(WIN32 OR MINGW)
     set(CPACK_NSIS_HELP_LINK ${CPACK_PACKAGE_CONTACT})
     set(CPACK_NSIS_URL_INFO_ABOUT ${CPACK_PACKAGE_CONTACT})
     set(CPACK_NSIS_CONTACT ${APPLICATION_MAINTAINER})
-    set(CPACK_NSIS_MUI_ICON "${CMAKE_SOURCE_DIR}/cmake/cpack/rpx-100_icon.ico")
-    set(CPACK_NSIS_MUI_UNIICON "${CMAKE_SOURCE_DIR}/cmake/cpack/rpx-100_icon.ico")
+    set(CPACK_NSIS_MUI_ICON "${CMAKE_SOURCE_DIR}/cmake/cpack/RPX100_icon.ico")
+    set(CPACK_NSIS_MUI_UNIICON "${CMAKE_SOURCE_DIR}/cmake/cpack/RPX100_icon.ico")
     set(CPACK_NSIS_PACKAGE_NAME "${APPLICATION_NAME}")
     set(CPACK_NSIS_CONTACT "${APPLICATION_MAINTAINER}")
     set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
@@ -329,9 +329,9 @@ elseif(WIN32 OR MINGW)
       Delete '$INSTDIR\\\\${VCREDIST_FILE}'
     ")
     set(CPACK_NSIS_CREATE_ICONS_EXTRA
-      "CreateShortCut '$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\rpx-100.lnk' '$INSTDIR\\\\rpx-100.exe'")
+      "CreateShortCut '$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\RPX100.lnk' '$INSTDIR\\\\RPX100.exe'")
     set(CPACK_NSIS_DELETE_ICONS_EXTRA
-      "Delete '$SMPROGRAMS\\\\$START_MENU\\\\rpx-100.lnk'")
+      "Delete '$SMPROGRAMS\\\\$START_MENU\\\\RPX100.lnk'")
   endif(BUNDLE)
 
 endif(APPLE AND BUNDLE AND BUILD_GUI)

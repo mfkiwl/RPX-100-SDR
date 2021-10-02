@@ -42,7 +42,7 @@ MESSAGE_CLASS_DEFINITION(GS232Controller::MsgConfigureGS232Controller, Message)
 MESSAGE_CLASS_DEFINITION(GS232Controller::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(GS232Controller::MsgReportWorker, Message)
 
-const char* const GS232Controller::m_featureIdURI = "rpx-100.feature.gs232controller";
+const char* const GS232Controller::m_featureIdURI = "RPX100.feature.gs232controller";
 const char* const GS232Controller::m_featureId = "GS232Controller";
 
 GS232Controller::GS232Controller(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -513,7 +513,7 @@ void GS232Controller::webapiReverseSendSettings(QList<QString>& featureSettingsK
         swgGS232ControllerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

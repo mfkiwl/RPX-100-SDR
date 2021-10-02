@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define FILEOUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.fileoutput"
+#define FILEOUTPUT_DEVICE_TYPE_ID "RPX100.samplesink.fileoutput"
 
 class PluginAPI;
 class DeviceAPI;

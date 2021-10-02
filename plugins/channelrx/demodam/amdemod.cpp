@@ -41,7 +41,7 @@
 
 MESSAGE_CLASS_DEFINITION(AMDemod::MsgConfigureAMDemod, Message)
 
-const char* const AMDemod::m_channelIdURI = "rpx-100.channel.amdemod";
+const char* const AMDemod::m_channelIdURI = "RPX100.channel.amdemod";
 const char* const AMDemod::m_channelId = "AMDemod";
 const int AMDemod::m_udpBlockSize = 512;
 
@@ -451,7 +451,7 @@ void AMDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, con
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

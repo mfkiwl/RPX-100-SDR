@@ -315,7 +315,7 @@ void RemoteInputGui::on_apiApplyButton_clicked(bool checked)
 
     sendSettings();
 
-    QString infoURL = QString("http://%1:%2/rpx-100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
+    QString infoURL = QString("http://%1:%2/RPX100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
     m_networkRequest.setUrl(QUrl(infoURL));
     m_networkManager->get(m_networkRequest);
 }
@@ -334,7 +334,7 @@ void RemoteInputGui::on_apiAddress_returnPressed()
 {
     m_settings.m_apiAddress = ui->apiAddress->text();
 
-    QString infoURL = QString("http://%1:%2/rpx-100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
+    QString infoURL = QString("http://%1:%2/RPX100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
     m_networkRequest.setUrl(QUrl(infoURL));
     m_networkManager->get(m_networkRequest);
 
@@ -391,7 +391,7 @@ void RemoteInputGui::on_apiPort_returnPressed()
     {
         m_settings.m_apiPort = udpApiPort;
 
-        QString infoURL = QString("http://%1:%2/rpx-100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
+        QString infoURL = QString("http://%1:%2/RPX100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
         m_networkRequest.setUrl(QUrl(infoURL));
         m_networkManager->get(m_networkRequest);
 

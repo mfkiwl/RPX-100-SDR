@@ -40,7 +40,7 @@ MESSAGE_CLASS_DEFINITION(RemoteSource::MsgConfigureRemoteSource, Message)
 MESSAGE_CLASS_DEFINITION(RemoteSource::MsgQueryStreamData, Message)
 MESSAGE_CLASS_DEFINITION(RemoteSource::MsgReportStreamData, Message)
 
-const char* const RemoteSource::m_channelIdURI = "rpx-100.channeltx.remotesource";
+const char* const RemoteSource::m_channelIdURI = "RPX100.channeltx.remotesource";
 const char* const RemoteSource::m_channelId ="RemoteSource";
 
 RemoteSource::RemoteSource(DeviceAPI *deviceAPI) :
@@ -360,7 +360,7 @@ void RemoteSource::webapiReverseSendSettings(QList<QString>& channelSettingsKeys
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

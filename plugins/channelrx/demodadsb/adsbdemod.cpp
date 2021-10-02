@@ -48,7 +48,7 @@
 
 MESSAGE_CLASS_DEFINITION(ADSBDemod::MsgConfigureADSBDemod, Message)
 
-const char* const ADSBDemod::m_channelIdURI = "rpx-100.channel.adsbdemod";
+const char* const ADSBDemod::m_channelIdURI = "RPX100.channel.adsbdemod";
 const char* const ADSBDemod::m_channelId = "ADSBDemod";
 
 ADSBDemod::ADSBDemod(DeviceAPI *devieAPI) :
@@ -433,7 +433,7 @@ void ADSBDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, c
         swgADSBDemodSettings->setStreamIndex(settings.m_streamIndex);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

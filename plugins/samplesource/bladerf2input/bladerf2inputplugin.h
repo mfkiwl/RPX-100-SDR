@@ -25,7 +25,7 @@ class PluginAPI;
 class DeviceAPI;
 class DeviceUISet;
 
-#define BLADERF2INPUT_DEVICE_TYPE_ID "rpx-100.samplesource.bladerf2input"
+#define BLADERF2INPUT_DEVICE_TYPE_ID "RPX100.samplesource.bladerf2input"
 
 class Blderf2InputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

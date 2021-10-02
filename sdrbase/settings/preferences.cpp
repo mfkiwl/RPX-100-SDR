@@ -17,7 +17,7 @@ void Preferences::resetToDefaults()
 	m_longitude = 8.418125;
         m_altitude = 0.0f;
 	m_useLogFile = false;
-	m_logFileName = "rpx-100.log";
+	m_logFileName = "RPX100.log";
 	m_consoleMinLogLevel = QtDebugMsg;
     m_fileMinLogLevel = QtDebugMsg;
 }
@@ -73,7 +73,7 @@ bool Preferences::deserialize(const QByteArray& data)
 		}
 
 		d.readBool(9, &m_useLogFile, false);
-		d.readString(10, &m_logFileName, "rpx-100.log");
+		d.readString(10, &m_logFileName, "RPX100.log");
 
         d.readS32(11, &tmpInt, (int) QtDebugMsg);
         d.readString(12, &m_stationName, "Home");

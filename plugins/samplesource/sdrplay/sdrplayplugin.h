@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define SDRPLAY_DEVICE_TYPE_ID "rpx-100.samplesource.sdrplay"
+#define SDRPLAY_DEVICE_TYPE_ID "RPX100.samplesource.sdrplay"
 
 class SDRPlayPlugin : public QObject, public PluginInterface {
     Q_OBJECT

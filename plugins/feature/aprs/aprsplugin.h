@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class APRSPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.feature.aprs")
+    Q_PLUGIN_METADATA(IID "RPX100.feature.aprs")
 
 public:
     explicit APRSPlugin(QObject* parent = nullptr);

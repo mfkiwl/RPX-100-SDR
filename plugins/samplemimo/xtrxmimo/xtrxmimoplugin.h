@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define XTRXMIMO_DEVICE_TYPE_ID "rpx-100.samplemimo.xtrxmimo"
+#define XTRXMIMO_DEVICE_TYPE_ID "RPX100.samplemimo.xtrxmimo"
 
 class XTRXMIMOPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

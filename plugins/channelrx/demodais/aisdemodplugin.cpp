@@ -31,9 +31,9 @@ const PluginDescriptor AISDemodPlugin::m_pluginDescriptor = {
     QStringLiteral("AIS Demodulator"),
     QStringLiteral("6.16.1"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 AISDemodPlugin::AISDemodPlugin(QObject* parent) :

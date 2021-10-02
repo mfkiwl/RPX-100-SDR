@@ -332,7 +332,7 @@
         </size>
        </property>
        <property name="toolTip">
-        <string>Device index (for rpx-100 server)</string>
+        <string>Device index (for RPX100 server)</string>
        </property>
        <property name="inputMask">
         <string>00</string>
@@ -358,7 +358,7 @@
         </size>
        </property>
        <property name="toolTip">
-        <string>Channel index (for rpx-100)</string>
+        <string>Channel index (for RPX100)</string>
        </property>
        <property name="inputMask">
         <string>00</string>

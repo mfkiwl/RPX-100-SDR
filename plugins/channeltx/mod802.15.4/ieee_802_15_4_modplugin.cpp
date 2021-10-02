@@ -31,9 +31,9 @@ const PluginDescriptor IEEE_802_15_4_ModPlugin::m_pluginDescriptor = {
     QStringLiteral("802.15.4 Modulator"),
     QStringLiteral("6.16.1"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 IEEE_802_15_4_ModPlugin::IEEE_802_15_4_ModPlugin(QObject* parent) :

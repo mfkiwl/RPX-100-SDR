@@ -58,8 +58,8 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
     QCoreApplication a(argc, argv);
 
     QCoreApplication::setOrganizationName("oe3bia");
-    QCoreApplication::setApplicationName("RPX-100");
-    QCoreApplication::setApplicationVersion(rpx-100_VERSION);
+    QCoreApplication::setApplicationName("RPX100");
+    QCoreApplication::setApplicationVersion(RPX100_VERSION);
 
 #ifndef _WIN32
     int catchSignals[] = {SIGQUIT, SIGINT, SIGTERM, SIGHUP};
@@ -106,6 +106,6 @@ static int runQtApplication(int argc, char* argv[], qtwebapp::LoggerWithFile *lo
         logger->installMsgHandler();
         int res = runQtApplication(argc, argv, logger);
         delete logger;
-        qWarning("RPX-100 quit.");
+        qWarning("RPX100 quit.");
         return res;
       }

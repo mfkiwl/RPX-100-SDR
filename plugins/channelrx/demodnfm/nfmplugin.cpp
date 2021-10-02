@@ -14,9 +14,9 @@ const PluginDescriptor NFMPlugin::m_pluginDescriptor = {
 	QStringLiteral("NFM Demodulator"),
 	QStringLiteral("6.10.0"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/rpx-100"),
+	QStringLiteral("https://github.com/f4exb/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/rpx-100")
+	QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 NFMPlugin::NFMPlugin(QObject* parent) :

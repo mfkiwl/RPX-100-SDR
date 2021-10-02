@@ -34,9 +34,9 @@ const PluginDescriptor SoapySDRInputPlugin::m_pluginDescriptor = {
     QStringLiteral("SoapySDR Input"),
     QStringLiteral("6.5.3"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 static constexpr const char* const m_hardwareID = "SoapySDR";

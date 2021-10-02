@@ -28,7 +28,7 @@ class BasebandSampleSource;
 class AISModPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.modais")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.modais")
 
 public:
     explicit AISModPlugin(QObject* parent = 0);

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / rpx-100                                                          //
+// for F4EXB / RPX100                                                          //
 // using LeanSDR Framework (C) 2016 F4DAV                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -30,7 +30,7 @@
 #include "datvdemod.h"
 #include "maincore.h"
 
-const char* const DATVDemod::m_channelIdURI = "rpx-100.channel.demoddatv";
+const char* const DATVDemod::m_channelIdURI = "RPX100.channel.demoddatv";
 const char* const DATVDemod::m_channelId = "DATVDemod";
 
 MESSAGE_CLASS_DEFINITION(DATVDemod::MsgConfigureDATVDemod, Message)

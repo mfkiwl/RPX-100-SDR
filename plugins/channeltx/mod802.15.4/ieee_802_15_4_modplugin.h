@@ -28,7 +28,7 @@ class BasebandSampleSource;
 class IEEE_802_15_4_ModPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channeltx.mod802.15.4")
+    Q_PLUGIN_METADATA(IID "RPX100.channeltx.mod802.15.4")
 
 public:
     explicit IEEE_802_15_4_ModPlugin(QObject* parent = 0);

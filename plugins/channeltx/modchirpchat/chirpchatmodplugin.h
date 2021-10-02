@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class ChirpChatModPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.channeltx.modchirpchat")
+	Q_PLUGIN_METADATA(IID "RPX100.channeltx.modchirpchat")
 
 public:
 	explicit ChirpChatModPlugin(QObject* parent = nullptr);

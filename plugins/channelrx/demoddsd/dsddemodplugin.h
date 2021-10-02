@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class DSDDemodPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.channel.dsddemod")
+	Q_PLUGIN_METADATA(IID "RPX100.channel.dsddemod")
 
 public:
 	explicit DSDDemodPlugin(QObject* parent = NULL);

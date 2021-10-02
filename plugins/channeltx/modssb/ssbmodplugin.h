@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class SSBModPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.channeltx.ssbmod")
+	Q_PLUGIN_METADATA(IID "RPX100.channeltx.ssbmod")
 
 public:
 	explicit SSBModPlugin(QObject* parent = 0);

@@ -88,7 +88,7 @@ void deviceHandler::set_lnaState(int x)
     (void)x;
 }
 
-// Device with source data from rpx-100
+// Device with source data from RPX100
 // Other methods not needed for DAB library
 
 DABDemodDevice::DABDemodDevice() :

@@ -212,7 +212,7 @@ void APRSWorker::recv()
             if (!m_loggedIn)
             {
                 // Log in with callsign and passcode
-                QString login = QString("user %1 pass %2 vers rpx-100 6.4.0%3\r\n").arg(m_settings.m_igateCallsign).arg(m_settings.m_igatePasscode).arg(m_settings.m_igateFilter.isEmpty() ? "" : QString(" filter %1").arg(m_settings.m_igateFilter));
+                QString login = QString("user %1 pass %2 vers RPX100 6.4.0%3\r\n").arg(m_settings.m_igateCallsign).arg(m_settings.m_igatePasscode).arg(m_settings.m_igateFilter.isEmpty() ? "" : QString(" filter %1").arg(m_settings.m_igateFilter));
                 send(login.toLatin1(), login.length());
                 m_loggedIn = true;
                 if (m_msgQueueToFeature)

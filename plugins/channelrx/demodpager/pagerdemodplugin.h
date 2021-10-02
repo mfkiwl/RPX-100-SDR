@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class PagerDemodPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.pagerdemod")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.pagerdemod")
 
 public:
     explicit PagerDemodPlugin(QObject* parent = NULL);

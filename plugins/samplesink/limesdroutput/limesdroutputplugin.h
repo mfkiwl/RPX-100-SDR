@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define LIMESDROUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.limesdr"
+#define LIMESDROUTPUT_DEVICE_TYPE_ID "RPX100.samplesink.limesdr"
 
 class LimeSDROutputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

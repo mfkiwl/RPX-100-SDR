@@ -363,7 +363,7 @@ bool ChannelWebAPIUtils::startStopFileSinks(unsigned int deviceIndex, bool start
     int channelIndex = 0;
     while(nullptr != (channel = mainCore->getChannel(deviceIndex, channelIndex)))
     {
-        if (ChannelUtils::compareChannelURIs(channel->getURI(), "rpx-100.channel.filesink"))
+        if (ChannelUtils::compareChannelURIs(channel->getURI(), "RPX100.channel.filesink"))
         {
             QStringList channelActionKeys = {"record"};
             SWGRPX100::SWGChannelActions channelActions;
@@ -397,7 +397,7 @@ bool ChannelWebAPIUtils::satelliteAOS(const QString name, bool northToSouthPass)
         int channelIndex = 0;
         while(nullptr != (channel = mainCore->getChannel(deviceIndex, channelIndex)))
         {
-            if (ChannelUtils::compareChannelURIs(channel->getURI(), "rpx-100.channel.aptdemod"))
+            if (ChannelUtils::compareChannelURIs(channel->getURI(), "RPX100.channel.aptdemod"))
             {
                 QStringList channelActionKeys = {"aos"};
                 SWGRPX100::SWGChannelActions channelActions;
@@ -436,7 +436,7 @@ bool ChannelWebAPIUtils::satelliteLOS(const QString name)
         int channelIndex = 0;
         while(nullptr != (channel = mainCore->getChannel(deviceIndex, channelIndex)))
         {
-            if (ChannelUtils::compareChannelURIs(channel->getURI(), "rpx-100.channel.aptdemod"))
+            if (ChannelUtils::compareChannelURIs(channel->getURI(), "RPX100.channel.aptdemod"))
             {
                 QStringList channelActionKeys = {"los"};
                 SWGRPX100::SWGChannelActions channelActions;

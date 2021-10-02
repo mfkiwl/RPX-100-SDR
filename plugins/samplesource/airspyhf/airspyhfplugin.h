@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define AIRSPYHF_DEVICE_TYPE_ID "rpx-100.samplesource.airspyhf"
+#define AIRSPYHF_DEVICE_TYPE_ID "RPX100.samplesource.airspyhf"
 
 class PluginAPI;
 

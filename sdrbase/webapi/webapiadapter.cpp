@@ -1517,7 +1517,7 @@ int WebAPIAdapter::instanceDeviceSetDelete(
         SWGRPX100::SWGSuccessResponse& response,
         SWGRPX100::SWGErrorResponse& error)
 {
-    unsigned int minFeatureSets = QCoreApplication::applicationName() == "rpx-100Srv" ? 0 : 1;
+    unsigned int minFeatureSets = QCoreApplication::applicationName() == "RPX100Srv" ? 0 : 1;
 
     if (m_mainCore->m_deviceSets.size() > minFeatureSets)
     {
@@ -1556,7 +1556,7 @@ int WebAPIAdapter::instanceFeatureSetDelete(
         SWGRPX100::SWGSuccessResponse& response,
         SWGRPX100::SWGErrorResponse& error)
 {
-    unsigned int minFeatureSets = QCoreApplication::applicationName() == "rpx-100Srv" ? 0 : 1;
+    unsigned int minFeatureSets = QCoreApplication::applicationName() == "RPX100Srv" ? 0 : 1;
 
     if (m_mainCore->m_featureSets.size() > minFeatureSets)
     {

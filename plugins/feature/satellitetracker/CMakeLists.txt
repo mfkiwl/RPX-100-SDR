@@ -20,7 +20,7 @@ set(satellitetracker_HEADERS
 )
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/RPX100/code/qt5/client
     ${SGP4_INCLUDE_DIR}
 )
 
@@ -79,5 +79,5 @@ install(TARGETS ${TARGET_NAME} DESTINATION ${INSTALL_FOLDER})
 if(WIN32)
   # Run deployqt for Charts and TextToSpeech etc
   include(DeployQt)
-  windeployqt(${TARGET_NAME} ${rpx-100_BINARY_BIN_DIR} ${PROJECT_SOURCE_DIR}/aprs)
+  windeployqt(${TARGET_NAME} ${RPX100_BINARY_BIN_DIR} ${PROJECT_SOURCE_DIR}/aprs)
 endif()

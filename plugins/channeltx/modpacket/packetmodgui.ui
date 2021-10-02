@@ -758,7 +758,7 @@ APRS examples:
 !Position</string>
         </property>
         <property name="text">
-         <string>&gt;Using rpx-100</string>
+         <string>&gt;Using RPX100</string>
         </property>
         <property name="maxLength">
          <number>256</number>

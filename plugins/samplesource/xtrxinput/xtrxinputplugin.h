@@ -24,7 +24,7 @@
 
 class PluginAPI;
 
-#define XTRX_DEVICE_TYPE_ID "rpx-100.samplesource.xtrx"
+#define XTRX_DEVICE_TYPE_ID "RPX100.samplesource.xtrx"
 
 class XTRXInputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

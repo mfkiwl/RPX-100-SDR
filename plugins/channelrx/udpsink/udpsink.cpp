@@ -40,7 +40,7 @@
 
 MESSAGE_CLASS_DEFINITION(UDPSink::MsgConfigureUDPSink, Message)
 
-const char* const UDPSink::m_channelIdURI = "rpx-100.channel.udpsink";
+const char* const UDPSink::m_channelIdURI = "RPX100.channel.udpsink";
 const char* const UDPSink::m_channelId = "UDPSink";
 
 UDPSink::UDPSink(DeviceAPI *deviceAPI) :
@@ -458,7 +458,7 @@ void UDPSink::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, con
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

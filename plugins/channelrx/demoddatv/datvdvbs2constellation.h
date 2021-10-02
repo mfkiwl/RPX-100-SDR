@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2019 F4HKW                                                      //
-// for F4EXB / rpx-100                                                          //
+// for F4EXB / RPX100                                                          //
 // using LeanSDR Framework (C) 2016 F4DAV                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //

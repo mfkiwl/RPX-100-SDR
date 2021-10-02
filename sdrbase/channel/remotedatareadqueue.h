@@ -3,10 +3,10 @@
 //                                                                               //
 // Remote sink channel (Rx) data blocks to read queue                            //
 //                                                                               //
-// rpx-100 can serve as a remote SDR front end that handles the interface       //
+// RPX100 can serve as a remote SDR front end that handles the interface       //
 // with a physical device and sends or receives the I/Q samples stream via UDP   //
-// to or from another rpx-100 instance or any program implementing the same     //
-// protocol. The remote rpx-100 is controlled via its Web REST API.             //
+// to or from another RPX100 instance or any program implementing the same     //
+// protocol. The remote RPX100 is controlled via its Web REST API.             //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //

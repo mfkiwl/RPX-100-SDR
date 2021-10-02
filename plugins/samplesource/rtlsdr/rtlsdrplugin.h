@@ -6,7 +6,7 @@
 
 class PluginAPI;
 
-#define RTLSDR_DEVICE_TYPE_ID "rpx-100.samplesource.rtlsdr"
+#define RTLSDR_DEVICE_TYPE_ID "RPX100.samplesource.rtlsdr"
 
 class RTLSDRPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

@@ -48,7 +48,7 @@ MESSAGE_CLASS_DEFINITION(FreeDVMod::MsgConfigureFileSourceStreamTiming, Message)
 MESSAGE_CLASS_DEFINITION(FreeDVMod::MsgReportFileSourceStreamData, Message)
 MESSAGE_CLASS_DEFINITION(FreeDVMod::MsgReportFileSourceStreamTiming, Message)
 
-const char* const FreeDVMod::m_channelIdURI = "rpx-100.channeltx.freedvmod";
+const char* const FreeDVMod::m_channelIdURI = "RPX100.channeltx.freedvmod";
 const char* const FreeDVMod::m_channelId = "FreeDVMod";
 
 FreeDVMod::FreeDVMod(DeviceAPI *deviceAPI) :
@@ -518,7 +518,7 @@ void FreeDVMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, c
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -550,7 +550,7 @@ void FreeDVMod::webapiReverseSendCWSettings(const CWKeyerSettings& cwKeyerSettin
     SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = swgFreeDVModSettings->getCwKeyer();
     m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex)

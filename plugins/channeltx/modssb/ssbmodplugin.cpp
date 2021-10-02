@@ -30,9 +30,9 @@ const PluginDescriptor SSBModPlugin::m_pluginDescriptor = {
     QStringLiteral("SSB Modulator"),
     QStringLiteral("6.4.0"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 SSBModPlugin::SSBModPlugin(QObject* parent) :

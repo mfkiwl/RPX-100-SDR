@@ -30,9 +30,9 @@ const PluginDescriptor FreqTrackerPlugin::m_pluginDescriptor = {
 	QStringLiteral("Frequency Tracker"),
 	QStringLiteral("6.3.3"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/rpx-100"),
+	QStringLiteral("https://github.com/f4exb/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/rpx-100")
+	QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 FreqTrackerPlugin::FreqTrackerPlugin(QObject* parent) :

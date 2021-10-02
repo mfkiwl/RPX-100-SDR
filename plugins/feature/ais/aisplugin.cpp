@@ -32,9 +32,9 @@ const PluginDescriptor AISPlugin::m_pluginDescriptor = {
     QStringLiteral("AIS"),
     QStringLiteral("6.12.1"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 AISPlugin::AISPlugin(QObject* parent) :

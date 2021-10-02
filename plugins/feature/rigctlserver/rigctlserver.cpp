@@ -34,7 +34,7 @@
 MESSAGE_CLASS_DEFINITION(RigCtlServer::MsgConfigureRigCtlServer, Message)
 MESSAGE_CLASS_DEFINITION(RigCtlServer::MsgStartStop, Message)
 
-const char* const RigCtlServer::m_featureIdURI = "rpx-100.feature.rigctlserver";
+const char* const RigCtlServer::m_featureIdURI = "RPX100.feature.rigctlserver";
 const char* const RigCtlServer::m_featureId = "RigCtlServer";
 
 RigCtlServer::RigCtlServer(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -363,7 +363,7 @@ void RigCtlServer::webapiReverseSendSettings(QList<QString>& featureSettingsKeys
         swgRigCtlServerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

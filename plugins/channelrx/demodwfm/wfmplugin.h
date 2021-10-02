@@ -10,7 +10,7 @@ class BasebandSampleSink;
 class WFMPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.channel.wfmdemod")
+	Q_PLUGIN_METADATA(IID "RPX100.channel.wfmdemod")
 
 public:
 	explicit WFMPlugin(QObject* parent = NULL);

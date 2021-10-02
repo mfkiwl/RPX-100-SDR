@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class LocalSinkPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.demod.localsink")
+    Q_PLUGIN_METADATA(IID "RPX100.demod.localsink")
 
 public:
     explicit LocalSinkPlugin(QObject* parent = 0);

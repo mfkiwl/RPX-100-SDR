@@ -82,8 +82,8 @@ struct SigMFFileMetaInfo
     QString m_recorder;
     QString m_license;
     QString m_hw;
-    // rpx-100
-    QString m_rpx-100Version;
+    // RPX100
+    QString m_RPX100Version;
     QString m_qtVersion;
     int m_rxBits;
     QString m_arch;
@@ -111,7 +111,7 @@ struct SigMFFileMetaInfo
         m_recorder(other.m_recorder),
         m_license(other.m_license),
         m_hw(other.m_hw),
-        m_rpx-100Version(other.m_rpx-100Version),
+        m_RPX100Version(other.m_RPX100Version),
         m_qtVersion(other.m_qtVersion),
         m_rxBits(other.m_rxBits),
         m_arch(other.m_arch),
@@ -140,7 +140,7 @@ struct SigMFFileMetaInfo
             m_recorder = t.m_recorder;
             m_license = t.m_license;
             m_hw = t.m_hw;
-            m_rpx-100Version = t.m_rpx-100Version;
+            m_RPX100Version = t.m_RPX100Version;
             m_qtVersion = t.m_qtVersion;
             m_rxBits = t.m_rxBits;
             m_arch = t.m_arch;
@@ -160,7 +160,7 @@ struct SigMFFileCapture
     uint64_t m_sampleStart;     //!< Sample index at which capture start
     uint64_t m_length;          //!< Length of capture in samples
     uint64_t m_cumulativeTime;  //!< Time since beginning of record (millisecond timestamp) at start
-    unsigned int m_sampleRate;  //!< rpx-100 extension - sample rate for this capture
+    unsigned int m_sampleRate;  //!< RPX100 extension - sample rate for this capture
 
     SigMFFileCapture() :
         m_tsms(0),

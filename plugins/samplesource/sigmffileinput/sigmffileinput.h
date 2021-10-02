@@ -473,14 +473,14 @@ private:
     void stopWorker();
 	bool openFileStreams(const QString& fileName);
     void extractMeta(
-        sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
-        sigmf::Capture<core::DescrT, rpx-100::DescrT>,
+        sigmf::SigMF<sigmf::Global<core::DescrT, RPX100::DescrT>,
+        sigmf::Capture<core::DescrT, RPX100::DescrT>,
         sigmf::Annotation<core::DescrT> >* metaRecord,
         uint64_t dataFileSize
     );
     void extractCaptures(
-        sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
-        sigmf::Capture<core::DescrT, rpx-100::DescrT>,
+        sigmf::SigMF<sigmf::Global<core::DescrT, RPX100::DescrT>,
+        sigmf::Capture<core::DescrT, RPX100::DescrT>,
         sigmf::Annotation<core::DescrT> >* metaRecord
     );
     static void analyzeDataType(const std::string& dataTypeString, SigMFFileDataType& dataType);

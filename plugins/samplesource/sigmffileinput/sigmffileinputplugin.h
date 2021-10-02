@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define FILEINPUT_DEVICE_TYPE_ID "rpx-100.samplesource.sigmffileinput"
+#define FILEINPUT_DEVICE_TYPE_ID "RPX100.samplesource.sigmffileinput"
 
 class PluginAPI;
 

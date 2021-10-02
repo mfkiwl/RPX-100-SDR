@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class ADSBPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.adsbdemod")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.adsbdemod")
 
 public:
     explicit ADSBPlugin(QObject* parent = NULL);

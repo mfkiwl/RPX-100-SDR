@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class FreeDVModPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.channeltx.freedvmod")
+	Q_PLUGIN_METADATA(IID "RPX100.channeltx.freedvmod")
 
 public:
 	explicit FreeDVModPlugin(QObject* parent = 0);

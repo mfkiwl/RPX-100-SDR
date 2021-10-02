@@ -37,7 +37,7 @@
 
 MESSAGE_CLASS_DEFINITION(AIS::MsgConfigureAIS, Message)
 
-const char* const AIS::m_featureIdURI = "rpx-100.feature.ais";
+const char* const AIS::m_featureIdURI = "RPX100.feature.ais";
 const char* const AIS::m_featureId = "AIS";
 
 AIS::AIS(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -267,7 +267,7 @@ void AIS::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, const A
         swgAISSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

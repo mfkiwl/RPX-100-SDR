@@ -29,7 +29,7 @@
 // Find the specified target on the map
 bool FeatureWebAPIUtils::mapFind(const QString& target, int featureSetIndex, int featureIndex)
 {
-    Feature *feature = FeatureWebAPIUtils::getFeature(featureSetIndex, featureIndex, "rpx-100.feature.map");
+    Feature *feature = FeatureWebAPIUtils::getFeature(featureSetIndex, featureIndex, "RPX100.feature.map");
     if (feature != nullptr)
     {
         QString errorMessage;
@@ -111,7 +111,7 @@ bool FeatureWebAPIUtils::satelliteAOS(const QString name, const QDateTime aos, c
         for (int fi = 0; fi < (*it)->getNumberOfFeatures(); fi++)
         {
             Feature *feature = (*it)->getFeatureAt(fi);
-            if (feature->getURI() == "rpx-100.feature.pertester")
+            if (feature->getURI() == "RPX100.feature.pertester")
             {
                 QStringList featureActionKeys = {"aos"};
                 SWGRPX100::SWGFeatureActions featureActions;

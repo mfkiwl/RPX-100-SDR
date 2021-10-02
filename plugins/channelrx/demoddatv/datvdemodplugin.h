@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / rpx-100                                                          //
+// for F4EXB / RPX100                                                          //
 // using LeanSDR Framework (C) 2016 F4DAV                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -30,7 +30,7 @@ class DATVDemodPlugin : public QObject, PluginInterface
 {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.demoddatv")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.demoddatv")
 
 public:
     explicit DATVDemodPlugin(QObject* ptrParent = nullptr);

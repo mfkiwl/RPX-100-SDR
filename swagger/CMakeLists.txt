@@ -1,11 +1,11 @@
 project (swagger)
 
 file(GLOB swagger_SOURCES
-    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client/*.cpp
+    ${CMAKE_SOURCE_DIR}/swagger/RPX100/code/qt5/client/*.cpp
 )
 
 file(GLOB swagger_HEADERS
-    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client/*.h
+    ${CMAKE_SOURCE_DIR}/swagger/RPX100/code/qt5/client/*.h
 )
 
 add_library(swagger SHARED
@@ -14,7 +14,7 @@ add_library(swagger SHARED
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/exports
-    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/RPX100/code/qt5/client
 )
 
 if (NOT MSVC)

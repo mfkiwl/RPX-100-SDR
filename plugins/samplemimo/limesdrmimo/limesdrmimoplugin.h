@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define LIMESDRMIMO_DEVICE_TYPE_ID "rpx-100.samplemimo.limesdrmimo"
+#define LIMESDRMIMO_DEVICE_TYPE_ID "RPX100.samplemimo.limesdrmimo"
 
 class LimeSDRMIMOPlugin : public QObject, public PluginInterface {
 	Q_OBJECT

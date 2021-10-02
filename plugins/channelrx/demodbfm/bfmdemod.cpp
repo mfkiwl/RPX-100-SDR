@@ -43,7 +43,7 @@
 
 MESSAGE_CLASS_DEFINITION(BFMDemod::MsgConfigureBFMDemod, Message)
 
-const char* const BFMDemod::m_channelIdURI = "rpx-100.channel.bfm";
+const char* const BFMDemod::m_channelIdURI = "RPX100.channel.bfm";
 const char* const BFMDemod::m_channelId = "BFMDemod";
 const int BFMDemod::m_udpBlockSize = 512;
 
@@ -454,7 +454,7 @@ void BFMDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

@@ -35,7 +35,7 @@
 MESSAGE_CLASS_DEFINITION(Interferometer::MsgConfigureInterferometer, Message)
 MESSAGE_CLASS_DEFINITION(Interferometer::MsgBasebandNotification, Message)
 
-const char* const Interferometer::m_channelIdURI = "rpx-100.channel.interferometer";
+const char* const Interferometer::m_channelIdURI = "RPX100.channel.interferometer";
 const char* const Interferometer::m_channelId = "Interferometer";
 const int Interferometer::m_fftSize = 4096;
 
@@ -374,7 +374,7 @@ void Interferometer::webapiReverseSendSettings(QList<QString>& channelSettingsKe
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

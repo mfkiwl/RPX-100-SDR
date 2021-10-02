@@ -45,7 +45,7 @@
 MESSAGE_CLASS_DEFINITION(FileSink::MsgConfigureFileSink, Message)
 MESSAGE_CLASS_DEFINITION(FileSink::MsgReportStartStop, Message)
 
-const char* const FileSink::m_channelIdURI = "rpx-100.channel.filesink";
+const char* const FileSink::m_channelIdURI = "RPX100.channel.filesink";
 const char* const FileSink::m_channelId = "FileSink";
 
 FileSink::FileSink(DeviceAPI *deviceAPI) :
@@ -551,7 +551,7 @@ void FileSink::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

@@ -62,7 +62,7 @@ void PacketModSettings::resetToDefaults()
     m_callsign = "MYCALL";
     m_to = "APRS";
     m_via = "WIDE2-2";
-    m_data = ">Using rpx-100";
+    m_data = ">Using RPX100";
     m_rgbColor = QColor(0, 105, 2).rgb();
     m_title = "Packet Modulator";
     m_streamIndex = 0;
@@ -237,7 +237,7 @@ bool PacketModSettings::deserialize(const QByteArray& data)
         d.readString(27, &m_callsign, "MYCALL");
         d.readString(28, &m_to, "APRS");
         d.readString(29, &m_via, "WIDE2-2");
-        d.readString(30, &m_data, ">Using rpx-100");
+        d.readString(30, &m_data, ">Using RPX100");
 
         d.readU32(31, &m_rgbColor);
         d.readString(32, &m_title, "Packet Modulator");

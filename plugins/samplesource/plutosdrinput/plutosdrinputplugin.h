@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define PLUTOSDR_DEVICE_TYPE_ID "rpx-100.samplesource.plutosdr"
+#define PLUTOSDR_DEVICE_TYPE_ID "RPX100.samplesource.plutosdr"
 
 class PluginAPI;
 

@@ -28,7 +28,7 @@ class MIMOChannel;
 class InterferometerPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channelmimo.interferometer")
+    Q_PLUGIN_METADATA(IID "RPX100.channelmimo.interferometer")
 
 public:
     explicit InterferometerPlugin(QObject* parent = nullptr);

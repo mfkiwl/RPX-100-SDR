@@ -27,7 +27,7 @@ class WebAPIAdapterInterface;
 class VORLocalizerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.feature.vorlocalizer")
+	Q_PLUGIN_METADATA(IID "RPX100.feature.vorlocalizer")
 
 public:
 	explicit VORLocalizerPlugin(QObject* parent = nullptr);

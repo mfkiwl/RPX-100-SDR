@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define REMOTEINPUT_DEVICE_TYPE_ID "rpx-100.samplesource.remoteinput"
+#define REMOTEINPUT_DEVICE_TYPE_ID "RPX100.samplesource.remoteinput"
 
 class PluginAPI;
 

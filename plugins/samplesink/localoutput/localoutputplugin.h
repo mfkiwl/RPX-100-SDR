@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define LOCALOUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.localoutput"
+#define LOCALOUTPUT_DEVICE_TYPE_ID "RPX100.samplesink.localoutput"
 
 class PluginAPI;
 

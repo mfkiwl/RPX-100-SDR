@@ -52,7 +52,7 @@ MESSAGE_CLASS_DEFINITION(PacketMod::MsgConfigurePacketMod, Message)
 MESSAGE_CLASS_DEFINITION(PacketMod::MsgTXPacketMod, Message)
 MESSAGE_CLASS_DEFINITION(PacketMod::MsgTXPacketBytes, Message)
 
-const char* const PacketMod::m_channelIdURI = "rpx-100.channeltx.modpacket";
+const char* const PacketMod::m_channelIdURI = "RPX100.channeltx.modpacket";
 const char* const PacketMod::m_channelId = "PacketMod";
 
 PacketMod::PacketMod(DeviceAPI *deviceAPI) :
@@ -781,7 +781,7 @@ void PacketMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, c
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

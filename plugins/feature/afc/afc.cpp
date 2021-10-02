@@ -40,7 +40,7 @@ MESSAGE_CLASS_DEFINITION(AFC::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(AFC::MsgDeviceTrack, Message)
 MESSAGE_CLASS_DEFINITION(AFC::MsgDevicesApply, Message)
 
-const char* const AFC::m_featureIdURI = "rpx-100.feature.afc";
+const char* const AFC::m_featureIdURI = "RPX100.feature.afc";
 const char* const AFC::m_featureId = "AFC";
 
 AFC::AFC(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -493,7 +493,7 @@ void AFC::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const A
         swgAFCSettings->setTrackerAdjustPeriod(settings.m_trackerAdjustPeriod);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)
@@ -543,7 +543,7 @@ void AFC::trackerDeviceChange(int deviceIndex)
     {
         ChannelAPI *channel = m_trackerDeviceSet->getChannelAt(i);
 
-        if (channel->getURI() == "rpx-100.channel.freqtracker")
+        if (channel->getURI() == "RPX100.channel.freqtracker")
         {
             MessageQueue *messageQueue = mainCore->getMessagePipes().registerChannelToFeature(channel, this, "settings");
             QObject::connect(
@@ -568,7 +568,7 @@ void AFC::trackedDeviceChange(int deviceIndex)
     {
         ChannelAPI *channel = m_trackedDeviceSet->getChannelAt(i);
 
-        if (channel->getURI() != "rpx-100.channel.freqtracker")
+        if (channel->getURI() != "RPX100.channel.freqtracker")
         {
             MessageQueue *messageQueue = mainCore->getMessagePipes().registerChannelToFeature(channel, this, "settings");
             QObject::connect(

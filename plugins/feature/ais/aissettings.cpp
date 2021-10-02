@@ -29,7 +29,7 @@ const QStringList AISSettings::m_pipeTypes = {
 };
 
 const QStringList AISSettings::m_pipeURIs = {
-    QStringLiteral("rpx-100.channel.aisdemod")
+    QStringLiteral("RPX100.channel.aisdemod")
 };
 
 AISSettings::AISSettings()

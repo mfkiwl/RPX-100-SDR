@@ -31,9 +31,9 @@ const PluginDescriptor DemodAnalyzerPlugin::m_pluginDescriptor = {
 	QStringLiteral("Demod Analyzer"),
 	QStringLiteral("6.15.1"),
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/rpx-100"),
+	QStringLiteral("https://github.com/f4exb/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/rpx-100")
+	QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 DemodAnalyzerPlugin::DemodAnalyzerPlugin(QObject* parent) :

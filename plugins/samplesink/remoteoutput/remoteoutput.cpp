@@ -507,7 +507,7 @@ void RemoteOutput::tick()
     {
         QString reportURL;
 
-        reportURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/report")
+        reportURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/report")
                 .arg(m_settings.m_apiAddress)
                 .arg(m_settings.m_apiPort)
                 .arg(m_settings.m_deviceIndex)
@@ -684,7 +684,7 @@ void RemoteOutput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys,
         swgRemoteOutputSettings->setChannelIndex(settings.m_channelIndex);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -710,7 +710,7 @@ void RemoteOutput::webapiReverseSendStartStop(bool start)
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("RemoteOutput"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

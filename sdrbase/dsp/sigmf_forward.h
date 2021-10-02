@@ -52,7 +52,7 @@ namespace sigmf {
 namespace core {
     class DescrT;
 }
-namespace rpx-100 {
+namespace RPX100 {
     class DescrT;
 }
 

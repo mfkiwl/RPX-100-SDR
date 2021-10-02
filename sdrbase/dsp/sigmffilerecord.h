@@ -73,8 +73,8 @@ private:
     quint64 m_sampleCount;
     quint64 m_initialMsCount;
     quint64 m_initialBytesCount;
-    sigmf::SigMF<sigmf::Global<core::DescrT, rpx-100::DescrT>,
-            sigmf::Capture<core::DescrT, rpx-100::DescrT>,
+    sigmf::SigMF<sigmf::Global<core::DescrT, RPX100::DescrT>,
+            sigmf::Capture<core::DescrT, RPX100::DescrT>,
             sigmf::Annotation<core::DescrT> > *m_metaRecord;
     void makeHeader();
     void makeCapture();

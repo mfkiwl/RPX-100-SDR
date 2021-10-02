@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2017 F4HKW                                                      //
-// for F4EXB / rpx-100                                                          //
+// for F4EXB / RPX100                                                          //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -31,10 +31,10 @@ const PluginDescriptor ATVDemodPlugin::m_ptrPluginDescriptor =
     ATVDemod::m_channelId,
 	QString("ATV Demodulator"),
 	QString("6.7.0"),
-    QString("(c) F4HKW for F4EXB / rpx-100"),
-	QString("https://github.com/f4exb/rpx-100"),
+    QString("(c) F4HKW for F4EXB / RPX100"),
+	QString("https://github.com/f4exb/RPX100"),
 	true,
-	QString("https://github.com/f4exb/rpx-100")
+	QString("https://github.com/f4exb/RPX100")
 };
 
 ATVDemodPlugin::ATVDemodPlugin(QObject* ptrParent) :

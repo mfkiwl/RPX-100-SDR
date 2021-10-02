@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class ChannelAnalyzerPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.channel.chanalyzerng")
+	Q_PLUGIN_METADATA(IID "RPX100.channel.chanalyzerng")
 
 public:
 	explicit ChannelAnalyzerPlugin(QObject* parent = NULL);

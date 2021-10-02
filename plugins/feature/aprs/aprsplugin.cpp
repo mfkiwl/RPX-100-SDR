@@ -32,9 +32,9 @@ const PluginDescriptor APRSPlugin::m_pluginDescriptor = {
     QStringLiteral("APRS"),
     QStringLiteral("6.8.0"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 APRSPlugin::APRSPlugin(QObject* parent) :

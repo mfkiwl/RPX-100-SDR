@@ -48,7 +48,7 @@ MESSAGE_CLASS_DEFINITION(APTDemod::MsgImage, Message)
 MESSAGE_CLASS_DEFINITION(APTDemod::MsgLine, Message)
 MESSAGE_CLASS_DEFINITION(APTDemod::MsgResetDecoder, Message)
 
-const char * const APTDemod::m_channelIdURI = "rpx-100.channel.aptdemod";
+const char * const APTDemod::m_channelIdURI = "RPX100.channel.aptdemod";
 const char * const APTDemod::m_channelId = "APTDemod";
 
 APTDemod::APTDemod(DeviceAPI *deviceAPI) :
@@ -482,7 +482,7 @@ void APTDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

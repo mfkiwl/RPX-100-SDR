@@ -5,7 +5,7 @@
 // Audio compressor based on sndfilter by Sean Connelly (@voidqk)                //
 // https://github.com/voidqk/sndfilter                                           //
 //                                                                               //
-// Sample by sample interface to facilitate integration in rpx-100 modulators.  //
+// Sample by sample interface to facilitate integration in RPX100 modulators.  //
 // Uses mono samples (just floats)                                               //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //

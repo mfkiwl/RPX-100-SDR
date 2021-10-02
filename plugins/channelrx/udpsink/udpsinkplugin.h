@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class UDPSinkPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.demod.udpsrc")
+	Q_PLUGIN_METADATA(IID "RPX100.demod.udpsrc")
 
 public:
 	explicit UDPSinkPlugin(QObject* parent = 0);

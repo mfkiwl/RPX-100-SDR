@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class NoiseFigurePlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.noisefigure")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.noisefigure")
 
 public:
     explicit NoiseFigurePlugin(QObject* parent = NULL);

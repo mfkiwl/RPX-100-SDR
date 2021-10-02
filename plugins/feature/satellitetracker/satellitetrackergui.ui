@@ -239,14 +239,14 @@
         <item>
          <widget class="QToolButton" name="radioControl">
           <property name="toolTip">
-           <string>rpx-100 control</string>
+           <string>RPX100 control</string>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="icon">
            <iconset resource="../../../sdrgui/resources/res.qrc">
-            <normaloff>:/rpx-100_icon.png</normaloff>:/rpx-100_icon.png</iconset>
+            <normaloff>:/RPX100_icon.png</normaloff>:/RPX100_icon.png</iconset>
           </property>
          </widget>
         </item>
@@ -267,7 +267,7 @@
         <item>
          <widget class="QToolButton" name="useMyPosition">
           <property name="toolTip">
-           <string>Set latitude, longitude and height from My Position in rpx-100 preferences</string>
+           <string>Set latitude, longitude and height from My Position in RPX100 preferences</string>
           </property>
           <property name="text">
            <string/>

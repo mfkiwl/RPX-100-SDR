@@ -31,10 +31,10 @@ const QStringList GS232ControllerSettings::m_pipeTypes = {
 };
 
 const QStringList GS232ControllerSettings::m_pipeURIs = {
-    QStringLiteral("rpx-100.channel.adsbdemod"),
-    QStringLiteral("rpx-100.feature.map"),
-    QStringLiteral("rpx-100.feature.startracker"),
-    QStringLiteral("rpx-100.feature.satellitetracker")
+    QStringLiteral("RPX100.channel.adsbdemod"),
+    QStringLiteral("RPX100.feature.map"),
+    QStringLiteral("RPX100.feature.startracker"),
+    QStringLiteral("RPX100.feature.satellitetracker")
 };
 
 GS232ControllerSettings::GS232ControllerSettings()

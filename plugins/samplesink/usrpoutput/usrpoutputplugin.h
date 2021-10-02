@@ -24,7 +24,7 @@
 
 class PluginAPI;
 
-#define USRPOUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.usrp"
+#define USRPOUTPUT_DEVICE_TYPE_ID "RPX100.samplesink.usrp"
 
 class USRPOutputPlugin : public QObject, public PluginInterface {
     Q_OBJECT

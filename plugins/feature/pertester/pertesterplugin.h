@@ -28,7 +28,7 @@ class WebAPIAdapterInterface;
 class PERTesterPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.feature.pertester")
+	Q_PLUGIN_METADATA(IID "RPX100.feature.pertester")
 
 public:
 	explicit PERTesterPlugin(QObject* parent = nullptr);

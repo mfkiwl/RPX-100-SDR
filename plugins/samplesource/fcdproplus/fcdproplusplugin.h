@@ -4,7 +4,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define FCDPROPLUS_DEVICE_TYPE_ID "rpx-100.samplesource.fcdproplus"
+#define FCDPROPLUS_DEVICE_TYPE_ID "RPX100.samplesource.fcdproplus"
 
 class PluginAPI;
 

@@ -32,9 +32,9 @@ const PluginDescriptor StarTrackerPlugin::m_pluginDescriptor = {
     QStringLiteral("Star Tracker"),
     QStringLiteral("6.15.0"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 StarTrackerPlugin::StarTrackerPlugin(QObject* parent) :

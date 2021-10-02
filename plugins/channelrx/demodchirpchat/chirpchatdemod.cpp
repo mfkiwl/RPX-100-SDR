@@ -45,7 +45,7 @@ MESSAGE_CLASS_DEFINITION(ChirpChatDemod::MsgConfigureChirpChatDemod, Message)
 MESSAGE_CLASS_DEFINITION(ChirpChatDemod::MsgReportDecodeBytes, Message)
 MESSAGE_CLASS_DEFINITION(ChirpChatDemod::MsgReportDecodeString, Message)
 
-const char* const ChirpChatDemod::m_channelIdURI = "rpx-100.channel.chirpchatdemod";
+const char* const ChirpChatDemod::m_channelIdURI = "RPX100.channel.chirpchatdemod";
 const char* const ChirpChatDemod::m_channelId = "ChirpChatDemod";
 
 ChirpChatDemod::ChirpChatDemod(DeviceAPI* deviceAPI) :
@@ -683,7 +683,7 @@ void ChirpChatDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKe
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

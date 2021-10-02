@@ -31,9 +31,9 @@ const PluginDescriptor FileSinkPlugin::m_pluginDescriptor = {
     QStringLiteral("File Sink"),
     QStringLiteral("6.16.2"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 FileSinkPlugin::FileSinkPlugin(QObject* parent) :

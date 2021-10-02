@@ -31,9 +31,9 @@ const PluginDescriptor BeamSteeringCWModPlugin::m_pluginDescriptor = {
     QStringLiteral("BeamSteeringCWMod"),
     QStringLiteral("6.0.0"),
     QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/rpx-100"),
+    QStringLiteral("https://github.com/f4exb/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/rpx-100")
+    QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 BeamSteeringCWModPlugin::BeamSteeringCWModPlugin(QObject* parent) :

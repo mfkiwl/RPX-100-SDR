@@ -33,9 +33,9 @@ const PluginDescriptor FCDProPlusPlugin::m_pluginDescriptor = {
 	fcd_traits<ProPlus>::pluginDisplayedName,
 	fcd_traits<ProPlus>::pluginVersion,
 	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/rpx-100"),
+	QStringLiteral("https://github.com/f4exb/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/rpx-100")
+	QStringLiteral("https://github.com/f4exb/RPX100")
 };
 
 static constexpr const char* const m_deviceTypeID = FCDPROPLUS_DEVICE_TYPE_ID;

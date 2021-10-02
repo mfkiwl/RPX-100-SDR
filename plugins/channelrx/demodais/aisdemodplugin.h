@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class AISDemodPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.aisdemod")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.aisdemod")
 
 public:
     explicit AISDemodPlugin(QObject* parent = NULL);

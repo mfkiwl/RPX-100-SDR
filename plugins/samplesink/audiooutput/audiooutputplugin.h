@@ -21,7 +21,7 @@
 #include <QObject>
 #include "plugin/plugininterface.h"
 
-#define AUDIOOUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.audiooutput"
+#define AUDIOOUTPUT_DEVICE_TYPE_ID "RPX100.samplesink.audiooutput"
 
 class PluginAPI;
 class DeviceAPI;

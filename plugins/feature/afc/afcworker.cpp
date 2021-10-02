@@ -185,7 +185,7 @@ void AFCWorker::initTrackerDeviceSet(int deviceSetIndex)
     {
         ChannelAPI *channel = m_trackerDeviceSet->getChannelAt(i);
 
-        if (channel->getURI() == "rpx-100.channel.freqtracker")
+        if (channel->getURI() == "RPX100.channel.freqtracker")
         {
             m_freqTracker = channel;
             SWGRPX100::SWGDeviceSettings resDevice;
@@ -238,7 +238,7 @@ void AFCWorker::initTrackedDeviceSet(int deviceSetIndex)
     {
         ChannelAPI *channel = m_trackedDeviceSet->getChannelAt(i);
 
-        if (channel->getURI() != "rpx-100.channel.freqtracker")
+        if (channel->getURI() != "RPX100.channel.freqtracker")
         {
             SWGRPX100::SWGChannelSettings resChannel;
             SWGRPX100::SWGErrorResponse error;

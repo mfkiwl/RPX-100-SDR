@@ -51,7 +51,7 @@
 MESSAGE_CLASS_DEFINITION(IEEE_802_15_4_Mod::MsgConfigureIEEE_802_15_4_Mod, Message)
 MESSAGE_CLASS_DEFINITION(IEEE_802_15_4_Mod::MsgTXIEEE_802_15_4_Mod, Message)
 
-const char* const IEEE_802_15_4_Mod::m_channelIdURI = "rpx-100.channeltx.mod802.15.4";
+const char* const IEEE_802_15_4_Mod::m_channelIdURI = "RPX100.channeltx.mod802.15.4";
 const char* const IEEE_802_15_4_Mod::m_channelId = "IEEE_802_15_4_Mod";
 
 IEEE_802_15_4_Mod::IEEE_802_15_4_Mod(DeviceAPI *deviceAPI) :
@@ -472,7 +472,7 @@ void IEEE_802_15_4_Mod::webapiReverseSendSettings(QList<QString>& channelSetting
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

@@ -43,7 +43,7 @@
 
 MESSAGE_CLASS_DEFINITION(NFMDemod::MsgConfigureNFMDemod, Message)
 
-const char* const NFMDemod::m_channelIdURI = "rpx-100.channel.nfmdemod";
+const char* const NFMDemod::m_channelIdURI = "RPX100.channel.nfmdemod";
 const char* const NFMDemod::m_channelId = "NFMDemod";
 
 const int NFMDemod::m_udpBlockSize = 512;
@@ -482,7 +482,7 @@ void NFMDemod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, co
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

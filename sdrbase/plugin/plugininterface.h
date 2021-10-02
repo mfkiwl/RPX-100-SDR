@@ -352,6 +352,6 @@ public:
     }
 };
 
-Q_DECLARE_INTERFACE(PluginInterface, "rpx-100.PluginInterface/0.1")
+Q_DECLARE_INTERFACE(PluginInterface, "RPX100.PluginInterface/0.1")
 
 #endif // INCLUDE_PLUGININTERFACE_H

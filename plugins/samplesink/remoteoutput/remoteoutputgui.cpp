@@ -345,7 +345,7 @@ void RemoteOutputSinkGui::on_apiAddress_returnPressed()
     m_settings.m_apiAddress = ui->apiAddress->text();
     sendSettings();
 
-    QString infoURL = QString("http://%1:%2/rpx-100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
+    QString infoURL = QString("http://%1:%2/RPX100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
     m_networkRequest.setUrl(QUrl(infoURL));
     m_networkManager->get(m_networkRequest);
 }
@@ -363,7 +363,7 @@ void RemoteOutputSinkGui::on_apiPort_returnPressed()
 
     sendSettings();
 
-    QString infoURL = QString("http://%1:%2/rpx-100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
+    QString infoURL = QString("http://%1:%2/RPX100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
     m_networkRequest.setUrl(QUrl(infoURL));
     m_networkManager->get(m_networkRequest);
 }
@@ -403,7 +403,7 @@ void RemoteOutputSinkGui::on_apiApplyButton_clicked(bool checked)
 
     sendSettings();
 
-    QString infoURL = QString("http://%1:%2/rpx-100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
+    QString infoURL = QString("http://%1:%2/RPX100").arg(m_settings.m_apiAddress).arg(m_settings.m_apiPort);
     m_networkRequest.setUrl(QUrl(infoURL));
     m_networkManager->get(m_networkRequest);
 }
@@ -483,7 +483,7 @@ void RemoteOutputSinkGui::tick()
 	{
         QString reportURL;
 
-        reportURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/report")
+        reportURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/report")
                 .arg(m_settings.m_apiAddress)
                 .arg(m_settings.m_apiPort)
                 .arg(m_settings.m_deviceIndex)

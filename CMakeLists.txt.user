@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 5.0.2, 2021-10-02T16:05:00. -->
+<!-- Written by QtCreator 5.0.2, 2021-10-02T17:18:46. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -315,9 +315,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">rpx-100</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.rpx-100</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">rpx-100</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">RPX100</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.RPX100</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">RPX100</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
@@ -332,9 +332,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">rpx-100bench</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.rpx-100bench</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">rpx-100bench</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">RPX100bench</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.RPX100bench</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">RPX100bench</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
@@ -349,9 +349,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">rpx-100srv</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.rpx-100srv</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">rpx-100srv</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">RPX100srv</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.RPX100srv</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">RPX100srv</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

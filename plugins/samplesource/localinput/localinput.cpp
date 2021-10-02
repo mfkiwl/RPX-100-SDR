@@ -374,7 +374,7 @@ void LocalInput::webapiReverseSendSettings(QList<QString>& deviceSettingsKeys, c
         swgLocalInputSettings->setIqCorrection(settings.m_iqCorrection ? 1 : 0);
     }
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/settings")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex);
@@ -400,7 +400,7 @@ void LocalInput::webapiReverseSendStartStop(bool start)
     swgDeviceSettings->setOriginatorIndex(m_deviceAPI->getDeviceSetIndex());
     swgDeviceSettings->setDeviceHwType(new QString("LocalInput"));
 
-    QString deviceSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/device/run")
+    QString deviceSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/device/run")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex);

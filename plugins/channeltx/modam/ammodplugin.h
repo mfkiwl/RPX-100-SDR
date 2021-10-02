@@ -27,7 +27,7 @@ class BasebandSampleSource;
 class AMModPlugin : public QObject, PluginInterface {
 	Q_OBJECT
 	Q_INTERFACES(PluginInterface)
-	Q_PLUGIN_METADATA(IID "rpx-100.channeltx.ammod")
+	Q_PLUGIN_METADATA(IID "RPX100.channeltx.ammod")
 
 public:
 	explicit AMModPlugin(QObject* parent = 0);

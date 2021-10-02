@@ -18,7 +18,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/sdrbase
     ${CMAKE_SOURCE_DIR}/logging
     ${CMAKE_SOURCE_DIR}/httpserver
-    ${CMAKE_SOURCE_DIR}/swagger/rpx-100/code/qt5/client
+    ${CMAKE_SOURCE_DIR}/swagger/RPX100/code/qt5/client
     ${OPENGL_INCLUDE_DIR}
 )
 

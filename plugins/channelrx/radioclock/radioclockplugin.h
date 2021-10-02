@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class RadioClockPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.channel.radioclock")
+    Q_PLUGIN_METADATA(IID "RPX100.channel.radioclock")
 
 public:
     explicit RadioClockPlugin(QObject* parent = NULL);

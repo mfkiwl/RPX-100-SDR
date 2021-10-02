@@ -3,8 +3,8 @@
 //                                                                               //
 // Remote sink channel (Rx) UDP sender thread                                    //
 //                                                                               //
-// rpx-100 can work as a detached SDR front end. With this plugin it can        //
-// sends the I/Q samples stream to another rpx-100 instance via UDP.            //
+// RPX100 can work as a detached SDR front end. With this plugin it can        //
+// sends the I/Q samples stream to another RPX100 instance via UDP.            //
 // It is controlled via a Web REST API.                                          //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //

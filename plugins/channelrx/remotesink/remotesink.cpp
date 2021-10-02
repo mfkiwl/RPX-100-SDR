@@ -3,8 +3,8 @@
 //                                                                               //
 // Remote sink channel (Rx) UDP sender thread                                    //
 //                                                                               //
-// rpx-100 can work as a detached SDR front end. With this plugin it can        //
-// sends the I/Q samples stream to another rpx-100 instance via UDP.            //
+// RPX100 can work as a detached SDR front end. With this plugin it can        //
+// sends the I/Q samples stream to another RPX100 instance via UDP.            //
 // It is controlled via a Web REST API.                                          //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -43,7 +43,7 @@
 
 MESSAGE_CLASS_DEFINITION(RemoteSink::MsgConfigureRemoteSink, Message)
 
-const char* const RemoteSink::m_channelIdURI = "rpx-100.channel.remotesink";
+const char* const RemoteSink::m_channelIdURI = "RPX100.channel.remotesink";
 const char* const RemoteSink::m_channelId = "RemoteSink";
 
 RemoteSink::RemoteSink(DeviceAPI *deviceAPI) :
@@ -425,7 +425,7 @@ void RemoteSink::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, 
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)

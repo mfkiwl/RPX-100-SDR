@@ -49,7 +49,7 @@ MESSAGE_CLASS_DEFINITION(AMMod::MsgConfigureFileSourceStreamTiming, Message)
 MESSAGE_CLASS_DEFINITION(AMMod::MsgReportFileSourceStreamData, Message)
 MESSAGE_CLASS_DEFINITION(AMMod::MsgReportFileSourceStreamTiming, Message)
 
-const char* const AMMod::m_channelIdURI = "rpx-100.channeltx.modam";
+const char* const AMMod::m_channelIdURI = "RPX100.channeltx.modam";
 const char* const AMMod::m_channelId ="AMMod";
 
 AMMod::AMMod(DeviceAPI *deviceAPI) :
@@ -540,7 +540,7 @@ void AMMod::webapiReverseSendSettings(QList<QString>& channelSettingsKeys, const
     SWGRPX100::SWGChannelSettings *swgChannelSettings = new SWGRPX100::SWGChannelSettings();
     webapiFormatChannelSettings(channelSettingsKeys, swgChannelSettings, settings, force);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIDeviceIndex)
@@ -572,7 +572,7 @@ void AMMod::webapiReverseSendCWSettings(const CWKeyerSettings& cwKeyerSettings)
     SWGRPX100::SWGCWKeyerSettings *apiCwKeyerSettings = swgAMModSettings->getCwKeyer();
     m_basebandSource->getCWKeyer().webapiFormatChannelSettings(apiCwKeyerSettings, cwKeyerSettings);
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/deviceset/%3/channel/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/deviceset/%3/channel/%4/settings")
             .arg(m_settings.m_reverseAPIAddress)
             .arg(m_settings.m_reverseAPIPort)
             .arg(m_settings.m_reverseAPIDeviceIndex)

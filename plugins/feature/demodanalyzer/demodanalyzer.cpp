@@ -43,7 +43,7 @@ MESSAGE_CLASS_DEFINITION(DemodAnalyzer::MsgReportChannels, Message)
 MESSAGE_CLASS_DEFINITION(DemodAnalyzer::MsgSelectChannel, Message)
 MESSAGE_CLASS_DEFINITION(DemodAnalyzer::MsgReportSampleRate, Message)
 
-const char* const DemodAnalyzer::m_featureIdURI = "rpx-100.feature.demodanalyzer";
+const char* const DemodAnalyzer::m_featureIdURI = "RPX100.feature.demodanalyzer";
 const char* const DemodAnalyzer::m_featureId = "DemodAnalyzer";
 
 DemodAnalyzer::DemodAnalyzer(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -476,7 +476,7 @@ void DemodAnalyzer::webapiReverseSendSettings(QList<QString>& featureSettingsKey
         swgDemodAnalyzerSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

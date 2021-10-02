@@ -28,7 +28,7 @@ class BasebandSampleSink;
 class FileSinkPlugin : public QObject, PluginInterface {
     Q_OBJECT
     Q_INTERFACES(PluginInterface)
-    Q_PLUGIN_METADATA(IID "rpx-100.demod.filesink")
+    Q_PLUGIN_METADATA(IID "RPX100.demod.filesink")
 
 public:
     explicit FileSinkPlugin(QObject* parent = 0);

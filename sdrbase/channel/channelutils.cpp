@@ -24,21 +24,21 @@ bool ChannelUtils::compareChannelURIs(const QString& registerdChannelURI, const 
 
 QString ChannelUtils::getRegisteredChannelURI(const QString& xChannelURI)
 {
-    if ((xChannelURI == "rpx-100.channel.chanalyzerng")
-     || (xChannelURI == "org.f4exb.rpx-100ove.channel.chanalyzer")) {
-        return "rpx-100.channel.chanalyzer";
-    } else if (xChannelURI == "de.maintech.rpx-100ove.channel.am") {
-        return "rpx-100.channel.amdemod";
-    } else if (xChannelURI == "de.maintech.rpx-100ove.channel.nfm") {
-        return "rpx-100.channel.nfmdemod";
-    } else if (xChannelURI == "de.maintech.rpx-100ove.channel.ssb") {
-        return "rpx-100.channel.ssbdemod";
-    } else if (xChannelURI == "de.maintech.rpx-100ove.channel.wfm") {
-        return "rpx-100.channel.wfmdemod";
-    } else if (xChannelURI == "rpx-100.channel.udpsrc") {
-        return "rpx-100.channel.udpsink";
-    } else if (xChannelURI == "rpx-100.channeltx.udpsink") {
-        return "rpx-100.channeltx.udpsource";
+    if ((xChannelURI == "RPX100.channel.chanalyzerng")
+     || (xChannelURI == "org.f4exb.RPX100ove.channel.chanalyzer")) {
+        return "RPX100.channel.chanalyzer";
+    } else if (xChannelURI == "de.maintech.RPX100ove.channel.am") {
+        return "RPX100.channel.amdemod";
+    } else if (xChannelURI == "de.maintech.RPX100ove.channel.nfm") {
+        return "RPX100.channel.nfmdemod";
+    } else if (xChannelURI == "de.maintech.RPX100ove.channel.ssb") {
+        return "RPX100.channel.ssbdemod";
+    } else if (xChannelURI == "de.maintech.RPX100ove.channel.wfm") {
+        return "RPX100.channel.wfmdemod";
+    } else if (xChannelURI == "RPX100.channel.udpsrc") {
+        return "RPX100.channel.udpsink";
+    } else if (xChannelURI == "RPX100.channeltx.udpsink") {
+        return "RPX100.channeltx.udpsource";
     } else  {
         return xChannelURI;
     }

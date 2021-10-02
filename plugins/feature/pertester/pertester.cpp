@@ -43,7 +43,7 @@ MESSAGE_CLASS_DEFINITION(PERTester::MsgStartStop, Message)
 MESSAGE_CLASS_DEFINITION(PERTester::MsgResetStats, Message)
 MESSAGE_CLASS_DEFINITION(PERTester::MsgReportWorker, Message)
 
-const char* const PERTester::m_featureIdURI = "rpx-100.feature.pertester";
+const char* const PERTester::m_featureIdURI = "RPX100.feature.pertester";
 const char* const PERTester::m_featureId = "PERTester";
 
 PERTester::PERTester(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -457,7 +457,7 @@ void PERTester::webapiReverseSendSettings(QList<QString>& featureSettingsKeys, c
         swgPERTesterSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

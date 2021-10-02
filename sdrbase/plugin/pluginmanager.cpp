@@ -31,21 +31,21 @@
 #include "plugin/pluginmanager.h"
 
 const QString PluginManager::m_localInputHardwareID = "LocalInput";
-const QString PluginManager::m_localInputDeviceTypeID = "rpx-100.samplesource.localinput";
+const QString PluginManager::m_localInputDeviceTypeID = "RPX100.samplesource.localinput";
 const QString PluginManager::m_remoteInputHardwareID = "RemoteInput";
-const QString PluginManager::m_remoteInputDeviceTypeID = "rpx-100.samplesource.remoteinput";
+const QString PluginManager::m_remoteInputDeviceTypeID = "RPX100.samplesource.remoteinput";
 const QString PluginManager::m_fileInputHardwareID = "FileInput";
-const QString PluginManager::m_fileInputDeviceTypeID = "rpx-100.samplesource.fileinput";
+const QString PluginManager::m_fileInputDeviceTypeID = "RPX100.samplesource.fileinput";
 
 const QString PluginManager::m_localOutputHardwareID = "LocalOutput";
-const QString PluginManager::m_localOutputDeviceTypeID = "rpx-100.samplesource.localoutput";
+const QString PluginManager::m_localOutputDeviceTypeID = "RPX100.samplesource.localoutput";
 const QString PluginManager::m_remoteOutputHardwareID = "RemoteOutput";
-const QString PluginManager::m_remoteOutputDeviceTypeID = "rpx-100.samplesink.remoteoutput";
+const QString PluginManager::m_remoteOutputDeviceTypeID = "RPX100.samplesink.remoteoutput";
 const QString PluginManager::m_fileOutputHardwareID = "FileOutput";
-const QString PluginManager::m_fileOutputDeviceTypeID = "rpx-100.samplesink.fileoutput";
+const QString PluginManager::m_fileOutputDeviceTypeID = "RPX100.samplesink.fileoutput";
 
 const QString PluginManager::m_testMIMOHardwareID = "TestMI";
-const QString PluginManager::m_testMIMODeviceTypeID = "rpx-100.samplemimo.testmi";
+const QString PluginManager::m_testMIMODeviceTypeID = "RPX100.samplemimo.testmi";
 
 PluginManager::PluginManager(QObject* parent) :
 	QObject(parent),
@@ -70,12 +70,12 @@ void PluginManager::loadPluginsPart(const QString& pluginsSubDir)
     QStringList PluginsPath;
 
     // NOTE: not the best solution but for now this is
-    // on make install [PREFIX]/bin and [PREFIX]/lib/rpx-100
-    PluginsPath << applicationDirPath + "/../lib/rpx-100/" + pluginsSubDir;
+    // on make install [PREFIX]/bin and [PREFIX]/lib/RPX100
+    PluginsPath << applicationDirPath + "/../lib/RPX100/" + pluginsSubDir;
     // on build
     PluginsPath << applicationDirPath + "/lib/" + pluginsSubDir;
 #ifdef __APPLE__
-    // on rpx-100.app
+    // on RPX100.app
     PluginsPath << applicationDirPath + "/../Resources/lib/" + pluginsSubDir;
 #elif defined(_WIN32) || defined(WIN32)
     PluginsPath << applicationDirPath + "/" + pluginsSubDir;

@@ -34,7 +34,7 @@
 
 MESSAGE_CLASS_DEFINITION(AntennaTools::MsgConfigureAntennaTools, Message)
 
-const char* const AntennaTools::m_featureIdURI = "rpx-100.feature.antennatools";
+const char* const AntennaTools::m_featureIdURI = "RPX100.feature.antennatools";
 const char* const AntennaTools::m_featureId = "AntennaTools";
 
 AntennaTools::AntennaTools(WebAPIAdapterInterface *webAPIAdapterInterface) :
@@ -291,7 +291,7 @@ void AntennaTools::webapiReverseSendSettings(QList<QString>& featureSettingsKeys
         swgAntennaToolsSettings->setRgbColor(settings.m_rgbColor);
     }
 
-    QString channelSettingsURL = QString("http://%1:%2/rpx-100/featureset/%3/feature/%4/settings")
+    QString channelSettingsURL = QString("http://%1:%2/RPX100/featureset/%3/feature/%4/settings")
             .arg(settings.m_reverseAPIAddress)
             .arg(settings.m_reverseAPIPort)
             .arg(settings.m_reverseAPIFeatureSetIndex)

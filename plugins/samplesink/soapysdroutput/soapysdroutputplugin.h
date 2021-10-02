@@ -23,7 +23,7 @@
 
 class PluginAPI;
 
-#define SOAPYSDROUTPUT_DEVICE_TYPE_ID "rpx-100.samplesink.soapysdroutput"
+#define SOAPYSDROUTPUT_DEVICE_TYPE_ID "RPX100.samplesink.soapysdroutput"
 
 class SoapySDROutputPlugin : public QObject, public PluginInterface {
     Q_OBJECT
