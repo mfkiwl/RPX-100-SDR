@@ -36,8 +36,8 @@ public:
         maxThreads = 100;
         cleanupInterval = 1000;
         readTimeout = 10000;
-        sslKeyFile = "";
-        sslCertFile = "";
+        sslKeyFile = "/etc/ssl/private/rpx-100_net.key";
+        sslCertFile = "/etc/ssl/certs/certificate.pem";
         maxRequestSize = 16000;
         maxMultiPartSize = 1000000;
     }
