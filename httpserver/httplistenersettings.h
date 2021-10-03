@@ -31,13 +31,13 @@ public:
     void resetToDefaults()
     {
         host = "192.168.0.100";
-        port = 443;
+        port = 80;
         minThreads = 1;
         maxThreads = 100;
         cleanupInterval = 1000;
         readTimeout = 10000;
-        sslKeyFile = "rpx-100_net.key";
-        sslCertFile = "certificate.pem";
+        sslKeyFile = "";
+        sslCertFile = "";
         maxRequestSize = 16000;
         maxMultiPartSize = 1000000;
     }
