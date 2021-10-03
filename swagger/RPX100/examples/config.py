@@ -3,7 +3,7 @@
 import requests, traceback, sys, json
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/RPX100"
+base_url = "http://rpx-100.net:80/RPX100"
 
 # commands list in JSON file. Each command is a list:
 #   - URL suffix (API function)
@@ -30,7 +30,7 @@ def getInputOptions():
     (options, args) = parser.parse_args()
 
     if (options.address == None):
-        options.address = "127.0.0.1:8091"
+        options.address = "10.0.0.37:80"
 
     return options
 

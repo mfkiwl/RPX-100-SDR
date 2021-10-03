@@ -3,7 +3,7 @@
 import requests, json, traceback, sys
 from optparse import OptionParser
 
-base_url = "http://127.0.0.1:8091/RPX100"
+base_url = "http://rpx-100.net:80/RPX100"
 
 requests_methods = {
     "GET": requests.get,
@@ -23,7 +23,7 @@ def getInputOptions():
     (options, args) = parser.parse_args()
 
     if (options.address == None):
-        options.address = "127.0.0.1:8091"
+        options.address = "10.0.0.37:80"
 
     return options
 
@@ -81,7 +81,7 @@ def main():
             exit(-1)
 
         settings["NFMModSettings"]["inputFrequencyOffset"] = 12500
-        settings["NFMModSettings"]["cwKeyer"]["text"] = "VVV DE F4EXB  "
+        settings["NFMModSettings"]["cwKeyer"]["text"] = "73 DE OE3BIA  "
         settings["NFMModSettings"]["cwKeyer"]["loop"] = 1
         settings["NFMModSettings"]["cwKeyer"]["mode"] = 1  # text
         settings["NFMModSettings"]["modAFInput"] = 4  # CW text

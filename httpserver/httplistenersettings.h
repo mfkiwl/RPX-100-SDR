@@ -31,13 +31,13 @@ public:
     void resetToDefaults()
     {
         host = "192.168.0.100";
-        port = 8080;
+        port = 443;
         minThreads = 1;
         maxThreads = 100;
         cleanupInterval = 1000;
         readTimeout = 10000;
-        sslKeyFile = "/etc/ssl/private/rpx-100_net.key";
-        sslCertFile = "/etc/ssl/certs/certificate.pem";
+        sslKeyFile = "/opt/install/RPX-100-SDR/rpx-100_net.key";
+        sslCertFile = "/opt/install/RPX-100-SDR/certificate.pem";
         maxRequestSize = 16000;
         maxMultiPartSize = 1000000;
     }
