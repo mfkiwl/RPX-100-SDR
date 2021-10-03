@@ -18,8 +18,8 @@ info:
   version: "6.0.0"
   title: RPX100
   contact:
-    url: "https://github.com/f4exb/RPX100"
-    email: "f4exb06@gmail.com"
+    url: "https://github.com/isemann/RPX-100-SDR"
+    email: "bernhard@isemann.at"
 # basePath prefixes all resource paths
 basePath: /
 #

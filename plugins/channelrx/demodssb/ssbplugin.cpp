@@ -13,10 +13,10 @@ const PluginDescriptor SSBPlugin::m_pluginDescriptor = {
     SSBDemod::m_channelId,
 	QStringLiteral("SSB Demodulator"),
 	QStringLiteral("6.16.0"),
-	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/RPX100"),
+	QStringLiteral("(c) Bernhard Isemann, oe3bia"),
+	QStringLiteral("https://github.com/oe3bia/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/RPX100")
+	QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 SSBPlugin::SSBPlugin(QObject* parent) :

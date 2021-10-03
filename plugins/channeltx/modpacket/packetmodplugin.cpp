@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2016 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2016 Bernhard Isemann, oe3bia                                   //
 // Copyright (C) 2020 Jon Beniston, M7RCE                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -31,9 +31,9 @@ const PluginDescriptor PacketModPlugin::m_pluginDescriptor = {
     QStringLiteral("Packet Modulator"),
     QStringLiteral("6.16.1"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/RPX100"),
+    QStringLiteral("https://github.com/oe3bia/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/RPX100")
+    QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 PacketModPlugin::PacketModPlugin(QObject* parent) :

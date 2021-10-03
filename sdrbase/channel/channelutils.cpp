@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2017 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2017 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -25,7 +25,7 @@ bool ChannelUtils::compareChannelURIs(const QString& registerdChannelURI, const 
 QString ChannelUtils::getRegisteredChannelURI(const QString& xChannelURI)
 {
     if ((xChannelURI == "RPX100.channel.chanalyzerng")
-     || (xChannelURI == "org.f4exb.RPX100ove.channel.chanalyzer")) {
+     || (xChannelURI == "org.oe3bia.RPX100ove.channel.chanalyzer")) {
         return "RPX100.channel.chanalyzer";
     } else if (xChannelURI == "de.maintech.RPX100ove.channel.am") {
         return "RPX100.channel.amdemod";

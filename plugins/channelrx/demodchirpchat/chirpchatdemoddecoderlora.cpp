@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2020 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2020 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // Inspired by: https://github.com/myriadrf/LoRa-SDR                             //
 //                                                                               //

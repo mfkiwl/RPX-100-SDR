@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2016 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2016 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // See: http://glslstudio.com/primer/#gl2frag                                    //
 //      https://gitlab.com/pteam/korvins-qtbase/blob/5.4/examples/opengl/cube/mainwidget.cpp //

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2017 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2017 Bernhard Isemann, oe3bia                                   //
 // Copyright (C) 2021 Jon Beniston, M7RCE                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -30,10 +30,10 @@ const PluginDescriptor DATVModPlugin::m_pluginDescriptor = {
     DATVMod::m_channelId,
     QStringLiteral("DATV Modulator"),
     QStringLiteral("6.16.2"),
-    QStringLiteral("(c) Jon Beniston, M7RCE, Edouard Griffiths, F4EXB. DVB-S2 by G4GUO"),
-    QStringLiteral("https://github.com/f4exb/RPX100"),
+    QStringLiteral("(c) Jon Beniston, M7RCE, Bernhard Isemann, oe3bia. DVB-S2 by G4GUO"),
+    QStringLiteral("https://github.com/oe3bia/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/RPX100")
+    QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 DATVModPlugin::DATVModPlugin(QObject* parent) :

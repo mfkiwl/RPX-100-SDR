@@ -2,7 +2,7 @@
  * kissagc.h
  *
  *  Created on: May 12, 2015
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #ifndef INCLUDE_GPL_DSP_AGC_H_

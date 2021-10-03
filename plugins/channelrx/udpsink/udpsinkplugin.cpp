@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2015 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2015 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -30,10 +30,10 @@ const PluginDescriptor UDPSinkPlugin::m_pluginDescriptor = {
     UDPSink::m_channelId,
 	QStringLiteral("UDP Channel Sink"),
 	QStringLiteral("6.3.3"),
-	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/RPX100"),
+	QStringLiteral("(c) Bernhard Isemann, oe3bia"),
+	QStringLiteral("https://github.com/oe3bia/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/RPX100")
+	QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 UDPSinkPlugin::UDPSinkPlugin(QObject* parent) :

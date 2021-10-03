@@ -16,10 +16,10 @@ const PluginDescriptor RTLSDRPlugin::m_pluginDescriptor = {
     QStringLiteral("RTLSDR"),
 	QStringLiteral("RTL-SDR Input"),
 	QStringLiteral("6.6.0"),
-	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/RPX100"),
+	QStringLiteral("(c) Bernhard Isemann, oe3bia"),
+	QStringLiteral("https://github.com/oe3bia/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/RPX100")
+	QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 static constexpr const char* const m_hardwareID = "RTLSDR";

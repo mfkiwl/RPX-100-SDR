@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2018 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2018 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // See: http://liquidsdr.org/blog/pll-howto/                                     //
 // Fixed filter registers saturation                                             //

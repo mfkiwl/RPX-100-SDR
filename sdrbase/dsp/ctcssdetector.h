@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2015-2020 Edouard Griffiths, F4EXB                                                         //
+// Copyright (C) 2015-2020 Bernhard Isemann, oe3bia                                                         //
 //                                                                                                          //
 // See: http://www.embedded.com/design/connectivity/4025660/Detecting-CTCSS-tones-with-Goertzel-s-algorithm //
 //                                                                                                          //

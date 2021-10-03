@@ -2,7 +2,7 @@
  * threadsafesingleton.h
  *
  *  Created on: Aug 7, 2015
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #ifndef INCLUDE_UTIL_THREADSAFESINGLETON_H_

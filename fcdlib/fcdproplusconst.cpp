@@ -2,7 +2,7 @@
  * fcdproplusconst.cpp
  *
  *  Created on: Sep 5, 2015
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #include "fcdproplusconst.h"

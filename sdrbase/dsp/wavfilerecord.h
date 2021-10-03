@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2020 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2020 Bernhard Isemann, oe3bia                                   //
 // Copyright (C) 2021 Jon Beniston, M7RCE                                        //
 //                                                                               //
 // File recorder in .wav format                                                  //

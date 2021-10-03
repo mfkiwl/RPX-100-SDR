@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2018 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2018 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // Integer half-band FIR based interpolator and decimator                        //
 // This is the even/odd double buffer variant. Really useful only when SIMD is   //

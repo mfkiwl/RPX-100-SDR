@@ -2,7 +2,7 @@
  * rtpendian.h
  *
  *  Created on: Feb 27, 2018
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #ifndef QRTPLIB_RTPENDIAN_H_

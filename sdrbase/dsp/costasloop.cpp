@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright 2006-2021 Free Software Foundation, Inc.                            //
-// Copyright (C) 2018 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2018 Bernhard Isemann, oe3bia                                   //
 // Copyright (C) 2021 Jon Beniston, M7RCE                                        //
 //                                                                               //
 // Based on the Costas Loop from GNU Radio                                       //

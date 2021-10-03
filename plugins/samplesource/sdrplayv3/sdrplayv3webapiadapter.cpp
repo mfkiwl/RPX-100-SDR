@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2019 Bernhard Isemann, oe3bia                                   //
 // Copyright (C) 2021 Jon Beniston, M7RCE                                        //
 //                                                                               //
 // Implementation of static web API adapters used for preset serialization and   //

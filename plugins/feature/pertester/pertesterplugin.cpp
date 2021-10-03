@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2020 Jon Beniston, M7RCE                                        //
-// Copyright (C) 2020 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2020 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -32,9 +32,9 @@ const PluginDescriptor PERTesterPlugin::m_pluginDescriptor = {
     QStringLiteral("Packet Error Rate Tester"),
     QStringLiteral("6.8.0"),
     QStringLiteral("(c) Jon Beniston, M7RCE"),
-    QStringLiteral("https://github.com/f4exb/RPX100"),
+    QStringLiteral("https://github.com/oe3bia/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/RPX100")
+    QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 PERTesterPlugin::PERTesterPlugin(QObject* parent) :

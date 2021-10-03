@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2020 Vort                                                       //
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / RPX100                                                          //
+// for oe3bia / RPX100                                                          //
 //                                                                               //
 // OpenGL interface modernization.                                               //
 // See: http://doc.qt.io/qt-5/qopenglshaderprogram.html                          //

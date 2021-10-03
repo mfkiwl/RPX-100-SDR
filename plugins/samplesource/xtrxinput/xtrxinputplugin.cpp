@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2017, 2018 Edouard Griffiths, F4EXB                             //
+// Copyright (C) 2017, 2018 Bernhard Isemann, oe3bia                             //
 // Copyright (C) 2017 Sergey Kostanbaev, Fairwaves Inc.                          //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -39,10 +39,10 @@ const PluginDescriptor XTRXInputPlugin::m_pluginDescriptor = {
     QStringLiteral("XTRX"),
     QStringLiteral("XTRX Input"),
     QStringLiteral("4.19.0"),
-    QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/RPX100"),
+    QStringLiteral("(c) Bernhard Isemann, oe3bia"),
+    QStringLiteral("https://github.com/oe3bia/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/RPX100")
+    QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 static constexpr const char* const m_hardwareID = "XTRX";

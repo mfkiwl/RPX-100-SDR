@@ -2,7 +2,7 @@
  * loggerwithfile.h
  *
  *  Created on: Nov 11, 2017
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #ifndef LOGGING_LOGGERWITHFILE_H_

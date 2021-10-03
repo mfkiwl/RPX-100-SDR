@@ -2,7 +2,7 @@
  * loggerwithfile.cpp
  *
  *  Created on: Nov 11, 2017
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #include "loggerwithfile.h"

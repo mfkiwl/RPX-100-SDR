@@ -12786,16 +12786,21 @@ margin-bottom: 20px;
             <h2 id="welcome-to-apidoc">API and SDK Documentation</h2>
               <div class="app-desc">Version: 6.0.0</div>
             <hr>
-            <div><p>This is the web REST/JSON API of RPX100 SDR software. RPX100 is an Open Source Qt5/OpenGL 3.0+ (4.3+ in Windows) GUI and server Software Defined Radio and signal analyzer in software. It supports Airspy, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube</p>
+            <div><p>This is the web REST API of RPX-100 - A modular transceiver kit for Radio Amateurs build with Raspberry Compute Module 4, the LimeSDR mini and a Radio Frontend with software defined band pass filters and output power of 10W.
+            The kit includes the Radio Frontend manufactured with a form fator to fit as hat-board on the Compute Module 4.</p>
 <hr />
-<p>Limitations and specifcities:</p>
+<p>Specifcities:</p>
 <ul>
-<li>In RPX100 GUI the first Rx device set cannot be deleted. Conversely the server starts with no device sets and its number of device sets can be reduced to zero by as many calls as necessary to /RPX100/deviceset with DELETE method.</li>
-<li>Preset import and export from/to file is a server only feature.</li>
-<li>Device set focus is a GUI only feature.</li>
-<li>The following channels are not implemented (status 501 is returned): ATV and DATV demodulators, Channel Analyzer NG, LoRa demodulator</li>
-<li>The device settings and report structures contains only the sub-structure corresponding to the device type. The DeviceSettings and DeviceReport structures documented here shows all of them but only one will be or should be present at a time</li>
-<li>The channel settings and report structures contains only the sub-structure corresponding to the channel type. The ChannelSettings and ChannelReport structures documented here shows all of them but only one will be or should be present at a time</li>
+<li>Supply Voltage 12V for mobile operation or 220V with internal PSU.</li>
+<li>4.3 inch touch screen</li>
+<li>Internal speakers and microphone</li>
+<li>External microphon with PTT</li>
+<li>Software defined filters and amplifier for 6m, 2m and 70cm Radio Amateur bands</li>
+<li>Premaplifier with 24dBm for 0-2.4GHz with external access</li>
+<li>Raspian Operating System enabling devlopers to write new sourcecode</li>
+<li>Output Power at 54MHz: 0 - 15 Watt</li>
+<li>Output Power at 144MHz: 0 - 10 Watt</li>
+<li>Output Power at 430MHz: 0 - 10 Watt</li>
 </ul>
 <hr />
 </div>

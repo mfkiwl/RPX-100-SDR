@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2016 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2016 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // Integer half-band FIR based interpolator and decimator                        //
 // This is the double buffer variant                                             //

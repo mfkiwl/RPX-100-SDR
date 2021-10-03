@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2021 Jon Beniston, M7RCE                                        //
-// Copyright (C) 2020 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2020 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -32,9 +32,9 @@ const PluginDescriptor SatelliteTrackerPlugin::m_pluginDescriptor = {
     QStringLiteral("Satellite Tracker"),
     QStringLiteral("6.16.5"),
     QStringLiteral("(c) Jon Beniston, M7RCE and Daniel Warner (SGP4 library)"),
-    QStringLiteral("https://github.com/f4exb/RPX100"),
+    QStringLiteral("https://github.com/oe3bia/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/RPX100")
+    QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 SatelliteTrackerPlugin::SatelliteTrackerPlugin(QObject* parent) :

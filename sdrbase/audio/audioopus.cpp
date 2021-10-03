@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2019 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // In this version we will use a fixed constant bit rate of 64kbit/s.            //
 // With a frame time of 20ms the encoder output size is always 160 bytes.        //

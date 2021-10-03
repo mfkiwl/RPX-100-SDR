@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2016 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2016 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -32,10 +32,10 @@ const PluginDescriptor AudioOutputPlugin::m_pluginDescriptor = {
     QString("AudioOutput"),
 	QString("Audio output"),
 	QString("6.8.0"),
-	QString("(c) Edouard Griffiths, F4EXB"),
-	QString("https://github.com/f4exb/RPX100"),
+	QString("(c) Bernhard Isemann, oe3bia"),
+	QString("https://github.com/oe3bia/RPX100"),
 	true,
-	QString("https://github.com/f4exb/RPX100")
+	QString("https://github.com/oe3bia/RPX100")
 };
 
 const QString AudioOutputPlugin::m_hardwareID = "AudioOutput";

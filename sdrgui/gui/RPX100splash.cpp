@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019 Edouard Griffiths, F4EXB.                                  //
+// Copyright (C) 2019 Bernhard Isemann, oe3bia.                                  //
 //                                                                               //
 // Swagger server adapter interface                                              //
 //                                                                               //

@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Remote - send I/Q samples read from a SDR device over the network via UDP.    //
 //                                                                               //
-// Copyright (C) 2015 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2015 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //

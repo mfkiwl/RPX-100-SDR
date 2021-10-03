@@ -14,10 +14,10 @@ const PluginDescriptor WFMPlugin::m_pluginDescriptor = {
     WFMDemod::m_channelId,
 	QStringLiteral("WFM Demodulator"),
 	QStringLiteral("6.6.1"),
-	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/RPX100"),
+	QStringLiteral("(c) Bernhard Isemann, oe3bia"),
+	QStringLiteral("https://github.com/oe3bia/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/RPX100")
+	QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 WFMPlugin::WFMPlugin(QObject* parent) :

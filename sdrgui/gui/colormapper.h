@@ -2,7 +2,7 @@
  * colormap.h
  *
  *  Created on: Jul 19, 2015
- *      Author: f4exb
+ *      Author: oe3bia
  */
 #ifndef INCLUDE_GPL_GUI_COLORMAPPER_H_
 #define INCLUDE_GPL_GUI_COLORMAPPER_H_

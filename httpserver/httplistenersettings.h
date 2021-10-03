@@ -2,7 +2,7 @@
  * httplistenersettings.h
  *
  *  Created on: Nov 13, 2017
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #ifndef HTTPSERVER_HTTPLISTENERSETTINGS_H_

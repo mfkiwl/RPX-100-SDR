@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2017 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2017 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // Object unique id calculator loosely inspired by MongoDB object id             //
 //                                                                               //

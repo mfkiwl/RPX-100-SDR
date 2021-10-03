@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2018 F4HKW                                                      //
-// for F4EXB / RPX100                                                          //
+// for oe3bia / RPX100                                                          //
 // using LeanSDR Framework (C) 2016 F4DAV                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -32,9 +32,9 @@ const PluginDescriptor DATVDemodPlugin::m_ptrPluginDescriptor =
     QString("DATV Demodulator"),
     QString("6.9.0"),
     QString("(c) F4HKW for RPX100 using LeanSDR framework (c) F4DAV"),
-	QString("https://github.com/f4exb/RPX100"),
+	QString("https://github.com/oe3bia/RPX100"),
 	true,
-	QString("https://github.com/f4exb/RPX100")
+	QString("https://github.com/oe3bia/RPX100")
 };
 
 DATVDemodPlugin::DATVDemodPlugin(QObject* ptrParent) :

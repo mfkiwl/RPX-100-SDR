@@ -2,7 +2,7 @@
  * colormap.cpp
  *
  *  Created on: Jul 19, 2015
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #include <gui/colormapper.h>

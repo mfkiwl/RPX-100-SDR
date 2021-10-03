@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2019 Vort                                   //
-// Copyright (C) 2019 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2019 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -33,10 +33,10 @@ const PluginDescriptor KiwiSDRPlugin::m_pluginDescriptor = {
     QStringLiteral("KiwiSDR"),
 	QStringLiteral("KiwiSDR input"),
 	QStringLiteral("4.21.2"),
-	QStringLiteral("(c) Vort (c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/RPX100"),
+	QStringLiteral("(c) Vort (c) Bernhard Isemann, oe3bia"),
+	QStringLiteral("https://github.com/oe3bia/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/RPX100")
+	QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 static constexpr const char* const m_hardwareID = "KiwiSDR";

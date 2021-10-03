@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2017 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2017 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // Same as ValueDial but handles optionally positive and negative numbers with   //
 // sign display.                                                                 //

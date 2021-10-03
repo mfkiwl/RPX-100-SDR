@@ -2,7 +2,7 @@
  * itemsettinggui.cpp
  *
  *  Created on: Nov 1, 2018
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #include "itemsettinggui.h"

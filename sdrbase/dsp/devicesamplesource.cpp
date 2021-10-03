@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2015-2017 F4EXB                                                 //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2015-2017 oe3bia                                                 //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //

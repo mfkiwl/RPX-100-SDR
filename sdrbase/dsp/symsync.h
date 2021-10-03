@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2018 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2018 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // Symbol synchronizer or symbol clock recovery mostly encapsulating             //
 // liquid-dsp's symsync "object"                                                 //

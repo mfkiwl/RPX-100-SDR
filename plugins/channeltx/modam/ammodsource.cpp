@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2019 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -176,8 +176,8 @@ void AMModSource::pullAF(Real& sample)
         sample = m_toneNco.next();
         break;
     case AMModSettings::AMModInputFile:
-        // sox f4exb_call.wav --encoding float --endian little f4exb_call.raw
-        // ffplay -f f32le -ar 48k -ac 1 f4exb_call.raw
+        // sox oe3bia_call.wav --encoding float --endian little oe3bia_call.raw
+        // ffplay -f f32le -ar 48k -ac 1 oe3bia_call.raw
         if (m_ifstream && m_ifstream->is_open())
         {
             if (m_ifstream->eof())

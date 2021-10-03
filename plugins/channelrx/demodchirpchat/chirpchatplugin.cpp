@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019-2020 Edouard Griffiths, F4EXB                              //
+// Copyright (C) 2019-2020 Bernhard Isemann, oe3bia                              //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -28,10 +28,10 @@ const PluginDescriptor ChirpChatPlugin::m_pluginDescriptor = {
     ChirpChatDemod::m_channelId,
 	QStringLiteral("ChirpChat Demodulator"),
 	QStringLiteral("6.7.0"),
-	QStringLiteral("(c) Edouard Griffiths, F4EXB"),
-	QStringLiteral("https://github.com/f4exb/RPX100"),
+	QStringLiteral("(c) Bernhard Isemann, oe3bia"),
+	QStringLiteral("https://github.com/oe3bia/RPX100"),
 	true,
-	QStringLiteral("https://github.com/f4exb/RPX100")
+	QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 ChirpChatPlugin::ChirpChatPlugin(QObject* parent) :

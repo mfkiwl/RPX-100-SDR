@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2019 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // Audio compressor based on sndfilter by Sean Connelly (@voidqk)                //
 // https://github.com/voidqk/sndfilter                                           //

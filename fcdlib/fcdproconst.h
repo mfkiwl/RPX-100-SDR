@@ -2,7 +2,7 @@
  * fcdproconst.h
  *
  *  Created on: Sep 7, 2015
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #ifndef FCDLIB_FCDPROCONST_H_

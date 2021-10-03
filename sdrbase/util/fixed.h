@@ -7,7 +7,7 @@
 // Original article:                                                             //
 // http://www.drdobbs.com/cpp/optimizing-math-intensive-applications-w/207000448 //
 //                                                                               //
-// Copyright (C) 2018 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2018 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // Modified as fully templatized class with variable size and type internal      //
 // representation                                                                //

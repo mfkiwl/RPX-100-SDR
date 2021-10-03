@@ -2,7 +2,7 @@
 // Copyright (C) 2012 maintech GmbH, Otto-Hahn-Str. 15, 97204 Hoechberg, Germany //
 // written by Christian Daniel                                                   //
 // (c) 2015 John Greb                                                            //
-// (c) 2020 Edouard Griffiths, F4EXB                                             //
+// (c) 2020 Bernhard Isemann, oe3bia                                             //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2015 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2015 Bernhard Isemann, oe3bia                                   //
 // Copyright (C) 2020 Jon Beniston, M7RCE                                        //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
@@ -36,10 +36,10 @@ const PluginDescriptor USRPInputPlugin::m_pluginDescriptor = {
     QStringLiteral("USRP"),
     QStringLiteral("USRP Input"),
     QStringLiteral("4.21.0"),
-    QStringLiteral("(c) Jon Beniston, M7RCE and Edouard Griffiths, F4EXB"),
-    QStringLiteral("https://github.com/f4exb/RPX100"),
+    QStringLiteral("(c) Jon Beniston, M7RCE and Bernhard Isemann, oe3bia"),
+    QStringLiteral("https://github.com/oe3bia/RPX100"),
     true,
-    QStringLiteral("https://github.com/f4exb/RPX100")
+    QStringLiteral("https://github.com/oe3bia/RPX100")
 };
 
 static constexpr const char* const m_hardwareID = "USRP";

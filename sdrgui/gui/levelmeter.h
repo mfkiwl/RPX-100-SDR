@@ -1,5 +1,5 @@
 /****************************************************************************
- * Copyright (C) 2016 Edouard Griffiths, F4EXB
+ * Copyright (C) 2016 Bernhard Isemann, oe3bia
  * Modifications made to:
  * - use the widget horizontally
  * - differentiate each area with a different color

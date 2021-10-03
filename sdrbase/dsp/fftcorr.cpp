@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2019 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // FFT based cross correlation. Uses FFTW/Kiss engine.                           //
 //                                                                               //

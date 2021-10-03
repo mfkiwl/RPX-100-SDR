@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
-// Copyright (C) 2019 F4EXB                                                      //
-// written by Edouard Griffiths                                                  //
+// Copyright (C) 2019 oe3bia                                                      //
+// written by Bernhard Isemann                                                  //
 //                                                                               //
 // Inspired by:                                                                  //
 // https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Tutorial_03    //                                                                             //

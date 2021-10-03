@@ -2,7 +2,7 @@
  * crightclickenabler.cpp
  *
  *  Created on: Mar 26, 2018
- *      Author: f4exb
+ *      Author: oe3bia
  */
 
 #include "crightclickenabler.h"

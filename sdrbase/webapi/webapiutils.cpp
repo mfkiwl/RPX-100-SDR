@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2020 Jon Beniston, M7RCE                                        //
-// Copyright (C) 2020 Edouard Griffiths, F4EXB                                   //
+// Copyright (C) 2020 Bernhard Isemann, oe3bia                                   //
 //                                                                               //
 // This program is free software; you can redistribute it and/or modify          //
 // it under the terms of the GNU General Public License as published by          //
@@ -35,7 +35,7 @@ const QMap<QString, QString> WebAPIUtils::m_channelURIToSettingsKey = {
     {"RPX100.channel.bfm", "BFMDemodSettings"},
     {"RPX100.channel.chanalyzer", "ChannelAnalyzerSettings"},
     {"RPX100.channel.chanalyzerng", "ChannelAnalyzerSettings"}, // remap
-    {"org.f4exb.RPX100ove.channel.chanalyzer", "ChannelAnalyzerSettings"}, // remap
+    {"org.oe3bia.RPX100ove.channel.chanalyzer", "ChannelAnalyzerSettings"}, // remap
     {"RPX100.channel.chirpchatdemod", "ChirpChatDemodSettings"},
     {"RPX100.channel.modchirpchat", "ChirpChatModSettings"},
     {"RPX100.channel.demodatv", "ATVDemodSettings"},
