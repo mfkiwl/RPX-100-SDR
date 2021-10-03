@@ -28,7 +28,7 @@ public:
 
     void resetToDefaults()
     {
-        path = ".";
+        path = "/opt/install/RPX-100-SDR";
         encoding = "UTF-8";
         maxAge = 60000;
         cacheTime = 60000;

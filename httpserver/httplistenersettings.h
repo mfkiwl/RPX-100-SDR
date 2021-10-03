@@ -36,8 +36,8 @@ public:
         maxThreads = 100;
         cleanupInterval = 1000;
         readTimeout = 10000;
-        sslKeyFile = "/opt/install/RPX-100-SDR/rpx-100_net.key";
-        sslCertFile = "/opt/install/RPX-100-SDR/certificate.pem";
+        sslKeyFile = "rpx-100_net.key";
+        sslCertFile = "certificate.pem";
         maxRequestSize = 16000;
         maxMultiPartSize = 1000000;
     }
