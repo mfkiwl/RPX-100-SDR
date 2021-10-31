@@ -1,0 +1,17 @@
+# This file is managed by Qt Creator, do not edit!
+
+set("CMAKE_BUILD_TYPE" "RelWithDebInfo" CACHE "UNINITIALIZED" "" FORCE)
+set("LIMESUITE_DIR" "/opt/install/LimeSuite" CACHE "UNINITIALIZED" "" FORCE)
+set("SOAPYSDR_DIR" "/opt/install/SoapySDR" CACHE "UNINITIALIZED" "" FORCE)
+set("UHD_DIR" "/opt/install/uhd" CACHE "UNINITIALIZED" "" FORCE)
+set("APT_DIR" "/opt/install/aptdec" CACHE "UNINITIALIZED" "" FORCE)
+set("CM256CC_DIR" "/opt/install/cm256cc" CACHE "UNINITIALIZED" "" FORCE)
+set("DSDCC_DIR" "/opt/install/dsdcc" CACHE "UNINITIALIZED" "" FORCE)
+set("SERIALDV_DIR" "/opt/install/serialdv" CACHE "UNINITIALIZED" "" FORCE)
+set("MBE_DIR" "/opt/install/mbelib" CACHE "UNINITIALIZED" "" FORCE)
+set("CODEC2_DIR" "/opt/install/codec2" CACHE "UNINITIALIZED" "" FORCE)
+set("SGP4_DIR" "/opt/install/sgp4" CACHE "UNINITIALIZED" "" FORCE)
+set("LIBSIGMF_DIR" "/opt/install/libsigmf" CACHE "UNINITIALIZED" "" FORCE)
+set("DAB_DIR" "/opt/install/libdab" CACHE "UNINITIALIZED" "" FORCE)
+set("CMAKE_INSTALL_PREFIX" "/opt/install/RPX-100-SDR .." CACHE "UNINITIALIZED" "" FORCE)
+set("CMAKE_BUILD_TYPE" "RelWithDebInfo" CACHE "STRING" "" FORCE)

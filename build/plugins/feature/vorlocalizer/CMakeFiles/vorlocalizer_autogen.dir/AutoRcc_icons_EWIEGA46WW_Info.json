@@ -1,0 +1,23 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/vorlocalizer_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer",
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/vorlocalizer_autogen/include",
+	"INPUTS" : 
+	[
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/icons/vor.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/icons/compass.png"
+	],
+	"LOCK_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/CMakeFiles/vorlocalizer_autogen.dir/AutoRcc_icons_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "icons" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_icons.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/CMakeFiles/vorlocalizer_autogen.dir/AutoRcc_icons_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/icons.qrc",
+	"VERBOSITY" : 0
+}

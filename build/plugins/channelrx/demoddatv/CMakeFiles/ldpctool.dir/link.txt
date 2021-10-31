@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -g -DNDEBUG -flto -fno-fat-lto-objects CMakeFiles/ldpctool.dir/ldpctool_autogen/mocs_compilation.cpp.o CMakeFiles/ldpctool.dir/ldpctool/ldpc_tool.cpp.o CMakeFiles/ldpctool.dir/ldpctool/tables_handler.cpp.o -o ../../../ldpctool  -Wl,-rpath,:::::::::::::::::::::::::::::::::::::: 

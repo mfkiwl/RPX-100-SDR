@@ -1,0 +1,280 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv/moddatv_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/channeltx/moddatv",
+	"CMAKE_EXECUTABLE" : "/home/bernhard/Qt/Tools/CMake/bin/cmake",
+	"CMAKE_LIST_FILES" : [ "/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmod.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmod.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodbaseband.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmodbaseband.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodgui.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmodgui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodplugin.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmodplugin.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodreport.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmodreport.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodsettings.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmodsettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodsource.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmodsource.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodwebapiadapter.h",
+			"MU",
+			"EWIEGA46WW/moc_datvmodwebapiadapter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s/dvb-s.h",
+			"MU",
+			"A3GAYU2ABF/moc_dvb-s.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/DVB2.h",
+			"MU",
+			"IKOUC5SMUM/moc_DVB2.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/DVBS2.h",
+			"MU",
+			"IKOUC5SMUM/moc_DVBS2.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv/moddatv_autogen/include",
+	"MOC_COMPILATION_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv/moddatv_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"APPLICATION_NAME=\"RPX100\"",
+		"ARCHITECTURE_x86_64",
+		"COMPANY=\"oe3bia\"",
+		"COPYRIGHT=\"Copyright (c) 2021 Bernhard Isemann. All rights reserved.\"",
+		"HAS_LIMERFEUSB",
+		"IDENTIFIER=\"com.oe3bia.RPX100\"",
+		"LINUX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEBUG_OUTPUT",
+		"QT_OPENGL_LIB",
+		"QT_WEBSOCKETS_LIB",
+		"QT_WIDGETS_LIB",
+		"RPX100_LIB_VERSION=\"6.16.5\"",
+		"RPX100_VERSION=\"6.16.5\"",
+		"SDR_RX_SAMPLE_24BIT",
+		"USE_AVX",
+		"USE_AVX2",
+		"USE_SSE2",
+		"USE_SSE3",
+		"USE_SSE4_1",
+		"USE_SSE4_2",
+		"USE_SSSE3",
+		"moddatv_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv",
+		"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv",
+		"/opt/build/RPX-100-SDR/sdrbase",
+		"/opt/build/RPX-100-SDR/exports",
+		"/opt/build/RPX-100-SDR/sdrgui",
+		"/opt/build/RPX-100-SDR/swagger/RPX100/code/qt5/client",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWebSockets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+		"/usr/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include/c++/10",
+		"/usr/include/x86_64-linux-gnu/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/local/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv/moddatv_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv/CMakeFiles/moddatv_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channeltx/moddatv/CMakeFiles/moddatv_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmod.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodbaseband.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodgui.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodplugin.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodreport.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodsettings.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodsource.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/datvmodwebapiadapter.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s/dvb-s.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/DVB2.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/DVBS2.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvb2_bbheader.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvb2_bch.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvb2_ldpc_encode.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvb2_ldpc_tables.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvb2_scrambler.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvbs2_interleave.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvbs2_modulator.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvbs2_physical.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvbs2_scrambler.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channeltx/moddatv/dvb-s2/dvbs2_tables.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

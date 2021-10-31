@@ -1,0 +1,60 @@
+Determining if the __ARM_NEON exist failed with the following output:
+Change Dir: /opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2c899/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2c899.dir/build.make CMakeFiles/cmTC_2c899.dir/build
+gmake[1]: Entering directory '/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2c899.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -march=native -o CMakeFiles/cmTC_2c899.dir/CheckSymbolExists.c.o -c /opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: '__ARM_NEON' undeclared (first use in this function)
+    7 |   return ((int*)(&__ARM_NEON))[argc];
+      |                   ^~~~~~~~~~
+/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_2c899.dir/build.make:78: CMakeFiles/cmTC_2c899.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_2c899/fast] Error 2
+
+
+File /opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __ARM_NEON
+  return ((int*)(&__ARM_NEON))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __AVX512F__ exist failed with the following output:
+Change Dir: /opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b2dc5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b2dc5.dir/build.make CMakeFiles/cmTC_b2dc5.dir/build
+gmake[1]: Entering directory '/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b2dc5.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -march=native -o CMakeFiles/cmTC_b2dc5.dir/CheckSymbolExists.c.o -c /opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: '__AVX512F__' undeclared (first use in this function)
+    7 |   return ((int*)(&__AVX512F__))[argc];
+      |                   ^~~~~~~~~~~
+/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_b2dc5.dir/build.make:78: CMakeFiles/cmTC_b2dc5.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b2dc5/fast] Error 2
+
+
+File /opt/build/RPX-100-SDR/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __AVX512F__
+  return ((int*)(&__AVX512F__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

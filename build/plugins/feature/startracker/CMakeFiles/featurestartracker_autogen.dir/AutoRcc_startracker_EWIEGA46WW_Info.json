@@ -1,0 +1,35 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/startracker/featurestartracker_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/startracker",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/feature/startracker",
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/startracker/featurestartracker_autogen/include",
+	"INPUTS" : 
+	[
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-flat-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-old-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-waxing-crescent-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-waxing-gibbous-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-waning-crescent-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-young-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/sun-40.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-first-quarter-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-waning-gibbous-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/sun-button-24.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-full-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-new-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/pulsar-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker/moon-third-quarter-32.png"
+	],
+	"LOCK_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/startracker/CMakeFiles/featurestartracker_autogen.dir/AutoRcc_startracker_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "startracker" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_startracker.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/startracker/CMakeFiles/featurestartracker_autogen.dir/AutoRcc_startracker_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/opt/build/RPX-100-SDR/plugins/feature/startracker/startracker.qrc",
+	"VERBOSITY" : 0
+}

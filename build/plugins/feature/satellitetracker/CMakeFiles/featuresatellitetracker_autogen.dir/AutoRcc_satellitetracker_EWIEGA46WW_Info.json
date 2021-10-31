@@ -1,0 +1,23 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/satellitetracker/featuresatellitetracker_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/satellitetracker",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/feature/satellitetracker",
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/satellitetracker/featuresatellitetracker_autogen/include",
+	"INPUTS" : 
+	[
+		"/opt/build/RPX-100-SDR/plugins/feature/satellitetracker/satellitetracker/satellite-32.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/satellitetracker/satellitetracker/iss-32.png"
+	],
+	"LOCK_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/satellitetracker/CMakeFiles/featuresatellitetracker_autogen.dir/AutoRcc_satellitetracker_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "satellitetracker" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_satellitetracker.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/satellitetracker/CMakeFiles/featuresatellitetracker_autogen.dir/AutoRcc_satellitetracker_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/opt/build/RPX-100-SDR/plugins/feature/satellitetracker/satellitetracker.qrc",
+	"VERBOSITY" : 0
+}

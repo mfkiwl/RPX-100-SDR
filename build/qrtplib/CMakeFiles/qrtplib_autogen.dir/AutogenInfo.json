@@ -1,0 +1,293 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/qrtplib/qrtplib_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/qrtplib",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/qrtplib",
+	"CMAKE_EXECUTABLE" : "/home/bernhard/Qt/Tools/CMake/bin/cmake",
+	"CMAKE_LIST_FILES" : [ "/opt/build/RPX-100-SDR/qrtplib/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpapppacket.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpapppacket.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpbyepacket.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpbyepacket.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpcompoundpacket.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpcompoundpacket.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpcompoundpacketbuilder.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpcompoundpacketbuilder.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcppacketbuilder.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcppacketbuilder.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcprrpacket.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcprrpacket.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpscheduler.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpscheduler.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpsdesinfo.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpsdesinfo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpsdespacket.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpsdespacket.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpsrpacket.h",
+			"MU",
+			"EWIEGA46WW/moc_rtcpsrpacket.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpaddress.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpaddress.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpcollisionlist.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpcollisionlist.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtperrors.h",
+			"MU",
+			"EWIEGA46WW/moc_rtperrors.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpinternalsourcedata.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpinternalsourcedata.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtppacket.h",
+			"MU",
+			"EWIEGA46WW/moc_rtppacket.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtppacketbuilder.h",
+			"MU",
+			"EWIEGA46WW/moc_rtppacketbuilder.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtprandom.h",
+			"MU",
+			"EWIEGA46WW/moc_rtprandom.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtprandomrand48.h",
+			"MU",
+			"EWIEGA46WW/moc_rtprandomrand48.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtprandomrands.h",
+			"MU",
+			"EWIEGA46WW/moc_rtprandomrands.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtprandomurandom.h",
+			"MU",
+			"EWIEGA46WW/moc_rtprandomurandom.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpsession.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpsession.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpsessionparams.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpsessionparams.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpsessionsources.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpsessionsources.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpsourcedata.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpsourcedata.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpsources.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpsources.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtptimeutilities.h",
+			"MU",
+			"EWIEGA46WW/moc_rtptimeutilities.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpudptransmitter.h",
+			"MU",
+			"EWIEGA46WW/moc_rtpudptransmitter.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/qrtplib/qrtplib_autogen/include",
+	"MOC_COMPILATION_FILE" : "/opt/build/RPX-100-SDR/build/qrtplib/qrtplib_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"APPLICATION_NAME=\"RPX100\"",
+		"ARCHITECTURE_x86_64",
+		"COMPANY=\"oe3bia\"",
+		"COPYRIGHT=\"Copyright (c) 2021 Bernhard Isemann. All rights reserved.\"",
+		"HAS_LIMERFEUSB",
+		"IDENTIFIER=\"com.oe3bia.RPX100\"",
+		"LINUX",
+		"QT_CORE_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEBUG_OUTPUT",
+		"RPX100_LIB_VERSION=\"6.16.5\"",
+		"RPX100_VERSION=\"6.16.5\"",
+		"SDR_RX_SAMPLE_24BIT",
+		"USE_AVX",
+		"USE_AVX2",
+		"USE_SSE2",
+		"USE_SSE3",
+		"USE_SSE4_1",
+		"USE_SSE4_2",
+		"USE_SSSE3",
+		"qrtplib_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/build/RPX-100-SDR/build/qrtplib",
+		"/opt/build/RPX-100-SDR/qrtplib",
+		"/opt/build/RPX-100-SDR/exports",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/c++/10",
+		"/usr/include/x86_64-linux-gnu/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/opt/build/RPX-100-SDR/build/qrtplib/qrtplib_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/opt/build/RPX-100-SDR/build/qrtplib/CMakeFiles/qrtplib_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/qrtplib/CMakeFiles/qrtplib_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcpapppacket.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcpbyepacket.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcpcompoundpacket.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtcpcompoundpacketbuilder.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcppacketbuilder.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcprrpacket.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcpscheduler.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcpsdesinfo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcpsdespacket.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtcpsrpacket.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpaddress.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpcollisionlist.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtperrors.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/qrtplib/rtpinternalsourcedata.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtppacket.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtppacketbuilder.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtprandom.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtprandomrand48.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtprandomrands.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtprandomurandom.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpsession.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpsessionparams.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpsessionsources.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpsourcedata.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpsources.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtptimeutilities.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/qrtplib/rtpudptransmitter.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

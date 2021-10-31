@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=RPX100
+GenericName=SDR/Analyzer frontend
+Comment=SDR/Analyzer frontend for Airspy, Airspy HF+, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay RSP1 and FunCube
+Exec=RPX100
+Icon=RPX100_icon
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Network;HamRadio;

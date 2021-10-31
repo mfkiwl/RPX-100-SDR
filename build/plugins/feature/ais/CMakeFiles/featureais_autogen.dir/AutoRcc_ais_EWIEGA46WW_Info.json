@@ -1,0 +1,29 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/ais/featureais_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/ais",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/feature/ais",
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/ais/featureais_autogen/include",
+	"INPUTS" : 
+	[
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/cargo.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/anchor.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/tanker.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/tug.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/bouy.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/ship.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/aircraft.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/ais/map/helicopter.png"
+	],
+	"LOCK_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/ais/CMakeFiles/featureais_autogen.dir/AutoRcc_ais_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "ais" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_ais.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/ais/CMakeFiles/featureais_autogen.dir/AutoRcc_ais_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/opt/build/RPX-100-SDR/plugins/feature/ais/ais.qrc",
+	"VERBOSITY" : 0
+}

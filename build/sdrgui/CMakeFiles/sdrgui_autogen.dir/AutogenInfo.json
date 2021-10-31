@@ -1,0 +1,809 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/sdrgui/sdrgui_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/sdrgui",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/sdrgui",
+	"CMAKE_EXECUTABLE" : "/home/bernhard/Qt/Tools/CMake/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/opt/build/RPX-100-SDR/sdrgui/CMakeLists.txt",
+		"/opt/build/RPX-100-SDR/sdrgui/resources/res.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/channel/channelgui.h",
+			"Mu",
+			"BE6U6ONXZC/moc_channelgui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/device/deviceuiset.h",
+			"Mu",
+			"GULY2SVRVA/moc_deviceuiset.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/dsp/scopevisxy.h",
+			"Mu",
+			"JGTBRDHS57/moc_scopevisxy.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/feature/featuregui.h",
+			"Mu",
+			"3DM3QXXG3A/moc_featuregui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/feature/featureuiset.h",
+			"Mu",
+			"3DM3QXXG3A/moc_featureuiset.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/RPX100splash.h",
+			"Mu",
+			"DMHXEJ42XS/moc_RPX100splash.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/aboutdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_aboutdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/addpresetdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_addpresetdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/ambedevicesdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_ambedevicesdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/audiodialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_audiodialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/audioselectdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_audioselectdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/basicchannelsettingsdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_basicchannelsettingsdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/basicdevicesettingsdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_basicdevicesettingsdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/basicfeaturesettingsdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_basicfeaturesettingsdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/buttonswitch.h",
+			"Mu",
+			"DMHXEJ42XS/moc_buttonswitch.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/channeladddialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_channeladddialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/channelsdock.h",
+			"Mu",
+			"DMHXEJ42XS/moc_channelsdock.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/channelwindow.h",
+			"Mu",
+			"DMHXEJ42XS/moc_channelwindow.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/clickablelabel.h",
+			"Mu",
+			"DMHXEJ42XS/moc_clickablelabel.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/colormapper.h",
+			"Mu",
+			"DMHXEJ42XS/moc_colormapper.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/commanditem.h",
+			"Mu",
+			"DMHXEJ42XS/moc_commanditem.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/commandkeyreceiver.h",
+			"Mu",
+			"DMHXEJ42XS/moc_commandkeyreceiver.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/commandoutputdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_commandoutputdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/crightclickenabler.h",
+			"Mu",
+			"DMHXEJ42XS/moc_crightclickenabler.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/customtextedit.h",
+			"Mu",
+			"DMHXEJ42XS/moc_customtextedit.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/cwkeyergui.h",
+			"Mu",
+			"DMHXEJ42XS/moc_cwkeyergui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/devicestreamselectiondialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_devicestreamselectiondialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/deviceuserargsdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_deviceuserargsdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/dmsspinbox.h",
+			"Mu",
+			"DMHXEJ42XS/moc_dmsspinbox.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/editcommanddialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_editcommanddialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/externalclockbutton.h",
+			"Mu",
+			"DMHXEJ42XS/moc_externalclockbutton.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/externalclockdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_externalclockdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/featureadddialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_featureadddialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/featurepresetsdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_featurepresetsdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/featuresdock.h",
+			"Mu",
+			"DMHXEJ42XS/moc_featuresdock.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/featurewindow.h",
+			"Mu",
+			"DMHXEJ42XS/moc_featurewindow.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/fmpreemphasisdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_fmpreemphasisdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glscope.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glscope.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glscopegui.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glscopegui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glshadercolors.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glshadercolors.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glshadersimple.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glshadersimple.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glshadertextured.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glshadertextured.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glshadertvarray.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glshadertvarray.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glspectrum.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glspectrum.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/glspectrumgui.h",
+			"Mu",
+			"DMHXEJ42XS/moc_glspectrumgui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/graphicsviewzoom.h",
+			"Mu",
+			"DMHXEJ42XS/moc_graphicsviewzoom.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/httpdownloadmanagergui.h",
+			"Mu",
+			"DMHXEJ42XS/moc_httpdownloadmanagergui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/indicator.h",
+			"Mu",
+			"DMHXEJ42XS/moc_indicator.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/levelmeter.h",
+			"Mu",
+			"DMHXEJ42XS/moc_levelmeter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/loggingdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_loggingdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/mypositiondialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_mypositiondialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/pluginsdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_pluginsdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/presetitem.h",
+			"Mu",
+			"DMHXEJ42XS/moc_presetitem.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/rollupwidget.h",
+			"Mu",
+			"DMHXEJ42XS/moc_rollupwidget.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/samplingdevicedialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_samplingdevicedialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/samplingdevicesdock.h",
+			"Mu",
+			"DMHXEJ42XS/moc_samplingdevicesdock.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/scaledimage.h",
+			"Mu",
+			"DMHXEJ42XS/moc_scaledimage.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/scaleengine.h",
+			"Mu",
+			"DMHXEJ42XS/moc_scaleengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/spectrummarkersdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_spectrummarkersdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/tickedslider.h",
+			"Mu",
+			"DMHXEJ42XS/moc_tickedslider.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/transverterbutton.h",
+			"Mu",
+			"DMHXEJ42XS/moc_transverterbutton.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/transverterdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_transverterdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/tvscreen.h",
+			"Mu",
+			"DMHXEJ42XS/moc_tvscreen.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/tvscreenanalog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_tvscreenanalog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/valuedial.h",
+			"Mu",
+			"DMHXEJ42XS/moc_valuedial.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/valuedialz.h",
+			"Mu",
+			"DMHXEJ42XS/moc_valuedialz.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/wrappingdatetimeedit.h",
+			"Mu",
+			"DMHXEJ42XS/moc_wrappingdatetimeedit.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/wsspectrumsettingsdialog.h",
+			"Mu",
+			"DMHXEJ42XS/moc_wsspectrumsettingsdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/limerfegui/limerfeusbdialog.h",
+			"Mu",
+			"K4EWOQWXHY/moc_limerfeusbdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/mainwindow.h",
+			"Mu",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/arginfogui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_arginfogui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/complexfactorgui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_complexfactorgui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/discreterangegui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_discreterangegui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/dynamicargsettinggui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_dynamicargsettinggui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/dynamicitemsettinggui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_dynamicitemsettinggui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/intervalrangegui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_intervalrangegui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/intervalslidergui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_intervalslidergui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/itemsettinggui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_itemsettinggui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/stringrangegui.h",
+			"Mu",
+			"LP7VHIG5O4/moc_stringrangegui.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/sdrgui/sdrgui_autogen/include",
+	"MOC_COMPILATION_FILE" : "/opt/build/RPX-100-SDR/build/sdrgui/sdrgui_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"APPLICATION_NAME=\"RPX100\"",
+		"ARCHITECTURE_x86_64",
+		"COMPANY=\"oe3bia\"",
+		"COPYRIGHT=\"Copyright (c) 2021 Bernhard Isemann. All rights reserved.\"",
+		"HAS_LIMERFEUSB",
+		"IDENTIFIER=\"com.oe3bia.RPX100\"",
+		"LINUX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEBUG_OUTPUT",
+		"QT_OPENGL_LIB",
+		"QT_WEBSOCKETS_LIB",
+		"QT_WIDGETS_LIB",
+		"RPX100_LIB_VERSION=\"6.16.5\"",
+		"RPX100_VERSION=\"6.16.5\"",
+		"SDR_RX_SAMPLE_24BIT",
+		"USE_AVX",
+		"USE_AVX2",
+		"USE_SSE2",
+		"USE_SSE3",
+		"USE_SSE4_1",
+		"USE_SSE4_2",
+		"USE_SSSE3",
+		"sdrgui_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/build/RPX-100-SDR/build/sdrgui",
+		"/opt/build/RPX-100-SDR/sdrgui",
+		"/opt/install/LimeSuite/include",
+		"/opt/build/RPX-100-SDR/exports",
+		"/opt/build/RPX-100-SDR/sdrbase",
+		"/opt/build/RPX-100-SDR/logging",
+		"/opt/build/RPX-100-SDR/httpserver",
+		"/opt/build/RPX-100-SDR/swagger/RPX100/code/qt5/client",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWebSockets",
+		"/usr/include",
+		"/usr/include/c++/10",
+		"/usr/include/x86_64-linux-gnu/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/opt/build/RPX-100-SDR/build/sdrgui/sdrgui_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_aboutdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_addpresetdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_ambedevicesdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_arginfogui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_audiodialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_audioselectdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_basicchannelsettingsdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_basicdevicesettingsdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_basicfeaturesettingsdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_channeladddialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_commandoutputdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_complexfactorgui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_cwkeyergui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_devicestreamselectiondialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_deviceuserargsdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_discreterangegui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_editcommanddialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_externalclockdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_featureadddialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_featurepresetsdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_fmpreemphasisdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_glscopegui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_glspectrumgui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_intervalrangegui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_intervalslidergui.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_limerfeusbdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_loggingdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_mainwindow.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_myposdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_pluginsdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_samplingdevicecontrol.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_samplingdevicedialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_spectrummarkersdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_transverterdialog.h",
+		"/opt/build/RPX-100-SDR/build/sdrgui/ui_wsspectrumsettingsdialog.h"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/opt/build/RPX-100-SDR/build/sdrgui/CMakeFiles/sdrgui_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/sdrgui/CMakeFiles/sdrgui_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/opt/build/RPX-100-SDR/sdrgui/channel/channelgui.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/device/deviceuiset.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/dsp/scopevisxy.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/feature/featuregui.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/feature/featureuiset.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/RPX100splash.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/aboutdialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/addpresetdialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/ambedevicesdialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/audiodialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/audioselectdialog.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/basicchannelsettingsdialog.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/basicdevicesettingsdialog.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/basicfeaturesettingsdialog.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/buttonswitch.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/channeladddialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/channelsdock.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/channelwindow.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/clickablelabel.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/colormapper.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/commanditem.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/commandkeyreceiver.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/commandoutputdialog.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/crightclickenabler.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/customtextedit.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/cwkeyergui.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/devicestreamselectiondialog.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/deviceuserargsdialog.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/dmsspinbox.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/editcommanddialog.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/externalclockbutton.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/externalclockdialog.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/featureadddialog.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/featurepresetsdialog.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/featuresdock.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/featurewindow.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/fmpreemphasisdialog.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glscope.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glscopegui.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glshadercolors.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glshadersimple.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glshadertextured.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glshadertvarray.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glspectrum.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/glspectrumgui.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/graphicsviewzoom.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/httpdownloadmanagergui.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/indicator.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/levelmeter.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/loggingdialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/mypositiondialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/pluginsdialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/presetitem.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/rollupwidget.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/samplingdevicedialog.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/samplingdevicesdock.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/scaledimage.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/scaleengine.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/spectrummarkersdialog.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/tickedslider.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/transverterbutton.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/transverterdialog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/tvscreen.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/tvscreenanalog.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/valuedial.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/gui/valuedialz.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/wrappingdatetimeedit.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/gui/wsspectrumsettingsdialog.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/limerfegui/limerfeusbdialog.cpp",
+			"Mu",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrgui/mainwindow.cpp", "Mu", null ],
+		[ "/opt/build/RPX-100-SDR/sdrgui/soapygui/arginfogui.cpp", "Mu", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/complexfactorgui.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/discreterangegui.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/dynamicargsettinggui.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/dynamicitemsettinggui.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/intervalrangegui.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/intervalslidergui.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/itemsettinggui.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrgui/soapygui/stringrangegui.cpp",
+			"Mu",
+			null
+		]
+	],
+	"VERBOSITY" : 0
+}

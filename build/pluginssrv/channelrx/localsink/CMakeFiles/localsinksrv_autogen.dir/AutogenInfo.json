@@ -1,0 +1,183 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink/localsinksrv_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/channelrx/localsink",
+	"CMAKE_EXECUTABLE" : "/home/bernhard/Qt/Tools/CMake/bin/cmake",
+	"CMAKE_LIST_FILES" : [ "/opt/build/RPX-100-SDR/plugins/channelrx/localsink/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsink.h",
+			"MU",
+			"EWIEGA46WW/moc_localsink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkbaseband.h",
+			"MU",
+			"EWIEGA46WW/moc_localsinkbaseband.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkplugin.h",
+			"MU",
+			"EWIEGA46WW/moc_localsinkplugin.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinksettings.h",
+			"MU",
+			"EWIEGA46WW/moc_localsinksettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinksink.h",
+			"MU",
+			"EWIEGA46WW/moc_localsinksink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkwebapiadapter.h",
+			"MU",
+			"EWIEGA46WW/moc_localsinkwebapiadapter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkworker.h",
+			"MU",
+			"EWIEGA46WW/moc_localsinkworker.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink/localsinksrv_autogen/include",
+	"MOC_COMPILATION_FILE" : "/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink/localsinksrv_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"APPLICATION_NAME=\"RPX100\"",
+		"ARCHITECTURE_x86_64",
+		"COMPANY=\"oe3bia\"",
+		"COPYRIGHT=\"Copyright (c) 2021 Bernhard Isemann. All rights reserved.\"",
+		"HAS_LIMERFEUSB",
+		"IDENTIFIER=\"com.oe3bia.RPX100\"",
+		"LINUX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEBUG_OUTPUT",
+		"QT_WEBSOCKETS_LIB",
+		"RPX100_LIB_VERSION=\"6.16.5\"",
+		"RPX100_VERSION=\"6.16.5\"",
+		"SDR_RX_SAMPLE_24BIT",
+		"SERVER_MODE",
+		"USE_AVX",
+		"USE_AVX2",
+		"USE_SSE2",
+		"USE_SSE3",
+		"USE_SSE4_1",
+		"USE_SSE4_2",
+		"USE_SSSE3",
+		"localsinksrv_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/localsink",
+		"/opt/build/RPX-100-SDR/sdrbase",
+		"/opt/build/RPX-100-SDR/exports",
+		"/opt/build/RPX-100-SDR/sdrgui",
+		"/opt/build/RPX-100-SDR/swagger/RPX100/code/qt5/client",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWebSockets",
+		"/usr/include",
+		"/usr/include/c++/10",
+		"/usr/include/x86_64-linux-gnu/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink/localsinksrv_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink/CMakeFiles/localsinksrv_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/pluginssrv/channelrx/localsink/CMakeFiles/localsinksrv_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsink.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkbaseband.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkplugin.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinksettings.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinksink.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkwebapiadapter.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/localsink/localsinkworker.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

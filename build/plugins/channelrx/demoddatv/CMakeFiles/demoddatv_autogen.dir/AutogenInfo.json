@@ -1,0 +1,303 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv/demoddatv_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv",
+	"CMAKE_EXECUTABLE" : "/home/bernhard/Qt/Tools/CMake/bin/cmake",
+	"CMAKE_LIST_FILES" : [ "/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemod.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemod.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodbaseband.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemodbaseband.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodgui.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemodgui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodplugin.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemodplugin.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodreport.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemodreport.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodsettings.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemodsettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodsink.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemodsink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodwebapiadapter.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdemodwebapiadapter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdvbs2ldpcdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_datvdvbs2ldpcdialog.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvideorender.h",
+			"MU",
+			"EWIEGA46WW/moc_datvideorender.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvideostream.h",
+			"MU",
+			"EWIEGA46WW/moc_datvideostream.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvudpstream.h",
+			"MU",
+			"EWIEGA46WW/moc_datvudpstream.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/dvb.h",
+			"MU",
+			"JW5BIFBWUH/moc_dvb.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/filtergen.h",
+			"MU",
+			"JW5BIFBWUH/moc_filtergen.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/framework.h",
+			"MU",
+			"JW5BIFBWUH/moc_framework.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/math.h",
+			"MU",
+			"JW5BIFBWUH/moc_math.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/sdr.h",
+			"MU",
+			"JW5BIFBWUH/moc_sdr.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv/demoddatv_autogen/include",
+	"MOC_COMPILATION_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv/demoddatv_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"APPLICATION_NAME=\"RPX100\"",
+		"ARCHITECTURE_x86_64",
+		"COMPANY=\"oe3bia\"",
+		"COPYRIGHT=\"Copyright (c) 2021 Bernhard Isemann. All rights reserved.\"",
+		"HAS_LIMERFEUSB",
+		"IDENTIFIER=\"com.oe3bia.RPX100\"",
+		"LINUX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIAWIDGETS_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEBUG_OUTPUT",
+		"QT_OPENGL_LIB",
+		"QT_WEBSOCKETS_LIB",
+		"QT_WIDGETS_LIB",
+		"RPX100_LIB_VERSION=\"6.16.5\"",
+		"RPX100_VERSION=\"6.16.5\"",
+		"SDR_RX_SAMPLE_24BIT",
+		"USE_AVX",
+		"USE_AVX2",
+		"USE_SSE2",
+		"USE_SSE3",
+		"USE_SSE4_1",
+		"USE_SSE4_2",
+		"USE_SSSE3",
+		"demoddatv_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv",
+		"/opt/build/RPX-100-SDR/sdrbase",
+		"/opt/build/RPX-100-SDR/exports",
+		"/opt/build/RPX-100-SDR/sdrgui",
+		"/opt/build/RPX-100-SDR/swagger/RPX100/code/qt5/client",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWebSockets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include/c++/10",
+		"/usr/include/x86_64-linux-gnu/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/local/include",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv/demoddatv_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv/CMakeFiles/demoddatv_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demoddatv/CMakeFiles/demoddatv_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemod.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodbaseband.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodgui.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodplugin.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodreport.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodsettings.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodsink.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdemodwebapiadapter.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvdvbs2ldpcdialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvideorender.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvideostream.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/datvudpstream.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/ldpctool/tables_handler.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/dvb.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/filtergen.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/framework.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/math.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/channelrx/demoddatv/leansdr/sdr.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

@@ -1,0 +1,177 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro/inputfcdpro_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro",
+	"CMAKE_EXECUTABLE" : "/home/bernhard/Qt/Tools/CMake/bin/cmake",
+	"CMAKE_LIST_FILES" : [ "/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprogui.h",
+			"MU",
+			"EWIEGA46WW/moc_fcdprogui.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdproinput.h",
+			"MU",
+			"EWIEGA46WW/moc_fcdproinput.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdproplugin.h",
+			"MU",
+			"EWIEGA46WW/moc_fcdproplugin.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprosettings.h",
+			"MU",
+			"EWIEGA46WW/moc_fcdprosettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprothread.h",
+			"MU",
+			"EWIEGA46WW/moc_fcdprothread.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprowebapiadapter.h",
+			"MU",
+			"EWIEGA46WW/moc_fcdprowebapiadapter.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro/inputfcdpro_autogen/include",
+	"MOC_COMPILATION_FILE" : "/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro/inputfcdpro_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"APPLICATION_NAME=\"RPX100\"",
+		"ARCHITECTURE_x86_64",
+		"COMPANY=\"oe3bia\"",
+		"COPYRIGHT=\"Copyright (c) 2021 Bernhard Isemann. All rights reserved.\"",
+		"HAS_LIMERFEUSB",
+		"IDENTIFIER=\"com.oe3bia.RPX100\"",
+		"LINUX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEBUG_OUTPUT",
+		"QT_OPENGL_LIB",
+		"QT_WEBSOCKETS_LIB",
+		"QT_WIDGETS_LIB",
+		"RPX100_LIB_VERSION=\"6.16.5\"",
+		"RPX100_VERSION=\"6.16.5\"",
+		"SDR_RX_SAMPLE_24BIT",
+		"USE_AVX",
+		"USE_AVX2",
+		"USE_SSE2",
+		"USE_SSE3",
+		"USE_SSE4_1",
+		"USE_SSE4_2",
+		"USE_SSSE3",
+		"inputfcdpro_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro",
+		"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro",
+		"/opt/build/RPX-100-SDR/sdrbase",
+		"/opt/build/RPX-100-SDR/exports",
+		"/opt/build/RPX-100-SDR/sdrgui",
+		"/opt/build/RPX-100-SDR/swagger/RPX100/code/qt5/client",
+		"/opt/build/RPX-100-SDR/fcdhid",
+		"/opt/build/RPX-100-SDR/fcdlib",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWebSockets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+		"/usr/include/c++/10",
+		"/usr/include/x86_64-linux-gnu/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro/inputfcdpro_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro/CMakeFiles/inputfcdpro_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/samplesource/fcdpro/CMakeFiles/inputfcdpro_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprogui.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdproinput.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdproplugin.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprosettings.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprothread.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/plugins/samplesource/fcdpro/fcdprowebapiadapter.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

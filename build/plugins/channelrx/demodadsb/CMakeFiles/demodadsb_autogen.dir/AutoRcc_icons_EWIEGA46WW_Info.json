@@ -1,0 +1,24 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/demodadsb_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb",
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/demodadsb_autogen/include",
+	"INPUTS" : 
+	[
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/icons/allflightpaths.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/icons/aircraft.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/icons/controltower.png"
+	],
+	"LOCK_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/CMakeFiles/demodadsb_autogen.dir/AutoRcc_icons_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "icons" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_icons.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/CMakeFiles/demodadsb_autogen.dir/AutoRcc_icons_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/icons.qrc",
+	"VERBOSITY" : 0
+}

@@ -1,0 +1,36 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/demodadsb_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb",
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/demodadsb_autogen/include",
+	"INPUTS" : 
+	[
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/airport_medium.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/airport_small.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/aircraft_space.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/aircraft_drone.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/airport_large.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/heliport.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/aircraft_2enginesmall.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/MapStation.qml",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/aircraft_light.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/aircraft_4engine.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/map.qml",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/aircraft_helicopter.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/truck.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/antenna.png",
+		"/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map/aircraft_2engine.png"
+	],
+	"LOCK_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/CMakeFiles/demodadsb_autogen.dir/AutoRcc_map_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "map" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_map.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/channelrx/demodadsb/CMakeFiles/demodadsb_autogen.dir/AutoRcc_map_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/opt/build/RPX-100-SDR/plugins/channelrx/demodadsb/map.qrc",
+	"VERBOSITY" : 0
+}

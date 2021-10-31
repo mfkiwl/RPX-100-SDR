@@ -1,0 +1,1298 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/sdrbase/sdrbase_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/sdrbase",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/sdrbase",
+	"CMAKE_EXECUTABLE" : "/home/bernhard/Qt/Tools/CMake/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/opt/build/RPX-100-SDR/sdrbase/CMakeLists.txt",
+		"/opt/build/RPX-100-SDR/cmake/Modules/FindOpus.cmake",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake",
+		"/opt/build/RPX-100-SDR/sdrbase/resources/webapi.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/ambe/ambeengine.h",
+			"MU",
+			"HUQHKZ44UG/moc_ambeengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/ambe/ambeworker.h",
+			"MU",
+			"HUQHKZ44UG/moc_ambeworker.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiocompressor.h",
+			"MU",
+			"PZONOMFGYT/moc_audiocompressor.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiocompressorsnd.h",
+			"MU",
+			"PZONOMFGYT/moc_audiocompressorsnd.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiodevicemanager.h",
+			"MU",
+			"PZONOMFGYT/moc_audiodevicemanager.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiofifo.h",
+			"MU",
+			"PZONOMFGYT/moc_audiofifo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiofilter.h",
+			"MU",
+			"PZONOMFGYT/moc_audiofilter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiog722.h",
+			"MU",
+			"PZONOMFGYT/moc_audiog722.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audioinputdevice.h",
+			"MU",
+			"PZONOMFGYT/moc_audioinputdevice.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audionetsink.h",
+			"MU",
+			"PZONOMFGYT/moc_audionetsink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audioopus.h",
+			"MU",
+			"PZONOMFGYT/moc_audioopus.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiooutputdevice.h",
+			"MU",
+			"PZONOMFGYT/moc_audiooutputdevice.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audioresampler.h",
+			"MU",
+			"PZONOMFGYT/moc_audioresampler.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/channelapi.h",
+			"MU",
+			"BE6U6ONXZC/moc_channelapi.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/channelutils.h",
+			"MU",
+			"BE6U6ONXZC/moc_channelutils.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/channelwebapiutils.h",
+			"MU",
+			"BE6U6ONXZC/moc_channelwebapiutils.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/remotedataqueue.h",
+			"MU",
+			"BE6U6ONXZC/moc_remotedataqueue.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/remotedatareadqueue.h",
+			"MU",
+			"BE6U6ONXZC/moc_remotedatareadqueue.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/commands/command.h",
+			"MU",
+			"4YNQ5GLRLQ/moc_command.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/device/deviceapi.h",
+			"MU",
+			"GULY2SVRVA/moc_deviceapi.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/device/deviceenumerator.h",
+			"MU",
+			"GULY2SVRVA/moc_deviceenumerator.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/device/deviceset.h",
+			"MU",
+			"GULY2SVRVA/moc_deviceset.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/device/deviceuserargs.h",
+			"MU",
+			"GULY2SVRVA/moc_deviceuserargs.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/device/deviceutils.h",
+			"MU",
+			"GULY2SVRVA/moc_deviceutils.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/afsquelch.h",
+			"MU",
+			"JGTBRDHS57/moc_afsquelch.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/agc.h",
+			"MU",
+			"JGTBRDHS57/moc_agc.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/basebandsamplesink.h",
+			"MU",
+			"JGTBRDHS57/moc_basebandsamplesink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/basebandsamplesource.h",
+			"MU",
+			"JGTBRDHS57/moc_basebandsamplesource.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/channelmarker.h",
+			"MU",
+			"JGTBRDHS57/moc_channelmarker.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/channelsamplesink.h",
+			"MU",
+			"JGTBRDHS57/moc_channelsamplesink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/channelsamplesource.h",
+			"MU",
+			"JGTBRDHS57/moc_channelsamplesource.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/costasloop.h",
+			"MU",
+			"JGTBRDHS57/moc_costasloop.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/ctcssdetector.h",
+			"MU",
+			"JGTBRDHS57/moc_ctcssdetector.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/ctcssfrequencies.h",
+			"MU",
+			"JGTBRDHS57/moc_ctcssfrequencies.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/cwkeyer.h",
+			"MU",
+			"JGTBRDHS57/moc_cwkeyer.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/cwkeyersettings.h",
+			"MU",
+			"JGTBRDHS57/moc_cwkeyersettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/datafifo.h",
+			"MU",
+			"JGTBRDHS57/moc_datafifo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dcscodes.h",
+			"MU",
+			"JGTBRDHS57/moc_dcscodes.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/decimatorc.h",
+			"MU",
+			"JGTBRDHS57/moc_decimatorc.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/decimatorsff.h",
+			"MU",
+			"JGTBRDHS57/moc_decimatorsff.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/decimatorsfi.h",
+			"MU",
+			"JGTBRDHS57/moc_decimatorsfi.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplemimo.h",
+			"MU",
+			"JGTBRDHS57/moc_devicesamplemimo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplesink.h",
+			"MU",
+			"JGTBRDHS57/moc_devicesamplesink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplesource.h",
+			"MU",
+			"JGTBRDHS57/moc_devicesamplesource.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplestatic.h",
+			"MU",
+			"JGTBRDHS57/moc_devicesamplestatic.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/downchannelizer.h",
+			"MU",
+			"JGTBRDHS57/moc_downchannelizer.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspcommands.h",
+			"MU",
+			"JGTBRDHS57/moc_dspcommands.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspdevicemimoengine.h",
+			"MU",
+			"JGTBRDHS57/moc_dspdevicemimoengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspdevicesinkengine.h",
+			"MU",
+			"JGTBRDHS57/moc_dspdevicesinkengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspdevicesourceengine.h",
+			"MU",
+			"JGTBRDHS57/moc_dspdevicesourceengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspengine.h",
+			"MU",
+			"JGTBRDHS57/moc_dspengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/fftcorr.h",
+			"MU",
+			"JGTBRDHS57/moc_fftcorr.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/fftengine.h",
+			"MU",
+			"JGTBRDHS57/moc_fftengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/fftfactory.h",
+			"MU",
+			"JGTBRDHS57/moc_fftfactory.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/fftfilt.h",
+			"MU",
+			"JGTBRDHS57/moc_fftfilt.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/fftwengine.h",
+			"MU",
+			"JGTBRDHS57/moc_fftwengine.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/fftwindow.h",
+			"MU",
+			"JGTBRDHS57/moc_fftwindow.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/filerecord.h",
+			"MU",
+			"JGTBRDHS57/moc_filerecord.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/filerecordinterface.h",
+			"MU",
+			"JGTBRDHS57/moc_filerecordinterface.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/filtermbe.h",
+			"MU",
+			"JGTBRDHS57/moc_filtermbe.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/filterrc.h",
+			"MU",
+			"JGTBRDHS57/moc_filterrc.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/firfilter.h",
+			"MU",
+			"JGTBRDHS57/moc_firfilter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/fmpreemphasis.h",
+			"MU",
+			"JGTBRDHS57/moc_fmpreemphasis.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/freqlockcomplex.h",
+			"MU",
+			"JGTBRDHS57/moc_freqlockcomplex.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/glscopesettings.h",
+			"MU",
+			"JGTBRDHS57/moc_glscopesettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/goertzel.h",
+			"MU",
+			"JGTBRDHS57/moc_goertzel.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/hbfilterchainconverter.h",
+			"MU",
+			"JGTBRDHS57/moc_hbfilterchainconverter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/hbfiltertraits.h",
+			"MU",
+			"JGTBRDHS57/moc_hbfiltertraits.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/interpolator.h",
+			"MU",
+			"JGTBRDHS57/moc_interpolator.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/mimochannel.h",
+			"MU",
+			"JGTBRDHS57/moc_mimochannel.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/nco.h",
+			"MU",
+			"JGTBRDHS57/moc_nco.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/ncof.h",
+			"MU",
+			"JGTBRDHS57/moc_ncof.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/nullsink.h",
+			"MU",
+			"JGTBRDHS57/moc_nullsink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/phaselock.h",
+			"MU",
+			"JGTBRDHS57/moc_phaselock.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/phaselockcomplex.h",
+			"MU",
+			"JGTBRDHS57/moc_phaselockcomplex.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/projector.h",
+			"MU",
+			"JGTBRDHS57/moc_projector.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/recursivefilters.h",
+			"MU",
+			"JGTBRDHS57/moc_recursivefilters.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/samplemififo.h",
+			"MU",
+			"JGTBRDHS57/moc_samplemififo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/samplemofifo.h",
+			"MU",
+			"JGTBRDHS57/moc_samplemofifo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/samplesimplefifo.h",
+			"MU",
+			"JGTBRDHS57/moc_samplesimplefifo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/samplesinkfifo.h",
+			"MU",
+			"JGTBRDHS57/moc_samplesinkfifo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/samplesourcefifo.h",
+			"MU",
+			"JGTBRDHS57/moc_samplesourcefifo.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/scopevis.h",
+			"MU",
+			"JGTBRDHS57/moc_scopevis.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/spectrummarkers.h",
+			"MU",
+			"JGTBRDHS57/moc_spectrummarkers.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/spectrumsettings.h",
+			"MU",
+			"JGTBRDHS57/moc_spectrumsettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/spectrumvis.h",
+			"MU",
+			"JGTBRDHS57/moc_spectrumvis.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/upchannelizer.h",
+			"MU",
+			"JGTBRDHS57/moc_upchannelizer.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/wavfilerecord.h",
+			"MU",
+			"JGTBRDHS57/moc_wavfilerecord.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/wfir.h",
+			"MU",
+			"JGTBRDHS57/moc_wfir.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/feature/feature.h",
+			"MU",
+			"3DM3QXXG3A/moc_feature.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/feature/featureset.h",
+			"MU",
+			"3DM3QXXG3A/moc_featureset.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/feature/featureutils.h",
+			"MU",
+			"3DM3QXXG3A/moc_featureutils.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/feature/featurewebapiutils.h",
+			"MU",
+			"3DM3QXXG3A/moc_featurewebapiutils.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/limerfe/limerfecontroller.h",
+			"MU",
+			"F6NAJKOHN2/moc_limerfecontroller.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/limerfe/limerfeusbcalib.h",
+			"MU",
+			"F6NAJKOHN2/moc_limerfeusbcalib.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/maincore.h",
+			"MU",
+			"EWIEGA46WW/moc_maincore.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/mainparser.h",
+			"MU",
+			"EWIEGA46WW/moc_mainparser.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/datapipes.h",
+			"MU",
+			"NFI3QQ6VMZ/moc_datapipes.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/datapipescommon.h",
+			"MU",
+			"NFI3QQ6VMZ/moc_datapipescommon.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/datapipesgcworker.h",
+			"MU",
+			"NFI3QQ6VMZ/moc_datapipesgcworker.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/messagepipes.h",
+			"MU",
+			"NFI3QQ6VMZ/moc_messagepipes.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/messagepipescommon.h",
+			"MU",
+			"NFI3QQ6VMZ/moc_messagepipescommon.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/messagepipesgcworker.h",
+			"MU",
+			"NFI3QQ6VMZ/moc_messagepipesgcworker.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/pipeendpoint.h",
+			"MU",
+			"NFI3QQ6VMZ/moc_pipeendpoint.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/plugin/pluginapi.h",
+			"MU",
+			"7RBZBFH7CH/moc_pluginapi.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/plugin/plugininterface.h",
+			"MU",
+			"7RBZBFH7CH/moc_plugininterface.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/plugin/pluginmanager.h",
+			"MU",
+			"7RBZBFH7CH/moc_pluginmanager.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/settings/featuresetpreset.h",
+			"MU",
+			"YPB6MEUM2W/moc_featuresetpreset.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/settings/mainsettings.h",
+			"MU",
+			"YPB6MEUM2W/moc_mainsettings.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/settings/preferences.h",
+			"MU",
+			"YPB6MEUM2W/moc_preferences.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/settings/preset.h",
+			"MU",
+			"YPB6MEUM2W/moc_preset.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/CRC64.h",
+			"MU",
+			"KH43KSYMFX/moc_CRC64.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/ais.h",
+			"MU",
+			"KH43KSYMFX/moc_ais.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/aprs.h",
+			"MU",
+			"KH43KSYMFX/moc_aprs.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/astronomy.h",
+			"MU",
+			"KH43KSYMFX/moc_astronomy.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/ax25.h",
+			"MU",
+			"KH43KSYMFX/moc_ax25.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/azel.h",
+			"MU",
+			"KH43KSYMFX/moc_azel.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/crc.h",
+			"MU",
+			"KH43KSYMFX/moc_crc.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/csv.h",
+			"MU",
+			"KH43KSYMFX/moc_csv.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/db.h",
+			"MU",
+			"KH43KSYMFX/moc_db.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/fits.h",
+			"MU",
+			"KH43KSYMFX/moc_fits.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/fixedtraits.h",
+			"MU",
+			"KH43KSYMFX/moc_fixedtraits.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/golay2312.h",
+			"MU",
+			"KH43KSYMFX/moc_golay2312.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/httpdownloadmanager.h",
+			"MU",
+			"KH43KSYMFX/moc_httpdownloadmanager.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/interpolation.h",
+			"MU",
+			"KH43KSYMFX/moc_interpolation.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/lfsr.h",
+			"MU",
+			"KH43KSYMFX/moc_lfsr.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/maidenhead.h",
+			"MU",
+			"KH43KSYMFX/moc_maidenhead.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/message.h",
+			"MU",
+			"KH43KSYMFX/moc_message.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/messagequeue.h",
+			"MU",
+			"KH43KSYMFX/moc_messagequeue.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/morse.h",
+			"MU",
+			"KH43KSYMFX/moc_morse.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/prettyprint.h",
+			"MU",
+			"KH43KSYMFX/moc_prettyprint.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/rtpsink.h",
+			"MU",
+			"KH43KSYMFX/moc_rtpsink.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/samplesourceserializer.h",
+			"MU",
+			"KH43KSYMFX/moc_samplesourceserializer.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/serialutil.h",
+			"MU",
+			"KH43KSYMFX/moc_serialutil.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/simpleserializer.h",
+			"MU",
+			"KH43KSYMFX/moc_simpleserializer.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/syncmessenger.h",
+			"MU",
+			"KH43KSYMFX/moc_syncmessenger.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/timeutil.h",
+			"MU",
+			"KH43KSYMFX/moc_timeutil.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/uid.h",
+			"MU",
+			"KH43KSYMFX/moc_uid.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/units.h",
+			"MU",
+			"KH43KSYMFX/moc_units.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/visa.h",
+			"MU",
+			"KH43KSYMFX/moc_visa.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapiadapter.h",
+			"MU",
+			"5LXZNFS4G5/moc_webapiadapter.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapiadapterbase.h",
+			"MU",
+			"5LXZNFS4G5/moc_webapiadapterbase.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapiadapterinterface.h",
+			"MU",
+			"5LXZNFS4G5/moc_webapiadapterinterface.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapirequestmapper.h",
+			"MU",
+			"5LXZNFS4G5/moc_webapirequestmapper.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapiserver.h",
+			"MU",
+			"5LXZNFS4G5/moc_webapiserver.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapiutils.h",
+			"MU",
+			"5LXZNFS4G5/moc_webapiutils.cpp",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/websockets/wsspectrum.h",
+			"MU",
+			"XIVWENITXK/moc_wsspectrum.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/sdrbase/sdrbase_autogen/include",
+	"MOC_COMPILATION_FILE" : "/opt/build/RPX-100-SDR/build/sdrbase/sdrbase_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"APPLICATION_NAME=\"RPX100\"",
+		"ARCHITECTURE_x86_64",
+		"COMPANY=\"oe3bia\"",
+		"COPYRIGHT=\"Copyright (c) 2021 Bernhard Isemann. All rights reserved.\"",
+		"DSD_USE_SERIALDV",
+		"HAS_LIMERFEUSB",
+		"IDENTIFIER=\"com.oe3bia.RPX100\"",
+		"LINUX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_DEBUG_OUTPUT",
+		"QT_WEBSOCKETS_LIB",
+		"RPX100_LIB_VERSION=\"6.16.5\"",
+		"RPX100_VERSION=\"6.16.5\"",
+		"SDR_RX_SAMPLE_24BIT",
+		"USE_AVX",
+		"USE_AVX2",
+		"USE_FFTW",
+		"USE_SSE2",
+		"USE_SSE3",
+		"USE_SSE4_1",
+		"USE_SSE4_2",
+		"USE_SSSE3",
+		"sdrbase_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/build/RPX-100-SDR/build/sdrbase",
+		"/opt/build/RPX-100-SDR/sdrbase",
+		"/opt/install/LimeSuite/include",
+		"/opt/install/serialdv/include/serialdv",
+		"/opt/build/RPX-100-SDR/exports",
+		"/opt/build/RPX-100-SDR/httpserver",
+		"/opt/build/RPX-100-SDR/logging",
+		"/opt/build/RPX-100-SDR/qrtplib",
+		"/opt/build/RPX-100-SDR/swagger/RPX100/code/qt5/client",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtMultimedia",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWebSockets",
+		"/usr/include",
+		"/usr/include/c++/10",
+		"/usr/include/x86_64-linux-gnu/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/bernhard/Qt/Tools/CMake/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/opt/build/RPX-100-SDR/build/sdrbase/sdrbase_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/opt/build/RPX-100-SDR/build/sdrbase/CMakeFiles/sdrbase_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/sdrbase/CMakeFiles/sdrbase_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/opt/build/RPX-100-SDR/sdrbase/ambe/ambeengine.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/ambe/ambeworker.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiocompressor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiocompressorsnd.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiodevicemanager.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/audio/audiofifo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/audio/audiofilter.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/audio/audiog722.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audioinputdevice.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/audio/audionetsink.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/audio/audioopus.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/audio/audiooutputdevice.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/audio/audioresampler.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/channel/channelapi.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/channel/channelutils.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/channelwebapiutils.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/remotedataqueue.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/channel/remotedatareadqueue.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/commands/command.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/device/deviceapi.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/device/deviceenumerator.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/device/deviceset.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/device/deviceuserargs.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/device/deviceutils.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/afsquelch.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/agc.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/basebandsamplesink.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/basebandsamplesource.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/channelmarker.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/channelsamplesink.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/channelsamplesource.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/costasloop.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/ctcssdetector.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/ctcssfrequencies.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/cwkeyer.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/cwkeyersettings.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/datafifo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/dcscodes.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/decimatorc.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/decimatorsff.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/decimatorsfi.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplemimo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplesink.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplesource.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/devicesamplestatic.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/downchannelizer.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/dspcommands.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspdevicemimoengine.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspdevicesinkengine.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/dspdevicesourceengine.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/dspengine.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/fftcorr.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/fftengine.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/fftfactory.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/fftfilt.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/fftwengine.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/fftwindow.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/filerecord.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/filerecordinterface.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/filtermbe.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/filterrc.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/firfilter.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/fmpreemphasis.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/freqlockcomplex.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/glscopesettings.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/goertzel.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/dsp/hbfilterchainconverter.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/hbfiltertraits.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/interpolator.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/mimochannel.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/nco.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/ncof.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/nullsink.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/phaselock.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/phaselockcomplex.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/projector.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/recursivefilters.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/samplemififo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/samplemofifo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/samplesimplefifo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/samplesinkfifo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/samplesourcefifo.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/scopevis.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/spectrummarkers.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/spectrumsettings.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/spectrumvis.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/upchannelizer.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/wavfilerecord.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/dsp/wfir.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/feature/feature.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/feature/featureset.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/feature/featureutils.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/feature/featurewebapiutils.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/limerfe/limerfecontroller.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/limerfe/limerfeusbcalib.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/maincore.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/mainparser.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/pipes/datapipes.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/datapipescommon.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/datapipesgcworker.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/pipes/messagepipes.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/messagepipescommon.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/pipes/messagepipesgcworker.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/pipes/pipeendpoint.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/plugin/pluginapi.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/plugin/plugininterface.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/plugin/pluginmanager.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/settings/featuresetpreset.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/settings/mainsettings.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/settings/preferences.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/settings/preset.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/CRC64.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/ais.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/aprs.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/astronomy.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/ax25.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/azel.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/crc.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/csv.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/db.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/fits.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/fixedtraits.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/golay2312.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/httpdownloadmanager.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/interpolation.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/lfsr.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/maidenhead.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/message.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/messagequeue.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/morse.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/prettyprint.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/rtpsink.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/samplesourceserializer.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/serialutil.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/util/simpleserializer.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/syncmessenger.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/timeutil.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/uid.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/units.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/util/visa.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/webapi/webapiadapter.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapiadapterbase.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapiadapterinterface.cpp",
+			"MU",
+			null
+		],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/webapi/webapirequestmapper.cpp",
+			"MU",
+			null
+		],
+		[ "/opt/build/RPX-100-SDR/sdrbase/webapi/webapiserver.cpp", "MU", null ],
+		[ "/opt/build/RPX-100-SDR/sdrbase/webapi/webapiutils.cpp", "MU", null ],
+		[
+			"/opt/build/RPX-100-SDR/sdrbase/websockets/wsspectrum.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

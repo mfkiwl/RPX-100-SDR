@@ -1,0 +1,27 @@
+{
+	"BUILD_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/vorlocalizer_autogen",
+	"CMAKE_BINARY_DIR" : "/opt/build/RPX-100-SDR/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer",
+	"CMAKE_SOURCE_DIR" : "/opt/build/RPX-100-SDR",
+	"INCLUDE_DIR" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/vorlocalizer_autogen/include",
+	"INPUTS" : 
+	[
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/map/VORTAC.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/map/VOR.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/map/VOR-DME.png",
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/map/MapStation.qml",
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/map/map.qml",
+		"/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/map/antenna.png"
+	],
+	"LOCK_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/CMakeFiles/vorlocalizer_autogen.dir/AutoRcc_map_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "map" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_map.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/opt/build/RPX-100-SDR/build/plugins/feature/vorlocalizer/CMakeFiles/vorlocalizer_autogen.dir/AutoRcc_map_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/opt/build/RPX-100-SDR/plugins/feature/vorlocalizer/map.qrc",
+	"VERBOSITY" : 0
+}

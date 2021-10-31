@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "../../../lib/plugins/libfeaturestartracker.pdb"
+  "../../../lib/plugins/libfeaturestartracker.so"
+  "CMakeFiles/featurestartracker_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/featurestartracker_autogen.dir/ParseCache.txt"
+  "featurestartracker_autogen"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker.cpp.o"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker1420mhz.cpp.o"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker1420mhz.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker150mhz.cpp.o"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker150mhz.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker408mhz.cpp.o"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startracker408mhz.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startrackermilkyway.cpp.o"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/EWIEGA46WW/qrc_startrackermilkyway.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/featurestartracker.dir/featurestartracker_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/startracker.cpp.o"
+  "CMakeFiles/featurestartracker.dir/startracker.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/startrackergui.cpp.o"
+  "CMakeFiles/featurestartracker.dir/startrackergui.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/startrackerplugin.cpp.o"
+  "CMakeFiles/featurestartracker.dir/startrackerplugin.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/startrackersettings.cpp.o"
+  "CMakeFiles/featurestartracker.dir/startrackersettings.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/startrackersettingsdialog.cpp.o"
+  "CMakeFiles/featurestartracker.dir/startrackersettingsdialog.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/startrackerwebapiadapter.cpp.o"
+  "CMakeFiles/featurestartracker.dir/startrackerwebapiadapter.cpp.o.d"
+  "CMakeFiles/featurestartracker.dir/startrackerworker.cpp.o"
+  "CMakeFiles/featurestartracker.dir/startrackerworker.cpp.o.d"
+  "featurestartracker_autogen/EWIEGA46WW/qrc_startracker.cpp"
+  "featurestartracker_autogen/EWIEGA46WW/qrc_startracker1420mhz.cpp"
+  "featurestartracker_autogen/EWIEGA46WW/qrc_startracker150mhz.cpp"
+  "featurestartracker_autogen/EWIEGA46WW/qrc_startracker408mhz.cpp"
+  "featurestartracker_autogen/EWIEGA46WW/qrc_startrackermilkyway.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/featurestartracker.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

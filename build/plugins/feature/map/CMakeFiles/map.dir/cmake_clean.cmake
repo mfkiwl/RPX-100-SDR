@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "../../../lib/plugins/libmap.pdb"
+  "../../../lib/plugins/libmap.so"
+  "CMakeFiles/map_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/map_autogen.dir/ParseCache.txt"
+  "map_autogen"
+  "CMakeFiles/map.dir/map.cpp.o"
+  "CMakeFiles/map.dir/map.cpp.o.d"
+  "CMakeFiles/map.dir/map_autogen/EWIEGA46WW/qrc_icons.cpp.o"
+  "CMakeFiles/map.dir/map_autogen/EWIEGA46WW/qrc_icons.cpp.o.d"
+  "CMakeFiles/map.dir/map_autogen/EWIEGA46WW/qrc_map.cpp.o"
+  "CMakeFiles/map.dir/map_autogen/EWIEGA46WW/qrc_map.cpp.o.d"
+  "CMakeFiles/map.dir/map_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/map.dir/map_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/map.dir/mapbeacondialog.cpp.o"
+  "CMakeFiles/map.dir/mapbeacondialog.cpp.o.d"
+  "CMakeFiles/map.dir/mapgui.cpp.o"
+  "CMakeFiles/map.dir/mapgui.cpp.o.d"
+  "CMakeFiles/map.dir/maplocationdialog.cpp.o"
+  "CMakeFiles/map.dir/maplocationdialog.cpp.o.d"
+  "CMakeFiles/map.dir/mapmaidenheaddialog.cpp.o"
+  "CMakeFiles/map.dir/mapmaidenheaddialog.cpp.o.d"
+  "CMakeFiles/map.dir/mapplugin.cpp.o"
+  "CMakeFiles/map.dir/mapplugin.cpp.o.d"
+  "CMakeFiles/map.dir/mapradiotimedialog.cpp.o"
+  "CMakeFiles/map.dir/mapradiotimedialog.cpp.o.d"
+  "CMakeFiles/map.dir/mapsettings.cpp.o"
+  "CMakeFiles/map.dir/mapsettings.cpp.o.d"
+  "CMakeFiles/map.dir/mapsettingsdialog.cpp.o"
+  "CMakeFiles/map.dir/mapsettingsdialog.cpp.o.d"
+  "CMakeFiles/map.dir/mapwebapiadapter.cpp.o"
+  "CMakeFiles/map.dir/mapwebapiadapter.cpp.o.d"
+  "map_autogen/EWIEGA46WW/qrc_icons.cpp"
+  "map_autogen/EWIEGA46WW/qrc_map.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/map.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
